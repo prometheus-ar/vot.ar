@@ -1,0 +1,62 @@
+[
+    {
+        "consulta_popular": true, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Consulta Popular", 
+        "posicion": 6, 
+        "nombre": "CONSULTA POPULAR", 
+        "codigo": "CPO", 
+        "max_selecciones": 1
+    }, 
+    {
+        "consulta_popular": false, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Intendente", 
+        "posicion": 4, 
+        "nombre": "INTENDENTE", 
+        "codigo": "INT", 
+        "max_selecciones": 1
+    }, 
+    {
+        "consulta_popular": false, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Gobernador", 
+        "posicion": 1, 
+        "nombre": "GOBERNADOR", 
+        "codigo": "GOB", 
+        "max_selecciones": 1
+    }, 
+    {
+        "consulta_popular": false, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Senador Provincial", 
+        "posicion": 2, 
+        "nombre": "SENADOR PROVINCIAL", 
+        "codigo": "SEN", 
+        "max_selecciones": 1
+    }, 
+    {
+        "consulta_popular": false, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Diputado Provincial", 
+        "posicion": 3, 
+        "nombre": "DIPUTADO PROVINCIAL", 
+        "codigo": "DIP", 
+        "max_selecciones": 1
+    }, 
+    {
+        "consulta_popular": false, 
+        "adhiere": null, 
+        "texto_adicional": null, 
+        "texto_asistida": "Concejal", 
+        "posicion": 5, 
+        "nombre": "CONCEJAL", 
+        "codigo": "CON", 
+        "max_selecciones": 1
+    }
+]

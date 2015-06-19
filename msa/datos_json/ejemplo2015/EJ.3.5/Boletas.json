@@ -1,0 +1,54 @@
+[
+  {
+    "CNJ": "1.55", 
+    "DIP": "1.114", 
+    "GOB": "1.166", 
+    "INT": "1.190", 
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "2.58", 
+    "DIP": "2.126", 
+    "GOB": "2.168", 
+    "INT": "2.192", 
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "3.61", 
+    "DIP": "3.138", 
+    "GOB": "3.170", 
+    "INT": "3.194", 
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "4.64", 
+    "DIP": "4.148", 
+    "GOB": "4.172", 
+    "INT": "4.196", 
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "5.67", 
+    "INT": "5.198", 
+    "codigo": "5", 
+    "lista_completa": true
+  }, 
+  {
+    "CPO": "CNO.103", 
+    "codigo": "CNO", 
+    "lista_completa": true
+  }, 
+  {
+    "CPO": "CSI.105", 
+    "codigo": "CSI", 
+    "lista_completa": true
+  }
+]

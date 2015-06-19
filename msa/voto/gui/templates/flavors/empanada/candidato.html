@@ -1,0 +1,26 @@
+<div class="candidato candidato-persona {{seleccionado}}" id="{{id_candidato}}">
+    <div class="nombre-partido">{{candidato.partido.nombre}}</div>
+    <div class="lista">
+        <p class="palabra-lista">{{palabra_lista}}</p>
+        <p class="numero-lista">{{candidato.lista.numero}}</p>
+    </div>
+    <div class="foto-candidato">
+        <img src="{{path_imagen_candidato}}" />
+    </div>
+    <div class="foto-partido">
+        <img src="{{path_imagen_lista}}" />
+    </div>
+    {{&colores}}
+    <div class="clear"></div>
+    <div clas="nombre-candidato">
+        {{#candidato.lista.nombre}}
+            <div class="nombre-lista">{{candidato.lista.nombre}}</div>
+        {{/candidato.lista.nombre}}
+        <div class="candidato-principal">{{candidato.nombre}}</div>
+        <div class="candidato-secundario">
+          {{#candidato.secundarios}}
+            {{nombre}};
+          {{/candidato.secundarios}}
+        </div>
+    </div>
+</div>

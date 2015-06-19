@@ -1,0 +1,25 @@
+<g transform="translate({{sec.posicion.0}},{{sec.posicion.1}})">
+    <rect id="rect_{{sec.box_titulo.4}}" x="{{sec.box_titulo.0}}" y="{{sec.box_titulo.1}}" width="{{sec.box_titulo.2}}"  height="{{sec.box_titulo.3}}" fill="#000000"/>
+    <text x="{{sec.titulo.0}}" y="{{sec.titulo.1}}" width="{{sec.titulo.4}}" style="font-size:{{sec.titulo.3}}px;text-anchor:middle;fill:#ffffff">{{sec.titulo.2}}</text> 
+    {% if sec.texto_lista %}
+        <text id="texto_lista_{{sec.texto_lista.5}}" x="{{sec.texto_lista.0}}" y="{{sec.texto_lista.1}}" width="{{sec.texto_lista.4}}" style="font-size:{{sec.texto_lista.3}}px;text-anchor:end;">{{sec.texto_lista.2}}</text> 
+    {% endif %}
+    <text id="num_lista_{{sec.numero_lista.5}}" x="{{sec.numero_lista.0}}" y="{{sec.numero_lista.1}}" width="{{sec.numero_lista.4}}" style="font-size:{{sec.numero_lista.3}}px;text-anchor:end;">{{sec.numero_lista.2}}</text> 
+    <text x="{{sec.nombre_lista.0}}" y="{{sec.nombre_lista.1}}" width="{{sec.nombre_lista.4}}" style="font-size:{{sec.nombre_lista.3}}px;text-anchor:middle;font-style:italic;font-weight:normal">
+        {% for linea in sec.nombre_lista.2 %}
+            <tspan y="{{linea.0}}" x="{{sec.titulo.0}}" dy="1em">{{linea.1}}</tspan>
+        {% endfor %}
+    </text> 
+    <text x="{{sec.nombre_candidato.0}}" y="{{sec.nombre_candidato.1}}" width="{{sec.nombre_candidato.4}}" style="font-size:{{sec.nombre_candidato.3}}px;text-anchor:middle;">
+        {% for linea in sec.nombre_candidato.2 %}
+            <tspan y="{{linea.0}}" x="{{sec.titulo.0}}" dy="1em">{{linea.1}}</tspan>
+        {% endfor %}
+    </text> 
+    {% if sec.secundarios %}
+        <text x="{{sec.secundarios.0}}" y="{{sec.secundarios.1}}" width="{{sec.secundarios.2}}" style="font-size:{{sec.secundarios.3}}px;text-anchor:middle">
+        {% for linea in sec.secundarios.4 %}
+            <tspan y="{{linea.0}}" x="{{sec.secundarios.0}}" dy="1em">{{linea.1}}</tspan>
+        {% endfor %}
+        </text>
+    {% endif %}
+</g>

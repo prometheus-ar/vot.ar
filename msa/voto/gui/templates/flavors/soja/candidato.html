@@ -1,0 +1,11 @@
+<div class="candidato candidato-persona {{extra_classes}}" id="{{id_boton}}">
+    <div class="lista">
+        <p class="palabra-lista">{{palabra_lista}}</p>
+        <p class="numero-lista">{{candidato.lista.numero}}</p>
+    </div>
+    <div class="foto-candidato">
+        <img src="{{path_imagen}}" />
+    </div>
+    <div class="candidato-principal">{{candidato.nombre}}</div>
+    {{&extra_html}}
+</div>

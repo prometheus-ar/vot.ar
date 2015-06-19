@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <link rel="stylesheet" href="css/voto.css">
+
+        <!-- IE8 y versiones anteriores -->
+        <!--[if lte IE 8]>
+            <link rel="stylesheet" href="css/ie8.css">
+        <![endif]-->
+        <script src="js/jquery.min.js"></script>
+        <script src="js/mustache.js"></script>
+        <script src="js/imagenes.js"></script>
+        <script src="js/helpers.js"></script>
+        <script src="js/keyboard.js"></script>
+
+        <script src="js/voto/ipc.js" ></script>
+        <script src="js/voto/voto.js" type="text/javascript"></script>
+        <script src="js/voto/base.js"></script>
+        <script src="js/voto/botonera.js"></script>
+        <script src="js/voto/show_hide.js"></script>
+        <script src="js/voto/pantallas.js"></script>
+        <script src="js/voto/interaccion.js"></script>
+        <script src="js/voto/templates.js"></script>
+        <script src="js/voto/asistida.js"></script>
+        <!-- esto esta ultimo a proposito -->
+        <script src="js/zaguan.js"></script>
+    </head>
+    <body
+        ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation();
+        event.preventDefault();">
+        <div id="contenedor">
+            <div id="contenedor_izq" class="contenedor-parcial">
+                <div id="encabezado">
+                </div>
+                <div class="clear"></div>
+
+                <div id="contenedor_pantallas">
+                </div>
+                <div id="contenedor_opciones">
+                    <div class="boton-barra-individual" id="si_confirmar_voto" style="display:none">
+                        <p id="_txt_si"></p>
+                    </div>
+                    <div class="boton-barra-individual" id="no_confirmar_voto" style="display:none">
+                        <p id="_txt_no"></p>
+                    </div>
+                    <div class="boton-barra-individual" id="voto_blanco" style="display:none">
+                        <img src="img/btn_voto_blanco.png">
+                        <p id="_txt_votar_en_blanco"></p>
+                    </div>
+                    <div class="boton-barra-individual" id="confirmar_seleccion" style="display:none">
+                        <img src="img/btn_voto_blanco.png">
+                        <p id="_txt_confirmar_seleccion"></p>
+                    </div>
+                    <div id="barra_opciones">
+                        <ul id="accesibilidad">
+                            <li id="alto_contraste"><img src="img/btn_contraste.png" id="img_alto_contraste"/>
+                                <span><span class="barra-opciones-texto" id="_txt_alto_contraste"></span></span>
+                            </li>
+                            <li id="btn_regresar" style="display:none"><img src="img/btn_anterior.png" id="img_regresar" />
+                                <span><span class="barra-opciones-texto" id="_txt_volver_al_inicio"></span></span>
+                            </li>
+                        </ul>
+                        <p class="mensaje-barra-opciones" style="display:none" id="_txt_confirmar_voto"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contenedor_der" style="display:none">
+                <div id="titulo_candidatos_seleccionados"><span id="_txt_su_seleccion"></span></div>
+                <div id="candidatos_seleccionados">
+
+                </div>
+            </div>
+
+            <div class="clear"></div>
+        </div>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="mensaje-popup">
+                    <p class="alerta"></p>
+                    <p class="pregunta"></p>
+                    <p class="aclaracion"></p>
+                </div>
+                <div class="btn btn-cancelar">
+                    <p id="_txt_cancelar"></p>
+                </div>
+                <div class="btn btn-aceptar">
+                    <p id="_txt_aceptar"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </body>
+</html>

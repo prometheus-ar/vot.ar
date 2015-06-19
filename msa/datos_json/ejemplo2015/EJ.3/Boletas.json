@@ -1,0 +1,30 @@
+[
+  {
+    "DIP": "1.114", 
+    "GOB": "1.166", 
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "2.126", 
+    "GOB": "2.168", 
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "3.138", 
+    "GOB": "3.170", 
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "4.148", 
+    "GOB": "4.172", 
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }
+]

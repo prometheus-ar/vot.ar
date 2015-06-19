@@ -1,0 +1,32 @@
+[
+    {
+        "asistida": "Presupuesto", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "3", 
+        "posicion": 7, 
+        "nombre": "PRESUPUESTO PARTICIPATIVO", 
+        "codigo": "PRE", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Senador Provincial", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 2, 
+        "nombre": "SENADOR PROVINCIAL", 
+        "codigo": "SEN", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Gobernador", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 1, 
+        "nombre": "GOBERNADOR", 
+        "codigo": "GOB", 
+        "adhiere": null
+    }
+]

@@ -1,0 +1,71 @@
+[
+    {
+        "cod_candidatos": [
+            "001.001.216", 
+            "001.001.217"
+        ], 
+        "asistida": "Partido de los Deportistas", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PD", 
+        "color": "#0099ff,#00ffe6", 
+        "nombre": "Partido de los Deportistas", 
+        "codigo": "001.001", 
+        "numero": "1"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.002.218", 
+            "001.002.219"
+        ], 
+        "asistida": "Partido de los Cient\u00edficos", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PC", 
+        "color": "#663399", 
+        "nombre": "Partido de los Cient\u00edficos", 
+        "codigo": "001.002", 
+        "numero": "9"
+    }, 
+    {
+        "cod_candidatos": [
+            "002.004.222", 
+            "002.004.223"
+        ], 
+        "asistida": "M\u00fasicos Unidos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "MU", 
+        "color": "#ff6633", 
+        "nombre": "M\u00fasicos Unidos", 
+        "codigo": "002.004", 
+        "numero": "109"
+    }, 
+    {
+        "cod_candidatos": [
+            "002.003.220", 
+            "002.003.221"
+        ], 
+        "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "PAP", 
+        "color": "#cc3333", 
+        "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+        "codigo": "002.003", 
+        "numero": "12"
+    }, 
+    {
+        "cod_candidatos": [
+            "BLC.BLC.BLC"
+        ], 
+        "asistida": "Voto en BLANCO", 
+        "cod_alianza": null, 
+        "cod_partido": "BLC", 
+        "nombre_corto": "En Blanco", 
+        "color": "#ffffff", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC", 
+        "numero": null
+    }
+]

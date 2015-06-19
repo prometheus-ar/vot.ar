@@ -1,0 +1,198 @@
+[
+    {
+        "cod_candidatos": [
+            "27.224"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP1", 
+        "color": "#ff6633", 
+        "nombre": "Arreglar todas las plazas", 
+        "codigo": "27", 
+        "numero": "800"
+    }, 
+    {
+        "cod_candidatos": [
+            "33.230"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP7", 
+        "color": "#ff6633", 
+        "nombre": "Monumento a Mascherano", 
+        "codigo": "33", 
+        "numero": "806"
+    }, 
+    {
+        "cod_candidatos": [
+            "32.229"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP6", 
+        "color": "#ff6633", 
+        "nombre": "Gas natural para todos", 
+        "codigo": "32", 
+        "numero": "805"
+    }, 
+    {
+        "cod_candidatos": [
+            "31.228"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP5", 
+        "color": "#ff6633", 
+        "nombre": "Cloacas para todos", 
+        "codigo": "31", 
+        "numero": "804"
+    }, 
+    {
+        "cod_candidatos": [
+            "30.227"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP4", 
+        "color": "#ff6633", 
+        "nombre": "Bomberos Voluntarios", 
+        "codigo": "30", 
+        "numero": "803"
+    }, 
+    {
+        "cod_candidatos": [
+            "28.225"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP2", 
+        "color": "#ff6633", 
+        "nombre": "WIFI gratis para todos", 
+        "codigo": "28", 
+        "numero": "801"
+    }, 
+    {
+        "cod_candidatos": [
+            "29.226"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP3", 
+        "color": "#ff6633", 
+        "nombre": "Cumplea\u00f1os infantiles gratis", 
+        "codigo": "29", 
+        "numero": "802"
+    }, 
+    {
+        "cod_candidatos": [
+            "35.232"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP9", 
+        "color": "#ff6633", 
+        "nombre": "Escalera al cielo", 
+        "codigo": "35", 
+        "numero": "808"
+    }, 
+    {
+        "cod_candidatos": [
+            "34.231"
+        ], 
+        "asistida": null, 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "OP8", 
+        "color": "#ff6633", 
+        "nombre": "Monumento a Juan P\u00e9rez", 
+        "codigo": "34", 
+        "numero": "807"
+    }, 
+    {
+        "cod_candidatos": [
+            "1.166", 
+            "1.167", 
+            "1.233", 
+            "1.234"
+        ], 
+        "asistida": "Partido de los Deportistas", 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "PD", 
+        "color": "#0099ff,#00ffe6", 
+        "nombre": "Partido de los Deportistas", 
+        "codigo": "1", 
+        "numero": "1"
+    }, 
+    {
+        "cod_candidatos": [
+            "3.170", 
+            "3.171", 
+            "3.237", 
+            "3.238"
+        ], 
+        "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "PAP", 
+        "color": "#cc3333", 
+        "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+        "codigo": "3", 
+        "numero": "12"
+    }, 
+    {
+        "cod_candidatos": [
+            "2.168", 
+            "2.169", 
+            "2.235", 
+            "2.236"
+        ], 
+        "asistida": "Partido de los Cient\u00edficos", 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "PC", 
+        "color": "#663399", 
+        "nombre": "Partido de los Cient\u00edficos", 
+        "codigo": "2", 
+        "numero": "9"
+    }, 
+    {
+        "cod_candidatos": [
+            "4.172", 
+            "4.173", 
+            "4.239", 
+            "4.240"
+        ], 
+        "asistida": "M\u00fasicos Unidos", 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "MU", 
+        "color": "#ff6633", 
+        "nombre": "M\u00fasicos Unidos", 
+        "codigo": "4", 
+        "numero": "109"
+    }, 
+    {
+        "cod_candidatos": [
+            "BLC.BLC", 
+            "BLC.BLC", 
+            "BLC.BLC"
+        ], 
+        "asistida": "Voto en BLANCO", 
+        "cod_alianza": null, 
+        "cod_partido": null, 
+        "nombre_corto": "En Blanco", 
+        "color": "#ffffff", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC", 
+        "numero": null
+    }
+]

@@ -1,0 +1,15 @@
+<div id="{{id_lista}}" class="candidato candidato-lista-completa partido">
+    <div class="foto-partido">
+        <img src="{{path_imagen_partido}}" />
+    </div>
+    {{#imagenes_candidatos}}
+    <div class="foto-candidato">
+        <img src="{{.}}" />
+    </div>
+    {{/imagenes_candidatos}}
+    {{&colores}}
+    <div class="clear"></div>
+    <div class="nombre-partido">
+        {{partido.nombre}}
+    </div>
+</div>

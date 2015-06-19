@@ -1,0 +1,335 @@
+[
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Ruiz, Roc\u00edo", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Ruiz, Roc\u00edo", 
+        "codigo": "001.001.061", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Castro, Pedro", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Castro, Pedro", 
+        "codigo": "001.001.062", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Ojeda, Fabi\u00e1n ", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Ojeda, Fabi\u00e1n ", 
+        "codigo": "001.001.069", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Ponce, Juan Pedro", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Ponce, Juan Pedro", 
+        "codigo": "001.001.070", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Tucuman, Flavia", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Tucuman, Flavia", 
+        "codigo": "001.001.071", 
+        "numero_de_orden": 3, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Pereyra, Francisco", 
+        "titular": true, 
+        "cod_lista": "001.009", 
+        "nombre": "Pereyra, Francisco", 
+        "codigo": "001.009.063", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Negativo, Mariano", 
+        "titular": true, 
+        "cod_lista": "001.009", 
+        "nombre": "Negativo, Mariano", 
+        "codigo": "001.009.064", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Vera, Marcelo", 
+        "titular": true, 
+        "cod_lista": "001.009", 
+        "nombre": "Vera, Marcelo", 
+        "codigo": "001.009.072", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Ferreira, Fernando", 
+        "titular": true, 
+        "cod_lista": "001.009", 
+        "nombre": "Ferreira, Fernando", 
+        "codigo": "001.009.073", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Walter \"Jolifild\" Salvador", 
+        "titular": true, 
+        "cod_lista": "001.009", 
+        "nombre": "Walter \"Jolifild\" Salvador", 
+        "codigo": "001.009.074", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Cabrera de Calmo, B\u00e1rbara", 
+        "titular": true, 
+        "cod_lista": "002.012", 
+        "nombre": "Cabrera de Calmo, B\u00e1rbara", 
+        "codigo": "002.012.065", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Calmo, David", 
+        "titular": true, 
+        "cod_lista": "002.012", 
+        "nombre": "Calmo, David", 
+        "codigo": "002.012.066", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Godoy, Luciano", 
+        "titular": true, 
+        "cod_lista": "002.012", 
+        "nombre": "Godoy, Luciano", 
+        "codigo": "002.012.075", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Duarte, Rodrigo", 
+        "titular": true, 
+        "cod_lista": "002.012", 
+        "nombre": "Duarte, Rodrigo", 
+        "codigo": "002.012.076", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Fisnotta, Juana \"Fifi\"", 
+        "titular": true, 
+        "cod_lista": "002.012", 
+        "nombre": "Fisnotta, Juana \"Fifi\"", 
+        "codigo": "002.012.077", 
+        "numero_de_orden": 3, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Colibr\u00ed, Corina", 
+        "titular": true, 
+        "cod_lista": "002.109", 
+        "nombre": "Colibr\u00ed, Corina", 
+        "codigo": "002.109.102", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "de la Calle, Sergio Clemente", 
+        "titular": true, 
+        "cod_lista": "002.109", 
+        "nombre": "de la Calle, Sergio Clemente", 
+        "codigo": "002.109.103", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Zorrilla, Juan", 
+        "titular": true, 
+        "cod_lista": "002.109", 
+        "nombre": "Zorrilla, Juan", 
+        "codigo": "002.109.104", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Gatti, Donald", 
+        "titular": true, 
+        "cod_lista": "002.109", 
+        "nombre": "Gatti, Donald", 
+        "codigo": "002.109.105", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Gallo, Gabriela", 
+        "titular": true, 
+        "cod_lista": "002.109", 
+        "nombre": "Gallo, Gabriela", 
+        "codigo": "002.109.106", 
+        "numero_de_orden": 3, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Martinez, Joaquin Ram\u00f3n", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Martinez, Joaquin Ram\u00f3n", 
+        "codigo": "003.097.067", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Cabezon, Huberto Orlando", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Cabezon, Huberto Orlando", 
+        "codigo": "003.097.068", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Duarte, Wayington Argentino", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Duarte, Washington Argentino", 
+        "codigo": "003.097.078", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Smith, Marcelo", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Smith, Marcelo", 
+        "codigo": "003.097.079", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Garcia, Joge", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Garcia, Joge", 
+        "codigo": "003.097.080", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Francese, Dario \"Belu\"", 
+        "titular": true, 
+        "cod_lista": "003.097", 
+        "nombre": "Francese, Dario \"Belu\"", 
+        "codigo": "003.097.081", 
+        "numero_de_orden": 4, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CPO", 
+        "asistida": "S\u00cd", 
+        "titular": true, 
+        "cod_lista": "CSI.CSI", 
+        "nombre": "S\u00cd", 
+        "codigo": "CSI.CSI.145", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CPO", 
+        "asistida": "Estoy a favor de la creacion del municipio de Aguas Blancas", 
+        "titular": true, 
+        "cod_lista": "CSI.CSI", 
+        "nombre": "Estoy a favor de la creacion del municipio de Aguas Blancas", 
+        "codigo": "CSI.CSI.146", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CPO", 
+        "asistida": "NO", 
+        "titular": true, 
+        "cod_lista": "CNO.CNO", 
+        "nombre": "NO", 
+        "codigo": "CNO.CNO.147", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CPO", 
+        "asistida": "Estoy a favor de la creacion del municipio de Aguas Blancas", 
+        "titular": true, 
+        "cod_lista": "CNO.CNO", 
+        "nombre": "Estoy a favor de la creacion del municipio de Aguas Blancas", 
+        "codigo": "CNO.CNO.148", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "INT_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "CPO", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "CPO_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "CON_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }
+]

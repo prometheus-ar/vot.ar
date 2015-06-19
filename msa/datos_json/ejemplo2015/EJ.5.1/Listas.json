@@ -1,0 +1,192 @@
+[
+  {
+    "asistida": "Partido de los Deportistas", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "1", 
+    "color": "#2EFC90,#F43D3B", 
+    "nombre": "Partido de los Deportistas", 
+    "nombre_corto": "PD", 
+    "numero": "1"
+  }, 
+  {
+    "asistida": "Horizonte Nuevo", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "10", 
+    "color": "#16862A,#28DEA2", 
+    "nombre": "Horizonte Nuevo", 
+    "nombre_corto": "HN", 
+    "numero": "114"
+  }, 
+  {
+    "asistida": "Partido Dem\u00f3crata de la Liberaci\u00f3n", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "11", 
+    "color": "#9F6A80,#8AB1FC", 
+    "nombre": "Partido Dem\u00f3crata de la Liberaci\u00f3n", 
+    "nombre_corto": "PDL", 
+    "numero": "115"
+  }, 
+  {
+    "asistida": "Movimiento Vecinal", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "12", 
+    "color": "#C7ADC4,#7D72B3", 
+    "nombre": "Movimiento Vecinal", 
+    "nombre_corto": "MV", 
+    "numero": "116"
+  }, 
+  {
+    "asistida": "Movimentaristas Asociados", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "13", 
+    "color": "#1B7683,#1FDE04", 
+    "nombre": "Movimentaristas Asociados", 
+    "nombre_corto": "MA", 
+    "numero": "117"
+  }, 
+  {
+    "asistida": "Ejemplo Libre", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "14", 
+    "color": "#BE15FD,#7E35D1", 
+    "nombre": "Ejemplo Libre", 
+    "nombre_corto": "EL", 
+    "numero": "118"
+  }, 
+  {
+    "asistida": "Frente Unido", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "15", 
+    "color": "#7466DE,#399EC7", 
+    "nombre": "Frente Unido", 
+    "nombre_corto": "FU", 
+    "numero": "119"
+  }, 
+  {
+    "asistida": "Partido de los Cient\u00edficos Locos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "16", 
+    "color": "#9B3FC8,#C58F32", 
+    "nombre": "Partido de los Cient\u00edficos Locos", 
+    "nombre_corto": "PCL", 
+    "numero": "120"
+  }, 
+  {
+    "asistida": "Partido de los Cient\u00edficos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "2", 
+    "color": "#EC5A8E,#97BDAB", 
+    "nombre": "Partido de los Cient\u00edficos", 
+    "nombre_corto": "PC", 
+    "numero": "9"
+  }, 
+  {
+    "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "3", 
+    "color": "#0839C8,#A9FB66", 
+    "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+    "nombre_corto": "PAP", 
+    "numero": "12"
+  }, 
+  {
+    "asistida": "M\u00fasicos Unidos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "4", 
+    "color": "#4CF221,#674DE6", 
+    "nombre": "M\u00fasicos Unidos", 
+    "nombre_corto": "MU", 
+    "numero": "109"
+  }, 
+  {
+    "asistida": "Partido An\u00f3nimo", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "5", 
+    "color": "#81630E,#D64EA4", 
+    "nombre": "Partido An\u00f3nimo", 
+    "nombre_corto": "PA", 
+    "numero": "97"
+  }, 
+  {
+    "asistida": "Vecinos Organizados", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "6", 
+    "color": "#F55B50,#647E22", 
+    "nombre": "Vecinos Organizados", 
+    "nombre_corto": "VO", 
+    "numero": "110"
+  }, 
+  {
+    "asistida": "Partido Vecinalista", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "7", 
+    "color": "#EEAAA7,#3C5018", 
+    "nombre": "Partido Vecinalista", 
+    "nombre_corto": "PV", 
+    "numero": "111"
+  }, 
+  {
+    "asistida": "Partido de la Costa", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "8", 
+    "color": "#AC5E6A,#747177", 
+    "nombre": "Partido de la Costa", 
+    "nombre_corto": "PC", 
+    "numero": "112"
+  }, 
+  {
+    "asistida": "Partido Marxista Vecinal", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "9", 
+    "color": "#1657A6,#998381", 
+    "nombre": "Partido Marxista Vecinal", 
+    "nombre_corto": "PMV", 
+    "numero": "113"
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "BLC", 
+    "color": "#ffffff", 
+    "nombre": "Votos en Blanco", 
+    "nombre_corto": "En Blanco", 
+    "numero": null
+  }, 
+  {
+    "asistida": "NO", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "CNO", 
+    "color": "#BB821A", 
+    "nombre": "No", 
+    "nombre_corto": "NO", 
+    "numero": "999"
+  }, 
+  {
+    "asistida": "SI", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "CSI", 
+    "color": "#7C6848", 
+    "nombre": "Si", 
+    "nombre_corto": "SI", 
+    "numero": "998"
+  }
+]

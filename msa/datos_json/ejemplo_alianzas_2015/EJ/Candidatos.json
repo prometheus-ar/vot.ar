@@ -1,0 +1,184 @@
+[
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Maradona, Diego", 
+        "codigo": "001.001.001.001", 
+        "texto_asistida": "Maradona, Diego", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Caniggia, Claudio Paul", 
+        "codigo": "001.001.001.002", 
+        "texto_asistida": "Caniggia, Claudio Paul", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "001.001.001.007", 
+        "texto_asistida": "Fangio, Juan Manuel", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "001.001.001.008", 
+        "texto_asistida": "Schumacher, Michael", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Curie, Marie", 
+        "codigo": "001.001.009.003", 
+        "texto_asistida": "Curie, Marie", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Curie, Pierre", 
+        "codigo": "001.001.009.004", 
+        "texto_asistida": "Curie, Pierre", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "001.001.009.009", 
+        "texto_asistida": "Newton, Isaac", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "001.001.009.010", 
+        "texto_asistida": "Kepler, Johannes ", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Dal\u00ed, Salvador", 
+        "codigo": "001.002.012.005", 
+        "texto_asistida": "Dal\u00ed, Salvador", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Vel\u00e1zquez, Diego", 
+        "codigo": "001.002.012.006", 
+        "texto_asistida": "Vel\u00e1zquez, Diego", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "001.002.012.011", 
+        "texto_asistida": "W\u00e1rjol, Andy", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "001.002.012.012", 
+        "texto_asistida": "Minuj\u00edn, Marta", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Lennon, John", 
+        "codigo": "001.002.109.082", 
+        "texto_asistida": "Lennon, John", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "McCartney, Paul", 
+        "codigo": "001.002.109.083", 
+        "texto_asistida": "McCartney, Paul", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "001.002.109.084", 
+        "texto_asistida": "Sosa, Mercedes", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "001.002.109.085", 
+        "texto_asistida": "Yupanqui, Atahualpa", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "GOB_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }
+]

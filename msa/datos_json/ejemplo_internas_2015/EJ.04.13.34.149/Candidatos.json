@@ -1,0 +1,93 @@
+[
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Fangio, Juan Manuel", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "001.001.216", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Schumacher, Michael", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "001.001.217", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Newton, Isaac", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "001.002.218", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Kepler, Johannes ", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "001.002.219", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "W\u00e1rjol, Andy", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "002.003.220", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Minuj\u00edn, Marta", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "002.003.221", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Sosa, Mercedes", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "002.004.222", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Yupanqui, Atahualpa", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "002.004.223", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }
+]

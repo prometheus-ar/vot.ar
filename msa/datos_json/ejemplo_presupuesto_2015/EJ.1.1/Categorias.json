@@ -1,0 +1,12 @@
+[
+  {
+    "adhiere": null, 
+    "asistida": "Presupuesto", 
+    "codigo": "PRE", 
+    "consulta_popular": false, 
+    "max_selecciones": "3", 
+    "nombre": "Presupuesto Participativo", 
+    "posicion": 7, 
+    "texto_adicional": null
+  }
+]

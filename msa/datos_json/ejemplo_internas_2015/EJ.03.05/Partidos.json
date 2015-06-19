@@ -1,0 +1,50 @@
+[
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#00FF00", 
+        "asistida": "SI", 
+        "nombre": "SI", 
+        "codigo": "CSI"
+    }, 
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#f1f374", 
+        "asistida": "Partido Pluralista", 
+        "nombre": "Partido Pluralista", 
+        "codigo": "003"
+    }, 
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#950075", 
+        "asistida": "Artistas Unidos", 
+        "nombre": "Artistas Unidos", 
+        "codigo": "002"
+    }, 
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#975086", 
+        "asistida": "Uni\u00f3n de Deportistas y Cientificos", 
+        "nombre": "Uni\u00f3n de Deportistas y Cientificos", 
+        "codigo": "001"
+    }, 
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#00FF00", 
+        "asistida": "NO", 
+        "nombre": "NO", 
+        "codigo": "CNO"
+    }, 
+    {
+        "cod_alianza": null, 
+        "nombre_corto": null, 
+        "color": "#ffffff", 
+        "asistida": "Votos en BLANCO", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC"
+    }
+]

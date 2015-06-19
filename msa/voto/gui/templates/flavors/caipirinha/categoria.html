@@ -1,0 +1,16 @@
+<div class="candidato {{seleccionado}}" id="{{id_boton}}">
+    <div class="nombre-cargo">{{categoria.nombre}}</div>
+    <div class="foto-candidato">
+        <img src="{{path_imagen}}" />
+    </div>
+    <div class="foto-partido">
+        <img src="{{path_imagen_agrupacion}}" />
+    </div>
+    <div class="candidato-principal">{{nombre}}</div>
+    <div class="candidato-secundario">
+        {{#candidato.secundarios}}
+        {{nombre}};
+        {{/candidato.secundarios}}
+    </div>
+    <div class="nombre-partido">{{candidato.lista.nombre}}</div>
+</div>

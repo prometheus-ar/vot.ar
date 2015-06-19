@@ -1,0 +1,202 @@
+[
+  {
+    "asistida": "Colombia", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "1", 
+    "color": "#ce1126,#003893,#fcd116", 
+    "nombre": "Colombia", 
+    "nombre_corto": "COL", 
+    "numero": "1"
+  }, 
+  {
+    "asistida": "Primera Fase", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "10", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Primera Fase", 
+    "nombre_corto": "PF", 
+    "numero": "114"
+  }, 
+  {
+    "asistida": "Holanda", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "11", 
+    "color": "#ae1c28,#fff,#214686", 
+    "nombre": "Holanda", 
+    "nombre_corto": "HOL", 
+    "numero": "115"
+  }, 
+  {
+    "asistida": "Argentina", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "12", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Argentina", 
+    "nombre_corto": "ARG", 
+    "numero": "116"
+  }, 
+  {
+    "asistida": "Alemania", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "13", 
+    "color": "#000,#d00,#ffce00", 
+    "nombre": "Alemania", 
+    "nombre_corto": "ALE", 
+    "numero": "117"
+  }, 
+  {
+    "asistida": "Final", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "14", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Final", 
+    "nombre_corto": "FI", 
+    "numero": "118"
+  }, 
+  {
+    "asistida": "Semifinal", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "15", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Semifinal", 
+    "nombre_corto": "SF", 
+    "numero": "119"
+  }, 
+  {
+    "asistida": "Inglaterra", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "17", 
+    "color": "#fff,#ce1124", 
+    "nombre": "Inglaterra", 
+    "nombre_corto": "ING", 
+    "numero": "121"
+  }, 
+  {
+    "asistida": "Chile", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "18", 
+    "color": "#0039a6,#fff,#d52b1e", 
+    "nombre": "Chile", 
+    "nombre_corto": "CHI", 
+    "numero": "122"
+  }, 
+  {
+    "asistida": "Brasil", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "19", 
+    "color": "#009b3a,#fedf00,#009b3a", 
+    "nombre": "Brasil", 
+    "nombre_corto": "BRA", 
+    "numero": "123"
+  }, 
+  {
+    "asistida": "Uruguay", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "2", 
+    "color": "#fff,#0038a8,#fff,#0038a8,#fff,#0038a8,#fff,#0038a8,#fff", 
+    "nombre": "Uruguay", 
+    "nombre_corto": "UR2", 
+    "numero": "9"
+  }, 
+  {
+    "asistida": "Italia", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "21", 
+    "color": "#009246,#fff,#ce2b37", 
+    "nombre": "Italia", 
+    "nombre_corto": "ITA", 
+    "numero": "125"
+  }, 
+  {
+    "asistida": "Otra Selecci\u00f3n", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "3", 
+    "color": "#0099ff", 
+    "nombre": "Otra Selecci\u00f3n", 
+    "nombre_corto": "OTR", 
+    "numero": "12"
+  }, 
+  {
+    "asistida": "Espa\u00f1a", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "4", 
+    "color": "#c60b1e,#ffc400", 
+    "nombre": "Espa\u00f1a", 
+    "nombre_corto": "ESP", 
+    "numero": "109"
+  }, 
+  {
+    "asistida": "Portugal", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "5", 
+    "color": "#060,#f00", 
+    "nombre": "Portugal", 
+    "nombre_corto": "POR", 
+    "numero": "97"
+  }, 
+  {
+    "asistida": "Francia", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "6", 
+    "color": "#002395,#fff,#ed2939", 
+    "nombre": "Francia", 
+    "nombre_corto": "FRA", 
+    "numero": "110"
+  }, 
+  {
+    "asistida": "M\u00e9xico", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "7", 
+    "color": "#006847,#fff,#ce1126", 
+    "nombre": "M\u00e9xico", 
+    "nombre_corto": "MEX", 
+    "numero": "111"
+  }, 
+  {
+    "asistida": "Cuartos de Final", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "8", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Cuartos de Final", 
+    "nombre_corto": "CU", 
+    "numero": "112"
+  }, 
+  {
+    "asistida": "Octavos de Final", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "9", 
+    "color": "#74acbf,#fff,#74acbf", 
+    "nombre": "Octavos de Final", 
+    "nombre_corto": "OC", 
+    "numero": "113"
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "BLC", 
+    "color": "#ffffff", 
+    "nombre": "Votos en Blanco", 
+    "nombre_corto": "En Blanco", 
+    "numero": null
+  }
+]

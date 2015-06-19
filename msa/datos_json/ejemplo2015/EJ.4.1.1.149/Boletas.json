@@ -1,0 +1,22 @@
+[
+  {
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }
+]

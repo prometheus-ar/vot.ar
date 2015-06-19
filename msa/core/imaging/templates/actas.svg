@@ -1,0 +1,97 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+     baseProfile="full"
+     width="{{width}}" height="{{height}}"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="font-size:21px;font-weight:bold;font-family: nimbus sans l;">
+  <rect width="{{width}}" height="{{height}}" fill="#ffffff"/>
+  {% if id_planilla %}
+    <text x="{{id_planilla.0}}" y="{{id_planilla.1}}" style="font-size:30px;">{{id_planilla.2}}</text>
+  {% endif %}
+  {% if qr %}
+    <image x="{{qr.0}}" y="{{qr.1}}" width="{{qr.3}}" height="{{qr.4}}" xlink:href="{{qr.2}}"/>
+  {% endif %}
+  {% if verificador %}
+    <image x="{{verificador.0}}" y="{{verificador.1}}" width="180" height="180" xlink:href="{{verificador.2}}"/>
+  {% endif %}
+  {% if escudo %}
+    <image x="{{escudo.0}}" y="{{escudo.1}}" width="80" height="80" xlink:href="{{escudo.2}}"/>
+  {% endif %}
+  <text x="{{titulo1.0}}" y="{{titulo1.1}}" >{{titulo1.2}}</text>
+  <text x="{{titulo2.0}}" y="{{titulo2.1}}" >{{titulo2.2}}</text>
+  <text x="{{titulo3.0}}" y="{{titulo3.1}}" >{{titulo3.2}}</text>
+  <text x="{{titulo4.0}}" y="{{titulo4.1}}" >{{titulo4.2}}</text>
+  <text x="{{titulo5.0}}" y="{{titulo5.1}}" >{{titulo5.2}}</text>
+  <text x="{{titulo_acta.0}}" y="{{titulo_acta.1}}" width="800px" style="text-anchor:middle">
+      {% for line in titulo_acta.2%}
+      <tspan x="{{margin_center}}" dy="1em">
+          {{ line }}
+      </tspan>
+      {% endfor%}
+  </text>
+  <text x="{{texto_acta.0}}" y="{{texto_acta.1}}" width="800px" height="500px" style="text-anchor:middle">
+      {% for line in texto_acta.2 %}
+      <tspan x="{{margin_center}}" dy="1em">
+          {{ line }}
+      </tspan>
+      {% endfor %}
+  </text>
+  {% if tabla %}
+    <rect width="{{tabla.1.3}}" x="{{tabla.1.1}}" y="{{tabla.1.2 + 39}}" height="{{alto_rectangulo}}"/>
+    {% for columna in tabla %} 
+      {% set col_lista=loop.index %}
+      <text x="{{columna.1}}" y="{{columna.2}}" width="{{columna.3}}" style="font-size:23px;
+            {% if loop.index == 2 %}fill:#ffffff;{% endif %}">
+          {% for fila in columna.0 %}
+            {% if loop.index == 1 %}
+                {% if loop.index < 3 %}
+                    <tspan x="{{columna.1 + columna.3 / 2 }}" dy="1.5em" text-anchor="middle" fill="#000000">{{fila}}</tspan>
+                {% else %}
+                    <tspan x="{{columna.1}}" dy="1.5em" text-anchor="end" fill="#000000">{{fila}}</tspan>
+                {% endif %}
+            {% elif col_lista == 1 %}
+                <tspan x="{{columna.1}}" dy="1em">{{fila}}</tspan>
+            {% elif col_lista == 2%}
+                <tspan x="{{columna.1 + columna.3 / 2}}" dy="1em" text-anchor="middle">{{fila}}</tspan>
+            {% else %}
+            <tspan x="{{columna.1 + columna.3 * 0.8}}" text-anchor="end" dy="1em">{{fila}}</tspan>
+            {% endif %}
+          {% endfor %}
+          <tspan x="{{columna.1 + columna.3 * 0.8}}" text-anchor="end" dy="1em"> &nbsp;</tspan>
+      </text>
+    {% endfor %}
+
+    <rect width="{{tabla_especiales.0.3}}" x="{{tabla_especiales.0.1}}" y="{{tabla_especiales.0.2 + 39}}" height="{{alto_rectangulo_especiales}}"/>
+    {% for columna in tabla_especiales %} 
+      {% set col_lista=loop.index %}
+      <text x="{{columna.1}}" y="{{columna.2}}" width="{{columna.3}}" style="font-size:23px;
+            {% if loop.index == 2 %}fill:#ffffff;{% endif %}">
+          {% for fila in columna.0 %}
+            {% if loop.index == 1 %}
+              <tspan x="{{columna.1}}" dy="1.5em" fill="#000000">{{fila}}</tspan>
+            {% else %}
+              {% if col_lista == 1 %}
+                <tspan x="{{columna.1}}" dy="1em" fill="#ffffff">{{fila}}</tspan>
+              {% else %}
+                <tspan x="{{columna.1}}" dy="1em" fill="#000000">{{fila}}</tspan>
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+      </text>
+    {% endfor %}
+
+  {% endif %}
+  {% if autoridades %}
+    <text x="{{autoridades.0}}" y="{{autoridades.1}}">{{autoridades.2}}</text>
+  {% endif %}
+  {% if fiscales %}
+    <text x="{{fiscales.0}}" y="{{fiscales.1}}">{{fiscales.2}}</text>
+  {% endif %}
+  {% if watermark %}
+    <text x="{{watermark.0}}" y="{{watermark.1}}" transform="rotate(-40 600, 0)" style="font-size:40px;stroke:#ffffff;stroke-width:2px;">{{watermark.2}}</text>
+  {% endif %}
+  {% for linea in lineas %}
+    <line x1="{{linea.1}}" y1="{{linea.0}}" x2="{{linea.2}}" y2="{{linea.0}}" style="stroke:rgb(0,0,0);stroke-width:2"/>
+  {% endfor %}
+</svg>

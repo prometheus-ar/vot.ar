@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) + russo vim edit -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   version="1.1"
+   width="600"
+   height="1030"
+   id="svg5925">
+
+  <!-- XXX DEFS -->
+  <defs id="defs5927">
+    <clipPath id="clipPath5068">
+      <path
+         d="m 1518.03,252.613 -4.451,10.524 4.451,-10.524 z"
+         id="path5070" />
+    </clipPath>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       id="linearGradient3270"
+       xlink:href="#linearGradient5076"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.2468414,-10.411911,-10.411911,0.2468414,1515.9277,263.08008)"
+       spreadMethod="pad" />
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       id="linearGradient5076"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(-0.2468414,-10.411911,-10.411911,0.2468414,1515.9277,263.08008)"
+       spreadMethod="pad">
+      <stop
+         id="stop5078"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop5080"
+         style="stop-color:#383332;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+    <clipPath
+       id="clipPath5124">
+      <path
+         d="m 1514.024,271.328 4.942,10.299 -4.942,-10.299 z"
+         id="path5126" />
+    </clipPath>
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       id="linearGradient3272"
+       xlink:href="#linearGradient5132"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.2467957,10.409958,-10.409958,0.2467957,1516.3721,271.27246)"
+       spreadMethod="pad" />
+    <linearGradient
+       x1="0"
+       y1="0"
+       x2="1"
+       y2="0"
+       id="linearGradient5132"
+       gradientUnits="userSpaceOnUse"
+       gradientTransform="matrix(0.2467957,10.409958,-10.409958,0.2467957,1516.3721,271.27246)"
+       spreadMethod="pad">
+      <stop
+         id="stop5134"
+         style="stop-color:#ffffff;stop-opacity:1"
+         offset="0" />
+      <stop
+         id="stop5136"
+         style="stop-color:#383332;stop-opacity:1"
+         offset="1" />
+    </linearGradient>
+  </defs>
+
+  <!-- XXX METADATA -->
+  <metadata
+     id="metadata5930">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+
+  <g id="layer1">
+    {% if tipo == 'transmision' %}
+      <!-- XXX BG LINES (transmision) -->
+      {% include 'reverso_boleta_bg_transmision.svg' %}
+    {% endif %}
+
+    <!-- XXX top rect -->
+    <rect
+      x="{{ top_rect.x }}" y="{{ top_rect.y }}"
+      width="{{ top_rect.width }}" height="{{ top_rect.height }}"
+      fill="{{ top_rect.fill }}" style="{{ top_rect.style }}"
+      transform="{{ top_rect.transform }}"/>
+
+    <!-- XXX bottom rect if transmision else bottom "rec" w/mueca -->
+    {% if tipo == 'transmision' %}
+    <rect
+      x="{{ bottom_rect.x }}" y="{{ bottom_rect.y }}"
+      width="{{ bottom_rect.width }}" height="{{ bottom_rect.height }}"
+      fill="{{ bottom_rect.fill }}" style="{{ bottom_rect.style }}"
+      transform="{{ bottom_rect.transform }}"/>
+    {# insert border with mueca #}
+    {% include 'reverso_boleta_border.svg' %}
+    {% else %}
+    <!-- XXX bottom "rect" (path with mueca (ranura)) -->
+    <g id="g_path_mueca" fill="{{ bottom_rect.fill }}"
+       style="{{ bottom_rect.style }}" transform="{{ bottom_rect.transform }}" >
+      <path id="path_mueca"
+        d="m -2,806.32092 0,-228.38575 298.92852,0 298.9286,0 0,184.49483 -41.23968,0.0575 -0.17907,45.03091 40.96164,-0.19753 0.45711,227.38572 -298.9286,0 -298.92852,0 z"
+      />
+    </g>
+    {% endif %}
+
+    <!-- XXX Group Flecha -->
+    <g id="group_flecha"
+       transform="matrix(1.7464477,0,0,-1.4816169,292.0272,994.4291)"
+       fill="{{ flecha.fill }}">
+      <path
+         d="m 0,0 -89.365,90.6 0,85.336 59.573,-60.401 0,136.887 59.581,0 0,-136.887 59.578,60.401 0,-85.336 L 0,0 z"
+         id="path3846"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:none" />
+      <path
+         d="m 0,0 -89.365,90.6 0,85.336 59.573,-60.401 0,136.887 59.581,0 0,-136.887 59.578,60.401 0,-85.336 L 0,0 z"
+         id="path8028"
+         style="fill-opacity:1;fill-rule:nonzero;stroke:none" />
+    </g>
+
+    <!-- XXX Legends reverso boleta -->
+    {% include 'reverso_boleta_legend_{}.svg'.format(tipo) %}
+
+    <!-- XXX Logo vot.ar -->
+    {% include 'reverso_boleta_logo_votar.svg' %}
+
+    <!-- XXX Legends -->
+    {#
+    example config for add legend
+    'legends': [
+        {'x': 50, 'y': 50, 'font_family': 'FONT_NAME', 'font_size': '80px',
+         'font_fill': '#ffffff',
+         'lines': [
+             {'x': 75, 'dy': '1.3em', 'fill': '#ffffff', 'text': u'Acta de'},
+             {'x': 50, 'dy': '1.3em', 'fill': '#ffffff', 'text': u'Apertura'},
+             {'x': 70, 'dy': '1.3em', 'fill': '#ffffff', 'text': u'de Mesa'},
+         ]
+        },
+    ],
+    #}
+    {% for legend in legends %}
+      <text
+        x="{{ legend.x }}" y="{{ legend.y }}"
+        font-family="{{ legend.font_family }}"
+        font-size="{{ legend.font_size }}"
+        font-weight="bold" fill="{{ legend.font_fill }}">
+      {% for line in legend.lines %}
+        <tspan x="{{ line.x }}" dy="{{ line.dy }}" fill="{{ line.fill }}">
+        {{ line.text }}
+        </tspan>
+      {% endfor %}
+      </text>
+    {% endfor %}
+
+  </g>
+</svg>

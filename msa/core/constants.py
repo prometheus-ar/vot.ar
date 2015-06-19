@@ -1,0 +1,34 @@
+CIERRE_RECUENTO = 'recuento'
+CIERRE_TRANSMISION = 'transmision'
+CIERRE_CERTIFICADO = 'certificado'
+CIERRE_COPIA_FIEL = 'copia_fiel'
+CIERRE_ESCRUTINIO = 'escrutinio'
+
+ALIGN_TITULO = "L"
+
+WATERMARK_TEXT = "DEMOSTRACION - USO NO OFICIAL"
+WATERMARK_FONT_SIZE = 40
+TMPL_LISTA = 'LISTA %s'
+
+LECTOR_TEXAS = 'Texas'
+LECTOR_ACG = 'ACG'
+LECTOR_DUMMY = "Dummy"
+
+DPI_VOTO_BAJA = (100, 67)
+DPI_VOTO_ALTA = (200, 200)
+
+FONT_PATH = "/usr/share/fonts/truetype/ttf-dejavu/"
+
+DEBUG_IMPRESION_TEST_FILE = '/tmp/printer_dummy'
+
+COD_IMPRESION_BAJA = "_baja"
+
+FAN_THRESHOLD_OFF = 50
+FAN_THRESHOLD_LOW = 55
+FAN_THRESHOLD_HIGH = 70
+
+MAX_FAN_SPEED = 100
+MIN_FAN_SPEED = 50
+
+# Cantidad de suplentes ademas del presidente en las autoridades de mesa
+CANTIDAD_SUPLENTES = 2

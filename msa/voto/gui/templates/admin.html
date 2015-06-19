@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Interfaz Voto Web</title>
+        <link rel="stylesheet" href="css/menu.css">
+        <link rel="stylesheet" href="css/icons.css">
+
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script src="js/mustache.js" ></script>
+        <script src="js/zaguan.js" ></script>
+
+        <script src="js/helpers.js" ></script>
+        <script src="js/admin/ipc.js" ></script>
+        <script src="js/admin/funciones.js" ></script>
+        <script src="js/admin/show_hide.js" ></script>
+    </head>
+    <body ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();" >
+        <div id="contenedor" class="fondo-rayado">
+          <div id="contenedor_izq" class="contenedor-completo">
+            <div id="encabezado" class="contenedor-completo">
+            </div>
+            <div class="clear"></div>
+
+            <div class="barra-titulo">
+                <p id="_txt_titulo_menu">&nbsp;</p>
+                <p id="_txt_titulo_mantenimiento" style="display:none;">&nbsp;</p>
+            </div>
+
+            <div id="menu" style="display:none">
+                <div id="btn_apertura" class="boton-menu boton-desactivado boton-central">
+                    <div class="gradiente-blanco"></div>
+                    <img src="img/menu/reloj1.png">
+                    <p id="_txt_apertura_de_mesa"></p>
+                </div>
+
+                <div id="btn_voto" class="boton-menu boton-desactivado boton-central">
+                    <div class="gradiente-blanco"></div>
+                    <img src="img/menu/reloj2.png">
+                    <p id="_txt_sistema_boleta_electronica"></p>
+                </div>
+
+                <div id="btn_recuento" class="boton-menu boton-desactivado boton-central">
+                    <div class="gradiente-blanco"></div>
+                    <img src="img/menu/reloj3.png">
+                    <p id="_txt_cierre_y_escrutinio"></p>
+                </div>
+
+                <div class="borde-boton-redondo" id="borde_asistida" style="display:none">
+                    <div id="btn_asistida" class="boton-redondo boton-desactivado boton-central">
+                        <img src="img/menu/asistida.png" >
+                        <p id="_txt_votacion_asistida"></p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="pantalla_mantenimiento" style="display:none">
+                <div class="contenido-mantenimiento">
+
+                    <div class="mantenimiento-columna">
+
+                        <div id="configuracion" class="item-mantenimiento">
+                            <div id="volumen" class="item-con-botones">
+                            <h3 id="_txt_volumen"></h3>
+                                <div id="_btn_volumen_abajo" class="boton"><img class="btn-campo" src="img/btn_scroll_down.png"></div>
+                                <div id="nivel_volumen" class="valor"><span id="_txt_cargando"></span></div>
+                                <div id="_btn_volumen_arriba" class="boton"><img class="btn-campo" src="img/btn_scroll_up.png"></div>
+                            </div>
+
+                            <div id="brillo" class="item-con-botones" style="display:none">
+                            <h3 id="_txt_brillo"></h3>
+                                <div id="_btn_brillo_abajo" class="boton"><img class="btn-campo" src="img/btn_scroll_down.png"></div>
+                                <div id="nivel_brillo" class="valor"><span id="_txt_cargando"></span></div>
+                                <div id="_btn_brillo_arriba" class="boton"><img class="btn-campo" src="img/btn_scroll_up.png"></div>
+                            </div>
+
+                            <div class="clear"></div>
+                        </div>
+
+                        <div id="fans" class="item-mantenimiento">
+                            <h3 id="_txt_modo_ventilador"></h3>
+                            <div id="modo_ventilador_actual"></div>
+                            <div id="modo_ventilador" style="display:none;">
+                                <label class="checkbox toggle">
+                                    <input id="modo_ventilador_checkbox" type="checkbox" checked="checked" />
+                                    <p><span id="_txt_auto"></span><span id="_txt_manual"></span></p>
+                                    <a class="slide-button"></a>
+                                </label>
+                            </div>
+                            <div id="velocidad_ventiladores" class="item-con-botones" style="display:none;">    
+                                <div id="_btn_velocidad_abajo" class="boton"><img class="btn-campo" src="img/btn_scroll_down.png"></div>
+                                <div id="nivel_velocidad" class="valor"></div>
+                                <div id="_btn_velocidad_arriba" class="boton"><img class="btn-campo" src="img/btn_scroll_up.png"></div>
+                            </div>
+                            <div class="clear"></div>
+                            <div id="chequeo_ventilador" style="display:none;">
+                                <button id="_txt_iniciar_chequeo"></button>
+                            </div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div id="rfid" class="item-mantenimiento">
+                            <h3 id="_txt_rfid"></h3>
+                            <div id="chequeo_rfid" class="subitem-mitad">
+                                <h4 id="_txt_chequeo_rfid" style="font-weight:bold;"></h4>
+                                <p id="_txt_descripcion_chequeo_rfid"></p>
+                                <div id="espacio_chequeo_rfid"><span id="_txt_no_hay_tag"></span></div>
+                            </div>
+                            <div id="potencia_rfid" class="subitem-mitad">
+                                <h4 id="_txt_potencia_rfid" style="font-weight:bold;"></h4>
+                                <span id="nivel_potencia"><span id="_txt_cargando"></span></span>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div id="pir" class="item-mantenimiento" style="display:none">
+                            <h3 id="_txt_pir"></h3>
+                            <div id="modo_pir" class="subitem-mitad">
+                                <label class="checkbox toggle">
+                                    <input id="modo_pir_checkbox" type="checkbox" checked="checked" />
+                                    <p><span id="_txt_pir_activado"></span><span id="_txt_pir_desactivado"></span></p>
+                                    <a class="slide-button"></a>
+                                </label>
+                            </div>
+                            <div id="estado_actual_pir" class="subitem-mitad">
+                                <h4 id="_txt_estado_pir" style="font-weight:bold;"></h4>
+                                <p id="estado_pir"><span id="_txt_cargando"></span></p>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+
+
+
+                    </div>
+
+                    <div class="mantenimiento-columna">
+
+                        <div id="bateria" class="item-mantenimiento">
+                            <h3 id="_txt_gestion_energia"></h3>
+                            <div id="power_source"></div>
+                            <div id="nivel_bateria"><span id="_txt_cargando"></span></div>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div id="firmware" class="item-mantenimiento item-mitad">
+                            <h3 id="_txt_version_firmware"></h3>
+                            <div id="build"><span id="_txt_cargando"></span></div>
+                        </div>
+
+                        <div id="temperature" class="item-mantenimiento item-mitad">
+                            <h3 id="_txt_temperatura"></h3>
+                            <div id="nivel_temperatura"><span id="_txt_cargando"></span></div>
+                        </div>
+                        <div class="clear"></div>
+                       
+                        <div id="extra" class="item-mantenimiento">
+                            <button id="expulsar_cd"><span id="_txt_expulsar_cd"></span></button>
+                            <button id="chequear_cd"><span id="_txt_chequeo_cd"></span></button>
+                            <button id="reset_devices" style="display:none"><span id="_txt_reset_devices"></span></button>
+                        </div>
+                        <div class="clear"></div>
+
+                        <div id="extra" class="item-mantenimiento">
+                            <button id="modo_autofeed" style="display:none"><span id="_txt_modo_autofeed"></span></button>
+                            <button id="printing_quality" style="display:none"><span id="_txt_calidad_impresion"></span></button>
+                            <button id="printer_test"><span id="_txt_prueba_impresora"></span></button>
+                        </div>
+                        <div class="clear"></div>
+
+
+                    </div>
+
+                </div>
+            </div>
+           <div class="clear"></div>
+
+           <div id="contenedor_opciones">
+                    <div class="completa" id="barra_opciones">
+                        <ul id="accesibilidad">
+                            <li id="btn_inicio"><img src="img/btn_anterior.png">
+                                <span><span class="barra-opciones-texto" id="_txt_salir"></span></span>
+                            </li>
+                            <li id="btn_volver_admin" style="display:none;"><img src="img/btn_anterior.png">
+                                <span><span class="barra-opciones-texto" id="_txt_volver_al_inicio"></span></span>
+                            </li>
+                            <li id="btn_reinicio"><img src="img/btn_reiniciar.png">
+                                <span><span class="barra-opciones-texto" id="_txt_reiniciar"></span></span>
+                            </li>
+                            <!-- li id="btn_expulsar_boleta"><img src="img/btn_expulsar.png">
+                                <span><span class="barra-opciones-texto" id="_txt_expulsar_boleta"></span></span>
+                            </li -->
+                            <li id="btn_demo"><img src="img/btn_demo.png">
+                                <span><span class="barra-opciones-texto" id="_txt_version_demo"></span></span>
+                            </li>
+                            <li id="btn_totalizador" style="display:none;"><img src="img/btn_demo.png">
+                                <span><span class="barra-opciones-texto"
+                                        id="_txt_totalizacion"></span></span>
+                            </li>
+                            <li id="btn_mantenimiento" style="display:none;"><img src="img/btn_mantenimiento.png">
+                                <span><span class="barra-opciones-texto" id="_txt_mantenimiento"></span></span>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+          </div>
+        </div>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="mensaje-popup">
+                    <p class="alerta"></p>
+                    <p class="pregunta"></p>
+                    <p class="aclaracion"></p>
+                </div>
+                <div class="btn btn-cancelar">
+                    <p id="_txt_cancelar"></p>
+                </div>
+                <div class="btn btn-aceptar">
+                    <p id="_txt_aceptar"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="popboleta-box">
+            <div class="popup">
+                <div class="cerrar-popup"></div>
+                <div class="mensaje-popup">
+                    <p class="aclaracion">Seleccione el tipo de boleta que posee:</p>
+                </div>
+                <div class="boletas">
+                    <div id="boleta_1">
+                        <img src="imagenes_voto/boleta_1.png">
+                        <p id="_txt_edicion_2013"></p>
+                    </div>
+                    <div id="boleta_2">
+                        <img src="imagenes_voto/boleta_2.png">
+                        <p id="_txt_edicion_2015"></p>
+                    </div>
+                    <div id="boleta_0">
+                        <img src="imagenes_voto/boleta_3.png">
+                        <p id="_txt_autodetectar"></p>
+                    </div>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        <div class="popreset-box">
+            <div class="popup">
+                <div class="cerrar-popup"></div>
+                <div class="mensaje-popup">
+                    <p class="aclaracion">Presione en los dispositivos que desea reiniciar:</p>
+                </div>
+                <div class="opciones opciones-reset">
+                    <div id="rfid">RFID</div>
+                    <div id="printer">Impresora</div>
+                    <div id="agente">Agente</div>
+                </div>
+            </div>
+        </div>
+        <div class="popquality-box">
+            <div class="popup">
+                <div class="cerrar-popup"></div>
+                <div class="mensaje-popup">
+                    <p class="aclaracion">Seleccione la calidad de impresión:</p>
+                </div>
+                <div class="opciones opciones-quality">
+                    <div id="pq_0">Muy Baja</div>
+                    <div id="pq_1">Baja</div>
+                    <div id="pq_2">Media</div>
+                    <div id="pq_3">Alta</div>
+                    <div id="pq_4">Muy alta</div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

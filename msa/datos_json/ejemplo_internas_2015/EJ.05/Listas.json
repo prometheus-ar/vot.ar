@@ -1,0 +1,153 @@
+[
+    {
+        "cod_candidatos": [
+            "003.006.149", 
+            "003.006.150", 
+            "003.006.151"
+        ], 
+        "asistida": "Vecinos Organizados", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "VO", 
+        "color": "#ff6633", 
+        "nombre": "Vecinos Organizados", 
+        "codigo": "003.006", 
+        "numero": "110"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.008.155", 
+            "003.008.156", 
+            "003.008.157"
+        ], 
+        "asistida": "Partido de la Costa", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PC", 
+        "color": "#ff6633", 
+        "nombre": "Partido de la Costa", 
+        "codigo": "003.008", 
+        "numero": "112"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.001.109", 
+            "001.001.110", 
+            "001.001.111", 
+            "001.001.158", 
+            "001.001.159", 
+            "001.001.216", 
+            "001.001.217"
+        ], 
+        "asistida": "Partido de los Deportistas", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PD", 
+        "color": "#0099ff,#00ffe6", 
+        "nombre": "Partido de los Deportistas", 
+        "codigo": "001.001", 
+        "numero": "1"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.002.121", 
+            "001.002.122", 
+            "001.002.123", 
+            "001.002.160", 
+            "001.002.161", 
+            "001.002.218", 
+            "001.002.219"
+        ], 
+        "asistida": "Partido de los Cient\u00edficos", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PC", 
+        "color": "#663399", 
+        "nombre": "Partido de los Cient\u00edficos", 
+        "codigo": "001.002", 
+        "numero": "9"
+    }, 
+    {
+        "cod_candidatos": [
+            "002.004.143", 
+            "002.004.144", 
+            "002.004.145", 
+            "002.004.164", 
+            "002.004.165", 
+            "002.004.222", 
+            "002.004.223"
+        ], 
+        "asistida": "M\u00fasicos Unidos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "MU", 
+        "color": "#ff6633", 
+        "nombre": "M\u00fasicos Unidos", 
+        "codigo": "002.004", 
+        "numero": "109"
+    }, 
+    {
+        "cod_candidatos": [
+            "002.003.133", 
+            "002.003.134", 
+            "002.003.135", 
+            "002.003.162", 
+            "002.003.163", 
+            "002.003.220", 
+            "002.003.221"
+        ], 
+        "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "PAP", 
+        "color": "#cc3333", 
+        "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+        "codigo": "002.003", 
+        "numero": "12"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.007.152", 
+            "003.007.153", 
+            "003.007.154"
+        ], 
+        "asistida": "Partido Vecinalista", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PV", 
+        "color": "#ff6633", 
+        "nombre": "Partido Vecinalista", 
+        "codigo": "003.007", 
+        "numero": "111"
+    }, 
+    {
+        "cod_candidatos": [
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC"
+        ], 
+        "asistida": "Voto en BLANCO", 
+        "cod_alianza": null, 
+        "cod_partido": "BLC", 
+        "nombre_corto": "En Blanco", 
+        "color": "#ffffff", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC", 
+        "numero": null
+    }, 
+    {
+        "cod_candidatos": [
+            "003.005.146", 
+            "003.005.147", 
+            "003.005.148"
+        ], 
+        "asistida": "Partido An\u00f3nimo", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PA", 
+        "color": "#ff33cc", 
+        "nombre": "Partido An\u00f3nimo", 
+        "codigo": "003.005", 
+        "numero": "97"
+    }
+]

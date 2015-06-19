@@ -1,0 +1,180 @@
+[
+    {
+        "codigo": "seis",
+        "templates": [
+            {
+                "ancho": 640,
+                "alto": 350,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 350,
+                "posicion": [0, 350]
+            },
+            {
+                "ancho": 640,
+                "alto": 350,
+                "posicion": [540, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 350,
+                "posicion": [540, 350]
+            },
+            {
+                "ancho": 640,
+                "alto": 350,
+                "posicion": [1080, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 350,
+                "posicion": [1080, 350]
+            }
+        ]
+    },
+    {
+        "codigo": "seis_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 150,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [0, 150]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 150]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 150]
+            }
+        ]
+    },
+    {
+        "codigo": "completa",
+        "templates": [
+            {
+                "ancho": 640,
+                "alto": 730,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 365,
+                "posicion": [640, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 365,
+                "posicion": [640, 365]
+            },
+            {
+                "ancho": 640,
+                "alto": 365,
+                "posicion": [1280, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 365,
+                "posicion": [1280, 365]
+            }
+        ]
+    },
+    {
+        "codigo": "completa_baja",
+        "templates": [
+            {
+                "ancho": 215,
+                "alto": 346,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 215,
+                "alto": 173,
+                "posicion": [215, 0]
+            },
+            {
+                "ancho": 215,
+                "alto": 173,
+                "posicion": [215, 173]
+            },
+            {
+                "ancho": 215,
+                "alto": 173,
+                "posicion": [430, 0]
+            },
+            {
+                "ancho": 215,
+                "alto": 173,
+                "posicion": [430, 173]
+            }
+        ]
+    },
+    {
+        "codigo": "extranjeros",
+        "templates": [
+            {
+                "ancho": 540,
+                "alto": 700,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 700,
+                "posicion": [540, 0]
+            },
+            {
+                "dx": 1080,
+                "ancho": 540,
+                "dy": 150,
+                "alto": 700,
+                "posicion": [1080, 0]
+            }
+        ]
+    },
+    {
+        "codigo": "extranjeros_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 300,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 300,
+                "posicion": [180, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 300,
+                "posicion": [360, 0]
+            }
+        ]
+    }
+]

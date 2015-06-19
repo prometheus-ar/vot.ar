@@ -1,0 +1,52 @@
+[
+  {
+    "adhiere": null, 
+    "asistida": "Concejal", 
+    "codigo": "CNJ", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Concejal", 
+    "posicion": 5, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Consulta Popular", 
+    "codigo": "CPO", 
+    "consulta_popular": true, 
+    "max_selecciones": "1", 
+    "nombre": "Consulta Popular", 
+    "posicion": 6, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Diputado Provincial", 
+    "codigo": "DIP", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Diputado Provincial", 
+    "posicion": 3, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Gobernador", 
+    "codigo": "GOB", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Gobernador", 
+    "posicion": 1, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Intendente", 
+    "codigo": "INT", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Intendente", 
+    "posicion": 4, 
+    "texto_adicional": null
+  }
+]

@@ -1,0 +1,747 @@
+msgid "titulo"
+msgstr "Eleições das Autoridades Provinciais e Municipais"
+
+msgid "subtitulo"
+msgstr "26 de Janeiro de 2015 - Província de Exemplo"
+
+msgid "si"
+msgstr "Sim"
+
+msgid "no"
+msgstr "Não"
+
+msgid "voto_en_blanco"
+msgstr "Voto em branco"
+
+msgid "conformar_voto"
+msgstr "Escolha como moldar o seu voto"
+
+msgid "votar_por_categorias"
+msgstr "Votar por Categorias"
+
+msgid "votar_lista_completa"
+msgstr "Votar Lista Completa"
+
+msgid "votar_en_blanco"
+msgstr "Votar em Branco"
+
+msgid "seleccione_lista_deseada"
+msgstr "Selecione a lista que pretende votar"
+
+msgid "elegir_otro_partido"
+msgstr "Elegir um outro partido"
+
+msgid "digite_numero_candidato"
+msgstr "Digite o Número do Candidato Desejado para %s e Pressione a tecla ENTER"
+
+msgid "escuche_y_digite"
+msgstr "Ouça as opções e digite o número do partido que pretende votar e pressione ENTER"
+
+msgid "introduzca_boleta_en_impresora"
+msgstr "<span size=\"large\" weight=\"bold\">Insere a Cédula Eletrônica de Voto na impresora:</span>"
+
+msgid "ayuda_insercion_boleta"
+msgstr "<span size=\"medium\" weight=\"bold\">Se tem dúvidas, consulte aos Mesários.</span>"
+
+msgid "mensaje_final_1"
+msgstr "<span size=\"x-large\" weight=\"bold\">Seu voto foi impreso.</span>"
+
+msgid "mensaje_final_2"
+msgstr "<span size=\"x-large\" weight=\"bold\">Você pode retirar seu voto e depositá-lo na urna.</span>"
+
+msgid "mensaje_final_3"
+msgstr "<span size=\"large\" weight=\"bold\">Se você quiser verificar o seu voto, proceda assim:</span>"
+
+msgid "muchas_gracias_final"
+msgstr "<span size=\"medium\" weight=\"bold\">Muito Obrigado.</span>"
+
+msgid "muchas_gracias_por_votar"
+msgstr "<span foreground=\"orange\" font_desc=\"40\" weight=\"heavy\">Muito Obrigado por votar.</span>"
+
+msgid "bienvenido"
+msgstr "Bemvindo ao sistema de Cédula Eletrônica de Voto."
+
+msgid "large_bold"
+msgstr "<span size=\"large\" weight=\"bold\">%s</span>"
+
+msgid "ingrese_boleta_no_vidente"
+msgstr "<span size=\"large\" font_desc=\"12\" weight=\"bold\">Insere a cédula eletrônica na impresora para começar.</span>"
+
+msgid "formato_titulo"
+msgstr "<big><b>%s</b></big>"
+
+msgid "formato_subtitulo"
+msgstr "<b>%s</b>"
+
+msgid "lista_n"
+msgstr "N°"
+
+msgid "ingrese_datos_solicitados"
+msgstr "Inserir os dados solicitados"
+
+msgid "ingrese_numero_mesa"
+msgstr "Digite o Número da Mesa:"
+
+msgid "ingrese_numero_pin"
+msgstr "Digite o Número de PIN:"
+
+msgid "confirma_datos_correctos"
+msgstr "Confirma que os dados são corretos?"
+
+msgid "titulo_apellido"
+msgstr "Sobrenome:"
+
+msgid "titulo_nombre"
+msgstr "Nome:"
+
+msgid "titulo_documento"
+msgstr "Nro. Documento Oficial:"
+
+msgid "titulo_presidente"
+msgstr "Presidente:"
+
+msgid "titulo_suplente"
+msgstr "Suplente:"
+
+msgid "titulo_segundo_suplente"
+msgstr "Segundo Suplente:"
+
+msgid "teclado_0"
+msgstr "1 2 3 4 5 6 7 8 9 0 Borrar"
+
+msgid "teclado_1"
+msgstr "Q W E R T Y U I O P"
+
+msgid "teclado_2"
+msgstr "A S D F G H J K L Ñ"
+
+msgid "teclado_3"
+msgstr "Z X C V B N M Espaço Seguinte"
+
+msgid "big_text"
+msgstr "<big>%s</big>"
+
+msgid "ingrese_acta_apertura"
+msgstr "Por favor, Inserir a Ata de Abertura na impressora."
+
+msgid "ingrese_acta_cierre"
+msgstr "Por favor, Inserir a Ata de Encerramento na impressora."
+
+msgid "retire_acta_apertura"
+msgstr "Por favor, remover a Ata de Abertura e inseri-la novamente."
+
+msgid "acta_contiene_informacion"
+msgstr "A Ata contém informação.<br />Por favor, confira ou insira uma nova."
+
+msgid "aguarde_procesando_acta"
+msgstr "Espere, está se processando a Ata."
+
+msgid "aguarde_configurando_mesa"
+msgstr "Espere, está se configurando a mesa."
+
+msgid "cancelar"
+msgstr "Cancelar"
+
+msgid "confirmar"
+msgstr "Confirmar"
+
+msgid "apertura_no_almacenada"
+msgstr "A Ata de Abertura Não foi armazenada corretamente<br />Tente outra Ata ou consulte com técnicos autorizados."
+
+msgid "papel_no_puesto"
+msgstr "A Cédula Não está colocada na impressora"
+
+msgid "acta_apertura_mesa"
+msgstr "Ata de Abertura da %s"
+
+msgid "este_es_su_voto"
+msgstr "Este é o seu voto:"
+
+msgid "si_tiene_dudas"
+msgstr "Se você tiver alguma dúvida, consulte aos mesários."
+
+msgid "seleccion_ubicacion_demo"
+msgstr "<big><b>Selecione uma localização para sua Demonstração</b></big>"
+
+msgid "extranjeros_demo"
+msgstr " (Estranjeiros)"
+
+msgid "formato_boton_demo"
+msgstr "<b>%s - %s %s</b>"
+
+msgid "error_conectar_lector"
+msgstr "Houve um erro de ligação com o leitor"
+
+msgid "mesa_pin_incorrectos"
+msgstr "O Número de mesa ou PIN ingresados não são corretos"
+
+msgid "presente_credencial_acta"
+msgstr "Aproxime sua credencial ou Ata de abertura ao leitor"
+
+msgid "apagar"
+msgstr "Desligar"
+
+msgid "calibrar"
+msgstr "Calibrar a tela tátil"
+
+msgid "esta_seguro_apagar"
+msgstr "Tem certeza que quer desligar o equipamento de votação?"
+
+msgid "impr_pag_prueba"
+msgstr "Imprimindo página de teste..."
+
+msgid "expulsando_boleta"
+msgstr "Ejecção da cédula da impressora..."
+
+msgid "apertura_de_mesa"
+msgstr "Abertura de Mesa"
+
+msgid "sistema_boleta_electronica"
+msgstr "Sistema de Cédula Eletrônica de Voto"
+
+msgid "votacion_asistida"
+msgstr "Votação<br /> Assistida"
+
+msgid "cierre_y_escrutinio"
+msgstr "Encerramento da votação e Apuração"
+
+msgid "version_demo"
+msgstr "Versión de Demonstração"
+
+msgid "expulsar_boleta"
+msgstr "Ejecção da Cédula Eletrônica de Voto da Impressora"
+
+msgid "reiniciar"
+msgstr "Reiniciar"
+
+msgid "seguro_salir_recuento"
+msgstr "Tem certeza que quer sair da contagem?"
+
+msgid "terminar_escrutinio"
+msgstr "Terminar a Contagem"
+
+msgid "salir"
+msgstr "Sair"
+
+msgid "pocas_boletas_alerta"
+msgstr "Atenção: ¡Foram lidas menos de %i cédulas!"
+
+msgid "pocas_boletas_pregunta"
+msgstr "Tem certeza de finalizar a contagem?"
+
+msgid "pocas_boletas_aclaracion"
+msgstr "Lembre-se que, para fazer a contagem, devem passar as Cédulas Eletrônicas de Voto pelo leitor da Máquina."
+
+msgid "listo_para_leer"
+msgstr "Pronto para ler"
+
+msgid "lectura_ok"
+msgstr "Leitura OK"
+
+msgid "error_lectura"
+msgstr "Erro de leitura"
+
+msgid "boleta_repetida"
+msgstr "Cédula repetida"
+
+msgid "guardado_correc"
+msgstr "Contagem registrada corretamente"
+
+msgid "error_escribir_rec"
+msgstr "Erro ao escrever a contagem"
+
+msgid "esta_seguro_acta_cierre"
+msgstr "Tem certeza de gerar a Ata de encerramento de Mesa e Apuração?"
+
+msgid "fallo_en_intento"
+msgstr "Fracasso na tentativa %s"
+
+msgid "guardo_en_intento"
+msgstr "guardo na tentativa %s"
+
+msgid "entregue_certif_transmision"
+msgstr "Por favor, entregar o Certificado de transmissão ao técnico autorizado y Pida as cédulas para imprimir os certificados dos fiscais."
+
+msgid "se_esta_imprimiendo"
+msgstr "<span size=\"20000\" weight=\"heavy\">Seu voto está sendo impresso.</span>"
+
+msgid "no_retire_boleta"
+msgstr "<span foreground=\"orange\" size=\"25000\" weight=\"heavy\">NÃO RETIRE A CÉDULA ATÉ QUE SEJA INDICADO.</span>"
+
+msgid "seleccionar_idioma"
+msgstr "Elija el idioma. Select your language. Wählen Sie die Sprache. Escolha seu idioma."
+
+# nombres de las categorias
+msgid "GOBERNADOR"
+msgstr "Governador"
+
+msgid "SENADOR PROVINCIAL"
+msgstr "Senador Provincial"
+
+msgid "DIPUTADO PROVINCIAL"
+msgstr "Deputado Provincial"
+
+msgid "INTENDENTE"
+msgstr "Prefeito"
+
+msgid "CONCEJAL"
+msgstr "Vereador"
+
+### NEW KEYS
+
+msgid "aceptar"
+msgstr "Aceptar"
+
+msgid "agradecimiento"
+msgstr "Gracias por votar"
+
+msgid "aguarde_unos_minutos"
+msgstr "Por favor aguarde unos segundos"
+
+msgid "alto_contraste"
+msgstr "Vista alto contraste"
+
+msgid "arm_no_responde"
+msgstr "Ha ocurrido un error de hardware. Apague la maquina completamente (desconecte las baterias) y vuelva a iniciar el sistema."
+
+msgid "asegurese_firmar_acta"
+msgstr "Asegúrese que se firme el Acta de Cierre, el Certificado de Transmisión y el Certificado de Escrutinio"
+
+msgid "auto"
+msgstr "Automático"
+
+msgid "bienvenida_recuento"
+msgstr "Bienvenido al Escrutinio"
+
+msgid "boleta_unica_electronica"
+msgstr "BOLETA ÚNICA ELECTRONICA"
+
+msgid "boletas_procesadas"
+msgstr "Boletas Procesadas"
+
+msgid "brillo"
+msgstr "Brillo"
+
+msgid "calibrador_error_dobleclick"
+msgstr "Doble click detectado."
+
+msgid "calibrador_error_misclick"
+msgstr "Click incorrecto detectado."
+
+msgid "calibrador_error_tiempo"
+msgstr "Por favor mantenga presionado el puntero más tiempo."
+
+msgid "calibrador_mensaje_calibracion"
+msgstr "Presione el puntero"
+
+msgid "calibrador_mensaje_fin"
+msgstr "Su pantalla ha sido calibrada."
+
+msgid "calibrador_mensaje_inicio"
+msgstr "Presione la pantalla para continuar"
+
+msgid "calibrador_mensaje_valido"
+msgstr "Click válido detectado."
+
+msgid "calibrador_mesaje_espera"
+msgstr " o espere {} segundos para salir."
+
+msgid "calibrador_titulo"
+msgstr "Calibrador de Pantalla"
+
+msgid "cancelar_apagado"
+msgstr "Volver Atrás"
+
+msgid "candidato_no_seleccionado"
+msgstr "Candidato aún no seleccionado"
+
+msgid "caracteristicas_pantalla"
+msgstr "Características de la pantalla"
+
+msgid "cargando"
+msgstr "Cargando"
+
+msgid "certificado_no_impreso_aclaracion"
+msgstr "Ha ingresado una Boleta Electrónica. Para imprimir certificados debe utilizar los Certificados de Escrutinio."
+
+msgid "certificado_no_impreso_alerta"
+msgstr "No se ha impreso el Certificado de Escrutinio"
+
+msgid "chequeo_cd"
+msgstr "Chequear CD"
+
+msgid "chequeo_rfid"
+msgstr "Chequeo"
+
+msgid "confirmar_voto"
+msgstr "¿Desea confirmar su voto?:"
+
+msgid "datos_persona"
+msgstr "%(apellido)s, %(nombre)s con %(tipo_documento)s %(nro_documento)s"
+
+msgid "descripcion_chequeo_rfid"
+msgstr "Acerque un tag al lector para comprobar su funcionamiento"
+
+msgid "digite_numero_lista"
+msgstr "Digite el Número de Lista Deseada y Presione ENTER"
+
+msgid "digite_numero_modo"
+msgstr "Digite el Número de Modo de Selección deseado"
+
+msgid "el_suplente"
+msgstr "el Suplente, Sr.:"
+
+msgid "el_suplente_acercara"
+msgstr "El suplente acercará al personal técnico el certificado de transmisión firmado para que con su ayuda proceda a transmitir los resultados."
+
+msgid "encabezado_actas"
+msgstr "Tribunal Electoral"
+
+msgid "entidad"
+msgstr "Provincia de Ejemplo"
+
+msgid "error_grabar_boleta_aclaracion"
+msgstr "Contáctese con las autoridades de mesa para solicitar una nueva boleta."
+
+msgid "error_grabar_boleta_alerta"
+msgstr "Se produjo un error al grabar su voto en la boleta."
+
+msgid "escrutinio_mesa"
+msgstr "Escrutinio de Mesa:"
+
+msgid "estado_pir"
+msgstr "Estado actual"
+
+msgid "expulsar_cd"
+msgstr "Expulsar CD"
+
+msgid "fecha"
+msgstr "26 de Enero de 2015"
+
+msgid "fecha_actas"
+msgstr "A los veintiseis (26) de enero de dos mil quince"
+
+msgid "finalizar_instructivo"
+msgstr "Finalizar Instructivo"
+
+msgid "firmas_autoridades"
+msgstr "AUTORIDADES DE MESA (Firma y aclaración)"
+
+msgid "firmas_fiscales"
+msgstr "FISCALES PARTIDARIOS (Firma, aclaración, DNI y lista/agrupación)"
+
+msgid "fiscales_qr"
+msgstr "Los fiscales podrán escanear o sacarle una foto este código QR ya que contiene los resultados de esta mesa."
+
+msgid "gestion_energia"
+msgstr "Gestion de Energía"
+
+msgid "hora_invalida"
+msgstr "La hora y/o minutos ingresados no son validos. Ingrese un valor entre 0 y 23 para la hora y entre 0 y 59 para los minutos."
+
+msgid "impresora_desconectada"
+msgstr "La impresora se encuentra desconectada. Por favor comuniquese con las autoridades de mesa"
+
+msgid "imprimiendo_voto"
+msgstr "Se está imprimiendo su voto"
+
+msgid "ingrese_certificado_correspondiente"
+msgstr "Por favor ingrese el certificado correspondiente"
+
+msgid "iniciar_chequeo"
+msgstr "Iniciar chequeo"
+
+msgid "iniciar_instructivo"
+msgstr "Iniciar Instructivo"
+
+msgid "introduzca_acta_cierre"
+msgstr "Por favor introduzca el Acta de Cierre de Mesa"
+
+msgid "introduzca_acta_transmision"
+msgstr "Por favor introduzca el Certificado de Transmisión de Resultados"
+
+msgid "introduzca_boleta"
+msgstr "Introduzca la Boleta Única Electrónica en la impresora"
+
+msgid "introduzca_cerfificado_escrutinio"
+msgstr "Por favor introduzca un Certificado de Escrutinio de Mesa"
+
+msgid "introduzca_certificado_boletas"
+msgstr "Introduzca el primer Certificado de Escrutinio y las boletas utilizadas en la urna y ciérrela con las fajas asegurándose de tapar la ranura de entrada."
+
+msgid "introduzca_certificados_para_fiscales"
+msgstr "Puede continuar introduciendo certificados de escrutinio para los fiscales que lo requieran"
+
+msgid "introduzca_sobre_actas"
+msgstr "Introduzca en el sobre de devolución de actas:"
+
+msgid "los_suplentes"
+msgstr "los Suplentes, Sres.:"
+
+msgid "mantenimiento"
+msgstr "Mantenimiento"
+
+msgid "manual"
+msgstr "Manual"
+
+msgid "mensaje_generando"
+msgstr "Generando"
+
+msgid "mensaje_imprimiendo"
+msgstr "Imprimiendo"
+
+msgid "modo_ventilador"
+msgstr "Modo del ventilador"
+
+msgid "muchas_gracias"
+msgstr "Muchas Gracias"
+
+msgid "no_hay_tag"
+msgstr "sin tag"
+
+msgid "no_retirar_boleta"
+msgstr "No retire la boleta hasta que se le indique"
+
+msgid "palabra_anterior"
+msgstr "Anterior"
+
+msgid "palabra_blanco"
+msgstr "BLANCO"
+
+msgid "palabra_categoria"
+msgstr "Categoria"
+
+msgid "palabra_imprimir"
+msgstr "Imprimir"
+
+msgid "palabra_lista"
+msgstr "Lista"
+
+msgid "palabra_nombre"
+msgstr "Nombre"
+
+msgid "palabra_partido"
+msgstr "Partido"
+
+msgid "palabra_siguiente"
+msgstr "Siguiente"
+
+msgid "pir"
+msgstr "PIR"
+
+msgid "pir_activado"
+msgstr "PIR activado"
+
+msgid "pir_apagado"
+msgstr "Apagado / No detecta presencia"
+
+msgid "pir_desactivado"
+msgstr "PIR desactivado"
+
+msgid "pir_prendido"
+msgstr "Prendido / Detecta presencia"
+
+msgid "potencia_rfid"
+msgstr "Nivel de potencia"
+
+msgid "presione_confirma_lista"
+msgstr "Presione ENTER si confirma su selección de Lista"
+
+msgid "presione_confirma_modo"
+msgstr "Presione ENTER si confirma su Modo de Selección"
+
+msgid "presione_enter_si_confirma"
+msgstr "Pressionar a tecla ENTER se confirmar a sua seleção de Candidatos"
+
+msgid "presione_imprimir"
+msgstr "Presione Imprimir para obtener el Acta de Cierre de Mesa"
+
+msgid "prueba_impresora"
+msgstr "Probar impresora"
+
+msgid "puede_retirar_boleta"
+msgstr "Puede retirar la boleta y depositar su voto en la urna"
+
+msgid "quite_la_boleta"
+msgstr "La boleta no se encuentra insertada correctamente en la impresora. Por favor retirela e insertela nuevamente."
+
+msgid "recuento_no_almacenado_aclaracion"
+msgstr "Pruebe con otro certificado o consulte con el técnico habilitado."
+
+msgid "recuento_no_almacenado_alerta"
+msgstr "El Certificado de Recuento de votos NO fue almacenado correctamente."
+
+msgid "rfid"
+msgstr "RFID"
+
+msgid "si_desea_verificarlo"
+msgstr "Si desea verificarlo, proceda cómo lo indica la imagen"
+
+msgid "slide_2_bullet_1"
+msgstr "Boletas"
+
+msgid "slide_2_bullet_2"
+msgstr "Faja de Seguridad"
+
+msgid "slide_2_bullet_3"
+msgstr "Certificado de Escrutinio"
+
+msgid "slide_2_contenido"
+msgstr "Usted debe pasar una a una las boletas por el verificador de la máquina."
+
+msgid "slide_2_titulo"
+msgstr "Para realizar el Escrutinio..."
+
+msgid "slide_3_bullet_1"
+msgstr "Poderes Fiscales"
+
+msgid "slide_3_bullet_2"
+msgstr "Votos Impugnados, Observados y Recurridos"
+
+msgid "slide_3_bullet_3"
+msgstr "Acta de Cierre de Mesa y Escrutinio"
+
+msgid "slide_3_bullet_4"
+msgstr "Padrones Electorales"
+
+msgid "slide_3_bullet_5"
+msgstr "Actas en papel Romaní"
+
+msgid "slide_3_recuadro_1"
+msgstr "Recuento parcial de las boletas leídas."
+
+msgid "slide_3_recuadro_2"
+msgstr "Imagen de la boleta leída."
+
+msgid "slide_3_recuadro_3"
+msgstr "Datos de la boleta."
+
+msgid "slide_3_subtitulo"
+msgstr "Vista de pantalla general. La lectura de la boleta en la pantalla se refleja en tres zonas:"
+
+msgid "slide_4_recuadro_1"
+msgstr "Cambio de Vista presionando la Pantalla."
+
+msgid "slide_4_subtitulo"
+msgstr "Vista expandida del conteo de votos."
+
+msgid "slide_5_recuadro_1"
+msgstr "Cambio de Tamaño presionando la Boleta."
+
+msgid "slide_5_subtitulo"
+msgstr "Vista expandida de la imagen de la Boleta."
+
+msgid "slide_6_subtitulo"
+msgstr "Recuerde que debe hacerlo de manera tal que permita el efectivo control de las operaciones de escrutinio por parte de los fiscales partidarios."
+
+msgid "slide_6_titulo"
+msgstr "Usted ya puede pasar las boletas por el verificador"
+
+msgid "su_seleccion"
+msgstr "Su selección:"
+
+msgid "su_voto_impreso"
+msgstr "Su voto ha sido impreso"
+
+msgid "sus_candidatos"
+msgstr "Sus candidatos seleccionados"
+
+msgid "teclado_numerico_0"
+msgstr "1 2 3"
+
+msgid "teclado_numerico_1"
+msgstr "4 5 6"
+
+msgid "teclado_numerico_2"
+msgstr "7 8 9"
+
+msgid "teclado_numerico_3"
+msgstr "* 0 #"
+
+msgid "temperatura"
+msgstr "Temperatura CPU actual"
+
+msgid "terminar"
+msgstr "Terminar"
+
+msgid "texto_apertura"
+msgstr "siendo las %(horas)02d:%(minutos)02d horas, en virtud de la convocatoria dispuesta por el Poder Ejecutivo Provincial por Resolución Nº 1337/12 y en presencia de %(cant_supl)s %(suplentes)s, y de los Fiscales de los Partidos Políticos quienes firman al pie. El suscripto Presidente del comicio Sr. %(presidente)s declara abierto el acto en la %(mesa)s del Departamento %(departamento)s ubicada en %(escuela)s."
+
+msgid "texto_cierre"
+msgstr "siendo las %(horas)02d:%(minutos)02d horas, en presencia de %(cant_supl)s %(suplentes)s, y de los Fiscales de los Partidos Políticos junto con el presidente del comicio Sr. %(presidente)s, se procede a la clausura del COMICIO de la %(mesa)s del Departamento %(departamento)s en acto continuo, conforme lo establecen los Art. 94, 95 y 96 de la Ley Nº 4.169.-"
+
+msgid "texto_copia_fiel"
+msgstr "Es copia fiel"
+
+msgid "texto_troquel_1"
+msgstr "Pliegue la boleta hasta la linea punteada"
+
+msgid "texto_troquel_2"
+msgstr "Este troquel debe quedar libre"
+
+msgid "titulo_apertura"
+msgstr "ACTA DE APERTURA DE LOS COMICIOS DE LA %s"
+
+msgid "titulo_certificado"
+msgstr "CERTIFICADO DE CLAUSURA DEL COMICIO Y ESCRUTINIO PROVISORIO DE LA %s"
+
+msgid "titulo_copia_fiel"
+msgstr "CERTIFICADO DE CLAUSURA DEL COMICIO Y ESCRUTINIO PROVISORIO DE LA %s"
+
+msgid "titulo_hora"
+msgstr "Hora:"
+
+msgid "titulo_mantenimiento"
+msgstr "Pantalla de Mantenimiento"
+
+msgid "titulo_menu"
+msgstr "Seleccione una opción"
+
+msgid "titulo_minutos"
+msgstr "Minutos:"
+
+msgid "titulo_recuento"
+msgstr "ACTA DE CLAUSURA DE LOS COMICIOS DE LA %s"
+
+msgid "titulo_transmision"
+msgstr "CERTIFICADO DE TRANSMISION DE ESCRUTINIO PROVISORIO DE LA %s"
+
+msgid "titulo_votos_IMP"
+msgstr "Votos Impugnados"
+
+msgid "titulo_votos_NUL"
+msgstr "Votos Nulos"
+
+msgid "titulo_votos_OBS"
+msgstr "Votos Observados"
+
+msgid "titulo_votos_REC"
+msgstr "Votos Recurridos"
+
+msgid "total_general"
+msgstr "Total General"
+
+msgid "transmision_no_almacenada_aclaracion"
+msgstr "Pruebe con otro certificado o consulte con el técnico habilitado."
+
+msgid "transmision_no_almacenada_alerta"
+msgstr "El Certificado de Transmisión NO fue almacenado correctamente."
+
+msgid "usted_puede_imprimir"
+msgstr "Ud. puede imprimir todos los certificados de escrutinio para ser entregados a los fiscales, con solo ingresarlos en la impresora mientras continúa leyendo este instructivo."
+
+msgid "ver_qr"
+msgstr "Ver QR"
+
+msgid "version_firmware"
+msgstr "Versión de Firmware"
+
+msgid "volumen"
+msgstr "Volumen"
+
+msgid "volver_al_inicio"
+msgstr "Volver Atrás"
+
+msgid "watermark_text"
+msgstr "DEMOSTRACION - USO NO OFICIAL"
+

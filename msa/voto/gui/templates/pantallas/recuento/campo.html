@@ -1,0 +1,12 @@
+
+<div class="campo {{class_editable}}" id={{id_campo}}>
+    <p class="titulo-campo">{{campo.titulo}}</p>
+        {{#editable}}
+            <img class="btn-campo incremento" src="img/btn_scroll_up.png">
+            <input type="text" maxlength="4" value="{{campo.valor}}">
+            <img class="btn-campo decremento" src="img/btn_scroll_down.png">
+       {{/editable}}
+       {{^editable}}
+           <p class="valor-campo">{{campo.valor}}</p>
+       {{/editable}}
+</div>

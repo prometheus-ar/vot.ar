@@ -1,0 +1,205 @@
+[
+    {
+        "codigo": "bienvenida",
+        "texto": "Bienvenido al Sistema de Votación de Ejemplo"
+    },
+    {
+        "codigo": "ingrese_comenzar",
+        "texto": "Por favor, ingrese la boleta en la impresora para comenzar."
+    },
+    {
+        "codigo": "inserteboleta",
+        "texto": "Por favor inserte la boleta en la impresora."
+    },
+    {
+        "codigo": "por_favor_ingrese",
+        "texto": "Por favor, presione "
+    },
+    {
+        "codigo": "y_presione_e_para_continuar",
+        "texto": " y presione la tecla numeral para continuar."
+    },
+    {
+        "codigo": "y_presione_e_para_continuar_malata",
+        "texto": " y presione la tecla eé para continuar."
+    },
+    {
+        "codigo": "la_tecla",
+        "texto": " la tecla"
+    },
+    {
+        "codigo": "confirmando_con_e",
+        "texto": "ingrese el número de candidato y luego presione la tecla numeral. Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_malata",
+        "texto": "ingrese el número de candidato y luego presione la tecla eé. Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_interna",
+        "texto": "ingrese el número de interna y luego presione la tecla numeral. Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_interna_malata",
+        "texto": "ingrese el número de interna y luego presione la tecla eé. Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_opcion",
+        "texto": "ingrese el número de opción y luego presione la tecla numeral. Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_opcion_malata",
+        "texto": "ingrese el número de opción y luego presione la tecla eé. Las opciones son:"
+    },
+    {
+        "codigo": "ingrese_nro_interna",
+        "texto": "A continuación usted elegirá la interna que desea votar:"
+    },
+    {
+        "codigo": "ingrese_nro_lista",
+        "texto": "A continuación usted elegirá la lista por la cual desea votar:"
+    },
+    {
+        "codigo": "ingrese_nro_modo",
+        "texto": "A continuación usted elegirá el modo de selección que desea utilizar:"
+    },
+    {
+        "codigo": "ud_eligio",
+        "texto": "Usted eligió"
+    },
+    {
+        "codigo": "ud_eligio_candidato",
+        "texto": "Usted eligió el candidato número"
+    },
+    {
+        "codigo": "ud_eligio_interna",
+        "texto": "Usted eligió la interna número"
+    },
+    {
+        "codigo": "ud_eligio_modo",
+        "texto": "Usted eligió la opción"
+    },
+    {
+        "codigo": "ud_eligio_lista",
+        "texto": "Usted eligió la lista"
+    },
+    {
+        "codigo": "acuerdo_cancelar",
+        "texto": "Presione la tecla numeral, si está de acuerdo, o presione asterisco para cancelar."
+    },
+    {
+        "codigo": "acuerdo_cancelar_malata",
+        "texto": "Presione la tecla eé, si está de acuerdo, o presione cé para cancelar."
+    },
+    {
+        "codigo": "ud_confirmo",
+        "texto": "Usted confirmó"
+    },
+    {
+        "codigo": "ud_voto",
+        "texto": "Usted votó"
+    },
+    {
+        "codigo": "el_candidato",
+        "texto": "el candidato"
+    },
+    {
+        "codigo": "la_lista",
+        "texto": "la lista"
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin_malata",
+        "texto": "Presione la tecla eé si confirma su selección final de candidatos,"
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin",
+        "texto": "Presione la tecla numeral si confirma su selección final de candidatos,"
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin2",
+        "texto": "o presione asterisco en caso contrario."
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin2_malata",
+        "texto": "o presione cé en caso contrario."
+    },
+    {
+        "codigo": "confirmacion_final_lista_malata",
+        "texto": "Presione la tecla eé si confirma su selección final de lista,"
+    },
+    {
+        "codigo": "confirmacion_final_lista",
+        "texto": "Presione la tecla numeral si confirma su selección final de lista,"
+    },
+    {
+        "codigo": "imprimiendo",
+        "texto": "Por favor No quíte la boleta de la impresora hasta que se termine de imprimir el voto."
+    },
+    {
+        "codigo": "fin_votacion",
+        "texto": "Su voto ha sido registrado e impreso. Ya puede retirar la boleta de la impresora."
+    },
+    {
+        "codigo": "puede_verificar",
+        "texto": "Usted puede revisar su voto ingresando la boleta nuevamente en la impresora."
+    },
+    {
+        "codigo": "tarjeta_con_datos",
+        "texto": "La tarjeta ingresada contiene datos."
+    },
+    {
+        "codigo": "si_es_la_primera",
+        "texto": "si es la primera vez que la ingresa solicite al presidente de mesa que la reemplace."
+    },
+    {
+        "codigo": "error_almacenado",
+        "texto": "hubo un error almacenando su voto, por favor solicite al presidente de mesa que reemplace la boleta"
+    },
+    {
+        "codigo": "para_votar",
+        "texto": "para votar"
+    },
+    {    "codigo": "para_votar_por",
+         "texto": "para votar por"
+    },
+    {
+        "codigo": "lista_completa",
+        "texto": "lista completa"
+    },
+    {
+        "codigo": "categorias",
+        "texto": "categorías"
+    },
+    {
+        "codigo": "presione",
+        "texto": "presione"
+    },
+    {
+        "codigo": "y",
+        "texto": "y"
+    },
+    {
+        "codigo": "para",
+        "texto": "para"
+    },
+    {
+        "codigo": "el_candidato",
+        "texto": "El candidato"
+    },
+    {
+        "codigo": "la_opcion",
+        "texto": "la opción"
+    },
+    {
+        "codigo": "que_ingreso",
+        "texto": "que ingresó"
+    },
+    {
+        "codigo": "no_existe",
+        "texto": "no existe"
+    },
+    {
+        "codigo": "interna_inexistente",
+        "texto": "El número de interna ingresado no existe"
+    }
+]

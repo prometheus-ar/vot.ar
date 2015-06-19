@@ -1,0 +1,149 @@
+[
+  {
+    "CNJ": "1.9", 
+    "GOB": "1.166", 
+    "INT": "1.182", 
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "10.12", 
+    "GOB": "3.170", 
+    "codigo": "10", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "11.14", 
+    "GOB": "3.170", 
+    "codigo": "11", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "12.16", 
+    "GOB": "4.172", 
+    "codigo": "12", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "13.18", 
+    "GOB": "4.172", 
+    "codigo": "13", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "14.20", 
+    "GOB": "4.172", 
+    "codigo": "14", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "15.22", 
+    "GOB": "4.172", 
+    "codigo": "15", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "16.24", 
+    "GOB": "4.172", 
+    "codigo": "16", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "17.26", 
+    "GOB": "4.172", 
+    "INT": "2.184", 
+    "codigo": "17", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "18.28", 
+    "INT": "2.184", 
+    "codigo": "18", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "19.30", 
+    "codigo": "19", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "2.31", 
+    "DIP": "2.123", 
+    "GOB": "2.168", 
+    "INT": "2.184", 
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "20.34", 
+    "codigo": "20", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "21.36", 
+    "codigo": "21", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "22.38", 
+    "codigo": "22", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "23.40", 
+    "SEN": "2.235", 
+    "codigo": "23", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "24.42", 
+    "DIP": "3.135", 
+    "SEN": "3.237", 
+    "codigo": "24", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "3.43", 
+    "DIP": "3.135", 
+    "GOB": "3.170", 
+    "INT": "3.186", 
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "4.45", 
+    "DIP": "4.146", 
+    "GOB": "4.172", 
+    "INT": "4.188", 
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "6.47", 
+    "GOB": "2.168", 
+    "codigo": "6", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "7.49", 
+    "GOB": "3.170", 
+    "codigo": "7", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "8.52", 
+    "GOB": "3.170", 
+    "codigo": "8", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "9.54", 
+    "GOB": "3.170", 
+    "codigo": "9", 
+    "lista_completa": true
+  }
+]

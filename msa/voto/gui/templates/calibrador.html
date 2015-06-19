@@ -1,0 +1,39 @@
+    <!doctype html>
+    <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <title></title>
+            <link rel="stylesheet" type="text/css" href="css/calibrador.css">
+            <script src="js/jquery.min.js"></script>
+            <script src="js/zaguan.js"></script>
+            <script src="js/calibrador/helpers.js"></script>
+            <script src="js/calibrador/show_hide.js"></script>
+            <script src="js/calibrador/calibrator.js"></script>
+        </head>
+
+        <body ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();" >
+            <div class="indicator" id="pointer"></div>
+            <canvas class="indicator" id="progress" width="100" height="100"></canvas>
+            <div class="container">
+                <div class="column">
+                    <div class="row">
+                        <img class="logo" id="logo" src="img/logo_votar_grande.png">
+                        <div class="title "id="title"></div>
+                    </div>
+
+                    <div class="row">
+                        <div class="dialog start" id="init_msg"></div>
+                        <div class="dialog loading" id="calibration_msg"></div>
+                        <div class="dialog error" id="error_misclick"></div>
+                        <div class="dialog error" id="error_doubleclick"></div>
+                        <div class="dialog error" id="error_time"></div>
+                        <div class="dialog success" id="finish_msg"></div>
+                        <div class="dialog timer" id="timer"></div>
+                    </div>
+                </div>
+            </div>
+        </body>
+    </html>

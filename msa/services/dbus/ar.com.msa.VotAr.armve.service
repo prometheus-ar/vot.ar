@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=ar.com.msa.VotAr.ARMVE
+Exec=/cdrom/app/msa/services/dbus/levantar_armve.sh
+User=root

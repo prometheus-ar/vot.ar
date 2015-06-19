@@ -1,0 +1,275 @@
+[
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Darwin, Charles Robert", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Darwin, Charles Robert", 
+        "codigo": "001.002.115", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Mendel, Gregor", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Mendel, Gregor", 
+        "codigo": "001.002.116", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "von Humboldt, Alexander", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "von Humboldt, Alexander", 
+        "codigo": "001.002.117", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Picasso, Pablo", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Picasso, Pablo", 
+        "codigo": "002.003.127", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Mir\u00f3, Joan", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Mir\u00f3, Joan", 
+        "codigo": "002.003.128", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Saura, Antonio", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Saura, Antonio", 
+        "codigo": "002.003.129", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Baj, iojan Seb\u00e1stian", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Bach, Johann Sebastian", 
+        "codigo": "002.004.138", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Chopin, Fr\u00e9d\u00e9ric", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Chopin, Fr\u00e9d\u00e9ric", 
+        "codigo": "002.004.139", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "DIP_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Maradona, Diego", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Maradona, Diego", 
+        "codigo": "001.001.158", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Caniggia, Claudio Paul", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Caniggia, Claudio Paul", 
+        "codigo": "001.001.159", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Marie", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Curie, Marie", 
+        "codigo": "001.002.160", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Pierre", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Curie, Pierre", 
+        "codigo": "001.002.161", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Dal\u00ed, Salvador", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Dal\u00ed, Salvador", 
+        "codigo": "002.003.162", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Vel\u00e1zquez, Diego", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Vel\u00e1zquez, Diego", 
+        "codigo": "002.003.163", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Lennon, John", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Lennon, John", 
+        "codigo": "002.004.164", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "McCartney, Paul", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "McCartney, Paul", 
+        "codigo": "002.004.165", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "GOB_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Fangio, Juan Manuel", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "001.001.216", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Schumacher, Michael", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "001.001.217", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Newton, Isaac", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "001.002.218", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Kepler, Johannes ", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "001.002.219", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "W\u00e1rjol, Andy", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "002.003.220", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Minuj\u00edn, Marta", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "002.003.221", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Sosa, Mercedes", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "002.004.222", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Yupanqui, Atahualpa", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "002.004.223", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }
+]

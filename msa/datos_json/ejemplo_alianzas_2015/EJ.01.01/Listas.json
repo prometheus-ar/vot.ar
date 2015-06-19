@@ -1,0 +1,110 @@
+[
+    {
+        "cod_candidatos": [
+            "001.002.109.094", 
+            "001.002.109.095", 
+            "001.002.109.096", 
+            "001.002.109.097", 
+            "001.002.109.086", 
+            "001.002.109.087", 
+            "001.002.109.082", 
+            "001.002.109.083", 
+            "001.002.109.084", 
+            "001.002.109.085"
+        ], 
+        "cod_alianza": "001", 
+        "cod_partido": "001.002", 
+        "nombre_corto": "MU", 
+        "texto_asistida": "Lista de los M\u00fasicos Unidos", 
+        "color": "#ff6633", 
+        "nombre": "Lista de los M\u00fasicos Unidos", 
+        "codigo": "001.002.109", 
+        "numero": "12B"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.002.012.041", 
+            "001.002.012.042", 
+            "001.002.012.047", 
+            "001.002.012.048", 
+            "001.002.012.019", 
+            "001.002.012.020", 
+            "001.002.012.021", 
+            "001.002.012.005", 
+            "001.002.012.006", 
+            "001.002.012.011", 
+            "001.002.012.012"
+        ], 
+        "cod_alianza": "001", 
+        "cod_partido": "001.002", 
+        "nombre_corto": "PAP", 
+        "texto_asistida": "Lista de los Artistas Pl\u00e1sticos", 
+        "color": "#cc3333", 
+        "nombre": "Lista de los Artistas Pl\u00e1sticos", 
+        "codigo": "001.002.012", 
+        "numero": "12A"
+    }, 
+    {
+        "cod_candidatos": [
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC"
+        ], 
+        "cod_alianza": null, 
+        "cod_partido": "BLC", 
+        "nombre_corto": "En Blanco", 
+        "texto_asistida": "Votos en BLANCO", 
+        "color": "#ffffff", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC", 
+        "numero": null
+    }, 
+    {
+        "cod_candidatos": [
+            "001.001.009.039", 
+            "001.001.009.040", 
+            "001.001.009.045", 
+            "001.001.009.046", 
+            "001.001.009.016", 
+            "001.001.009.017", 
+            "001.001.009.018", 
+            "001.001.009.003", 
+            "001.001.009.004", 
+            "001.001.009.009", 
+            "001.001.009.010"
+        ], 
+        "cod_alianza": "001", 
+        "cod_partido": "001.001", 
+        "nombre_corto": "PC", 
+        "texto_asistida": "Lista de los Cient\u00edficos", 
+        "color": "#663399", 
+        "nombre": "Lista de los Cient\u00edficos", 
+        "codigo": "001.001.009", 
+        "numero": "1B"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.001.001.037", 
+            "001.001.001.038", 
+            "001.001.001.043", 
+            "001.001.001.044", 
+            "001.001.001.013", 
+            "001.001.001.014", 
+            "001.001.001.015", 
+            "001.001.001.001", 
+            "001.001.001.002", 
+            "001.001.001.007", 
+            "001.001.001.008"
+        ], 
+        "cod_alianza": "001", 
+        "cod_partido": "001.001", 
+        "nombre_corto": "PD", 
+        "texto_asistida": "Lista de los Deportistas", 
+        "color": "#0099ff", 
+        "nombre": "Lista de los Deportistas", 
+        "codigo": "001.001.001", 
+        "numero": "1A"
+    }
+]

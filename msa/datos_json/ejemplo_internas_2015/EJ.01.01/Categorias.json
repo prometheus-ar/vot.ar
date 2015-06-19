@@ -1,0 +1,52 @@
+[
+    {
+        "asistida": "Intendente", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 4, 
+        "nombre": "INTENDENTE", 
+        "codigo": "INT", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Diputado Provincial", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 3, 
+        "nombre": "DIPUTADO PROVINCIAL", 
+        "codigo": "DIP", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Concejal", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 5, 
+        "nombre": "CONCEJAL", 
+        "codigo": "CNJ", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Senador Provincial", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 2, 
+        "nombre": "SENADOR PROVINCIAL", 
+        "codigo": "SEN", 
+        "adhiere": null
+    }, 
+    {
+        "asistida": "Gobernador", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 1, 
+        "nombre": "GOBERNADOR", 
+        "codigo": "GOB", 
+        "adhiere": null
+    }
+]

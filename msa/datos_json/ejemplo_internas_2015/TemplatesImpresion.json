@@ -1,0 +1,108 @@
+[
+    {
+        "codigo": "completa",
+        "templates": [
+            {
+                "ancho": 540,
+                "alto": 700,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [540, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [540, 350]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [1080, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [1080, 350]
+            }
+        ]
+    },
+    {
+        "codigo": "completa_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 150,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 150]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 150]
+            }
+        ]
+    },
+    {
+        "codigo": "extranjeros",
+        "templates": [
+            {
+                "ancho": 540,
+                "alto": 700,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 700,
+                "posicion": [0, 540]
+            },
+            {
+                "dx": 1080,
+                "ancho": 540,
+                "dy": 150,
+                "alto": 350,
+                "posicion": [0, 1080]
+            }
+        ]
+    },
+    {
+        "codigo": "extranjeros_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 150,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [0, 180]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [0, 360]
+            }
+        ]
+    }
+]

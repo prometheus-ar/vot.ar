@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Interfaz Voto Web</title>
+        <link rel="stylesheet" href="css/voto.css">
+
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script src="js/mustache.js" ></script>
+        <script src="js/zaguan.js" ></script>
+
+        <script src="js/inicio/ipc.js" ></script>
+        <script src="js/inicio/funciones.js" ></script>
+        <script src="js/inicio/show_hide.js" ></script>
+        <script src="js/helpers.js" ></script>
+        <script src="js/ingreso_datos.js" ></script>
+        <script src="js/keyboard.js" ></script>
+    </head>
+    <body ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();" >
+
+        <div id="contenedor">
+            <div id="contenedor_izq" class="contenedor-completo">
+                <div id="encabezado">
+                </div>
+                <div class="clear"></div>
+
+
+                <div class="barra-titulo">
+                    <p id="_txt_presente_credencial_acta"></p>
+                </div>
+                <div id="pantalla_inicio" class="mensaje con-barra-opciones-y-barra-titulo bienvenida" style="display:none">
+
+                    <h1 id="_txt_bienvenido"></h1>
+                    <div class="img-votar"> <img src="img/logo_votar_grande.png"/></div>
+
+                </div>
+
+                <div class="contenedor-datos" style="display: none;">
+                </div>
+
+                <div id="contenedor_opciones">
+                    <div id="barra_opciones" class="completa">
+                        <ul id="accesibilidad">
+                          <li id="btn_calibrar">
+                            <img src="img/btn_calibrar.png" />
+                            <p id="_txt_calibrar"></p>
+                          </li>
+                          <li id="btn_apagar">
+                            <img src="img/btn_apagar.png" />
+                            <p id="_txt_apagar"></p></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="popup-box-datos">
+        </div>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="mensaje-popup">
+                    <p class="alerta"></p>
+                    <p class="pregunta"></p>
+                    <p class="aclaracion"></p>
+                </div>
+                <div class="btn btn-cancelar btn-volver-al-inicio">
+                    <p id="_txt_cancelar_apagado"></p>
+                </div>
+                <div class="btn btn-aceptar">
+                    <p id="_txt_apagar"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </body>
+</html>

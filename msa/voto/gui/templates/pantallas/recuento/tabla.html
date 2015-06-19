@@ -1,0 +1,16 @@
+<tbody id="scroll_tabla">
+  {{#filas}}
+    {{#es_partido}}
+      <tr class="fila-partido">
+          <td colspan="{{columnas}}">{{nombre_interna}}</td>
+      </tr>
+    {{/es_partido}}
+    {{^es_partido}}
+      <tr id="{{id_fila}}" class="fila-{{color}}">
+          <td>{{lista_numero}}</td>
+          <td><span>{{lista_nombre}}</span><span>{{nombre_corto}}</span></td>
+          {{&columnas_candidatos}}
+      </tr>
+    {{/es_partido}}
+  {{/filas}}
+</tbody>

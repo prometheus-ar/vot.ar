@@ -1,0 +1,72 @@
+[
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "1", 
+    "color": "#0099ff", 
+    "nombre": "Intervenci\u00f3n Urban\u00edstica Champagnat", 
+    "nombre_corto": "Champagnat", 
+    "numero": "1"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "2", 
+    "color": "#0099ff", 
+    "nombre": "Avenida Ernesto Salva", 
+    "nombre_corto": "Av. Salva", 
+    "numero": "2"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "3", 
+    "color": "#0099ff", 
+    "nombre": "Galpones Nuevo Central Argentino (Nca)", 
+    "nombre_corto": "Galpones NCA", 
+    "numero": "3"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "4", 
+    "color": "#0099ff", 
+    "nombre": "Parque Balneario", 
+    "nombre_corto": "Pqe. Balneario", 
+    "numero": "4"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "5", 
+    "color": "#0099ff", 
+    "nombre": "Cord\u00f3n Verde Av. Suipacha-Av. Williner y Plaza Suiza", 
+    "nombre_corto": "Cordon Verde", 
+    "numero": "5"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "6", 
+    "color": "#0099ff", 
+    "nombre": "Av. Podio Conexi\u00f3n con Plaza de la Democracia y Espacio Verde Ant\u00e1rtida Argentina", 
+    "nombre_corto": "Av. Podio", 
+    "numero": "6"
+  }, 
+  {
+    "asistida": null, 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "7", 
+    "color": "#0099ff", 
+    "nombre": "Av. A. del Valle desde Anduiza hasta Constituci\u00f3n", 
+    "nombre_corto": "A. del Valle", 
+    "numero": "7"
+  }
+]

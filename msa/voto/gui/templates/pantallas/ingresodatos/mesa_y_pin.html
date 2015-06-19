@@ -1,0 +1,11 @@
+<div id="pantalla_mesaypin" class="ingreso">
+    <div class="mesaypin">
+        <label id="_txt_ingrese_numero_mesa"></label>
+        <input type="text" name="nro_mesa" {{#af_mesa}}autofocus{{/af_mesa}} pattern="{{pattern_mesa}}"
+        value="{{mesa}}" />
+        <label id="_txt_ingrese_numero_pin"></label>
+        <input type="text" name="nro_pin" {{#af_pin}}autofocus{{/af_pin}} pattern="{{pattern_pin}}" />
+        <div class="clear"></div>
+    </div>
+    {{> teclado}}
+</div>

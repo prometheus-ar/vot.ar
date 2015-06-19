@@ -1,0 +1,33 @@
+<div id="pantalla_datospersonales" class="ingreso">
+    <div class="hora">
+        <label id="_txt_titulo_hora"></label>
+        <input type="text" name="hora" pattern="[0]?[0-9]|1[0-9]|2[0-3]" placeholder="HH" data-keyboard="num" />
+        <label id="_txt_titulo_minutos"></label>
+        <input type="text" name="minutos" pattern="[0-5]?[0-9]" placeholder="MM" data-keyboard="num" />
+    </div>
+
+    <div class="nombre-autoridades{{#scroll}} con-scroll{{/scroll}}">
+    {{#autoridades}}
+    <h2 id="_txt_titulo_{{id_cargo}}" class="cargo">{{cargo}}</h2>
+        <form class="autoridad" id="{{id_cargo}}">
+            <label id="_txt_titulo_apellido"></label>
+            <input type="text" name="{{id_cargo}}_apellido" class="apellido"
+            pattern="[A-ZÑÁ-Ú'\s]{0,20}" {{#disabled_default}}disabled="disabled"{{/disabled_default}} data-keyboard="alpha" />
+            <label id="_txt_titulo_nombre"></label>
+            <input type="text" name="{{id_cargo}}_nombre" class="nombre" {{#disabled_default}}disabled="disabled"{{/disabled_default}}
+                pattern="[A-ZÑÁ-Ú'\s]{0,20}" data-keyboard="alpha" />
+            <label id="_txt_titulo_documento"></label>
+            <input type="text" name="{{id_cargo}}_tipo_documento" class="tipo_documento" value="{{tipo_doc_default}}" {{#disabled_default}}disabled="disabled"{{/disabled_default}} readonly="readonly" data-keyboard="docs" />
+            <input type="text" name="{{id_cargo}}_nro_documento" class="nro_documento" {{#disabled_default}}disabled="disabled"{{/disabled_default}}
+                pattern="[0-9]{0,8}" data-keyboard="num" />
+        </form>
+    {{/autoridades}}
+    </div>
+    {{#scroll}}
+    <div class="scroll">
+        <div id="_btn_scroll_arriba" class="boton"><img class="btn-campo" src="img/btn_scroll_up.png"></div>
+        <div id="_btn_scroll_abajo" class="boton"><img class="btn-campo" src="img/btn_scroll_down.png"></div>
+    </div>
+    {{/scroll}}
+    {{> teclado}}
+</div>

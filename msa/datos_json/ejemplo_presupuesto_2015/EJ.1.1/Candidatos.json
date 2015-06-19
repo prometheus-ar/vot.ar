@@ -1,0 +1,72 @@
+[
+  {
+    "asistida": "Intervenci\u00f3n Champa\u00f1\u00e1t", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "1", 
+    "codigo": "1.690", 
+    "nombre": "Intervenci\u00f3n Urban\u00edstica Champagnat", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Avenida Ernesto Salva", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "2", 
+    "codigo": "2.691", 
+    "nombre": "Avenida Ernesto Salva", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Galpones ferrocarril en e ce a", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "3", 
+    "codigo": "3.692", 
+    "nombre": "Galpones Nuevo Central Argentino (Nca)", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Parque Balneario", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "4", 
+    "codigo": "4.693", 
+    "nombre": "Parque Balneario", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Avenidas Suipacha y v\u00ed li ner", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "5", 
+    "codigo": "5.694", 
+    "nombre": "Cord\u00f3n Verde Av. Suipacha-Av. Williner y Plaza Suiza", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Paseo Avenida P\u00f3dio", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "6", 
+    "codigo": "6.695", 
+    "nombre": "Av. Podio Conexi\u00f3n con Plaza de la Democracia y Espacio Verde Ant\u00e1rtida Argentina", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Arist\u00f3bulo del valle", 
+    "cod_categoria": "PRE", 
+    "cod_lista": "7", 
+    "codigo": "7.696", 
+    "nombre": "Av. A. del Valle desde Anduiza hasta Constituci\u00f3n", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }
+]

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Interfaz Voto Web</title>
+        <link rel="stylesheet" href="css/demo.css">
+
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script src="js/mustache.js" ></script>
+        <script src="js/zaguan.js" ></script>
+
+        <script src="js/helpers.js" ></script>
+        <script src="js/demo/ipc.js" ></script>
+        <script src="js/demo/funciones.js" ></script>
+    </head>
+    <body ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();" >
+
+        <div id="contenedor">
+            <div id="contenedor_izq" class="contenedor-completo">
+                <div id="encabezado">
+                </div>
+                <div class="clear"></div>
+
+
+                <div class="barra-titulo">
+                    <p id="_txt_seleccion_ubicacion_demo"></p>
+                </div>
+                <div id="pantalla_inicio" class="mensaje con-barra-opciones-y-barra-titulo bienvenida" style="display: none;">
+
+                </div>
+
+                <div class="contenedor-datos" id="botones-ubicacion"></div>
+
+                <div id="contenedor_opciones">
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

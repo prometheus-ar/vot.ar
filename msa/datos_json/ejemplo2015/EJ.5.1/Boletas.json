@@ -1,0 +1,139 @@
+[
+  {
+    "CNJ": "1.71", 
+    "DIP": "1.117", 
+    "GOB": "1.166", 
+    "INT": "1.200", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "10.75", 
+    "DIP": "2.129", 
+    "GOB": "3.170", 
+    "INT": "10.202", 
+    "codigo": "10", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "11.77", 
+    "DIP": "3.141", 
+    "GOB": "3.170", 
+    "INT": "11.204", 
+    "codigo": "11", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "12.79", 
+    "DIP": "5.154", 
+    "GOB": "4.172", 
+    "INT": "12.206", 
+    "codigo": "12", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "13.81", 
+    "DIP": "4.151", 
+    "GOB": "4.172", 
+    "INT": "2.208", 
+    "codigo": "13", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "14.83", 
+    "DIP": "6.157", 
+    "GOB": "4.172", 
+    "INT": "3.210", 
+    "codigo": "14", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "15.85", 
+    "DIP": "7.160", 
+    "GOB": "4.172", 
+    "INT": "5.214", 
+    "codigo": "15", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "16.87", 
+    "DIP": "8.163", 
+    "GOB": "4.172", 
+    "INT": "4.212", 
+    "codigo": "16", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "2.89", 
+    "DIP": "2.129", 
+    "GOB": "2.168", 
+    "INT": "2.208", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "3.91", 
+    "DIP": "3.141", 
+    "GOB": "3.170", 
+    "INT": "3.210", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "4.94", 
+    "DIP": "4.151", 
+    "GOB": "4.172", 
+    "INT": "4.212", 
+    "codigo": "4", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "5.95", 
+    "DIP": "5.154", 
+    "INT": "5.214", 
+    "codigo": "5", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "6.97", 
+    "DIP": "6.157", 
+    "GOB": "2.168", 
+    "INT": "6.216", 
+    "codigo": "6", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "7.99", 
+    "DIP": "7.160", 
+    "GOB": "3.170", 
+    "INT": "7.218", 
+    "codigo": "7", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "8.101", 
+    "DIP": "8.163", 
+    "GOB": "3.170", 
+    "INT": "8.220", 
+    "codigo": "8", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "9.73", 
+    "DIP": "2.129", 
+    "GOB": "3.170", 
+    "INT": "9.222", 
+    "codigo": "9", 
+    "lista_completa": true
+  }, 
+  {
+    "CPO": "CNO.107", 
+    "codigo": "CNO", 
+    "lista_completa": true
+  }, 
+  {
+    "CPO": "CSI.109", 
+    "codigo": "CSI", 
+    "lista_completa": true
+  }
+]

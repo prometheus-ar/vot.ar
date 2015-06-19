@@ -1,0 +1,435 @@
+[
+  {
+    "asistida": null, 
+    "cod_categoria": "DIP", 
+    "cod_lista": "1", 
+    "codigo": "1.117", 
+    "nombre": "Romagnoli, Leandro \u201cPipi\u201d", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": null, 
+    "cod_categoria": "DIP", 
+    "cod_lista": "1", 
+    "codigo": "1.118", 
+    "nombre": "Ruggeri, Oscar", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": null, 
+    "cod_categoria": "DIP", 
+    "cod_lista": "1", 
+    "codigo": "1.119", 
+    "nombre": "Bochini, Ricardo", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Maradona, Diego", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "1", 
+    "codigo": "1.166", 
+    "nombre": "Maradona, Diego", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Caniggia, Claudio Paul", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "1", 
+    "codigo": "1.167", 
+    "nombre": "Caniggia, Claudio Paul", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Fangio, Juan Manuel", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "1", 
+    "codigo": "1.233", 
+    "nombre": "Fangio, Juan Manuel", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Schumacher, Michael", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "1", 
+    "codigo": "1.234", 
+    "nombre": "Schumacher, Michael", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "McCarthy, John", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "2", 
+    "codigo": "2.129", 
+    "nombre": "Mccarthy, John", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Ritchie, Dennis", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "2", 
+    "codigo": "2.130", 
+    "nombre": "Ritchie, Dennis", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Church, Alonzo", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "2", 
+    "codigo": "2.131", 
+    "nombre": "Church, Alonzo", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Curie, Marie", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "2", 
+    "codigo": "2.168", 
+    "nombre": "Curie, Marie", 
+    "numero_de_orden": 1, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Curie, Pierre", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "2", 
+    "codigo": "2.169", 
+    "nombre": "Curie, Pierre", 
+    "numero_de_orden": 2, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Newton, Isaac", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "2", 
+    "codigo": "2.235", 
+    "nombre": "Newton, Isaac", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Kepler, Johannes ", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "2", 
+    "codigo": "2.236", 
+    "nombre": "Kepler, Johannes ", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Degas, Edgar", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "3", 
+    "codigo": "3.141", 
+    "nombre": "Bacon, Francis", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Bacon, Francis", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "3", 
+    "codigo": "3.142", 
+    "nombre": "Vermeer, Jan", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Vermeer, Jan", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "3", 
+    "codigo": "3.143", 
+    "nombre": "Freud, Lucian", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Dal\u00ed, Salvador", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "3", 
+    "codigo": "3.170", 
+    "nombre": "Dal\u00ed, Salvador", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Vel\u00e1zquez, Diego", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "3", 
+    "codigo": "3.171", 
+    "nombre": "Vel\u00e1zquez, Diego", 
+    "numero_de_orden": 2, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "W\u00e1rjol, Andy", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "3", 
+    "codigo": "3.237", 
+    "nombre": "Warhol, Andy", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Minuj\u00edn, Marta", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "3", 
+    "codigo": "3.238", 
+    "nombre": "Minuj\u00edn, Marta", 
+    "numero_de_orden": 2, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Morrissey, Steven Patrick", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "4", 
+    "codigo": "4.151", 
+    "nombre": "Morrissey, Steven Patrick", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Bowie, David", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "4", 
+    "codigo": "4.152", 
+    "nombre": "Bowie, David", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Piaf, Edith", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "4", 
+    "codigo": "4.153", 
+    "nombre": "Piaf, Edith", 
+    "numero_de_orden": 3, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Lennon, John", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "4", 
+    "codigo": "4.172", 
+    "nombre": "Lennon, John", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "McCartney, Paul", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "4", 
+    "codigo": "4.173", 
+    "nombre": "Mccartney, Paul", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Sosa, Mercedes", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "4", 
+    "codigo": "4.239", 
+    "nombre": "Sosa, Mercedes", 
+    "numero_de_orden": 1, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Yupanqui, Atahualpa", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "4", 
+    "codigo": "4.240", 
+    "nombre": "Yupanqui, Atahualpa", 
+    "numero_de_orden": 2, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Lopez, Daniel", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "5", 
+    "codigo": "5.154", 
+    "nombre": "Lopez, Daniel", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Batalla, Miguel", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "5", 
+    "codigo": "5.155", 
+    "nombre": "Batalla, Miguel", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Moreno, Liliana", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "5", 
+    "codigo": "5.156", 
+    "nombre": "Moreno, Liliana", 
+    "numero_de_orden": 3, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Gismonti, Ana Laura", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "6", 
+    "codigo": "6.157", 
+    "nombre": "Gismonti, Ana Laura", 
+    "numero_de_orden": 1, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Bruckner, Esteban", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "6", 
+    "codigo": "6.158", 
+    "nombre": "Bruckner, Esteban", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Piedra, Roberto", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "6", 
+    "codigo": "6.159", 
+    "nombre": "Piedra, Roberto", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Ward, Lila Susana", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "7", 
+    "codigo": "7.160", 
+    "nombre": "Ward, Lila Susana", 
+    "numero_de_orden": 1, 
+    "sexo": "F", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Morel, Eugenio", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "7", 
+    "codigo": "7.161", 
+    "nombre": "Morel, Eugenio", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Pires, Jacinto", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "7", 
+    "codigo": "7.162", 
+    "nombre": "Pires, Jacinto", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Spektor, Emanuel", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "8", 
+    "codigo": "8.163", 
+    "nombre": "Spektor, Emanuel", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Ravioli, Lucas", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "8", 
+    "codigo": "8.164", 
+    "nombre": "Ravioli, Lucas", 
+    "numero_de_orden": 2, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Garc\u00eda P\u00e9rez, Alejandro", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "8", 
+    "codigo": "8.165", 
+    "nombre": "Garc\u00eda P\u00e9rez, Alejandro", 
+    "numero_de_orden": 3, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "DIP", 
+    "cod_lista": "BLC", 
+    "codigo": "DIP_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "GOB", 
+    "cod_lista": "BLC", 
+    "codigo": "GOB_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "SEN", 
+    "cod_lista": "BLC", 
+    "codigo": "SEN_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }
+]

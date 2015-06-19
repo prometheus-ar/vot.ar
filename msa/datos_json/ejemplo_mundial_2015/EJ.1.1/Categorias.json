@@ -1,0 +1,52 @@
+[
+  {
+    "adhiere": null, 
+    "asistida": "Hasta d\u00f3nde llegar\u00e1 Argentina", 
+    "codigo": "ARG", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Argentina", 
+    "posicion": 1, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Qui\u00e9n ser\u00e1 la decepci\u00f3n", 
+    "codigo": "DEC", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Decepcion", 
+    "posicion": 4, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Qui\u00e9n ganar\u00e1 el mundial", 
+    "codigo": "GAN", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Ganador", 
+    "posicion": 2, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Qui\u00e9n ser\u00e1 el goleador", 
+    "codigo": "GOL", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Goleador", 
+    "posicion": 3, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Qui\u00e9n ser\u00e1 el mejor jugador", 
+    "codigo": "MEJ", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Mejor Jugador", 
+    "posicion": 5, 
+    "texto_adicional": null
+  }
+]

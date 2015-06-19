@@ -1,0 +1,52 @@
+[
+  {
+    "asistida": "Partido de los Deportistas", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "1", 
+    "color": "#2EFC90,#F43D3B", 
+    "nombre": "Partido de los Deportistas", 
+    "nombre_corto": "PD", 
+    "numero": "1"
+  }, 
+  {
+    "asistida": "Partido de los Cient\u00edficos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "2", 
+    "color": "#EC5A8E,#97BDAB", 
+    "nombre": "Partido de los Cient\u00edficos", 
+    "nombre_corto": "PC", 
+    "numero": "9"
+  }, 
+  {
+    "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "3", 
+    "color": "#0839C8,#A9FB66", 
+    "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+    "nombre_corto": "PAP", 
+    "numero": "12"
+  }, 
+  {
+    "asistida": "M\u00fasicos Unidos", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "4", 
+    "color": "#4CF221,#674DE6", 
+    "nombre": "M\u00fasicos Unidos", 
+    "nombre_corto": "MU", 
+    "numero": "109"
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_alianza": null, 
+    "cod_partido": null, 
+    "codigo": "BLC", 
+    "color": "#ffffff", 
+    "nombre": "Votos en Blanco", 
+    "nombre_corto": "En Blanco", 
+    "numero": null
+  }
+]

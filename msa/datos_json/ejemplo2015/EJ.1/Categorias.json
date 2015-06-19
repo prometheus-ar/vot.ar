@@ -1,0 +1,32 @@
+[
+  {
+    "adhiere": null, 
+    "asistida": "Diputado Provincial", 
+    "codigo": "DIP", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Diputado Provincial", 
+    "posicion": 3, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Gobernador", 
+    "codigo": "GOB", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Gobernador", 
+    "posicion": 1, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "Senador Provincial", 
+    "codigo": "SEN", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Senador Provincial", 
+    "posicion": 2, 
+    "texto_adicional": null
+  }
+]

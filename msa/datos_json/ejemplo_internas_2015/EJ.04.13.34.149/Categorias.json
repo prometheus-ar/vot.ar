@@ -1,0 +1,12 @@
+[
+    {
+        "asistida": "Senador Provincial", 
+        "consulta_popular": false, 
+        "texto_adicional": null, 
+        "max_selecciones": "1", 
+        "posicion": 2, 
+        "nombre": "SENADOR PROVINCIAL", 
+        "codigo": "SEN", 
+        "adhiere": null
+    }
+]

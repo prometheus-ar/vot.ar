@@ -1,0 +1,597 @@
+[
+  {
+    "asistida": "Colombia", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "1", 
+    "codigo": "1.10", 
+    "nombre": "Colombia", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Colombia", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "1", 
+    "codigo": "1.22", 
+    "nombre": "Colombia", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Te\u00f3filo Guti\u00e9rrez", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "1", 
+    "codigo": "1.35", 
+    "nombre": "Te\u00f3filo Guti\u00e9rrez", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Te\u00f3filo Guti\u00e9rrez", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "1", 
+    "codigo": "1.49", 
+    "nombre": "Te\u00f3filo Guti\u00e9rrez", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Primera Fase", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "10", 
+    "codigo": "10.1", 
+    "nombre": "Primera Fase", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Holanda", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "11", 
+    "codigo": "11.13", 
+    "nombre": "Holanda", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Holanda", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "11", 
+    "codigo": "11.25", 
+    "nombre": "Holanda", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Robin Van Persie", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "11", 
+    "codigo": "11.38", 
+    "nombre": "Robin Van Persie", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Arjen Robben", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "11", 
+    "codigo": "11.52", 
+    "nombre": "Arjen Robben", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Argentina", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "12", 
+    "codigo": "12.19", 
+    "nombre": "Argentina", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Lionel Messi", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "12", 
+    "codigo": "12.32", 
+    "nombre": "Lionel Messi", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Lionel Messi", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "12", 
+    "codigo": "12.46", 
+    "nombre": "Lionel Messi", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Argentina", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "12", 
+    "codigo": "12.7", 
+    "nombre": "Argentina", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Thomas M\u00fcller", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "13", 
+    "codigo": "13.31", 
+    "nombre": "Thomas M\u00fcller", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Mesut \u00d6zil", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "13", 
+    "codigo": "13.45", 
+    "nombre": "Mesut \u00d6zil", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Alemania", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "13", 
+    "codigo": "13.6", 
+    "nombre": "Alemania", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Final", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "14", 
+    "codigo": "14.5", 
+    "nombre": "Final", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Semifinal", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "15", 
+    "codigo": "15.4", 
+    "nombre": "Semifinal", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Inglaterra", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "17", 
+    "codigo": "17.14", 
+    "nombre": "Inglaterra", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Inglaterra", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "17", 
+    "codigo": "17.26", 
+    "nombre": "Inglaterra", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Wayne Rooney", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "17", 
+    "codigo": "17.39", 
+    "nombre": "Wayne Rooney", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Chile", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "18", 
+    "codigo": "18.21", 
+    "nombre": "Chile", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Alexis S\u00e1nchez", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "18", 
+    "codigo": "18.34", 
+    "nombre": "Alexis S\u00e1nchez", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Alexis S\u00e1nchez", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "18", 
+    "codigo": "18.48", 
+    "nombre": "Alexis S\u00e1nchez", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Chile", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "18", 
+    "codigo": "18.9", 
+    "nombre": "Chile", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Brasil", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "19", 
+    "codigo": "19.20", 
+    "nombre": "Brasil", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Neymar", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "19", 
+    "codigo": "19.33", 
+    "nombre": "Neymar", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Neymar", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "19", 
+    "codigo": "19.47", 
+    "nombre": "Neymar", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Brasil", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "19", 
+    "codigo": "19.8", 
+    "nombre": "Brasil", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Uruguay", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "2", 
+    "codigo": "2.18", 
+    "nombre": "Uruguay", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Uruguay", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "2", 
+    "codigo": "2.29", 
+    "nombre": "Uruguay", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Edinson Cabani", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "2", 
+    "codigo": "2.43", 
+    "nombre": "Edinson Cavani", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Luis Alberto Su\u00e1rez", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "2", 
+    "codigo": "2.44", 
+    "nombre": "Luis Alberto Su\u00e1rez", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Italia", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "21", 
+    "codigo": "21.15", 
+    "nombre": "Italia", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Mario Balotelli", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "21", 
+    "codigo": "21.40", 
+    "nombre": "Mario Balotelli", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Otra selecci\u00f3n", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "3", 
+    "codigo": "3.16", 
+    "nombre": "Otra Selecci\u00f3n", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Otra selecci\u00f3n", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "3", 
+    "codigo": "3.27", 
+    "nombre": "Otra Selecci\u00f3n", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Otro jugador", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "3", 
+    "codigo": "3.41", 
+    "nombre": "Otro Jugador", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Otro jugador", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "3", 
+    "codigo": "3.53", 
+    "nombre": "Otro Jugador", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Espa\u00f1a", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "4", 
+    "codigo": "4.11", 
+    "nombre": "Espa\u00f1a", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Espa\u00f1a", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "4", 
+    "codigo": "4.23", 
+    "nombre": "Espa\u00f1a", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "David Villa", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "4", 
+    "codigo": "4.36", 
+    "nombre": "David Villa", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Andr\u00e9s Iniesta", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "4", 
+    "codigo": "4.50", 
+    "nombre": "Andr\u00e9s Iniesta", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Portugal", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "5", 
+    "codigo": "5.17", 
+    "nombre": "Portugal", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Portugal", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "5", 
+    "codigo": "5.28", 
+    "nombre": "Portugal", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Cristiano Ronaldo", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "5", 
+    "codigo": "5.42", 
+    "nombre": "Cristiano Ronaldo", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Cristiano Ronaldo", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "5", 
+    "codigo": "5.54", 
+    "nombre": "Cristiano Ronaldo", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Francia", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "6", 
+    "codigo": "6.12", 
+    "nombre": "Francia", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Francia", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "6", 
+    "codigo": "6.24", 
+    "nombre": "Francia", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Karim Benzema", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "6", 
+    "codigo": "6.37", 
+    "nombre": "Karim Benzema", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Franck Rib\u00e9ry", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "6", 
+    "codigo": "6.51", 
+    "nombre": "Franck Rib\u00e9ry", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "M\u00e9xico", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "7", 
+    "codigo": "7.30", 
+    "nombre": "M\u00e9xico", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Cuartos de Final", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "8", 
+    "codigo": "8.3", 
+    "nombre": "Cuartos de Final", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Octavos de Final", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "9", 
+    "codigo": "9.2", 
+    "nombre": "Octavos de Final", 
+    "numero_de_orden": 1, 
+    "sexo": "M", 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "ARG", 
+    "cod_lista": "BLC", 
+    "codigo": "ARG_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "DEC", 
+    "cod_lista": "BLC", 
+    "codigo": "DEC_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "GAN", 
+    "cod_lista": "BLC", 
+    "codigo": "GAN_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "GOL", 
+    "cod_lista": "BLC", 
+    "codigo": "GOL_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_categoria": "MEJ", 
+    "cod_lista": "BLC", 
+    "codigo": "MEJ_BLC", 
+    "codigo_original": "BLC.BLC", 
+    "nombre": "Voto en blanco", 
+    "numero_de_orden": 1, 
+    "sexo": null, 
+    "titular": true
+  }
+]

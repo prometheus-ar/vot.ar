@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <title>Interfaz Voto Web</title>
+         <link rel="stylesheet" href="css/recuento.css">
+
+        <script src="js/jquery.min.js" type="application/javascript"></script>
+        <script src="js/recuento/jquery.event.move.js" type="application/javascript"></script>
+        <script src="js/mustache.js" ></script>
+        <script src="js/zaguan.js" ></script>
+
+        <script src="js/helpers.js" ></script>
+        <script src="js/imagenes.js" ></script>
+        <script src="js/ingreso_datos.js" ></script>
+        <script src="js/keyboard.js" ></script>
+        <script src="js/recuento/ipc.js" ></script>
+        <script src="js/recuento/funciones.js" ></script>
+        <script src="js/recuento/interaccion.js" ></script>
+        <script src="js/recuento/tabla.js" ></script>
+        <script src="js/recuento/pantallas.js" ></script>
+        <script src="js/recuento/show_hide.js" ></script>
+    </head>
+    <body data-vista="vista-boleta"
+        ondragstart="return false" draggable="false"
+        ondragenter="event.dataTransfer.dropEffect='none'; event.stopPropagation(); event.preventDefault();"
+        ondragover="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+        ondrop="event.dataTransfer.dropEffect='none';event.stopPropagation(); event.preventDefault();"
+    style="display:none">
+        <div id="contenedor" class="fondo-rayado">
+
+            <div id="encabezado" class="contenedor-completo">
+            </div>
+
+            <div id="contenedor_izq" class="contenedor-completo" style="display:none">
+                <div class="barra-titulo">
+                    <p id=""></p>
+                </div>
+
+                <div class="contenedor-datos">
+                </div>
+            </div>
+
+            <div class="contenedor-izq">
+                <div class="clear"></div>
+                <div class="contenedor-tabla">
+                    <div class="tabla-scrolleable">
+                        <table id="tabla_recuento" class="tabla-recuento">
+                        </table>
+                    </div>
+                    <table id="tabla_campos" class="tabla-recuento tabla-campos" style="display:none">
+                    </table>
+                </div>
+            </div>
+
+            <div class="contenedor-der">
+            </div>
+
+            <div class="clear"></div>
+            <div id="contenedor_opciones">
+                <div id="barra_opciones" class="completa">
+                    <ul id="accesibilidad">
+                        <li id="btn_salir"><img src="img/btn_anterior.png" id="img_regresar" />
+                            <span><span class="barra-opciones-texto" id="_txt_volver_al_inicio"></span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="contenedor-opciones-recuento">
+                <div id="panel_izquierdo" class="barra-opciones-recuento">
+                    <ul class="accesibilidad">
+                        <li id="btn_regresar">
+                            <span>
+                                <img src="img/btn_anterior.png" />
+                                <p id="_txt_salir"></p>
+                            </span>
+                        </li>
+                        <li>
+                            <span class="desplazar">
+                                <img src="img/btn_scroll_up.png">
+                            </span>
+                            <span class="desplazar">
+                                <img src="img/btn_scroll_down.png">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="panel_estado" class="boton-central panel-estado-3">
+                    <p>
+                    </p>
+                </div>
+
+                <div id="panel_derecho" class="panel-der">
+                    <ul class="accesibilidad-panel-der">
+                        <li id="cantidad_escrutadas">
+                            <span class="numero-procesada"></span>
+                            <p id="_txt_boletas_procesadas"></p>
+                        </li>
+                        <li id="btn_qr" style="display:none;">
+                            <span>
+                                <img src="img/btn_qr.png">
+                                <p id="_txt_ver_qr"></p>
+                            </span>
+                        </li>
+                        <li id="terminar_escrutinio">
+                            <span>
+                                <img src="img/btn_siguiente.png"/>
+                                <p id="_txt_terminar_escrutinio"></p>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="boletabox">
+        </div>
+        <div class="qrbox">
+            <img src="">
+        </div>
+        <div class="popup-box-datos">
+        </div>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="mensaje-popup">
+                    <p class="alerta"></p>
+                    <p class="pregunta"></p>
+                    <p class="aclaracion"></p>
+                </div>
+                <div class="btn btn-cancelar">
+                    <p id="_txt_cancelar"></p>
+                </div>
+                <div class="btn btn-aceptar">
+                    <p id="_txt_aceptar"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+      </body>
+</html>

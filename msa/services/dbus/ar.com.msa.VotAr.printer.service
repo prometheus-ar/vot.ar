@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=ar.com.msa.VotAr.printer
+Exec=/cdrom/app/msa/services/dbus/levantar_impresora.sh
+User=root

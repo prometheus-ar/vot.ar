@@ -1,0 +1,837 @@
+[
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Flores, Antonella", 
+        "codigo": "001.001.001.049", 
+        "texto_asistida": "Flores, Antonela", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Acosta, Barbara", 
+        "codigo": "001.001.001.050", 
+        "texto_asistida": "Acosta, Barbara", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Silva, Sebastian", 
+        "codigo": "001.001.001.055", 
+        "texto_asistida": "Silva, Sebastian", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Castro, Sofia", 
+        "codigo": "001.001.001.056", 
+        "texto_asistida": "Castro, Sofia", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Medina, Emilio", 
+        "codigo": "001.001.009.051", 
+        "texto_asistida": "Medina, Emilio", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "de la Casa, Felipe", 
+        "codigo": "001.001.009.052", 
+        "texto_asistida": "de la Casa, Felipe", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Rojas, Sim\u00f3n", 
+        "codigo": "001.001.009.057", 
+        "texto_asistida": "Rojas, Sim\u00f3n", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Sor\u00edn, Renata", 
+        "codigo": "001.001.009.058", 
+        "texto_asistida": "Sor\u00edn, Renata", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Quito, Esteban", 
+        "codigo": "001.002.012.053", 
+        "texto_asistida": "Quito, Esteban", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Soto, Ezequiel", 
+        "codigo": "001.002.012.054", 
+        "texto_asistida": "Soto, Ezequiel", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Generalli, Paz", 
+        "codigo": "001.002.012.059", 
+        "texto_asistida": "Generali, Paz", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Molina, Victoria", 
+        "codigo": "001.002.012.060", 
+        "texto_asistida": "Molina, Victoria", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Cavallo, Carlos", 
+        "codigo": "001.002.109.098", 
+        "texto_asistida": "Cavalo, Carlos", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Saponari, Samuel", 
+        "codigo": "001.002.109.099", 
+        "texto_asistida": "Saponari, Samuel", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Pereira, Pablo", 
+        "codigo": "001.002.109.100", 
+        "texto_asistida": "Pereira, Pablo", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Magrani, Federico", 
+        "codigo": "001.002.109.101", 
+        "texto_asistida": "Magrani, Federico", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.110", 
+        "nombre": "Martinez, Julian", 
+        "codigo": "002.003.110.107", 
+        "texto_asistida": "Martinez, Julian", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.110", 
+        "nombre": "Castrilla, Adriana", 
+        "codigo": "002.003.110.108", 
+        "texto_asistida": "Castrilla, Adriana", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.111", 
+        "nombre": "Juarez, Emilia", 
+        "codigo": "002.003.111.109", 
+        "texto_asistida": "Juarez, Emilia", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.111", 
+        "nombre": "Martinez, Richard", 
+        "codigo": "002.003.111.110", 
+        "texto_asistida": "Martinez, Richard", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.112", 
+        "nombre": "Flores, Florencia Soledad Ornela", 
+        "codigo": "002.003.112.111", 
+        "texto_asistida": "Flores, Florencia Soledad Ornela", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.112", 
+        "nombre": "Iglesias, Ramond", 
+        "codigo": "002.003.112.112", 
+        "texto_asistida": "Iglesias, Ramond", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.113", 
+        "nombre": "Galindez, Juliana", 
+        "codigo": "002.003.113.113", 
+        "texto_asistida": "Galindez, Juliana", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.113", 
+        "nombre": "Criolla, Julio Cesar", 
+        "codigo": "002.003.113.114", 
+        "texto_asistida": "Criolla, Julio Cesar", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.114", 
+        "nombre": "Ramirez, Ramiro Ismael", 
+        "codigo": "002.003.114.115", 
+        "texto_asistida": "Ramirez, Ramiro Ismael", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.114", 
+        "nombre": "Mario, Ricardo", 
+        "codigo": "002.003.114.116", 
+        "texto_asistida": "Mario, Ricardo", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.115", 
+        "nombre": "Cossa, Luiggi", 
+        "codigo": "002.003.115.117", 
+        "texto_asistida": "Cossa, Luiggi", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.115", 
+        "nombre": "Rossi, Francisco \"Pancho\" ", 
+        "codigo": "002.003.115.118", 
+        "texto_asistida": "Rossi, Francisco \"Pancho\" ", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.116", 
+        "nombre": "Mozolla, Juliana", 
+        "codigo": "002.003.116.119", 
+        "texto_asistida": "Mozolla, Juliana", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.116", 
+        "nombre": "Luzardi, Luisa", 
+        "codigo": "002.003.116.120", 
+        "texto_asistida": "Luzardi, Luisa", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.117", 
+        "nombre": "Guevara, Matias \"El Che\"", 
+        "codigo": "002.003.117.121", 
+        "texto_asistida": "Guevara, Matias \"El Che\"", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.117", 
+        "nombre": "Fernandez, Pablo Nicolas", 
+        "codigo": "002.003.117.122", 
+        "texto_asistida": "Fernandez, Pablo Nicolas", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.118", 
+        "nombre": "Chefa, Estefania", 
+        "codigo": "002.003.118.123", 
+        "texto_asistida": "Chefa, Estefania", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.118", 
+        "nombre": "German, Gerardo", 
+        "codigo": "002.003.118.124", 
+        "texto_asistida": "German, Gerardo", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.119", 
+        "nombre": "Juarez, Geronimo", 
+        "codigo": "002.003.119.125", 
+        "texto_asistida": "Juarez, Geronimo", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.119", 
+        "nombre": "Paez, Jacinta", 
+        "codigo": "002.003.119.126", 
+        "texto_asistida": "Paez, Jacinta", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.120", 
+        "nombre": "Perez, Christiano", 
+        "codigo": "002.003.120.127", 
+        "texto_asistida": "Perez, Christiano", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.120", 
+        "nombre": "Ricci, Santiago", 
+        "codigo": "002.003.120.128", 
+        "texto_asistida": "Ricci, Santiago", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.121", 
+        "nombre": "Casero, Alberto", 
+        "codigo": "002.003.121.129", 
+        "texto_asistida": "Casero, Alberto", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.121", 
+        "nombre": "Capozzolo, Diego", 
+        "codigo": "002.003.121.130", 
+        "texto_asistida": "Capozzolo, Diego", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.122", 
+        "nombre": "Martinez, Santiago Rafael", 
+        "codigo": "002.003.122.131", 
+        "texto_asistida": "Martinez, Santiago Rafael", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.122", 
+        "nombre": "Duarte, Carla", 
+        "codigo": "002.003.122.132", 
+        "texto_asistida": "Duarte, Carla", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.123", 
+        "nombre": "Hembrio, Andrea", 
+        "codigo": "002.003.123.133", 
+        "texto_asistida": "Hembrio, Andrea", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.123", 
+        "nombre": "Gostuski, Federica", 
+        "codigo": "002.003.123.134", 
+        "texto_asistida": "Gostuski, Federica", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.124", 
+        "nombre": "Fernandez, Walter", 
+        "codigo": "002.003.124.135", 
+        "texto_asistida": "Fernandez, Walter", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.124", 
+        "nombre": "Labandeira, Ezequiel", 
+        "codigo": "002.003.124.136", 
+        "texto_asistida": "Labandeira, Ezequiel", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.125", 
+        "nombre": "Urtizberea, Roberto", 
+        "codigo": "002.003.125.137", 
+        "texto_asistida": "Urtizberea, Roberto", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.125", 
+        "nombre": "Alberdi, Fabian", 
+        "codigo": "002.003.125.138", 
+        "texto_asistida": "Alberdi, Fabian", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.126", 
+        "nombre": "Pickard, Jean Luc", 
+        "codigo": "002.003.126.139", 
+        "texto_asistida": "Pickard, Jean Luc", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.126", 
+        "nombre": "Callejon, Juan Cruz", 
+        "codigo": "002.003.126.140", 
+        "texto_asistida": "Callejon, Juan Cruz", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.127", 
+        "nombre": "Urtizberea, Roberto", 
+        "codigo": "002.003.127.141", 
+        "texto_asistida": "Urtizberea, Roberto", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.127", 
+        "nombre": "Bello, Fabiana", 
+        "codigo": "002.003.127.142", 
+        "texto_asistida": "Bello, Fabiana", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "002.003.128", 
+        "nombre": "Gimenez, Ximena", 
+        "codigo": "002.003.128.144", 
+        "texto_asistida": "Gimenez, Ximena", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "002.003.128", 
+        "nombre": "Gonzales, Clara", 
+        "codigo": "002.003.128.143", 
+        "texto_asistida": "Gonzales, Clara", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CON", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "CON_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "INT_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Darwin, Charles Robert", 
+        "codigo": "001.001.009.022", 
+        "texto_asistida": "Darwin, Charles Robert", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Mendel, Gregor", 
+        "codigo": "001.001.009.023", 
+        "texto_asistida": "Mendel, Gregor", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 3, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "von Humboldt, Alexander", 
+        "codigo": "001.001.009.024", 
+        "texto_asistida": "von Humboldt, Alexander", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Picasso, Pablo", 
+        "codigo": "001.002.012.025", 
+        "texto_asistida": "Picasso, Pablo", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Mir\u00f3, Joan", 
+        "codigo": "001.002.012.026", 
+        "texto_asistida": "Mir\u00f3, Joan", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 3, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Saura, Antonio", 
+        "codigo": "001.002.012.027", 
+        "texto_asistida": "Saura, Antonio", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Bach, Johann Sebastian", 
+        "codigo": "001.002.109.089", 
+        "texto_asistida": "Baj, iojan Seb\u00e1stian", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Chopin, Fr\u00e9d\u00e9ric", 
+        "codigo": "001.002.109.090", 
+        "texto_asistida": "Chopin, Fr\u00e9d\u00e9ric", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "DIP_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Maradona, Diego", 
+        "codigo": "001.001.001.001", 
+        "texto_asistida": "Maradona, Diego", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Caniggia, Claudio Paul", 
+        "codigo": "001.001.001.002", 
+        "texto_asistida": "Caniggia, Claudio Paul", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "001.001.001.007", 
+        "texto_asistida": "Fangio, Juan Manuel", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.001", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "001.001.001.008", 
+        "texto_asistida": "Schumacher, Michael", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Curie, Marie", 
+        "codigo": "001.001.009.003", 
+        "texto_asistida": "Curie, Marie", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Curie, Pierre", 
+        "codigo": "001.001.009.004", 
+        "texto_asistida": "Curie, Pierre", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "001.001.009.009", 
+        "texto_asistida": "Newton, Isaac", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.001.009", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "001.001.009.010", 
+        "texto_asistida": "Kepler, Johannes ", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Dal\u00ed, Salvador", 
+        "codigo": "001.002.012.005", 
+        "texto_asistida": "Dal\u00ed, Salvador", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Vel\u00e1zquez, Diego", 
+        "codigo": "001.002.012.006", 
+        "texto_asistida": "Vel\u00e1zquez, Diego", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "001.002.012.011", 
+        "texto_asistida": "W\u00e1rjol, Andy", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.012", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "001.002.012.012", 
+        "texto_asistida": "Minuj\u00edn, Marta", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Lennon, John", 
+        "codigo": "001.002.109.082", 
+        "texto_asistida": "Lennon, John", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "McCartney, Paul", 
+        "codigo": "001.002.109.083", 
+        "texto_asistida": "McCartney, Paul", 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "001.002.109.084", 
+        "texto_asistida": "Sosa, Mercedes", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 2, 
+        "titular": true, 
+        "cod_lista": "001.002.109", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "001.002.109.085", 
+        "texto_asistida": "Yupanqui, Atahualpa", 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "GOB_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "numero_de_orden": 1, 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "texto_asistida": "Voto en BLANCO", 
+        "sexo": null
+    }
+]

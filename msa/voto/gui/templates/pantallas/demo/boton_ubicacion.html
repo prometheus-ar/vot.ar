@@ -1,0 +1,13 @@
+{{#columnas}}
+    <div class="columna">
+        {{#ubicaciones}}
+            <div class="btn {{#display_ext}}extranjera{{/display_ext}}" id="{{nro_mesa}}">
+                <p class="text"> {{departamento}} <br /> <strong>{{municipio}}</strong>
+                {{#display_ext}}
+                    {{extranjera}}
+                {{/display_ext}}
+                </p>
+            </div>
+        {{/ubicaciones}}
+    </div>
+{{/columnas}}

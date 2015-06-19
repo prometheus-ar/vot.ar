@@ -1,0 +1,64 @@
+[
+    {
+        "codigo": "completa",
+        "templates": [
+            {
+                "ancho": 540,
+                "alto": 700,
+                "font_size": 30,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [540, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [540, 350]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [1080, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 350,
+                "posicion": [1080, 350]
+            }
+        ]
+    },
+    {
+        "codigo": "completa_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 150,
+                "font_size": 12,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [180, 150]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 150,
+                "posicion": [360, 150]
+            }
+        ]
+    }
+]

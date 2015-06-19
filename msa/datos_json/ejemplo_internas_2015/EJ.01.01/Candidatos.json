@@ -1,0 +1,487 @@
+[
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Comaneci, Nadia", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Comaneci, Nadia", 
+        "codigo": "001.001.001", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Isinbayeva, Yelena", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Isinbayeva, Yelena", 
+        "codigo": "001.001.002", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Lovelace, Ada", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Lovelace, Ada", 
+        "codigo": "001.002.003", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Turing, Alan", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Turing, Alan", 
+        "codigo": "001.002.004", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Renoir, Pierre Auguste", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Renoir, Pierre Auguste", 
+        "codigo": "002.003.005", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "NDiaye, Iba", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "NDiaye, Iba", 
+        "codigo": "002.003.006", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Presley, Elvis", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Presley, Elvis", 
+        "codigo": "002.004.007", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Santana, Carlos", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Santana, Carlos", 
+        "codigo": "002.004.008", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "CNJ", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "CNJ_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Agassi, Andre", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Agassi, Andre", 
+        "codigo": "001.001.166", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Sampras, Pete", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Sampras, Pete", 
+        "codigo": "001.001.167", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Einstein, Albert", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Einstein, Albert", 
+        "codigo": "001.002.168", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Faraday, Michael", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Faraday, Michael", 
+        "codigo": "001.002.169", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Kahlo, Frida", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Kahlo, Frida", 
+        "codigo": "002.003.170", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Berni, Antonio", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Berni, Antonio", 
+        "codigo": "002.003.171", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Franklin, Aretha", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Franklin, Aretha", 
+        "codigo": "002.004.172", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Morissette, Alanis", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Morissette, Alanis", 
+        "codigo": "002.004.173", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "INT", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "INT_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Graf, Steffi", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Graf, Steffi", 
+        "codigo": "001.001.103", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Navratilova, Martina", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Navratilova, Martina", 
+        "codigo": "001.001.104", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Borg, Bj\u00f6rn", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Borg, Bj\u00f6rn", 
+        "codigo": "001.001.105", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Past\u00e9r, Lu\u00ed", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Pasteur, Louis", 
+        "codigo": "001.002.112", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Pascal, Blaise", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Pascal, Blaise", 
+        "codigo": "001.002.113", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "de Fermat, Pierre", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "de Fermat, Pierre", 
+        "codigo": "001.002.114", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Poloc, jacson", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Pollock, Jackson", 
+        "codigo": "002.003.124", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Frankenthaler, Helen", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Frankenthaler, Helen", 
+        "codigo": "002.003.125", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Hart Benton, Thomas", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Hart Benton, Thomas", 
+        "codigo": "002.003.126", 
+        "numero_de_orden": 3, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "M\u00f3zart, Wolfgang Amad\u00e9us", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Mozart, Wolfgang Amadeus", 
+        "codigo": "002.004.136", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Salieri, Antonio", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Salieri, Antonio", 
+        "codigo": "002.004.137", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "DIP", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "DIP_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Maradona, Diego", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Maradona, Diego", 
+        "codigo": "001.001.158", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Caniggia, Claudio Paul", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Caniggia, Claudio Paul", 
+        "codigo": "001.001.159", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Marie", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Curie, Marie", 
+        "codigo": "001.002.160", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Pierre", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Curie, Pierre", 
+        "codigo": "001.002.161", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Dal\u00ed, Salvador", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Dal\u00ed, Salvador", 
+        "codigo": "002.003.162", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Vel\u00e1zquez, Diego", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Vel\u00e1zquez, Diego", 
+        "codigo": "002.003.163", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Lennon, John", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Lennon, John", 
+        "codigo": "002.004.164", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "McCartney, Paul", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "McCartney, Paul", 
+        "codigo": "002.004.165", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "GOB_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Fangio, Juan Manuel", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "001.001.216", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Schumacher, Michael", 
+        "titular": true, 
+        "cod_lista": "001.001", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "001.001.217", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Newton, Isaac", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "001.002.218", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Kepler, Johannes ", 
+        "titular": true, 
+        "cod_lista": "001.002", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "001.002.219", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "W\u00e1rjol, Andy", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "002.003.220", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Minuj\u00edn, Marta", 
+        "titular": true, 
+        "cod_lista": "002.003", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "002.003.221", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Sosa, Mercedes", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "002.004.222", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Yupanqui, Atahualpa", 
+        "titular": true, 
+        "cod_lista": "002.004", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "002.004.223", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": ""
+    }
+]

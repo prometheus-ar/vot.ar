@@ -1,0 +1,16 @@
+[
+    {
+        "color": "#f1f374", 
+        "nombre": "Ultramix", 
+        "codigo": "002", 
+        "nombre_corto": null, 
+        "texto_asistida": ""
+    }, 
+    {
+        "color": "#975086", 
+        "nombre": "Megamix", 
+        "codigo": "001", 
+        "nombre_corto": null, 
+        "texto_asistida": ""
+    }
+]

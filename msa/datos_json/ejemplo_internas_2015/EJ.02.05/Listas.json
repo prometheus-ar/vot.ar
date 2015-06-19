@@ -1,0 +1,373 @@
+[
+    {
+        "cod_candidatos": [
+            "003.008.051", 
+            "003.008.052"
+        ], 
+        "asistida": "Partido de la Costa", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PC", 
+        "color": "#ff6633", 
+        "nombre": "Partido de la Costa", 
+        "codigo": "003.008", 
+        "numero": "112"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.020.033", 
+            "003.020.034"
+        ], 
+        "asistida": "Los Ni\u00f1os Primero", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "LNP", 
+        "color": "#ff6633", 
+        "nombre": "Los Ni\u00f1os Primero", 
+        "codigo": "003.020", 
+        "numero": "124"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.021.035", 
+            "003.021.036"
+        ], 
+        "asistida": "Partido de la Reivindicaci\u00f3n Popular", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PRP", 
+        "color": "#ff6633", 
+        "nombre": "Partido de la Reivindicaci\u00f3n Popular", 
+        "codigo": "003.021", 
+        "numero": "125"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.022.037", 
+            "003.022.038"
+        ], 
+        "asistida": "Frente Para el Cambio", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "FC", 
+        "color": "#ff6633", 
+        "nombre": "Frente Para el Cambio", 
+        "codigo": "003.022", 
+        "numero": "126"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.023.039", 
+            "003.023.040"
+        ], 
+        "asistida": "Partido Conservador", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PCO", 
+        "color": "#ff6633", 
+        "nombre": "Partido Conservador", 
+        "codigo": "003.023", 
+        "numero": "127"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.024.041", 
+            "003.024.042"
+        ], 
+        "asistida": "Partido Ultra Conservador", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PUC", 
+        "color": "#ff6633", 
+        "nombre": "Partido Ultra Conservador", 
+        "codigo": "003.024", 
+        "numero": "128"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.006.047", 
+            "003.006.048"
+        ], 
+        "asistida": "Vecinos Organizados", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "VO", 
+        "color": "#ff6633", 
+        "nombre": "Vecinos Organizados", 
+        "codigo": "003.006", 
+        "numero": "110"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.007.049", 
+            "003.007.050"
+        ], 
+        "asistida": "Partido Vecinalista", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PV", 
+        "color": "#ff6633", 
+        "nombre": "Partido Vecinalista", 
+        "codigo": "003.007", 
+        "numero": "111"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.009.053", 
+            "003.009.054"
+        ], 
+        "asistida": "Partido Marxista Vecinal", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PMV", 
+        "color": "#ff6633", 
+        "nombre": "Partido Marxista Vecinal", 
+        "codigo": "003.009", 
+        "numero": "113"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.001.009", 
+            "001.001.010", 
+            "001.001.174", 
+            "001.001.175", 
+            "001.001.158", 
+            "001.001.159", 
+            "001.001.216", 
+            "001.001.217"
+        ], 
+        "asistida": "Partido de los Deportistas", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PD", 
+        "color": "#0099ff,#00ffe6", 
+        "nombre": "Partido de los Deportistas", 
+        "codigo": "001.001", 
+        "numero": "1"
+    }, 
+    {
+        "cod_candidatos": [
+            "001.002.031", 
+            "001.002.032", 
+            "001.002.176", 
+            "001.002.177", 
+            "001.002.115", 
+            "001.002.116", 
+            "001.002.117", 
+            "001.002.160", 
+            "001.002.161", 
+            "001.002.218", 
+            "001.002.219"
+        ], 
+        "asistida": "Partido de los Cient\u00edficos", 
+        "cod_alianza": null, 
+        "cod_partido": "001", 
+        "nombre_corto": "PC", 
+        "color": "#663399", 
+        "nombre": "Partido de los Cient\u00edficos", 
+        "codigo": "001.002", 
+        "numero": "9"
+    }, 
+    {
+        "cod_candidatos": [
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC", 
+            "BLC.BLC.BLC"
+        ], 
+        "asistida": "Voto en BLANCO", 
+        "cod_alianza": null, 
+        "cod_partido": "BLC", 
+        "nombre_corto": "En Blanco", 
+        "color": "#ffffff", 
+        "nombre": "Votos en BLANCO", 
+        "codigo": "BLC", 
+        "numero": null
+    }, 
+    {
+        "cod_candidatos": [
+            "002.004.045", 
+            "002.004.046", 
+            "002.004.180", 
+            "002.004.181", 
+            "002.004.138", 
+            "002.004.139", 
+            "002.004.164", 
+            "002.004.165", 
+            "002.004.222", 
+            "002.004.223"
+        ], 
+        "asistida": "M\u00fasicos Unidos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "MU", 
+        "color": "#ff6633", 
+        "nombre": "M\u00fasicos Unidos", 
+        "codigo": "002.004", 
+        "numero": "109"
+    }, 
+    {
+        "cod_candidatos": [
+            "002.003.043", 
+            "002.003.044", 
+            "002.003.178", 
+            "002.003.179", 
+            "002.003.127", 
+            "002.003.128", 
+            "002.003.129", 
+            "002.003.162", 
+            "002.003.163", 
+            "002.003.220", 
+            "002.003.221"
+        ], 
+        "asistida": "Partido de los Artistas Pl\u00e1sticos", 
+        "cod_alianza": null, 
+        "cod_partido": "002", 
+        "nombre_corto": "PAP", 
+        "color": "#cc3333", 
+        "nombre": "Partido de los Artistas Pl\u00e1sticos", 
+        "codigo": "002.003", 
+        "numero": "12"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.019.029", 
+            "003.019.030"
+        ], 
+        "asistida": "Frente por un Barrio Limpio", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "FBL", 
+        "color": "#ff6633", 
+        "nombre": "Frente por un Barrio Limpio", 
+        "codigo": "003.019", 
+        "numero": "123"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.018.027", 
+            "003.018.028"
+        ], 
+        "asistida": "Partido Solidario", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PS", 
+        "color": "#ff6633", 
+        "nombre": "Partido Solidario", 
+        "codigo": "003.018", 
+        "numero": "122"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.015.021", 
+            "003.015.022"
+        ], 
+        "asistida": "Frente Unido", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "FU", 
+        "color": "#ff6633", 
+        "nombre": "Frente Unido", 
+        "codigo": "003.015", 
+        "numero": "119"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.014.019", 
+            "003.014.020"
+        ], 
+        "asistida": "Ejemplo Libre", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "EL", 
+        "color": "#ff6633", 
+        "nombre": "Ejemplo Libre", 
+        "codigo": "003.014", 
+        "numero": "118"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.017.025", 
+            "003.017.026"
+        ], 
+        "asistida": "Casas Para Todos", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "CPT", 
+        "color": "#ff6633", 
+        "nombre": "Casas Para Todos", 
+        "codigo": "003.017", 
+        "numero": "121"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.016.023", 
+            "003.016.024"
+        ], 
+        "asistida": "Partido de los Cient\u00edficos Locos", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PCL", 
+        "color": "#ff6633", 
+        "nombre": "Partido de los Cient\u00edficos Locos", 
+        "codigo": "003.016", 
+        "numero": "120"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.011.013", 
+            "003.011.014"
+        ], 
+        "asistida": "Partido Dem\u00f3crata de la Liberaci\u00f3n", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "PDL", 
+        "color": "#ff6633", 
+        "nombre": "Partido Dem\u00f3crata de la Liberaci\u00f3n", 
+        "codigo": "003.011", 
+        "numero": "115"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.010.011", 
+            "003.010.012"
+        ], 
+        "asistida": "Horizonte Nuevo", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "HN", 
+        "color": "#ff6633", 
+        "nombre": "Horizonte Nuevo", 
+        "codigo": "003.010", 
+        "numero": "114"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.013.017", 
+            "003.013.018"
+        ], 
+        "asistida": "Movimentaristas Asociados", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "MA", 
+        "color": "#ff6633", 
+        "nombre": "Movimentaristas Asociados", 
+        "codigo": "003.013", 
+        "numero": "117"
+    }, 
+    {
+        "cod_candidatos": [
+            "003.012.015", 
+            "003.012.016"
+        ], 
+        "asistida": "Movimiento Vecinal", 
+        "cod_alianza": null, 
+        "cod_partido": "003", 
+        "nombre_corto": "MV", 
+        "color": "#ff6633", 
+        "nombre": "Movimiento Vecinal", 
+        "codigo": "003.012", 
+        "numero": "116"
+    }
+]

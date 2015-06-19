@@ -1,0 +1,40 @@
+[
+    {
+        "descripcion": "Contiene los nombres de las listas especiales", 
+        "codigo": "listas_especiales", 
+        "valor": [
+            "IMP.IMP", 
+            "OBS.OBS"
+        ]
+    }, 
+    {
+        "descripcion": "Configuraciones de tipo de eleccion", 
+        "codigo": "tipo_eleccion", 
+        "valor": {
+            "adh_segmentada_nivel": 5, 
+            "paso": true, 
+            "adh_segmentada": false, 
+            "colapsar_partidos": 25, 
+            "interna": false, 
+            "colapsar_listas": 21
+        }
+    }, 
+    {
+        "descripcion": "Nombre de los campos extra a guardar en el chip", 
+        "codigo": "campos_extra", 
+        "valor": [
+            "boletas_contadas", 
+            "total_votantes"
+        ]
+    }, 
+    {
+        "descripcion": "Largo de los codigos de datos a guardar", 
+        "codigo": "len_cod", 
+        "valor": {
+            "categoria": 3, 
+            "mesa": 15, 
+            "candidato": 3, 
+            "interna": 3
+        }
+    }
+]

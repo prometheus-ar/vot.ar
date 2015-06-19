@@ -1,0 +1,38 @@
+[
+  {
+    "CNJ": "1.1", 
+    "DIP": "1.111", 
+    "GOB": "1.166", 
+    "INT": "1.174", 
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "2.3", 
+    "DIP": "2.120", 
+    "GOB": "2.168", 
+    "INT": "2.176", 
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "3.5", 
+    "DIP": "3.132", 
+    "GOB": "3.170", 
+    "INT": "3.178", 
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "CNJ": "4.7", 
+    "DIP": "4.144", 
+    "GOB": "4.172", 
+    "INT": "4.180", 
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }
+]

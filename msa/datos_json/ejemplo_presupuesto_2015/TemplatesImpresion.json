@@ -1,0 +1,42 @@
+[
+    {
+        "codigo": "tres",
+        "templates": [
+            {
+                "ancho": 540,
+                "alto": 700,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 700,
+                "posicion": [540, 0]
+            },
+            {
+                "ancho": 540,
+                "alto": 700,
+                "posicion": [1080, 0]
+            }
+        ]
+    },
+    {
+        "codigo": "tres_baja",
+        "templates": [
+            {
+                "ancho": 180,
+                "alto": 300,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 300,
+                "posicion": [180, 0]
+            },
+            {
+                "ancho": 180,
+                "alto": 300,
+                "posicion": [360, 0]
+            }
+        ]
+    }
+]

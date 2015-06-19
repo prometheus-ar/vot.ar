@@ -1,0 +1,53 @@
+[
+  {
+    "DIP": "1.117", 
+    "GOB": "1.166", 
+    "SEN": "1.233", 
+    "codigo": "1", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "2.129", 
+    "GOB": "2.168", 
+    "SEN": "2.235", 
+    "codigo": "2", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "3.141", 
+    "GOB": "3.170", 
+    "SEN": "3.237", 
+    "codigo": "3", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "4.151", 
+    "GOB": "4.172", 
+    "SEN": "4.239", 
+    "codigo": "4", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "5.154", 
+    "codigo": "5", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "6.157", 
+    "GOB": "2.168", 
+    "codigo": "6", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "7.160", 
+    "GOB": "3.170", 
+    "codigo": "7", 
+    "lista_completa": true
+  }, 
+  {
+    "DIP": "8.163", 
+    "GOB": "3.170", 
+    "codigo": "8", 
+    "lista_completa": true
+  }
+]

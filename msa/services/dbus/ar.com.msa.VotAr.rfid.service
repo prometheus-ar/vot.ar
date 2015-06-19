@@ -1,0 +1,4 @@
+[D-BUS Service]
+Name=ar.com.msa.VotAr.rfid
+Exec=/cdrom/app/msa/services/dbus/levantar_lector.sh
+User=root

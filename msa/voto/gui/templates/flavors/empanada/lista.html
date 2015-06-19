@@ -1,0 +1,30 @@
+<div id="{{id_boton}}" class="candidato candidato-lista-completa boton-lista {{seleccionado}}">
+    <div class="nombre-partido">{{lista.nombre}}</div>
+    {{#lista_codigo }}
+      <div class="lista">
+        <p class="palabra-lista">{{palabra_lista}}</p>
+        <p class="numero-lista">{{lista.numero}}</p>
+      </div>
+    {{/lista_codigo}}
+    {{#path_imagen_lista }}
+      <div class="foto-partido">
+          <img src="{{path_imagen_lista}}" />
+      </div>
+    {{/path_imagen_lista }}
+    {{#imagenes_candidatos}}
+    <div class="foto-candidato">
+        <img src="{{.}}" />
+    </div>
+    {{/imagenes_candidatos}}
+    <div class="clear"></div>
+    {{&colores}}
+    <div class="lista-candidatos">
+        {{#lista.candidatos}}
+        <div class="nombre-categoria">{{categoria}}</div>
+        <div class="nombre-candidato">{{nombre}}</div>
+        {{/lista.candidatos}}
+    </div>
+    {{^normal}}
+      <div class="">{{lista.categoria}}</div>
+    {{/normal}}
+</div>

@@ -1,0 +1,35 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1"
+     baseProfile="full"
+     width="{{width}}" height="{{height}}"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="font-size:21px;font-weight:bold;font-family: nimbus sans l;">
+  <rect width="{{width}}" height="{{height}}" fill="#ffffff"/>
+  {% if verificador %}
+    <image x="{{verificador.0}}" y="{{verificador.1}}" width="{{verificador.3}}" height="{{verificador.4}}" xlink:href="{{verificador.2}}"/> 
+  {% endif %}
+  {% if escudo %}
+    <image x="{{escudo.0}}" y="{{escudo.1}}" width="{{ escudo.2 }}" height="{{ escudo.3 }}" xlink:href="{{escudo.4}}"/>
+  {% endif %}
+  {% if titulo%}
+  <text x="{{titulo.0}}" y="{{titulo.1}}" width="{{titulo.4}}" style="font-size:{{titulo.3}}px;">{{titulo.2}}</text> 
+  {% endif %}
+  {% if subtitulo %}
+    <text x="{{subtitulo.0}}" y="{{subtitulo.1}}" width="{{subtitulo.4}}" style="font-size:{{subtitulo.3}}px;">{{subtitulo.2}}</text> 
+  {% endif %}
+  {% for linea in lineas %}
+    <line x1="{{linea.0}}" y1="{{linea.1}}" x2="{{linea.2}}" y2="{{linea.3}}" style="stroke:rgb(0,0,0);stroke-width:{{ancho_linea}}"/>
+  {% endfor %}
+
+  {% for sec in secciones %}
+    {% include sec.template %}
+  {% endfor %}
+  {% if watermark %}
+     <text x="{{watermark.0}}" y="{{watermark.1}}" transform="rotate(-40 800, 0)" style="font-size:{{watermark.3}}px;stroke:#ffffff;stroke-width:2px;">{{watermark.2}}</text> 
+  {% endif %}
+  {% if troquel %}
+     <text x="{{troquel.0}}" y="{{troquel.1}}" transform="rotate(270 110, 0)" style="font-size:{{troquel.3}}px;">{{troquel.2}}</text> 
+     <text x="{{sub_troquel.0}}" y="{{sub_troquel.1}}" transform="rotate(270 110, 0)" style="font-size:{{sub_troquel.3}}px;">{{sub_troquel.2}}</text> 
+  {% endif %}
+</svg>

@@ -1,0 +1,285 @@
+[
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "27", 
+        "nombre": "Arreglar todas las plazas", 
+        "codigo": "27.224", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "28", 
+        "nombre": "WIFI gratis para todos", 
+        "codigo": "28.225", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "29", 
+        "nombre": "Cumplea\u00f1os infantiles gratis", 
+        "codigo": "29.226", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "30", 
+        "nombre": "Bomberos Voluntarios", 
+        "codigo": "30.227", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "31", 
+        "nombre": "Cloacas para todos", 
+        "codigo": "31.228", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "32", 
+        "nombre": "Gas natural para todos", 
+        "codigo": "32.229", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "33", 
+        "nombre": "Monumento a Mascherano", 
+        "codigo": "33.230", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "34", 
+        "nombre": "Monumento a Juan Perez", 
+        "codigo": "34.231", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": null, 
+        "titular": true, 
+        "cod_lista": "35", 
+        "nombre": "Escalera al cielo", 
+        "codigo": "35.232", 
+        "numero_de_orden": 1, 
+        "sexo": "X"
+    }, 
+    {
+        "cod_categoria": "PRE", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "PRE_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Maradona, Diego", 
+        "titular": true, 
+        "cod_lista": "1", 
+        "nombre": "Maradona, Diego", 
+        "codigo": "1.166", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Caniggia, Claudio Paul", 
+        "titular": true, 
+        "cod_lista": "1", 
+        "nombre": "Caniggia, Claudio Paul", 
+        "codigo": "1.167", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Fangio, Juan Manuel", 
+        "titular": true, 
+        "cod_lista": "1", 
+        "nombre": "Fangio, Juan Manuel", 
+        "codigo": "1.233", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Schumacher, Michael", 
+        "titular": true, 
+        "cod_lista": "1", 
+        "nombre": "Schumacher, Michael", 
+        "codigo": "1.234", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Marie", 
+        "titular": true, 
+        "cod_lista": "2", 
+        "nombre": "Curie, Marie", 
+        "codigo": "2.168", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Curie, Pierre", 
+        "titular": true, 
+        "cod_lista": "2", 
+        "nombre": "Curie, Pierre", 
+        "codigo": "2.169", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Newton, Isaac", 
+        "titular": true, 
+        "cod_lista": "2", 
+        "nombre": "Newton, Isaac", 
+        "codigo": "2.235", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Kepler, Johannes ", 
+        "titular": true, 
+        "cod_lista": "2", 
+        "nombre": "Kepler, Johannes ", 
+        "codigo": "2.236", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Dal\u00ed, Salvador", 
+        "titular": true, 
+        "cod_lista": "3", 
+        "nombre": "Dal\u00ed, Salvador", 
+        "codigo": "3.170", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Vel\u00e1zquez, Diego", 
+        "titular": true, 
+        "cod_lista": "3", 
+        "nombre": "Vel\u00e1zquez, Diego", 
+        "codigo": "3.171", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "W\u00e1rjol, Andy", 
+        "titular": true, 
+        "cod_lista": "3", 
+        "nombre": "Warhol, Andy", 
+        "codigo": "3.237", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Minuj\u00edn, Marta", 
+        "titular": true, 
+        "cod_lista": "3", 
+        "nombre": "Minuj\u00edn, Marta", 
+        "codigo": "3.238", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Lennon, John", 
+        "titular": true, 
+        "cod_lista": "4", 
+        "nombre": "Lennon, John", 
+        "codigo": "4.172", 
+        "numero_de_orden": 1, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "McCartney, Paul", 
+        "titular": true, 
+        "cod_lista": "4", 
+        "nombre": "McCartney, Paul", 
+        "codigo": "4.173", 
+        "numero_de_orden": 2, 
+        "sexo": "M"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Sosa, Mercedes", 
+        "titular": true, 
+        "cod_lista": "4", 
+        "nombre": "Sosa, Mercedes", 
+        "codigo": "4.239", 
+        "numero_de_orden": 1, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Yupanqui, Atahualpa", 
+        "titular": true, 
+        "cod_lista": "4", 
+        "nombre": "Yupanqui, Atahualpa", 
+        "codigo": "4.240", 
+        "numero_de_orden": 2, 
+        "sexo": "F"
+    }, 
+    {
+        "cod_categoria": "SEN", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "SEN_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }, 
+    {
+        "cod_categoria": "GOB", 
+        "asistida": "Voto en BLANCO", 
+        "codigo_original": "BLC.BLC", 
+        "titular": true, 
+        "cod_lista": "BLC", 
+        "nombre": "Voto en blanco", 
+        "codigo": "GOB_BLC", 
+        "numero_de_orden": 1, 
+        "sexo": null
+    }
+]

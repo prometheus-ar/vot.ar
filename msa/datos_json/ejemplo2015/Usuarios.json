@@ -1,0 +1,62 @@
+[
+    {
+        "nombre_usuario": "capacitacion1",
+        "nombre": "Usuario de Capacitación 1",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.1"
+    },
+    {
+        "nombre_usuario": "capacitacion2",
+        "nombre": "Usuario de Capacitación 2",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.1"
+    },
+    {
+        "nombre_usuario": "capacitacion3",
+        "nombre": "Usuario de Capacitación 3",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.1"
+    },
+    {
+        "nombre_usuario": "capacitacion4",
+        "nombre": "Usuario de Capacitación 4",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.1"
+    },
+    {
+        "nombre_usuario": "capacitacion5",
+        "nombre": "Usuario de Capacitación 5",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.1"
+    },
+    {
+        "nombre_usuario": "capacitacion6",
+        "nombre": "Usuario de Capacitación 6",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.3"
+    },
+    {
+        "nombre_usuario": "capacitacion7",
+        "nombre": "Usuario de Capacitación 7",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.3"
+    },
+    {
+        "nombre_usuario": "capacitacion8",
+        "nombre": "Usuario de Capacitación 8",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.3"
+    },
+    {
+        "nombre_usuario": "capacitacion9",
+        "nombre": "Usuario de Capacitación 9",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.3"
+    },
+    {
+        "nombre_usuario": "capacitacion10",
+        "nombre": "Usuario de Capacitación 10",
+        "clave": "AAA111",
+        "ubicacion": "EJ.1.1.3"
+    }
+]

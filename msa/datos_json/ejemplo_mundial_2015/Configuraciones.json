@@ -1,0 +1,52 @@
+[
+  {
+    "codigo": "campos_extra", 
+    "descripcion": "Nombre de los campos extra a guardar en el chip", 
+    "valor": [
+      "boletas_contadas", 
+      "total_votantes"
+    ]
+  }, 
+  {
+    "codigo": "datos_eleccion", 
+    "descripcion": "Contiene los datos generales de la eleccion", 
+    "valor": {
+      "entidad": "Provincia de Ejemplo", 
+      "fecha": "26 de Enero de 2015", 
+      "subtitulo": "26 de Enero de 2015 - Provincia de Ejemplo", 
+      "titulo": "Elecciones de Autoridades Provinciales y Municipales"
+    }
+  }, 
+  {
+    "codigo": "db_version", 
+    "descripcion": "Indica la versi\u00f3n de los datos presentes en la DB", 
+    "valor": 20150109160624
+  }, 
+  {
+    "codigo": "len_cod", 
+    "descripcion": "Largo de los codigos de datos a guardar", 
+    "valor": {
+      "candidato": 3, 
+      "categoria": 3, 
+      "interna": 0, 
+      "mesa": 10
+    }
+  }, 
+  {
+    "codigo": "listas_especiales", 
+    "descripcion": "Contiene los nombres de las listas especiales", 
+    "valor": []
+  }, 
+  {
+    "codigo": "tipo_eleccion", 
+    "descripcion": "Configuraciones de tipo de eleccion", 
+    "valor": {
+      "adh_segmentada": true, 
+      "adh_segmentada_nivel": 1, 
+      "colapsar_listas": 21, 
+      "colapsar_partidos": 25, 
+      "interna": false, 
+      "paso": false
+    }
+  }
+]
