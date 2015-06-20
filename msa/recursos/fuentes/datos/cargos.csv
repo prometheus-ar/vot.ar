@@ -1,0 +1,4 @@
+id_cargo,id_cargo_descriptivo,descripcion,idx_col,descripcion_corta,texto_asistida,max_selecciones,consulta_popular,cargo_ejecutivo
+1,JEF,JEFE/A y VICEJEFE/A DE GOBIERNO,1,Jefe y V.Jefe,jéfe o jéfa y vicejéfe o vicejéfa de gobierno,1,NO,SI
+2,LEG,LEGISLADORES,2,Legisl.,legisladóres,1,NO,NO
+3,COM,MIEMBROS DE JUNTAS COMUNALES,3,M.J.Comunales,miémbros de júntas comunáles,1,NO,NO

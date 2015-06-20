@@ -35,7 +35,7 @@ function pantalla_impresion_certificados(path_qr){
     $("#terminar_escrutinio").unbind('click');
 
     hide_elements("#asistente_cierre, #terminar_escrutinio, #btn_regresar");
-    hide_elements("#instructivo");
+    hide_elements("#instructivo, .accesibilidad");
     $("#_txt_terminar_escrutinio").text(constants.terminar);
     $("#terminar_escrutinio span img").attr("src", "img/btn_siguiente_rojo.png");
 
@@ -56,7 +56,6 @@ function pantalla_revision(data){
     generar_tabla_recuento(data.cat_list, data.listas);
     generar_tabla_campos(data.campos_extra);
     show_elements("#tabla_campos");
-    show_elements(".accesibilidad");
 
     achicar_tabla_recuento();
 

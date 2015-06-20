@@ -11,13 +11,21 @@
         <div class="foto-partido">
             <img src="{{path_imagen_agrupacion}}" />
         </div>
+        <div class="nombre-partido">{{nombre_lista}}</div>
         <div class="candidato-principal">{{candidato.nombre}}</div>
         <div class="candidato-secundario">
           {{#candidato.secundarios}}
             {{nombre}};
           {{/candidato.secundarios}}
         </div>
-        <div class="nombre-partido">{{nombre_lista}}</div>
+        <div class="candidato-suplente">
+        {{#candidato.suplentes.0}}
+            <span class="cargo">Suplentes:</span>
+        {{/candidato.suplentes.0}}
+          {{#candidato.suplentes}}
+            {{nombre}};
+          {{/candidato.suplentes}}
+        </div>
     </div>
     {{#modificar}}
         <div class="btn-modificar-voto"><p>Modificar</p></div>

@@ -123,11 +123,11 @@ function click_confirmar_seleccion(){
     var candidatos_seleccionados = [];
     var categoria = null;
     $("#opciones .candidato-persona.seleccionado").each(function(){
-        var parts = $(this).attr("id").split("_");
+        var parts = $(this).attr("id").split("_")
         candidatos_seleccionados.push(parts[1]);
-    });
+    })
     var categoria = get_categoria_actual();
-    seleccionar_candidatos(categoria, candidatos_seleccionados);
+    seleccionar_candidatos(categoria, candidatos_seleccionados)
 }
 
 function click_lista(evento){

@@ -1,0 +1,389 @@
+@import "../base/variables";
+
+.btn-anterior, .btn-siguiente {
+    width: 78px;
+    height: 100%;
+    float: left;
+    margin-top: 30%;
+    img{
+        display: none;
+    }
+}
+
+.contenedor-blanco,
+.contenedor-central,
+.mensaje-cierre{
+
+    .slide{
+        width: 694px;
+        .contenido{
+            width: 100%;
+            height: 400px;
+        }
+    }
+
+    .titulo{
+        width: 100%;
+        font-size: 2.2em;
+        color: @celeste-votar;
+        font-weight: bold;
+    }
+
+    .subtitulo{
+        color: #231F20;
+        font-size: 1em;
+        font-weight: bold;
+    }
+
+    .encabezado{
+        background-image: url(../img/instructivo/flecha_encabezado.png);
+        background-repeat: no-repeat;
+        height: 110px;
+        margin-top: 50px;
+        text-align: left;
+        width: 100%;
+
+        .titulo{
+            float: left;
+            margin-left: 35px;
+            margin-bottom: 10px;
+            padding-top: 27px;
+        }
+        .subtitulo{
+            float: left;
+            font-size: 1em;
+            margin-left: 35px;
+        }
+    }
+
+    .recuadro-mediano{
+        background-image: url(../img/instructivo/flecha_celeste.png);
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        border: 1px solid @gris-medio;
+        border-radius: 5px 5px 5px 5px;
+        float: left;
+        padding: 10px;
+        p{
+            float:right;
+            font-size: 1.2em;
+            color: #666;
+            font-weight: normal;
+            text-align: left;
+        }
+    }
+
+    .recuadro-chico{
+        background-color: #FFFFFF;
+        border: 1px solid @gris-medio;
+        border-radius: 5px 5px 5px 5px;
+        padding: 10px;
+        text-align: left;
+    }
+
+    .instruccion{
+        p{
+            color: #000;
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        span{
+            font-size: 100%;
+            font-weight:normal;
+        }
+    }
+
+    .btn-iniciar{
+        margin: auto;
+        width: 278px;
+        text-shadow: rgba(0,0,0,.5) 0.1em 0.1em 0.1em;
+        border: 1px solid #eee;
+        opacity: .8;
+        height: 60px;
+        border-radius: 10px;
+        background: #37B4F6; /* Old browsers */
+        background: -moz-radial-gradient(#37B4F6 0%, #6ad4fb 0%, #2ab6ea 100%); /* FF3.6+ */
+        background: -webkit-gradient(color-stop(0%,#37B4F6), color-stop(0%,#6ad4fb), color-stop(100%,#2ab6ea)); /* Chrome,Safari4+ */
+        background: -webkit-radial-gradient(#37B4F6 0%,#6ad4fb 0%,#2ab6ea 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-radial-gradient(#37B4F6 0%,#6ad4fb 0%,#2ab6ea 100%); /* Opera 12+ */
+        background: -ms-radial-gradient(#37B4F6 0%,#6ad4fb 0%,#2ab6ea 100%); /* IE10+ */
+        background: radial-gradient(#37B4F6 0%,#6ad4fb 0%,#2ab6ea 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37B4F6', endColorstr='#6ad4fb',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+        p{
+            font-size: 1.5em;
+            margin-top: 17px;
+            font-weight: bold;
+            color: #fff;
+        }
+    }
+
+    .slide-1{
+        text-align: center;
+
+        .titulo{
+            font-size: 2.5em;
+            margin-top: 90px;
+        }
+
+        img{
+            //margin-bottom: 15px;
+            margin-top: 10px;
+        }
+
+        .texto-logo{
+            color: @gris-medio;
+            margin-bottom: 30px;
+        }
+    }
+
+    .slide-2{
+        display:none;
+        .contenido{
+            background-image: url(../img/instructivo/fondo_pantalla_2.png);
+            background-position: 15px 0;
+            background-repeat: no-repeat;
+
+            .recuadro-mediano{
+                margin-left: 400px;
+                margin-top: 60px;
+                width: 340px;
+                p{
+                    width: 300px;
+                }
+            }
+        }
+    }
+
+    .slide-3{
+        display:none;
+        .contenido{
+            background-image: url(../img/instructivo/fondo_pantalla_3.png);
+            background-position: 20px 0;
+            background-repeat: no-repeat;
+
+            .recuadro-chico:nth-child(1){
+                float: left;
+                margin-left: 15px;
+                margin-top: 125px;
+                width: 150px;
+            }
+            .recuadro-chico:nth-child(2){
+                float: right;
+                margin-top: 70px;
+                width: 100px;
+            }
+            .recuadro-chico:nth-child(3){
+                float: right;
+                margin-right: 80px;
+                margin-top: 320px;
+                width: 133px;
+            }
+        }
+    }
+
+    .slide-4{
+        display:none;
+        .contenido{
+            background-image: url(../img/instructivo/fondo_pantalla_4.png);
+            background-position: 15px 0;
+            background-repeat: no-repeat;
+
+            .recuadro-chico{
+                width: 173px;
+                margin-left: 30px;
+                margin-top: 15px;
+            }
+        }
+    }
+
+    .slide-5{
+        display:none;
+        .contenido{
+            background-image: url(../img/instructivo/fondo_pantalla_5.png);
+            background-position: 15px 0;
+            background-repeat: no-repeat;
+
+            .recuadro-chico{
+                width: 160px;
+                margin-left: 30px;
+                margin-top: 15px;
+            }
+
+        }
+    }
+
+    .slide-6{
+        display: none;
+        .titulo{
+            font-weight: bold;
+            text-align: center;
+            margin-left: 0px;
+        }
+
+        span{
+            width: 600px;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            margin-top: 50px;
+            display: inline-block;
+            line-height: 30px;
+            text-align: center;
+        }
+
+        .sensor{
+           height: 80px;
+           width: 80px;
+           vertical-align: middle;
+           margin: auto;
+           img {
+               height: 76px;
+               width: 63px;
+               }
+        }
+
+        .btn-iniciar{
+            margin-top: 25px;
+        }
+
+        .flecha-logo{
+            float: right;
+            img{
+                width: 111px;
+                height: 105px;
+            }
+            p{
+                color: @gris-medio;
+                height: 40px;
+                font-size: 0.5em;
+             }
+        }
+    }
+
+}
+
+#asistente_cierre{
+
+    .slide{
+        height: 567px;
+        width: 100%;
+        .contenido{
+            width: 850px;
+            height: 457px;
+            margin: 0px;
+            background-image: none;
+            text-align: center;
+        }
+    }
+
+    .titulo{
+        font-size: 2em;
+    }
+
+    .encabezado{
+        margin-left: 30px;
+    }
+
+    .bullet{
+        background-image: url(../img/asistente_cierre/bullet.png);
+        background-origin: content-box;
+        background-repeat: no-repeat;
+        padding: 5px;
+        float: left;
+        p{
+            margin-left: 20px;
+            float:right;
+            color: #666;
+            font-weight: normal;
+            text-align: left;
+        }
+    }
+
+    .slide-1{
+        .titulo{
+            font-size: 2.0em;
+            margin-top: 45px;
+            line-height: 1.5;
+        }
+    }
+
+    .slide-2{
+        .titulo{
+            font-size: 2.0em;
+            margin-top: 45px;
+            line-height: 1.5;
+        }
+    }
+
+    .slide-4{
+        display: none;
+
+        .contenido{
+            background-image: url(../img/asistente_cierre/urna_faja.png);
+            background-position: 80px 30px;
+            background-repeat: no-repeat;
+
+            .bullet:nth-child(1){
+                margin-left: 320px;
+                margin-top: 52px;
+                width: 75px;
+            }
+            .bullet:nth-child(2){
+                float: right;
+                margin-right: 158px;
+                margin-top: 89px;
+                width: 152px;
+            }
+            .bullet:nth-child(3){
+                margin-left: 352px;
+                margin-top: 218px;
+                width: 195px;
+            }
+        }
+
+    }
+
+    .slide-5{
+        display: none;
+        text-align: center;
+
+        .contenido{
+            background-image: url(../img/asistente_cierre/devolucion_actas.png);
+            background-position: 50px -20px;
+            background-repeat: no-repeat;
+
+            .bullet:nth-child(1){
+                margin-left: 669px;
+                margin-top: 29px;
+                width: 144px;
+            }
+            .bullet:nth-child(2){
+                margin-left: 367px;
+                margin-top: 57px;
+                width: 200px;
+            }
+            .bullet:nth-child(3){
+                margin-left: 306px;
+                margin-top: 60px;
+                width: 146px;
+            }
+            .bullet:nth-child(4){
+                margin-left: 236px;
+                margin-top: 75px;
+                width: 100px;
+            }
+            .bullet:nth-child(5){
+                margin-left: 604px;
+                margin-top: 40px;
+                width: 120px;
+            }
+        }
+
+    }
+
+    .slide-6{
+        display: none;
+    }
+}
+

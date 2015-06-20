@@ -6,7 +6,7 @@ import time
 from base64 import b64encode
 from urllib2 import quote
 
-from msa.settings import QUEMA
+from msa.settings import MODO_DEMO
 from msa.core.clases import Apertura
 from msa.core.rfid.constants import TAG_APERTURA
 from msa.core.settings import USA_ARMVE
@@ -150,7 +150,7 @@ class ModuloApertura(Modulo):
 
         if USA_ARMVE:
             datos = self.apertura.a_tag()
-            marcar_ro = QUEMA
+            marcar_ro = not MODO_DEMO
             guardado_ok = sesion.lector.guardar_tag(TAG_APERTURA, datos,
                                                     marcar_ro)
         else:

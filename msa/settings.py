@@ -3,7 +3,6 @@ import os
 
 DEBUG = False
 MODO_DEMO = True
-QUEMA = True
 
 PATH_CODIGO = '/cdrom/app/msa/'  # poner la barra al final
 PATH_REPO_RECURSOS = '/opt/eleccion_recursos/'

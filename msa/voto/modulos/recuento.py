@@ -164,11 +164,9 @@ class ModuloRecuento(Modulo):
                 sesion.mesa = sesion.recuento.mesa
 
                 def _inner():
-                    if hasattr(self.controller, "set_mensaje"):
-                        self.controller.set_mensaje(_("cargando_recuento"))
-                    gobject.timeout_add(4000, self.revision_recuento)
                     if self.rampa.tiene_papel:
                         self.rampa.expulsar_boleta()
+                    self.revision_recuento()
                 gobject.timeout_add(1000, _inner)
 
             else:
@@ -193,8 +191,8 @@ class ModuloRecuento(Modulo):
                                .set_pantalla_impresion_certificados)
         self.print_manager.callback = self.print_manager.reset_copias
         self._cargar_ui_recuento()
-        #self.controller.set_pantalla_impresion_certificados()
-        #self.habilitar_impresion_certificados()
+        self.controller.set_pantalla_impresion_certificados()
+        self.habilitar_impresion_certificados()
         self.copiar_certificados()
         sesion.impresora.remover_consultar_tarjeta()
         if USA_ARMVE:
@@ -275,7 +273,6 @@ class ModuloRecuento(Modulo):
         def esperando_papel(tipo_acta):
             self.controller.pedir_acta(tipo_acta[0])
 
-        self.rampa.expulsar_boleta()
         self.print_manager.imprimir_secuencia(
             False, pre_impresion, waiting_paper_callback=esperando_papel)
 
@@ -357,9 +354,9 @@ class ModuloRecuento(Modulo):
                         pass
 
                     self.print_manager.imprimir_secuencia(True,
-                                                          pre_impresion,
-                                                          post_impresion,
-                                                          esperando_papel)
+                                                            pre_impresion,
+                                                            post_impresion,
+                                                            esperando_papel)
                 else:
                     # En otro caso (levanto un recuento ya grabado) solo
                     # mando a imprimir la secuencia.

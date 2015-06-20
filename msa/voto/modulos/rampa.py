@@ -449,11 +449,9 @@ class RampaRecuento(RampaActas):
                 self.modulo.estado = E_VERIFICACION
                 self.modulo.procesar_tag(tag_dict)
             elif tipo_tag == NO_TAG:
-                self._show_pantalla_inicial()
+                    self._show_pantalla_inicial()
         elif tipo_tag == TAG_ADMIN:
             self.tag_admin()
-        elif tipo_tag == TAG_COLISION and sorted(tag_dict['tipo']) == [0, 4]:
-            self.expulsar_boleta()
         elif tipo_tag == TAG_COLISION and tag_dict['tipo'] \
                 not in ([0, 0], [1, 1], [1], [0], []):
             self.tag_admin()

@@ -1,0 +1,5 @@
+id_candidato,id_lista,id_cargo,id_provincia,id_departamento,id_localidad,nombre,norden,sexo,titular,texto_asistida,especial,voto_positivo
+BLC,BLC,,,,,Votos en BLANCO,1,,SI,Voto en BLANCO,SI,SI
+IMP,IMP,,,,,Votos IMPUGNADOS,1,,SI,Votos IMPUGNADOS,SI,NO
+OBS,OBS,,,,,Votos OBSERVADOS,1,,SI,Votos OBSERVADOS,SI,NO
+REC,REC,,,,,Votos RECURRIDOS,1,,SI,Votos RECURRIDOS,SI,NO

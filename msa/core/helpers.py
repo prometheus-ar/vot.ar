@@ -13,6 +13,7 @@ from msa.core.data.settings import PATH_DATOS_JSON
 from msa.core.settings import (IMPRESION_USBLP, USB_PRINTER_PRODUCT_ID,
                                USB_PRINTER_VENDOR_ID)
 from msa.settings import PATH_CODIGO, PATH_REPO_RECURSOS, PATH_TTS
+from msa.voto.settings import PATH_FOTOS_ORIGINALES
 
 
 logger = get_logger("helpers")
@@ -30,9 +31,8 @@ def crear_juego(nombre):
     """
     Crea un nuevo juego de datos
     """
-    from msa.voto.settings import PATH_FOTOS_ORIGINALES
     archivos_sql = ['adhesiones_cargos.sql', 'adhesiones.sql',
-                    'candidaturas.sql',
+                    'candidaturas',
                     'cargo_candidatura_ubicacion.sql', 'cargos.sql',
                     'configuraciones.sql', 'dhont.sql',
                     'estados.sql',
@@ -81,7 +81,6 @@ def eliminar_juego(nombre):
     """
     Elimina un juego de datos existente
     """
-    from msa.voto.settings import PATH_FOTOS_ORIGINALES
     print("Eliminando juego de datos %s" % nombre)
     dir_json = os.path.join(PATH_CODIGO, 'datos_json', nombre)
     if os.path.exists(dir_json):
@@ -111,12 +110,12 @@ def smart_title(string):
     Tituliza un string sin tener en cuenta ciertas palabras
     (ex. preposiciones, etc.)
     """
-    EXCEPCIONES = ('a', 'ante', 'bajo', 'con', 'contra', 'de', 'desde', 'del',
-                   'durante', 'e', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'y',
-                   'para', 'por', 'según', 'segun', 'sin', 'so', 'sobre',
+    EXCEPCIONES = ('ante', 'bajo', 'con', 'contra', 'de', 'desde', 'del',
+                   'durante', 'e', 'en', 'entre', 'hacia', 'hasta', 'mediante',
+                   'y', 'para', 'por', 'según', 'segun', 'sin', 'so', 'sobre',
                    'tras', 'versus', 'via', 'la', 'los')
-    SIGLAS = ('ti', 'mst', 'pro', '(aps)', '(aupec)', '(mst)',
-              'ucr', 'unen', 'ps')
+    SIGLAS = ('ti', 'ba', 'mst', 'ari', 'pro', '(aps)', '(aupec)', '(mst)',
+              'ucr', 'unen', 'ps', 'cfk', 'mmxv', 'surgen')
     # Primero titulizamos el string
     titleized = string.title()
     splitted = titleized.split(' ')

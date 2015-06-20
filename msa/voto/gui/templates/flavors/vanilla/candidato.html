@@ -6,15 +6,28 @@
     <div class="foto-candidato">
         <img src="{{path_imagen}}" />
     </div>
+    {{#candidato.secundarios.0.imagen}}
+        <div class="foto-secundario">
+            <img src="{{path_imagen_secundario}}" />
+        </div>
+    {{/candidato.secundarios.0.imagen}}
     <div class="foto-partido">
         <img src="{{path_imagen_agrupacion}}" />
     </div>
     <div class="nombre-partido">{{candidato.lista.nombre}}</div>
-    <div class="candidato-principal">{{candidato.nombre}}</div>
+    <div class="candidato-principal">
+        {{#candidato.secundarios.0.imagen}}
+            <span class="cargo">Jefe/a de Gobierno:</span>
+        {{/candidato.secundarios.0.imagen}}
+        {{candidato.nombre}}
+    </div>
     <div class="candidato-secundario">
-      {{#candidato.secundarios}}
-        {{nombre}};
-      {{/candidato.secundarios}}
+        {{#candidato.secundarios.0.imagen}}
+            <span class="cargo">Vicejefe/a de Gobierno:</span>
+        {{/candidato.secundarios.0.imagen}}
+        {{#candidato.secundarios}}
+            {{nombre}};
+        {{/candidato.secundarios}}
     </div>
     {{&extra_html}}
 </div>

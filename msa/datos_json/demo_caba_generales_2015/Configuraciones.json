@@ -1,0 +1,56 @@
+[
+  {
+    "codigo": "campos_extra", 
+    "descripcion": "Nombre de los campos extra a guardar en el chip", 
+    "valor": [
+      "boletas_contadas", 
+      "total_votantes"
+    ]
+  }, 
+  {
+    "codigo": "datos_eleccion", 
+    "descripcion": "Contiene los datos generales de la eleccion", 
+    "valor": {
+      "entidad": "Ciudad Aut\u00f3noma de Buenos Aires", 
+      "fecha": "26 de Abril de 2015", 
+      "subtitulo": "26 de Abril de 2015 \u2013 Ciudad Aut\u00f3noma de Buenos Aires", 
+      "titulo": "Elecciones Generales"
+    }
+  }, 
+  {
+    "codigo": "db_version", 
+    "descripcion": "Indica la versi\u00f3n de los datos presentes en la DB", 
+    "valor": 20150415195807
+  }, 
+  {
+    "codigo": "len_cod", 
+    "descripcion": "Largo de los codigos de datos a guardar", 
+    "valor": {
+      "candidato": 3, 
+      "categoria": 3, 
+      "interna": 3, 
+      "mesa": 12
+    }
+  }, 
+  {
+    "codigo": "listas_especiales", 
+    "descripcion": "Contiene los nombres de las listas especiales", 
+    "valor": [
+      "IMP", 
+      "OBS", 
+      "REC"
+    ]
+  }, 
+  {
+    "codigo": "tipo_eleccion", 
+    "descripcion": "Configuraciones de tipo de eleccion", 
+    "valor": {
+      "adh_segmentada": false, 
+      "adh_segmentada_nivel": 1, 
+      "colapsar_listas": 21, 
+      "colapsar_partidos": 25, 
+      "interna": false, 
+      "paso": false
+    }
+  }
+]

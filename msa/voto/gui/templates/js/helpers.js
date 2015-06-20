@@ -76,18 +76,3 @@ function get_template(name, dir_){
     }
     return template;
 }
-
-function crear_div_colores(color_partido){
-    var item = "";
-    if(color_partido){
-      var template = get_template("colores");
-      var colores = color_partido.split(",");
-      var template_data = {
-          num_colores: colores.length,
-          colores: colores
-      };
-
-      item = Mustache.to_html(template, template_data);
-    }
-    return item;
-}

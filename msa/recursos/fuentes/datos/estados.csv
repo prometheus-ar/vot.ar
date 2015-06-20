@@ -1,0 +1,8 @@
+"id_estado","descripcion","bg_color1","bg_color2","prioridad","orden","accion"
+"Espera","No recibidas","#ffff7b","#ffffad",50,1,
+"Recibida","Recibidas","#abb5ff","#c4cbff",60,2,
+"En Proceso","En Proceso","#c89eff","#d7b8ff",70,3,
+"Aprobar","Pendientes de aprobación - DESHABILITADO","#f0f0f0","#f0f0f0",0,4,"aprobar"
+"Verificar","A verificar","#ffcf6b","#ffd785",5,5,"verificar"
+"OK","Pendientes de publicación","#80ed94","#98eda8",80,6,
+"Publicada","Publicadas en reportes","#abff5a","#c6ff8c",90,7,"observar"

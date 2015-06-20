@@ -1,0 +1,92 @@
+@background-color: #EEE;
+@dialog-error-color: rgba(210, 22, 22, 0.6);
+@dialog-success-color: rgba(35, 210, 35, 0.6);
+
+@title-color: #0197FD;
+
+
+body{
+    background-color: @background-color;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container{
+    width: 60%;
+    margin: 10% auto;
+}
+
+
+.column{
+    margin: 0 auto;
+    width: auto;
+
+    .row{
+        text-align: center;
+        margin: 0 auto;
+    }
+}
+
+.indicator{
+    display: none;
+    left: -100px;
+    top: -100px;
+}
+
+.logo{
+    background-image:url('img/logo_votar_grande.png');
+    width: 40%;
+}
+
+.title{
+    font-size: 48px;
+    font-weight: bold;
+    color: @title-color;
+    text-align: center;
+    cursor: default;
+}
+
+.dialog{
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    border: 0px solid;
+    border-radius: 10px;
+    cursor: default;
+}
+
+.error{
+    background-color: @dialog-error-color;
+    border: 1px solid;
+    border-color: darken(@dialog-error-color, 10%);
+}
+
+.success{
+    background-color: @dialog-success-color;
+    border: 1px solid;
+    border-color: darken(@dialog-success-color, 10%);
+}
+
+#timer{
+    display: none;
+}
+
+#pointer{
+    position: absolute;
+    left:-100px;
+    top: -100px;
+    width: 48px;
+    height: 48px;
+    background-image: url(../img/puntero.png);
+    background-repeat: no-repeat;
+}
+
+#progress{
+    position: absolute;
+    left:-100px;
+    top: -100px;
+}

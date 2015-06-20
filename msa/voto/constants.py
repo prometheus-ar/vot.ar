@@ -187,8 +187,7 @@ CANTIDAD_SUPLENTES = 1
 TIPO_DOC = ["DNI", "LC", "LE"]
 
 NUMEROS_TEMPLATES = {"vanilla": [2, 4, 6, 9, 12, 16, 20, 24, 30, 36],
-                     "empanada": [2, 3, 4, 6, 8, 10, 12, 15, 18, 21,
-                                  24, 28, 32, 36],
+                     "empanada": [2, 3, 4, 6, 8, 10, 15, 18, 21],
                      "soja": [8, ],
                      "caipirinha": [2, 4, 6, 9, 12, 16, 20, 24, 30, 36]}
 

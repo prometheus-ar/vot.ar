@@ -1,0 +1,158 @@
+[
+    {
+        "codigo": "CABA",
+        "cod_template": "tres"
+    }, 
+    {
+        "codigo": "BA.1.1",
+        "cod_template": "capital"
+    }, 
+    {
+        "codigo": "BA.7",
+        "cod_template": "cinco"
+    }, 
+    {
+        "codigo": "BA.8",
+        "cod_template": "cinco" 
+    }, 
+    {
+        "codigo": "BA.10",
+        "cod_template": "cinco" 
+    }, 
+    {
+        "codigo": "BA.11",
+        "cod_template": "cinco" 
+    }, 
+    {
+        "codigo": "BA.12",
+        "cod_template": "tres" 
+    }, 
+    {
+        "codigo": "BA.13",
+        "cod_template": "cinco" 
+    }, 
+    {
+        "codigo": "BA.16",
+        "cod_template": "cinco" 
+    }, 
+    {
+        "codigo": "BA.17",
+        "cod_template": "tres" 
+    }, 
+    {
+        "codigo": "BA.20",
+        "cod_template": "tres" 
+    }, 
+    {
+        "codigo": "BA.1.1.92",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.1.2.5.4007",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.5.2.3.4008",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.5.3.1.4009",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.11.1.7.4010",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.11.2.1.4011",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.3.2.2.4012",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.3.1.2.4013",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.3.3.8.4014",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.2.2.1.4015",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.13.1.1.4016",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.3.3.4017",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.2.3.4018",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.5.4.4019",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.6.1.4020",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.1.4.4021",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.1.4.4022",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.1.4.4023",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.7.4.1.4024",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.15.1.8.4025",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.21.2.9.4026",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.21.1.2.4027",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.8.5.6.4028",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.8.1.2.4029",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.8.3.1.4030",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.8.6.4.4031",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.8.4.4.4032",
+        "cod_template": "extranjeros" 
+    },
+    {
+        "codigo": "BA.10.2.2.4033",
+        "cod_template": "extranjeros" 
+    }
+]

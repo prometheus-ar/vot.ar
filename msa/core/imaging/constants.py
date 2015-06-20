@@ -18,10 +18,9 @@ medidas_alta = {
 
     'titulo': (595, 35),
     'subtitulo': (595, 70),
-    'tercer_titulo': (595, 70),
     'img_verificador': 'verificador_alta.png',
 
-    'default_tfz': 26,
+    'default_tfz': 25,
     'fs_water': 30,
     'fs_titulo': 35,
     'fs_subtitulo': 30,
@@ -38,13 +37,13 @@ medidas_alta = {
     'padding_txt_lista': 22, # separacion entre el tope del bloque y la palabra lista
     'padding_num_lista': 40, # separacion enter la palabra_lista y el numero
     'padding_nom_lista': 125, # separacion entre el tope del bloque y el nombre del la lista
-    'sep_lineas_lista': 30, # alto de las lineas del nombre de la lista
+    'sep_lineas_lista': 25, # alto de las lineas del nombre de la lista
     'padding_cand_titular': 10,
     'sep_lineas_titular': 25, # alto de las lineas del nombre de la lista
     'padding_secundarios': 20, # separacion entre el titular y los secunadarios
     'padding_selecciones': 90, # margen superior desde el borde de la boleta hasta el primer bloque
     'fs_secundarios': 3, # cantidad de numeros menos de fuente que tiene el secundario que el principal
-    'sep_lineas_secundarios': 25, # alto de las lineas del nombre de la lista
+    'sep_lineas_secundarios': 23, # alto de las lineas del nombre de la lista
 }
 
 medidas_baja = {

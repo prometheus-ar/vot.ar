@@ -1,0 +1,80 @@
+.flavor() when (@flavor = soja) {
+    .opciones .candidato{
+
+    // Esquema //
+
+        .foto-candidato,
+        .foto-principal{
+            .column-p(11, 24);
+        }
+
+        .foto-partido,
+        .foto-secundaria{
+            .column-p(5, 24);
+        }
+
+        .nombre-partido, .candidato-principal, .candidato-secundario,{
+            .column-p(11, 24);
+        }
+
+    // Estilos generales //
+        &.candidato-persona {
+            .nombre-partido{
+                border-bottom: 1px solid @gris-medio;
+            }
+            .candidato-secundario{
+                color: @celeste-votar;
+            }
+        }
+
+        &.candidato-lista-completa{
+            .foto-partido{
+                .column-p(11, 24);
+            }
+            .nombre-partido{
+                color: @azul;
+                font-size: 1em;
+                margin-top: 0px; 
+            }
+        }
+
+    }
+
+    // Estilos especificos //
+    .opciones {
+        &.max8 {
+            .candidato-persona {
+                .foto-candidato {
+                    .column-p(18,24);
+                }
+                .foto-partido, .nombre-partido {
+                    display: none;
+                }
+                .candidato-principal {
+                    .column-p(24,24);
+                    font-size: 1.2em;
+                }
+                .candidato-secundario {
+                    .column-p(24,24);
+                    font-size: 1em;
+                }
+                .lista {
+                    font-size: 1.2em;
+                }
+                .numero-lista{
+                    font-size: 4em;
+                }
+            }
+        }
+    }
+
+    .confirmados {
+        .nombre-cargo{
+            min-height: 13px;
+        }
+        .foto-candidato{
+            width: 280px;
+            height: 280px;
+        }
+    }
+}

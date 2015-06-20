@@ -33,7 +33,7 @@ function generar_tabla_recuento(cat_list, listas){
 
         // Creo la fila de una lista.
 
-        var id_fila = 'lista_' + listas[i].codigo.replace(new RegExp("\\.", "g"), "_");
+        var id_fila = 'lista_' + listas[i].codigo.replace(".", "_");
         var lista_numero = listas[i].codigo === constants.cod_lista_blanco ? "-" : listas[i].numero;
 
         var candidatos = listas[i].candidatos;
@@ -118,9 +118,9 @@ function mover(event){
 }
 
 function mover_a_lista(codigo){
-    var contenedor = $(".tabla-scrolleable");
-    var offset_lista = $("#lista_" + codigo.replace(new RegExp("\\.", "g"), "_"))[0].offsetTop;
-    contenedor[0].scrollTop = offset_lista;
+    var contenedor = $("#scroll_tabla");
+    var offset_lista = $("#lista_" + codigo.replace(".", "_"))[0].offsetTop;
+    contenedor.scrollTop = offset_lista;
 }
 
 function resaltar_seleccion(){
@@ -143,7 +143,7 @@ function actualizar_tabla(){
     var seleccion = seleccion_actual.seleccion;
     for(var i in seleccion){
         var index_col = map_categorias.indexOf(seleccion[i].categoria.codigo) + 3;
-        var nombre_celda = "#lista_" + seleccion[i].candidato.cod_lista.replace(new RegExp("\\.", "g"), "_")
+        var nombre_celda = "#lista_" + seleccion[i].candidato.cod_lista.replace(".", "_")
         var selector_celda = nombre_celda + " td:nth-child(" + index_col + ")"
         var celda = $(selector_celda);
         celda.text(seleccion[i].candidato.votos);

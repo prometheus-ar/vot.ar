@@ -10,7 +10,7 @@
     <text x="{{id_planilla.0}}" y="{{id_planilla.1}}" style="font-size:30px;">{{id_planilla.2}}</text>
   {% endif %}
   {% if qr %}
-    <image x="{{qr.0}}" y="{{qr.1}}" width="{{qr.3}}" height="{{qr.4}}" xlink:href="{{qr.2}}"/>
+    <image x="{{qr.0}}" y="{{qr.1}}" width="380" height="380" xlink:href="{{qr.2}}"/>
   {% endif %}
   {% if verificador %}
     <image x="{{verificador.0}}" y="{{verificador.1}}" width="180" height="180" xlink:href="{{verificador.2}}"/>
@@ -18,11 +18,15 @@
   {% if escudo %}
     <image x="{{escudo.0}}" y="{{escudo.1}}" width="80" height="80" xlink:href="{{escudo.2}}"/>
   {% endif %}
-  <text x="{{titulo1.0}}" y="{{titulo1.1}}" >{{titulo1.2}}</text>
-  <text x="{{titulo2.0}}" y="{{titulo2.1}}" >{{titulo2.2}}</text>
-  <text x="{{titulo3.0}}" y="{{titulo3.1}}" >{{titulo3.2}}</text>
-  <text x="{{titulo4.0}}" y="{{titulo4.1}}" >{{titulo4.2}}</text>
-  <text x="{{titulo5.0}}" y="{{titulo5.1}}" >{{titulo5.2}}</text>
+  {% if encabezado_actas %}
+    <text x="{{encabezado_actas.0}}" y="{{encabezado_actas.1}}" >{{encabezado_actas.2}}</text>
+  {% endif %}
+  {% if titulo_eleccion %}
+    <text x="{{titulo_eleccion.0}}" y="{{titulo_eleccion.1}}">{{titulo_eleccion.2}}</text>
+  {% endif %}
+  {% if entidad %}
+    <text x="{{entidad.0}}" y="{{entidad.1}}">{{entidad.2}}</text>
+  {% endif %}
   <text x="{{titulo_acta.0}}" y="{{titulo_acta.1}}" width="800px" style="text-anchor:middle">
       {% for line in titulo_acta.2%}
       <tspan x="{{margin_center}}" dy="1em">

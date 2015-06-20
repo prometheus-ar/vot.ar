@@ -145,8 +145,8 @@ class ControllerRecuento(WebContainerController):
 
         if get_tipo_elec("paso"):
             def _sort_listas_paso(lista_a, lista_b):
-                return cmp((lista_a.partido.nombre.upper(), lista_a.numero),
-                           (lista_b.partido.nombre.upper(), lista_b.numero))
+                return cmp(lista_a.partido.nombre.upper(),
+                           lista_b.partido.nombre.upper())
             data_listas = sorted(data_listas, _sort_listas_paso)
         else:
             def _sort_listas(lista_a, lista_b):
@@ -160,17 +160,17 @@ class ControllerRecuento(WebContainerController):
         if lista_blanca is not None:
             data_listas.append(lista_blanca)
         listas = []
-        principales = {(candidato.cod_lista, candidato.cod_categoria): candidato
-                       for candidato in Candidato.many(titular=True,
-                                                       numero_de_orden=1)}
         for lista in data_listas:
             lista_dict = lista.to_dict()
             if lista.partido is not None:
                 lista_dict['nombre_partido'] = lista.partido.nombre
             lista_dict['candidatos'] = []
             for categoria in categorias:
-                candidato = principales.get((lista.codigo, categoria.codigo))
-                if candidato is not None:
+                candidatos = Candidato.many(cod_lista=lista.codigo,
+                                            cod_categoria=categoria.codigo,
+                                            titular=True, numero_de_orden=1)
+                if candidatos:
+                    candidato = candidatos[0]
                     candidato_dict = candidato.to_dict()
                     candidato_dict['votos'] = \
                         self.sesion.recuento.obtener_resultado(categoria.codigo,
@@ -351,7 +351,7 @@ class ControllerRecuento(WebContainerController):
 
 
 def get_constants():
-        translations = ("si", "no", "ver_qr",
+        translations = ("si", "no", "ver_qr", "introduzca_acta_cierre",
             "alto_contraste", "muchas_gracias", "puede_retirar_boleta",
             "si_desea_verificarlo", "imprimiendo_voto", "no_retirar_boleta",
             "agradecimiento", "cancelar", "volver_al_inicio", "salir",
@@ -369,8 +369,7 @@ def get_constants():
             "introduzca_sobre_actas", "slide_3_bullet_1", "slide_3_bullet_2",
             "slide_3_bullet_3", "slide_3_bullet_4", "slide_3_bullet_5",
             "entregue_certif_transmision", "el_suplente_acercara",
-            "introduzca_certificados_para_fiscales", "usted_puede_imprimir",
-            "introduzca_acta_cierre_nuevamente")
+            "introduzca_certificados_para_fiscales", "usted_puede_imprimir")
         encabezado = get_config('datos_eleccion')
 
         constants_dict = {
@@ -414,7 +413,7 @@ def get_constants():
 
 def get_templates():
     templates = {}
-    template_names = ("candidato_recuento", )
+    template_names = ("candidato_recuento",)
     for template in template_names:
         file_name = "%s.html" % template
         template_file = os.path.join(FLAVOR, file_name)

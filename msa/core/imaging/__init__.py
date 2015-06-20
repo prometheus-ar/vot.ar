@@ -121,10 +121,7 @@ class ImagenActa(Imagen):
         alto_boleta = 938  # Alto de apertura y cierre.
         if self.recuento is not None:
             if self.hd:
-                if USA_ARMVE:
-                    alto_boleta = 2950
-                else:
-                    alto_boleta = 2800
+                alto_boleta = 2950
             elif self.de_muestra:
                 alto_boleta = 2050
         elif self.hd:
@@ -156,10 +153,7 @@ class ImagenActa(Imagen):
         qr = None
         if not self.de_muestra:
             if self.qr is not None and USAR_QR:
-                if self.recuento is not None:
-                    qr = (width - 430, 40, self.qr, 400, 400)
-                else:
-                    qr = (width - 530, 1420, self.qr, 500, 500)
+                qr = (width - 430, 50, self.qr)
 
         return qr
 
@@ -175,49 +169,43 @@ class ImagenActa(Imagen):
 
     def _get_escudo(self):
         escudo = None
-        if not self.de_muestra:
+        if (self.recuento is None and self.de_muestra) or not self.de_muestra:
             logo = self._get_img_b64(join(PATH_IMAGENES_CORE,
                                           'logo_boleta.png'))
-            y = 20 if not self.de_muestra else 0
-            escudo = (40, y * self.zoom, logo)
+            y = 235 if not self.de_muestra else 0
+            escudo = (20, y * self.zoom, logo)
         return escudo
 
     def _get_titulos(self):
-        titulos = [None, None, None, None, None]
-        if not self.de_muestra:
-            x = 20
-            y = 70 * self.zoom if not self.de_muestra else 0
-            encabezado_actas = (x, y, "Tribunal Electoral")
-            titulo = (x, y + 12 * self.zoom, "Provincia de Ejemplo")
-            elecciones = (x, y + 24 * self.zoom,
-                          "Elecciones de Autoridades")
-            abiertas = (x, y + 36 * self.zoom, "Provinciales y Municipales")
-            obligatorias = (x, y + 48 * self.zoom, "")
-            titulos = (encabezado_actas, titulo, elecciones, abiertas,
-                       obligatorias)
+        titulos = [None, None, None]
+        datos = get_config('datos_eleccion')
+        if (self.recuento is None and self.de_muestra) or not self.de_muestra:
+            x = 110
+            y = 245 * self.zoom if not self.de_muestra else 40
+            encabezado_actas = (x, y, _("encabezado_actas"))
+            titulo = (x, y + 12 * self.zoom, datos["titulo"])
+            entidad = (x, y + 24 * self.zoom,datos["entidad"])
+            titulos = (encabezado_actas, titulo, entidad)
 
         return titulos
 
     def _get_titulo(self):
-        dy = 225 if not self.de_muestra else 20
+        dy = 275 if not self.de_muestra else 50
         return (self.margin_center, dy * self.zoom,
                 textwrap.wrap(self.titulo, 50))
 
     def _get_texto(self):
-        texto = ""
-        if self.data['mostrar_texto']:
-            tmpl_suplentes = env.get_template("texto_suplentes.tmpl")
-            tmpl_presidente = env.get_template("texto_presidente.tmpl")
-            template = env.get_template(self.template_texto)
+        tmpl_suplentes = env.get_template("texto_suplentes.tmpl")
+        tmpl_presidente = env.get_template("texto_presidente.tmpl")
+        template = env.get_template(self.template_texto)
 
-            self.data['texto_suplentes'] = tmpl_suplentes.render(**self.data)
-            self.data['texto_presidente'] = tmpl_presidente.render(**self.data)
-            self.texto = template.render(**self.data)
+        self.data['texto_suplentes'] = tmpl_suplentes.render(**self.data)
+        self.data['texto_presidente'] = tmpl_presidente.render(**self.data)
+        self.texto = template.render(**self.data)
 
-            dy = 250 if not self.de_muestra else 40
-            texto = (self.margin_center, dy * self.zoom,
-                     textwrap.wrap(self.texto, 65))
-        return texto
+        dy = 300 if not self.de_muestra else 80
+        return (self.margin_center, dy * self.zoom,
+                textwrap.wrap(self.texto, 75))
 
     def _get_tabla(self, width):
         ret = {}
@@ -237,7 +225,7 @@ class ImagenActa(Imagen):
         # calculo ancho columna descripción
         w = width - dx * 2 - len(categorias) * ancho_col
         w = w - ancho_col           # resto ancho col. nº de lista
-        y2 = 370 if not self.de_muestra else 160
+        y2 = 390 if not self.de_muestra else 188
         lineas.append((y2 * self.zoom, self.margin_left, self.margin_right))
 
         filas = []
@@ -265,10 +253,6 @@ class ImagenActa(Imagen):
             listas.append(lista_blanca)
         partido_actual = None
         num_listas = 0
-        guiones = ["-"] * (len(categorias) + 1)
-
-        principales = self.recuento._get_dict_candidatos()
-
         for lista in listas:
             lista_partido = False
             partido = lista.partido
@@ -284,30 +268,34 @@ class ImagenActa(Imagen):
                 if una_lista or partido.nombre == lista.nombre:
                     lista_partido = True
                 else:
-                    fila = [partido.nombre] + guiones
+                    fila = [partido.nombre] + ["-"] * \
+                        (len(categorias) + 1)
                     filas.append(fila)
-                    lista_partido = False
 
             numero = lista.numero if lista.numero is not None else ""
             nombre_lista = lista.nombre if not lista_partido else partido.nombre
-            if not es_blanco and not lista_partido and get_tipo_elec("paso"):
-                nombre_lista = "-- " + nombre_lista
+            if mostrar_partidos and not lista.es_blanco() and not \
+                    lista_partido:
+                nombre_lista = "--- " + nombre_lista
             fila = [nombre_lista, numero]
+            votos = 0
             for categoria in categorias:
-                candidato = principales.get((lista.codigo, categoria.codigo))
+                candidato = Candidato.one(cod_lista=lista.codigo,
+                                          cod_categoria=categoria.codigo,
+                                          titular=True, numero_de_orden=1)
                 resultado = "- "
                 if candidato is not None:
                     resultado = self.recuento.obtener_resultado(
                         categoria.codigo, candidato.codigo)
+                    votos += resultado
                 fila.append(resultado)
             num_listas += 1
             filas.append(fila)
-
-        empujar_firmas += len(filas) * 23
+        empujar_firmas += 115 + len(filas) * 19
 
         # Armando tabla superior
         x = self.margin_left
-        y = (350 if not self.de_muestra else 140) * self.zoom
+        y = (370 if not self.de_muestra else 170) * self.zoom
         ancho_columnas = [w, ancho_col] + [ancho_col] * len(categorias)
         titulo_columnas = [_("palabra_lista"), "Nº"] + \
             [cat.codigo for cat in categorias]
@@ -315,7 +303,7 @@ class ImagenActa(Imagen):
         for i, titulo in enumerate(titulo_columnas):
             columna = [titulo]
             for fila in filas:
-                max_chars = ancho_columnas[i] * 80 / 800
+                max_chars = ancho_columnas[i] * 80 / 700
                 data = fila[i] if i > 0 else fila[i][:max_chars]
                 columna.append(data)
             columnas.append((columna, x, y, ancho_columnas[i]))
@@ -327,7 +315,7 @@ class ImagenActa(Imagen):
         titulo_columnas = ["Cod.", _("palabra_categoria"), "N°"]
         w = width - dx * 2 - ancho_col * 3
         ancho_columnas = [ancho_col, w, ancho_col]
-        y2 = 385 if not self.de_muestra else 173
+        y2 = 465 if not self.de_muestra else 263
         lineas.append((y2 * self.zoom + empujar_firmas, self.margin_left,
                        self.margin_right))
 
@@ -343,7 +331,7 @@ class ImagenActa(Imagen):
         valores_especiales.append((COD_TOTAL, _("total_general"), general))
 
         x = self.margin_left
-        y += empujar_firmas + 30
+        y += empujar_firmas + 150
 
         columnas = []
         for i, titulo in enumerate(titulo_columnas):
@@ -354,7 +342,7 @@ class ImagenActa(Imagen):
             x += ancho_columnas[i]
         ret['alto_rectangulo_especiales'] = len(valores_especiales) * 23
         ret['tabla_especiales'] = columnas
-        empujar_firmas += len(valores_especiales) * 23
+        empujar_firmas += 150 + len(valores_especiales) * 25
 
         ret['lineas'] = lineas
         return ret, empujar_firmas
@@ -365,16 +353,16 @@ class ImagenActa(Imagen):
         fiscales = None
         # firmas autoridades:
         if not self.de_muestra:
-            lineas.append((410 * self.zoom + empujar_firmas, self.margin_left,
+            lineas.append((400 * self.zoom + empujar_firmas, self.margin_left,
                            self.margin_right))
 
-            autoridades = (self.margin_left, 422 * self.zoom + empujar_firmas,
+            autoridades = (self.margin_left, 412 * self.zoom + empujar_firmas,
                            _("firmas_autoridades"))
-            lineas.append((540 * self.zoom + empujar_firmas, self.margin_left,
+            lineas.append((530 * self.zoom + empujar_firmas, self.margin_left,
                            self.margin_right))
-            fiscales = (self.margin_left, 552 * self.zoom + empujar_firmas,
+            fiscales = (self.margin_left, 542 * self.zoom + empujar_firmas,
                         _("firmas_fiscales"))
-            lineas.append((655 * self.zoom + empujar_firmas, self.margin_left,
+            lineas.append((645 * self.zoom + empujar_firmas, self.margin_left,
                            self.margin_right))
 
         return autoridades, fiscales, lineas
@@ -382,7 +370,7 @@ class ImagenActa(Imagen):
     def _get_watermark(self):
         watermark = None
         if MODO_DEMO and not self.de_muestra:
-            watermark = (-500, 600, _("watermark_text"))
+            watermark = (-350, 500, _("watermark_text"))
         return watermark
 
     def generate_data(self):
@@ -398,8 +386,8 @@ class ImagenActa(Imagen):
         data['qr'] = self._get_qr(data['width'])
         data['id_planilla'] = self._get_id_planilla(data['width'])
         data['escudo'] = self._get_escudo()
-        data['titulo1'], data['titulo2'], data["titulo3"], \
-            data["titulo4"], data["titulo5"] = self._get_titulos()
+        data['encabezado_actas'], data['titulo_eleccion'], \
+            data['entidad'] = self._get_titulos()
         data['titulo_acta'] = self._get_titulo()
         data['texto_acta'] = self._get_texto()
         if self.recuento is not None:
@@ -649,16 +637,16 @@ class ImagenBoleta(Imagen):
             nombre_lista = ""
         else:
             lineas_titulo = []
-            if candidato.partido is not None and candidato.partido.nombre != candidato.lista.nombre:
+            if candidato.partido is not None:
                 for linea_wrapeada in textwrap.wrap(candidato.partido.nombre,
                                                     brl):
                     linea = (padding_lista, linea_wrapeada)
                     padding_lista += self.medidas_boleta['sep_lineas_lista']
                     lineas_titulo.append(linea)
-            for linea_wrapeada in textwrap.wrap(candidato.lista.nombre, brl):
-                linea = (padding_lista, linea_wrapeada)
-                padding_lista += self.medidas_boleta['sep_lineas_lista']
-                lineas_titulo.append(linea)
+            #for linea_wrapeada in textwrap.wrap(candidato.lista.nombre, brl):
+            #    linea = (padding_lista, linea_wrapeada)
+            #    padding_lista += self.medidas_boleta['sep_lineas_lista']
+            #    lineas_titulo.append(linea)
             nombre_lista = lineas_titulo
 
         seccion["nombre_lista"] = (dx + w / 2,

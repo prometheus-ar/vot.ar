@@ -1,0 +1,71 @@
+@import "../base/variables";
+
+#opciones_tipo_voto, #opciones_idioma{
+
+    .opcion-tipo-voto, .opcion-idioma{
+        background-color: @fondo;
+        margin:20px;
+        height: 270px;
+        border: solid 1px @gris-borde-boton;
+        border-radius: 10px;
+        img{
+            float: left;
+            margin-left:200px;
+            margin-top: 40px;
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 50px;
+            float: left;
+            margin-left: 60px;
+            margin-top: 120px;
+        }
+    }
+
+    .opcion-idioma{
+        height: 123px;
+        p{
+            text-align: center;
+            float: none;
+            font-weight: bold;
+            font-size: 50px;
+            margin-top: 37px;
+        }
+    }
+}
+
+//TODO: Pasar a accesibilidad
+.alto-contraste #opciones_tipo_voto, .alto-contraste #pantalla_idiomas{
+
+    .opcion-tipo-voto, .opcion-idioma{
+        background-color: @alto-contraste-oscuro;
+        margin:20px;
+        height: 265px;
+        border-radius: 10px;
+        border-color: @alto-contraste-claro;
+        border-width: 1px;
+        border-style: solid;
+        img{
+            display:none;
+        }
+
+        p{
+            font-weight: bold;
+            font-size: 50px;
+            width: 100%;
+            text-align: center;
+        }
+    }
+
+    .opcion-idioma{
+        height: 120px;
+    }
+
+    .barra-titulo{
+        background-color: @alto-contraste-oscuro;
+        color: @alto-contraste-claro;
+        text-shadow: none;
+        font-size: 1.6em;
+    }
+}

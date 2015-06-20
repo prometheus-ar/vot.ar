@@ -40,7 +40,7 @@ FULLSCREEN = True
 MOSTRAR_CURSOR = False
 
 # Para elecciones pequeñas no es necesario realizar Apertura de mesa
-REALIZAR_APERTURA = True
+REALIZAR_APERTURA = False
 USA_TILDES = False
 
 # Poner en None para saltear la pantalla

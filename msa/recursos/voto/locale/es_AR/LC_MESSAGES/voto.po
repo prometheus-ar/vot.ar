@@ -1,5 +1,5 @@
 msgid "entidad"
-msgstr "Provincia de Ejemplo"
+msgstr "Ciudad Autónoma de Buenos Aires"
 
 msgid "si"
 msgstr "Sí"
@@ -63,9 +63,6 @@ msgstr "<span size=\"medium\" weight=\"bold\">Recuerde colocar el acrílico tal 
 
 msgid "cargando_interfaz"
 msgstr "Cargando interfaz"
-
-msgid "cargando_recuento"
-msgstr "Cargando recuento. Por favor espere un momento"
 
 msgid "espere_por_favor"
 msgstr "Por favor espere unos momentos"
@@ -470,13 +467,13 @@ msgid "seleccionar_idioma"
 msgstr "Elija el idioma. Select your language. Wählen Sie die Sprache. Escolha seu idioma."
 
 msgid "encabezado_actas"
-msgstr "Tribunal Electoral"
+msgstr "Tribunal Superior de Justicia"
 
 msgid "titulo_apertura"
-msgstr "ACTA DE APERTURA DEL COMICIO DE LA %s"
+msgstr "ACTA DE APERTURA DE LOS COMICIOS DE LA %s"
 
 msgid "titulo_recuento"
-msgstr "ACTA DE CLAUSURA DEL COMICIO DE LA %s"
+msgstr "ACTA DE CLAUSURA DE LOS COMICIOS DE LA %s"
 
 msgid "titulo_transmision"
 msgstr "CERTIFICADO DE TRANSMISION DE ESCRUTINIO PROVISORIO DE LA %s"
@@ -485,7 +482,7 @@ msgid "titulo_certificado"
 msgstr "CERTIFICADO DE CLAUSURA DEL COMICIO Y ESCRUTINIO PROVISORIO DE LA %s"
 
 msgid "titulo_copia_fiel"
-msgstr "COPIA GENERADA CON EL ACTA DE CLAUSURA DEL COMICIO DE LA %s"
+msgstr "CERTIFICADO DE CLAUSURA DEL COMICIO Y ESCRUTINIO PROVISORIO DE LA %s"
 
 msgid "datos_persona"
 msgstr "%(apellido)s, %(nombre)s con %(tipo_documento)s %(nro_documento)s"
@@ -622,9 +619,6 @@ msgstr "Por favor introduzca el Acta de Apertura de Mesa"
 msgid "introduzca_acta_cierre"
 msgstr "Por favor introduzca el Acta de Cierre de Mesa"
 
-msgid "introduzca_acta_cierre_nuevamente"
-msgstr "Por favor vuelva a introducir el Acta de Cierre de Mesa"
-
 msgid "introduzca_acta_transmision"
 msgstr "Por favor introduzca el Certificado de Transmisión de Resultados"
 
@@ -638,13 +632,13 @@ msgid "recuento_no_almacenado_alerta"
 msgstr "El Certificado de Recuento de votos NO fue almacenado correctamente."
 
 msgid "recuento_no_almacenado_aclaracion"
-msgstr "Pruebe con OTRO certificado o consulte con el técnico habilitado."
+msgstr "Pruebe con otro certificado o consulte con el técnico habilitado."
 
 msgid "transmision_no_almacenada_alerta"
 msgstr "El Certificado de Transmisión NO fue almacenado correctamente."
 
 msgid "transmision_no_almacenada_aclaracion"
-msgstr "Pruebe con OTRO certificado o consulte con el técnico habilitado."
+msgstr "Pruebe con otro certificado o consulte con el técnico habilitado."
 
 msgid "certificado_no_impreso_alerta"
 msgstr "No se ha impreso el Certificado de Escrutinio"

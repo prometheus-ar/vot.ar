@@ -1,0 +1,132 @@
+[
+  {
+    "asistida": "part\u00eddo de la graved\u00e1d", 
+    "cod_alianza": null, 
+    "cod_partido": "1", 
+    "codigo": "1.665", 
+    "color": "#8f10ff", 
+    "nombre": "Partido de la Gravedad", 
+    "nombre_corto": "GR", 
+    "numero": "665"
+  }, 
+  {
+    "asistida": "part\u00eddo de la literat\u00fara", 
+    "cod_alianza": null, 
+    "cod_partido": "10", 
+    "codigo": "10.107", 
+    "color": "#e6b9b8", 
+    "nombre": "Partido de la Literatura", 
+    "nombre_corto": "LI", 
+    "numero": "107"
+  }, 
+  {
+    "asistida": "part\u00eddo de la enfermer\u00eda", 
+    "cod_alianza": null, 
+    "cod_partido": "11", 
+    "codigo": "11.836", 
+    "color": "#eeece1", 
+    "nombre": "Partido de la Enfermer\u00eda", 
+    "nombre_corto": "EN", 
+    "numero": "836"
+  }, 
+  {
+    "asistida": "part\u00eddo del composit\u00f3r", 
+    "cod_alianza": null, 
+    "cod_partido": "12", 
+    "codigo": "12.197", 
+    "color": "#f5ba51", 
+    "nombre": "Partido del Compositor", 
+    "nombre_corto": "CO", 
+    "numero": "197"
+  }, 
+  {
+    "asistida": "part\u00eddo del pop\u00e1rt", 
+    "cod_alianza": null, 
+    "cod_partido": "2", 
+    "codigo": "2.127", 
+    "color": "#a6a6a6", 
+    "nombre": "Partido del Popart", 
+    "nombre_corto": "PP", 
+    "numero": "127"
+  }, 
+  {
+    "asistida": "part\u00eddo dramat\u00fargo", 
+    "cod_alianza": null, 
+    "cod_partido": "3", 
+    "codigo": "3.584", 
+    "color": "#b7dee8", 
+    "nombre": "Partido Dramaturgo", 
+    "nombre_corto": "DR", 
+    "numero": "584"
+  }, 
+  {
+    "asistida": "part\u00eddo del avi\u00f3n", 
+    "cod_alianza": null, 
+    "cod_partido": "4", 
+    "codigo": "4.26", 
+    "color": "#b9cde5", 
+    "nombre": "Partido del Avi\u00f3n", 
+    "nombre_corto": "AV", 
+    "numero": "26"
+  }, 
+  {
+    "asistida": "part\u00eddo expresion\u00edsta", 
+    "cod_alianza": null, 
+    "cod_partido": "5", 
+    "codigo": "5.221", 
+    "color": "#4b1082", 
+    "nombre": "Partido Expresionista", 
+    "nombre_corto": "EX", 
+    "numero": "221"
+  }, 
+  {
+    "asistida": "part\u00eddo de la poes\u00eda", 
+    "cod_alianza": null, 
+    "cod_partido": "6", 
+    "codigo": "6.934", 
+    "color": "#1010ff", 
+    "nombre": "Partido de la Poes\u00eda", 
+    "nombre_corto": "PDP", 
+    "numero": "934"
+  }, 
+  {
+    "asistida": "part\u00eddo de la l\u00e1mpara", 
+    "cod_alianza": null, 
+    "cod_partido": "7", 
+    "codigo": "7.235", 
+    "color": "#d7e4bd", 
+    "nombre": "Partido de la L\u00e1mpara", 
+    "nombre_corto": "PL", 
+    "numero": "235"
+  }, 
+  {
+    "asistida": "part\u00eddo de la astronom\u00eda", 
+    "cod_alianza": null, 
+    "cod_partido": "8", 
+    "codigo": "8.102", 
+    "color": "#dbeee0", 
+    "nombre": "Partido de la Astronom\u00eda", 
+    "nombre_corto": "PA", 
+    "numero": "102"
+  }, 
+  {
+    "asistida": "part\u00eddo de la ciencia", 
+    "cod_alianza": null, 
+    "cod_partido": "9", 
+    "codigo": "9.532", 
+    "color": "#10ff10", 
+    "nombre": "Partido de la Ciencia", 
+    "nombre_corto": "CI", 
+    "numero": "532"
+  }, 
+  {
+    "asistida": "Voto en BLANCO", 
+    "cod_alianza": null, 
+    "cod_partido": "BLC", 
+    "codigo": "BLC", 
+    "color": "#ffffff", 
+    "nombre": "Votos en Blanco", 
+    "nombre_corto": "En Blanco", 
+    "numero": null
+  }
+]

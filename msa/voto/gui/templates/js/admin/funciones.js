@@ -50,7 +50,7 @@ function mostrar_pantalla(data){
     } else {
         $("#btn_apertura").addClass("boton-desactivado");
         $("#btn_voto").removeClass("boton-desactivado");
-        $("#btn_recuento").removeClass("boton-desactivado");
+        //$("#btn_recuento").removeClass("boton-desactivado");
         $("#btn_asistida").removeClass("boton-desactivado");
         if(data.USAR_TOTALIZADOR){
             $("#btn_totalizador").show()

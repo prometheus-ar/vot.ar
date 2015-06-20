@@ -22,37 +22,28 @@ function cargar_botones_ubicaciones(data){
     var clase = "";
     var datos_ubicaciones = data;
     var botones_ubicacion = $("#botones-ubicacion");
-    var columnas = [];
-    var items = [];
+    var items = []
     for (i=0; i<datos_ubicaciones.length; i++){
         var ubicacion = datos_ubicaciones[i];
         var display_ext = false;
 
-        if (ubicacion[3] != ''){
+        if (ubicacion[2] != ''){
             display_ext = true;
         }
 
         var data_template = {
             'nro_mesa': ubicacion[0],
-            'departamento': ubicacion[1],
-            'municipio': ubicacion[2],
-            'extranjera': ubicacion[3],
+            'municipio': ubicacion[1],
+            'extranjera': ubicacion[2],
             'display_ext': display_ext,
         }
 
         items.push(data_template);
-        if(items.length == 10 ){
-            columnas.push({ubicaciones: items});
-            items = [];
-        }
     }
-    columnas.push({ubicaciones: items});
-
     var template = get_template("boton_ubicacion", "pantallas/demo");
-    var html = Mustache.to_html(template, {"columnas": columnas});
+    var html = Mustache.to_html(template, {"ubicaciones": items});
     botones_ubicacion.html(html);
 
-    /*
     switch (true) {
         case i <= 11:
             clase = "una-columna";
@@ -68,8 +59,9 @@ function cargar_botones_ubicaciones(data){
             break;
         default:
             clase = "anidado";
-    }*/
+    }
 
     $("#botones-ubicacion").addClass(clase);
     $(".btn").click(click_boton);
+
 }

@@ -34,7 +34,6 @@ function set_constants(data){
     body.addClass(constants.flavor);
     body.attr('data-ubicacion', constants.ubicacion);
     effects = constants.effects;
-    preload(constants.imagenes)
 }
 
 function get_candidatos(_id_categoria, revisando, id_interna){

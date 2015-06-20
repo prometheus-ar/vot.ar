@@ -7,7 +7,6 @@ from time import sleep
 
 from msa import get_logger
 from msa.core.armve.constants import MSG_ERROR, AUTOFEED_SELECT
-from msa.core.armve.settings import FALLBACK_2K
 from msa.core.armve.helpers import array_to_string, array_to_printable_string
 from msa.core.clases import Seleccion, Apertura, Autoridad, Recuento
 from msa.core.imaging import ImagenPrueba
@@ -16,7 +15,7 @@ from msa.core.rfid.constants import NO_TAG, TAGS_ADMIN, TAG_ADMIN, TAG_DATOS, \
     COD_TAG_DESCONOCIDO, TAG_VOTO, TAG_RECUENTO, COD_TAG_RECUENTO, \
     COD_TAG_INICIO, COD_TAG_ADDENDUM
 from msa.core.settings import TOKEN, COMPROBAR_TOKEN
-from msa.settings import QUEMA
+from msa.settings import MODO_DEMO
 
 
 logger = get_logger("armve_controller")
@@ -85,18 +84,15 @@ class ARMVEController(object):
                        "datos": ''}
                 if COD_TAG_RECUENTO in tipos:
                     for index, datos_tag in enumerate(tipos_tags):
-                        tipo_, tag_ = self._get_tag_response(response, index)
-                        if tipo_ == TAG_DATOS and tag_['tipo'] == TAG_RECUENTO:
-                            tipo = tipo_
-                            tag = tag_
+                        if datos_tag[0] == COD_TAG_RECUENTO:
+                            tipo, tag = self._get_tag_response(response)
                             break
-                        else:
-                            sleep(0.1)
                 elif len(tipos) == 2:
                     tipos = sorted(tipos)
                     if tipos == [COD_TAG_INICIO, COD_TAG_ADDENDUM]:
                         tipo, tag = self._get_tag_response(response,
                                                            multi=True)
+
         return tipo, tag
 
     def get_tag_metadata(self):
@@ -142,14 +138,13 @@ class ARMVEController(object):
 
     def _check_data(self, serial, data, tipo, multi_tag=False):
         sleep(0.1)
+        written_data = self.parent.rfid.get_tag_data(serial)
         if multi_tag:
             written_data = self.parent.rfid.get_multitag_data()
         else:
             written_data = self.parent.rfid.get_tag_data(serial)
+        ret = written_data is not None and data == written_data['user_data']
 
-        ret = written_data is not None and (
-              data == written_data['user_data'] or
-              (written_data['user_data'] == "" and not FALLBACK_2K))
         return ret
 
     def write(self, serial, tipo, data, marcar_ro):
@@ -171,6 +166,7 @@ class ARMVEController(object):
                         self.parent.rfid.quemar_tag(serial)
                 else:
                     self.parent.rfid.quemar_tag(serial)
+
         return success
 
     def con_tarjeta(self, response):
@@ -239,7 +235,7 @@ class ARMVEController(object):
 
     def registrar(self, tag):
         ret = {"status": "OK"}
-        marcar_ro = QUEMA
+        marcar_ro = not MODO_DEMO
 
         tag_guardado = self.guardar_tag(TAG_VOTO, tag, marcar_ro)
         if tag_guardado:
@@ -275,17 +271,14 @@ class ARMVEController(object):
 
     def guardar_tag(self, tipo_tag, data, marcar_ro):
         guardado = False
-        try:
-            if self.parent.printer.has_paper():
-                tags = self.parent.rfid.get_tags()
-                if tags is not None and tags[0] is not None and \
-                        ((tipo_tag != TAG_RECUENTO and tags[0]["number"] == 1)
-                         or tipo_tag == TAG_RECUENTO):
-                    serial_number = tags[0]["serial_number"][0]
-                    guardado = self.write(serial_number, tipo_tag, data,
-                                          marcar_ro)
-        except Exception, e:
-            logger.exception(e)
+        if self.parent.printer.has_paper():
+            tags = self.parent.rfid.get_tags()
+            if tags is not None and tags[0] is not None and \
+                    ((tipo_tag != TAG_RECUENTO and tags[0]["number"] == 1) or
+                     tipo_tag == TAG_RECUENTO):
+                serial_number = tags[0]["serial_number"][0]
+                guardado = self.write(serial_number, tipo_tag, data,
+                                      marcar_ro)
         return guardado
 
     def pir_detected_cb(self, response):

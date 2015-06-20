@@ -9,10 +9,6 @@ function mostrar_teclado(datos){
         $("#hidden_input").keyboard().focus();
     }
 
-    if(!constants.usa_armve){
-        keyboard.addClass('malata');
-    }
-
     show_asistida();
     show_indicador_asistida();
     hide_barra_opciones();

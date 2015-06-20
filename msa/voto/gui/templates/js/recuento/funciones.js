@@ -19,7 +19,7 @@ function document_ready(){
         $("#boleta").on('click', show_boletabox);
         $(".boletabox").on('click', hide_boletabox);
         $(".qrbox").on('click', hide_qrbox);
-    }, 2000);
+    }, 1000);
 
     $(".popup .btn").on('click', click_boton_popup);
     $("#btn_qr").on('click', show_qrbox);
@@ -255,13 +255,12 @@ function crear_item_candidato(data){
         path_imagen_partido = "img/opcion_blanco.png";
 
     } else {
-        nombre_partido = candidato.nombre_lista;
+        nombre_partido = candidato.lista.nombre;
         path_imagen_candidato = get_path_candidato(candidato);
         path_imagen_partido = get_path_lista(candidato.lista.imagen);
     }
     var id_contenedor = "contenedor_" + categoria.codigo;
     var consulta_popular = categoria.consulta_popular == "SI";
-    var div_colores = crear_div_colores(candidato.lista.color);
     var template_data = {
         'blanco': blanco,
         'consulta_popular': consulta_popular?"consulta-popular":"",
@@ -274,8 +273,7 @@ function crear_item_candidato(data){
         'partido_nombre': nombre_partido,
         'candidato_nombre': candidato.nombre,
         'candidato_secundario': candidato.secundarios,
-        'id_contenedor': id_contenedor,
-        'colores': div_colores
+        'id_contenedor': id_contenedor
     };
 
     var item = Mustache.to_html(template, template_data);

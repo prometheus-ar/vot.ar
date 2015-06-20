@@ -3,15 +3,14 @@ import gobject
 import time
 
 from base64 import b64encode
-from dbus.exceptions import DBusException
 from json import dumps
 
 from msa.core.clases import Categoria
 from msa.core.constants import CIERRE_RECUENTO, CIERRE_TRANSMISION, \
     CIERRE_ESCRUTINIO, CIERRE_COPIA_FIEL, CIERRE_CERTIFICADO
-from msa.core.rfid.constants import TAG_RECUENTO, TAG_NO_ENTRA
+from msa.core.rfid.constants import TAG_RECUENTO
 from msa.core.settings import DESPLAZAMIENTO_BOLETA, USA_ARMVE, ACTA_DESGLOSADA
-from msa.settings import QUEMA
+from msa.settings import MODO_DEMO
 from msa.voto.constants import RECUENTO_GENERANDO, RECUENTO_IMPRIMIENDO, \
     SECUENCIA_CERTIFICADOS
 from msa.voto.sesion import get_sesion
@@ -31,7 +30,7 @@ class PrintManager(object):
         self.post_page_callback = post_page_callback
         self.waiting_paper_callback = waiting_paper_callback
         self.controller = modulo.controller
-        self.primer_acta = False
+        self.primer_acta = True
 
         self.mensajes = {
             CIERRE_RECUENTO: {
@@ -90,6 +89,8 @@ class PrintManager(object):
         """ pre_page_callback y post_page_callback reciben como parametro
             la page sobre la cual son llamados.
         """
+        #self.modulo.rampa.desregistrar_eventos()
+
         # Solo modifico los callbacks de post y pre impresion de página si los
         # paso explicitamente para evitar que se sobreescriban en la
         # autorreferencia que hace esta funcion
@@ -174,6 +175,9 @@ class PrintManager(object):
                     time.sleep(1)
                 if self._guardar_e_imprimir(tipo_acta):
                     def esperar_vacia(datos_sensores=None):
+                        #sensor_1 = datos_sensores['paper_out_1']
+                        #sensor_2 = datos_sensores['paper_out_2']
+                        #if not sensor_1 and not sensor_2:
                         if self.post_page_callback is not None:
                             self.post_page_callback(tipo_acta)
                         if USA_ARMVE:
@@ -182,6 +186,7 @@ class PrintManager(object):
                             sesion.impresora.remover_insertando_papel()
 
                         self.controller.limpiar_panel_estado()
+                        #self.modulo.rampa.tiene_papel = False
                         callback()
 
                     if USA_ARMVE:
@@ -256,10 +261,7 @@ class PrintManager(object):
                     gobject.timeout_add(200, self.imprimir, tipo_acta,
                                         self.imprimir_secuencia)
 
-            if USA_ARMVE:
-                self.modulo.rampa.registrar_nuevo_papel(esperar)
-            else:
-                sesion.impresora.registrar_insertando_papel(esperar)
+            sesion.impresora.consultar_tarjeta(esperar)
 
     def _imprimir_acta(self, tipo_acta):
         if not USA_ARMVE:
@@ -276,16 +278,13 @@ class PrintManager(object):
             "autoridades": autoridades,
             "hora": sesion.recuento.hora
         }
-        try:
-            sesion.impresora.imprimir_serializado(
-                "Recuento", b64encode(sesion.recuento.a_tag(tipo_acta[1])),
-                extra_data=dumps(extra_data))
-        except DBusException:
-            # ignorando posible timeout de dbus para carga de buffer
-            pass
+        sesion.impresora.imprimir_serializado(
+            "Recuento", b64encode(sesion.recuento.a_tag(tipo_acta[1])),
+            extra_data=dumps(extra_data), only_buffer=USA_ARMVE)
 
         if USA_ARMVE:
             self.panel(RECUENTO_IMPRIMIENDO)
+            sesion.impresora.do_print()
 
     def _guardar_recuento(self, tag, categoria=None):
         """ Guarda los datos en el tag, lo vuelve a leer y compara los dos
@@ -294,7 +293,7 @@ class PrintManager(object):
             False en caso contrario.
         """
         guardado_ok = False
-        marcar_ro = QUEMA
+        marcar_ro = not MODO_DEMO
         datos1 = sesion.recuento.a_tag(categoria)
 
         if tag['datos'] != '':
@@ -305,19 +304,10 @@ class PrintManager(object):
             tag_grabado = self._guardar_tag(tag, datos1, marcar_ro)
             if tag_grabado:
                 datos2 = self.modulo._lee_tag()
-                if datos2 == "":
-                    metadata = sesion.lector.get_tag_metadata()
-                    guardado_ok = (metadata["tipo"] == TAG_NO_ENTRA or
-                                   datos1 == datos2)
-                else:
-                    guardado_ok = datos1 == datos2
+                guardado_ok = datos1 == datos2
         else:
             guardado_ok = sesion.lector.guardar_tag(TAG_RECUENTO, datos1,
                                                     marcar_ro)
-            if not guardado_ok:
-                sesion.lector.reset()
-                guardado_ok = sesion.lector.guardar_tag(TAG_RECUENTO, datos1,
-                                                        marcar_ro)
         return guardado_ok
 
     def _guardar_tag(self, tag, datos, marcar_ro):

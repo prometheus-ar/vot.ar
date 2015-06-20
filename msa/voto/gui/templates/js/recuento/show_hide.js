@@ -43,7 +43,7 @@ function agrandar_tabla_recuento(fast, callback){
         if(callback !== null && callback !== undefined) callback();
     }
 
-    if($(".tabla-recuento").height() <= $(".contenedor-tabla")[0].scrollHeight){
+    if($(".tabla-scrolleable").height() <= $(".contenedor-tabla")[0].scrollHeight){
         $(".desplazar").hide();
     }
 }

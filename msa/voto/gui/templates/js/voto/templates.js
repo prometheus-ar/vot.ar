@@ -16,7 +16,7 @@ function popular_html(){
 }
 
 function sacar_punto_y_coma(){
-    var candidatos = $(".candidatos-concejales,.candidato-secundario,.candidatos-suplentes,.candidato-principal");
+    var candidatos = $(".candidato-secundario,.candidatos-suplente");
     candidatos.each(function(index){
         var candidato = $(this);
         var texto = candidato.html().trim();
@@ -135,7 +135,22 @@ function crear_item_consulta_popular(candidato){
     return item;
 }
 
-function crear_item_partido(partido, gobernador){
+function crear_div_colores(color_partido){
+    var item = "";
+    if(color_partido){
+      var template = get_template("colores");
+      var colores = color_partido.split(",");
+      var template_data = {
+          num_colores: colores.length,
+          colores: colores
+      };
+
+      item = Mustache.to_html(template, template_data);
+    }
+    return item;
+}
+
+function crear_item_partido(partido){
     /*
      * Crea el boton para un partido.
      * Argumentos:
@@ -170,20 +185,11 @@ function crear_item_candidato(candidato, seleccionado, template_name){
     var id_candidato = 'candidato_' + candidato.codigo;
     
     var path_imagen = get_path_candidato(candidato);
+    var path_imagen_secundario = get_path_candidato(candidato.secundarios[0]);
     var path_imagen_agrupacion = get_path_lista(candidato.lista.imagen);
 
     var template = get_template(template_name);
     
-    //Si el partido y la lista se llaman igual no muestro la lista esto fue
-    //agregado en Salta y puede ser que en otros lados no quieran este
-    //comportamiento
-    if(candidato.partido !== undefined && candidato.lista.nombre == candidato.partido.nombre){
-        nombre_lista_original = candidato.lista.nombre;
-        candidato.lista.nombre = false;
-    } else {
-        nombre_lista_original = false;
-    }
-
     if(candidato.categorias_hijas !== undefined && candidato.categorias_hijas.length){
         extra_classes += " hijos_" + candidato.categorias_hijas.length;
         extra_html += crear_categorias_hijas(candidato.categorias_hijas);
@@ -197,22 +203,21 @@ function crear_item_candidato(candidato, seleccionado, template_name){
         colores = crear_div_colores(candidato.lista.color);
     }
 
+    candidato.secundarios = candidato.secundarios.slice(0,2);
+
     //Armo el template con los datos del candidato
     var template_data = {
         candidato: candidato,
         id_boton: id_candidato,
         path_imagen: path_imagen,
+        path_imagen_secundario: path_imagen_secundario,
         path_imagen_agrupacion: path_imagen_agrupacion,
         palabra_lista: constants.palabra_lista,
         colores: colores,
         extra_classes: extra_classes,
         extra_html: extra_html
     };
-    var rendered = Mustache.to_html(template, template_data);
-    if(nombre_lista_original){
-        candidato.lista.nombre = nombre_lista_original;
-    }
-    return rendered
+    return Mustache.to_html(template, template_data);
 }
 
 function crear_categorias_hijas(categorias_hijas){

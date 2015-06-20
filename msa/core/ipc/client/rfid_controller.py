@@ -145,9 +145,3 @@ class DbusLectorController():
         lector = self._get_lector()
         quit_method = lector.get_dbus_method('quit')
         return quit_method()
-
-    def reset(self):
-        """Resetea el lector on demand."""
-        lector = self._get_lector()
-        reset = lector.get_dbus_method('reset_rfid')
-        return reset()
