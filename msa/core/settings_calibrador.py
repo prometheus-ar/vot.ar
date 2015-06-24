@@ -14,3 +14,7 @@ TIMEOUT = 0
 
 FAST_START = True
 AUTO_CLOSE = True
+try:
+    from msa.core.settings_calibrador_local import *
+except ImportError:
+    pass

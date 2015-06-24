@@ -24,7 +24,8 @@ from msa.core.settings import IMPRESION_HD_APERTURA, USAR_QR, \
     IMPRESION_HD_CIERRE, SMART_PACKING
 from msa.settings import DEFAULT_LOCALE
 from msa.core.settings import TOKEN
-from msa.core.structs import struct_voto, struct_recuento, struct_apertura
+from msa.core.structs import struct_voto, struct_recuento, struct_apertura, \
+    struct_recuento_dni
 from msa.voto.constants import TIPO_DOC
 
 
@@ -170,13 +171,13 @@ class Apertura(object):
             'cantidad_suplentes': len(suplentes),
             'mesa': self.mesa.descripcion_completa,
             'escuela': self.mesa.escuela,
-            'municipio': self.mesa.municipio,
-            'departamento': self.mesa.departamento,
+            'comuna': self.mesa.comuna,
             'horas': "%02d" % self.hora['horas'],
-            'minutos': "%02d" % self.hora['minutos']
+            'minutos': "%02d" % self.hora['minutos'],
+            'mostrar_texto': True
         }
 
-        qr_img = self.a_qr_b64_encoded() if USAR_QR else None
+        qr_img = self.a_qr_b64_encoded() if USAR_QR and not de_muestra else None
         imagen = ImagenActa(titulo, datos, hd=IMPRESION_HD_APERTURA,
                             de_muestra=de_muestra, qr=qr_img)
         if svg:
@@ -189,11 +190,17 @@ class Apertura(object):
         """Devuelve la informacion del recuento para almacenar en qr."""
         # tipo de qr
         # cod_mesa
-        encoded_data = string_to_array(self.a_tag())
-        datos = [int(TOKEN, 16), len(encoded_data) * 2]
-        datos.extend(encoded_data)
-        todo = "A" + array_to_printable_string(datos)
-        return todo
+        #encoded_data = string_to_array(self.a_tag())
+        #datos = [int(TOKEN, 16), len(encoded_data) * 2]
+        #datos.extend(encoded_data)
+        #todo = "A" + array_to_printable_string(datos)
+        datos = [self.mesa.numero,
+                 "%s:%s" % (self.hora["horas"], self.hora["minutos"])]
+        for autoridad in self.autoridades:
+            dato = ",".join((autoridad.apellido, autoridad.nombre,
+                             str(autoridad.nro_documento)))
+            datos.append(dato)
+        return ";".join(datos)
 
     def a_qr(self):
         datos = self.a_qr_str()
@@ -352,11 +359,6 @@ class Seleccion(object):
             mesa = Ubicacion.one(cod_datos=datos_tag.ubicacion)
             current_data_code(datos_tag.ubicacion)
 
-        if datos_tag.cod_interna != "":
-            interna = Partido.one(datos_tag.cod_interna)
-        else:
-            interna = None
-
         candidatos = []
         for elem in datos_tag.voto_categoria:
             cod_categoria = elem["cod_categoria"].strip()
@@ -364,55 +366,13 @@ class Seleccion(object):
 
             if cod_candidato == COD_LISTA_BLANCO:
                 candidato = Candidato.one(codigo__endswith=cod_candidato,
-                                        cod_categoria=cod_categoria)
+                                          cod_categoria=cod_categoria)
             else:
                 candidato = Candidato.one(codigo__endswith="." + cod_candidato,
-                                        cod_categoria=cod_categoria)
+                                          cod_categoria=cod_categoria)
             candidatos.append(candidato)
 
-        return Seleccion(mesa, interna, candidatos)
-
-    @classmethod
-    def _desde_string(cls, tag, mesa=None):
-        len_cods = get_config("len_cod")
-        # partes del tag
-        len_cod_datos = int(tag[:2])
-        separador1 = len_cod_datos + 2
-        separador2 = separador1 + len_cods["interna"]
-
-        # separamos las partes
-        cod_datos = tag[2:separador1].strip()
-        cod_interna = tag[separador1:separador2].strip()
-        datos = tag[separador2:]
-
-        if mesa is not None:
-            # verificamos la mesa
-            if mesa.cod_datos != cod_datos:
-                raise MesaIncorrecta()
-        else:
-            #TODO: ESTO trae cualquier mesa del juego de datos
-            mesa = Ubicacion.one(cod_datos=cod_datos)
-            current_data_code(cod_datos)
-
-        # obtenemos la interna
-        if cod_interna:
-            interna = Partido.one(cod_interna)
-        else:
-            interna = None
-
-        # vamos leyendo los pares cod_categoria+cod_lista
-        candidatos = []
-        len_par = len_cods["categoria"] + len_cods['candidato']
-        for i in range(0, len(datos), len_par):
-            par = datos[i:i + len_par]
-            cod_categoria = par[:len_cods["categoria"]].strip()
-            cod_candidato = par[len_cods["categoria"]:].strip()
-
-            candidato = Candidato.one(codigo__eVndswith=cod_candidato,
-                                      cod_categoria=cod_categoria)
-            candidatos.append(candidato)
-
-        return Seleccion(mesa, interna, candidatos)
+        return Seleccion(mesa, None, candidatos)
 
     @classmethod
     def desde_qr(cls, datos):
@@ -427,11 +387,13 @@ class Recuento(object):
     def __init__(self, mesa, autoridades=None, hora=None):
         if autoridades is None:
             autoridades = []
+
+        self.__dict_candidatos = None
         self.autoridades = autoridades
         self.mesa = mesa
         self.cod_categoria = None
 
-        self.hora = hora or {'horas': 18, 'minutos': 0}
+        self.hora = hora # si hora es None no se muestra el texto del acta
         _campos_extra = get_config("campos_extra")
         self.campos_extra = dict(zip(_campos_extra, [0] * len(_campos_extra)))
         _lst_esp = get_config("listas_especiales")
@@ -498,7 +460,19 @@ class Recuento(object):
         else:
             raise SerialRepetido()
 
-    def a_tag(self, cod_categoria=None):
+    def _get_dict_candidatos(self):
+        if self.__dict_candidatos is None:
+            cand = {(candidato.cod_lista, candidato.cod_categoria): candidato
+                    for candidato in Candidato.many(titular=True,
+                                                    numero_de_orden=1)}
+
+            self.__dict_candidatos = cand
+        else:
+            cand = self.__dict_candidatos
+
+        return cand
+
+    def a_tag(self, cod_categoria=None, con_dnis=True):
         """Devuelve la informacion del recuento para almacenar en tag rfid."""
         # valores ordenados por cod_lista,cod_categoria
         valores = []
@@ -509,15 +483,16 @@ class Recuento(object):
             por_categoria = 0
             categorias = Categoria.many(sorted='codigo')
 
+        principales = self._get_dict_candidatos()
         for lista in Lista.many(sorted='codigo'):
             for categoria in categorias:
                 try:
-                    cod_candidato = Candidato.one(
-                        cod_categoria=categoria.codigo,
-                        cod_lista=lista.codigo, titular=True,
-                        numero_de_orden=1).codigo
-                    valores.append(self._resultados[categoria.codigo,
-                                                    cod_candidato])
+                    candidato = principales.get((lista.codigo,
+                                                 categoria.codigo))
+                    if candidato is not None:
+                        cod_candidato = candidato.codigo
+                        valores.append(self._resultados[categoria.codigo,
+                                                        cod_candidato])
                 except AttributeError:
                     #si no hay candidato lo ignoramos
                     pass
@@ -539,7 +514,10 @@ class Recuento(object):
         # cod_mesa
         if SMART_PACKING:
             num_mesa = self.mesa.numero.encode('ascii')
-            datos = pack(int(num_mesa), valores, max_bits=MAXBITS*2)
+            try:
+                datos = pack(int(num_mesa), valores)
+            except NameError:
+                datos = pack(int(num_mesa), valores, max_bits=MAXBITS*2)
         else:
             cod_mesa = self.mesa.codigo.encode('ascii')
             datos = str(len(cod_mesa)) + cod_mesa + pack(valores)
@@ -549,24 +527,39 @@ class Recuento(object):
         for autoridad in self.autoridades:
             documentos.append(int(autoridad.nro_documento))
 
-        documentos = pack_slow(documentos, 27)
-        container.len_documentos = len(documentos)
-        container.documentos = documentos
+        if con_dnis:
+            documentos = []
+            for autoridad in self.autoridades:
+                documentos.append(int(autoridad.nro_documento))
+            len_documentos = len(documentos)
+            if len_documentos == 1:
+                documentos += [0, 0]
+            elif len_documentos == 2:
+                documentos.append(0)
+            elif len_documentos == 0:
+                documentos = [0, 0, 0]
 
-        return struct_recuento.build(container)
+            documentos = pack_slow(documentos, 27)
+            container.documentos = documentos
 
-    def a_qr_str(self, cod_categoria=None):
+            struct = struct_recuento_dni
+        else:
+            struct = struct_recuento
+
+        return struct.build(container)
+
+    def a_qr_str(self, cod_categoria=None, con_dnis=True):
         """Devuelve la informacion del recuento para almacenar en qr."""
         # tipo de qr
         # cod_mesa
-        encoded_data = string_to_array(self.a_tag(cod_categoria))
+        encoded_data = string_to_array(self.a_tag(cod_categoria, con_dnis))
         datos = [int(TOKEN, 16), len(encoded_data) * 2]
         datos.extend(encoded_data)
         todo = "R" + array_to_printable_string(datos)
         return todo
 
-    def a_qr(self, cod_categoria=None):
-        datos = self.a_qr_str(cod_categoria)
+    def a_qr(self, cod_categoria=None, con_dnis=True):
+        datos = self.a_qr_str(cod_categoria, con_dnis)
         return crear_qr(datos)
 
     def a_qr_b64_encoded(self, cod_categoria=None):
@@ -604,23 +597,28 @@ class Recuento(object):
             presidente = self.autoridades[0]
         except IndexError:
             presidente = ""
-        suplentes = self.autoridades[1:]
+        suplentes = [sup for sup in self.autoridades[1:]
+                     if sup.nro_documento != 0]
+
         datos = {
             'presidente': presidente,
             'suplentes': suplentes,
             'cantidad_suplentes': len(suplentes),
             'mesa': self.mesa.descripcion_completa,
             'escuela': self.mesa.escuela,
-            'municipio': self.mesa.municipio,
-            'departamento': self.mesa.departamento,
-            'horas': "%02d" % self.hora['horas'],
-            'minutos': "%02d" % self.hora['minutos']
+            'comuna': self.mesa.comuna,
+            'horas': "%02d" % self.hora.get('horas', "") \
+                if self.hora is not None else "",
+            'minutos': "%02d" % self.hora.get('minutos', "")
+                if self.hora is not None else "",
+            'mostrar_texto': self.hora is not None
         }
 
         qr_img = self.a_qr_b64_encoded(categoria) if USAR_QR else None
         imagen = ImagenActa(titulo, datos, hd=IMPRESION_HD_CIERRE,
                             qr=qr_img, recuento=self, categoria=categoria,
                             de_muestra=de_muestra, verificador=verif)
+
         if svg:
             rendered = imagen.render_svg()
         else:
@@ -632,9 +630,12 @@ class Recuento(object):
         return 'Recuento de la mesa %s' % self.mesa
 
     @classmethod
-    def desde_tag(cls, tag):
-        """Devuelve un recuento a partir de la informacion de un tag rfid."""
-        datos_tag = struct_recuento.parse(tag)
+    def desde_tag(cls, tag, con_dnis=True):
+        if con_dnis:
+            struct = struct_recuento_dni
+        else:
+            struct = struct_recuento
+        datos_tag = struct.parse(tag)
         por_categoria = int(datos_tag.por_categoria)
         cod_categoria = datos_tag.cod_categoria
 
@@ -659,13 +660,13 @@ class Recuento(object):
             categorias = Categoria.many(sorted='codigo')
 
         recuento = Recuento(mesa)
+        principales = recuento._get_dict_candidatos()
         # leemos los valores y los seteamos en los resultados
         # vienen ordenados por cod_lista,cod_categoria
         for lista in Lista.many(sorted='codigo'):
             for categoria in categorias:
-                candidato = Candidato.one(cod_categoria=categoria.codigo,
-                                          cod_lista=lista.codigo, titular=True,
-                                          numero_de_orden=1)
+                candidato = principales.get((lista.codigo,
+                                             categoria.codigo))
                 if candidato is not None:
                     recuento._resultados[categoria.codigo,
                                          candidato.codigo] = valores.pop(0)
@@ -681,10 +682,11 @@ class Recuento(object):
         if por_categoria:
             recuento.cod_categoria = cod_categoria
 
-        dnis = unpack_slow(datos_tag.documentos, 27)
-        for dni in dnis:
-            autoridad = Autoridad("", "", 0, dni)
-            recuento.autoridades.append(autoridad)
+        if con_dnis:
+            dnis = unpack_slow(datos_tag.documentos, 27)
+            for dni in dnis:
+                autoridad = Autoridad("", "", 0, dni)
+                recuento.autoridades.append(autoridad)
 
         return recuento
 
@@ -700,18 +702,23 @@ class Recuento(object):
         len_datos = int(datos[2:4], 16)
         datos_recuento = datos[4:]
         if len_datos != len(datos_recuento):
-            raise QRMalformado()
+            len_datos = int(datos[2:5], 16)
+            datos_recuento = datos[5:]
+            if len_datos != len(datos_recuento):
+                raise QRMalformado()
         datos_recuento = array_to_string(serial_16_to_8(datos_recuento))
-        recuento = Recuento.desde_tag(datos_recuento)
+        recuento = Recuento.desde_tag(datos_recuento, con_dnis=True)
 
         return recuento
 
     def a_human(self):
-        texto = "%s - %s, %s, %s (%s)\n" % (self.mesa.descripcion,
-                                            self.mesa.escuela,
-                                            self.mesa.municipio,
-                                            self.mesa.departamento,
-                                            self.mesa.codigo)
+        texto = "%s - %s, %s (%s)\n" % (self.mesa.descripcion,
+                                        self.mesa.escuela,
+                                        self.mesa.comuna,
+                                        self.mesa.codigo)
+        for autoridad in self.autoridades:
+            texto += "%s\n" % autoridad.nro_documento
+
         for categoria in Categoria.many(sorted="posicion"):
             texto += "%s\n" % categoria.nombre
             for lista in Lista.many(sorted='codigo'):
@@ -743,7 +750,7 @@ class Recuento(object):
 
 class Autoridad(object):
 
-    """Presidente de mesa."""
+    """Autoridad de mesa."""
 
     def __init__(self, apellido='', nombre='', tipo_documento='',
                  nro_documento=''):
@@ -823,7 +830,7 @@ class Jerarquia(str):
         """
         Devuelve True si label es ancestro de la jerarquia
         """
-        if self.jerarquia.startswith(label):
+        if self.jerarquia.startswith(label + "."):
             return True
         else:
             return False

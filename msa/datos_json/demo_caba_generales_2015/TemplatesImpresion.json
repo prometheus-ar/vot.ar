@@ -1,236 +1,58 @@
 [
     {
-        "codigo": "capital",
-        "templates": [
-            {
-                "ancho": 560,
-                "alto": 740,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 560,
-                "alto": 740,
-                "posicion": [560, 0]
-            },
-            {
-                "ancho": 810,
-                "alto": 350,
-                "posicion": [1120, 0],
-                "wrap_lista": 60
-            },
-            {
-                "ancho": 810,
-                "alto": 700,
-                "posicion": [1120, 280],
-                "wrap_secundarios": 70,
-                "wrap_lista": 60
-            }
-        ]
-    }, 
-    {
-        "codigo": "capital_baja",
-        "templates": [
-            {
-                "ancho": 180,
-                "alto": 350,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 180,
-                "alto": 350,
-                "posicion": [180, 0]
-            },
-            {
-                "ancho": 290,
-                "alto": 150,
-                "posicion": [360, 0]
-            },
-            {
-                "ancho": 290,
-                "alto": 300,
-                "posicion": [360, 120],
-                "wrap_secundarios": 70
-            }
-       ]
-    },
-    {
-        "codigo": "cinco",
-        "templates": [
-            {
-                "ancho": 640,
-                "alto": 740,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 740,
-                "posicion": [640, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 740,
-                "posicion": [640, 280]
-            },
-            {
-                "ancho": 640,
-                "alto": 350,
-                "posicion": [1280, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 700,
-                "posicion": [1280, 280]
-            }
-        ]
-    }, 
-    {
-        "codigo": "cinco_baja",
-        "templates": [
-            {
-                "ancho": 215,
-                "alto": 350,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 150,
-                "posicion": [215, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 300,
-                "posicion": [215, 120]
-            },
-            {
-                "ancho": 215,
-                "alto": 150,
-                "posicion": [430, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 300,
-                "posicion": [430, 120]
-            }
-       ]
-    },
-    {
-        "codigo": "cuatro",
-        "templates": [
-            {
-                "ancho": 640,
-                "alto": 740,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 740,
-                "posicion": [640, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 350,
-                "posicion": [1280, 0]
-            },
-            {
-                "ancho": 640,
-                "alto": 700,
-                "posicion": [1280, 280]
-            }
-        ]
-    }, 
-    {
-        "codigo": "cuatro_baja",
-        "templates": [
-            {
-                "ancho": 215,
-                "alto": 350,
-                "posicion": [0, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 350,
-                "posicion": [215, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 150,
-                "posicion": [430, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 300,
-                "posicion": [430, 120]
-            }
-       ]
-    },
-    {
         "codigo": "tres",
         "templates": [
             {
+                "font_size": 47,
                 "ancho": 640,
                 "alto": 740,
                 "posicion": [0, 0]
             },
             {
+                "font_size": 32,
                 "ancho": 640,
                 "alto": 740,
-                "posicion": [640, 0]
+                "posicion": [640, 0],
+                "wrap_secundarios": 44
             },
             {
+                "font_size": 36,
                 "ancho": 640,
                 "alto": 740,
-                "posicion": [1280, 0]
+                "posicion": [1280, 0],
+                "wrap_secundarios": 36
             }        
         ]
-    }, 
+    },
     {
-        "codigo": "tres_baja",
+        "codigo": "consulta",
         "templates": [
             {
-                "ancho": 215,
-                "alto": 350,
+                "font_size": 47,
+                "ancho": 640,
+                "alto": 740,
                 "posicion": [0, 0]
             },
             {
-                "ancho": 215,
-                "alto": 350,
-                "posicion": [215, 0]
-            },
-            {
-                "ancho": 215,
-                "alto": 350,
-                "posicion": [430, 0]
-            }
-        ]
-    },
-    {
-        "codigo": "extranjeros",
-        "templates": [
-            {
-                "ancho": 700,
+                "font_size": 32,
+                "ancho": 640,
                 "alto": 740,
-                "posicion": [480, 0]
+                "posicion": [640, 0],
+                "wrap_secundarios": 44
             },
             {
-                "ancho": 700,
+                "font_size": 36,
+                "ancho": 640,
                 "alto": 740,
-                "posicion": [1180, 0]
-            }        
-        ]
-    },
-    {
-        "codigo": "extranjeros_baja",
-        "templates": [
+                "posicion": [1280, 0],
+                "wrap_secundarios": 36
+            },        
             {
-                "ancho": 240,
-                "alto": 350,
-                "posicion": [170, 0]
-            },
-            {
-                "ancho": 240,
-                "alto": 350,
-                "posicion": [410, 0]
-            }
+                "font_size": 37,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 400]
+            }       
         ]
     }
 ]

@@ -192,6 +192,10 @@ class ARMVEDBus(MSADbusService):
         if func is not None:
             gobject.timeout_add(100, func)
 
+    @dbus.service.method(DBUS_BUSNAME_ARMVE)
+    def reset_rfid(self):
+        self.agent_reset(DEV_RFID)
+
     def _eventos_rfid(self):
         logger.info("registrando evento de cambio de tag")
         self.rfid.register_new_tag(100)

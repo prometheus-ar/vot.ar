@@ -8,6 +8,8 @@
   <rect width="{{width}}" height="{{height}}" fill="#ffffff"/>
   {% if verificador %}
     <image x="{{verificador.0}}" y="{{verificador.1}}" width="{{verificador.3}}" height="{{verificador.4}}" xlink:href="{{verificador.2}}"/> 
+    <text x="{{verificador.0 + 175}}" y="{{verificador.1 + 85}}" width="200" style="font-size:{{titulo.3}}px;">Verifique</text> 
+    <text x="{{verificador.0 + 190}}" y="{{verificador.1 + 117}}" width="200" style="font-size:{{titulo.3}}px;">su voto</text> 
   {% endif %}
   {% if escudo %}
     <image x="{{escudo.0}}" y="{{escudo.1}}" width="{{ escudo.2 }}" height="{{ escudo.3 }}" xlink:href="{{escudo.4}}"/>

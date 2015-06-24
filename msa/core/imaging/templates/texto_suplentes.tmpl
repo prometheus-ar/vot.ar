@@ -1,8 +1,13 @@
 {% if cantidad_suplentes == 1 %}
     del Suplente, Sr.:
 {% else %}
-    de los Suplentes, Sres.:
+    {% if cantidad_suplentes == 2 %}
+        de los Suplentes, Sres.:
+    {% endif %}
 {% endif %}
 {% for suplente in suplentes %}
     {{suplente.apellido}}, {{suplente.nombre}} con {{suplente.tipo_documento}} {{suplente.nro_documento}};
 {% endfor %} 
+{% if cantidad_suplentes > 0 %}
+    y de
+{% endif %}

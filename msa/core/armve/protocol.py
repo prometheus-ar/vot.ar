@@ -11,7 +11,7 @@ from zlib import crc32
 
 from msa import get_logger
 from msa.core.rfid.constants import COD_TAG_VACIO, COD_TAG_RECUENTO, \
-    COD_TAG_ADDENDUM, COD_TAG_INICIO
+    COD_TAG_ADDENDUM, COD_TAG_INICIO, COD_TAG_NO_ENTRA
 from msa.core.armve.constants import PROTOCOL_VERSION_1, MSG_COMMAND, \
     CMD_PWR_SOURCE, CMD_PWR_CONNECTED, CMD_PWR_GET_STATUS, CMD_PWR_PARAMS, \
     MSG_EV_PERS, MSG_EV_NOPERS, EVT_PWR_DISCHARGE, EVT_PWR_LVL_MIN, \
@@ -54,7 +54,8 @@ from msa.core.armve.decorators import arm_command, arm_event, retry_on_error, \
     wait_for_response
 from msa.core.armve.helpers import array_to_string, string_to_array, \
     serial_16_to_8
-from msa.core.armve.settings import AUTOFEED_1_MOVE, AUTOFEED_2_MOVE
+from msa.core.armve.settings import AUTOFEED_1_MOVE, AUTOFEED_2_MOVE, \
+    FALLBACK_2K
 from msa.core.armve.structs import struct_common, struct_batt_connected, \
     struct_byte, struct_batt_params, struct_printer_get_status, \
     struct_load_buffer_response, struct_tags_list, struct_power_check, \
@@ -1985,7 +1986,7 @@ class RFID(Device):
         blocks = self._create_blocks(tipo, token, data)
         if len(blocks) <= 28:
             self.write_blocks(serial_number, 0, len(blocks) - 1, blocks)
-        else:
+        elif FALLBACK_2K:
             tags = self.get_tags()[0]['serial_number']
             if len(tags) == 2 and tipo == COD_TAG_RECUENTO:
                 data_chip_1 = data[:104]
@@ -2000,6 +2001,9 @@ class RFID(Device):
                                              data_chip_2)
                 self.write_blocks(otro_serial, 0, len(blocks) - 1, blocks)
                 multi_tag = True
+        else:
+            blocks = self._create_blocks(COD_TAG_NO_ENTRA, token, "")
+            self.write_blocks(serial_number, 0, len(blocks) - 1, blocks)
 
         pm = PowerManager(self._buffer)
         pm.set_leds(1, 3, 0, 200)

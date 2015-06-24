@@ -6,6 +6,7 @@ from ojota import Ojota, Relation, OjotaSet
 from ojota.sources import JSONSource
 
 from msa.constants import COD_LISTA_BLANCO
+from msa.core import get_tipo_elec
 from msa.core.data.constants import NOMBRE_JSON_CATEGORIAS, \
     NOMBRE_JSON_CANDIDATOS, NOMBRE_JSON_LISTAS, NOMBRE_JSON_PARTIDOS, \
     NOMBRE_JSON_BOLETAS, NOMBRE_JSON_ALIANZAS
@@ -73,7 +74,6 @@ class Candidatura(Ojota):
             del dict_['asistida']
         return dict_
 
-
     def __str__(self):
         """Representacion del objeto. Codigo y nombre de la Candidatura."""
         return "%s - %s" % (self.codigo, self.nombre)
@@ -92,7 +92,11 @@ class Categoria(Candidatura):
         Devuelve el texto para a descripcion de la proxima categoria en
         asistida.
         """
-        msg = u'A continuación usted elegirá su candidato para %s'
+        if self.codigo != "CPO":
+            msg = u'A continuación usted elegirá su candidato para %s'
+        else:
+            msg = u'A continuación usted participará de la %s'
+
         return msg % self.texto_asistida
 
     def candidatos(self, cod_partido=None, clase_agrupacion=None):
@@ -145,7 +149,7 @@ class Alianza(Candidatura):
 
     plural_name = NOMBRE_JSON_ALIANZAS
 
-    def full_dict(self, img_func):
+    def full_dict(self, img_func, listas=True):
         """
         Devuelve una representacion completa de la Alianza y las relaciones
         relevantes para armar los botones de la eleccion.
@@ -157,11 +161,12 @@ class Alianza(Candidatura):
         alianza = self.to_dict()
         alianza['imagen'] = img_func(alianza['codigo'])
         alianza['listas'] = []
-        for lista in self.listas:
-            lista_dict = lista.to_dict()
-            lista_dict['candidatos'] = [cand.full_dict(img_func) for cand in
-                                        lista.candidatos]
-            alianza['listas'].append(lista_dict)
+        if listas:
+            for lista in self.listas:
+                lista_dict = lista.to_dict()
+                lista_dict['candidatos'] = [cand.full_dict(img_func)
+                                            for cand in lista.candidatos]
+                alianza['listas'].append(lista_dict)
         return alianza
 
     def candidatos_principales(self, cod_categoria):
@@ -200,7 +205,7 @@ class Partido(Candidatura):
     plural_name = NOMBRE_JSON_PARTIDOS
     alianza = Relation('cod_alianza', Alianza, "partidos")
 
-    def full_dict(self, img_func):
+    def full_dict(self, img_func, listas=True):
         """
         Devuelve una representacion completa del partido y las relaciones
         relevantes para armar los botones de la eleccion.
@@ -211,12 +216,13 @@ class Partido(Candidatura):
         """
         partido = self.to_dict()
         partido['imagen'] = img_func(partido['codigo'])
-        partido['listas'] = []
-        for lista in self.listas:
-            lista_dict = lista.to_dict()
-            lista_dict['candidatos'] = [cand.full_dict(img_func) for cand in
-                                        lista.candidatos]
-            partido['listas'].append(lista_dict)
+        if listas:
+            partido['listas'] = []
+            for lista in self.listas:
+                lista_dict = lista.to_dict()
+                lista_dict['candidatos'] = [cand.full_dict(img_func) for cand in
+                                            lista.candidatos]
+                partido['listas'].append(lista_dict)
         return partido
 
     def candidatos_principales(self, cod_categoria):
@@ -332,7 +338,8 @@ class Candidato(Candidatura):
         dict_['texto_asistida'] = dict_['texto_asistida'].replace("'", "`")
         return dict_
 
-    def full_dict(self, img_func=None):
+    def full_dict(self, img_func=None, secundarios=True, suplentes=True,
+                  hijas=False):
         """
         Devuelve una representacion completa del Candidato y las relaciones
         relevantes para armar los botones de la eleccion.
@@ -351,24 +358,24 @@ class Candidato(Candidatura):
         if img_func is not None:
             candidato_dict['imagen'] = img_func(self.codigo)
 
-        candidato_dict['secundarios'] = self.secundarios.to_dict()
-
-        if self.cod_categoria == "JEF" and self.numero_de_orden == 1 \
-                and not self.es_blanco():
-            candidato_dict['secundarios'][0]['imagen'] = \
-                img_func(candidato_dict['secundarios'][0]["codigo"])
-        candidato_dict['suplentes'] = self.suplentes.to_dict()
-
-        categorias_hijas = self.categoria.get_hijas()
-        candidato_dict['categorias_hijas'] = []
-        if len(categorias_hijas) > 0:
-            for cat_hija in categorias_hijas:
-                principal = Candidato.one(cod_categoria=cat_hija.codigo,
-                                          cod_lista=self.cod_lista,
-                                          titular=True, numero_de_orden=1)
-                cand_hijo = principal.full_dict(img_func)
-                candidato_dict['categorias_hijas'].append([cat_hija.to_dict(),
-                                                           cand_hijo])
+        if secundarios:
+            secundarios = self.secundarios.to_dict()
+            if self.cod_categoria == "JEF" and len(secundarios):
+                secundarios[0]['imagen'] = img_func(secundarios[0]['codigo'])
+            candidato_dict['secundarios'] = secundarios
+        if suplentes:
+            candidato_dict['suplentes'] = self.suplentes.to_dict()
+        if hijas:
+            categorias_hijas = self.categoria.get_hijas()
+            candidato_dict['categorias_hijas'] = []
+            if len(categorias_hijas) > 0:
+                for cat_hija in categorias_hijas:
+                    principal = Candidato.one(cod_categoria=cat_hija.codigo,
+                                              cod_lista=self.cod_lista,
+                                              titular=True, numero_de_orden=1)
+                    cand_hijo = principal.full_dict(img_func)
+                    candidato_dict['categorias_hijas'].append(
+                        [cat_hija.to_dict(), cand_hijo])
 
         return candidato_dict
 
@@ -405,12 +412,40 @@ class Candidato(Candidatura):
                                     sorted="numero_de_orden")
         return candidatos
 
+    @property
+    def listas(self):
+        listas = [boleta.lista for boleta in Boleta.many(GOB=self.codigo,
+                                                         lista_completa=True)
+                  if boleta.lista is not None]
+        return listas
+
+    @property
+    def partidos(self):
+
+        partidos = []
+        codigos = []
+        for lista in self.listas:
+            if lista.partido not in codigos:
+                codigos.append(lista.partido)
+                partidos.append(lista.partido)
+
+        return partidos
+
+    @property
+    def numero_colapsado(self):
+        return 15 if hasattr(self, "agrupacion_partidos") and \
+            self.agrupacion_partidos else get_tipo_elec("colapsar_partidos")
+
 
 class Boleta(Candidatura):
 
     """Partido de una eleccion."""
 
     plural_name = NOMBRE_JSON_BOLETAS
+
+    def __str__(self):
+        """Representacion del objeto. Codigo y nombre de la Candidatura."""
+        return "%s" % self.codigo
 
     def get_candidato(self, cod_categoria):
         if hasattr(self, cod_categoria):
@@ -419,3 +454,7 @@ class Boleta(Candidatura):
             candidato = None
 
         return candidato
+    @property
+    def lista(self):
+        lista = Lista.one(self.codigo)
+        return lista

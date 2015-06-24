@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import hashlib
+
 from ojota import Ojota, set_data_source
 from ojota.base import OjotaHierarchy
 
@@ -44,12 +46,8 @@ class Ubicacion(OjotaHierarchy):
         return self.descripcion
 
     @property
-    def departamento(self):
-        return self._get_data_clase("Departamento")
-
-    @property
-    def municipio(self):
-        return self._get_data_clase("Localidad")
+    def comuna(self):
+        return self._get_data_clase("Comuna")
 
     @property
     def escuela(self):
@@ -68,6 +66,11 @@ class Ubicacion(OjotaHierarchy):
     @property
     def descripcion_completa(self):
         return "%s %s" % (self.clase, self.descripcion)
+
+    def validar_pin(self, salt, pin):
+        hash_local = hashlib.sha256(salt + pin).hexdigest()
+        ret = hash_local == self.pin
+        return ret
 
 
 class Speech(Ojota):

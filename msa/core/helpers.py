@@ -13,7 +13,6 @@ from msa.core.data.settings import PATH_DATOS_JSON
 from msa.core.settings import (IMPRESION_USBLP, USB_PRINTER_PRODUCT_ID,
                                USB_PRINTER_VENDOR_ID)
 from msa.settings import PATH_CODIGO, PATH_REPO_RECURSOS, PATH_TTS
-from msa.voto.settings import PATH_FOTOS_ORIGINALES
 
 
 logger = get_logger("helpers")
@@ -31,8 +30,9 @@ def crear_juego(nombre):
     """
     Crea un nuevo juego de datos
     """
+    from msa.voto.settings import PATH_FOTOS_ORIGINALES
     archivos_sql = ['adhesiones_cargos.sql', 'adhesiones.sql',
-                    'candidaturas',
+                    'candidaturas.sql',
                     'cargo_candidatura_ubicacion.sql', 'cargos.sql',
                     'configuraciones.sql', 'dhont.sql',
                     'estados.sql',
@@ -81,6 +81,7 @@ def eliminar_juego(nombre):
     """
     Elimina un juego de datos existente
     """
+    from msa.voto.settings import PATH_FOTOS_ORIGINALES
     print("Eliminando juego de datos %s" % nombre)
     dir_json = os.path.join(PATH_CODIGO, 'datos_json', nombre)
     if os.path.exists(dir_json):
@@ -110,12 +111,12 @@ def smart_title(string):
     Tituliza un string sin tener en cuenta ciertas palabras
     (ex. preposiciones, etc.)
     """
-    EXCEPCIONES = ('ante', 'bajo', 'con', 'contra', 'de', 'desde', 'del',
-                   'durante', 'e', 'en', 'entre', 'hacia', 'hasta', 'mediante',
-                   'y', 'para', 'por', 'según', 'segun', 'sin', 'so', 'sobre',
+    EXCEPCIONES = ('a', 'ante', 'bajo', 'con', 'contra', 'de', 'desde', 'del',
+                   'durante', 'e', 'en', 'entre', 'hacia', 'hasta', 'mediante', 'y',
+                   'para', 'por', 'según', 'segun', 'sin', 'so', 'sobre',
                    'tras', 'versus', 'via', 'la', 'los')
-    SIGLAS = ('ti', 'ba', 'mst', 'ari', 'pro', '(aps)', '(aupec)', '(mst)',
-              'ucr', 'unen', 'ps', 'cfk', 'mmxv', 'surgen')
+    SIGLAS = ('ti', 'mst', 'pro', '(aps)', '(aupec)', '(mst)',
+              'ucr', 'unen', 'ps')
     # Primero titulizamos el string
     titleized = string.title()
     splitted = titleized.split(' ')
@@ -313,12 +314,12 @@ def get_lista_mod10(digitos=4, cant=None):
     return lista[:cant] if cant is not None else lista
 
 
-def generar_pin():
+def generar_pin(num_char=8):
     letras = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'P', 'Q', 'R',
               'S', 'T', 'U', 'W', 'X', 'Z']
     numeros = range(1, 10)
-    pin = "%s%s%s%d%d%d" % (choice(letras), choice(letras), choice(letras),
-                            choice(numeros), choice(numeros), choice(numeros))
+    caracteres = letras + list(numeros)
+    pin = "".join([str(choice(caracteres)) for i in range(num_char)])
     return pin
 
 

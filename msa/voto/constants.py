@@ -182,14 +182,12 @@ RECUENTO_IMPRIMIENDO = 7
 RECUENTO_GENERANDO = 8
 
 # Cantidad de suplentes ademas del presidente en las autoridades de mesa
-CANTIDAD_SUPLENTES = 1
+CANTIDAD_SUPLENTES = 2
 
 TIPO_DOC = ["DNI", "LC", "LE"]
 
 NUMEROS_TEMPLATES = {"vanilla": [2, 4, 6, 9, 12, 16, 20, 24, 30, 36],
-                     "empanada": [2, 3, 4, 6, 8, 10, 15, 18, 21],
-                     "soja": [8, ],
-                     "caipirinha": [2, 4, 6, 9, 12, 16, 20, 24, 30, 36]}
+                     "milanga": [2, 4, 6, 8, 9, 12]}
 
 INCREMENTO_VOLUMEN = 10
 DECREMENTO_VOLUMEN = 10

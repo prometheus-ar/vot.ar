@@ -1,0 +1,27 @@
+(S'tag con datos'
+p0
+(dp1
+Vread_only
+p2
+I01
+sVtipo
+p3
+VTAG_RECUENTO
+p4
+sVclase
+p5
+S'ICODE2'
+p6
+sVtoken
+p7
+V1C
+p8
+sVdatos
+p9
+S''
+p10
+sVserial
+p11
+I1
+stp12
+.

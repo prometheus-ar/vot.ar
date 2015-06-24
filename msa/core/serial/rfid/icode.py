@@ -8,7 +8,7 @@ from msa import get_logger
 from msa.core.serial.rfid import TAG, TAGError
 from msa.core.rfid.constants import TAG_VOTO, TAG_USUARIO_MSA,\
     TAG_PRESIDENTE_MESA, TAG_RECUENTO, TAG_APERTURA, TAG_DEMO, TAG_VIRGEN, \
-    TAG_VACIO, TAG_DESCONOCIDO, TAG_INICIO, TAG_ADDENDUM
+    TAG_VACIO, TAG_DESCONOCIDO, TAG_INICIO, TAG_ADDENDUM, TAG_NO_ENTRA
 from msa.core.settings import DEBUG_RFID
 
 
@@ -70,6 +70,7 @@ class ICODE(TAG):
     COD_TAG_VIRGEN = '\x00\x07'
     COD_TAG_INICIO = '\x00\x7F'
     COD_TAG_ADDENDUM = '\x00\x80'
+    COD_TAG_NO_ENTRA = '\x00\x45'
     COD_TAG_DESCONOCIDO = '\xff\xff'
 
     TIPOS_TAGS = { COD_TAG_VACIO: TAG_VACIO,
@@ -82,7 +83,9 @@ class ICODE(TAG):
                    COD_TAG_INICIO: TAG_INICIO,
                    COD_TAG_ADDENDUM: TAG_ADDENDUM,
                    COD_TAG_VIRGEN: TAG_VIRGEN,
-                   COD_TAG_DESCONOCIDO: TAG_DESCONOCIDO}
+                   COD_TAG_DESCONOCIDO: TAG_DESCONOCIDO,
+                   COD_TAG_NO_ENTRA : TAG_NO_ENTRA
+                  }
 
     def __init__(self, serial, lector, clase, token_id=''):
         TAG.__init__(self, serial, clase, token_id)
@@ -322,6 +325,7 @@ class ICODE2(ICODE):
     COD_TAG_INICIO = '\x7F'
     COD_TAG_ADDENDUM = '\x80'
     COD_TAG_DESCONOCIDO = '\xff'
+    COD_TAG_NO_ENTRA = '\x45'
 
     TIPOS_TAGS = { COD_TAG_VACIO: TAG_VACIO,
                    COD_TAG_VOTO: TAG_VOTO,
@@ -333,5 +337,6 @@ class ICODE2(ICODE):
                    COD_TAG_VIRGEN: TAG_VIRGEN,
                    COD_TAG_INICIO: TAG_INICIO,
                    COD_TAG_ADDENDUM: TAG_ADDENDUM,
+                   COD_TAG_NO_ENTRA : TAG_NO_ENTRA,
                    COD_TAG_DESCONOCIDO: TAG_DESCONOCIDO}
 

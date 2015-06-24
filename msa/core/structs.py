@@ -1,4 +1,5 @@
-from construct import GreedyRange, Bytes, If, Struct, UBInt8, UBInt16, Array
+from construct import GreedyRange, Bytes, Struct, UBInt8, UBInt16, Array, \
+    Embed, If
 
 from msa.core import get_config
 
@@ -22,11 +23,12 @@ struct_recuento = Struct("Recuento",
                          Bytes("por_categoria", 1),
                          If(lambda ctx: ctx.por_categoria == "1",
                             Bytes("cod_categoria", len_cods.get('categoria'))),
-                         UBInt8("len_documentos"),
-                         Array(lambda ctx: ctx.len_documentos,
-                               Bytes("documentos", 1)),
                          GreedyRange(Bytes("datos", 1))
                          )
+struct_recuento_dni = Struct("Recuento con dni",
+                             Array(11, Bytes("documentos", 1)),
+                             Embed(struct_recuento),
+                             )
 
 struct_apertura = Struct("Apertura",
                          UBInt16("numero_mesa"),

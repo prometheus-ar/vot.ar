@@ -11,7 +11,8 @@ from msa import get_logger
 from msa.core.serial.rfid import get_lector, TAGError, SerialException
 from msa.core.rfid.constants import CLASE_ICODE, CLASE_ICODE2, \
     TAGS_ADMIN, TAG_ADMIN, TAG_DATOS, TAG_VACIO, TAG_ERROR, CNX_ERROR, \
-    TAG_COLISION, NO_TAG, TAG_INICIO, TAG_ADDENDUM, TAG_RECUENTO
+    TAG_COLISION, NO_TAG, TAG_INICIO, TAG_ADDENDUM, TAG_RECUENTO, \
+    TAG_NO_ENTRA
 from msa.core.serial.rfid.helpers import str2hexa2
 
 
@@ -192,6 +193,10 @@ class RFIDController(object):
                 if len(data) <= 104:
                     tags[0].escribe_datos(data, tipo, marcar_ro)
                 else:
+                    tags[0].escribe_datos("", TAG_NO_ENTRA, marcar_ro)
+
+                """
+                else:
                     if len(tags) == 2:
                         data_chip_1 = data[:104]
                         tags[0].escribe_datos(data_chip_1, TAG_INICIO,
@@ -199,6 +204,7 @@ class RFIDController(object):
                         data_chip_2 = data[104:]
                         tags[1].escribe_datos(data_chip_2, TAG_ADDENDUM,
                                               marcar_ro)
+                """
             else:
                 tag = self._get_tag(obj=True)
                 if tag.get_serial() == serial:
@@ -228,7 +234,10 @@ class RFIDController(object):
         try:
             tag = self._get_tag()
             if tag:
-                tag_meta = tag.to_dict()
+                if type(tag) != dict:
+                    tag_meta = tag.to_dict()
+                else:
+                    tag_meta = tag
         except Exception, e:
             logger.error(">>>%s" % e)
         return tag_meta
