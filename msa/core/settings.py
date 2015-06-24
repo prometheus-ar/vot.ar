@@ -12,8 +12,9 @@ FAST_PACKING = False  # Indica si se usan las funciones rápidas para
 SMART_PACKING = True  # Indica si se usan las funciones de smart packing
 
 # settings para rfid
-TOKEN = '1C'
-COMPROBAR_TOKEN = True
+TOKEN = '97'
+COMPROBAR_TOKEN = False
+USAR_SALT = True
 # desplazamiento de boleta en la impresora para sacarla o volverla al lector
 DESPLAZAMIENTO_BOLETA = 10
 DEBUG_RFID = False
@@ -108,7 +109,7 @@ USB_PRINTER_PRODUCT_ID = 0x014c
 # Pausa entre frases, en segundos
 SPEECH_PAUSE = 3
 
-USAR_PIR = True
+USAR_PIR = False
 USAR_FAN = True
 ITERACIONES_APAGADO = 12
 

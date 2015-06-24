@@ -1,0 +1,171 @@
+// Variables
+
+@celeste-vot-ar: #00C0F2;
+@naranja-flecha: #FAA918;
+@gris-vot-ar: #f2f1f4;
+@blanco: #fff;
+@negro: #444;
+
+// Elementos
+
+body {
+    background-color: @gris-vot-ar;
+    overflow-y: scroll;
+    min-width: 1300px;
+    width: 100%;
+    min-height: 700px;
+    height: 100%;
+}
+
+.container {
+    width: 100%;
+}
+
+.logo {
+    width: 100px;
+    margin-top: 15px;
+    margin-left: 25px;
+    margin-bottom: 15px;
+}
+
+#navbar-top {
+    width: 100%;
+    border-bottom: 5px solid @naranja-flecha;
+    background-image: url('../img/bg_body.gif');
+    background-color: @gris-vot-ar;
+    background-repeat: no-repeat;
+    background-position: top right;
+}
+
+.navbar-header {
+    width: 70%;
+}
+
+img.navbar-brand {
+    margin-top: 19px;
+}
+
+.contenido {
+    height: 80%;
+}
+
+.estado-base {
+    width: 80px;
+    height: 20px;
+    border-left: 2px solid #696969;
+    border-radius: 5px;
+    text-align: center;
+    color: #333;
+    font-size: 10px;
+}
+
+.estado-espera {
+    background: #ffff7b;
+}
+
+.estado-recibida {
+    background: #abb5ff;
+}
+
+.estado-en-proceso {
+    background: #c89eff;
+}
+
+.estado-verificar {
+    background: #ffcf6b;
+}
+
+.estado-ok {
+    background: #80ed94;
+}
+
+.estado-publicada {
+    background: #abff5a;
+}
+
+.mesa-estados {
+    padding-left:15px;
+    vertical-align: middle;
+    font-size: 0.9em;
+}
+
+.cargo-estados {
+    padding-left:35px;
+    vertical-align: middle;
+    font-size: 0.8em;
+}
+
+.icono-estado{
+  font-size: 11px;
+}
+
+#mensaje {
+    font-size: 1.3em;
+    font-weight: bold;
+    height: 20%;
+
+}
+
+.numero-planilla {
+    color: @celeste-vot-ar;
+    font-weight: bold;
+}
+#contenedor_imagen_acta {
+    min-height: 275px;
+    height: 50%;
+    overflow: auto;
+    position: relative;
+}
+
+#contenedor_imagen_acta svg {
+    margin: auto;
+    display: block;
+}
+
+#contenedor_derecho {
+    background: @blanco;
+    min-height: 550px;
+    height: 100%;
+    overflow: auto;
+    margin-top: -20px;
+}
+
+#confirmacion {
+    padding-top: 20px;
+}
+
+#btn_si, #btn_no {
+    font-size: 2em;
+}
+
+#conectar, #desconectar {
+    width: 150px;
+}
+
+#status {
+    font-size: 1.2em;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.noselect {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.desc-prueba {
+  font-size: 1.3em;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.res-prueba {
+  font-size: 1.15em;
+  font-weight: bold;
+}

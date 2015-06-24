@@ -1,0 +1,32 @@
+[
+  {
+    "adhiere": null, 
+    "asistida": "mi\u00e9mbros de j\u00fantas comun\u00e1les", 
+    "codigo": "COM", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Miembros de Juntas Comunales", 
+    "posicion": 3, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "j\u00e9fe o j\u00e9fa y vicej\u00e9fe o vicej\u00e9fa de gobierno", 
+    "codigo": "JEF", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Jefe/a y Vicejefe/a de Gobierno", 
+    "posicion": 1, 
+    "texto_adicional": null
+  }, 
+  {
+    "adhiere": null, 
+    "asistida": "legislad\u00f3res", 
+    "codigo": "LEG", 
+    "consulta_popular": false, 
+    "max_selecciones": "1", 
+    "nombre": "Legisladores", 
+    "posicion": 2, 
+    "texto_adicional": null
+  }
+]

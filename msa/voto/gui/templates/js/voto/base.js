@@ -49,8 +49,3 @@ function set_unico_modo(estado){
     unico_modo = estado;
 }
 
-function preload(images){
-    $(images).each(function() {
-        $('<img />').attr('src', "imagenes_candidaturas/" + constants.juego_de_datos + "/" + this);
-    });
-}

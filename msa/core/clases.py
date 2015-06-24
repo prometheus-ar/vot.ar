@@ -171,8 +171,7 @@ class Apertura(object):
             'cantidad_suplentes': len(suplentes),
             'mesa': self.mesa.descripcion_completa,
             'escuela': self.mesa.escuela,
-            'municipio': self.mesa.municipio,
-            'departamento': self.mesa.departamento,
+            'comuna': self.mesa.comuna,
             'horas': "%02d" % self.hora['horas'],
             'minutos': "%02d" % self.hora['minutos'],
             'mostrar_texto': True
@@ -360,11 +359,6 @@ class Seleccion(object):
             mesa = Ubicacion.one(cod_datos=datos_tag.ubicacion)
             current_data_code(datos_tag.ubicacion)
 
-        if datos_tag.cod_interna != "":
-            interna = Partido.one(datos_tag.cod_interna)
-        else:
-            interna = None
-
         candidatos = []
         for elem in datos_tag.voto_categoria:
             cod_categoria = elem["cod_categoria"].strip()
@@ -539,9 +533,11 @@ class Recuento(object):
                 documentos.append(int(autoridad.nro_documento))
             len_documentos = len(documentos)
             if len_documentos == 1:
+                documentos += [0, 0]
+            elif len_documentos == 2:
                 documentos.append(0)
             elif len_documentos == 0:
-                documentos = [0, 0]
+                documentos = [0, 0, 0]
 
             documentos = pack_slow(documentos, 27)
             container.documentos = documentos
@@ -601,15 +597,16 @@ class Recuento(object):
             presidente = self.autoridades[0]
         except IndexError:
             presidente = ""
-        suplentes = self.autoridades[1:]
+        suplentes = [sup for sup in self.autoridades[1:]
+                     if sup.nro_documento != 0]
+
         datos = {
             'presidente': presidente,
             'suplentes': suplentes,
             'cantidad_suplentes': len(suplentes),
             'mesa': self.mesa.descripcion_completa,
             'escuela': self.mesa.escuela,
-            'municipio': self.mesa.municipio,
-            'departamento': self.mesa.departamento,
+            'comuna': self.mesa.comuna,
             'horas': "%02d" % self.hora.get('horas', "") \
                 if self.hora is not None else "",
             'minutos': "%02d" % self.hora.get('minutos', "")
@@ -668,9 +665,8 @@ class Recuento(object):
         # vienen ordenados por cod_lista,cod_categoria
         for lista in Lista.many(sorted='codigo'):
             for categoria in categorias:
-                candidato = Candidato.one(cod_categoria=categoria.codigo,
-                                          cod_lista=lista.codigo, titular=True,
-                                          numero_de_orden=1)
+                candidato = principales.get((lista.codigo,
+                                             categoria.codigo))
                 if candidato is not None:
                     recuento._resultados[categoria.codigo,
                                          candidato.codigo] = valores.pop(0)
@@ -716,11 +712,13 @@ class Recuento(object):
         return recuento
 
     def a_human(self):
-        texto = "%s - %s, %s, %s (%s)\n" % (self.mesa.descripcion,
-                                            self.mesa.escuela,
-                                            self.mesa.municipio,
-                                            self.mesa.departamento,
-                                            self.mesa.codigo)
+        texto = "%s - %s, %s (%s)\n" % (self.mesa.descripcion,
+                                        self.mesa.escuela,
+                                        self.mesa.comuna,
+                                        self.mesa.codigo)
+        for autoridad in self.autoridades:
+            texto += "%s\n" % autoridad.nro_documento
+
         for categoria in Categoria.many(sorted="posicion"):
             texto += "%s\n" % categoria.nombre
             for lista in Lista.many(sorted='codigo'):
@@ -752,7 +750,7 @@ class Recuento(object):
 
 class Autoridad(object):
 
-    """Presidente de mesa."""
+    """Autoridad de mesa."""
 
     def __init__(self, apellido='', nombre='', tipo_documento='',
                  nro_documento=''):
@@ -832,7 +830,7 @@ class Jerarquia(str):
         """
         Devuelve True si label es ancestro de la jerarquia
         """
-        if self.jerarquia.startswith(label):
+        if self.jerarquia.startswith(label + "."):
             return True
         else:
             return False

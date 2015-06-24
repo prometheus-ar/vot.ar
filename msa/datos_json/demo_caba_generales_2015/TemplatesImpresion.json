@@ -1,0 +1,58 @@
+[
+    {
+        "codigo": "tres",
+        "templates": [
+            {
+                "font_size": 47,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [0, 0]
+            },
+            {
+                "font_size": 32,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [640, 0],
+                "wrap_secundarios": 44
+            },
+            {
+                "font_size": 36,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 0],
+                "wrap_secundarios": 36
+            }        
+        ]
+    },
+    {
+        "codigo": "consulta",
+        "templates": [
+            {
+                "font_size": 47,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [0, 0]
+            },
+            {
+                "font_size": 32,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [640, 0],
+                "wrap_secundarios": 44
+            },
+            {
+                "font_size": 36,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 0],
+                "wrap_secundarios": 36
+            },        
+            {
+                "font_size": 37,
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 400]
+            }       
+        ]
+    }
+]

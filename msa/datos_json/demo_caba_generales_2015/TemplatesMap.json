@@ -1,0 +1,10 @@
+[
+    {
+        "codigo": "CABA",
+        "cod_template": "tres"
+    },
+    {
+        "codigo": "CABA.9",
+        "cod_template": "consulta"
+    }
+]

@@ -16,7 +16,7 @@
     <image x="{{verificador.0}}" y="{{verificador.1}}" width="180" height="180" xlink:href="{{verificador.2}}"/>
   {% endif %}
   {% if escudo %}
-    <image x="{{escudo.0}}" y="{{escudo.1}}" width="80" height="80" xlink:href="{{escudo.2}}"/>
+    <image x="{{escudo.0}}" y="{{escudo.1}}" width="350" height="123" xlink:href="{{escudo.2}}"/>
   {% endif %}
   <text x="{{titulo1.0}}" y="{{titulo1.1}}" >{{titulo1.2}}</text>
   <text x="{{titulo2.0}}" y="{{titulo2.1}}" >{{titulo2.2}}</text>

@@ -16,6 +16,9 @@ POSBITS = 7
 # diferencia respecto al offset
 OFFSETMESA = 0
 
+# Cantidad de bits para almacenar el nro de mesa
+BITS_NUMERO_MESA = 14
+
 
 def nro2cod(nro, bits_fijos, bits_variables, posicion):
     """ Codifica el nro devolviendo una tupla con la parte fija y la
@@ -143,7 +146,7 @@ def pack(mesa, datos, modo=0, max_bits=MAXBITS):
     bits_fijos = bitsfijos(modo)
     bits_var = bitsvariables(modo)
 
-    binmesa = bin(mesa - OFFSETMESA)[2:].zfill(12)
+    binmesa = bin(mesa - OFFSETMESA)[2:].zfill(BITS_NUMERO_MESA)
     binmodo = bin(modo)[2:].zfill(2)
     bincantdatos = bin(len(datos))[2:].zfill(POSBITS)
 
@@ -185,21 +188,21 @@ def unpack(strbytes):
 
     binstr = strbytes2binstr(strbytes)
 
-    # La mesa ocupa los primeros 12 bits. Tiene un offset de OFFSETMESA por lo
-    # que se le suman
+    # La mesa ocupa los primeros BITS_NUMERO_MESA bits. Tiene un offset de
+    # OFFSETMESA por lo que se le suman
 
-    mesa = int(binstr[0:12], 2) + OFFSETMESA
-    # El modo ocupa los bits 13 y 14
-    modo = int(binstr[12:14], 2)
-    # La cantidad de datos ocupa los bits 15-21
-    cant_datos = int(binstr[14:21], 2)
+    mesa = int(binstr[0:BITS_NUMERO_MESA], 2) + OFFSETMESA
+    # El modo ocupa los 2 bits siguientes
+    modo = int(binstr[BITS_NUMERO_MESA:BITS_NUMERO_MESA + 2], 2)
+    # La cantidad de datos ocupa los 7 bits siguientes
+    cant_datos = int(binstr[BITS_NUMERO_MESA + 2:BITS_NUMERO_MESA + 9], 2)
 
     # Obtiene la cantidad de bits segun el modo
     bits_fijos = bitsfijos(modo)
     bits_var = bitsvariables(modo)
 
-    # Los datos ocupan los bits 22-(22 + cant_datos * bits_fijos - 1)
-    bindatos = binstr[21:21 + cant_datos * bits_fijos]
+    # Los datos ocupan los siguientes bits
+    bindatos = binstr[BITS_NUMERO_MESA + 9:BITS_NUMERO_MESA + 9 + cant_datos * bits_fijos]
 
     datos = []
     for i in range(0, len(bindatos), bits_fijos):
@@ -208,7 +211,7 @@ def unpack(strbytes):
 
     # A partir de eso vienen los datos variables es decir la direccion mas
     # los bits significativos de aquellos que los requieren
-    bindatosvariables = binstr[21 + cant_datos * bits_fijos:]
+    bindatosvariables = binstr[BITS_NUMERO_MESA + 9 + cant_datos * bits_fijos:]
     # Omito los 0 que se agregaron para completar el byte
     longitud_ajustada = len(bindatosvariables) / (POSBITS + bits_var) * \
         (POSBITS + bits_var)
@@ -221,40 +224,3 @@ def unpack(strbytes):
         datos[pos] = datos[pos] + valor
 
     return (mesa, datos)
-
-
-if __name__ == "__main__":
-        import random
-        # Pruebo generar varias actas para analizar la longitud y verificar que
-        # funcione la codificacion y decodificacion
-        for i in range(10):
-            lista = []
-
-            # Uso 3 cargos
-            for cargo in range(3):
-                acum = 0
-                # Al primer candidato le pongo un random cuanto más
-                # grande este random más desparejos van a ser los datos
-                nro = random.randint(0, 150)
-                lista.append(nro)
-                acum += nro
-                for votos in range(32):
-                    # Al resto de los candidatos le asigno un
-                    # aleatorio que sea a lo sumo 1/3 de lo que
-                    # queda para llegar a 350 votos. Se puede jugar
-                    # con el 1/3 para ver distintos tipos de
-                    # distribuciones
-                    nro = random.randint(0, (350 - acum) / 3)
-                    lista.append(nro)
-                    acum += nro
-
-            strcod = pack(1234, lista)
-            print "Lista: %s" % lista
-            print "Lenght lista: %s" % len(lista)
-            print "Longitud generada: %d bits \n" % (len(strcod) * 8)
-
-            mesa, lista2 = unpack(strcod)
-            if cmp(lista, lista2) != 0:
-                msg = "No coinciden la original y la codificada y luego " \
-                "decodificada"
-                print msg

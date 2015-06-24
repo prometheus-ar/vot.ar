@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 import os
 
-from copy import copy
 from urllib2 import quote
 from random import shuffle
 from time import sleep
@@ -14,7 +13,7 @@ from msa.core import get_tipo_elec, get_config
 from msa.core.clases import Seleccion
 from msa.core.data import TemplateImpresion, TemplateMap
 from msa.core.data.candidaturas import Categoria, Candidato, Lista, Partido, \
-    Alianza, Boleta
+    Alianza
 from msa.core.data.settings import JUEGO_DE_DATOS
 from msa.core.settings import USA_ARMVE, USAR_BUFFER_IMPRESION
 from msa.helpers import cambiar_locale
@@ -45,8 +44,8 @@ class Actions(BaseActionController):
         self.controller.mostrar_loader()
 
     def cargar_cache(self, data):
-        self.controller._precache_datos()
-        #self.controller._precache_generacion_img()
+        self.controller._precache_categorias()
+        self.controller._precache_generacion_img()
         self.controller.ocultar_loader()
 
     def inicializar_interfaz(self, data):
@@ -217,24 +216,10 @@ class ControllerVoto(WebContainerController):
 
         return ret
 
-    def _precache_datos(self):
+    def _precache_categorias(self):
         sleep(0.1)
-        self.sesion.logger.debug("cacheando categorias")
-        alianzas = self.agrupador.all()
         for categoria in Categoria.all():
-            candidatos = self._get_candidatos_categoria(categoria.codigo, None)
-            if len(candidatos) > get_tipo_elec("colapsar_listas"):
-                for alianza in alianzas:
-                    if len(alianza.listas) > 10:
-                        self._get_candidatos_categoria(categoria.codigo,
-                                                       alianza.codigo)
-        self.sesion.logger.debug("cacheando listas")
-        for lista in Lista.all():
-            self._get_dict_lista(lista)
-
-        self.sesion.logger.debug("cacheando partidos")
-        self._get_partidos()
-        self.sesion.logger.debug("fin cache")
+            self._get_candidatos_categoria(categoria.codigo, None)
 
     def _precache_generacion_img(self):
         #Imagen dummy para importar lo relacionado a generar imagenes
@@ -255,30 +240,6 @@ class ControllerVoto(WebContainerController):
             self._cache_categorias[key] = cand_list
         return cand_list
 
-    def _get_dict_lista(self, lista):
-        key = ("dict_lista", lista.codigo)
-        if key in self._cache_categorias:
-            listas_dict = self._cache_categorias[key]
-        else:
-            listas_dict = []
-            candidatos = lista.candidatos
-
-            if len(candidatos):
-                lista_dict = lista.to_dict()
-                lista_dict['imagen'] = _image_name(lista.codigo)
-                lista_dict['candidatos'] = []
-
-                for cand in candidatos:
-                    candidato_dict = cand.full_dict(_image_name,
-                                                    secundarios=False,
-                                                    suplentes=False)
-                    candidato_dict['categoria'] = cand.categoria.nombre
-                    lista_dict['candidatos'].append(candidato_dict)
-
-                listas_dict.append(lista_dict)
-            self._cache_categorias[key] = listas_dict
-        return listas_dict
-
     @solo_votando
     def cargar_candidatos(self, cod_categoria, cod_partido=None):
         """"Envia los candidatos a la interfaz web."""
@@ -295,16 +256,7 @@ class ControllerVoto(WebContainerController):
         if cod_partido is None and get_tipo_elec("paso") and len(cand_list) > \
                 get_tipo_elec("colapsar_listas"):
 
-            partidos = {}
-            for candidato in cand_list:
-                cod_partido = candidato['partido']['codigo']
-                if cod_partido not in partidos:
-                    candidato['partido']['imagen'] = _image_name(cod_partido)
-                    partidos[cod_partido] = candidato['partido']
-
-            partidos = partidos.values()
-            shuffle(partidos)
-
+            partidos = self._get_partidos()
             self.send_command("cargar_partido_categorias",
                               {'candidatos': cand_list,
                                'cod_categoria': cod_categoria,
@@ -595,13 +547,8 @@ class ControllerVoto(WebContainerController):
 
     def _get_partidos(self):
         """Devuelve las partidos."""
-        key = "partidos"
-        if key in self._cache_categorias:
-            partidos = self._cache_categorias.get(key)
-        else:
-            partidos = [agr.full_dict(_image_name, listas=False) for agr in
-                        self.agrupador.all() if not agr.es_blanco()]
-            self._cache_categorias[key] = partidos
+        partidos = [agr.full_dict(_image_name) for agr in self.agrupador.all()
+                    if not agr.es_blanco()]
 
         if MEZCLAR_INTERNAS:
             shuffle(partidos)
@@ -670,13 +617,11 @@ class ControllerVoto(WebContainerController):
 
     def send_constants(self):
         """Envia todas las constantes de la eleccion."""
-        constants_dict = get_constants(self.sesion.mesa.codigo,
-                                       self.sesion.mesa.departamento,
-                                       self.sesion.mesa.municipio)
+        constants_dict = get_constants(self.sesion.mesa.codigo)
         self.send_command("set_constants", constants_dict)
 
 
-def get_constants(ubicacion=None, departamento=None, municipio=None):
+def get_constants(ubicacion=None):
     translations = (
         "conformar_voto", "si",
         "votar_por_categorias", "votar_lista_completa", "su_seleccion",
@@ -689,9 +634,6 @@ def get_constants(ubicacion=None, departamento=None, municipio=None):
         "cargando_interfaz", "espere_por_favor", "verificando_voto")
 
     encabezado = get_config('datos_eleccion')
-    if departamento is not None and municipio is not None:
-        encabezado = copy(encabezado)
-        encabezado["fecha"] += " - %s - %s" % (departamento, municipio)
 
     constants_dict = {
         "juego_de_datos": JUEGO_DE_DATOS,
@@ -719,7 +661,6 @@ def get_constants(ubicacion=None, departamento=None, municipio=None):
         "COLAPSAR_INTERNAS_PASO": get_tipo_elec("colapsar_partidos"),
         "BARRA_SELECCION": BARRA_SELECCION,
         "asistida": False,
-        "imagenes": []#get_nombres_imagenes()
     }
     return constants_dict
 
@@ -733,18 +674,3 @@ def get_templates():
         template_file = os.path.join("flavors", FLAVOR, file_name)
         templates[template] = template_file
     return templates
-
-
-def get_nombres_imagenes():
-    nombres_imagenes = []
-    for candidato in Candidato.principales():
-        nombres_imagenes.append(_image_name(candidato.codigo))
-
-    for lista in Lista.all():
-        nombres_imagenes.append(_image_name(lista.codigo))
-    for partido in Partido.all():
-        nombres_imagenes.append(_image_name(partido.codigo))
-    for alianza in Alianza.all():
-        nombres_imagenes.append(_image_name(alianza.codigo))
-
-    return nombres_imagenes

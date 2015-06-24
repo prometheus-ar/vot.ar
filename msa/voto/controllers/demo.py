@@ -31,19 +31,24 @@ class ControllerDemo(WebContainerController):
 
         # Tomo una mesa testigo por cada lugar diferente
         for obj in Ubicacion.many(clase="Mesa"):
-            if obj.cod_datos not in configuraciones:
-                configuraciones.add(obj.cod_datos)
-                ext = obj.extranjera and _("extranjeros_demo") or ''
-                mesas_demo.append((obj.numero, obj.municipio, ext))
+            key = (obj.municipio, obj.extranjera)
+            if key not in configuraciones:
+                configuraciones.add(key)
+                ext = obj.extranjera and "(Ext)" or ''
+                mesas_demo.append((obj.numero, obj.departamento,
+                                   obj.municipio, ext))
         return mesas_demo
 
     def cargar_botones(self):
+        def _cmp(a, b):
+            return cmp(a[1], b[1])
         datos_mesas = self._get_data_mesas()
-        if len(datos_mesas) == 1:
-            nro_mesa = datos_mesas[0][0]
-            self.configurar_mesa(nro_mesa)
-        else:
-            self.send_command("cargar_botones_ubicaciones", datos_mesas)
+        datos_mesas = sorted(datos_mesas, cmp=_cmp)
+        #if len(datos_mesas) == 1:
+        nro_mesa = datos_mesas[0][0]
+        self.configurar_mesa(nro_mesa)
+        #else:
+        #    self.send_command("cargar_botones_ubicaciones", datos_mesas)
 
     def configurar_mesa(self, data):
         self.parent._configurar_ubicacion_demo(data)

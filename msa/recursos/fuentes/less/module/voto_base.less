@@ -1,0 +1,264 @@
+@import "../base/variables";
+@import "../base/utils";
+@import "barra_seleccion";
+
+// Estilos generales
+
+.opciones .candidato{
+    background-color: @fondo;
+    padding: 7px;
+
+    border-radius: 3px;
+    border: solid 1px @borde-boton;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+
+    img{
+        width: 100%;
+    }
+
+    .foto-candidato, .foto-partido, .foto-secundario{
+        position: relative;
+        &:before{
+            content: "";
+            display: block;
+            padding-top: 100%;
+        }
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .foto-candidato, .foto-secundario{
+        margin-right: 5px;
+        display: block;
+        float: left;
+        border: 1px solid @borde-foto;
+        margin-bottom: 5px;
+    }
+
+    .foto-partido{
+        border: 1px solid @borde-foto;
+        float: left;
+    }
+
+    .lista{
+        float: right;
+        text-align: right;
+
+        .palabra-lista{
+            text-transform: uppercase;
+            color: @celeste-votar;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+
+        .numero-lista{
+            font-size: 1em;
+            font-weight: bold;
+        }
+    }
+
+    .nombre-partido{
+        float: left;
+        margin-top: 5px;
+        display: block;
+        padding-bottom: 3px;
+    }
+
+    .candidato-principal{
+        font-weight: bold;
+        color: @azul;
+        font-size: 0.9em;
+    }
+
+    .candidato-secundario{
+        font-size: 0.8em;
+        margin-top: 3px;
+        font-weight: bold;
+    }
+
+    &.candidato-persona{
+        //Nothing to see here, keeping it just in case
+    }
+
+    &.candidato-lista-completa{
+        .candidato-principal, .candidato-secundario{
+            display: none;
+        }
+        .nombre-partido{
+            width: 100%;
+            font-weight: bold;
+        }
+    }
+
+    &.seleccionado{
+        .box-shadow(0px 0px 12px 12px rgba(55, 180, 246, .75));
+        .rounded(3px);
+    }
+}
+
+.opciones .opcion-consulta {
+    font-size: 4em;
+    text-align: center;
+    div {
+        width: 100% !important;
+    }
+    .candidato-principal {
+        margin-top: 20%;
+    }
+    .candidato-secundario {
+        clear: both;
+    }
+}
+
+// Confirmacion
+
+.confirmados{
+    .candidato{
+        margin-left: 10px;
+        margin-top: 10px;
+        float: left;
+        background-color: @fondo;
+        border-radius: 3px;
+        border: solid 1px @gris-borde-boton;
+        padding: 10px;
+        .contenedor-candidato{
+            height: 87%;
+        }
+        &.consulta_popular {
+            .foto-partido, .foto-candidato, .nombre-partido, .palabra-lista, .numero-lista {
+                display: none;
+            }
+        }
+    }
+
+    .blanco, .no-seleccionado{
+        .palabra-lista, .numero-lista, 
+        .candidato-secundario, .nombre-partido{ 
+            display:none;
+        }
+    }
+
+    .nombre-cargo{
+        text-transform: uppercase;
+        color: @gris-oscuro;
+        font-size: 0.8em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        border-bottom: 1px solid @gris-medio;
+    }
+
+    .lista{
+        float: right;
+        text-align: right;
+        height: 52px;
+        width: 90px;
+        .palabra-lista{
+            text-transform: uppercase;
+            color: @celeste-votar;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+
+        .numero-lista{
+            font-size: 2.3em;
+            font-weight: bold;
+        }
+    }
+
+    .foto-candidato{
+        width: 140px;
+        height: 140px;
+        float: left;
+        border: 1px solid @gris-medio;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        img{
+            width: 100%;
+        }
+    }
+
+    .foto-partido{
+        clear: right;
+        float: right;
+        width: 88px;
+        height: 88px;
+        //float: left;
+        border: 1px solid @gris-medio;
+        img{
+            width: 100%;
+        }
+    }
+
+    .candidato-principal{
+        color: @azul;
+        font-weight: bold;
+        font-size: 1.3em;
+        clear: both;
+        margin-bottom: 5px;
+    }
+
+    .candidato-secundario{
+        color: @celeste-votar;
+        font-weight: bold;
+        font-size: 1em;
+    }
+
+    .candidato-suplente{
+        margin-top: 5px;
+        .cargo{
+            font-weight: bold;
+        }
+    }
+
+    .nombre-partido{
+        font-size: 1em;
+        line-height: 1.1em;
+        .width-fl(100%);
+    }
+
+    &.confirmacion6{
+        .candidato {
+            .foto-candidato {
+                width: 120px;
+                height: 120px;
+            }
+            .foto-partido {
+                width: 63px;
+                height: 63px;
+            }
+        }
+    }
+}
+
+#pantalla_agradecimiento {
+    text-align: center;
+    .texto-grande {
+        margin-top: -20px;
+    }
+    .texto-mediano {
+        margin-top: 0px;
+        margin-bottom: 20px;
+    }
+    #img_previsualizacion {
+        margin-top: 10px;
+    }
+}
+
+#pantalla_consulta {
+    text-align: center;
+    .texto-mediano {
+        margin-top: 10px;
+        margin-bottom: 30px;
+    }
+    h2.asistida {
+        margin-top: 100px;
+        font-size: 3em;
+    }
+}

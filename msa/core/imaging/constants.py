@@ -9,19 +9,20 @@ medidas_alta = {
     'alto_con_verif': 2200,
     'alto_solo_mostrar': 1930,
 
-    'pos_verif': (260, 540),
+    'pos_verif': (245, 540),
 
     'verif_size': (200, 185),
 
-    'logo': (530, 0),
+    'logo': (530, 8),
     'dimensiones_logo': (60, 65),
 
     'titulo': (595, 35),
     'subtitulo': (595, 70),
     'tercer_titulo': (595, 70),
-    'img_verificador': 'verificador_alta.png',
+    'img_verificador': 'verificador_alta_flecha.png',
 
     'default_tfz': 26,
+    'default_tfz_texto_lista': 32,
     'fs_water': 30,
     'fs_titulo': 35,
     'fs_subtitulo': 30,
@@ -40,11 +41,11 @@ medidas_alta = {
     'padding_nom_lista': 125, # separacion entre el tope del bloque y el nombre del la lista
     'sep_lineas_lista': 30, # alto de las lineas del nombre de la lista
     'padding_cand_titular': 10,
-    'sep_lineas_titular': 25, # alto de las lineas del nombre de la lista
-    'padding_secundarios': 20, # separacion entre el titular y los secunadarios
+    'sep_lineas_titular': 35, # alto de las lineas del nombre de la lista
+    'padding_secundarios': 28, # separacion entre el titular y los secunadarios
     'padding_selecciones': 90, # margen superior desde el borde de la boleta hasta el primer bloque
-    'fs_secundarios': 3, # cantidad de numeros menos de fuente que tiene el secundario que el principal
-    'sep_lineas_secundarios': 25, # alto de las lineas del nombre de la lista
+    'fs_secundarios': 5, # cantidad de numeros menos de fuente que tiene el secundario que el principal
+    'sep_lineas_secundarios': 30, # alto de las lineas del nombre de la lista
 }
 
 medidas_baja = {

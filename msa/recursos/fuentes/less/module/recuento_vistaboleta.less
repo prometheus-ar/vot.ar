@@ -1,0 +1,115 @@
+body[data-vista='vista-boleta'] {
+    .contenedor-izq {
+        width: 335px;
+    }
+    .contenedor-der{
+        width: 1010px;
+    }
+    .contenedor-tabla{
+        width: 335px;
+    }
+    #boleta {
+        display: block;
+    }
+    #resultado{
+        width: 1004px;
+        height: 172px;
+        margin-top: 8px;
+        margin-bottom: 10px;
+        margin-left: 0px;
+        background-color: @fondo;
+    }
+    .contenedor-votado{
+        width: 143px;
+        height: 140px;
+        padding: 5px 14px 0px 12px;
+        &#contenedor_LEG{
+            width: 505px;
+        }
+        &#contenedor_COM, &#contenedor_JEF{
+            width: 200px;
+        }
+        .candidato{
+            padding-left:0px;
+            padding-right:0px;
+            .nombre-cargo-recuento{
+                font-size: 0.7em;
+                margin-top: 0px;
+            }
+            .candidato-principal{
+                font-size: 0.7em;
+            }
+            .candidato-secundario{
+                color: @celeste-votar;
+                font-size: 0.6em;
+                margin-top: 3px;
+                font-weight: bold;
+            }
+            .nombre-partido{
+                width: 111px;
+                font-size: 0.52em;
+                border: 0px;
+            }
+            .foto-candidato{
+                width: 70px;
+                height: 70px;
+            }
+            .lista{
+                min-height: 26px;
+                .numero-lista{
+                    font-size: 1em;
+                }
+            }
+            .foto-partido{
+                width: 44px;
+                height: 44px;
+            }
+        }
+    }
+    .tabla-scrolleable{
+        padding-top: 42px;
+    }
+    .tabla-recuento {
+        width: 335px;
+        &#tabla_recuento{
+            thead {
+                position: absolute;
+                top: 9px;
+                th:nth-child(1){
+                    width: 42px;
+                    max-width: 42px;
+                    display: block;
+                    div.nombre-corto{
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+                th:nth-child(2){
+                    width: 100%;
+                    div.nombre-corto{
+                        width: 100%;
+                        max-width: 100%;
+                    }
+                }
+                th{
+                    width: 33px;
+                    max-width: 33px;
+                    div.nombre-corto{
+                        width: 32px;
+                        max-width: 32px;
+                    }
+                }
+            }
+        }
+        th{
+            div:nth-child(2){
+                display:none;
+            }
+        }
+        td{
+            span:nth-child(2){
+                display:none;
+            }
+        }
+    }
+}

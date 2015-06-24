@@ -81,6 +81,7 @@ function cargar_categorias(data){
                 if(candidato !== null){
                     paths = get_imagenes_candidato(candidato);
                     nombre = candidato.nombre;
+                    candidato.secundarios = candidato.secundarios.slice(0,2);
                     if(candidato.cod_lista == constants.cod_lista_blanco){
                         seleccionado += " blanco";
                     }
@@ -110,13 +111,14 @@ function cargar_categorias(data){
                 var item = Mustache.to_html(template, data_template);
                 items += item;
             }
-            elem.html(items);
         }
 
         get_candidatos(next_cat, revisando);
+        elem.html(items);
         if(!constants.asistida){
             achicar_contenedor(false, show_contenedor_der);
         }
+        sacar_punto_y_coma();
     }
 }
 
@@ -464,6 +466,7 @@ function cargar_candidatos(data){
 
     hide_botones_confirmacion();
     show_contenedor_opciones();
+    sacar_punto_y_coma();
     show_candidatos();
 }
 
@@ -499,7 +502,7 @@ function generar_paneles_confirmacion(categorias){
             nombre_lista: blanco=="blanco"?"":candidato.lista.nombre,
             path_imagen: paths[1],
             path_imagen_agrupacion: paths[0],
-            colores: crear_div_colores(candidato.lista.color)
+            colores: crear_div_colores(candidato.color_lista)
         };
         html += Mustache.to_html(template, template_data);
     }

@@ -4,60 +4,40 @@ from os.path import join
 from msa.settings import PATH_CODIGO
 
 # OJO: No juntar los imports
-from msa.core.data.constants import NOMBRE_JSON_MESAS_DEFINITIVO as MESAS
+from msa.core.data.constants import NOMBRE_JSON_MESAS_1 as MESAS
 
 # settings relativas a los datos y como se muestran
 NOMBRE_JSON_MESAS = MESAS
 
-# settings de juego de datos
-JUEGO_DE_DATOS = 'ejemplo2015'
+# settings de juego de dato
+JUEGO_DE_DATOS = 'demo_caba_generales_2015'
 # lista de los juegos de datos presentes en el branch
 # (se usa en el generador CSV)
 
-PREFIJO_PROVINCIA = 'EJ'
+PREFIJO_PROVINCIA = 'CABA'
+
 JUEGOS_DE_DATOS_ACTIVOS = {
-    'ejemplo_alianzas_2015':
-    {'jerarquia_ubicaciones': ['Provincia',
-                               'Departamento',
-                               'Localidad',
-                               'Establecimiento',
-                               'Mesa'],
-     'jerarquia_candidaturas': ['Alianza',
-                                'Partido',
-                                'Lista',
-                                'Candidato']},
-    'ejemplo_internas_2015':
-    {'jerarquia_ubicaciones': ['Provincia',
-                               'Departamento',
-                               'Localidad',
+    'caba_generales_2015':
+    {'jerarquia_ubicaciones': ['Distrito',
+                               'Comuna',
+                               'Circuito',
                                'Establecimiento',
                                'Mesa'],
      'jerarquia_candidaturas': ['Partido',
                                 'Lista',
-                                'Candidato']},
-    'ejemplo2015':
-    {'jerarquia_ubicaciones': ['Provincia',
-                               'Departamento',
-                               'Localidad',
-                               'Establecimiento',
-                               'Mesa'],
-     'jerarquia_candidaturas': ['Lista',
-                                'Candidato']},
-    'ejemplo_presupuesto_2015':
-    {'jerarquia_ubicaciones': ['Provincia',
-                               'Departamento',
-                               'Localidad',
-                               'Establecimiento',
-                               'Mesa'],
-     'jerarquia_candidaturas': ['Lista',
                                 'Candidato'],
      'generar_dhont': False,
      'generar_adhesiones': False,
      'generar_adhesiones_cargos': False,
      'generar_nocargoubicacion': False},
-    'ejemplo_mundial_2015':
-    {'jerarquia_ubicaciones': ['Mesa'],
-     'jerarquia_candidaturas': ['Lista',
+    'demo_caba_generales_2015':
+    {'jerarquia_ubicaciones': ['Distrito',
+                               'Comuna',
+                               'Circuito',
+                               'Establecimiento',
+                               'Mesa'],
+     'jerarquia_candidaturas': ['Partido',
+                                'Lista',
                                 'Candidato'],
      'generar_dhont': False,
      'generar_adhesiones': False,
@@ -92,7 +72,7 @@ def actualizar_paths():
     PATH_DATOS_JSON = join(PATH_CODIGO, 'datos_json', JUEGO_DE_DATOS)
 
 try:
-    from msa.settings_local import *
+    from msa.core.data.settings_local import *
 except ImportError:
     pass
 

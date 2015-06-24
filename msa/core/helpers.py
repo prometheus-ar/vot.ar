@@ -314,12 +314,12 @@ def get_lista_mod10(digitos=4, cant=None):
     return lista[:cant] if cant is not None else lista
 
 
-def generar_pin():
+def generar_pin(num_char=8):
     letras = ['A', 'C', 'D', 'E', 'F', 'G', 'H', 'J', 'K', 'L', 'P', 'Q', 'R',
               'S', 'T', 'U', 'W', 'X', 'Z']
     numeros = range(1, 10)
-    pin = "%s%s%s%d%d%d" % (choice(letras), choice(letras), choice(letras),
-                            choice(numeros), choice(numeros), choice(numeros))
+    caracteres = letras + list(numeros)
+    pin = "".join([str(choice(caracteres)) for i in range(num_char)])
     return pin
 
 

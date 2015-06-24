@@ -1,0 +1,129 @@
+@import "../base/variables";
+
+
+#titulo_candidatos_seleccionados{
+    background-color: @amarillo-votar;
+    border-radius: 7px 7px 0px 0px;
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 0.8em;
+    padding: 5px;
+    padding-top: 7px;
+}
+
+#candidatos_seleccionados{
+    background-color: #fff;
+
+    .candidato{
+        padding: 5px;
+        padding-top: 8px;
+        padding-bottom: 7px;
+        border-bottom: 1px dashed #333;
+        &.seleccionado{
+            background-color: @color-fondo-der;
+
+            .candidato-principal, .candidato-secundario, .nombre-cargo{
+                color: @color-candidato-der;
+            }
+
+            .nombre-partido, .palabra-lista{
+                color: @color-lista-der;
+            }
+
+            .foto-candidato, .foto-partido{
+                background-color: #fff;
+            }
+        }
+    }
+
+    .nombre-cargo{
+        text-transform: uppercase;
+        color: @gris-oscuro;
+        font-size: 0.6em;
+        font-weight: bold;
+        /* border-bottom: 1px solid @fondo; */
+        margin-bottom: 2px;
+    }
+
+    .lista{
+        float: right;
+        text-align: right;
+
+        .palabra-lista{
+            text-transform: uppercase;
+            color: @celeste-votar;
+            font-size: 0.6em;
+            font-weight: bold;
+        }
+
+        .numero-lista{
+            font-size: 1.7em;
+            font-weight: bold;
+        }
+    }
+
+    .foto-candidato{
+        width: 55px;
+        height: 55px;
+        float: left;
+        border: 1px solid @fondo;
+        margin-right: 3px;
+        margin-bottom: 3px;
+        img{
+            width: 100%;
+        }
+    }
+
+    .foto-partido{
+        width: 35px;
+        height: 35px;
+        float: left;
+        border: 1px solid @fondo;
+        img{
+            width: 100%;
+        }
+    }
+
+    .candidato-principal{
+        color: @azul;
+        font-weight: bold;
+        font-size: .8em;
+        clear: both;
+    }
+
+    .candidato-secundario{
+        color: @celeste-votar;
+        font-weight: bold;
+        font-size: .7em;
+    }
+
+    .nombre-partido{
+        font-size: .7em;
+        margin-top: 5px;
+    }
+
+    .blanco, .no-seleccionado{
+        .palabra-lista, .numero-lista, .candidato-secundario, .nombre-partido{
+            display:none;
+        }
+    }
+
+    .no-seleccionado{
+        .foto-candidato img, .foto-partido img{
+            display:none; 
+        }
+        .foto-candidato, .foto-partido{
+            background-color: @gris-medio;
+        }
+    }
+
+    .consulta_popular{
+        .foto-candidato, .foto-partido{
+            display:none; 
+        }
+        .palabra-lista, .numero-lista, .nombre-partido{ 
+            display:none; 
+        }
+    }
+}
+

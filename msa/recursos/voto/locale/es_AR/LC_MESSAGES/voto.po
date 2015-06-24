@@ -17,7 +17,7 @@ msgid "votar_por_categorias"
 msgstr "Votar por Categorías"
 
 msgid "votar_lista_completa"
-msgstr "Votar Lista Completa"
+msgstr "Votar por Lista Completa"
 
 msgid "votar_en_blanco"
 msgstr "Votar en Blanco"
@@ -47,7 +47,7 @@ msgid "presione_confirma_lista"
 msgstr "Presione ENTER si confirma su selección de Lista"
 
 msgid "escuche_y_digite"
-msgstr "Escuche las opciones y digite el Número de Partido que para el que desea votar y Presione ENTER"
+msgstr "Escuche las opciones y digite el Número de Partido por el que desea votar y Presione ENTER"
 
 msgid "titulo_votacion_asistida"
 msgstr "<span size=\"large\" weight=\"bold\">Votación Asistida</span>"
@@ -86,7 +86,7 @@ msgid "muchas_gracias_por_votar"
 msgstr "<span foreground=\"orange\" font_desc=\"40\" weight=\"heavy\">Muchas gracias por votar.</span>"
 
 msgid "bienvenido"
-msgstr "Bienvenido al sistema de la Boleta Única Electrónica."
+msgstr "Bienvenido al sistema de la Boleta Única Electrónica (BUE)."
 
 msgid "large_bold"
 msgstr "<span size=\"large\" weight=\"bold\">%s</span>"
@@ -112,26 +112,38 @@ msgstr "Ingrese el Número de Mesa:"
 msgid "ingrese_numero_pin"
 msgstr "Ingrese el PIN:"
 
+msgid "acerque_acta_apertura"
+msgstr "Si ya tiene impresa el acta de apertura, acérquela al lector"
+
+msgid "acerque_acta_cierre"
+msgstr "Si desea imprimir copias del certificado de escrutinio, acerque el acta de cierre de mesa al lector"
+
 msgid "confirma_datos_correctos"
 msgstr "¿Confirma que los datos son correctos?"
 
+msgid "debe_cargar_autoridad"
+msgstr "Debe cargar al menos una autoridad."
+
+msgid "hora_vacia"
+msgstr "Debe ingresar la hora actual. Recuerde ingresar la hora en formato 24 horas."
+
 msgid "hora_invalida"
-msgstr "La hora y/o minutos ingresados no son válidos. Ingrese un valor entre 0 y 23 para la hora y entre 0 y 59 para los minutos."
+msgstr "La hora y/o minutos ingresados no son válidos. Recuerde ingresar la hora en formato 24 horas. La apertura de la mesa solo puede realizarse a partir de las 8 horas y el cierre de la mesa a partir de las 18 horas."
 
 msgid "hora_incompleta"
 msgstr "La hora se encuentra incompleta. Asegúrese de completar ambos campos."
 
 msgid "largo_invalido"
-msgstr "Compruebe que los nombres y apellidos poseen más de 1 caracter."
+msgstr "Compruebe que los nombres y apellidos posean más de 1 caracter."
 
 msgid "autoridades_invalidas"
-msgstr "Compruebe que los nombres y apellidos poseen hasta 20 caracteres."
+msgstr "Compruebe que los nombres y apellidos posean hasta 20 caracteres."
 
 msgid "documentos_invalidos"
-msgstr "Compruebe que los números de documento poseen hasta 8 dígitos numéricos."
+msgstr "Compruebe que los números de documento posean hasta 8 dígitos numéricos."
 
 msgid "documentos_numeros_invalidos"
-msgstr "Compruebe que el número de documento es invalido."
+msgstr "Compruebe que el número de documento sea válido."
 
 msgid "autoridades_incompletas"
 msgstr "Una o más de las autoridades ingresadas no poseen todos sus datos. Asegúrese de completar todos los campos correspondientes"
@@ -188,7 +200,7 @@ msgid "big_text"
 msgstr "<big>%s</big>"
 
 msgid "retire_acta_apertura"
-msgstr "Por favor, retire el acta e ingresela nuevamente."
+msgstr "Por favor, retire el acta e ingrésela nuevamente."
 
 msgid "ingrese_certificado_correspondiente"
 msgstr "Por favor ingrese el certificado correspondiente"
@@ -221,16 +233,19 @@ msgid "acta_apertura_mesa"
 msgstr "Acta de Apertura de la %s"
 
 msgid "este_es_su_voto"
-msgstr "Este es su voto:"
+msgstr "Por favor asegúrese de doblar la boleta hasta la línea punteada."
 
 msgid "verificando_voto"
-msgstr "Verificando voto"
+msgstr "Verificando selección"
 
 msgid "si_tiene_dudas"
 msgstr "Si tiene dudas, consulte a las autoridades de mesa."
 
+msgid "no_olvide_verificar"
+msgstr "No olvide verificar su selección luego de imprimir"
+
 msgid "seleccion_ubicacion_demo"
-msgstr "<big><b>Seleccione la ubicación para realizar la demostración</b></big>"
+msgstr "<big><b>Seleccione la comuna para realizar la demostración</b></big>"
 
 msgid "extranjeros_demo"
 msgstr " (Extranjeros)"
@@ -242,10 +257,10 @@ msgid "error_conectar_lector"
 msgstr "Hubo un error al conectar con el lector"
 
 msgid "mesa_pin_incorrectos"
-msgstr "Número de mesa o PIN ingresados no son correctos"
+msgstr "El número de mesa o PIN ingresados no son correctos o la credencial utilizada no corresponde a la mesa"
 
 msgid "presente_credencial_acta"
-msgstr "Acerque su credencial o el acta de apertura al lector"
+msgstr "Por favor acerque la credencial de la autoridad de mesa al lector"
 
 msgid "cancelar_apagado"
 msgstr "Volver Atrás"
@@ -260,7 +275,7 @@ msgid "esta_seguro_apagar"
 msgstr "¿Está seguro de apagar la maquina de voto?"
 
 msgid "impr_pag_prueba"
-msgstr "Imprimiento página de prueba..."
+msgstr "Imprimiendo página de prueba..."
 
 msgid "expulsando_boleta"
 msgstr "Expulsando boleta de la impresora..."
@@ -392,7 +407,7 @@ msgid "reiniciar"
 msgstr "Reiniciar"
 
 msgid "volver_al_inicio"
-msgstr "Volver Atrás"
+msgstr "Volver al Inicio"
 
 msgid "seguro_salir_recuento"
 msgstr "¿Está seguro de salir del recuento?"
@@ -431,7 +446,7 @@ msgid "guardo_en_intento"
 msgstr "guardo en el intento %s"
 
 msgid "entregue_certif_transmision"
-msgstr "Con la asistencia del personal técnico proceda transmitir los resultados con el Certificado de Transmisión y solicite boletas para emitir los certificados de los fiscales."
+msgstr "Con la asistencia del personal técnico proceda a transmitir los resultados con el Certificado de Transmisión y solicite boletas para emitir los certificados de los fiscales."
 
 msgid "titulo_votos_NUL"
 msgstr "Votos Nulos"
@@ -442,8 +457,11 @@ msgstr "Votos Recurridos"
 msgid "titulo_votos_OBS"
 msgstr "Votos Observados"
 
+msgid "titulo_votos_TEC"
+msgstr "Votos no leídos por motivos técnicos"
+
 msgid "titulo_votos_IMP"
-msgstr "Votos Impugnados"
+msgstr "Votos Impugnados (Identidad)"
 
 msgid "total_general"
 msgstr "Total General"
@@ -455,13 +473,13 @@ msgid "firmas_fiscales"
 msgstr "FISCALES PARTIDARIOS (Firma, aclaración, DNI y lista/agrupación)"
 
 msgid "se_esta_imprimiendo"
-msgstr "<span size=\"20000\" weight=\"heavy\">Se está imprimiendo su voto.</span>"
+msgstr "<span size=\"20000\" weight=\"heavy\">Se está imprimiendo su boleta.</span>"
 
 msgid "no_retire_boleta"
 msgstr "<span foreground=\"orange\" size=\"25000\" weight=\"heavy\">NO RETIRE LA BOLETA HASTA QUE SE LE INDIQUE.</span>"
 
 msgid "error_grabar_boleta_alerta"
-msgstr "Se produjo un error al grabar su voto en la boleta."
+msgstr "Se produjo un error al grabar su seleccion en la boleta."
 
 msgid "error_grabar_boleta_aclaracion"
 msgstr "Contáctese con las autoridades de mesa para solicitar una nueva boleta."
@@ -470,7 +488,7 @@ msgid "seleccionar_idioma"
 msgstr "Elija el idioma. Select your language. Wählen Sie die Sprache. Escolha seu idioma."
 
 msgid "encabezado_actas"
-msgstr "Tribunal Electoral"
+msgstr "Tribunal Superior de Justicia"
 
 msgid "titulo_apertura"
 msgstr "ACTA DE APERTURA DEL COMICIO DE LA %s"
@@ -527,7 +545,13 @@ msgstr "BLANCO"
 
 # cosas nuevas de voto web
 msgid "confirmar_voto"
-msgstr "¿Desea confirmar su voto?:"
+msgstr "¿Desea confirmar su selección?:"
+
+msgid "si_confirmar_voto"
+msgstr "Imprimir"
+
+msgid "no_confirmar_voto"
+msgstr "Volver al Inicio"
 
 msgid "alto_contraste"
 msgstr "Vista alto contraste"
@@ -548,19 +572,19 @@ msgid "introduzca_boleta"
 msgstr "Introduzca la Boleta Única Electrónica en la impresora"
 
 msgid "su_voto_impreso"
-msgstr "Su voto ha sido impreso"
+msgstr "Su boleta ha sido impresa"
 
 msgid "puede_retirar_boleta"
-msgstr "Puede retirar la boleta y depositar su voto en la urna"
+msgstr "Puede retirar su boleta y depositarla en la urna"
 
 msgid "si_desea_verificarlo"
-msgstr "Si desea verificarlo, proceda cómo lo indica la imagen"
+msgstr "Si desea verificarlo, proceda como lo indica la imagen"
 
 msgid "muchas_gracias"
 msgstr "Muchas Gracias"
 
 msgid "imprimiendo_voto"
-msgstr "Se está imprimiendo su voto"
+msgstr "Se está imprimiendo su boleta"
 
 msgid "aguarde_unos_minutos"
 msgstr "Por favor aguarde unos segundos"
@@ -611,10 +635,10 @@ msgid "pocas_boletas_aclaracion"
 msgstr "Recuerde que para realizar el recuento se deben contar las Boletas Únicas Electrónicas pasando las mismas por el lector de la Máquina."
 
 msgid "esta_seguro_acta_cierre"
-msgstr "¿Está seguro de terminar el escrutinio e imprimir el Acta de Cierre?"
+msgstr "¿Está seguro de terminar el escrutinio?"
 
 msgid "presione_imprimir"
-msgstr "Presione Imprimir para obtener el Acta de Cierre de Mesa"
+msgstr "Presione Siguiente para obtener el Acta de Cierre de Mesa"
 
 msgid "introduzca_acta_apertura"
 msgstr "Por favor introduzca el Acta de Apertura de Mesa"
@@ -623,13 +647,13 @@ msgid "introduzca_acta_cierre"
 msgstr "Por favor introduzca el Acta de Cierre de Mesa"
 
 msgid "introduzca_acta_cierre_nuevamente"
-msgstr "Por favor vuelva a introducir el Acta de Cierre de Mesa"
+msgstr "Por favor introduzca el Acta de Cierre de Mesa"
 
 msgid "introduzca_acta_transmision"
 msgstr "Por favor introduzca el Certificado de Transmisión de Resultados"
 
 msgid "introduzca_acta_totalizacion"
-msgstr "Por favor introduzca un acta para realizar la totalización"
+msgstr "Por favor introduzca el acta para realizar la totalización"
 
 msgid "introduzca_cerfificado_escrutinio"
 msgstr "Por favor introduzca un Certificado de Escrutinio de Mesa"
@@ -657,7 +681,7 @@ msgid "asegurese_firmar_acta"
 msgstr "Asegúrese que se firme el Acta de Cierre, el Certificado de Transmisión y el Certificado de Escrutinio"
 
 msgid "el_suplente_acercara"
-msgstr "El suplente acercará al personal técnico el certificado de transmisión firmado para que con su ayuda proceda a transmitir los resultados."
+msgstr "El delegado/a del Tribunal Superior de Justicia acercará al personal técnico el certificado de transmisión firmado para que con su ayuda proceda a transmitir los resultados."
 
 msgid "fiscales_qr"
 msgstr "Los fiscales podrán escanear o sacarle una foto a este código QR ya que contiene los resultados de esta mesa."
@@ -669,31 +693,34 @@ msgid "introduzca_certificado_boletas"
 msgstr "Introduzca el primer Certificado de Escrutinio y las boletas utilizadas en la urna y ciérrela con las fajas asegurándose de tapar la ranura de entrada."
 
 msgid "slide_2_bullet_1"
-msgstr "Boletas"
+msgstr "Certificado de Escrutinio"
 
 msgid "slide_2_bullet_2"
-msgstr "Faja de Seguridad"
+msgstr "Boletas y Votos nulos"
 
 msgid "slide_2_bullet_3"
-msgstr "Certificado de Escrutinio"
+msgstr "Introducir en la urna"
+
+msgid "slide_2_bullet_4"
+msgstr "Cerrar con faja de seguridad"
 
 msgid "introduzca_sobre_actas"
 msgstr "Introduzca en el sobre de devolución de actas:"
 
 msgid "slide_3_bullet_1"
-msgstr "Poderes Fiscales"
-
-msgid "slide_3_bullet_2"
-msgstr "Votos Impugnados, Observados y Recurridos"
-
-msgid "slide_3_bullet_3"
 msgstr "Acta de Cierre de Mesa y Escrutinio"
 
-msgid "slide_3_bullet_4"
+msgid "slide_3_bullet_2"
+msgstr "Actas en papel Romaní"
+
+msgid "slide_3_bullet_3"
 msgstr "Padrones Electorales"
 
+msgid "slide_3_bullet_4"
+msgstr "Poderes Fiscales"
+
 msgid "slide_3_bullet_5"
-msgstr "Actas en papel Romaní"
+msgstr "Votos Impugnados, Recurridos y no leídos por motivos técnicos"
 
 msgid "introduzca_certificados_para_fiscales"
 msgstr "Puede continuar introduciendo certificados de escrutinio para los fiscales que lo requieran"
@@ -776,7 +803,7 @@ msgid "CONCEJAL"
 msgstr "Concejal"
 
 msgid "quite_la_boleta"
-msgstr "La boleta no se encuentra insertada correctamente en la impresora. Por favor retirela e insertela nuevamente."
+msgstr "La boleta no se encuentra insertada correctamente en la impresora. Por favor retírela e insértela nuevamente."
 
 ###
 #   Textos para el Calibrador de pantalla

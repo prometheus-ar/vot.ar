@@ -92,7 +92,11 @@ class Categoria(Candidatura):
         Devuelve el texto para a descripcion de la proxima categoria en
         asistida.
         """
-        msg = u'A continuación usted elegirá su candidato para %s'
+        if self.codigo != "CPO":
+            msg = u'A continuación usted elegirá su candidato para %s'
+        else:
+            msg = u'A continuación usted participará de la %s'
+
         return msg % self.texto_asistida
 
     def candidatos(self, cod_partido=None, clase_agrupacion=None):
@@ -335,7 +339,7 @@ class Candidato(Candidatura):
         return dict_
 
     def full_dict(self, img_func=None, secundarios=True, suplentes=True,
-                  hijas=True):
+                  hijas=False):
         """
         Devuelve una representacion completa del Candidato y las relaciones
         relevantes para armar los botones de la eleccion.
@@ -355,7 +359,10 @@ class Candidato(Candidatura):
             candidato_dict['imagen'] = img_func(self.codigo)
 
         if secundarios:
-            candidato_dict['secundarios'] = self.secundarios.to_dict()
+            secundarios = self.secundarios.to_dict()
+            if self.cod_categoria == "JEF" and len(secundarios):
+                secundarios[0]['imagen'] = img_func(secundarios[0]['codigo'])
+            candidato_dict['secundarios'] = secundarios
         if suplentes:
             candidato_dict['suplentes'] = self.suplentes.to_dict()
         if hijas:

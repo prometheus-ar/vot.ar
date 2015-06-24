@@ -169,8 +169,8 @@ class ModuloInicio(Modulo):
         self.estado = E_EN_CONFIGURACION
 
     def abrir_mesa(self, datos_tag):
-        apertura = Apertura.desde_tag(datos_tag)
-        self._validar_configuracion(mesa=apertura.mesa.numero, pin=None,
+        mesa = datos_tag.split(';')[0]
+        self._validar_configuracion(mesa=mesa, pin=None,
                                     con_acta_apertura=True,
                                     datos_tag=datos_tag)
 
@@ -240,10 +240,9 @@ class ModuloInicio(Modulo):
             except:
                 pass
             else:
-                apertura = Apertura.desde_tag(dump_data)
-                if apertura.mesa is not None:
-                    self._validar_configuracion(mesa=apertura.mesa.numero,
-                                                pin=None,
+                mesa = dump_data.split(';')[0]
+                if mesa != '':
+                    self._validar_configuracion(mesa=mesa, pin=None,
                                                 con_acta_apertura=True,
                                                 datos_tag=dump_data)
             finally:

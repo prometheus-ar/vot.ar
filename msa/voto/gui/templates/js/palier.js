@@ -138,7 +138,6 @@ function _palier_click_ubicacion(){
 }
 
 function _palier_header_ubicacion(cod_ubicacion){
-    $("body").attr('data-ubicacion', cod_ubicacion);
     $.getJSON("./ubicaciones.json").done(function(data){
         data.forEach(function(element,index,array){
             if(element[2] == cod_ubicacion) {
@@ -238,17 +237,13 @@ function _palier_datos_candidato(candidato){
     } 
     candidato.imagen = _palier_get_img(candidato.codigo);
     candidato.imagen_lista = _palier_get_img(candidato.cod_lista);
-    candidato.secundarios = _palier_get_secundarios(candidato, candidato.cod_categoria);
-    candidato.suplentes = _palier_get_suplentes(candidato, candidato.cod_categoria);
+    candidato.secundarios = _palier_get_secundarios(candidato, candidato.cod_categoria)
+    candidato.suplentes = _palier_get_suplentes(candidato, candidato.cod_categoria)
     candidato.categorias_hijas = _palier_categorias_hijas(candidato.cod_categoria,
-                                                          candidato.cod_lista);
-
-    candidato.lista = _palier_get_lista(candidato.cod_lista);
-    candidato.lista.imagen = _palier_get_img(candidato.lista.codigo);
-    candidato.partido = _palier_get_partido(candidato.lista.cod_partido);
-    candidato.partido.imagen = _palier_get_img(candidato.partido.codigo);
-    candidato.alianza = _palier_get_alianza(candidato.lista.cod_alianza);
-    return candidato;
+                                                          candidato.cod_lista)
+    candidato.lista = _palier_get_lista(candidato.cod_lista)
+    candidato.lista.imagen = _palier_get_img(lista.codigo);
+    return candidato
 }
 
 function _palier_cargar_candidatos(cod_categoria, cod_partido){
@@ -258,38 +253,31 @@ function _palier_cargar_candidatos(cod_categoria, cod_partido){
     var candidatos_orig = _palier_get_candidatos();
     
     var filtro = {cod_categoria: cod_categoria};
+    if(cod_partido !== null){
+        filtro.cod_partido = cod_partido;
+    }
     var candidatos = candidatos_orig.many(filtro);
+    var partidos = _palier_get_partidos();
+    var listas = _palier_get_listas();
     var cand_list = [];
-    var partidos = [];
-    var ids_partidos = [];
-    for(var i in candidatos){
+    for(i in candidatos){
         var candidato = _palier_datos_candidato(candidatos[i]);
-        agrupador = "partido";
-        if(cod_partido === null || candidato[agrupador].codigo == cod_partido){
-            cand_list.push(candidato);
-            if(ids_partidos.indexOf(candidato[agrupador].codigo) == -1 && candidato[agrupador].codigo != "BLC.BLC"){
-                candidato[agrupador].imagen = _palier_get_img(candidato[agrupador].codigo);
-                partidos.push(candidato[agrupador]);
-                ids_partidos.push(candidato[agrupador].codigo);
-            }
-        }
-    }
-
-    cand_list = shuffle(cand_list);
-    if(constants.elecciones_paso && cand_list.length > constants.COLAPSAR_LISTAS_PASO && cod_partido === null){
-        cargar_partido_categorias({candidatos: cand_list,
-                                    cod_categoria: cod_categoria,
-                                    partidos: shuffle(partidos),
-                                    agrupador: agrupador 
-                                  });
-    } else {
-        if(cand_list.length == 1){
-            action_seleccionar_candidatos([cod_categoria, cand_list[0].codigo]);
-        } else {
-          cargar_candidatos({"candidatos": cand_list, 
-                              "cod_categoria": cod_categoria});
-        }
-    }
+      cand_list.push(candidato);
+  }
+  cand_list = shuffle(cand_list);
+  if(constants.elecciones_paso && cand_list.length > constants.COLAPSAR_LISTAS_PASO && cod_partido === null){
+      cargar_partido_categorias({candidatos: cand_list,
+                                  cod_categoria: cod_categoria,
+                                  partidos: shuffle(partidos)
+                                });
+  } else {
+      if(cand_list.length == 1){
+          action_seleccionar_candidato([cod_categoria, cand_list[0].codigo]);
+      } else {
+        cargar_candidatos({"candidatos": cand_list, 
+                            "cod_categoria": cod_categoria});
+      }
+  }
 }
 
 function _palier_categorias_hijas(cod_categoria, cod_lista){
@@ -299,7 +287,7 @@ function _palier_categorias_hijas(cod_categoria, cod_lista){
         if(categorias[i].adhiere == cod_categoria){
             var hija = [];
             var candidatos = _palier_get_candidatos();
-            for(var j in candidatos){
+            for(j in candidatos){
                 var cand = candidatos[j];
                 if(cand.cod_categoria == categorias[i].codigo && cand.cod_lista != "BLC" && cand.cod_lista == cod_lista){
                     hija = [categorias[i], _palier_datos_candidato(cand)];
@@ -311,8 +299,17 @@ function _palier_categorias_hijas(cod_categoria, cod_lista){
     return hijas;
 }
 
+function _palier_get_partido(cod_partido){
+  var partidos = _palier_get_partidos();
+  for(var i in partidos){
+      if(partidos[i].codigo == cod_partido){
+          return partidos[i];
+      }
+  } 
+}
+
 function _palier_get_lista(cod_lista){
-  var lista = _palier_get_listas().one({"codigo": cod_lista});
+  lista = _palier_get_listas().one({codigo:cod_lista});
   return lista;
 }
 
@@ -332,7 +329,6 @@ function _palier_get_data_categorias(consulta_popular){
         candidato = palier_seleccion[categoria.codigo];
         if(typeof(candidato) !== "undefined"){
             candidato.lista = _palier_get_lista(candidato.cod_lista);
-            candidato.lista.imagen = _palier_get_img(candidato.cod_lista);
             var partido = _palier_get_partido(candidato.cod_partido);
             if(partido){
                 candidato.nombre_partido = partido.nombre;
@@ -354,8 +350,7 @@ function _palier_get_secundarios(candidato, cod_categoria){
     var cod_lista = candidato.cod_lista;
     var candidatos = _palier_get_candidatos(null, true, false);
     var filtered = candidatos.many({cod_lista:cod_lista,
-                                    cod_categoria:cod_categoria,
-                                    sorted: "numero_de_orden"});
+                                    cod_categoria:cod_categoria});
     return filtered.slice(1, filtered.length);
 }
 
@@ -490,7 +485,7 @@ function _palier_set_pantalla_partidos(){
     var partidos = _palier_get_partidos();
     var listas = _palier_get_listas();
     if(partidos.length < constants.COLAPSAR_INTERNAS_PASO){
-        _palier_cargar_listas();
+        self._palier_cargar_listas();
     } else {
         seleccion_partido(shuffle(partidos));
     }
@@ -516,11 +511,6 @@ function _palier_reset_seleccion(){
    palier_seleccion = {} ;
 }
 
-function _palier_get_partido(cod_partido){
-    var partidos = _palier_get_partidos();
-    return partidos.one({"codigo": cod_partido});
-}
-
 function _palier_get_partidos(){
     var int_data = null; 
     if(typeof(_cache_json.partidos) == "undefined"){
@@ -530,38 +520,15 @@ function _palier_get_partidos(){
         });
         var int_data = [];
         for(var i in data_temp){
-            data_temp[i].imagen_partido = data_temp[i].codigo + "." + constants.ext_img_voto;
-            int_data.push(data_temp[i]);
+            if(data_temp[i].codigo != constants.cod_lista_blanco){
+                data_temp[i].imagen_partido = data_temp[i].codigo + "." + constants.ext_img_voto;
+                int_data.push(data_temp[i]);
+            }
         }
-        int_data = new Chancleta(int_data);
+        int_data = Chancleta(int_data);
         _cache_json.partidos = int_data;
     } else {
         int_data = _cache_json.partidos;
-    }
-    return int_data;
-}
-
-function _palier_get_alianza(cod_alianza){
-    var alianzas = _palier_get_alianzas();
-    return alianzas.one({"codigo": cod_alianza});
-}
-
-function _palier_get_alianzas(){
-    var int_data = null; 
-    if(typeof(_cache_json.alianzas) == "undefined"){
-        var data_temp = null;
-        $.getJSON("./datos/" + ubicacion + "/Alianzas.json", {}, function(data){
-            data_temp = data;
-        });
-        var int_data = [];
-        for(var i in data_temp){
-            data_temp[i].imagen_partido = data_temp[i].codigo + "." + constants.ext_img_voto;
-            int_data.push(data_temp[i]);
-        }
-        int_data = new Chancleta(int_data);
-        _cache_json.alianzas = int_data;
-    } else {
-        int_data = _cache_json.alianzas;
     }
     return int_data;
 }
@@ -606,7 +573,7 @@ function _palier_get_categoria(cod_categoria){
 }
 
 function _palier_get_listas(partido){
-    var list_data = null;
+    list_data = null;
     
     if(typeof(_cache_json.listas) == "undefined"){
         $.getJSON("./datos/" + ubicacion + "/Listas.json", {}, function(data){
@@ -652,7 +619,7 @@ function _palier_get_candidatos(partido, titular, primero){
 }
 
 function _palier_get_boletas(){
-    var adh_data = null;
+    adh_data = null;
     if(typeof(_cache_json.boletas) == "undefined"){
       $.getJSON("./datos/" + ubicacion + "/Boletas.json", {}, function(data){
           adh_data = new Chancleta(data);

@@ -26,7 +26,7 @@ struct_recuento = Struct("Recuento",
                          GreedyRange(Bytes("datos", 1))
                          )
 struct_recuento_dni = Struct("Recuento con dni",
-                             Array(7, Bytes("documentos", 1)),
+                             Array(11, Bytes("documentos", 1)),
                              Embed(struct_recuento),
                              )
 
