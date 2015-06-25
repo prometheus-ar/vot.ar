@@ -1,0 +1,109 @@
+Si recibiste el mail de ingreso al portal caba.operaciones.com.ar y has sido convocado para asistir a la PRUEBA DE TRANSMISIÓN DE MAÑANA SÁBADO 20 DE JUNIO.
+Debés descargar del portal caba.operaciones.com.ar e imprimir la DESIGNACIÓN (donde figura tu nombre y DNI) que avala tu participación en las actividades de todo el proceso eleccionario. ES IMPORTANTE QUE TE PRESENTES EN EL ESTABLECIMIENTO ASIGNADO CON ESTA DESIGNACIÓN Y TU DNI ya que deberás presentarlo ante el CORREO ARGENTINO para que te entreguen la máquina.
+ Debés presentarte en el establecimiento asignado antes de las 07:45 ya que el Correo Argentina comienza a entregar las máquinas a partir de esa hora.
+ RECORDÁ PRESENTARTE EN LA ESCUELA CON DNI, DESIGNACIÓN IMPRESA, CELULAR, CARGADOR DE CELULAR.
+Datos Personales:
+En el portal caba.operaciones.com.ar existe la posibilidad de ACTUALIZAR TUS DATOS PERSONALES. Verificá especialmente si tu número de celular y mail son los correctos, ya que es la vía de comunicación con la que cuenta tu operador.
+Respecto a tu Operador:
+ Los números telefónicos que figuran en el sistema SÓLO ESTARÁN DISPONIBLES LOS DÍAS 20 DE JUNIO, 4 Y 5 DE JULIO EN LOS HORARIOS DE LAS ACTIVIDADES PLANIFICADAS, en consecuencia NO INTENTEN COMUNICARSE FUERA DE ESOS DÍAS/HORARIOS.
+Respecto a la entrega/repliegue de equipos: 
+  El reparto de los equipos se inicia a las 08:00, si para las 10:00 no recibieron la entrega de la máquina y el bolso por parte del CORREO ARGENTINO, deberán informar a su operador de dicha situación.
+ Si para las 16:00 hs el correo no ha pasado a retirar los equipos, también se debe informar esta situación al operador. La máquina debe entregarse cerrada y precintada al igual que el bolso. EL CORREO DEBE RETIRAR TODO EL MATERIAL, NO DEBE QUEDAR NADA EN LA ESCUELA/ESTABLECIMIENTO.
+Respecto de la aplicación WITT:
+Si la descargas desde un celular con ANDROID ten presente que:
+ Generalmente se utiliza Chrome para las descargas, y, generalmente -dependiendo de la versión-, el navegador descarga como .zip algunos archivos, por lo que se debe chequear en la carpeta de descargas si el archivo tiene extensión .zip, en tal caso, renombrarlo cambiando a .apk. Para instalarla en el celular, se debe habilitar la opción "origenes desconocidos" yendo a Ajustes-->Seguridad-->Orígenes Desconocidos.
+ Si la descargas desde una PC, no hace falta renombrar la aplicación, pero antes de pasarla al celular, igualmente debes habilitar la opción "orígenes desconocidos" de tu celular yendo a Ajustes-->Seguridad-->Orígenes Desconocidos.
+Respecto a RRHH
+ Enviar mail a manuel.luis@cidersa.com.ar y a wenrico@randstad.com.ar
+NOTA: Quienes no asistan mañana, 20 de junio, no habrán adquirido la práctica IN SITU necesaria para cumplir posteriormente con la tarea de Técnico de Boleta Única Electrónica. Por esa razón, NO PODEMOS ASEGURARLE que serán convocados a trabajar en las sucesivas tareas previstas para el proyecto, los días 4 y 5 de julio.
+PREGUNTAS FRECUENTES
+No me llego ningún mail con la asignación a mi escuela.
+El mail esta mal, o no está asignado a ningún establecimiento.
+No me llamo nadie, pero si me llego el mail informándome a que escuela estoy designado.
+El centro de operaciones está habilitado los días de trabajo, sábado 20, sábado 4 y domingo 5. Mientras duren las actividades los operadores van a estar disponibles para ayudarlos.
+¿Puedo llamar a mi operador cualquier día de la semana?
+ El centro de operaciones está habilitado los días de trabajo, sábado 20, sábado 4 y domingo 5. Mientras duren las actividades los operadores van a estar disponibles para ayudarlos.
+mis datos están equivocados en mi perfil.
+ Por favor ingresar a https://caba.operaciones.com.ar y luego acceder a “Editar perfil”, actualizar los datos y luego confirmar.
+Cambie de número de celular
+Por favor ingresar a https://caba.operaciones.com.ar y luego acceder a “Editar perfil”, actualizar los datos y luego confirmar.
+No me puedo descargar la aplicación Witt.
+ Por favor ingresar a https://caba.operaciones.com.ar y luego presionar “Descargar Witt”, en el caso que su navegador descargue la app como Witt.ZIP renombrar a Witt.APK.
+No me puedo instalar la aplicación Witt.
+ Chequear que Ud. posee sistema operativo Android en su dispositivo móvil.
+ Chequear que el archivo tenga extensión APK.
+ Hacer clic sobre Witt.APK
+ En caso de no tener habilitado la instalación desde Orígenes desconocidos habilitarla.
+ Una vez instalada ingresar el número de PIN que le llego en el mail y que ademas figura en el sitio https://caba.operaciones.com.ar
+Me quiero cambiar de escuela
+Las escuelas ya fueron asignados y no hay lugar para cambios.
+No quiero participar
+ Por favor ingresar a https://caba.operaciones.com.ar y luego marque “No voy a participar”.
+La escuela donde estoy asignado no es donde voto.
+ Se hizo lo posible en respetar esto, pero al tener establecimientos densamente poblados por técnicos cercanos se trató de organizarlos lo mejor posible por cercanía. Recordá que al estar prestando servicios para la elección estás exento de votar.
+Me llego la designación pero yo tenía que recuperar un módulo el sábado 20.
+ Vaya a la escuela que está designado.
+No puedo abrir el certificado SSL (tar.gz) que me llego al mail
+ El archivo tar.gz que se le envío es un archivo comprimido que contiene los archivos necesarios para encriptar los datos, el archivo tar.gz Ud. lo debe utilizar solo en el sistema de transmisión.
+¿El programa descompresor que tengo instalado quiere abrir el archivo tar.gz que hago?
+ No lo descomprima el archivo tar.gz Ud. lo debe utilizar solo en el sistema de transmisión.
+¿Me pueden enviar el certificado SSL en otra extensión?
+El formato del archivo es tar.gz y el sistema de transmisión solo reconoce este formato, Ud. no debe modificar la extension.
+No puedo imprimir el certificado que me enviaron
+ No confundir el certificado SSL (El cual viene comprimido en un tar.gz) con la designación. La designación está en un archivo PNG.
+No tengo datos de mi operador
+Los datos de tu operador figuran en https://caba.operaciones.com.ar, los operadores van a estar activos los días de trabajo solamente.
+Mi celular no tiene Android, Mi celular no soporta la aplicación Witt.
+En este caso recuerde que Ud. va a estar acompañado de otros técnicos y probablemente alguno tenga Android. En el caso de que ninguno posea sistema operativo Android, se puede usar como vía de comunicación los SMS y el teléfono.
+Donde puedo sacar material de repaso
+ http://www.curso.votar.com.ar/
+¿Me llego la designación pero todavía no firme el contrato?
+ Contactar consultora.
+¿Cuando se hace la evaluación?
+ La evaluación se realizara en el transcurso de la semana que viene de manera virtual en http://www.curso.votar.com.ar/
+Estimados:
+Ante las numerosas consultas remitidas sobre la actividad de mañana, les transmitimos por este medio las respuesta a las preguntas más usuales.
+1) No puedo abrir el portal caba.operaciones.com.ar
+Es porque NO recibieron el mail de asignación, ya sea porque AUN SE ESTAN CAPACITANDO o porque no fueron incluidos en la nómina de técnicos que trabajaran mañana. En cualquiera de los casos NO deben asistir mañana.
+2) Al no asistir mañana quedo fuera del proyecto?
+SI, en caso de que te haya llegado el mail para ingresar al caba.operaciones.com.ar con el usuario y clave de ingreso 
+NO, en caso de que no te haya llegado el mail indicado.
+3) Me avisaron de una capacitación para ir mañana a Chiclana, que debo hacer?
+Deben asistir a la capacitación indicada en los horarios que ya le avisaron
+4) Hay una evaluación virtual?
+Si, se implementará en el portal curso.votar.com.ar a partir de la semana que viene. Y será una evaluación NO VINCULANTE, es decir, no será eliminatoria sino que será una autoevaluación para que cada técnico pueda reforzar los temas en los que tenga menor conocimiento. NO SIGNIFICA QUE SI DESAPRUEBAN NO TRABAJARAN.
+5) Si no me llegó la designación significa que no estoy incluido en el proyecto?
+NO, todavía falta cubrir puestos de trabajo.
+5) Cualquier otra consulta sobre la aplicación witt, la escuela, el certificado, etc. DEBEN REALIZARLA MAÑANA A SU OPERADOR.
+Aprovecho para informarles que por la cantidad de correos recibidos NO podremos contestar particularmente uno a uno. Y que las cuentas utilizadas en este portal VOLVERAN A ESTAR ACTIVAS A PARTIR DEL LUNES, en donde volveremos a recibir sus consultas. 
+
+01 Funciones del personal técnico
+https://www.youtube.com/watch?v=KpfiY3HnDvI
+02 Instalación y uso de los equipos
+https://www.youtube.com/watch?v=ODoMyoGuo_4
+03 Uso de los sticker
+https://www.youtube.com/watch?v=jmdS7mGOEZY
+04 Interfaz de mantenimiento
+https://www.youtube.com/watch?v=hfLOeqKUUJw
+Importante cambio:
+El Presidente de Mesa acercará su credencial y luego el acta de apertura al lector para acceder al menú principal, es entonces que el técnico pasará su credencial por el lector y habilitará el botón de Mantenimiento en la parte inferior central.
+05 La escuela
+https://www.youtube.com/watch?v=3_fhzWkAvX0
+06 Jornada de prueba general
+https://www.youtube.com/watch?v=2SMgvFZjpS8
+Importante cambio: 
+Presentarse en el establecimiento con dni, la designación ya no hará falta.
+Realizar la prueba de transmisión a la hora definida.
+Revisar el kit de técnico.
+07 Jornada pre electoral
+https://www.youtube.com/watch?v=D1ZgzataMv0
+Prueba de equipos y acondicionamiento del establecimiento.
+08 Jornada electoral
+https://www.youtube.com/watch?v=VYjbDuIp_W8
+Importante cambio:
+Brindar asistencia y contingencia al delegado.
+Las autoridades de mesa no devuelven nada al técnico.
+09 Transmisión de resultados
+https://www.youtube.com/watch?v=a8j9bolHReU
+Importantes cambios:
+NO SE UTILIZARÁN BGAN PARA LA CONEXIÓN DE INT
