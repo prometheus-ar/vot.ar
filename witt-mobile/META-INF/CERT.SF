@@ -1,0 +1,217 @@
+Signature-Version: 1.0
+Created-By: 1.0 (Android)
+SHA1-Digest-Manifest: PmXtC5hCS8HFPITWG7toSwj3H2w=
+
+Name: res/xml/preferences.xml
+SHA1-Digest: JnqlJW+TE7eSB70gfjIJr6JppxM=
+
+Name: res/menu/history.xml
+SHA1-Digest: nlux8D1TKIa4/mwfsNMPYrWvDxk=
+
+Name: assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverOp
+ tions.js
+SHA1-Digest: GC8Rb7mW+L90XJr10TQdVRbckLU=
+
+Name: res/xml/config.xml
+SHA1-Digest: 4XjJ6/hM+O6zmvaAbCfpBhywO2w=
+
+Name: assets/www/css/lib/Skeleton-2.0.2/css/skeleton.css
+SHA1-Digest: 0qlnHkpdlt5OpMAk3+XzfsdgFCA=
+
+Name: res/drawable-port-ldpi-v4/screen.png
+SHA1-Digest: mE61JKUtvrNBtmhyKoMsht6TzpA=
+
+Name: res/drawable-port-xhdpi-v4/screen.png
+SHA1-Digest: 94gj6GvDNJEnS8H238nPU2dIAoA=
+
+Name: assets/www/static/qr.png
+SHA1-Digest: 6a8Qky/7MCRRlK1zJrZwOf7lKoo=
+
+Name: assets/www/css/lib/Skeleton-2.0.2/images/favicon.png
+SHA1-Digest: HLSmXIKjsCm7P9a6yD1vJLDGvqs=
+
+Name: assets/www/plugins/org.apache.cordova.camera/www/CameraPopoverHa
+ ndle.js
+SHA1-Digest: DaiTOkmuEYcHWmuPgAkXCQGzuF8=
+
+Name: res/layout-land/share.xml
+SHA1-Digest: Bu/y34mT59U1nSVFRhxp1se9H1k=
+
+Name: assets/www/npm-debug.log
+SHA1-Digest: ZlWp3y+LWJVw0G4RCVnle/YE+yY=
+
+Name: res/layout/share.xml
+SHA1-Digest: G3kipFcv1B4W/2IfQNcVh1N2hz8=
+
+Name: assets/www/css/fonts/FontAwesome.otf
+SHA1-Digest: hL2Qa/Or4heWtwMks9EYV2VvzUY=
+
+Name: res/layout/capture.xml
+SHA1-Digest: pyBtJ8HPgbjrfvfoRF6Q/pUz+tE=
+
+Name: assets/www/plugins/org.apache.cordova.network-information/www/Co
+ nnection.js
+SHA1-Digest: th9oNaphXkU4o2sO57yf3W3/7JA=
+
+Name: res/raw/beep.ogg
+SHA1-Digest: swN9tJue4UsGRYOvaFiQcrztfsA=
+
+Name: assets/www/css/style.css
+SHA1-Digest: 3t6Aegdu4SkcDodB/XpSWky15R0=
+
+Name: assets/www/plugins/org.apache.cordova.camera/www/Camera.js
+SHA1-Digest: Pe9OR++bxKDWd//+Se7rVrf8m5Q=
+
+Name: assets/www/static/logo-vot-ar.png
+SHA1-Digest: 6eV80K5pzOUq04mWtznS60azrrw=
+
+Name: assets/www/css/fonts/fontawesome-webfont.ttf
+SHA1-Digest: +6wpUhUNcq2ngfM8EWSdxiJqVWc=
+
+Name: res/drawable-land-xhdpi-v4/screen.png
+SHA1-Digest: uwSq2lAsbn517Beqh0Q91NUs86A=
+
+Name: res/layout/bookmark_picker_list_item.xml
+SHA1-Digest: u7+EgsUmPBpZ/zYStB+T+p8iv2U=
+
+Name: res/layout/history_list_item.xml
+SHA1-Digest: O7bdm7TzCx8eih3kXUOJTW+OdLQ=
+
+Name: res/drawable-land-hdpi-v4/screen.png
+SHA1-Digest: jIQQxGGNkn7wLuXwcKzvUUxGlNI=
+
+Name: res/menu/capture.xml
+SHA1-Digest: GaVKGZlzLVTDeFXyHhdTRfzj7oc=
+
+Name: assets/www/css/fonts/fontawesome-webfont.woff
+SHA1-Digest: Sf73ebSM7gVsZOk4rslj/0udHLw=
+
+Name: assets/www/lib/es5-sham.min.js
+SHA1-Digest: QCghoXing3EzxwZGQ3WamOdtnS0=
+
+Name: assets/www/css/lib/Skeleton-2.0.2/index.html
+SHA1-Digest: PVBQgF7u1El3TZq2o02kAZrw97I=
+
+Name: assets/_where-is-www.txt
+SHA1-Digest: XyoRHUmqQWhFqkB6tnerFbQr+4I=
+
+Name: res/layout-land/encode.xml
+SHA1-Digest: OkXBuzT+syqLTcyEXW4kT22cVSc=
+
+Name: res/drawable-port-hdpi-v4/screen.png
+SHA1-Digest: TexVJuKBe7RIX63L9yazh6eOw+8=
+
+Name: assets/www/cordova.js
+SHA1-Digest: qkBUA3eLBbWGD/J7AZIVuFCfDnQ=
+
+Name: assets/www/plugins/org.apache.cordova.network-information/www/ne
+ twork.js
+SHA1-Digest: sFvS6jXxHDt52T8rwicnOU1HzyE=
+
+Name: res/drawable-land-mdpi-v4/screen.png
+SHA1-Digest: meocnDlUylnLGomGN/oNyPvq1w4=
+
+Name: res/menu/encode.xml
+SHA1-Digest: yo+5UdDpzQaSYImT2XL498DWQ9A=
+
+Name: assets/www/index.html
+SHA1-Digest: S4/o8Hh2QmZRnxbSB5kLnuRR7ww=
+
+Name: assets/www/plugins/org.apache.cordova.camera/www/CameraConstants
+ .js
+SHA1-Digest: ROkdY2ZIoMOrXJKdRA/ir7fo7NQ=
+
+Name: res/drawable/launcher_icon.png
+SHA1-Digest: z1xWFNSb8Bo8KEe+CDnSVYhd7Bk=
+
+Name: assets/www/css/lib/raleway.css
+SHA1-Digest: iXbxqlrMiVaK9PKXPNgRwv32hvA=
+
+Name: assets/www/plugins/com.cordova.plugins.sms/www/sms.js
+SHA1-Digest: ve348GKJ+Mb3UaP5qwHTQFIDHWU=
+
+Name: res/drawable/share_via_barcode.png
+SHA1-Digest: xueox/aadYoTyPW0Irz+cTgnKA0=
+
+Name: res/layout/encode.xml
+SHA1-Digest: 1gS/I7Z3+Hy66hKGyqd6DdcPXqw=
+
+Name: res/drawable-port-mdpi-v4/screen.png
+SHA1-Digest: AnMw4dYUgOFTRVtYrb7QoM0f1sc=
+
+Name: res/drawable-land-ldpi-v4/screen.png
+SHA1-Digest: ykt1q37h0o6e8nTwlzoa2yESIdU=
+
+Name: resources.arsc
+SHA1-Digest: RolE+QmQ3Q0Ehb2AefMPGFAAk9g=
+
+Name: res/layout/search_book_contents_header.xml
+SHA1-Digest: MeoEaHApkNaD5LyaqMLk1DKM4qM=
+
+Name: res/drawable-hdpi-v4/shopper_icon.png
+SHA1-Digest: rIX0xd1GjI/cqckdsEuis5LoJgo=
+
+Name: AndroidManifest.xml
+SHA1-Digest: 59OyZH2yiSokTsaXb7BgT1HqT+E=
+
+Name: assets/www/css/lib/Skeleton-2.0.2/css/normalize.css
+SHA1-Digest: eVFx4DlyaVd3x7ackU47HZmeejg=
+
+Name: assets/www/css/fonts/fontawesome-webfont.svg
+SHA1-Digest: X+rabBqmfKxHednaCRgMsdW4Bns=
+
+Name: res/drawable-hdpi-v4/launcher_icon.png
+SHA1-Digest: XsICEt3dT8t6aWDIcNQgVFG4DyI=
+
+Name: res/layout/search_book_contents_list_item.xml
+SHA1-Digest: 8UgsUNRdxMBFHk0sXreDSKX+wQ4=
+
+Name: res/drawable-xxhdpi-v4/launcher_icon.png
+SHA1-Digest: Sn7nuuDfkp5VxWRwiX6jZw3O7XE=
+
+Name: res/layout/help.xml
+SHA1-Digest: /oRFdxwR5+eeJnTOl0iDX6G6ADU=
+
+Name: assets/www/css/fonts/fonts.css
+SHA1-Digest: adgsWXnESYm3QuajCWs783fokOA=
+
+Name: assets/www/css/checkbox.css
+SHA1-Digest: myPuXWVkzwCct43U3UkHLVf7QEo=
+
+Name: assets/www/cordova_plugins.js
+SHA1-Digest: tEmRxlA7gxmWZwX2jaJEaSguUOw=
+
+Name: classes.dex
+SHA1-Digest: vR6YxIoTM/y0EQczRFYjkpNXOuI=
+
+Name: res/drawable-xhdpi-v4/launcher_icon.png
+SHA1-Digest: bO140kXhICmJTHku9+qwgMYlcbk=
+
+Name: res/layout-ldpi-v4/capture.xml
+SHA1-Digest: MgUT855TDxB9FAJbns3RTSRpZjs=
+
+Name: res/layout/search_book_contents.xml
+SHA1-Digest: lK51YlJ3rivSL4mmhWOGmeoZqlw=
+
+Name: res/drawable/icon.png
+SHA1-Digest: 2zfxd9IEzn+OiWuRV0FJqwrs24M=
+
+Name: assets/www/plugins/com.phonegap.plugins.barcodescanner/www/barco
+ descanner.js
+SHA1-Digest: BwnQZCo9blZpo5V8Kb/cEy4efzQ=
+
+Name: assets/www/main.js
+SHA1-Digest: JOG6TPdj1BLYD3wesvMioiPkOm8=
+
+Name: assets/www/lib/es5-shim.min.js
+SHA1-Digest: HhqXPF8J5RsHSbF0g2EjDKYw0zA=
+
+Name: assets/www/css/fonts/font-awesome.min.css
+SHA1-Digest: rTmLn7uf4hVBHzk3u5b5Lag1PFE=
+
+Name: res/drawable/shopper_icon.png
+SHA1-Digest: bL/oWy7GxeMliS5+Rh/EkcrwJ4k=
+
+Name: assets/www/css/fonts/fontawesome-webfont.eot
+SHA1-Digest: 42UOUUSvf/cx+ZTyQ1xovrJhMZo=
+
