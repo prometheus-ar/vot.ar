@@ -427,7 +427,7 @@ class Recuento(object):
                 if candidato_key not in candidatos_sumados:
                     self._resultados[candidato.cod_categoria,
                                      candidato.codigo] += 1
-                    candidatos_sumados.append(candidato_key)
+                    candidatos_sumados.add(candidato_key)
                 else:
                     # Si llegamos a este punto es porque se ha
                     # leído una tarjeta hackeada. Que hacemos con ella?
