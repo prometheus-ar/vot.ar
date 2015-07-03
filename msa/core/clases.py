@@ -413,11 +413,25 @@ class Recuento(object):
         return serial in self._serials
 
     def sumar_seleccion(self, seleccion, serial=None):
-        """Suma una seleccion a los resultados."""
+        """Suma una seleccion a los resultados.
+
+           Cada selección es acumulada en candidatos_sumados,
+           de esta manera si encontramos una votación en el conjunto es
+           porque se duplicó la entrada de ese candidato en la boleta.
+           En otras palabras ocurrió un voto fraudulento
+           """
+        candidatos_sumados = set()
         if not serial or not self.serial_sumado(serial):
             for candidato in seleccion._candidatos:
-                self._resultados[candidato.cod_categoria,
-                                 candidato.codigo] += 1
+                candidato_key = (candidato.cod_categoria, candidato.codigo)
+                if candidato_key not in candidatos_sumados:
+                    self._resultados[candidato.cod_categoria,
+                                     candidato.codigo] += 1
+                    candidatos_sumados.append(candidato_key)
+                else:
+                    # Si llegamos a este punto es porque se ha
+                    # leído una tarjeta hackeada. Que hacemos con ella?
+                    raise RuntimeError("Booleta Hackeada!")
             if serial:
                 self._serials.append(serial)
             self.campos_extra[CAM_BOL_CONT] += 1
