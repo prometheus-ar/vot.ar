@@ -1,5 +1,6 @@
 # coding: utf-8
 """Clase que implementa el protocolo ARMVE."""
+from __future__ import absolute_import
 import platform
 import struct
 
@@ -9,66 +10,68 @@ from datetime import datetime
 from time import sleep
 from zlib import crc32
 
-from msa import get_logger
-from msa.core.rfid.constants import COD_TAG_VACIO, COD_TAG_RECUENTO, \
-    COD_TAG_ADDENDUM, COD_TAG_INICIO, COD_TAG_NO_ENTRA
-from msa.core.armve.constants import PROTOCOL_VERSION_1, MSG_COMMAND, \
-    CMD_PWR_SOURCE, CMD_PWR_CONNECTED, CMD_PWR_GET_STATUS, CMD_PWR_PARAMS, \
-    MSG_EV_PERS, MSG_EV_NOPERS, EVT_PWR_DISCHARGE, EVT_PWR_LVL_MIN, \
-    EVT_PWR_LVL_CRI, EVT_PWR_LVL_MAX, EVT_PWR_SWITCH_AC, EVT_PWR_UNPLUGGED, \
-    EVT_PWR_EMPTY, DEV_PRINTER, CMD_PRINTER_GET_STATUS, CMD_PRINTER_MOVE, \
-    CMD_PRINTER_LOAD_BUFFER, CMD_PRINTER_PRINT, CMD_PRINTER_CLEAR_BUFFER, \
-    CMD_PRINTER_PAPER_REMOVE, CMD_PRINTER_PAPER_START, DEV_AGENT, \
-    EVT_PRINTER_PAPER_INSERTED, EVT_PRINTER_PAPER_OUT_3, CMD_RFID_GET_TAGS, \
-    CMD_RFID_READ_BLOCK, CMD_RFID_READ_BLOCKS, CMD_RFID_WRITE_BLOCK, \
-    CMD_RFID_WRITE_BLOCKS, CMD_RFID_IS_READONLY, CMD_RFID_SET_RO_BLOCK, \
-    CMD_RFID_CLEAR_BUFFER, CMD_RFID_GET_ANTENNA_LVL, CMD_AGENT_LS_EVENTS, \
-    DEV_RFID, CMD_PWR_CHECK, CMD_PRINTER_SET_AUTOFEED, \
-    EVT_PRINTER_PAPER_OUT_1, EVT_PRINTER_PAPER_OUT_2, CMD_RFID_SELECT_TAG, \
-    CMD_RFID_SET_RO_BLOCKS, EVT_RFID_NEW_TAG, DEV_BACKLIGHT, DEV_PWR, \
-    DEV_FAN_COOLERS, DEV_BUZZER, DEV_PIR, CMD_BACKLIGHT_GET_BRIGHTNESS, \
-    CMD_BACKLIGHT_SET_BRIGHTNESS, CMD_BACKLIGHT_GET_STATUS, CMD_BUZZER_BUZZ, \
-    CMD_BACKLIGHT_SET_STATUS, CMD_FAN_COOLERS_GET_SPEED, MSG_ERROR, \
-    CMD_FAN_COOLERS_SET_SPEED, EVT_PIR_DETECTED, EVT_PIR_NOT_DETECTED, \
-    MINI_HEADER_BYTES, CMD_PWR_SOURCE_CONTROL_MODE, CMD_PWR_SOURCE_CONTROL, \
-    CMD_PRINTER_GET_AUTOFEED, CMD_RFID_SET_ANTENNA_LVL, MSG_EV_DES, \
-    CMD_AGENT_INIT, CMD_AGENT_LS_DEV, INIT_RESPONSE_OK, MSG_EV_PUB, \
-    CMD_RFID_GET_PWR_STATUS, CMD_RFID_SET_PWR_STATUS, CMD_RFID_SEND_RAW, \
-    CMD_PRINTER_LOAD_COMP_BUFFER, CMD_PWR_ENABLE_SUSPEND, CMD_PIR_STATUS, \
-    CMD_PWR_GET_BATT_LEVEL, CMD_PWR_SET_BATT_LEVEL, CMD_AGENT_RESET, \
-    CMD_AGENT_RM_EVENTS, CMD_PWR_GET_BATT_LOW_ALARM, \
-    CMD_PWR_SET_BATT_LOW_ALARM, CMD_PWR_SET_LEDS, \
-    CMD_RFID_GET_ANTENNA_RCP_LVL, CMD_PRINTER_GET_QUALITY, \
-    CMD_PRINTER_SET_QUALITY, EVT_PWR_PLUGGED, \
-    CMD_PRINTER_LOAD_COMP_BUFFER_HEADERS, AVE_VERSION_ERROR, AVE_SIZE_ERROR, \
-    AVE_MESSAGE_NOT_FOUND, AVE_DEVICE_NOT_SUPPORTED, \
-    AVE_COMMAND_NOT_SUPPORTED, AVE_INSUFFICIENT_PARAMETERS, \
-    AVE_TO_MANY_PARAMETERS, AVE_WRONG_PARAMETERS, AVE_RFID_NOT_RESPONSE, \
-    AVE_ISO15693_ERROR, AVE_RFID_BLOCKS_ALREADY_LOCKED, \
-    AVE_RFID_TAG_NOT_SELECTED, AVE_BUSY, AVE_RFID_DISABLED, \
-    AVE_RFID_TX_TIMEOUT, AVE_RFID_RX_TIMEOUT, AVE_RFID_ERROR_FIFO, \
-    AVE_RFID_ERROR_DRV, AVE_RFID_UNKNOWN_ERROR, AUTOFEED_1, AUTOFEED_2, \
-    AUTOFEED_OFF, AUTOFEED_DEFAULT, CMD_PRINTER_MOVE_TO_SLOT, \
-    EVT_AGENT_RESET, AVE_AGENT_RESET_ERROR
-from msa.core.armve.decorators import arm_command, arm_event, retry_on_error, \
-    wait_for_response
-from msa.core.armve.helpers import array_to_string, string_to_array, \
-    serial_16_to_8
-from msa.core.armve.settings import AUTOFEED_1_MOVE, AUTOFEED_2_MOVE, \
-    FALLBACK_2K
-from msa.core.armve.structs import struct_common, struct_batt_connected, \
-    struct_byte, struct_batt_params, struct_printer_get_status, \
-    struct_load_buffer_response, struct_tags_list, struct_power_check, \
-    struct_rfid_block, struct_rfid_blocks, struct_security_status, \
-    struct_move_paper, struct_print_buffer, struct_tag_sn, struct_read_block, \
-    struct_read_blocks, struct_write_block, struct_write_blocks, \
-    struct_set_brightness, struct_base, \
-    struct_power_source_control, struct_autofeed, struct_batt_get_status, \
-    struct_event_list, struct_new_tag, struct_dev_list, struct_initialize_ok, \
-    struct_initialize_err, struct_led, struct_tag, struct_tag_header, \
-    struct_gset_batt_level, struct_batt_low_alarm, struct_batt_level_event, \
-    struct_reception_level, struct_buzz
-from msa.core.settings import TOKEN
+from msa.core.armve.constants import (
+    AUTOFEED_1, AUTOFEED_2, AUTOFEED_DEFAULT, AUTOFEED_OFF,
+    AVE_AGENT_RESET_ERROR, AVE_BUSY, AVE_COMMAND_NOT_SUPPORTED,
+    AVE_DEVICE_NOT_SUPPORTED, AVE_INSUFFICIENT_PARAMETERS, AVE_ISO15693_ERROR,
+    AVE_MESSAGE_NOT_FOUND, AVE_RFID_BLOCKS_ALREADY_LOCKED, AVE_RFID_DISABLED,
+    AVE_RFID_ERROR_DRV, AVE_RFID_ERROR_FIFO, AVE_RFID_NOT_RESPONSE,
+    AVE_RFID_RX_TIMEOUT, AVE_RFID_TAG_NOT_SELECTED, AVE_RFID_TX_TIMEOUT,
+    AVE_RFID_UNKNOWN_ERROR, AVE_SIZE_ERROR, AVE_TO_MANY_PARAMETERS,
+    AVE_VERSION_ERROR, AVE_WRONG_PARAMETERS, BLOQUES_TAG, CMD_AGENT_INIT,
+    CMD_AGENT_LS_DEV, CMD_AGENT_LS_EVENTS, CMD_AGENT_RESET,
+    CMD_AGENT_RM_EVENTS, CMD_BACKLIGHT_GET_BRIGHTNESS,
+    CMD_BACKLIGHT_GET_STATUS, CMD_BACKLIGHT_SET_BRIGHTNESS,
+    CMD_BACKLIGHT_SET_STATUS, CMD_BUZZER_BUZZ, CMD_FAN_COOLERS_GET_SPEED,
+    CMD_FAN_COOLERS_SET_SPEED, CMD_PIR_STATUS, CMD_PRINTER_CLEAR_BUFFER,
+    CMD_PRINTER_GET_AUTOFEED, CMD_PRINTER_GET_QUALITY, CMD_PRINTER_GET_STATUS,
+    CMD_PRINTER_LOAD_BUFFER, CMD_PRINTER_LOAD_COMP_BUFFER,
+    CMD_PRINTER_LOAD_COMP_BUFFER_FULL, CMD_PRINTER_LOAD_COMP_BUFFER_HEADERS,
+    CMD_PRINTER_MOVE, CMD_PRINTER_MOVE_TO_SLOT, CMD_PRINTER_PAPER_REMOVE,
+    CMD_PRINTER_PAPER_START, CMD_PRINTER_PRINT, CMD_PRINTER_SET_AUTOFEED,
+    CMD_PRINTER_SET_QUALITY, CMD_PWR_CHECK, CMD_PWR_CONNECTED,
+    CMD_PWR_ENABLE_SUSPEND, CMD_PWR_GET_BATT_LEVEL, CMD_PWR_GET_BATT_LOW_ALARM,
+    CMD_PWR_GET_STATUS, CMD_PWR_PARAMS, CMD_PWR_SET_BATT_LEVEL,
+    CMD_PWR_SET_BATT_LOW_ALARM, CMD_PWR_SET_LEDS, CMD_PWR_SOURCE,
+    CMD_PWR_SOURCE_CONTROL, CMD_PWR_SOURCE_CONTROL_MODE,
+    CMD_RFID_CLEAR_BUFFER, CMD_RFID_GET_ANTENNA_LVL,
+    CMD_RFID_GET_ANTENNA_RCP_LVL, CMD_RFID_GET_PWR_STATUS,
+    CMD_RFID_GET_TAGS, CMD_RFID_IS_READONLY, CMD_RFID_READ_BLOCK,
+    CMD_RFID_READ_BLOCKS, CMD_RFID_SELECT_TAG, CMD_RFID_SEND_RAW,
+    CMD_RFID_SET_ANTENNA_LVL, CMD_RFID_SET_PWR_STATUS, CMD_RFID_SET_RO_BLOCK,
+    CMD_RFID_SET_RO_BLOCKS, CMD_RFID_WRITE_BLOCK, CMD_RFID_WRITE_BLOCKS,
+    DEV_AGENT, DEV_BACKLIGHT, DEV_BUZZER, DEV_FAN_COOLERS, DEV_PIR,
+    DEV_PRINTER, DEV_PWR, DEV_RFID, EVT_AGENT_RESET, EVT_PIR_DETECTED,
+    EVT_PIR_NOT_DETECTED, EVT_PRINTER_PAPER_INSERTED, EVT_PRINTER_SENSOR_1,
+    EVT_PRINTER_SENSOR_2, EVT_PRINTER_SENSOR_3, EVT_PWR_DISCHARGE,
+    EVT_PWR_EMPTY, EVT_PWR_LVL_CRI, EVT_PWR_LVL_MAX, EVT_PWR_LVL_MIN,
+    EVT_PWR_PLUGGED, EVT_PWR_SWITCH_AC, EVT_PWR_UNPLUGGED, EVT_RFID_NEW_TAG,
+    INIT_RESPONSE_OK, MINI_HEADER_BYTES, MSG_COMMAND, MSG_ERROR, MSG_EV_DES,
+    MSG_EV_NOPERS, MSG_EV_PERS, MSG_EV_PUB, PROTOCOL_VERSION_1)
+from msa.core.armve.decorators import (arm_command, arm_event, retry_on_error,
+                                       wait_for_response)
+from msa.core.armve.settings import (
+    AUTOFEED_1_MOVE, AUTOFEED_2_MOVE, FALLBACK_2K, ESCRIBIR_TODOS_BLOQUES)
+from msa.core.armve.structs import (
+    struct_common, struct_batt_connected, struct_byte, struct_batt_params,
+    struct_printer_get_status, struct_load_buffer_response, struct_tags_list,
+    struct_power_check, struct_rfid_block, struct_rfid_blocks,
+    struct_security_status, struct_move_paper, struct_print_buffer,
+    struct_tag_sn, struct_read_block, struct_read_blocks, struct_write_block,
+    struct_write_blocks, struct_set_brightness, struct_base,
+    struct_power_source_control, struct_autofeed, struct_batt_get_status,
+    struct_event_list, struct_new_tag, struct_dev_list, struct_initialize_ok,
+    struct_initialize_err, struct_led, struct_tag, struct_tag_header,
+    struct_gset_batt_level, struct_batt_low_alarm, struct_batt_level_event,
+    struct_reception_level, struct_buzz, struct_raw_data)
+from msa.core.logging import get_logger
+from msa.core.rfid.constants import (COD_TAG_VACIO, COD_TAG_RECUENTO,
+                                     COD_TAG_ADDENDUM, COD_TAG_INICIO,
+                                     COD_TAG_NO_ENTRA, COD_TAG_USUARIO_MSA)
+from msa.core.settings import TOKEN, TOKEN_TECNICO
+from six.moves import range
+from six.moves import zip
+
 
 if platform.architecture()[0] == "64bit":
     from msa.core.armve.compresion.x86_64.compresion import comprimir1B
@@ -129,7 +132,7 @@ class Device(object):
         """
         self._device_type = None
         self._buffer = buffer
-        self._supported_protocols = ['\x01']
+        self._supported_protocols = [1]
         self._writing = False
 
     def _write(self, bytes_):
@@ -152,11 +155,13 @@ class Device(object):
 
     def _get_default_container(self):
         """Devuelve un container que se usa para enviar los mensajes."""
+        data = bytes("", "utf8")
         container = Container(version=PROTOCOL_VERSION_1,
                               device=self._device_type,
                               msg_type=MSG_COMMAND,
                               size=7,
-                              data="")
+                              data=data
+                              )
         return container
 
     def _process_command(self, command, data):
@@ -168,8 +173,9 @@ class Device(object):
             data -- un string con bytes.
         """
         ret = None
-        func_name = "_callback_%s" % self._command_dict.get(command)
-        if func_name is not None:
+        command_name = self._command_dict.get(command)
+        if command_name is not None:
+            func_name = "_callback_{}".format(command_name)
             func = getattr(self, func_name)
             if func is not None:
                 ret = func(data)
@@ -206,7 +212,7 @@ class Device(object):
         else:
             error_msg = self._errors_dict.get(common_data.command,
                                               "UNKNOWN")
-            string_data = string_to_array(common_data.data)
+            string_data = common_data.data
             logger.error("Error: %s %s", error_msg, string_data)
         return response, common_data.device, common_data.command, \
             common_data.msg_type
@@ -264,12 +270,12 @@ class Device(object):
         #    command not in (CMD_PRINTER_LOAD_COMP_BUFFER,
         #                    CMD_PRINTER_LOAD_BUFFER)):
         logger.debug_armve("(hex)>>> %s",
-                           " ".join('%02x' % ord(c) for c in stream))
+                           " ".join('%02x' % c for c in stream))
 
         while self._writing:
             sleep(0.1)
         self._writing = True
-        self._write(stream)
+        self._write(bytearray(stream))
         self._writing = False
 
     def read(self, expecting_event=False, expecting_command=None):
@@ -316,23 +322,26 @@ class Device(object):
         # primero leemos los primeros bytes del header para ver el largo y solo
         # leer la cantidad necesaria de informacion desde el buffer.
         header_data = self._buffer.read(MINI_HEADER_BYTES)
-        if header_data and header_data[0] in self._supported_protocols:
+        if (header_data is not None and len(header_data) and
+                header_data[0] in self._supported_protocols):
+            # y despues leemos todo el resto sabiendo el largo del mensaje
             try:
                 response = struct_base.parse(header_data)
-                remaining_data = self._read_full_message(response['size'] -
-                                                         MINI_HEADER_BYTES)
+                remaining_data = self._read_full_message(
+                    response['size'] - MINI_HEADER_BYTES)
                 full_data = header_data + remaining_data
-                logger.debug_armve("(hex)<<< %s", " ".join('%02x' % ord(c)
-                                                     for c in full_data))
+                logger.debug_armve(
+                    "(hex)<<< %s", " ".join('%02x' % c for c in full_data))
                 processed_data = self._process(full_data)
                 logger.debug("(con)<<< %s", processed_data)
             except FieldError:
                 pass
+
         return processed_data
 
     def _read_full_message(self, size):
         """Lee el buffer hasta que termine el ."""
-        data = ""
+        data = b""
         data_len = 0
         i = 0
         while data_len < size and i < 10:
@@ -371,7 +380,7 @@ class Agent(Device):
            data -- string con los datos del protocolo que no fueron
            procesados.
         """
-        cmd_reply = struct_security_status.parse(data)[0].byte
+        cmd_reply = struct_raw_data.parse(data)[0].byte
         if cmd_reply == INIT_RESPONSE_OK:
             struct_ = struct_initialize_ok
         else:
@@ -532,9 +541,10 @@ class PowerManager(Device):
         """
         container = struct_batt_params.parse(data)
         for batt in container.batt_data:
-            batt.manufacturer = array_to_string(batt.manufacturer).strip()
-            batt.model = array_to_string(batt.model)
-            batt.chem = array_to_string(batt.chem)
+            batt.manufacturer = "".join([chr(item) for item in
+                                         batt.manufacturer])
+            batt.model = "".join([chr(item) for item in batt.model])
+            batt.chem = "".join([chr(item) for item in batt.chem])
         return container
 
     def _callback_check_voltages(self, data):
@@ -799,7 +809,7 @@ class PowerManager(Device):
         keys = ("slot_number", "level_empty", "level_critical", "level_min",
                 "full_charge", "full_charge_current")
         for i in range(batt_number):
-            args = dict(zip(keys, params.pop()))
+            args = dict(list(zip(keys, params.pop())))
             levels.append(Container(**args))
         self._send_command(
             CMD_PWR_SET_BATT_LEVEL,
@@ -964,12 +974,13 @@ class Printer(Device):
         CMD_PRINTER_GET_AUTOFEED: "get_autofeed",
         CMD_PRINTER_SET_AUTOFEED: "set_autofeed",
         CMD_PRINTER_LOAD_COMP_BUFFER: "load_buffer_compressed",
+        CMD_PRINTER_LOAD_COMP_BUFFER_FULL: "load_buffer_compressed",
         CMD_PRINTER_GET_QUALITY: "get_quality",
         CMD_PRINTER_SET_QUALITY: "set_quality",
         EVT_PRINTER_PAPER_INSERTED: "paper_inserted",
-        EVT_PRINTER_PAPER_OUT_1: "paper_out_1",
-        EVT_PRINTER_PAPER_OUT_2: "paper_out_2",
-        EVT_PRINTER_PAPER_OUT_3: "paper_out_3",
+        EVT_PRINTER_SENSOR_1: "sensor_1",
+        EVT_PRINTER_SENSOR_2: "sensor_2",
+        EVT_PRINTER_SENSOR_3: "sensor_3",
     }
 
     def __init__(self, buffer=None):
@@ -1135,9 +1146,9 @@ class Printer(Device):
         """
         return struct_printer_get_status.parse(data)
 
-    def _callback_paper_out_1(self, data):
+    def _callback_sensor_1(self, data):
         """Callback que se ejecuta cuando se recibe la respuesta del evento
-        representado en EVT_PRINTER_PAPER_OUT_1.
+        representado en EVT_PRINTER_SENSOR_1.
 
         Argumentos:
             data -- string con los datos del protocolo que no fueron
@@ -1145,9 +1156,9 @@ class Printer(Device):
         """
         return struct_printer_get_status.parse(data)
 
-    def _callback_paper_out_2(self, data):
+    def _callback_sensor_2(self, data):
         """Callback que se ejecuta cuando se recibe la respuesta del evento
-        representado en EVT_PRINTER_PAPER_OUT_2.
+        representado en EVT_PRINTER_SENSOR_2.
 
         Argumentos:
             data -- string con los datos del protocolo que no fueron
@@ -1155,9 +1166,9 @@ class Printer(Device):
         """
         return struct_printer_get_status.parse(data)
 
-    def _callback_paper_out_3(self, data):
+    def _callback_sensor_3(self, data):
         """Callback que se ejecuta cuando se recibe la respuesta del evento
-        representado en EVT_PRINTER_PAPER_OUT_3.
+        representado en EVT_PRINTER_SENSOR_3.
 
         Argumentos:
             data -- string con los datos del protocolo que no fueron
@@ -1188,7 +1199,7 @@ class Printer(Device):
         """Envia el comando CMD_PRINTER_LOAD_BUFFER al ARM."""
         do_print = 255 if do_print else 0
         clear_buffer = 255 if clear_buffer else 0
-        stream_bytes = string_to_array(stream)
+        stream_bytes = stream
         buffer_data = struct_print_buffer.build(
             Container(size=len(stream_bytes),
                       stream=stream_bytes,
@@ -1197,18 +1208,59 @@ class Printer(Device):
         )
         self._send_command(CMD_PRINTER_LOAD_BUFFER, buffer_data)
 
-    def _get_load_buffer_msg(self, stream, do_print, clear_buffer):
-        """Genera el mensaje de carga de buffer de impresion."""
-        do_print = b'\xff' if do_print else b'\x00'
-        clear_buffer = b'\xff' if clear_buffer else b'\x00'
-        stream_len = len(stream)
+    def _load_buffer_header(self, stream_len):
         byte_stream = bytearray(b'\x01')  # Version
         byte_stream.extend(struct.pack('>I', stream_len + 11)[1:])  # Size
-        byte_stream.extend(b'\x01\x02\x09')  # Tipo Proto Cmd
-        byte_stream.extend(struct.pack('>H', stream_len))  # Long Stream
+        byte_stream.extend(b'\x01\x02')  # Tipo Proto Cmd
+        return byte_stream
+
+    def _get_flags(self, do_print, clear_buffer):
+        do_print = b'\xff' if do_print else b'\x00'
+        flags = bytearray(do_print)
+        clear_buffer = b'\xff' if clear_buffer else b'\x00'
+        flags.extend(clear_buffer)
+        return flags
+
+    def _get_data_stream(self, stream_len, stream):
+        byte_stream = bytearray(struct.pack('>H', stream_len))  # Long Stream
         byte_stream.extend(stream)
-        byte_stream.append(do_print)
-        byte_stream.append(clear_buffer)
+        return byte_stream
+
+    def _get_load_buffer_full_msg(self, stream, do_print, clear_buffer, width,
+                                  height):
+        """Genera el mensaje de carga completa de buffer de impresion."""
+        stream_len = len(stream)
+        # header
+        byte_stream = self._load_buffer_header(stream_len)
+        # comando
+        byte_stream.extend(b'\x0d')
+        # flags
+        flags = self._get_flags(do_print, clear_buffer)
+        byte_stream.extend(flags)
+        # tamaño
+        width = (width).to_bytes(2, byteorder='big')
+        byte_stream.extend(width)
+        height = (height).to_bytes(2, byteorder='big')
+        byte_stream.extend(height)
+        # stream
+        data_stream = self._get_data_stream(stream_len, stream)
+        byte_stream.extend(data_stream)
+        return byte_stream
+
+    def _get_load_buffer_msg(self, stream, do_print, clear_buffer):
+        """Genera el mensaje de carga de buffer de impresion."""
+        # header
+        stream_len = len(stream)
+        # header
+        byte_stream = self._load_buffer_header(stream_len)
+        # comando
+        byte_stream.extend(b'\x09')
+        # stream
+        data_stream = self._get_data_stream(stream_len, stream)
+        byte_stream.extend(data_stream)
+        # flags
+        flags = self._get_flags(do_print, clear_buffer)
+        byte_stream.extend(flags)
         return byte_stream
 
     def load_buffer_compressed(self, stream, free_page_mem,
@@ -1216,18 +1268,63 @@ class Printer(Device):
         u"""Envia el comando CMD_PRINTER_LOAD_COMP_BUFFER al ARM.
             free_page_mem DEBE tener un valor razonable, mínimo de 10000.
         """
+        # comprimimos el stream de datos
         stream_buffer = comprimir1B(stream)
+        # no imprimimos a menos que sea la ultima carga
         do_print = False
         free_page_mem -= CMD_PRINTER_LOAD_COMP_BUFFER_HEADERS
-        cargas = range(0, len(stream_buffer), free_page_mem)
+        # la cantidad de cargas necesarias para cargar toda la pagina
+        cargas = list(range(0, len(stream_buffer), free_page_mem))
         cant_cargas = len(cargas)
         logger.debug("Cant cargas: %s, largo buffer: %s, free page mem: %s",
                      cant_cargas, len(stream_buffer), free_page_mem)
+        # iteramos por cada carga
         for nro_carga, idx in enumerate(cargas):
             stream_bytes = stream_buffer[idx:idx + free_page_mem]
+            # solo le decimos a la impresora que empiece a imprimir
             do_print = print_immediately and (nro_carga + 1 == cant_cargas)
             msg = self._get_load_buffer_msg(stream_bytes, do_print,
                                             clear_buffer)
+            while self._writing:
+                sleep(0.1)
+            self._writing = True
+            start = datetime.now()
+            self._write(msg)
+            # el tiempo que tarda en escribir en el USB
+            logger.debug("Tiempo carga buffer %s", datetime.now() - start)
+            self._writing = False
+            clear_buffer = False
+
+    def load_buffer_compressed_full(self, stream, free_page_mem, width, height,
+                                    print_immediately=False,
+                                    clear_buffer=True):
+        u"""Envia el comando CMD_PRINTER_LOAD_COMP_BUFFER_FULL al ARM.
+            free_page_mem DEBE tener un valor razonable, mínimo de 10000.
+        """
+        # FIXME: esta funcion no debería recibir mas el free_page_mem y no
+        # debería hacer varias cargas una vez que Ale implemente la parte de
+        # ciclar por el buffer mientras descomprime, por eso es una copia de
+        # load_buffer_compressed. Cuando Ale implemente el driver nuevo
+        # USB en el firmware esta funcion debería ser mucho mas corta y hacer
+        # una sola carga del buffer
+
+        # comprimimos el stream de datos
+        stream_buffer = comprimir1B(stream)
+        # no imprimimos a menos que sea la ultima carga
+        do_print = False
+        free_page_mem -= CMD_PRINTER_LOAD_COMP_BUFFER_HEADERS
+        # la cantidad de cargas necesarias para cargar toda la pagina
+        cargas = list(range(0, len(stream_buffer), free_page_mem))
+        cant_cargas = len(cargas)
+        logger.debug("Cant cargas: %s, largo buffer: %s, free page mem: %s",
+                     cant_cargas, len(stream_buffer), free_page_mem)
+        # iteramos por cada carga
+        for nro_carga, idx in enumerate(cargas):
+            stream_bytes = stream_buffer[idx:idx + free_page_mem]
+            # solo le decimos a la impresora que empiece a imprimir
+            do_print = print_immediately and (nro_carga + 1 == cant_cargas)
+            msg = self._get_load_buffer_full_msg(stream_bytes, do_print,
+                                                 clear_buffer, width, height)
             while self._writing:
                 sleep(0.1)
             self._writing = True
@@ -1342,22 +1439,22 @@ class Printer(Device):
         self._register_event(EVT_PRINTER_PAPER_INSERTED)
 
     @arm_event
-    def register_paper_out_1(self):
-        """Envia un mensaje de registracion del evento EVT_PRINTER_PAPER_OUT_1.
+    def register_sensor_1(self):
+        """Envia un mensaje de registracion del evento EVT_PRINTER_SENSOR_1.
         """
-        self._register_event(EVT_PRINTER_PAPER_OUT_1)
+        self._register_event(EVT_PRINTER_SENSOR_1)
 
     @arm_event
-    def register_paper_out_2(self):
-        """Envia un mensaje de registracion del evento EVT_PRINTER_PAPER_OUT_2.
+    def register_sensor_2(self):
+        """Envia un mensaje de registracion del evento EVT_PRINTER_SENSOR_2.
         """
-        self._register_event(EVT_PRINTER_PAPER_OUT_2)
+        self._register_event(EVT_PRINTER_SENSOR_2)
 
     @arm_event
-    def register_paper_out_3(self):
-        """Envia un mensaje de registracion del evento EVT_PRINTER_PAPER_OUT_3.
+    def register_sensor_3(self):
+        """Envia un mensaje de registracion del evento EVT_PRINTER_SENSOR_3.
         """
-        self._register_event(EVT_PRINTER_PAPER_OUT_3)
+        self._register_event(EVT_PRINTER_SENSOR_3)
 
     @arm_event
     def unregister_paper_inserted(self):
@@ -1367,25 +1464,25 @@ class Printer(Device):
         self._unregister_event(EVT_PRINTER_PAPER_INSERTED)
 
     @arm_event
-    def unregister_paper_out_1(self):
+    def unregister_sensor_1(self):
         """Envia un mensaje de desregistracion del evento
-        EVT_PRINTER_PAPER_OUT_1.
+        EVT_PRINTER_SENSOR_1.
         """
-        self._unregister_event(EVT_PRINTER_PAPER_OUT_1)
+        self._unregister_event(EVT_PRINTER_SENSOR_1)
 
     @arm_event
-    def unregister_paper_out_2(self):
+    def unregister_sensor_2(self):
         """Envia un mensaje de desregistracion del evento
-        EVT_PRINTER_PAPER_OUT_2.
+        EVT_PRINTER_SENSOR_2.
         """
-        self._unregister_event(EVT_PRINTER_PAPER_OUT_2)
+        self._unregister_event(EVT_PRINTER_SENSOR_2)
 
     @arm_event
-    def unregister_paper_out_3(self):
+    def unregister_sensor_3(self):
         """Envia un mensaje de desregistracion del evento
-        EVT_PRINTER_PAPER_OUT_3.
+        EVT_PRINTER_SENSOR_3.
         """
-        self._unregister_event(EVT_PRINTER_PAPER_OUT_3)
+        self._unregister_event(EVT_PRINTER_SENSOR_3)
 
     @arm_event
     def register_print_finished(self):
@@ -1418,15 +1515,37 @@ class Printer(Device):
         """
         self._register_event(CMD_PRINTER_LOAD_COMP_BUFFER, persistent=False)
 
+    @arm_event
+    def register_load_buffer_compressed_full(self):
+        """
+        Registra el evento eventual CMD_PRINTER_LOAD_COMP_BUFFER_FULL en el ARM.
+        """
+        self._register_event(CMD_PRINTER_LOAD_COMP_BUFFER_FULL,
+                             persistent=False)
+
     def has_paper(self):
+        """La impresora tiene papel."""
         status = self.get_status()
         try:
-            ret_status = bool(status[0]['paper_out_1']) if status is not None \
-                else False
+            ret_status = (bool(status[0]['sensor_1']) if status is not None
+                          else False)
         except:
             ret_status = False
 
         return ret_status
+
+    def is_paper_ready(self):
+        """La impresora tiene papel listo para imprimir en la posicion correcta
+        para imprimir."""
+        is_ready = False
+        status = self.get_status()
+        if status is not None:
+            sensors = status[0]
+            is_ready = (sensors['sensor_1'] and
+                        not sensors['sensor_2'] and
+                        not sensors['sensor_3'])
+
+        return is_ready
 
 
 class RFID(Device):
@@ -1642,9 +1761,8 @@ class RFID(Device):
         Argumentos:
             serial_number -- el numero de serie del tag a utilizar.
         """
-        serial = string_to_array(serial_number)
         self._send_command(CMD_RFID_SELECT_TAG,
-            struct_tag_sn.build(Container(serial_number=serial)))
+            struct_tag_sn.build(Container(serial_number=serial_number)))
 
     @arm_command(CMD_RFID_READ_BLOCK)
     def read_block(self, serial_number, block):
@@ -1654,11 +1772,9 @@ class RFID(Device):
             serial_number -- el numero de serie del tag a utilizar.
             block -- numero de bloque a leer.
         """
-        self._send_command(
-            CMD_RFID_READ_BLOCK,
-            struct_read_block.build(Container(
-                serial_number=string_to_array(serial_number),
-                block=block)))
+        built = struct_read_block.build(Container(serial_number=serial_number,
+                                                  block=block))
+        self._send_command(CMD_RFID_READ_BLOCK, built)
 
     @retry_on_error
     @wait_for_response(CMD_RFID_READ_BLOCKS)
@@ -1673,9 +1789,9 @@ class RFID(Device):
         self._send_command(
             CMD_RFID_READ_BLOCKS,
             struct_read_blocks.build(Container(
-                serial_number=string_to_array(serial_number),
+                serial_number=serial_number,
                 block=first_block,
-                number=number)))
+                number=int(number))))
 
     @arm_command(CMD_RFID_WRITE_BLOCK)
     def write_block(self, serial_number, block_number, data):
@@ -1689,9 +1805,9 @@ class RFID(Device):
         self._send_command(
             CMD_RFID_WRITE_BLOCK,
             struct_write_block.build(Container(
-                serial_number=string_to_array(serial_number),
+                serial_number=serial_number,
                 block=block_number,
-                bytes=string_to_array(data))))
+                bytes=data)))
 
     @retry_on_error
     @wait_for_response(CMD_RFID_WRITE_BLOCKS)
@@ -1704,14 +1820,14 @@ class RFID(Device):
             number -- numero de bloques a escribir.
             data -- datos a enviar al primer bloque.
         """
-        blocks = [Container(bytes=string_to_array(elem)) for elem in data]
+        blocks = [Container(bytes=elem) for elem in data]
         self._send_command(
             CMD_RFID_WRITE_BLOCKS,
             struct_write_blocks.build(
                 Container(block=first_block,
                           number=number,
                           rfid_block=blocks,
-                          serial_number=string_to_array(serial_number))))
+                          serial_number=serial_number)))
 
     @retry_on_error
     @arm_command(CMD_RFID_IS_READONLY)
@@ -1726,7 +1842,7 @@ class RFID(Device):
         self._send_command(
             CMD_RFID_IS_READONLY,
             struct_read_blocks.build(Container(
-                serial_number=string_to_array(serial_number),
+                serial_number=serial_number,
                 block=first_block,
                 number=number)))
 
@@ -1739,9 +1855,9 @@ class RFID(Device):
             block -- numero del bloque a quemar.
         """
         self._send_command(CMD_RFID_SET_RO_BLOCK,
-                           struct_read_block.build(Container(
-                           serial_number=string_to_array(serial_number),
-                           block=block)))
+                           struct_read_block.build(
+                               Container(serial_number=serial_number,
+                                         block=block)))
 
     @arm_command(CMD_RFID_SET_RO_BLOCKS)
     def set_read_only_blocks(self, serial_number, first_block, number):
@@ -1753,10 +1869,10 @@ class RFID(Device):
             number -- numero de bloques a quemar.
         """
         self._send_command(CMD_RFID_SET_RO_BLOCKS,
-                          struct_read_blocks.build(Container(
-                              serial_number=string_to_array(serial_number),
-                              block=first_block,
-                              number=number)))
+                           struct_read_blocks.build(Container(
+                               serial_number=serial_number,
+                               block=first_block,
+                               number=number)))
 
     @arm_command(CMD_RFID_CLEAR_BUFFER)
     def clear_buffer(self):
@@ -1801,7 +1917,6 @@ class RFID(Device):
 
     @arm_command(CMD_RFID_SEND_RAW)
     def send_raw_data(self, raw_data):
-        #stream_bytes = string_to_array(raw_data)
         self._send_command(
             CMD_RFID_SEND_RAW,
             raw_data
@@ -1815,7 +1930,7 @@ class RFID(Device):
             polling -- establece el tiempo de polling.
         """
         self._register_event(EVT_RFID_NEW_TAG,
-                            struct_new_tag.build(Container(timeout=polling)))
+                             struct_new_tag.build(Container(timeout=polling)))
 
     @arm_event
     def unregister_new_tag(self):
@@ -1832,17 +1947,25 @@ class RFID(Device):
         struct_data = None
         inc = 0
         while struct_data is None and inc < 3:
+            # leo el contenido del header
             header_data = self.read_block(serial_number, 0)
+            # Si traje el contenido bien lo parseo
             if header_data is not None and header_data[3] != MSG_ERROR:
-                header = struct_tag_header.parse(
-                    array_to_string(header_data[0]['bytes']))
+                # traigo los bytes de lo que acabo de leer
+                str_bytes = header_data[0]['bytes']
+                # y lo parseo con construct
+                header = struct_tag_header.parse(str_bytes)
+                # Creo el bytestream con los datos del tag
                 bytes_data = header_data[0]['bytes']
                 # TODO "tiene que empezar el serial con e0
                 h_size = header['size']
-                # manejando el caso donde todo el chip tiene FF
+                # manejando el caso donde todo el chip tiene FF. Sin esta
+                # comprobación leemos mas de lo que el tag puede guardar
                 if h_size > 255:
                     h_size = 0
 
+                # si el tamaños es cero el CRC32 es 0 y el user_data es vacio,
+                # por que asumimos que estamos en presencia de un tag vacio
                 if h_size == 0:
                     struct_data = header
                     struct_data['crc32'] = [0] * 4
@@ -1855,14 +1978,23 @@ class RFID(Device):
                 data_len = (h_size / 4) + (1 if (h_size % 4) and
                                            (h_size < 107) else 0)
                 rfid_data = self.read_blocks(serial_number, 1, data_len)
+                # Si pudimos leer la data y no devolvió error de lectura
                 if rfid_data is not None and rfid_data[3] != MSG_ERROR:
+                    # Vamos a agregegar el contenido en bytes de cada bloque al
+                    # bytestream con los datos
                     for block in rfid_data[0]:
-                        bytes_data.extend(block['bytes'])
-                    struct_data = struct_tag.parse(array_to_string(bytes_data))
-                    crc_datos = crc32(
-                        array_to_string(struct_data['user_data']))
-                    crc_datos = string_to_array(struct.pack("i", crc_datos))
+                        bytes_data += block['bytes']
+                    # Parseamos con construct el contenido del tag
+                    struct_data = struct_tag.parse(bytes_data)
+                    # Calculamos y el CRC32 que deberíamos tener
+                    int_crc = crc32(struct_data['user_data'])
+                    # Formateamos el CRC32 en el mismo formato que viene del
+                    # tag
+                    crc_datos = struct.pack("I", int_crc)
+
+                    # Comparamos el crc del tag con el crc calculado
                     if struct_data['crc32'] != crc_datos:
+                        # si son distintos el tag leido es invalido
                         struct_data = None
             else:
                 sleep(0.05)
@@ -1870,7 +2002,7 @@ class RFID(Device):
             inc += 1
 
         if struct_data is not None and get_raw:
-            struct_data = array_to_string(bytes_data)
+            struct_data = bytes_data
         return struct_data
 
     def get_tipos_tags(self, response=None):
@@ -1905,10 +2037,13 @@ class RFID(Device):
             # COD_TAG_VACIO es para dejar pasar los chips vírgenes que tienen
             # en el primer byte del bloque 0 el valor 0.
             elif struct_data['token'] == COD_TAG_VACIO or \
-                 struct_data['token'] == int(TOKEN, 16) or not comprobar_token:
+                    struct_data['token'] == int(TOKEN, 16) or \
+                        (struct_data['token'] == int(TOKEN_TECNICO, 16) and
+                         struct_data['tipo_tag'] == COD_TAG_USUARIO_MSA) or \
+                    not comprobar_token:
                 data = {}
                 data['token'] = struct_data['token']
-                data['user_data'] = array_to_string(struct_data['user_data'])
+                data['user_data'] = struct_data['user_data']
                 data['tipo_tag'] = struct_data['tipo_tag']
         return data
 
@@ -1932,12 +2067,11 @@ class RFID(Device):
         Argumentos:
             serial_number -- el numero de serie del tag.
         """
-        serial_number = serial_16_to_8(serial_number)
         header_data = self.read_block(serial_number, 0)
         if header_data is not None and header_data[3] != MSG_ERROR:
-            header = struct_tag_header.parse(
-                array_to_string(header_data[0]['bytes']))
-            data = self.is_read_only(serial_number, 0, header['size'] / 4 + 1)
+            header = struct_tag_header.parse(header_data[0]['bytes'])
+            data = self.is_read_only(serial_number, 0,
+                                     int(header['size'] / 4) + 1)
             if data is not None and data[3] != MSG_ERROR:
                 for element in data[0]:
                     if element['byte']:
@@ -1952,25 +2086,34 @@ class RFID(Device):
             token -- Token con en que quiero guardar el chip.
             data -- datos que quiero guardar en el chip.
         """
+        # primero calculo el CRC32 y lo formateo
         crc_datos = crc32(data)
-        crc_datos = string_to_array(struct.pack("i", crc_datos))
-        data_stream = struct_tag.build(Container(
-             token=int(token, 16),
-             tipo_tag=tipo,
-             size=len(data),
-             user_data=string_to_array(data),
-             crc32=crc_datos
-        ))
+        crc_datos = struct.pack("I", crc_datos)
+        # creo el struct del tag
+        container = Container(token=int(token, 16),
+                              tipo_tag=tipo,
+                              size=len(data),
+                              user_data=data,
+                              crc32=crc_datos)
+        # lo compilo y saco el binario del output que quiero grabar
+        data_stream = struct_tag.build(container)
         blocks = []
+        # me aseguro de que lo que quiero guardar sea multiplo de cuatro para
+        # guardar los bloques completos y armo una lista con los bloques
         while len(data_stream) > 0:
             if len(data_stream) > 4:
                 chunk = data_stream[:4]
                 data_stream = data_stream[4:]
             else:
-                chunk = data_stream.ljust(4, "\x00")
+                chunk = data_stream.ljust(4, b"\x00")
                 data_stream = ""
-            block = string_to_array(chunk)
+            block = chunk
             blocks.append(block)
+
+        len_blocks = len(blocks)
+        if ESCRIBIR_TODOS_BLOQUES and len_blocks < BLOQUES_TAG:
+            blocks.extend([b'\x00' * 4] * (BLOQUES_TAG - len_blocks))
+
         return blocks
 
     def write_tag(self, serial_number, tipo, token, data):
@@ -1982,31 +2125,44 @@ class RFID(Device):
             token -- el token que queremos guardar.
             data -- los datos que queremos guardar en el tag.
         """
+        # Indicador de que se grabó en mas de un tag con el FALLBACK_2K
         multi_tag = False
+        # creo los bloques que quiero escribir
         blocks = self._create_blocks(tipo, token, data)
-        if len(blocks) <= 28:
+        # En caso de que los bloques sean menos de 29 los grabo en el tag
+        if len(blocks) <= BLOQUES_TAG:
             self.write_blocks(serial_number, 0, len(blocks) - 1, blocks)
-        elif FALLBACK_2K:
+        elif FALLBACK_2K and tipo == COD_TAG_RECUENTO:
+            # si tengo activado el fallback y estoy grabando un recuento
+            # busco los numeros de serie de los tags que encuentre
             tags = self.get_tags()[0]['serial_number']
-            if len(tags) == 2 and tipo == COD_TAG_RECUENTO:
+            # Si encontré 2 tags procedo a guardar
+            if len(tags) == 2:
+                # voy a guardar los primeros 104 caracteres en el primer chip
                 data_chip_1 = data[:104]
                 blocks = self._create_blocks(COD_TAG_INICIO, token,
                                              data_chip_1)
                 self.write_blocks(serial_number, 0, len(blocks) - 1, blocks)
-                tags.remove(string_to_array(serial_number))
+                # Quito el serial de la lista de seriales
+                tags.remove(serial_number)
 
+                # agarro el chip que me queda y le escribo el resto de la data
                 otro_serial = tags[0]
                 data_chip_2 = data[104:]
                 blocks = self._create_blocks(COD_TAG_ADDENDUM, token,
                                              data_chip_2)
                 self.write_blocks(otro_serial, 0, len(blocks) - 1, blocks)
+                # Indico que grabé un multitag
                 multi_tag = True
         else:
+            # Si por alguna razon no entra guardo que no entró en el tag.
             blocks = self._create_blocks(COD_TAG_NO_ENTRA, token, "")
             self.write_blocks(serial_number, 0, len(blocks) - 1, blocks)
 
+        # prendemos el led de lectura.
         pm = PowerManager(self._buffer)
         pm.set_leds(1, 3, 0, 200)
+
         return multi_tag
 
     def quemar_tag(self, serial_number):

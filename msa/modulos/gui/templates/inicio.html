@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="css/sufragio.css">
+
+        <script type="application/javascript" src="js/jquery.min.js"></script>
+        <script src="js/eventos.js" ></script>
+        <script src="js/handlebars.js" ></script>
+        <script src="js/zaguan.js" ></script>
+        <script src="js/patio.js" ></script>
+        <script src="js/eventos.js" ></script>
+
+        <script src="js/helpers.js" ></script>
+
+        <script src="js/inicio/ipc.js" ></script>
+        <script src="js/inicio/funciones.js" ></script>
+        <script src="js/inicio/show_hide.js" ></script>
+
+    </head>
+    <body>
+        <div id="contenedor">
+            <div id="contenedor_izq" class="contenedor-completo">
+                <div id="encabezado">
+                </div>
+                <div class="clear"></div>
+
+
+                <div id="pantalla_inicio" class="mensaje bienvenida" style="display:none">
+
+                    <div class="img-votar"> <img src="img/logo_votar_grande.png"/></div>
+                    <h1 id="_txt_bienvenido"></h1>
+                    <div class="tooltip flecha-der tooltip_ini">
+                        <p id="_txt_presente_credencial_acta"></p>
+                    </div>
+
+                </div>
+
+                <div class="contenedor-datos" style="display: none;">
+                </div>
+            </div>
+        </div>
+        <div class="popup-box-datos">
+        </div>
+        <div class="popup-box">
+            <div class="popup">
+                <div class="mensaje-popup">
+                    <p class="alerta"></p>
+                    <p class="pregunta"></p>
+                    <p class="aclaracion"></p>
+                </div>
+                <div class="btn btn-cancelar btn-volver-al-inicio">
+                    <p id="_txt_cancelar_apagado"></p>
+                </div>
+                <div class="btn btn-aceptar">
+                    <p id="_txt_apagar"></p>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+    </body>
+</html>

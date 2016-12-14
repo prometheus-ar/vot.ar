@@ -1,10 +1,14 @@
+# -*- coding: utf-8 -*-
+
+NOMBRE_JSON_AGRUPACIONES = 'Agrupaciones'
+NOMBRE_JSON_CANDIDATURAS = 'Candidaturas'
 NOMBRE_JSON_CATEGORIAS = 'Categorias'
 NOMBRE_JSON_CONFIGS = 'Configuraciones'
-NOMBRE_JSON_CANDIDATOS = 'Candidatos'
-NOMBRE_JSON_LISTAS = 'Listas'
-NOMBRE_JSON_PARTIDOS = 'Partidos'
-NOMBRE_JSON_ALIANZAS = 'Alianzas'
 NOMBRE_JSON_BOLETAS = 'Boletas'
 
 NOMBRE_JSON_MESAS_DEFINITIVO = 'Ubicaciones'
 NOMBRE_JSON_MESAS_1 = 'Ubicaciones_1'
+
+TIPO_DOC = ["DNI", "LC", "LE"]
+
+LEN_COD_CATEGORIA = 3

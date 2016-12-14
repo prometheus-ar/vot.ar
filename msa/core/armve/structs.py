@@ -1,8 +1,11 @@
-from struct import unpack
-from helpers import tohex
+from __future__ import absolute_import
 
-from construct import Field, Struct, UBInt8, UBInt16, SBInt16, Adapter, \
-    Array, LFloat32, GreedyRange, Embed, OptionalGreedyRange, UBInt32
+from struct import unpack
+from construct import (Field, Struct, UBInt8, UBInt16, SBInt16, Adapter,
+                       Array, LFloat32, GreedyRange, Embed,
+                       OptionalGreedyRange, UBInt32, Bytes)
+
+from msa.core.armve.helpers import tohex
 
 
 class SizeAdapter(Adapter):
@@ -12,7 +15,7 @@ class SizeAdapter(Adapter):
         return encoded
 
     def _decode(self, obj, context):
-        return unpack('>L', '\x00' + obj)[0]
+        return unpack('>L', b'\x00' + obj)[0]
 
 
 struct_base = Struct("base",
@@ -84,9 +87,9 @@ struct_led = Struct("led",
                     UBInt16("period"),
                     UBInt16("timeout"))
 struct_printer_get_status = Struct("printer_get_status",
-                                   UBInt8("paper_out_1"),
-                                   UBInt8("paper_out_2"),
-                                   UBInt8("lever_open"))
+                                   UBInt8("sensor_1"),
+                                   UBInt8("sensor_2"),
+                                   UBInt8("sensor_3"))
 struct_move_paper = Struct("move_paper",
                            SBInt16("move"))
 
@@ -99,17 +102,18 @@ struct_print_buffer = Struct("print_buffer",
 struct_load_buffer_response = Struct("load_buffer",
                                      UBInt16("size"))
 struct_tag_sn = Struct("serial_number",
-                       Array(8, UBInt8("serial_number")))
+                       Bytes("serial_number", 8))
 struct_tags_list = Struct("tags_list",
                           UBInt8("number"),
                           Array(lambda ctx: ctx.number,
-                                Array(8, UBInt8("serial_number"))),
+                                Bytes("serial_number", 8)
+                                ),
                           Array(lambda ctx: ctx.number,
                                 Array(1, UBInt8("reception_level"))))
 struct_rfid_block = Struct("rfid_block",
-                           Array(4, UBInt8("bytes")))
+                           Bytes("bytes", 4))
 struct_read_block = Struct("read_block",
-                           Array(8, UBInt8("serial_number")),
+                           Embed(struct_tag_sn),
                            UBInt8("block"))
 struct_read_blocks = Struct("read_blocks",
                             Embed(struct_read_block),
@@ -153,7 +157,7 @@ struct_initialize_ok = Struct("init_ok",
                               Array(lambda ctx: ctx.protocol_size,
                                     UBInt8("protocols")),
                               Array(12, UBInt8("model")),
-                              Array(8, UBInt8("serial_number")),
+                              Embed(struct_tag_sn),
                               Array(3, UBInt8("build")),
                               UBInt8("watchdog"),
                               UBInt32("free_ram"),
@@ -179,7 +183,7 @@ struct_tag_header = Struct("tag_header",
                            UBInt16("size"))
 struct_tag = Struct("tag",
                     Embed(struct_tag_header),
-                    Array(4, UBInt8("crc32")),
-                    Array(lambda ctx: ctx.size, UBInt8("user_data")))
+                    Bytes("crc32", 4),
+                    Bytes("user_data", lambda ctx: ctx.size))
 struct_buzz = Struct("buzz",
                      UBInt16("delay"))

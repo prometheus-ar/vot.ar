@@ -1,12 +1,13 @@
 # coding: utf-8
+from __future__ import absolute_import
 import dbus
 from json import loads
-import gobject
 
 from base64 import b64encode, b64decode
+from gi.repository.GObject import timeout_add
 
-from msa import get_logger
-from msa.core.settings import DBUS_BUSNAME_RFID, DBUS_LECTOR_PATH
+from msa.core.ipc.settings import DBUS_BUSNAME_RFID, DBUS_LECTOR_PATH
+from msa.core.logging import get_logger
 from msa.core.rfid.constants import CLASE_ICODE, CLASE_ICODE2, CLASE_MIFARE
 
 
@@ -91,15 +92,15 @@ class DbusLectorController():
     def consultar_lector(self, funcion):
         logger.debug("Registrando callback lector %s", funcion)
 
-        def _inner(*args, **kwargs):
-            funcion(*args, **kwargs)
+        def _inner(tipo_tag, datos):
+            funcion(tipo_tag, datos)
 
         lector = self._get_lector()
         if lector is not None:
             self.remover_consultar_lector()
             self._signal_tag = lector.connect_to_signal("tag_leido", _inner)
         else:
-            gobject.timeout_add(1000, self._intentar_conectar, _inner)
+            timeout_add(1000, self._intentar_conectar, _inner)
 
     def remover_consultar_lector(self):
         if self._signal_tag is not None:

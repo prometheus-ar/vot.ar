@@ -1,9 +1,16 @@
 # coding:utf-8
+from __future__ import absolute_import
 import os.path
 import pyudev
+import sys
+
+from binascii import unhexlify
+from six.moves import range
 
 from msa.core.armve.settings import SERIAL_PORT
-from binascii import unhexlify
+
+
+py_version = sys.version_info[0]
 
 
 def tohex(int_value):
@@ -30,14 +37,17 @@ def serial_16_to_8(serial):
 
 def array_to_string(array):
     """Convierte un array de int a un string."""
-    return "".join([chr(char) for char in array])
+    ret = "".join([chr(char) for char in array])
+    return ret
 
 
 def string_to_array(string_):
     """Convierte un sting a un array de int"""
     try:
+        print([ord(char) for char in string_])
         array = [ord(char) for char in string_]
     except TypeError:
+        print("error", string_)
         array = string_
 
     return array

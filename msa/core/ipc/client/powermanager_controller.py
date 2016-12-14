@@ -1,7 +1,9 @@
 # coding: utf-8
+from __future__ import absolute_import
 import dbus
 
-from msa.core.settings import DBUS_BUSNAME_POWERMANAGER, DBUS_POWERMANAGER_PATH
+from msa.core.ipc.settings import (DBUS_BUSNAME_POWERMANAGER,
+                                   DBUS_POWERMANAGER_PATH)
 
 
 class DbusPowerManagerController():

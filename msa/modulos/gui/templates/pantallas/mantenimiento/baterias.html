@@ -1,0 +1,16 @@
+<div class="item-bateria slot-{{slot}}">
+    <strong>Bater&iacute;a {{slot}}</strong><br />
+    <div class="icon icon-extra-large">
+        <span class="icon-battery-{{battery_level}}">
+            <span class="icon-battery-{{charging}}"></span>
+            <span class="icon-text">{{battery_level_number}}%</span>
+        </span>
+    </div>
+    <div class="descripcion-bateria">
+        Tensi&oacute;n: {{tension}}mV<br />
+        Corriente: {{corriente}}mA<br />
+        Temperatura: {{temp}}&deg;C<br />
+        Capacidad remanente: {{remaining}}mAh<br />
+        Capacidad total: {{full_charge}}mAh<br />
+    </div>
+</div>

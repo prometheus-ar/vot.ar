@@ -1,0 +1,46 @@
+<div id="pantalla_datospersonales" class="ingreso {{#if mostrar_tooltip}}con-tooltip{{/if}}">
+    <div class="hora">
+        <label id="_txt_titulo_hora"></label>
+        <input type="text" name="hora" pattern="{{regex_hora}}" placeholder="HH" data-keyboard="num" data-tooltip="true" maxlength=2 />
+        <label id="_txt_titulo_minutos"></label>
+        <input type="text" name="minutos" pattern="[0-5]?[0-9]" placeholder="MM" data-keyboard="num" data-tooltip="true" maxlength=2 />
+    </div>
+
+    <div class="nombre-autoridades{{#if scroll}} con-scroll{{/if}}">
+    {{#autoridades}}
+    <h2 id="_txt_titulo_{{id_cargo}}" class="cargo">{{cargo}}</h2>
+        <form class="autoridad" id="{{id_cargo}}">
+            <label id="_txt_titulo_apellido"></label>
+            <input type="text" name="{{id_cargo}}_apellido" class="apellido"
+            pattern="[A-ZÑÁ-Ú'\s]{0,20}" {{#disabled_default}}disabled="disabled"{{/disabled_default}} data-keyboard="alpha" maxlength="20"/>
+            <label id="_txt_titulo_nombre"></label>
+            <input type="text" name="{{id_cargo}}_nombre" class="nombre" {{#disabled_default}}disabled="disabled"{{/disabled_default}}
+                pattern="[A-ZÑÁ-Ú'\s]{0,20}" data-keyboard="alpha" maxlength="20"/>
+            <label id="_txt_titulo_documento"></label>
+            <input type="text" name="{{id_cargo}}_tipo_documento" class="tipo_documento" value="{{../tipo_doc_default}}" {{#disabled_default}}disabled="disabled"{{/disabled_default}} readonly="readonly" data-keyboard="docs" />
+            <input type="text" name="{{id_cargo}}_nro_documento" class="nro_documento" {{#disabled_default}}disabled="disabled"{{/disabled_default}}
+            pattern="(?!0{1,})\d{1,8}" data-keyboard="num" maxlength="8"/>
+        </form>
+    {{/autoridades}}
+    </div>
+    {{#if scroll}}
+    <div class="scroll">
+        <div id="_btn_scroll_arriba" class="boton">
+            <i class="btn-campo material-icons">&#xE5CE;</i>
+        </div>
+        <div id="_btn_scroll_abajo" class="boton">
+            <i class="btn-campo material-icons">&#xE5CF;</i>
+        </div>
+    </div>
+    {{/if}}
+    {{> teclado}}
+</div>
+{{#if mostrar_tooltip}}
+    <div class="tooltip tooltip_wrapper">
+        <div class="contenido_tooltip">
+          <div class="texto-chico" id="_txt_acerque_acta_cierre"></div>
+          <div id="svg_cierre"></div>
+          <div class="clear"></div>
+        </div>
+    </div>
+{{/if}}

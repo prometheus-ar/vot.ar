@@ -1,43 +1,28 @@
-# Estados
-ESTADO_ESPERA = 'Espera'
-ESTADO_RECIBIDA = 'Recibida'
-ESTADO_PRIMERA_CARGA = 'En Proceso'
-ESTADO_OK = 'OK'
-ESTADO_APROBACION = 'Aprobar'
-ESTADO_VERIFICACION = 'Verificar'
-ESTADO_PUBLICADA = 'Publicada'
+from os.path import join
 
-ESTADO_FAX_ACTIVO = 'Activa'
-ESTADO_FAX_RECHAZADO = 'Rechazada'
-ESTADO_FAX_ELIMINADO = 'Eliminada'
-
-#para la tabla de permisos
-NOMBRE_APP_CONSULTA = 'consulta'
-NOMBRE_APP_DASHBOARD = 'dashboard'
-NOMBRE_APP_ENTRADA = 'entrada'
-NOMBRE_APP_CARGA = 'carga'
-NOMBRE_APP_VERIFICACION = 'verificacion'
-NOMBRE_APP_DESKTOP = 'desktop'
-
-PERMISO_SUPERUSUARIO = '*'
-
-TIPO_CARGA_DESKTOP = 'Tradicional'
-TIPO_CARGA_ELECTRONICA = 'Electronica'
-TIPO_CARGA_WEB = 'Directa'
-TIPO_CARGA_SMS = 'SMS'
-
-TIPO_CARGA_EXT = { TIPO_CARGA_DESKTOP: 'jpeg',
-                   TIPO_CARGA_ELECTRONICA: 'png',
-                   TIPO_CARGA_SMS: 'png',
-                   TIPO_CARGA_WEB: 'jpeg',
-                  }
+PATH_CODIGO = '/cdrom/app/msa/'  # poner la barra al final
+PATH_REPO_RECURSOS = '/cdrom/app_recursos/'
+PATH_VARS = join(PATH_CODIGO, 'var')
+PATH_CONFIGS = join(PATH_VARS, 'config')
+PATH_RECURSOS = join(PATH_CODIGO, 'recursos')
+PATH_TTS = join(PATH_VARS, 'tts')
+PATH_FUENTES = join(PATH_RECURSOS, 'fuentes')
+PATH_CERTS = join(PATH_REPO_RECURSOS, 'keys')
+PATH_CD = '/cdrom'
 
 COD_LISTA_BLANCO = 'BLC'
 COD_NULO = 'NUL'
 COD_IMPUGNADO = 'IMP'
 COD_RECURRIDO = 'REC'
-COD_OBSERVADO = 'TEC'
+COD_OBSERVADO = 'OBS'
 COD_TOTAL = 'TOT'
 
 CAM_BOL_CONT = "boletas_contadas"
 CAM_TOT_VOT = "total_votantes"
+PLANILLAS_DATOS_EXTRA = [CAM_TOT_VOT, CAM_BOL_CONT]
+
+
+try:
+    from msa.constants_extras import *
+except ImportError:
+    pass

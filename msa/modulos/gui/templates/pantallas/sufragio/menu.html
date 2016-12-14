@@ -1,0 +1,21 @@
+<div id="pantalla_menu" class="pantalla" style="display:none;">
+    <div class="barra-titulo">
+        <p id="_txt_seleccione_accion"></p>
+    </div>
+    {{#if usar_asistida}}
+        <div id="salir_a_asistida" class="opcion-salida">
+            <i class="material-icons boton-salir">
+                {{#if asistida}}
+                    <span>&#xE417;</span>
+                {{else}}
+                    <span class="headphone">&#xE310;</span>
+                {{/if}}
+                </i>
+            <p id="_txt_cambiar_modo_votacion"></p>
+        </div>
+    {{/if}}
+    <div id="salir_a_inicio" class="opcion-salida">
+        <i class="material-icons boton-salir"><span>&#xE879;</span></i>
+        <p id="_txt_salir_al_menu"></p>
+    </div>
+</div>

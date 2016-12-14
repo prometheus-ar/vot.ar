@@ -10,12 +10,6 @@ class MesaNoEncontrada(Exception):
     pass
 
 
-class TemplateNoEncontrado(Exception):
-
-    """Template no encontrado."""
-    pass
-
-
 class TipoQrErroneo(Exception):
 
     """Qr con tipo erroneo (diferente al esperado)."""
@@ -23,6 +17,12 @@ class TipoQrErroneo(Exception):
 
 
 class QRMalformado(Exception):
+
+    """Tag mal formado."""
+    pass
+
+
+class TagMalformado(Exception):
 
     """Qr mal formado."""
     pass

@@ -1,0 +1,12 @@
+<div id="{{id}}" class="keyboard">
+    {{#each rows}}
+        <div id="keyboard-row{{@index}}" class="keyboard-row">
+            <div class="ui-keyboard-keyset">
+                {{#each this}}
+                <div class="ui-keyboard-button ui-state-default {{#if this.action_key}}ui-keyboard-actionkey{{/if}} {{this.classname}}"{{#if this.action_key}} data-accion="{{accion}}"{{/if}}>{{this.texto}}</div>
+                {{/each}}
+            </div>
+        </div>
+    {{/each}}
+</div>
+<audio src="sonidos/tecla.wav" preload="auto" id="sonido_tecla"\>

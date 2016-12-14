@@ -1,10 +1,8 @@
 # coding: utf-8
+from __future__ import absolute_import
 import dbus
 
-from tempfile import NamedTemporaryFile
-
-from msa.core.settings import DBUS_BUSNAME_ARMVE, DBUS_ARMVE_PATH
-from msa.core.imaging import get_dpi_boletas
+from msa.core.ipc.settings import DBUS_BUSNAME_ARMVE, DBUS_ARMVE_PATH
 
 
 class DbusBatteryController():

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="representacion_boleta"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="29.067322mm"
+   height="11.955498mm"
+   viewBox="0 0 102.99445 42.362"
+   version="1.1"
+   style="enable-background:new">
+  <g
+     id="layer2"
+     style="display:inline;opacity:1"
+     transform="translate(-7.4217192,-4.457251)">
+    <path
+       id="paths"
+       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 37.583728,4.4572578 0.01015,42.3315292 56.364071,0.02031 0,-3.525236 1.617034,0 0,3.525236 14.841177,0.01015 0,-42.361991 -14.841177,0 0,4.8528807 -1.617034,0 0,-4.8528807 z m 56.374225,6.4699152 1.617034,0 0,4.854658 -1.617034,0 z m 0,6.471692 1.617034,0 0,4.852881 -1.617034,0 z m 0,6.471692 1.617034,0 0,4.852882 -1.617034,0 z m 0,6.471693 1.617034,0 0,4.852881 -1.617034,0 z m 0,6.469915 1.617034,0 0,4.854658 -1.617034,0 z M 7.4217242,4.4572578 l 0,42.3289892 28.5539878,0 0,-42.3289892 z m 10.1393408,14.7096842 1.29185,1.323836 -3.950185,3.975061 16.545285,0 0,1.675675 -16.554169,-0.0089 4.346447,4.310907 -1.368261,1.348714 -6.466361,-6.466362 c 1.994555,-2.015278 4.057585,-4.064265 6.155394,-6.158915 z"
+       connector-curvature="0" />
+  </g>
+</svg>

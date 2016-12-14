@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
-import gobject
+from __future__ import absolute_import
 
 from dbus import service, SessionBus
 from dbus.mainloop.glib import DBusGMainLoop
+from gi.repository.GObject import MainLoop
 
-from msa import get_logger
+from msa.core.logging import get_logger
 
 logger = get_logger("core")
 
@@ -22,12 +23,15 @@ class MSADbusService(service.Object):
         # use, sino Dbus restartea el servicio N veces una por cada reintento
         # del cliente.
         name = service.BusName(self.bus_name, self.session_bus)
-        self._real_init()
+        self._service_init()
         service.Object.__init__(self, self.session_bus, self.object_path)
 
-        self._loop = gobject.MainLoop()
-        self._loop.run()
-    
+        self._loop = MainLoop()
+        try:
+            self._loop.run()
+        except KeyboardInterrupt:
+            pass
+
     def quit(self):
         """ Cierra el servicio DBUS, útil para casos de reinicio.
             DEBE ser implementado por los hijos de esta clase. """

@@ -1,7 +1,8 @@
 # coding: utf-8
+from __future__ import absolute_import
 import dbus
 
-from msa.core.settings import DBUS_BUSNAME_FANCOOLERS, DBUS_FANCOOLERS_PATH
+from msa.core.ipc.settings import DBUS_BUSNAME_FANCOOLERS, DBUS_FANCOOLERS_PATH
 
 
 class DbusFanCoolersController():

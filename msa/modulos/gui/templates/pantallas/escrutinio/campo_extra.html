@@ -1,0 +1,14 @@
+<div id="campo_{{id_campo}}" class="campo {{#if editable}}campo_editable{{/if}}">
+    <div class="clave">{{titulo}}</div>
+    <div id="numero_{{id_campo}}" class="contenedor-valor">
+        <div id="valor_{{id_campo}}" class="valor {{#if editable}}editable{{/if}}" data-value="{{cantidad}}">
+            {{cantidad}}
+        </div>
+        {{#if editable}}
+            <div id="btn_bajar_{{id_campo}}" class="btn-bajar" data-target="valor_{{id_campo}}">-</div>
+        {{/if}}
+        {{#if editable}}
+            <div id="btn_subir_{{id_campo}}" class="btn-subir" data-target="valor_{{id_campo}}">+</div>
+        {{/if}}
+    </div>
+</div>

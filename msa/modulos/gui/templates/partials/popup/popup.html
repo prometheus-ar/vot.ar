@@ -1,0 +1,18 @@
+<div class="popup">
+    <div class="mensaje-popup">
+        <p class="alerta">{{{alerta}}}</p>
+        <p class="pregunta">{{{pregunta}}}</p>
+        <p class="aclaracion">{{{aclaracion}}}</p>
+    </div>
+    {{#if btn_cancelar}}
+    <div class="btn btn-cancelar {{clase_cancelar}}" id="btn_cancelar">
+        <p id="_txt_cancelar"></p>
+    </div>
+    {{/if}}
+    {{#if btn_aceptar}}
+    <div class="btn btn-aceptar {{clase_aceptar}}" id="btn_aceptar">
+        <p id="_txt_aceptar"></p>
+    </div>
+    {{/if}}
+    <div class="clear"></div>
+</div>

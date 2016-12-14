@@ -1,0 +1,11 @@
+<div id="pantalla_modos" class="pantalla" style="display:none">
+    <div class="barra-titulo">
+        <p id="_txt_conformar_voto"></p>
+    </div>
+    {{#each botones}}
+        <div class="opcion-tipo-voto {{clase}}" id="modo-{{cod_boton}}">
+        <img src="img/sufragio/{{imagen}}.png"/>
+            <p id="_txt_{{texto}}"></p>
+        </div>
+    {{/each}}
+</div>

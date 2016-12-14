@@ -1,0 +1,70 @@
+<table>
+    <thead>
+      <tr>
+        {{#each titulos}}
+        <th {{#if @first}} colspan="{{../../ancho_titulo}}"{{else}} style="text-align:center" {{/if}}>
+            <div>{{.}}</div>
+          </th>
+        {{/each}}
+        </tr>
+    </thead>
+    <tbody class="contenedor-scroll arriba">
+        <tr id="scroll-arriba"><td>&#xE5C7;</td></tr>
+    </tbody>
+    <tbody class="votos-regulares">
+      {{#each filas}}
+          <tr id="fila-{{datos.codigo}}" class="{{tipo}}">
+              <td {{#if expande}} colspan="{{../../num_filas}}"{{/if}}>
+                  {{#if mostrar_numero_lista}}
+                      {{#if datos.numero}}
+                        <div class="lista-numero">
+                            {{datos.numero}}
+                            <div class="colores" style="background:{{../colores}};">&nbsp;</div>
+                        </div>
+                      {{/if}}
+                  {{else if ../colores}}
+                      {{#if datos.numero}}
+                        <div class="colores" style="background:{{../colores}};">&nbsp;</div>
+                      {{/if}}
+                  {{else}}
+                  <div class="lista-especial">
+                      &nbsp;
+                  </div>
+                  {{/if}}
+                  <div class="descripcion {{#if es_blanco}}voto-blanco{{/if}}">
+                      {{{descripcion}}}
+                  </div>
+              </td>
+              {{#each categorias}}
+              <td class="{{clase_resaltado}}">
+                  {{#if votos}}
+                    {{votos}}
+                  {{else}} 
+                  -
+                  {{/if}}
+              </td>
+              {{/each}}
+          </tr>
+      {{/each }}
+      </tbody>
+      <tbody class="contenedor-scroll abajo">
+          <tr id="scroll-abajo"><td>&#xE5C5;</td></tr>
+      </tbody>
+      <tbody class="votos-especiales">
+      {{#each filas_especiales}}
+          <tr id="fila-{{id_fila}}" class="{{tipo}}">
+              <td colspan="{{../ancho_filas_especiales}}">
+                  <div class="lista-especial">
+                      &nbsp;
+                  </div>
+                  <div class="descripcion">
+                      {{descripcion}}
+                  </div>
+              </td>
+              <td colspan="1">
+                  {{votos}}
+              </td>
+          </tr>
+      {{/each }}
+    </tbody>
+</table>

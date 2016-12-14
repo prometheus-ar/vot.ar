@@ -1,14 +1,15 @@
 # coding: utf-8
+from __future__ import absolute_import
 import dbus
 
 from base64 import b64encode
 from json import loads
 from tempfile import NamedTemporaryFile
 
-from msa import get_logger
-from msa.core.settings import DBUS_BUSNAME_PRINTER, DBUS_IMPRESORA_PATH, \
-        COMPRESION_IMPRESION, USA_ARMVE
-from msa.core.imaging import get_dpi_boletas
+from msa.core.imaging.helpers import get_dpi_boletas
+from msa.core.ipc.settings import DBUS_BUSNAME_PRINTER, DBUS_IMPRESORA_PATH
+from msa.core.logging import get_logger
+from msa.core.settings import COMPRESION_IMPRESION
 
 
 logger = get_logger("dbus_client")
@@ -48,8 +49,8 @@ class DbusPrintController():
     def full_paper_status(self):
         dbus_method = self.printer.get_dbus_method('full_paper_status')
         data = dbus_method()
-        if data is not None and 'paper_out_1' in data:
-            self.tiene_papel = data['paper_out_1']
+        if data is not None and 'sensor_1' in data:
+            self.tiene_papel = data['sensor_1']
         return data
 
     def tarjeta_ingresada(self):
@@ -64,24 +65,11 @@ class DbusPrintController():
 
         self.tiene_papel = False
 
-    def tarjeta_sin_retirar(self):
-        dbus_method = self.printer.get_dbus_method('tarjeta_sin_retirar')
-        return dbus_method()
-
-    def posicionar_al_inicio(self):
-        if not USA_ARMVE:
-            dbus_method = self.printer.get_dbus_method('posicionar_al_inicio')
-            return dbus_method()
-
-    def tomar_tarjeta(self, loops=False):
-        dbus_method = self.printer.get_dbus_method('tomar_tarjeta')
-        return dbus_method(loops)
-
     def imprimir_image(self, image, dpi=get_dpi_boletas(), transpose=False,
                        compress=COMPRESION_IMPRESION, only_buffer=False):
         image_file = NamedTemporaryFile(prefix="imagen_impresion", dir="/tmp",
-                                        bufsize=0, delete=False)
-        data = image.tostring()
+                                        buffering=0, delete=False)
+        data = image.tobytes()
         image_file.write(data)
         image_file.flush()
         filepath = image_file.name
@@ -99,10 +87,11 @@ class DbusPrintController():
         dbus_method = self.printer.get_dbus_method('imprimir_serializado')
         return dbus_method(tipo_tag, tag, transpose, only_buffer, extra_data)
 
-    def registrar(self, seleccion):
+    def registrar(self, seleccion, solo_impimir=False):
         dbus_method = self.printer.get_dbus_method('registrar')
-        tag = b64encode(seleccion.a_tag())
-        return loads(dbus_method(tag))
+        tag = b64encode(seleccion.a_string())
+        crypto_tag = b64encode(seleccion.a_tag())
+        return loads(dbus_method(tag, solo_impimir, crypto_tag))
 
     def limpiar_cola(self):
         dbus_method = self.printer.get_dbus_method('limpiar_cola')
@@ -119,7 +108,7 @@ class DbusPrintController():
     def consultar_tarjeta(self, funcion):
         self._callback_tarjeta = funcion
 
-    def registar_boleta_expulsada(self, funcion):
+    def registrar_boleta_expulsada(self, funcion):
         self._callback_expulsada = funcion
 
     def boleta_expulsada(self):
@@ -150,8 +139,8 @@ class DbusPrintController():
 
     def registrar_insertando_papel(self, callback):
         def _inner(data):
-            if data is not None and 'paper_out_1' in data:
-                self.tiene_papel = data['paper_out_1']
+            if data is not None and 'sensor_1' in data:
+                self.tiene_papel = data['sensor_1']
             return callback(data)
         self._signal_insertando = self.printer.connect_to_signal(
             "insertando_papel", _inner)
@@ -163,8 +152,8 @@ class DbusPrintController():
 
     def registrar_autofeed_end(self, callback):
         def _inner(data):
-            if data is not None and 'paper_out_1' in data:
-                self.tiene_papel = data['paper_out_1']
+            if data is not None and 'sensor_1' in data:
+                self.tiene_papel = data['sensor_1']
             return callback(data)
         self._signal_autofeed = self.printer.connect_to_signal(
             "autofeed_end", _inner)
