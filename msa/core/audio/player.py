@@ -49,6 +49,7 @@ class WavPlayer(Thread):
         self._default_mixer = None
         self._queue = []
         self.__init_alsa()
+        self.callback_fin_cola = None
 
     def __init_alsa(self):
         try:
@@ -95,7 +96,7 @@ class WavPlayer(Thread):
         """ Starts the loop waiting for audio files to be played """
         self.__running = True
         while self.__running:
-            if self._queue:
+            if len(self._queue):
                 now_filename, now_message = self._queue.pop(0)
                 if now_message == WavPlayer.PAUSE_TOKEN:
                     time.sleep(SPEECH_PAUSE)
@@ -115,6 +116,8 @@ class WavPlayer(Thread):
                     sleep_time = (wav.nframes / wav.frate) - segundos_carga
                     if sleep_time > 0:
                         time.sleep(sleep_time)
+                if not len(self._queue) and self.callback_fin_cola is not None:
+                    self.callback_fin_cola()
             # NO SACAR, sino audioplayer se come el 100% de cpu
             time.sleep(0.1)
 
@@ -174,3 +177,12 @@ class WavPlayer(Thread):
             except ValueError:
                 pass
         return index
+
+    def registrar_callback_fin_cola(self, callback):
+        """Registra un callback que será llamado la próxima vez que se vacíe la
+        cola de mensajes."""
+        def _inner():
+            callback()
+            self.callback_fin_cola = None
+
+        self.callback_fin_cola = _inner

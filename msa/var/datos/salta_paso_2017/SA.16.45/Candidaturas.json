@@ -1,0 +1,202 @@
+[
+  {
+    "asistida":"Pastrana, Mar\u00eda Antonia",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2082",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2082.140070",
+    "id_candidatura":"1886.1890.2082.140070",
+    "id_umv":291,
+    "imagenes":[
+      "1886.1890.2082.140070"
+    ],
+    "nombre":"Pastrana, Maria Antonia",
+    "orden_absoluto":[
+      6,
+      51,
+      47,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Herrera, Mario Ivan",
+      "Mamani, Cintia Liliana"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Rodr\u00edguez, Carlos Sebasti\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1903.2121",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121.137774",
+    "id_candidatura":"1886.1903.2121.137774",
+    "id_umv":313,
+    "imagenes":[
+      "1886.1903.2121.137774"
+    ],
+    "nombre":"Rodriguez, Carlos Sebastian",
+    "orden_absoluto":[
+      6,
+      23,
+      137,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Humacata, Liliana Gloria",
+      "Rodas, Omar Gabriel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ferreyra, Silvia Estela",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.141380",
+    "id_candidatura":"1886.2104.2105.141380",
+    "id_umv":486,
+    "imagenes":[
+      "1886.2104.2105.141380"
+    ],
+    "nombre":"Ferreyra, Silvia Estela",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Aguilar, Ramon Alberto",
+      "Lopez, Claudia Marcela"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Rodr\u00edguez, Francisco Fabio",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2266.2267",
+    "cod_partido":"1886.2266",
+    "codigo":"1886.2266.2267.156801",
+    "id_candidatura":"1886.2266.2267.156801",
+    "id_umv":581,
+    "imagenes":[
+      "1886.2266.2267.156801"
+    ],
+    "nombre":"Rodriguez, Francisco Fabio",
+    "orden_absoluto":[
+      6,
+      64,
+      244,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Diaz, Angela Daiana",
+      "Valdez, Felix Dario"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Apaza, Ram\u00f3n Amado",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.146368",
+    "id_candidatura":"1888.2378.2379.146368",
+    "id_umv":685,
+    "imagenes":[
+      "1888.2378.2379.146368"
+    ],
+    "nombre":"Apaza, Ramon Amado",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Acosta, Stefania del Milagro",
+      "Arias, Hector Domingo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":871,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":931,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":991,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

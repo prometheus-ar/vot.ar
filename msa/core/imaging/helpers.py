@@ -5,16 +5,10 @@ from jinja2 import Environment, FileSystemBytecodeCache, FileSystemLoader
 from PIL import Image
 
 from msa.core.constants import PATH_TEMPLATES_VARS
-from msa.core.imaging.constants import DPI_VOTO_ALTA
-
-
-def get_dpi_boletas():
-    """Devuelve el DPI de la boleta segun la calidad configurada."""
-    return DPI_VOTO_ALTA
 
 
 def xml2pil(xml, width, height):
-    # No sacar este import a la cabecera (con el resto) por que genera un
+    # No sacar este import a la cabecera (con el resto) porque genera un
     # problema al correrlo en el server via mod_wsgi
     import cairo
     import gi

@@ -1,0 +1,187 @@
+[
+    {
+        "codigo": "por_favor_ingrese",
+        "texto": "Por favor, presione "
+    },
+    {
+        "codigo": "y_presione_e_para_continuar",
+        "texto": "y presione la tecla numeral para continuar."
+    },
+    {
+        "codigo": "la_tecla",
+        "texto": "la tecla"
+    },
+    {
+        "codigo": "confirmando_con_e",
+        "texto": "ingrese el n\u00famero de candidato y luego presione la tecla numeral"
+    },
+    {
+        "codigo": "las_opciones_son",
+        "texto": "Las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_interna",
+        "texto": "ingrese el n\u00famero de agrupación y luego presione la tecla numeral. las opciones son:"
+    },
+    {
+        "codigo": "confirmando_con_e_opcion",
+        "texto": "ingrese el n\u00famero de opci\u00f3n y luego presione la tecla numeral"
+    },
+    {
+        "codigo": "ingrese_nro_interna",
+        "texto": "A continuaci\u00f3n usted elegir\u00e1 la agrupación que desea votar:"
+    },
+    {
+        "codigo": "ingrese_nro_lista",
+        "texto": "A continuaci\u00f3n usted elegir\u00e1 la lista por la cual desea votar:"
+    },
+    {
+        "codigo": "ingrese_nro_modo",
+        "texto": "A continuaci\u00f3n usted elegir\u00e1 el modo de selecci\u00f3n que desea utilizar:"
+    },
+    {
+        "codigo": "ingrese_nro_cargo_lista",
+        "texto": "A continuaci\u00f3n usted elegir\u00e1 el candidato por el cual desea votar"
+    },
+    {
+        "codigo": "ud_eligio",
+        "texto": "Usted eligi\u00f3"
+    },
+    {
+        "codigo": "ud_eligio_candidato",
+        "texto": "Usted eligi\u00f3 el candidato n\u00famero"
+    },
+    {
+        "codigo": "ud_eligio_interna",
+        "texto": "Usted eligi\u00f3 la agrupación n\u00famero"
+    },
+    {
+        "codigo": "ud_eligio_modo",
+        "texto": "Usted eligi\u00f3 la opci\u00f3n"
+    },
+    {
+        "codigo": "ud_eligio_lista",
+        "texto": "Usted eligi\u00f3 la lista"
+    },
+    {
+        "codigo": "acuerdo_cancelar",
+        "texto": "Presione la tecla numeral, si est\u00e1 de acuerdo, o presione asterisco para cancelar."
+    },
+    {
+        "codigo": "ud_confirmo",
+        "texto": "Usted seleccion\u00f3"
+    },
+    {
+        "codigo": "ud_voto",
+        "texto": "Usted seleccion\u00f3"
+    },
+    {
+        "codigo": "el_candidato",
+        "texto": "el candidato"
+    },
+    {
+        "codigo": "los_candidatos",
+        "texto": "Los candidatos"
+    },
+    {
+        "codigo": "la_lista",
+        "texto": "la lista"
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin",
+        "texto": "Presione la tecla numeral si confirma su selecci\u00f3n final de candidatos,"
+    },
+    {
+        "codigo": "confirmar_ud_confirmo_fin2",
+        "texto": "o presione asterisco en caso contrario."
+    },
+    {
+        "codigo": "confirmacion_final_lista",
+        "texto": "Presione la tecla numeral si confirma su selecci\u00f3n final de lista,"
+    },
+    {
+        "codigo": "imprimiendo",
+        "texto": "Por favor No qu\u00edte la boleta de la impresora hasta que se termine de imprim\u00edr."
+    },
+    {
+        "codigo": "fin_votacion",
+        "texto": "Su selecci\u00f3n ha sido registrada e impresa. Ya puede retirar la boleta de la impresora."
+    },
+    {
+        "codigo": "puede_verificar",
+        "texto": "Usted puede revisar su selecci\u00f3n ingresando la boleta nuevamente en la impresora."
+    },
+    {
+        "codigo": "tarjeta_con_datos",
+        "texto": "La boleta ingresada contiene datos."
+    },
+    {
+        "codigo": "si_es_la_primera",
+        "texto": "si es la primera vez que la ingresa solicite al presidente de mesa que la reemplace."
+    },
+    {
+        "codigo": "error_almacenado",
+        "texto": "hubo un error almacenando su selecci\u00f3n"
+    },
+    {
+        "codigo": "error_almacenado_2",
+        "texto": "Por favor solicite al presidente de mesa que reemplace la boleta"
+    },
+    {
+        "codigo": "para_votar",
+        "texto": "para votar"
+    },
+    {    "codigo": "para_votar_por",
+         "texto": "para votar por"
+    },
+    {
+        "codigo": "lista_completa",
+        "texto": "lista completa"
+    },
+    {
+        "codigo": "categorias",
+        "texto": "categor\u00edas"
+    },
+    {
+        "codigo": "presione",
+        "texto": "presione"
+    },
+    {
+        "codigo": "y",
+        "texto": "h\u00ed"
+    },
+    {
+        "codigo": "para",
+        "texto": "para"
+    },
+    {
+        "codigo": "el_candidato",
+        "texto": "El candidato"
+    },
+    {
+        "codigo": "la_opcion",
+        "texto": "la opci\u00f3n"
+    },
+    {
+        "codigo": "que_ingreso",
+        "texto": "que ingres\u00f3"
+    },
+    {
+        "codigo": "no_existe",
+        "texto": "no existe"
+    },
+    {
+        "codigo": "interna_inexistente",
+        "texto": "El n\u00famero de agrupación ingresado no existe"
+    },
+    {
+        "codigo": "no_olvide_apretar_numeral",
+        "texto": "Por favor no olvide presionar la tecla numer\u00e1l"
+    },
+    {
+        "codigo": "asterisco_cambiar_agrupacion",
+        "texto": "o puede presionar asterisco para cambiar de agrupación política"
+    }
+
+
+]

@@ -1,0 +1,287 @@
+[
+  {
+    "asistida":"Ab\u00e1n, W\u00e1lter Joaqu\u00edn",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.1890.2078",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2078.138490",
+    "id_candidatura":"1886.1890.2078.138490",
+    "id_umv":1224,
+    "imagenes":[
+      "1886.1890.2078.138490"
+    ],
+    "nombre":"Aban, Walter Joaquin",
+    "orden_absoluto":[
+      6,
+      51,
+      60,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Gonz\u00e1lez, V\u00edctor Hugo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2078",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2078.138574",
+    "id_candidatura":"1886.1890.2078.138574",
+    "id_umv":287,
+    "imagenes":[
+      "1886.1890.2078.138574"
+    ],
+    "nombre":"Gonzalez, Victor Hugo",
+    "orden_absoluto":[
+      6,
+      51,
+      60,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Vilte, Liliana Amanda",
+      "Gonzalez, Mario Ediberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Zenteno, Sergio Ram\u00f3n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.2223.2224",
+    "cod_partido":"1886.2223",
+    "codigo":"1886.2223.2224.153412",
+    "id_candidatura":"1886.2223.2224.153412",
+    "id_umv":1254,
+    "imagenes":[
+      "1886.2223.2224.153412"
+    ],
+    "nombre":"Zenteno, Sergio Ramon",
+    "orden_absoluto":[
+      6,
+      66,
+      142,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Fabi\u00e1n, V\u00edctor Manuel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2223.2224",
+    "cod_partido":"1886.2223",
+    "codigo":"1886.2223.2224.153414",
+    "id_candidatura":"1886.2223.2224.153414",
+    "id_umv":568,
+    "imagenes":[
+      "1886.2223.2224.153414"
+    ],
+    "nombre":"Fabian, Victor Manuel",
+    "orden_absoluto":[
+      6,
+      66,
+      142,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Zarate, Miriam Elida",
+      "Belasquez, Liendro Ricardo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Al\u00e1ncay, Santos Esteban",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"SEN",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.152973",
+    "id_candidatura":"1888.1934.2440.152973",
+    "id_umv":1267,
+    "imagenes":[
+      "default"
+    ],
+    "nombre":"Alancay, Santos Esteban",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Fabi\u00e1n, Mabel",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.152888",
+    "id_candidatura":"1888.2378.2379.152888",
+    "id_umv":719,
+    "imagenes":[
+      "default_mujer"
+    ],
+    "nombre":"Fabian, Mabel",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Liendro, Jesus Alejandro",
+      "Fabian, Socorro del Carmen"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":877,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1303,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":937,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1315,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":997,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1327,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

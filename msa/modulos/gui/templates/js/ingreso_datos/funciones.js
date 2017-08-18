@@ -8,13 +8,25 @@ function document_ready(){
 $(document).ready(document_ready);
 
 //Funciones que envian datos
-function enviar_mesaypin() {
+function enviar_mesaypin(){
     // Envía al backend la mesa y pin ingresada por el usuario
-    var nro_mesa = $("input[name='nro_mesa']").val();
-    var nro_pin = $("input[name='nro_pin']").val();
-    var data = {"mesa": nro_mesa,
-        "pin": nro_pin};
-    send("recibir_mesaypin", data);
+    var nro_mesa = document.getElementsByName("nro_mesa")[0].value;
+    var nro_pin = obtener_pin();
+
+    mensaje_validando_mesa();
+
+    setTimeout(
+        function(){
+            if(validar_pin(nro_pin)) {
+                var data = {
+                    "mesa": nro_mesa,
+                    "pin": nro_pin.substr(0, nro_pin.length - 1)
+                };
+                send("recibir_mesaypin", data);
+            }
+        
+        },
+        200);
 }
 
 function enviar_datospersonales() {
@@ -22,8 +34,9 @@ function enviar_datospersonales() {
     // Obtenemos los cargos que hay en la pantalla
     
     var lista_cargos = [];
-    $('.cargo').each(function (i, value) {
-        lista_cargos.push(value.textContent.replace(' ', '_').toLowerCase());
+    var elem_cargos = document.querySelectorAll(".cargo");
+    elem_cargos.forEach(function(elem, index, lista){
+        lista_cargos.push(elem.dataset.cargo);
     });
 
     var tipo_doc = [];
@@ -91,7 +104,8 @@ function msg_error_validacion(mensaje){
 
 function aceptar_mesa_y_pin(){
     var datos_invalidos = $(".mesaypin input").is(":invalid");
-    if(!datos_invalidos){
+    var pin = obtener_pin();
+    if(!datos_invalidos && validar_pin(pin)){
         send("msg_confirmar_ingreso");
     } else {
         cargar_dialogo("msg_mesa_y_pin_incorrectos");
@@ -181,12 +195,34 @@ function mostrar_tooltip(){
     if(typeof($(destination).data("tooltip")) !== "undefined"
             && $(destination).data("tooltip")){
         $(".ingreso").addClass("con-tooltip");
+        $(".ingreso + .tooltip").show();
     } else {
         $(".ingreso").removeClass("con-tooltip");
+        $(".ingreso + .tooltip").hide();
     }
 }
 
 //Auxiliares y otras
+function obtener_pin(){
+    var campos = document.querySelectorAll("[name^=nro_pin]");
+    var pin = "";
+    for(var i=0; i < campos.length; i++){
+        pin = pin.concat(campos[i].value);
+    }
+    return pin;
+}
+
+function validar_pin(nro_pin){
+    var suma = 0;
+    var pin = nro_pin.split("");
+    var digito_verificador = pin.pop();
+    for(var letra in pin){
+        suma += pin[letra].charCodeAt();
+    }
+    caracter = suma % 10;
+    return caracter == parseInt(digito_verificador);
+}
+
 function revalida_hora(){
     var elemento = document.getElementsByName("hora")[0];
     var activo = document.activeElement;

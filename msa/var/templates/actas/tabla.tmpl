@@ -1,0 +1,104 @@
+{% set ancho_caracter = 15.1 %}
+{% set ancho_categoria = ancho_caracter * tabla.caracteres_categoria %}
+{% set ancho_numero_lista = ancho_caracter * tabla.caracteres_lista %}
+
+<g transform="translate(10, {{posiciones.tabla}})">
+    <!-- ****** ENCABEZADO ***** -->
+    {% set ancho_tabla = 775 %}
+    {% set margen_categoria = 2 %}
+    
+    <rect x="1" y="0" width="773" height="40" fill="{{colores.blanco}}" stroke="{{colores.negro}}" stroke-width="3"/>
+    <text style="font-size:1.05em">
+        <tspan y="3" x="7" dy="1em">{{i18n.agrupaciones}}</tspan>
+    </text>
+    {% for i in range(tabla.categorias|length, 0, -1) %}
+        {% set posicion_texto = ancho_tabla - (loop.index - 1 ) * ancho_categoria - margen_categoria - 1 %}
+        {% set x_linea = posicion_texto - ancho_categoria + margen_categoria + 1%}
+        <text x="{{posicion_texto}}"  y="5" dy="1em" width="{{ancho_categoria}}" style="text-anchor:end;">{{tabla.categorias[i-1]}}</text>
+        <line x1="{{x_linea}}" y1="1" x2="{{x_linea}}" y2="39" style="stroke:{{colores.negro}};stroke-width:2"/>
+    {% endfor %}
+
+    <!-- ****** CUERPO ***** -->
+    {% for fila in tabla.filas %}
+        {% set base_y = 19 + loop.index * medidas.alto_linea_tabla %}
+        {% set borde_inferior = base_y + medidas.alto_linea_tabla - 1 %}
+        {% set muestra_lista = ancho_numero_lista and fila.0 != "" %}
+
+        <!-- << BORDES Y FONDOS >> -->
+        {% if muestra_lista %}
+            <!-- cuadrado fondo del numero de lista -->
+            <rect x="0"  y="{{base_y}}" width="{{ancho_numero_lista}}" height="{{medidas.alto_linea_tabla - 1}}" fill="{{colores.negro}}"/>
+        {% endif %}
+        <!-- Linea inferior -->
+        <line x1="{% if muestra_lista %}{{ancho_numero_lista}}{% else %}0{% endif %}" y1="{{borde_inferior}}" x2="{{ancho_tabla}}" y2="{{borde_inferior}}" style="stroke:{{colores.negro}};stroke-width:1"/>
+        <!-- borde izquierdo -->
+        <line x1="1" y1="{{borde_inferior}}" x2="1" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        <!-- borde derecho -->
+        <line x1="{{ancho_tabla - 1}}" y1="{{borde_inferior}}" x2="{{ancho_tabla - 1}}" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        <!-- lineas categorias -->
+        {% for i in range(tabla.len_categorias, 0, -1) %}
+            {% set x_linea = ancho_tabla - i * ancho_categoria %}
+            <line x1="{{x_linea}}" y1="{{borde_inferior}}" x2="{{x_linea}}" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:1"/>
+        {% endfor %}
+        {% if loop.last %}
+            <!-- Linea inferior -->
+            <line x1="0" y1="{{borde_inferior}}" x2="{{ancho_tabla}}" y2="{{borde_inferior}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        {% endif %}
+
+        <!-- << DATOS >> -->
+        <text>
+            {% set base_texto = base_y - 6%}
+            {% set margen_nombre = 5 %}
+            
+            {% if ancho_numero_lista %}
+                <tspan x="2" y="{{base_texto}}" dy="1em" fill="{{colores.blanco}}">{{fila.0}}</tspan>
+            {% endif %}
+            <tspan x="{{ancho_numero_lista + fila.2 * ancho_caracter + margen_nombre}}" y="{{base_texto}}" dy="1em">{{fila.1}}</tspan>
+        </text>
+        {% for i in range(fila|length -1, 2, -1) %}
+            {% set x_texto =  ancho_tabla - (loop.index - 1 ) * ancho_categoria - margen_categoria %}
+            {% if fila[i] != "-" %}
+                <text x="{{x_texto}}" y="{{base_texto}}" dy="1em" width="{{ancho_categoria}}" style="text-anchor:end">{{fila[i]}}</text>
+            {% else  %}
+                <line x1="{{x_texto + 1}}" y1="{{borde_inferior}}" x2="{{x_texto - ancho_categoria + 1}}" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:2"/>
+                <line x1="{{x_texto + 1}}" y1="{{base_y -1}}" x2="{{x_texto - ancho_categoria + 1}}" y2="{{borde_inferior}}" style="stroke:{{colores.negro}};stroke-width:2"/>
+            {% endif %}
+        {% endfor %}
+
+    {% endfor %}
+</g>
+<g transform="translate(10, {{posiciones.especiales}})">
+    <!-- ****** ENCABEZADO ***** -->
+    <line x1="0" y1="21" x2="{{ancho_tabla}}" y2="21" style="stroke:{{colores.negro}};stroke-width:3"/>
+    <!-- ****** CUERPO ***** -->
+    {% for fila in tabla.especiales %}
+        {% set base_y = loop.index * medidas.alto_linea_tabla %}
+        {% set borde_inferior = base_y + medidas.alto_linea_tabla - 1 %}
+
+        <!-- << BORDES Y FONDOS >> -->
+        <!-- cuadrado fondo del numero de lista -->
+        <rect x="0"  y="{{base_y}}" width="{{ancho_numero_lista}}" height="{{medidas.alto_linea_tabla - 1}}" fill="{{colores.negro}}"/>
+        <!-- Linea inferior -->
+        <line x1="{{ancho_numero_lista}}" y1="{{borde_inferior}}" x2="{{ancho_tabla}}" y2="{{borde_inferior}}" style="stroke:{{colores.negro}};stroke-width:1"/>
+        <!-- borde izquierdo -->
+        <line x1="1" y1="{{borde_inferior}}" x2="1" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        <!-- borde derecho -->
+        <line x1="{{ancho_tabla - 1}}" y1="{{borde_inferior}}" x2="{{ancho_tabla - 1}}" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        <!-- separador numero -->
+        <line x1="{{ancho_tabla - 1 - ancho_categoria}}" y1="{{borde_inferior}}" x2="{{ancho_tabla - 1 - ancho_categoria}}" y2="{{base_y - 1}}" style="stroke:{{colores.negro}};stroke-width:1"/>
+        {% if loop.last %}
+            <!-- Linea inferior -->
+            <line x1="0" y1="{{borde_inferior}}" x2="{{ancho_tabla}}" y2="{{borde_inferior}}" style="stroke:{{colores.negro}};stroke-width:3"/>
+        {% endif %}
+
+        <!-- << DATOS >> -->
+        <text>
+            {% set base_texto = base_y - 6%}
+            {% set margen_nombre = 5 %}
+            <tspan x="2" y="{{base_texto}}" dy="1em" fill="{{colores.blanco}}">{{fila.0}}</tspan>
+            <tspan x="{{ancho_numero_lista + margen_nombre}}" y="{{base_texto}}" dy="1em">{{fila.1}}</tspan>
+        </text>
+            {% set x_texto =  ancho_tabla - margen_categoria %}
+            <text x="{{x_texto}}" y="{{base_texto}}" dy="1em" width="{{ancho_categoria}}" style="text-anchor:end">{{fila[2]}}</text>
+    {% endfor %}
+</g>

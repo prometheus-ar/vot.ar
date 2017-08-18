@@ -1,6 +1,3 @@
-# -*- coding: utf-8 -*-
-from __future__ import absolute_import
-
 from struct import pack as struct_pack
 
 from base64 import b64encode
@@ -23,6 +20,7 @@ from msa.core.documentos.constants import (BITS_DNI, CIERRE_CERTIFICADO,
                                            CIERRE_TRANSMISION)
 from msa.core.documentos.helpers import (decodear_string_apertura,
                                          encodear_string_apertura)
+from msa.core.documentos.settings import GUARDAR_DNI
 from msa.core.documentos.structs import (struct_apertura, struct_recuento,
                                          struct_recuento_dni)
 from msa.core.documentos.tabulacion import Pizarra
@@ -34,21 +32,23 @@ from msa.core.imaging.acta import ImagenActa
 from msa.core.imaging.qr import crear_qr
 from msa.core.logging import get_logger
 from msa.core.packing.settings import SMART_PACKING
+from msa.core.rfid.constants import TAG_RECUENTO, TAG_NO_ENTRA
 from msa.core.settings import TOKEN
 from six.moves import range, zip
 
 logger = get_logger("core_documentos_actas")
 
 
-if SMART_PACKING:
-    from msa.core.packing.smart_numpacker import pack, unpack, MAXBITS
-else:
-    from msa.core.packing.numpacker import pack, unpack
+from msa.core.packing import smart_numpacker
+from msa.core.packing import numpacker
 
 from msa.core.packing.numpacker import pack_slow, unpack_slow
 
 
 class Acta():
+
+    clase_acta = "ACTA"                     # prefijo para QR y serialización
+
     def _encode_qr(self, qr):
         output = BytesIO()
         qr.save(output, format='PNG')
@@ -74,7 +74,7 @@ class Apertura(Acta):
     def a_tag(self):
         """Devuelve la informacion del apertura para almacenar en tag rfid."""
         nombres, dnis, tipos = self.encodear_autoridades()
-        container = Container(numero_mesa=int(self.mesa.numero),
+        container = Container(numero_mesa=int(self.mesa.id_unico_mesa),
                               hora=int(self.hora["horas"]),
                               minutos=int(self.hora["minutos"]),
                               cantidad_autoridades=len(self.autoridades),
@@ -106,15 +106,15 @@ class Apertura(Acta):
     @classmethod
     def desde_tag(cls, tag):
         """Devuelve un apertura a partir de la informacion de un tag rfid."""
-        autoridades = []
+        # parseamos los datos del tag.
         datos = struct_apertura.parse(tag)
-        nro_mesa = datos.numero_mesa
-        horas = datos.hora
-        minutos = datos.minutos
-        mesa = Ubicacion.first(numero=str(nro_mesa))
+        # instanciamos una mesa
+        mesa = Ubicacion.first(id_unico_mesa=str(datos.numero_mesa))
+        # extraemos los nombres y DNIs
         nombres = decodear_string_apertura(datos.nombres).split(";")
-
         dnis = unpack_slow(datos.dnis, BITS_DNI)
+        # y armamos las autoridades
+        autoridades = []
         for i in range(datos.cantidad_autoridades):
             apellido = nombres.pop(0)
             nombre = nombres.pop(0)
@@ -122,44 +122,38 @@ class Apertura(Acta):
             dni = dnis.pop(0)
             autoridad = Autoridad(apellido, nombre, tipo, dni)
             autoridades.append(autoridad)
-        return Apertura(mesa, autoridades, hora={"horas": horas,
-                                                 "minutos": minutos})
+        # armamos el diccionario de la hora
+        hora = {
+            "horas": datos.hora,
+            "minutos": datos.minutos
+        }
+        # y finalmente instanciamos la Apertura que vamos a devolver
+        apertura = Apertura(mesa, autoridades, hora)
+        return apertura
 
     @forzar_idioma(DEFAULT_LOCALE)
-    def a_imagen(self, de_muestra=False, svg=False):
+    def a_imagen(self, mostrar=None, svg=False):
         """Devuelve la imagen para imprimir el apertura."""
-        titulo = _("titulo_apertura")
-        try:
-            presidente = self.autoridades[0]
-        except IndexError:
-            presidente = ""
-        suplentes = self.autoridades[1:]
-        mesa = self.mesa
-        datos = {
-            'presidente': presidente,
-            'suplentes': suplentes,
-            'cantidad_suplentes': len(suplentes),
-            'mesa': mesa.numero,
-            'escuela': mesa.escuela,
-            'municipio': mesa.municipio,
-            'departamento': mesa.departamento,
-            'horas': "%02d" % self.hora['horas'],
-            'minutos': "%02d" % self.hora['minutos'],
-            'mostrar_texto': True,
-            'leyenda': None,
-            'pie': "|".join([mesa.codigo, str(mesa.id_planilla),
-                             mesa.escuela]),
-            "cod_datos": self.mesa.cod_datos,
-        }
-        config = Config(["imaging"], mesa.cod_datos)
-        usar_qr = config.val("usar_qr")
+        if mostrar is None:
+            mostrar = {
+                "en_pantalla": False
+            }
+        mostrar["texto"] = mostrar.get("texto", True)
 
-        qr_img = self.a_qr_b64_encoded() if usar_qr and not de_muestra else None
-        imagen = ImagenActa(titulo, datos, de_muestra=de_muestra, qr=qr_img)
-        if svg:
-            rendered = imagen.render_svg()
-        else:
-            rendered = imagen.render_image()
+        datos = {
+            'titulo': _("titulo_apertura"),
+            'leyenda': None,
+            "mesa": self.mesa,
+            "autoridades": self.autoridades,
+            "hora": self.hora
+        }
+        config = Config(["imaging"], self.mesa.cod_datos)
+        usar_qr = config.val("usar_qr")
+        qr_img = (self.a_qr_b64_encoded()
+                  if usar_qr and not mostrar["en_pantalla"]
+                  else None)
+        imagen = ImagenActa(datos, mostrar, qr=qr_img)
+        rendered = imagen.render(svg)
         return rendered
 
     def a_qr_str(self):
@@ -190,6 +184,11 @@ class Apertura(Acta):
 class Recuento(Acta):
 
     """Recuento de votos de una mesa."""
+
+    # usar la configuración predeterminada para empaquetamiento de numeros:
+    smart_packing = SMART_PACKING
+    clase_acta = "REC "                     # prefijo para QR y serialización
+    tipo_tag = TAG_RECUENTO                 # código para identificar el tag
 
     def __init__(self, mesa, autoridades=None, hora=None):
         if autoridades is None:
@@ -272,32 +271,11 @@ class Recuento(Acta):
                     if cand is not None:
                         ret[key] = votos[key]
             else:
-                # no esta desgolsada devolvemos todos los votos.
+                # no esta desglosada devolvemos todos los votos.
                 ret = votos
         return ret
 
-    def sumar_recuento(self, recuento, serial):
-        if not serial or not self.serial_sumado(serial):
-            resultados = recuento.get_resultados()
-
-            for key, votos in resultados.items():
-                actual = self.get_resultados(key)
-                self.pizarra.set_votos_candidato(key, actual + votos)
-
-            for key, votos in six.iteritems(recuento.campos_extra):
-                actual = self.campos_extra.get(key, 0)
-                self.campos_extra[key] = actual + votos
-
-            for key, votos in six.iteritems(recuento.listas_especiales):
-                actual = self.listas_especiales.get(key, 0)
-                self.listas_especiales[key] = actual + votos
-
-            if serial:
-                self._serials.append(serial)
-        else:
-            raise SerialRepetido()
-
-    def a_tag(self, grupo_cat=None, con_dnis=True):
+    def a_tag(self, grupo_cat=None, con_dnis=GUARDAR_DNI):
         """Devuelve la informacion del recuento para almacenar en tag rfid."""
         valores = []
 
@@ -317,17 +295,13 @@ class Recuento(Acta):
         container = Container()
 
         # cod_mesa
-        if SMART_PACKING:
-            num_mesa = self.mesa.numero.encode('ascii')
-            try:
-                datos = pack(int(num_mesa), valores)
-            except NameError:
-                # hacemos "upgrade" a chip de 2k
-                datos = pack(int(num_mesa), valores, max_bits=MAXBITS*2)
+        if self.smart_packing:
+            num_mesa = self.mesa.id_unico_mesa.encode('ascii')
+            datos = smart_numpacker.pack(int(num_mesa), valores)
             container.datos = datos
         else:
             cod_mesa = self.mesa.codigo.encode('ascii')
-            packed = pack(valores)
+            packed = numpacker.pack(valores)
             datos = str(len(cod_mesa)).zfill(2).encode() + cod_mesa + packed
 
             container.datos = datos
@@ -374,7 +348,7 @@ class Recuento(Acta):
         return todo
 
     def a_qr(self, grupo_cat=None, con_dnis=True):
-        datos = "REC " + self.a_qr_str(grupo_cat, con_dnis)
+        datos = self.clase_acta + self.a_qr_str(grupo_cat, con_dnis)
         return crear_qr(datos)
 
     def a_qr_b64_encoded(self, grupo_cat=None):
@@ -384,92 +358,91 @@ class Recuento(Acta):
             qr_data = self._encode_qr(qr)
         return qr_data
 
+    def generar_titulo(self, tipo):
+        # Por defecto no tenemos titulo, a menos que el tipo de acta tenga
+        # titulo.
+        titulo = ""
+        leyenda = None
+        # Muestra el icono del verificador en la boleta. Si no tiene chip en el
+        # documento en el que imprimimos no imprimirmos el verificador.
+        verif = True
+
+        # Internamente todas las actas son iguales, lo que cambia es el texto
+        # que se imprime, pero el acta una vez serializada no sabe cual es.
+        if tipo == CIERRE_RECUENTO:
+            # El acta de cierre.
+            titulo = _("titulo_recuento")
+            leyenda = _("no_insertar_en_urna")
+        elif tipo == CIERRE_TRANSMISION:
+            # El acta de transmision.
+            titulo = _("titulo_transmision")
+            leyenda = _("no_insertar_en_urna")
+        elif tipo in (CIERRE_CERTIFICADO, CIERRE_ESCRUTINIO):
+            # El certificado de escrutinio.
+            titulo = _("titulo_certificado")
+            verif = False
+        elif tipo == CIERRE_COPIA_FIEL:
+            # Una copia fiel del certificado. (Certificado sin datos desc_mesa
+            # autoridades)
+            titulo = _("titulo_copia_fiel")
+            verif = False
+
+        return titulo, leyenda, verif
+
+
     @forzar_idioma(DEFAULT_LOCALE)
-    def a_imagen(self, tipo=None, de_muestra=False, svg=False):
+    def a_imagen(self, mostrar=None, tipo=None, svg=False):
         """Devuelve la imagen para imprimir recuento.
 
         Argumentos:
         tipo -- una tupla con el tipo de acta y el id_de grupo de categorias.
             Puede ser None si no no queremos agrupar.
-        de_muestra --  es la imagen que no se imprime, que se muestra en
-            pantalla.
+        mostrar -- un diccionario con las cosas a mostrar.
         svg -- Devuelve un svg si True, en caso contrario un objeto PIL.Image
         """
+        if mostrar is None:
+            mostrar = {
+                "en_pantalla": False
+            }
+
         if tipo is None:
             tipo = (CIERRE_RECUENTO, None)
 
-        # Muestra el icono del verificador en la boleta. Si no tiene chip en el
-        # documento en el que imprimimos no imprimirmos el verificador.
-        verif = True
-        # Por defecto no tenemos titulo, a menos que el tipo de acta tenga
-        # titulo.
-        titulo = ""
-        leyenda = None
-
-        # Internamente todas las actas son iguales, lo que cambia es el texto
-        # que se imprime, pero el acta una vez serializada no sabe cual es.
-        if tipo[0] == CIERRE_RECUENTO:
-            # El acta de cierre.
-            titulo = _("titulo_recuento")
-            leyenda = _("no_insertar_en_urna")
-        elif tipo[0] == CIERRE_TRANSMISION:
-            # El acta de transmision.
-            titulo = _("titulo_transmision")
-            leyenda = _("no_insertar_en_urna")
-        elif tipo[0] == CIERRE_CERTIFICADO or tipo[0] == CIERRE_ESCRUTINIO:
-            # El certificado de escrutinio.
-            titulo = _("titulo_certificado")
-            verif = False
-        elif tipo[0] == CIERRE_COPIA_FIEL:
-            # Una copia fiel del certificado. (Certificado sin datos desc_mesa
-            # autoridades)
-            titulo = _("titulo_copia_fiel")
-            verif = False
+        titulo, leyenda, verif = self.generar_titulo(tipo[0])
         grupo_cat = tipo[1]
-
-        # Establecemos las autoridades para los templates del texto del acta,
-        # los cuales hacen diferencia entre el presidente y los suplentes.
-        try:
-            presidente = self.autoridades[0]
-        except IndexError:
-            presidente = ""
-        suplentes = [sup for sup in self.autoridades[1:]
-                     if sup.nro_documento != 0]
 
         mesa = self.mesa
         # Armamos los datos para el texto.
         datos = {
-            'presidente': presidente,
-            'suplentes': suplentes,
-            'cantidad_suplentes': len(suplentes),
-            'mesa': mesa.numero,
-            'escuela': mesa.escuela,
-            'municipio': mesa.municipio,
-            'departamento': mesa.departamento,
-            'horas': "%02d" % self.hora.get('horas', "") \
-                if self.hora is not None else "",
-            'minutos': "%02d" % self.hora.get('minutos', "")
-                if self.hora is not None else "",
-            'mostrar_texto': self.hora is not None,
+            'titulo': titulo,
+            "autoridades": self.autoridades,
+            'mesa': mesa,
+            'hora': self.hora,
             'leyenda': leyenda,
-            'pie': "|".join([mesa.codigo, str(mesa.id_planilla),
-                             mesa.escuela]),
             "cod_datos": self.mesa.cod_datos,
         }
+
+        if self.hora is not None:
+            datos["horas"] = "%02d" % self.hora.get('horas', "")
+            datos["minutos"] = "%02d" % self.hora.get('minutos', "")
+            mostrar["texto"] = True
+        else:
+            datos["horas"] = ""
+            datos["minutos"] = ""
+            mostrar["texto"] = False
 
         config = Config(["imaging"], mesa.cod_datos)
         usar_qr = config.val("usar_qr")
         # Generamos el QR que va a ir en el acta.
         qr_img = self.a_qr_b64_encoded(grupo_cat) if usar_qr else None
-        # Y armamos la imagen.
-        imagen = ImagenActa(titulo, datos, qr=qr_img, recuento=self,
-                            grupo_cat=grupo_cat, de_muestra=de_muestra,
-                            verificador=verif)
 
-        if svg:
-            rendered = imagen.render_svg()
-        else:
-            rendered = imagen.render_image()
+        mostrar["verificador"] = verif
+
+        # Y armamos la imagen.
+        imagen = ImagenActa(datos, mostrar, qr=qr_img, recuento=self,
+                            grupo_cat=grupo_cat)
+
+        rendered = imagen.render(svg)
 
         # Devolvemos la imagen en el formato solicitado.
         return rendered
@@ -479,7 +452,7 @@ class Recuento(Acta):
         return 'Recuento de la mesa %s' % self.mesa
 
     @classmethod
-    def desde_tag(cls, tag, con_dnis=True):
+    def desde_tag(cls, tag, con_dnis=GUARDAR_DNI):
         # Si vamos a guardar los dnis usamos el struct con DNIS, sino no.
         if con_dnis:
             struct = struct_recuento_dni
@@ -488,28 +461,28 @@ class Recuento(Acta):
         # Parseamos el tag
         datos_tag = struct.parse(tag)
         # Nos fijamos si el tag tiene la data de una categoria o solo de una
-        if SMART_PACKING:
+        if cls.smart_packing:
             try:
                 string_datos = b""
                 for byte in datos_tag.datos:
                     string_datos += byte
-                num_mesa, valores = unpack(string_datos)
+                num_mesa, valores = smart_numpacker.unpack(string_datos)
             except IndexError as e:
                 raise TagMalformado(e)
-            mesa = Ubicacion.first(numero=str(num_mesa))
+            mesa = Ubicacion.first(id_unico_mesa=str(num_mesa))
         else:
             tag = b""
             for byte in datos_tag.datos:
                 tag += byte
             len_cod_mesa = int(tag[:2])
             cod_mesa = tag[2:2 + len_cod_mesa]
-            mesa = Ubicacion.first(codigo=cod_mesa.decode("utf-8"))
-            valores = unpack(tag[len_cod_mesa + 2:])
+            mesa = Ubicacion.first(codigo=cod_mesa.decode("utf8"))
+            valores = numpacker.unpack(tag[len_cod_mesa + 2:])
 
         if not mesa:
             raise MesaNoEncontrada()
         mesa.usar_cod_datos()
-        recuento = Recuento(mesa)
+        recuento = cls(mesa)
         grupo = datos_tag.grupo
         # Establecemos el grupo del recuento, si viene en 0 lo establecemos en
         # None
@@ -545,7 +518,7 @@ class Recuento(Acta):
     def desde_qr(cls, datos):
         """Devuelve un recuento a partir de la informacion de un qr."""
         # tipo de qr
-        if datos.startswith("REC "):
+        if datos.startswith(cls.clase_acta):
             datos = datos[4:]
 
         token = datos[0:2]
@@ -561,12 +534,12 @@ class Recuento(Acta):
         for i in range(0, len_datos, 2):
             bytes_recuento.append(int(datos_recuento[i:i+2], 16))
 
-        recuento = Recuento.desde_tag(bytes_recuento, con_dnis=True)
+        recuento = cls.desde_tag(bytes_recuento, con_dnis=True)
 
         return recuento
 
     @classmethod
-    def desde_dict(self, id_planilla, hora, data_dict, campos_extra):
+    def desde_dict(cls, id_planilla, hora, data_dict, campos_extra):
         """Genera un recuento desde un diccionario con los datos.
            Argumentos:
             id_planilla -- el id_planilla del acta que queremos generar.
@@ -582,7 +555,7 @@ class Recuento(Acta):
         """
         mesa = Ubicacion.one(id_planilla=id_planilla)
         mesa.usar_cod_datos()
-        recuento = Recuento(mesa, hora=hora)
+        recuento = cls(mesa, hora=hora)
         for key, value in data_dict.items():
             recuento.pizarra.set_votos_candidato(key, value)
         recuento.campos_extra = campos_extra
@@ -597,8 +570,9 @@ class Recuento(Acta):
         for autoridad in self.autoridades:
             texto += "Autoridad: {}\n".format(autoridad.nro_documento)
 
+        grupo = int(self.grupo_cat) if self.grupo_cat is not None else 1
         for categoria in Categoria.many(sorted="posicion",
-                                        id_grupo=self.grupo_cat):
+                                        id_grupo=grupo):
             texto += "{}\n".format(categoria.nombre)
             for lista in Lista.many(sorted='codigo'):
                 candidato = Candidatura.one(cod_categoria=categoria.codigo,
@@ -627,3 +601,43 @@ class Recuento(Acta):
             texto += "{}: {}\n".format(titulo, self.listas_especiales[key])
 
         return texto
+
+
+class Totalizacion(Recuento):
+
+    """Suma de recuentos de votos de varias mesa."""
+
+    # usar siempre num_packer para empaquetamiento de numeros grandes:
+    smart_packing = False
+    clase_acta = "TOT "                     # prefijo para QR y serialización
+    tipo_tag = TAG_NO_ENTRA                 # código para diferenciar el tag
+
+    def __init__(self, mesa, autoridades=None, hora=None):
+        super().__init__(mesa, autoridades, hora)
+
+    def sumar_recuento(self, recuento, serial):
+        if not serial or not self.serial_sumado(serial):
+            resultados = recuento.get_resultados()
+
+            for key, votos in resultados.items():
+                actual = self.get_resultados(key)
+                self.pizarra.set_votos_candidato(key, actual + votos)
+
+            for key, votos in six.iteritems(recuento.campos_extra):
+                actual = self.campos_extra.get(key, 0)
+                self.campos_extra[key] = actual + votos
+
+            for key, votos in six.iteritems(recuento.listas_especiales):
+                actual = self.listas_especiales.get(key, 0)
+                self.listas_especiales[key] = actual + votos
+
+            if serial:
+                self._serials.append(serial)
+        else:
+            raise SerialRepetido()
+
+    def generar_titulo(self, tipo):
+        titulo = _("titulo_totalizacion")
+        leyenda = None
+        verif = True
+        return titulo, leyenda, verif

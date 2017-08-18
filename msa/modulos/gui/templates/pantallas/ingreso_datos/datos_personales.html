@@ -8,7 +8,7 @@
 
     <div class="nombre-autoridades{{#if scroll}} con-scroll{{/if}}">
     {{#autoridades}}
-    <h2 id="_txt_titulo_{{id_cargo}}" class="cargo">{{cargo}}</h2>
+    <h2 id="_txt_titulo_{{id_cargo}}" class="cargo" data-cargo="{{id_cargo}}">{{cargo}}</h2>
         <form class="autoridad" id="{{id_cargo}}">
             <label id="_txt_titulo_apellido"></label>
             <input type="text" name="{{id_cargo}}_apellido" class="apellido"

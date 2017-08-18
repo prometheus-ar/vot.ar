@@ -1,12 +1,24 @@
 """Rampa del modulo Menu."""
-from msa.core.rfid.constants import (TAG_APERTURA, TAG_DATOS,
-                                     TAG_PRESIDENTE_MESA, TAG_USUARIO_MSA)
+from msa.core.armve.constants import DEV_PRINTER
 from msa.modulos.base.rampa import RampaBase, semaforo
+from msa.modulos.constants import MODULO_INICIO
 
 
 class Rampa(RampaBase):
 
     """La Rampa especializada para el modulo de administracion."""
+
+    def registrar_eventos(self):
+        RampaBase.registrar_eventos(self)
+        self.registrar_reset_device(self._device_reset)
+
+    def desregistrar_eventos(self):
+        self.remover_reset_device()
+        RampaBase.desregistrar_eventos(self)
+
+    def _device_reset(self, device):
+        if device == DEV_PRINTER:
+            self.modulo.salir_a_modulo(MODULO_INICIO)
 
     @semaforo
     def maestro(self):
@@ -14,49 +26,28 @@ class Rampa(RampaBase):
         if self.tiene_papel:
             self.expulsar_boleta()
 
-    def registrar_eventos(self):
-        """Registra los eventos."""
-        lector = self.sesion.lector
-        if lector is not None:
-            self._ev_lector = lector.consultar_lector(self._cambio_tag)
-        imp = self.sesion.impresora
-        if imp is not None:
-            self._ev_sensor_1 = imp.registrar_insertando_papel(
-                self.cambio_sensor_1)
-            self._ev_sensor_2 = imp.registrar_autofeed_end(
-                self.cambio_sensor_2)
-
-    def desregistrar_eventos(self):
-        """desegistra los eventos por default de la rampa."""
-        if self.sesion.lector is not None:
-            self.sesion.lector.remover_consultar_lector()
-        if self.sesion.impresora is not None:
-            self.sesion.impresora.remover_insertando_papel()
-            self.remover_nuevo_papel()
-
-    def cambio_tag(self, tipo_tag, tag_dict):
+    def cambio_tag(self, tipo_lectura, tag):
         """ Callback de cambio de tag.
 
         Argumentos:
-            tipo_tag -- el tipo de tag
-            tag_dict -- los datos del tag
+            tipo_lectura -- el tipo de tag
+            tag -- un objeto de clase SoporteDigital
         """
-        boton_mantenimiento = self.modulo.boton_mantenimiento
-        timer = self.modulo.controlador.timer
+        if self.tiene_papel:
+            self.expulsar_boleta()
 
-        if (tag_dict is not None and tag_dict['tipo'] == TAG_USUARIO_MSA and
-            timer is not None):
-            if boton_mantenimiento:
-                self.modulo._calibrar_pantalla()
-            else:
-                self.modulo._show_maintenance_button()
-        elif (tag_dict is not None and tag_dict['tipo'] == TAG_PRESIDENTE_MESA
-              and timer is None):
-            self.modulo.controlador.cargar_botones(self.modulo.mesa_abierta)
-        elif not self.modulo.mesa_abierta and tipo_tag == TAG_DATOS and \
-                tag_dict['tipo'] == TAG_APERTURA:
-            datos_tag = tag_dict['datos']
-            self.modulo._configurar_mesa(datos_tag)
-        else:
-            if self.tiene_papel:
-                self.expulsar_boleta()
+        if tag is not None:
+            controlador =  self.modulo.controlador
+            # si pusieron un tag de autoridad
+            if tag.es_autoridad():
+                controlador.mostrar_botonera()
+            elif tag.es_tecnico() and controlador.timer is not None:
+                # IMPORTANTE: habilitado sólo si la pantalla no está bloqueada
+                # si el tag es de tecnico vamos a mostrar el boton de
+                # mantenimiento la primera vez que lo pongan, la segunda vamos
+                # a calibrar la pantalla.
+                if self.modulo.boton_mantenimiento:
+                    self.modulo._calibrar_pantalla()
+                else:
+                    controlador.reiniciar_timer()
+                    self.modulo.mostrar_boton_mantenimiento()

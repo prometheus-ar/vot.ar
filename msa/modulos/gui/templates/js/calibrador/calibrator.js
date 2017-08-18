@@ -1,6 +1,6 @@
 get_url = get_url_function("calibrator");
 
-// SVG stuff
+// Estados y configuraciones del SVG
 var animacion = {
     "bg": null,
     "ctx": null,
@@ -16,11 +16,13 @@ var auto_close = null;
 var verification_point = null;
 
 function click(e){
+    /* recibe un evento de click. */
     var click_pos = get_click_position(e);
     send_click();
 }
 
 function move_pointer(xy){
+    /* Mueve el indicador a la posicion en la que lo queremos mostrar. */
     show_indicators();
     var img_pointer = $("#pointer");
     var progress = $("#progress");
@@ -33,10 +35,14 @@ function move_pointer(xy){
 }
 
 function get_click_position(e) {
+    /* Obtinene la posicion del click. */
     var ret = null;
+    // si es un evento que llega como click de mouse lo tratamos diferente que
+    // un evento que llega como touch.
     if(e.type == "mousedown"){
         ret = [e.clientX, e.clientY];
     } else{
+        // tomamos la decision consciente de agarrar solo el primer touch.
         var touches = e.originalEvent.touches;
         if(touches.length){
             var first_touch = touches[0];
@@ -47,12 +53,14 @@ function get_click_position(e) {
 }
 
 function initiate(){
+    /* Inicio de la calibracion. */
     var screen_resolution = [screen.width, screen.height];
     send('initiate', screen_resolution);
 }
 
 
 function ready(data) {
+    /* Se ejecuta cuando estamos listos para empezar a calibrar. */
     if(!data.mostrar_cursor){
         $("html").css("cursor", "none");
     }
@@ -76,6 +84,7 @@ function check_calibration(){
 }
 
 function end(){
+    /* fin del click en el indicador */
     state = 'end';
     end_dialog();
     hide_timer();
@@ -83,6 +92,7 @@ function end(){
 }
 
 function error(type){
+    /* Muestra el error de calibracion. */
     clear_anim();
     if (type == 'misclick'){
         hide_calibration_msg();
@@ -94,6 +104,7 @@ function error(type){
 }
 
 function reset(data){
+    /* Resetea la calibracion. */
     verification_point = data;
     hide_all();
     show_seccion_central();
@@ -103,6 +114,7 @@ function reset(data){
 }
 
 function draw(current) {
+    /* Dibuja el punto del calibrador. */
     var circ = Math.PI * 2;
     var quart = Math.PI / 2;
 
@@ -113,6 +125,7 @@ function draw(current) {
 }
 
 function init_anim(){
+    /* Inicia la animacion del marcador. */
     clear_anim();
     animacion.step = 1;
     
@@ -129,11 +142,13 @@ function init_anim(){
 }
 
 function clear_anim(){
+    /* Limpia la animacion del marcador. */
     window.clearInterval(animacion.interval);
     animacion.ctx.clearRect(0, 0, animacion.bg.width, animacion.bg.height);
 }
 
 function _finger_start(e){
+    /* funcion que se ejecuta cuando arranca la interaccion con un marcador. */
     if (state == 'init'){
         hide_init_msg();
     } else if (state == 'calibrating' || state == 'checking'){
@@ -145,10 +160,12 @@ function _finger_start(e){
 }
 
 function send_click(){
+    /* Envia un click al backend */
     send('click', click_pos);
 }
 
 function _finger_end(e){
+    /* Funcion que se ejecuta cuando termina la interaccion con un marcador. */
     if (state == 'init'){
         state = 'calibrating';
         send_click();
@@ -169,6 +186,7 @@ function _finger_end(e){
 }
 
 function init_context(){
+    /* Inicializa el context del canvas para la animacion. */
     animacion.bg = document.getElementById('progress');
     var ctx = animacion.bg.getContext('2d');
 
@@ -184,7 +202,7 @@ function init_context(){
 }
 
 function document_ready(){
-    //Sending a screen resolution to backend
+    /* Se lanza cuando se termina de cargar la pagina. Establece el contexto.*/
     var click_pos = null;
     send('initiate');
 
@@ -195,6 +213,7 @@ function document_ready(){
 }
 
 function fake_touch_end(data){
+    /* Lanza un evento de fin de touch, */
     _finger_end();
 }
 

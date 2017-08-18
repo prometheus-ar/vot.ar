@@ -1,0 +1,314 @@
+[
+  {
+    "asistida":"Aguirre, Pedro Federico",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1895.2213",
+    "cod_partido":"1885.1895",
+    "codigo":"1885.1895.2213.152131",
+    "id_candidatura":"1885.1895.2213.152131",
+    "id_umv":14,
+    "imagenes":[
+      "1885.1895.2213.152131"
+    ],
+    "nombre":"Aguirre, Pedro Federico",
+    "orden_absoluto":[
+      15,
+      47,
+      186,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Llanes, Marcela Antonia",
+      "Lopez, Javier Beltran"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Cordoba, David Alejandro",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1918.2237",
+    "cod_partido":"1885.1918",
+    "codigo":"1885.1918.2237.140781",
+    "id_candidatura":"1885.1918.2237.140781",
+    "id_umv":51,
+    "imagenes":[
+      "1885.1918.2237.140781"
+    ],
+    "nombre":"Cordoba, David Alejandro",
+    "orden_absoluto":[
+      15,
+      56,
+      192,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Tapia, Angelica Argentina",
+      "Mercado, Jose Luis"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Correa, Cesar Roberto",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1919.2140",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140.143550",
+    "id_candidatura":"1885.1919.2140.143550",
+    "id_umv":88,
+    "imagenes":[
+      "1885.1919.2140.143550"
+    ],
+    "nombre":"Correa, Cesar Roberto",
+    "orden_absoluto":[
+      15,
+      57,
+      193,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Salvatierra, Araceli Noemi",
+      "Taritolay, Walter Clemente"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ruiz, Benito Isidoro",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1923.2236",
+    "cod_partido":"1885.1923",
+    "codigo":"1885.1923.2236.143793",
+    "id_candidatura":"1885.1923.2236.143793",
+    "id_umv":107,
+    "imagenes":[
+      "1885.1923.2236.143793"
+    ],
+    "nombre":"Ruiz, Benito Isidoro",
+    "orden_absoluto":[
+      15,
+      50,
+      187,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Qui\u00f1ones, Griselda Yamila",
+      "Justiniano, Hector Roberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guaym\u00e1s, M\u00edlton Leonel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2024",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2024.137802",
+    "id_candidatura":"1886.1890.2024.137802",
+    "id_umv":224,
+    "imagenes":[
+      "1886.1890.2024.137802"
+    ],
+    "nombre":"Guaymas, Milton Leonel",
+    "orden_absoluto":[
+      6,
+      51,
+      55,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Perez, Eva Maria",
+      "Esteve, Ramon Felix"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guzm\u00e1n, Omar F\u00e9lix",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1907",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907.137856",
+    "id_candidatura":"1886.1906.1907.137856",
+    "id_umv":365,
+    "imagenes":[
+      "1886.1906.1907.137856"
+    ],
+    "nombre":"Guzman, Omar Felix",
+    "orden_absoluto":[
+      6,
+      52,
+      207,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cruz, Romina del Valle",
+      "Guanuco, Benito Ruben"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"L\u00f3pez, Juan Jos\u00e9 Lu\u00eds",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1912.2260",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.2260.150075",
+    "id_candidatura":"1886.1912.2260.150075",
+    "id_umv":415,
+    "imagenes":[
+      "1886.1912.2260.150075"
+    ],
+    "nombre":"Lopez, Juan Jose Luis",
+    "orden_absoluto":[
+      6,
+      48,
+      212,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Apaza, Cinthia Anabel",
+      "Colque, Walter Ernesto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Arana, Antonia Petrona",
+    "clase":"Candidato",
+    "cod_alianza":"1887",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1887.2126.2141",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2141.152250",
+    "id_candidatura":"1887.2126.2141.152250",
+    "id_umv":609,
+    "imagenes":[
+      "1887.2126.2141.152250"
+    ],
+    "nombre":"Arana, Antonia Petrona",
+    "orden_absoluto":[
+      5,
+      31,
+      100,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Torres, Oscar Samuel",
+      "Alvarez, Silvia Rosa"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guzm\u00e1n, Juan Jos\u00e9",
+    "clase":"Candidato",
+    "cod_alianza":"1973",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1973.1973.2232",
+    "cod_partido":"1973.1973",
+    "codigo":"1973.1973.2232.147273",
+    "id_candidatura":"1973.1973.2232.147273",
+    "id_umv":836,
+    "imagenes":[
+      "1973.1973.2232.147273"
+    ],
+    "nombre":"Guzman, Juan Jose",
+    "orden_absoluto":[
+      14,
+      62,
+      230,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Quiroga, Ema Raquel",
+      "Alancay, Roberto Martin"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":865,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":925,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":985,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

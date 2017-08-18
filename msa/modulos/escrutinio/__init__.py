@@ -1,7 +1,8 @@
 """Modulo para hacer Escrutinio y Cierre de Mesa."""
+from datetime import datetime
+
 from msa.core.audio.settings import VOLUMEN_ESCRUTINIO_P2, VOLUMEN_GENERAL
 from msa.core.config_manager.constants import COMMON_SETTINGS
-from msa.core.crypto.settings import ENCRIPTAR_TAG
 from msa.core.documentos.actas import Recuento
 from msa.core.documentos.boletas import Seleccion
 from msa.core.documentos.constants import CIERRE_COPIA_FIEL
@@ -11,8 +12,8 @@ from msa.modulos.constants import (E_IMPRIMIENDO, E_RECUENTO, MODULO_INICIO,
 from msa.modulos.decorators import requiere_mesa_abierta
 from msa.modulos.escrutinio.constants import (ACT_BOLETA_NUEVA,
                                               ACT_BOLETA_REPETIDA, ACT_ERROR,
-                                              SECUENCIA_CERTIFICADOS,
-                                              ACT_CLONADA)
+                                              ACT_VERIFICAR_ACTA,
+                                              SECUENCIA_CERTIFICADOS)
 from msa.modulos.escrutinio.controlador import Controlador
 from msa.modulos.escrutinio.rampa import Rampa
 from msa.modulos.escrutinio.registrador import SecuenciaActas
@@ -36,10 +37,10 @@ class Modulo(ModuloBase):
         self.get_controller()
         ModuloBase.__init__(self, nombre)
         self._start_audio()
-        self.set_volume()
         self.apertura = self.sesion.apertura
         self.ret_code = MODULO_RECUENTO
         self.get_rampa()
+        self.set_volume()
         if self.sesion.recuento is None:
             self.sesion.recuento = Recuento(self.sesion.mesa)
         self.estado = E_RECUENTO
@@ -47,11 +48,14 @@ class Modulo(ModuloBase):
         self.config_files = [COMMON_SETTINGS, nombre, "imaging"]
         self._load_config()
 
+        self._ultimo_tag_leido = None
+        self._hora_ultimo_tag = datetime.now()
+
     def set_volume(self):
         volumen = VOLUMEN_GENERAL
-        if hasattr(self.sesion, "agent"):
-            machine_number = self.sesion.agent.get_machine_type()
-            if machine_number == 1:
+        if self.rampa.tiene_conexion:
+            version = self.rampa.get_arm_version()
+            if version == 1:
                 volumen = VOLUMEN_ESCRUTINIO_P2
         self._player.set_volume(volumen)
 
@@ -75,33 +79,52 @@ class Modulo(ModuloBase):
             self.play_sonido_ok()
         elif tipo_actualizacion == ACT_BOLETA_REPETIDA:
             self.play_sonido_warning()
-        elif tipo_actualizacion in (ACT_ERROR, ACT_CLONADA):
+        elif tipo_actualizacion == ACT_ERROR:
             self.play_sonido_error()
 
-    def procesar_voto(self, serial, tipo_tag, datos):
+    def procesar_voto(self, tag):
+        """Procesa un voto que se apoya. Actua en consecuencia.
+
+        Argumentos:
+            tag -- un objeto SoporteDigital
+        """
         tipo_actualizacion = ACT_ERROR
         seleccion = None
         if self.estado == E_RECUENTO:
             try:
-                seleccion = Seleccion.desde_tag(datos, self.sesion.mesa)
-                # Si el serial no fue ya sumado
-                if not self.sesion.recuento.serial_sumado(serial):
-                    # Si el voto no fue ya contado vemos.
-                    if seleccion.serial == serial:
-                        self._sumar_voto(seleccion, serial)
+                # usamos el serial como unicidad, esto podría cambiar
+                unicidad = tag.serial
+                # Parseamos la seleccion
+                seleccion = Seleccion.desde_tag(tag.datos, self.sesion.mesa)
+                # A veces puede llegar mas de un evento de tag nuevo al mismo
+                # tiempo, como es un factor humano dificil de manejar lo que
+                # hacemos es no tirar dos eventos seguidos del mismo tag por
+                # que las autoridades de mesa "se asustan" si ven un "boleta
+                # repetida" inmediatamente despues de que apoyaron el tag de
+                # una boleta nueva. Para evitar confusiones no procesamos la
+                # boleta que se acaba de procesar y la pantalla no se refresca
+                # si la ultima lectura de la misma boleta fue hace menos de un
+                # segundo.
+                delta = datetime.now() - self._hora_ultimo_tag
+                if tag.serial != self._ultimo_tag_leido or delta.seconds > 0:
+                        # Si el voto no fue ya contado se suma.
+                    if not self.sesion.recuento.serial_sumado(unicidad):
+                        self._sumar_voto(seleccion, unicidad)
                         tipo_actualizacion = ACT_BOLETA_NUEVA
                     else:
-                        tipo_actualizacion = ACT_ERROR
-                        seleccion = None
+                        # En caso de estar ya somado se avisa y no se cuenta.
+                        tipo_actualizacion = ACT_BOLETA_REPETIDA
                 else:
-                    # En caso de estar ya somado se avisa y no se cuenta.
-                    tipo_actualizacion = ACT_BOLETA_REPETIDA
+                    tipo_actualizacion = None
             except Exception as e:
                 # cualquier circunstancia extraña se translada en un error.
                 print(e)
                 seleccion = None
 
-            self.controlador.actualizar(tipo_actualizacion, seleccion)
+            if tipo_actualizacion is not None:
+                self._ultimo_tag_leido = unicidad
+                self._hora_ultimo_tag = datetime.now()
+                self.controlador.actualizar(tipo_actualizacion, seleccion)
 
     def _sumar_voto(self, seleccion, unicidad):
         """Suma un voto al recuento."""
@@ -139,7 +162,9 @@ class Modulo(ModuloBase):
         self.secuencia.callback_post_fin_secuencia = _fin
         self.secuencia.callback_imprimiendo = _imprimiendo
         self.secuencia.actas_a_imprimir = []
-        self.secuencia.acta_actual = [CIERRE_COPIA_FIEL, None]
+        # usar el mismo grupo categoria para todas las copias:
+        grupo_cat = self.sesion.recuento.grupo_cat
+        self.secuencia.acta_actual = [CIERRE_COPIA_FIEL, grupo_cat]
         self.secuencia._pedir_acta()
 
     def _iniciar_secuencia(self):

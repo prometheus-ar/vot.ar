@@ -28,10 +28,11 @@ class Modulo(ModuloBase):
         ModuloBase.__init__(self, nombre)
         levantar_locales()
 
-        self._vaciar_impresora()
         self.ret_code = MODULO_MENU
 
         self.rampa = Rampa(self)
+        self.rampa.expulsar_boleta()
+        self.controlador.rampa = self.rampa
         self._start_audio()
 
     def _btn_presionado(self, boton):
@@ -39,12 +40,6 @@ class Modulo(ModuloBase):
         # Obtengo el label del botón, lo busco en el diccionario de botones
         # y lo establezco como código de retorno
         self.salir_a_modulo(boton)
-
-    def _vaciar_impresora(self):
-        """Expulsa la boleta."""
-        impresora = self.sesion.impresora
-        if impresora is not None and impresora.tarjeta_ingresada():
-            impresora.expulsar_boleta()
 
     def _inicio(self):
         """Inicio del modulo mantenimiento."""
@@ -60,22 +55,22 @@ class Modulo(ModuloBase):
 
         ModuloBase.quit(self, w)
 
-    def _recheck_batteries(self):
+    def _recheck_batteries(self, data):
         """Rechequea las baterias."""
         self.controlador.refresh_batteries()
 
-    def _recheck_pir_detected(self):
+    def _recheck_pir_detected(self, data):
         """Rechequea el estado presente del PIR."""
         self.controlador.pir_detection_status(True)
 
-    def _recheck_pir_not_detected(self):
+    def _recheck_pir_not_detected(self, data):
         """Rechequea la ausencia de deteccion del PIR."""
         self.controlador.pir_detection_status(False)
 
     def printer_begin_test(self):
         """Inicia el test de impresion."""
         if not self.rampa.tiene_papel:
-            self.signal_paper = self.sesion.impresora.registrar_autofeed_end(
+            self.signal_paper = self.rampa.registrar_nuevo_papel(
                 self._printer_test)
             self.controlador.printer_begin_test()
         else:
@@ -83,8 +78,8 @@ class Modulo(ModuloBase):
 
     def printer_end_test(self):
         """Finaliza el test de impresion."""
-        self.sesion.impresora.remover_autofeed_end()
-        self.sesion.impresora.remover_insertando_papel()
+        self.rampa.remover_nuevo_papel()
+        self.rampa.remover_insertando_papel()
         self.controlador.printer_end_test()
         self.rampa.tiene_papel = False
 
@@ -103,6 +98,6 @@ class Modulo(ModuloBase):
     def rfid_check(self, datos_tag):
         """chequea el estado del RFID."""
         try:
-            self.controlador.rfid_check(datos_tag['tipo'])
+            self.controlador.rfid_check(datos_tag.tipo)
         except:
             self.controlador.rfid_check(NO_TAG)

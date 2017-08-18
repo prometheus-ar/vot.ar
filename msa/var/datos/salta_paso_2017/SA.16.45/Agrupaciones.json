@@ -1,0 +1,248 @@
+[
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1890",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890",
+    "imagenes":[
+      "1886.1890"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"Part.Justicialista",
+    "orden_absoluto":[
+      6,
+      51
+    ]
+  },
+  {
+    "asistida":"Para Volver Al Progreso",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2082",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2082",
+    "imagenes":[
+      "1886.1890.2082"
+    ],
+    "nombre":"Para Volver Al Progreso",
+    "nombre_corto":"P\/Volver Al Progreso",
+    "numero":"244",
+    "orden_absoluto":[
+      6,
+      51,
+      47
+    ]
+  },
+  {
+    "asistida":"Frente Salte\u00f1o",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1903",
+    "color":[
+      "#BF0000",
+      "#000000",
+      "#BF0000"
+    ],
+    "id_candidatura":"1886.1903",
+    "imagenes":[
+      "1886.1903"
+    ],
+    "nombre":"Frente Salte\u00f1o",
+    "nombre_corto":"Frente Salte\u00f1o",
+    "orden_absoluto":[
+      6,
+      23
+    ]
+  },
+  {
+    "asistida":"Frente Salte\u00f1o",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121",
+    "color":[
+      "#BF0000",
+      "#000000",
+      "#BF0000"
+    ],
+    "id_candidatura":"1886.1903.2121",
+    "imagenes":[
+      "1886.1903.2121"
+    ],
+    "nombre":"Frente Salte\u00f1o",
+    "nombre_corto":"Frente Salte\u00f1o",
+    "numero":"541",
+    "orden_absoluto":[
+      6,
+      23,
+      137
+    ]
+  },
+  {
+    "asistida":"Memoria y Movilizaci\u00f3n Social",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2104",
+    "color":[
+      "#0000FF",
+      "#EE3224"
+    ],
+    "id_candidatura":"1886.2104",
+    "imagenes":[
+      "1886.2104"
+    ],
+    "nombre":"Memoria y Movilizacion Social",
+    "nombre_corto":"Memor.Y Movil.Social",
+    "orden_absoluto":[
+      6,
+      35
+    ]
+  },
+  {
+    "asistida":"Memoria y Movilizaci\u00f3n Social",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105",
+    "color":[
+      "#0000FF",
+      "#EE3224"
+    ],
+    "id_candidatura":"1886.2104.2105",
+    "imagenes":[
+      "1886.2104.2105"
+    ],
+    "nombre":"Memoria y Movilizacion Social",
+    "nombre_corto":"Memor.Y Movil.Social",
+    "numero":"200",
+    "orden_absoluto":[
+      6,
+      35,
+      3
+    ]
+  },
+  {
+    "asistida":"Unidos por El Tala",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2266",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2266",
+    "imagenes":[
+      "1886.2266"
+    ],
+    "nombre":"Unidos por El Tala",
+    "nombre_corto":"Unidos por El Tala",
+    "orden_absoluto":[
+      6,
+      64
+    ]
+  },
+  {
+    "asistida":"Unidos por El Tala",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2266",
+    "codigo":"1886.2266.2267",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2266.2267",
+    "imagenes":[
+      "1886.2266.2267"
+    ],
+    "nombre":"Unidos por El Tala",
+    "nombre_corto":"Unidos por El Tala",
+    "numero":"915",
+    "orden_absoluto":[
+      6,
+      64,
+      244
+    ]
+  },
+  {
+    "asistida":"Frente Ciudadano para la Victoria",
+    "clase":"Alianza",
+    "codigo":"1888",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888",
+    "imagenes":[
+      "1888"
+    ],
+    "nombre":"Fte. Ciudadano para la Victoria",
+    "nombre_corto":"Fte.Ciud.P\/Victoria",
+    "orden_absoluto":[
+      3
+    ]
+  },
+  {
+    "asistida":"Partido de la Victoria",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.2378",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378",
+    "imagenes":[
+      "1888.2378"
+    ],
+    "nombre":"Partido de la Victoria",
+    "nombre_corto":"Part. de la Victoria",
+    "orden_absoluto":[
+      3,
+      45
+    ]
+  },
+  {
+    "asistida":"Unidad para la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2379",
+    "imagenes":[
+      "1888.2378.2379"
+    ],
+    "nombre":"Unidad para la Victoria",
+    "nombre_corto":"Unidad P\/La Victoria",
+    "numero":"651",
+    "orden_absoluto":[
+      3,
+      45,
+      150
+    ]
+  }
+]

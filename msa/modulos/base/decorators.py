@@ -15,3 +15,8 @@ def semaforo(func):
             rampa_corriendo = False
     return _inner
 
+def si_tiene_conexion(func):
+    def _inner(self, *args, **kwargs):
+        if self.tiene_conexion:
+            return func(self, *args, **kwargs)
+    return _inner

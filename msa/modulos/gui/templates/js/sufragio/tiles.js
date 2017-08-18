@@ -45,7 +45,7 @@ var pantallas = [
   },
   {"id": "pantalla_partidos_categoria",
    "context_tiles": ["barra_opciones", "voto_blanco",
-                     "alto_contraste", "categoria_votada"]
+                     "alto_contraste", "categoria_votada", "btn_regresar"]
   },
   {"id": "pantalla_partidos_completa",
    "context_tiles": ["barra_opciones", "voto_blanco",
@@ -68,6 +68,10 @@ var contexto = [
   {"id": "voto_blanco",
    "container": "#contenedor_opciones",
    "template": "voto_blanco"
+  },
+  {"id": "agrupaciones_municipales",
+   "container": "#contenedor_opciones",
+   "template": "btn_agrupaciones_municipales"
   },
   {"id": "confirmar_seleccion",
    "container": "#contenedor_opciones",

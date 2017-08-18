@@ -5,6 +5,7 @@ from __future__ import print_function
 try:
     import colorama
 except ImportError:
+    colorama = None
     pass
 import os
 import sys
@@ -50,23 +51,25 @@ def debug_armve(self, msg, *args, **kwargs):
     """
     try:
         if self.isEnabledFor(DEBUG):
-            stream = args[0].split(" ")
-            data = colorama.Fore.WHITE + stream[0] + " "
-            data += colorama.Fore.YELLOW + " ".join(stream[1:4]) + " "
-            data += colorama.Fore.GREEN + stream[4] + " "
-            data += colorama.Fore.BLUE + " ".join(stream[5:7]) + " "
-            resto = stream[7:]
-            nuevo_resto = []
-            prox_cambio = 0
-            for i, elem in enumerate(resto):
-                if elem == "e0" and resto[i+1] == "04":
-                    color = colorama.Fore.RED
-                    prox_cambio = i + 8
-                elif prox_cambio == i:
-                    color = colorama.Fore.MAGENTA
-                nuevo_resto.append(color+elem)
-
-            data += " ".join(nuevo_resto)
+            if colorama:
+                stream = args[0].split(" ")
+                data = colorama.Fore.WHITE + stream[0] + " "
+                data += colorama.Fore.YELLOW + " ".join(stream[1:4]) + " "
+                data += colorama.Fore.GREEN + stream[4] + " "
+                data += colorama.Fore.BLUE + " ".join(stream[5:7]) + " "
+                resto = stream[7:]
+                nuevo_resto = []
+                prox_cambio = 0
+                for i, elem in enumerate(resto):
+                    if elem == "e0" and resto[i+1] == "04":
+                        color = colorama.Fore.RED
+                        prox_cambio = i + 8
+                    elif prox_cambio == i:
+                        color = colorama.Fore.MAGENTA
+                    nuevo_resto.append(color+elem)
+                data += " ".join(nuevo_resto)
+            else:
+                data = args[0]
 
             self._log(DEBUG, msg, (data, ), **kwargs)
     except KeyboardInterrupt:
@@ -99,28 +102,34 @@ def get_logger(name):
 def add_socket_handler(logger):
     handler = SocketHandler(LOGGING_SERVER_HOST,
                             DEFAULT_TCP_LOGGING_PORT)
-    logger.addHandler(handler)
+    if DEFAULT_LOG_LEVEL == DEBUG:
+        logger.addHandler(handler)
 
 
 def add_file_handler(logger):
+    formatter = Formatter(
+        "[%(asctime)s] %(name)s %(funcName)s():%(lineno)d\t%(message)s")
+    formatter.default_time_format = '%S'
     try:
-        log_file = LOG_NAME % logger.name.lower()
-        if not os.path.exists(log_file):
-            try:
-                open(log_file, 'w').close()
-            except IOError:
-                pass
-        handler = RotatingFileHandler(log_file,
-                                      maxBytes=FILELOG_SIZE,
-                                      backupCount=FILELOG_ROTATION)
-        logger.addHandler(handler)
+        if DEFAULT_LOG_LEVEL == DEBUG:
+            log_file = LOG_NAME % logger.name.lower()
+            if not os.path.exists(log_file):
+                try:
+                    open(log_file, 'w').close()
+                except IOError:
+                    pass
+            handler = RotatingFileHandler(log_file,
+                                          maxBytes=FILELOG_SIZE,
+                                          backupCount=FILELOG_ROTATION)
+            handler.setFormatter(formatter)
+            logger.addHandler(handler)
     except IOError:
         print(("La ubicacion %s no existe" % log_file))
 
 
 def add_stdout_handler(logger):
     formatter = Formatter(
-        "[%(asctime)s] %(name)s %(funcName)s():%(lineno)d\t%(message)s")
+        "[%(asctime)s.%(msecs)d] %(name)s %(funcName)s():%(lineno)d\t%(message)s")
     try:
         # Si está instalado rainbow_logging_handler (coloriza el output
         # de consola) lo usamos, sino defaulteamos al módulo logging
@@ -139,7 +148,8 @@ def add_raven_logger(logger, raven_url):
     from raven.base import Client
     from raven.handlers.logging import SentryHandler
 
-    client = Client(raven_url, auto_log_stacks=True)
-    handler = SentryHandler(client)
-    logger.addHandler(handler)
+    if DEFAULT_LOG_LEVEL == DEBUG:
+        client = Client(raven_url, auto_log_stacks=True)
+        handler = SentryHandler(client)
+        logger.addHandler(handler)
 

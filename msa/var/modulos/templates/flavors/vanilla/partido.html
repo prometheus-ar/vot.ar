@@ -1,0 +1,14 @@
+<div id="{{id_boton}}" class="candidato candidato-lista-completa partido {{extra_classes}}">
+    <div class="foto-partido">
+        {{imagen_candidatura partido.imagenes.[0]}}
+    </div>
+    <div class="nombre-partido">
+        {{partido.nombre}}
+    </div>
+    {{#imagenes_candidatos}}
+    <div class="foto-candidato">
+        {{imagen_candidatura . }}
+    </div>
+    {{/imagenes_candidatos}}
+    <div class="clear"></div>
+</div>

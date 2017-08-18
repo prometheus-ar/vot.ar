@@ -9,7 +9,6 @@ Maneja 3 pantallas distintas:
 """
 from gi.repository.GObject import idle_add, timeout_add
 from msa.core.documentos.actas import Apertura, Recuento
-from msa.core.rfid.constants import TAG_APERTURA
 from msa.modulos import get_sesion
 from msa.modulos.base.modulo import ModuloBase
 from msa.modulos.constants import (E_CARGA, E_CONFIGURADA, E_INGRESO_ACTA,
@@ -90,75 +89,60 @@ class Modulo(ModuloBase):
         """Funcion llamada desde el controlador."""
         self.controlador.send_constants()
 
-    def abrir_mesa(self, datos_tag):
-        """Abre la mesa."""
-        apertura = Apertura.desde_tag(datos_tag)
-        apertura.mesa = self.sesion.mesa
-        self._validar_configuracion(mesa=apertura.mesa, pin=None,
-                                    con_acta_apertura=True,
-                                    datos_tag=datos_tag)
-
-    def _validar_configuracion(self, mesa=None, pin=None,
-                               con_acta_apertura=False, datos_tag=''):
-        """ Recibe el numero de mesa y el pin de la pantalla de configuración y
-            verifica que sea correcto.
-            Si es *con_acta_apertura* se carga la mesa automaticamente y con
-            datos tag carga los datos del presidente
-            Si es correcto configura la mesa para dejarla operativa y pasa al
-            menú de administración, en otro caso presenta la pantalla
-            principal.
-        """
+    def _abrir_mesa(self, mesa):
+        """ Abre la mesa. """
         if mesa is not None:
             self._mesa = mesa
-            # Le seteo el atributo abierta si la configuracion de la mesa fue
+            # Le seteo el atributo abierta si la configuración de la mesa fue
             # con el acta de apertura
-            self._configurar_mesa()
-            if con_acta_apertura:
-                apertura = Apertura.desde_tag(datos_tag)
-                self.sesion.apertura = apertura
+            self.sesion.mesa = mesa
+            # establezco el estado del modulo como "configurada"
             self.estado = E_CONFIGURADA
-            realizar_apertura = self.config("realizar_apertura")
-            self.ret_code = SUBMODULO_DATOS_APERTURA if realizar_apertura \
-                else MODULO_MENU
-            if self.rampa.tiene_papel:
-                self.rampa.expulsar_boleta()
+            # si es una elección que usa apertura vamos al modulo, sino
+            # directamente mostramos el menú
+            if self.config("realizar_apertura"):
+                self.ret_code = SUBMODULO_DATOS_APERTURA
+            else:
+                self.ret_code = MODULO_MENU
+            # expulsamos la boleta y salimos
+            self.rampa.expulsar_boleta()
             idle_add(self.quit)
         else:
+            # si la mesa no es válida volvemos al estado inicial y mostramos
+            # pin incorrecto
             self.estado = E_INICIAL
+            self.ventana.remove(self.ventana.children()[0])
             self._cargar_ui_web()
             self.ventana.show_all()
             self._pantalla_principal()
             self.controlador.msg_mesaypin_incorrecto()
 
-    def _configurar_mesa(self):
-        """Configura la ubicacion actual del modulo."""
-        self.sesion.mesa = self._mesa
-
     def salir(self):
         self.salir_a_menu()
 
-    def procesar_tag_apertura(self, tag_dict):
+    def procesar_tag_apertura(self, tag):
         """Procesa el tag que se apoya en el lector."""
-        read_only = tag_dict.get("read_only")
-        if tag_dict['datos'] == b'' and not read_only:
-            if self.controlador.estado == E_INGRESO_ACTA and \
-                    self.rampa.tiene_papel:
-                self.apertura = None
-                self.sesion.apertura = None
+        if tag.vacio and not tag.read_only:
+            if self.controlador.estado == E_INGRESO_ACTA:
+                if self.rampa.tiene_papel:
+                    self.apertura = None
+                    self.sesion.apertura = None
 
-                con_datos = self.config("con_datos_personales")
-                if con_datos:
-                    self.cargar_datos()
+                    con_datos = self.config("con_datos_personales")
+                    if con_datos:
+                        self.cargar_datos()
+                    else:
+                        self.crear_apertura()
                 else:
-                    self.crear_objeto([], None)
+                    self.controlador.set_mensaje(_("apoyo_acta"))
 
-        elif tag_dict['tipo'] != TAG_APERTURA:
+        elif not tag.es_apertura():
             self.controlador.set_mensaje(_("acta_contiene_informacion"))
 
             def _expulsar():
                 self.controlador.set_mensaje(self.controlador.MSG_APERTURA)
-                self.sesion.impresora.expulsar_boleta()
-            timeout_add(1500, _expulsar)
+                self.rampa.expulsar_boleta()
+            timeout_add(2500, _expulsar)
 
     def mensaje_inicial(self):
         """Muestra el mensaje_inicial, borra la apertura de la sesion."""
@@ -188,9 +172,9 @@ class Modulo(ModuloBase):
         self.controlador.set_pantalla({"hora": hora,
                                       "autoridades": autoridades})
 
-    def cargar_apertura(self, tag_dict):
+    def cargar_apertura(self, tag):
         """Carga los datos de la apertura en el menu cuando se apoya."""
-        apertura = Apertura.desde_tag(tag_dict['datos'])
+        apertura = Apertura.desde_tag(tag.datos)
         estado = self.controlador.estado
         mesa = self.sesion.mesa
         if estado != E_INGRESO_DATOS or (estado == E_INGRESO_DATOS and
@@ -204,11 +188,13 @@ class Modulo(ModuloBase):
         self.controlador.estado = E_INGRESO_ACTA
         self.controlador._inicializa_pantalla()
 
-    def crear_objeto(self, autoridades, hora):
+    def crear_apertura(self, autoridades=None, hora=None):
         """
         Recibe un instancia de Presidente de Mesa y del suplente con los datos
         que cargo el usuario.
         """
+        if autoridades is None:
+            autoridades = []
         self.sesion._tmp_apertura = Apertura(self.sesion.mesa, autoridades,
                                              hora)
 
@@ -218,11 +204,12 @@ class Modulo(ModuloBase):
         self.ret_code = MODULO_APERTURA
         self.quit()
 
-    def _configurar_mesa_apertura(self, datos_tag):
+    def configurar_desde_apertura(self, tag):
         """
         Configura la mesa con los datos que contiene el tag.
         """
-        apertura = Apertura.desde_tag(datos_tag)
+        # traemos el objeto apertura desde los datos del tag
+        apertura = Apertura.desde_tag(tag.datos)
 
         def _salir():
             """Estamblece la apertura y la mesa en la sesion y sale al menu."""
@@ -231,10 +218,13 @@ class Modulo(ModuloBase):
             self.rampa.desregistrar_eventos()
             self.salir_a_menu()
 
+        # si la apertura es válida y el número de la mesa que estamos abriendo
+        # coincide con el número de la mesa de la apertura apoyada abrimos la
+        # mesa en caso contrario mostramos un mensaje de error
         if apertura.mesa is not None:
             if apertura.mesa.numero == self.sesion.mesa.numero:
-                self.sesion.impresora.expulsar_boleta()
-                self.sesion.impresora.consultar_tarjeta(
+                self.rampa.expulsar_boleta()
+                self.rampa.consultar_tarjeta(
                     lambda x: timeout_add(500, _salir))
             else:
                 self.controlador.set_mensaje(_("acta_mesa_erronea"))
@@ -248,8 +238,7 @@ class Modulo(ModuloBase):
             self.pantalla.destroy()
         if self.browser is not None:
             self.ventana.remove(self.browser)
-        if self.sesion.lector is not None:
-            self.sesion.lector.remover_consultar_lector()
+        self.rampa.remover_consultar_lector()
         self.ret_code = MODULO_MENU
         self.quit()
 
@@ -264,7 +253,7 @@ class Modulo(ModuloBase):
 
     def cargar_recuento_copias(self, datos_tag):
         """Carga el modulo recuento en modo de copia de actas"""
-        recuento = Recuento.desde_tag(datos_tag['datos'])
+        recuento = Recuento.desde_tag(datos_tag.datos)
         recuento.reimpresion = True
         self.sesion.recuento = recuento
         self.ret_code = MODULO_RECUENTO

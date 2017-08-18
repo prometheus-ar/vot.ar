@@ -1,4 +1,4 @@
-var constants = {}
+var constants = null;
 
 get_url = get_url_function("voto");
 
@@ -14,6 +14,7 @@ function set_constants(data){
 }
 
 function load_ready_msg(){
+    registrar_helper_i18n();
     send("document_ready");
 }
 

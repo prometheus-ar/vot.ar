@@ -1,0 +1,11 @@
+chirimbolos_en_pin: true
+con_datos_personales: true
+flavor: vanilla
+login_desde_inicio: false
+realizar_apertura: true
+teclado_usa_tildes: false
+usar_asistida: true
+usar_capacitacion: true
+usar_mantenimiento: true
+usar_sufragio: true
+usar_totalizador: false

@@ -1,0 +1,9 @@
+    <div class="candidato-secundario">
+      {{categoria.nombre}}: 
+      {{candidato.nombre}}{{#if candidato.secundarios}}; {{/if}}
+      {{#candidato.secundarios}}
+          <span>
+              {{this}}{{#unless @last}};{{/unless}}
+          </span>
+      {{/candidato.secundarios}}
+    </div>

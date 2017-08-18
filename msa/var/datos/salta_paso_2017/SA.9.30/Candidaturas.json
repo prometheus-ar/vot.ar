@@ -1,0 +1,399 @@
+[
+  {
+    "asistida":"Pocl\u00e1va, Roberto",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1890.2021",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2021.139347",
+    "id_candidatura":"1886.1890.2021.139347",
+    "id_umv":1062,
+    "imagenes":[
+      "1886.1890.2021.139347"
+    ],
+    "nombre":"Poclava, Roberto",
+    "orden_absoluto":[
+      6,
+      51,
+      40,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Maman\u00ed, Ivan, Lindor",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2021",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2021.139349",
+    "id_candidatura":"1886.1890.2021.139349",
+    "id_umv":219,
+    "imagenes":[
+      "1886.1890.2021.139349"
+    ],
+    "nombre":"Mamani, Ivan Lindor",
+    "orden_absoluto":[
+      6,
+      51,
+      40,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Gallardo, Elba Norma",
+      "Tolava, Reynaldo Deciderio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Maman\u00ed, Miguel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1935.2152",
+    "cod_partido":"1886.1935",
+    "codigo":"1886.1935.2152.152334",
+    "id_candidatura":"1886.1935.2152.152334",
+    "id_umv":457,
+    "imagenes":[
+      "1886.1935.2152.152334"
+    ],
+    "nombre":"Mamani, Miguel",
+    "orden_absoluto":[
+      6,
+      22,
+      134,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Diaz, Geronima",
+      "Diaz, Celso Ivan"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guari, N\u00e9stor David",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.141092",
+    "id_candidatura":"1886.2104.2105.141092",
+    "id_umv":478,
+    "imagenes":[
+      "1886.2104.2105.141092"
+    ],
+    "nombre":"Guari, Nestor David",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Mamani, Ana Joaquina",
+      "Ba\u00f1os, Fortunato"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Vargas, Ricardo Germ\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"DIP",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.153322",
+    "id_candidatura":"1888.1934.2440.153322",
+    "id_umv":1117,
+    "imagenes":[
+      "1888.1934.2440.153322"
+    ],
+    "nombre":"Vargas, Ricardo German",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Canchi, Teobaldo Antonio",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"DIP",
+    "cod_lista":"1888.1934.2460",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2460.153257",
+    "id_candidatura":"1888.1934.2460.153257",
+    "id_umv":1122,
+    "imagenes":[
+      "1888.1934.2460.153257"
+    ],
+    "nombre":"Canchi, Teobaldo Antonio",
+    "orden_absoluto":[
+      3,
+      24,
+      148,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Herrera, Bonifacio Cornelio",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2117.2118",
+    "cod_partido":"1888.2117",
+    "codigo":"1888.2117.2118.141994",
+    "id_candidatura":"1888.2117.2118.141994",
+    "id_umv":668,
+    "imagenes":[
+      "1888.2117.2118.141994"
+    ],
+    "nombre":"Herrera, Bonifacio Cornelio",
+    "orden_absoluto":[
+      3,
+      49,
+      166,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Sanchez, Gabriela Rocio",
+      "Herrera, Cesar Alberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Yugr\u00e1, Elba",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.148994",
+    "id_candidatura":"1888.2378.2379.148994",
+    "id_umv":706,
+    "imagenes":[
+      "1888.2378.2379.148994"
+    ],
+    "nombre":"Yugra, Elba",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Condori, Francisco Javier",
+      "Gutierrez, Emilse Maribel"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Condor\u00ed, Alberto",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2448",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2448.149130",
+    "id_candidatura":"1888.2378.2448.149130",
+    "id_umv":734,
+    "imagenes":[
+      "1888.2378.2448.149130"
+    ],
+    "nombre":"Condori, Alberto",
+    "orden_absoluto":[
+      3,
+      45,
+      156,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cruz, Teresa Gladis",
+      "Chambe, Juan Mateo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Mamani, D\u00e1masio Sinforiano",
+    "clase":"Candidato",
+    "cod_alianza":"2221",
+    "cod_categoria":"CNJ",
+    "cod_lista":"2221.2221.2222",
+    "cod_partido":"2221.2221",
+    "codigo":"2221.2221.2222.156316",
+    "id_candidatura":"2221.2221.2222.156316",
+    "id_umv":845,
+    "imagenes":[
+      "2221.2221.2222.156316"
+    ],
+    "nombre":"Mamani, Damacio Sinforiano",
+    "orden_absoluto":[
+      10,
+      37,
+      243,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Ba\u00f1os, Griselda Monica",
+      "Cabana, Margarito Celestino"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":914,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1166,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":974,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1177,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1034,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1188,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

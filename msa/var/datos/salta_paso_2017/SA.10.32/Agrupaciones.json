@@ -1,0 +1,183 @@
+[
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Alianza",
+    "codigo":"1885",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885",
+    "imagenes":[
+      "1885"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1926",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926",
+    "imagenes":[
+      "1885.1926"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "orden_absoluto":[
+      15,
+      61
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926.2372",
+    "imagenes":[
+      "1885.1926.2372"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "numero":"781",
+    "orden_absoluto":[
+      15,
+      61,
+      203
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1890",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890",
+    "imagenes":[
+      "1886.1890"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"Part.Justicialista",
+    "orden_absoluto":[
+      6,
+      51
+    ]
+  },
+  {
+    "asistida":"Progreso Victore\u00f1o",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2058",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2058",
+    "imagenes":[
+      "1886.1890.2058"
+    ],
+    "nombre":"Progreso Victore\u00f1o",
+    "nombre_corto":"Progreso Victore\u00f1o",
+    "numero":"282",
+    "orden_absoluto":[
+      6,
+      51,
+      85
+    ]
+  },
+  {
+    "asistida":"Frente Ciudadano para la Victoria",
+    "clase":"Alianza",
+    "codigo":"1888",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888",
+    "imagenes":[
+      "1888"
+    ],
+    "nombre":"Fte. Ciudadano para la Victoria",
+    "nombre_corto":"Fte.Ciud.P\/Victoria",
+    "orden_absoluto":[
+      3
+    ]
+  },
+  {
+    "asistida":"Partido de la Victoria",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.2378",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378",
+    "imagenes":[
+      "1888.2378"
+    ],
+    "nombre":"Partido de la Victoria",
+    "nombre_corto":"Part. de la Victoria",
+    "orden_absoluto":[
+      3,
+      45
+    ]
+  },
+  {
+    "asistida":"Unidad para la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2379",
+    "imagenes":[
+      "1888.2378.2379"
+    ],
+    "nombre":"Unidad para la Victoria",
+    "nombre_corto":"Unidad P\/La Victoria",
+    "numero":"651",
+    "orden_absoluto":[
+      3,
+      45,
+      150
+    ]
+  }
+]

@@ -6,6 +6,7 @@ function click_alto_contraste(){
 }
 
 function bindear_botones(){
+    /* Bindea los botones de la interfaz. */
     desbindear_botones();
     aceptar_clicks = true;
     $("#accesibilidad").on("click", "#btn_regresar", get_next_modo);
@@ -17,6 +18,7 @@ function bindear_botones(){
 }
 
 function desbindear_botones(){
+    /* Desbindea los botones de la interfaz. */
     aceptar_clicks = false;
     $("#accesibilidad").off("click", "#btn_regresar");
     $("#opciones_idioma").off("click", ".opcion-idioma");
@@ -27,6 +29,7 @@ function desbindear_botones(){
 }
 
 function click_opcion(evento){
+    /* Callback que se ejecuta cuando se hace click en una opcion. */
     if(aceptar_clicks && _votando){
         var callback = null;
         var boton = $(this);
@@ -130,6 +133,9 @@ function click_candidato(evento){
 }
 
 function click_confirmar_seleccion(){
+    /* Callback de hacer click en el boton de confirmar seleccion cuando en una
+     * categoría se elije mas de una opcion.
+     */
     var candidatos_seleccionados = [];
     $(".candidato-persona.seleccionado").each(function(){
         var parts = $(this).attr("id").split("_");
@@ -155,6 +161,15 @@ function click_lista(evento){
     $(evento.currentTarget).addClass("seleccionado");
     _lista_seleccionada = codigo;
     seleccionar_lista(codigo);
+}
+
+function click_agrupaciones_municipales(evento){
+    /*
+     * Callback que se ejecuta cuando se hace click en el boton de listas municipales.
+     */
+    $(".candidato-lista-completa.seleccionado,#voto_blanco").removeClass("seleccionado");
+    $(evento.currentTarget).addClass("seleccionado");
+    seleccionar_lista(null);
 }
 
 function click_consulta_popular(evento){
@@ -225,10 +240,11 @@ function click_si(){
     $("#si_confirmar_voto").addClass("seleccionado");
     $("#img_previsualizacion").html("");
     window.setTimeout(sonido_tecla, 50);
-    window.setTimeout(agradecimiento, 50);
     setTimeout(function() {
         $("#si_confirmar_voto").removeClass("seleccionado");
+        setTimeout(agradecimiento, 50);
     }, 120);
+
 }
 
 function click_no(){
@@ -260,6 +276,7 @@ function click_candidato_seleccionado(evento){
 }
 
 function click_salir(boton){
+    /* Callback de click del boton de Salir. */
     var parts = boton.id.split("_");
     send("salir_a_modulo", parts[2]);
 }

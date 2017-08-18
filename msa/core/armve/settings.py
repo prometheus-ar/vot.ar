@@ -6,8 +6,6 @@ SERIAL_TIMEOUT = 0.2
 AUTOFEED_1_MOVE = -128
 AUTOFEED_2_MOVE = 8
 
-# Escribe el contenido del acta en dos tags en caso de que no entren
-FALLBACK_2K = False
 # Rellena todos los bytes que no se escriben en el chip con "\x00" y pisa
 # cualquier cosa que hubiera en su lugar
 ESCRIBIR_TODOS_BLOQUES = True

@@ -1,10 +1,14 @@
 <div id="pantalla_mesaypin" class="ingreso">
     <div class="mesaypin">
         <label id="_txt_ingrese_numero_mesa"></label>
-        <input type="text" name="nro_mesa" {{#af_mesa}}autofocus{{/af_mesa}} pattern="{{pattern_mesa}}"
-        value="{{mesa}}" data-keyboard="num" />
+        <input type="text" class="nro_mesa" name="nro_mesa" {{#af_mesa}}autofocus{{/af_mesa}} pattern="{{pattern_mesa}}"
+        value="{{mesa}}" data-keyboard="qwerty" />
         <label id="_txt_ingrese_numero_pin"></label>
-        <input type="text" name="nro_pin" {{#af_pin}}autofocus{{/af_pin}} pattern="{{pattern_pin}}" data-keyboard="{{tipo_teclado_pin}}" />
+        <input type="text" class="nro_pin" name="nro_pin_1" {{#af_pin}}autofocus{{/af_pin}} pattern="{{pattern_pin}}" maxlength=3 data-keyboard="qwerty" />
+        <span class="guion">-</span>
+        <input type="text" class="nro_pin" maxlength=3 name="nro_pin_2" pattern="{{pattern_pin}}" data-keyboard="qwerty" />
+        <span class="guion">-</span>
+        <input type="text" class="nro_pin" maxlength=3 name="nro_pin_3" pattern="{{pattern_pin}}" data-keyboard="qwerty" />
         <div class="clear"></div>
     </div>
     {{#if mostrar_tooltip}}

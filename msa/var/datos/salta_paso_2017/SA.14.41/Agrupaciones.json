@@ -1,0 +1,301 @@
+[
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Alianza",
+    "codigo":"1885",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885",
+    "imagenes":[
+      "1885"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15
+    ]
+  },
+  {
+    "asistida":"Partido F\u00e9",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1895",
+    "color":[
+      "#00BF00",
+      "#007FFF",
+      "#FF7F00"
+    ],
+    "id_candidatura":"1885.1895",
+    "imagenes":[
+      "1885.1895"
+    ],
+    "nombre":"Partido Fe",
+    "nombre_corto":"Partido Fe",
+    "orden_absoluto":[
+      15,
+      47
+    ]
+  },
+  {
+    "asistida":"Partido Fe",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1895",
+    "codigo":"1885.1895.2213",
+    "color":[
+      "#00BF00",
+      "#007FFF",
+      "#FF7F00"
+    ],
+    "id_candidatura":"1885.1895.2213",
+    "imagenes":[
+      "1885.1895.2213"
+    ],
+    "nombre":"Partido Fe",
+    "nombre_corto":"Partido Fe",
+    "numero":"731",
+    "orden_absoluto":[
+      15,
+      47,
+      186
+    ]
+  },
+  {
+    "asistida":"Partido de la Cultura, la Educacion y El Trabajo",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1911",
+    "color":[
+      "#FFFF00",
+      "#56AAFF"
+    ],
+    "id_candidatura":"1885.1911",
+    "imagenes":[
+      "1885.1911"
+    ],
+    "nombre":"P. Cultura, Educacion y Trabajo",
+    "nombre_corto":"Cult.Educ. y Trabajo",
+    "orden_absoluto":[
+      15,
+      43
+    ]
+  },
+  {
+    "asistida":"Juntos con Fe",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1911",
+    "codigo":"1885.1911.2527",
+    "color":[
+      "#FFFF00",
+      "#56AAFF"
+    ],
+    "id_candidatura":"1885.1911.2527",
+    "imagenes":[
+      "1885.1911.2527"
+    ],
+    "nombre":"Juntos con Fe",
+    "nombre_corto":"Juntos con Fe",
+    "numero":"725",
+    "orden_absoluto":[
+      15,
+      43,
+      185
+    ]
+  },
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.2215",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885.2215",
+    "imagenes":[
+      "1885.2215"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15,
+      63
+    ]
+  },
+  {
+    "asistida":"Un Cambio - Salta",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2216",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885.2215.2216",
+    "imagenes":[
+      "1885.2215.2216"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "numero":"704",
+    "orden_absoluto":[
+      15,
+      63,
+      173
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1890",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890",
+    "imagenes":[
+      "1886.1890"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"Part.Justicialista",
+    "orden_absoluto":[
+      6,
+      51
+    ]
+  },
+  {
+    "asistida":"Compromiso Guachipe\u00f1o",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2020",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2020",
+    "imagenes":[
+      "1886.1890.2020"
+    ],
+    "nombre":"Compromiso Guachipe\u00f1o",
+    "nombre_corto":"Comprom.Guachipe\u00f1o",
+    "numero":"235",
+    "orden_absoluto":[
+      6,
+      51,
+      38
+    ]
+  },
+  {
+    "asistida":"Gestion y Trabajo para Guachipas",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2059",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2059",
+    "imagenes":[
+      "1886.1890.2059"
+    ],
+    "nombre":"Gestion y Trabajo para Guachipas",
+    "nombre_corto":"Gest.Trab.P\/Guachip.",
+    "numero":"236",
+    "orden_absoluto":[
+      6,
+      51,
+      39
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1891",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891",
+    "imagenes":[
+      "1886.1891"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6,
+      27
+    ]
+  },
+  {
+    "asistida":"Compromiso Guachipe\u00f1o",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2157",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2157",
+    "imagenes":[
+      "1886.1891.2157"
+    ],
+    "nombre":"Compromiso Guachipe\u00f1o",
+    "nombre_corto":"Comprom.Guachipe\u00f1o",
+    "numero":"513",
+    "orden_absoluto":[
+      6,
+      27,
+      117
+    ]
+  },
+  {
+    "asistida":"Gesti\u00f3n y Trabajo para Guachipas",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2158",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2158",
+    "imagenes":[
+      "1886.1891.2158"
+    ],
+    "nombre":"Gestion y Trabajo para Guachipas",
+    "nombre_corto":"Gest.Trab.P\/Guachip.",
+    "numero":"514",
+    "orden_absoluto":[
+      6,
+      27,
+      118
+    ]
+  }
+]

@@ -1,0 +1,42 @@
+{% include "boletas/xmlversion.tmpl" %}
+{% include "boletas/doctype.tmpl" %}
+<svg version="1.1"
+     baseProfile="full"
+     width="{{width}}" height="{{height}}"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="font-size:21px;font-weight:bold;font-family: nimbus mono L;">
+    {% include "boletas/fondo.tmpl" %}
+    {% for sec in secciones %}
+        {% set margen_bloque = 0 %}
+        {% set margen_texto = margen_bloque + 10 %}
+        {% set ancho_texto = sec.ancho_texto %}
+        {% set margen_der = margen_bloque + ancho_texto - 5%}
+        {% set alto_box = sec.height - 5 %}
+        {% set posicion_lista = margen_der - 45 %}
+
+        {% include sec.template %}
+    {% endfor %}
+
+    {% if verificador %}
+        {% include "boletas/verificador.tmpl" %}
+    {% endif %}
+    {% if escudo %}
+        {% include "boletas/escudo.tmpl" %}
+    {% endif %}
+    {% if titulo%}
+        <text x="{{titulo.0}}" y="{{titulo.1}}" width="{{titulo.4}}" style="font-size:{{titulo.3}}px;">{{titulo.2}}</text> 
+    {% endif %}
+    {% if subtitulo %}
+        <text x="{{subtitulo.0}}" y="{{subtitulo.1}}" width="{{subtitulo.4}}" style="font-size:{{subtitulo.3}}px;">{{subtitulo.2}}</text> 
+    {% endif %}
+    {% for linea in lineas %}
+        <line x1="{{linea.0}}" y1="{{linea.1}}" x2="{{linea.2}}" y2="{{linea.3}}" style="stroke:rgb(0,0,0);stroke-width:{{ancho_linea}}"/>
+    {% endfor %}
+
+    {% for elem in watermark%}
+        {% include "boletas/watermark.tmpl" %}
+    {% endfor %}
+    {% if troquel %}
+        {% include "boletas/troquel.tmpl" %}
+    {% endif %}
+</svg>

@@ -1,0 +1,315 @@
+[
+  {
+    "asistida":"L\u00f3pez, Mar\u00eda Silvia",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1895.2213",
+    "cod_partido":"1885.1895",
+    "codigo":"1885.1895.2213.151234",
+    "id_candidatura":"1885.1895.2213.151234",
+    "id_umv":10,
+    "imagenes":[
+      "1885.1895.2213.151234"
+    ],
+    "nombre":"Lopez, Maria Silvia",
+    "orden_absoluto":[
+      15,
+      47,
+      186,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Benavidez, Federico Adolfo",
+      "Torres, Silveria Patricia"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Tol\u00e1ba V\u00e1zquez, Silvana Gabriela",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1911.2527",
+    "cod_partido":"1885.1911",
+    "codigo":"1885.1911.2527.155104",
+    "id_candidatura":"1885.1911.2527.155104",
+    "id_umv":46,
+    "imagenes":[
+      "1885.1911.2527.155104"
+    ],
+    "nombre":"Tolaba Vazquez, Silvana Gabriela",
+    "orden_absoluto":[
+      15,
+      43,
+      185,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cari, Hector Sebastian",
+      "Flores, Claudia Beatriz"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ibarra, Jos\u00e9 Antonio",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"SEN",
+    "cod_lista":"1885.2215.2216",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2216.148845",
+    "id_candidatura":"1885.2215.2216.148845",
+    "id_umv":1203,
+    "imagenes":[
+      "1885.2215.2216.148845"
+    ],
+    "nombre":"Ibarra, Jose Antonio",
+    "orden_absoluto":[
+      15,
+      63,
+      173,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Benavidez, Miguel \"Pato Ramos\"",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2020",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2020.139523",
+    "id_candidatura":"1886.1890.2020.139523",
+    "id_umv":218,
+    "imagenes":[
+      "1886.1890.2020.139523"
+    ],
+    "nombre":"Benavidez, Miguel \"Pato Ramos\"",
+    "orden_absoluto":[
+      6,
+      51,
+      38,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cruz, Leonor del Valle",
+      "Oropeza, Walter Raul"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Qipild\u00f3r, Omar Gerardo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2059",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2059.139943",
+    "id_candidatura":"1886.1890.2059.139943",
+    "id_umv":269,
+    "imagenes":[
+      "1886.1890.2059.139943"
+    ],
+    "nombre":"Quipildor, Omar Gerardo",
+    "orden_absoluto":[
+      6,
+      51,
+      39,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Rodriguez, Ofelia Milagro",
+      "Aguirre, Hector Raul"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guanca, Ernesto \"Sapito\"",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.1891.2157",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2157.139686",
+    "id_candidatura":"1886.1891.2157.139686",
+    "id_umv":1228,
+    "imagenes":[
+      "1886.1891.2157.139686"
+    ],
+    "nombre":"Guanca, Ernesto \"Sapito\"",
+    "orden_absoluto":[
+      6,
+      27,
+      117,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Vidal, Ricardo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.1891.2158",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2158.139949",
+    "id_candidatura":"1886.1891.2158.139949",
+    "id_umv":1229,
+    "imagenes":[
+      "1886.1891.2158.139949"
+    ],
+    "nombre":"Vidal, Ricardo",
+    "orden_absoluto":[
+      6,
+      27,
+      118,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":867,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1300,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":927,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1312,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":987,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1324,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

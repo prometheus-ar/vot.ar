@@ -1,15 +1,22 @@
-from __future__ import absolute_import
 from functools import wraps
+
 
 callback_map = {}
 
 
-def register_event(device, event):
-    def real_decorator(function):
-        callback_map[(device, event)] = function
+def signal(function):
+    """Decora un metodo para que devuelva una señal."""
+    @wraps(function)
+    def wrapper(self, *args, **kwargs):
+        response = function(self, *args, **kwargs)
+        self.send(self.dumps(["event", function.__name__, response]))
+    return wrapper
 
-        @wraps(function)
-        def wrapper(*args, **kwargs):
-            function(*args, **kwargs)
-        return wrapper
-    return real_decorator
+def method(function):
+    """Decora un metodo para que devuelva una respuesta."""
+    @wraps(function)
+    def wrapper(self, *args, **kwargs):
+        response = function(self, *args, **kwargs)
+        self.send(self.dumps(["response", function.__name__, response]))
+        return response
+    return wrapper

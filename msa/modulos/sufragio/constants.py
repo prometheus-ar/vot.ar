@@ -32,12 +32,11 @@ IDIOMAS_DISPONIBLES = (
 
 
 NUMEROS_TEMPLATES = {
-    "vanilla": [2, 4, 6, 9, 12, 16, 20, 24, 30, 36],
-    "empanada": [2, 3, 4, 6, 9, 12, 16, 21, 24, 30, 36],
-    "soja": [8, ],
-    "milanga": [2, 4, 6, 9, 12, 16],
-    "medialuna": [2, 3, 4]
+    "empanada": [2, 3, 4, 6, 8, 9, 10, 12, 15, 16, 18, 21, 24, 28, 30, 35, 36],
 }
+
+TIEMPO_POST_IMPRESION = 6000
+TIEMPO_VERIFICACION =  5000
 
 TEXTOS = (
     "conformar_voto", "si_confirmar_voto", "no_confirmar_voto",
@@ -51,6 +50,7 @@ TEXTOS = (
     "espere_por_favor", "no_olvide_verificar", "palabra_lista",
     "sus_candidatos", "candidato_no_seleccionado", "verificando_seleccion",
     "cambiar_modo_votacion", "salir_al_menu", "seleccione_accion",
-    "error_grabar_boleta_alerta", "error_grabar_boleta_aclaracion", "si_desea_verificarla_alto_cotraste",
-    "cinta_capacitacion", "cinta_demostracion", "modificar"
+    "error_grabar_boleta_alerta", "error_grabar_boleta_aclaracion",
+    "si_desea_verificarla_alto_cotraste", "cinta_capacitacion",
+    "cinta_demostracion", "modificar", "palabra_no_presenta_candidatos",
 )

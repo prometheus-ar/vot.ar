@@ -1,0 +1,358 @@
+[
+  {
+    "asistida":"R\u00edchard Cobo",
+    "clase":"Candidato",
+    "cod_alianza":"2",
+    "cod_categoria":"INT",
+    "cod_lista":"2.2A.2A",
+    "cod_partido":"2.2A",
+    "codigo":"2.2A.2A.9",
+    "id_candidatura":"2.2A.2A.9",
+    "id_umv":1,
+    "imagenes":[
+      "2.2A.2A.9"
+    ],
+    "nombre":"Richard Cobo",
+    "orden_absoluto":[
+      1,
+      3,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Flor Destefanis",
+    "clase":"Candidato",
+    "cod_alianza":"2",
+    "cod_categoria":"INT",
+    "cod_lista":"2.2B.2B",
+    "cod_partido":"2.2B",
+    "codigo":"2.2B.2B.6",
+    "id_candidatura":"2.2B.2B.6",
+    "id_umv":2,
+    "imagenes":[
+      "2.2B.2B.6"
+    ],
+    "nombre":"Flor Destefanis",
+    "orden_absoluto":[
+      1,
+      4,
+      4,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Gustavo Jofre",
+    "clase":"Candidato",
+    "cod_alianza":"2",
+    "cod_categoria":"INT",
+    "cod_lista":"2.2C.2C",
+    "cod_partido":"2.2C",
+    "codigo":"2.2C.2C.8",
+    "id_candidatura":"2.2C.2C.8",
+    "id_umv":3,
+    "imagenes":[
+      "2.2C.2C.8"
+    ],
+    "nombre":"Gustavo Jofre",
+    "orden_absoluto":[
+      1,
+      5,
+      5,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Gonza S\u00e1nchez",
+    "clase":"Candidato",
+    "cod_alianza":"2",
+    "cod_categoria":"INT",
+    "cod_lista":"2.2D.2D",
+    "cod_partido":"2.2D",
+    "codigo":"2.2D.2D.7",
+    "id_candidatura":"2.2D.2D.7",
+    "id_umv":4,
+    "imagenes":[
+      "2.2D.2D.7"
+    ],
+    "nombre":"Gonza S\u00e1nchez",
+    "orden_absoluto":[
+      1,
+      6,
+      6,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Norma Trigo",
+    "clase":"Candidato",
+    "cod_alianza":"501",
+    "cod_categoria":"INT",
+    "cod_lista":"501.501A.501A",
+    "cod_partido":"501.501A",
+    "codigo":"501.501A.501A.1",
+    "id_candidatura":"501.501A.501A.1",
+    "id_umv":5,
+    "imagenes":[
+      "501.501A.501A.1"
+    ],
+    "nombre":"Norma Trigo",
+    "orden_absoluto":[
+      4,
+      7,
+      7,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Daniel Jofre",
+    "clase":"Candidato",
+    "cod_alianza":"501",
+    "cod_categoria":"INT",
+    "cod_lista":"501.501B.501B",
+    "cod_partido":"501.501B",
+    "codigo":"501.501B.501B.2",
+    "id_candidatura":"501.501B.501B.2",
+    "id_umv":6,
+    "imagenes":[
+      "501.501B.501B.2"
+    ],
+    "nombre":"Daniel Jofre",
+    "orden_absoluto":[
+      4,
+      8,
+      8,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Mirtha Reyes",
+    "clase":"Candidato",
+    "cod_alianza":"501",
+    "cod_categoria":"INT",
+    "cod_lista":"501.501C.501C",
+    "cod_partido":"501.501C",
+    "codigo":"501.501C.501C.3",
+    "id_candidatura":"501.501C.501C.3",
+    "id_umv":7,
+    "imagenes":[
+      "501.501C.501C.3"
+    ],
+    "nombre":"Mirtha Reyes",
+    "orden_absoluto":[
+      4,
+      9,
+      9,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"D\u00e9bora Quiroga",
+    "clase":"Candidato",
+    "cod_alianza":"501",
+    "cod_categoria":"INT",
+    "cod_lista":"501.501D.501D",
+    "cod_partido":"501.501D",
+    "codigo":"501.501D.501D.4",
+    "id_candidatura":"501.501D.501D.4",
+    "id_umv":8,
+    "imagenes":[
+      "501.501D.501D.4"
+    ],
+    "nombre":"D\u00e9bora Quiroga",
+    "orden_absoluto":[
+      4,
+      10,
+      10,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Daniel Carrizo",
+    "clase":"Candidato",
+    "cod_alianza":"71",
+    "cod_categoria":"INT",
+    "cod_lista":"71.71.71",
+    "cod_partido":"71.71",
+    "codigo":"71.71.71.11",
+    "id_candidatura":"71.71.71.11",
+    "id_umv":9,
+    "imagenes":[
+      "71.71.71.11"
+    ],
+    "nombre":"Daniel Carrizo",
+    "orden_absoluto":[
+      3,
+      2,
+      2,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Pablo Sebasti\u00e1n Rosales",
+    "clase":"Candidato",
+    "cod_alianza":"8",
+    "cod_categoria":"INT",
+    "cod_lista":"8.8.8",
+    "cod_partido":"8.8",
+    "codigo":"8.8.8.5",
+    "id_candidatura":"8.8.8.5",
+    "id_umv":10,
+    "imagenes":[
+      "8.8.8.5"
+    ],
+    "nombre":"Pablo Sebasti\u00e1n Rosales",
+    "orden_absoluto":[
+      2,
+      1,
+      1,
+      4,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Voto en BLANCO",
+    "clase":"Blanco",
+    "cod_categoria":"INT",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":11,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en BLANCO",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Votos IMPUGNADOS",
+    "clase":"Especial",
+    "cod_categoria":"INT",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":12,
+    "nombre":"Votos IMPUGNADOS",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":[
+
+    ]
+  },
+  {
+    "asistida":"Votos OBSERVADOS",
+    "clase":"Especial",
+    "cod_categoria":"INT",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":13,
+    "nombre":"Votos OBSERVADOS",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":[
+
+    ]
+  }
+]

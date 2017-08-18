@@ -1,0 +1,146 @@
+[
+  {
+    "asistida":"Ruiz, Pascual Celestino",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.153016",
+    "id_candidatura":"1885.1926.2372.153016",
+    "id_umv":135,
+    "imagenes":[
+      "1885.1926.2372.153016"
+    ],
+    "nombre":"Ruiz, Pascual Celestino",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Anagua, Maria Veronica",
+      "Grimaldo, Santos Gregorio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ruiz, V\u00edctor Rom\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2026",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2026.138189",
+    "id_candidatura":"1886.1890.2026.138189",
+    "id_umv":226,
+    "imagenes":[
+      "1886.1890.2026.138189"
+    ],
+    "nombre":"Ruiz, Victor Roman",
+    "orden_absoluto":[
+      6,
+      51,
+      83,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Fernandez, Keila Zohet",
+      "Acosta, Angel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Acosta, Francisco Osb\u00e1ldo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.140877",
+    "id_candidatura":"1886.2104.2105.140877",
+    "id_umv":475,
+    "imagenes":[
+      "1886.2104.2105.140877"
+    ],
+    "nombre":"Acosta, Francisco Osbaldo",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Maras, Nicolasa",
+      "Acosta, Walter Luis"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":859,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":919,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":979,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

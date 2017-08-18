@@ -1,44 +1,48 @@
-import textwrap
-
 from os.path import join
+from textwrap import wrap
 
-from msa.core.imaging import Imagen
 from msa.core.constants import PATH_IMAGENES_VARS
 from msa.core.data.candidaturas import Categoria
 from msa.core.data.helpers import get_config
-from msa.core.imaging.constants import (DEFAULTS_BLOQUE, MEDIDAS_BOLETA,
-                                        PATH_BLOQUE)
-from msa.settings import MODO_DEMO
+from msa.core.imaging import Imagen
+from msa.core.imaging.constants import (DEFAULTS_BLOQUE,
+                                        DEFAULTS_MOSTRAR_BOLETA,
+                                        MEDIDAS_BOLETA, PATH_BLOQUE)
 
 
 class ImagenBoleta(Imagen):
     """Clase para la imagen de la boleta."""
-    def __init__(self, seleccion, verificador=True, de_muestra=False):
+    def __init__(self, seleccion, mostrar):
         self.template = "boletas/voto.tmpl"
         self.render_template()
         self.seleccion = seleccion
-        self.verificador = verificador
-        self.de_muestra = de_muestra
         self.medidas = self._get_medidas()
         self.data = None
+        self._mostrar = DEFAULTS_MOSTRAR_BOLETA
+        if mostrar is not None:
+            self._mostrar.update(mostrar)
 
     def generate_data(self):
         """Genera la data para mandar al template de la boleta."""
         data = {}
-        if not self.de_muestra:
+        if not self.config_vista("en_pantalla"):
             troquel, sub_troquel = self._get_troquel()
             data['troquel'] = troquel
             data['sub_troquel'] = sub_troquel
         else:
             self.medidas['margen_izq'] = 5
 
-        if self.verificador:
+        if self.config_vista("verificador"):
             data['verificador'] = self._get_verificador()
 
         data['width'], data['height'] = self._get_size()
         data['escudo'] = self._get_escudo()
         data['titulo'], data['subtitulo'] = self._get_titulos()
         data['margen_izq'] = self.medidas["margen_izq"]
+        if self.config_vista("en_pantalla"):
+            data['multiplicador_fz'] = self.config_vista("multiplicador_fz")
+        else:
+            data['multiplicador_fz'] = 1
 
         secciones = self._get_datos_candidatos()
         data['secciones'] = secciones
@@ -50,7 +54,8 @@ class ImagenBoleta(Imagen):
     def _get_watermark(self):
         """Devuelveve los datos de la posicion del watermark."""
         watermarks = []
-        if MODO_DEMO and not self.de_muestra:
+        if (self.config_vista("watermark") and
+                not self.config_vista("en_pantalla")):
             # solo muestro la marca de agua si imprimo (con verificador)
             for posicion in self.medidas['pos_watermark']:
                 watermark = (posicion[0], posicion[1], _("watermark_text"),
@@ -88,10 +93,10 @@ class ImagenBoleta(Imagen):
 
     def _get_size(self):
         u"""Trae los tamaños de la boleta."""
-        if self.de_muestra:
+        if self.config_vista("en_pantalla"):
             size = (self.medidas['alto_solo_mostrar'],
                     self.medidas['ancho_boleta'])
-        elif self.verificador:
+        elif self.config_vista('verificador'):
             size = (self.medidas['alto_con_verif'],
                     self.medidas['ancho_boleta'])
         else:
@@ -145,7 +150,7 @@ class ImagenBoleta(Imagen):
         filter = {
             "sorted": "posicion"
         }
-        mostrar_adheridas = self.config("mostrar_adheridas",
+        mostrar_adheridas = self.config("mostrar_adheridas_boleta",
                                         self.seleccion.mesa.cod_datos)
         if not mostrar_adheridas:
             filter["adhiere"] = None
@@ -175,47 +180,30 @@ class ImagenBoleta(Imagen):
 
         return secciones
 
-    def _get_datos_candidato(self, candidato, template, idx_categorias,
-                             categorias_usadas):
-        categoria = candidato.categoria
-
-        index = idx_categorias.index(categoria.codigo)
-        if categoria in categorias_usadas:
-            index += categorias_usadas.count(categoria)
-        categorias_usadas.append(categoria)
-
+    def _armar_layout(self, template, index):
+        """Arma el dicconario de datos con los defaults de todas las configs +
+        los defaults para el template en particular + lo que establece para si
+        mismo ada bloque."""
         layout = {}
         layout.update(DEFAULTS_BLOQUE)
         layout.update(template.get_default())
         layout.update(template.bloques[index])
 
-        #margen_izq = self.medidas['margen_izq']
-        margen_sup = layout['padding_selecciones']
+        return layout
 
-        # titulo de la categoria (fondo negro, letras blancas)
-        seccion = {}
-        seccion["layout"] = layout
-        seccion["ancho_texto"] = layout['ancho'] - layout['diff_ancho_texto']
-        #seccion['margen_izq'] = margen_izq
-        seccion['posicion'] = layout["posicion"]
-        seccion['font_size'] = layout["font_size"]
-        seccion['height'] = layout['alto']
-        seccion['width'] = layout['ancho']
-        seccion['mostrar_titulo'] = layout["mostrar_titulo"]
-        seccion['mostrar_borde'] = layout["mostrar_borde"]
-        seccion['rotar_bloque'] = layout["rotar_bloque"]
-        seccion['margen_sup'] = margen_sup
-        seccion['template'] = PATH_BLOQUE.format(layout["nombre_template"])
-        seccion["es_blanco"] = candidato.es_blanco
-
-        nombre_categoria = categoria.nombre.upper()
-        pos_y = margen_sup - 10
-        pos_wrap = pos_y
-
+    def _generar_titulo_bloque(self, layout, seccion, categoria, margen_sup):
+        # si no hay titulo queda en cero
+        alto_titulo = 0
         if layout["mostrar_titulo"]:
             lineas_titulo = []
-            for linea_wrapeada in textwrap.wrap(nombre_categoria,
-                                                layout["wrap_titulo"]):
+            # El titulo de la categoría se muestra siempre en mayúscula
+            nombre_categoria = categoria.nombre.upper()
+
+            # Si el titulo es mas largo tiene unas de una linea
+            pos_y = margen_sup - 10
+            pos_wrap = pos_y
+            for linea_wrapeada in wrap(nombre_categoria,
+                                       layout["wrap_titulo"]):
                 linea = (pos_wrap, linea_wrapeada)
                 pos_wrap += layout['alto_fondo_titulo']
                 lineas_titulo.append(linea)
@@ -235,10 +223,13 @@ class ImagenBoleta(Imagen):
                 "width": layout["ancho"] - 5,
                 "height": alto_titulo,
             }
-        else:
-            alto_titulo = 0
+        # devolvemos el alto del titulo que es lo que va a empujar para abajo a
+        # todo el resto de los elementos del bloque
+        return alto_titulo
 
-        pos_num_lista = (margen_sup + alto_titulo +
+    def _generar_nro_lista_bloque(self, layout, seccion, categoria, candidato,
+                                  alto_titulo):
+        pos_num_lista = (seccion["margen_sup"] + alto_titulo +
                          layout["padding_num_lista"])
 
         num_lista = None
@@ -257,21 +248,27 @@ class ImagenBoleta(Imagen):
             "em": layout["em_num_lista"],
         }
 
-        padding_lista = pos_num_lista + layout['padding_nom_lista']
+        return pos_num_lista + layout['padding_nom_lista']
+
+    def _generar_lista_bloque(self, layout, seccion, categoria, candidato,
+                              padding_lista):
 
         if candidato.es_blanco or categoria.consulta_popular:
             nombre_lista = ""
             padding_lista += layout['sep_lineas_lista']
         else:
             lineas_titulo = []
-            if candidato.partido is not None:
-                for linea_wrapeada in textwrap.wrap(candidato.partido.alianza.nombre,
-                                                    layout["wrap_lista"]):
+            mostrar_partido = self.config("mostrar_partido_en_boleta",
+                                          self.seleccion.mesa.cod_datos)
+            if mostrar_partido and candidato.partido is not None:
+                for linea_wrapeada in wrap(candidato.partido.nombre,
+                                           layout["wrap_lista"]):
                     linea = (padding_lista, linea_wrapeada)
                     padding_lista += layout['sep_lineas_lista']
                     lineas_titulo.append(linea)
-            for linea_wrapeada in textwrap.wrap(candidato.lista.nombre,
-                                                layout["wrap_lista"]):
+
+            for linea_wrapeada in wrap(candidato.lista.nombre,
+                                       layout["wrap_lista"]):
                 linea = (padding_lista, linea_wrapeada)
                 padding_lista += layout['sep_lineas_lista']
                 lineas_titulo.append(linea)
@@ -282,7 +279,10 @@ class ImagenBoleta(Imagen):
             "lineas": nombre_lista,
             "em": layout["em_nom_lista"],
         }
+        return padding_lista
 
+    def _generar_candidato_bloque(self, layout, seccion, categoria, candidato,
+                                  padding_lista):
         # nombre del primer candidato
         y_candidato = padding_lista + layout["padding_cand_titular"]
         nombre_candidato = []
@@ -290,7 +290,7 @@ class ImagenBoleta(Imagen):
         if categoria.consulta_popular and len(candidato.secundarios):
             nombre = " ".join(candidato.secundarios)
 
-        for linea_wrapeada in textwrap.wrap(nombre, layout["wrap_candidato"]):
+        for linea_wrapeada in wrap(nombre, layout["wrap_candidato"]):
             linea = (y_candidato, linea_wrapeada)
             y_candidato += layout["sep_lineas_titular"]
             nombre_candidato.append(linea)
@@ -300,6 +300,11 @@ class ImagenBoleta(Imagen):
             "lineas": nombre_candidato,
             "em": layout["em_candidato"],
         }
+
+        return y_candidato
+
+    def _generar_secundarios_bloque(self, layout, seccion, categoria,
+                                    candidato, y_candidato):
         pad_sec = layout['padding_secundarios']
         # nombre del resto de los candidatos (si hay)
         y_secundarios = y_candidato + pad_sec
@@ -308,8 +313,8 @@ class ImagenBoleta(Imagen):
             candidatos_secundarios = "; ".join([cand for cand
                                                in secundarios])
             lineas_texto = []
-            for linea_wrapeada in textwrap.wrap(candidatos_secundarios,
-                                                layout["wrap_secundarios"]):
+            for linea_wrapeada in wrap(candidatos_secundarios,
+                                       layout["wrap_secundarios"]):
                 linea = (y_secundarios, linea_wrapeada)
                 y_secundarios += layout['sep_lineas_secundarios']
                 lineas_texto.append(linea)
@@ -318,30 +323,41 @@ class ImagenBoleta(Imagen):
                 "lineas": lineas_texto,
                 "em": layout["em_secundarios"]
             }
+        return y_secundarios
+
+    def _generar_suplentes_bloque(self, layout, seccion, categoria,
+                                  candidato, y_suplentes):
+        pad_sec = layout['padding_suplentes']
         # nombre del resto de los candidatos (si hay)
-        secundarios = candidato.suplentes
+        suplentes = candidato.suplentes
         mostrar_suplentes = self.config("mostrar_suplentes_en_boleta",
                                         self.seleccion.mesa.cod_datos)
-        if mostrar_suplentes and len(secundarios) and not \
+        if mostrar_suplentes and len(suplentes) and not \
                 categoria.consulta_popular:
-            candidatos_secundarios = "; ".join([cand for cand
-                                                in secundarios])
-            y_secundarios = y_secundarios + pad_sec - 20
-            lineas_texto = [(y_secundarios, "Suplentes:")]
-            y_secundarios = y_secundarios + pad_sec - 10
-            for linea_wrapeada in textwrap.wrap(candidatos_secundarios,
-                                                layout["wrap_secundarios"]):
-                linea = (y_secundarios, linea_wrapeada)
-                y_secundarios += pad_sec - 3
+            candidatos_suplentes = "; ".join([cand for cand in suplentes])
+            y_suplentes = y_suplentes + pad_sec
+            lineas_texto = [(y_suplentes, _("Suplentes:"))]
+            y_suplentes += layout['sep_lineas_suplentes']
+            for linea_wrapeada in wrap(candidatos_suplentes,
+                                       layout["wrap_suplentes"]):
+                linea = (y_suplentes, linea_wrapeada)
+                y_suplentes += layout['sep_lineas_suplentes']
                 lineas_texto.append(linea)
+
             seccion['suplentes'] = {
-                "pos_y": y_secundarios,
+                "pos_y": y_suplentes,
                 "lineas": lineas_texto,
                 "em": layout["em_suplentes"]
             }
+
+        return y_suplentes
+
+    def _generar_adherida_bloque(self, layout, seccion, categoria,
+                                 y_secundarios):
         # si no quiero mostrar las categorias adheridas como paneles separados
         # seguramente quiera mostrar la seleccion dentro del bloque del padre
-        mostrar_adheridas = self.config("mostrar_adheridas",
+        pad_sec = layout['padding_secundarios']
+        mostrar_adheridas = self.config("mostrar_adheridas_boleta",
                                         self.seleccion.mesa.cod_datos)
         if not mostrar_adheridas:
             hijas = Categoria.many(adhiere=categoria.codigo)
@@ -354,8 +370,8 @@ class ImagenBoleta(Imagen):
                     cand_hijo = "{}: {}".format(hija.nombre,
                                                 "; ".join(candidatos))
                     y_secundarios = y_secundarios + pad_sec
-                    for linea_wrapeada in textwrap.wrap(
-                        cand_hijo, layout["wrap_adherentes"]):
+                    for linea_wrapeada in wrap(cand_hijo,
+                                               layout["wrap_adherentes"]):
                         linea = (y_secundarios, linea_wrapeada)
                         y_secundarios += layout['sep_lineas_adherentes']
                         lineas_texto.append(linea)
@@ -365,6 +381,58 @@ class ImagenBoleta(Imagen):
                 "em": layout["em_adherentes"]
             }
 
+    def _get_datos_candidato(self, candidato, template, idx_categorias,
+                             categorias_usadas):
+        categoria = candidato.categoria
+
+        index = idx_categorias.index(categoria.codigo)
+        if categoria in categorias_usadas:
+            index += categorias_usadas.count(categoria)
+        categorias_usadas.append(categoria)
+
+        layout = self._armar_layout(template, index)
+
+        #margen_izq = self.medidas['margen_izq']
+        margen_sup = layout['padding_selecciones']
+
+        seccion = {}
+        seccion["layout"] = layout
+        seccion["ancho_texto"] = layout['ancho'] - layout['diff_ancho_texto']
+        seccion['posicion'] = layout["posicion"]
+        seccion['font_size'] = layout["font_size"]
+        seccion['height'] = layout['alto']
+        seccion['width'] = layout['ancho']
+        seccion['mostrar_titulo'] = layout["mostrar_titulo"]
+        seccion['mostrar_borde'] = layout["mostrar_borde"]
+        seccion['rotar_bloque'] = layout["rotar_bloque"]
+        seccion['margen_sup'] = margen_sup
+        seccion['template'] = PATH_BLOQUE.format(layout["nombre_template"])
+        seccion["es_blanco"] = candidato.es_blanco
+
+        # titulo de la categoria (fondo negro, letras blancas)
+        alto_titulo = self._generar_titulo_bloque(layout, seccion, categoria,
+                                                  margen_sup)
+        # genero el numero de lista si es necesario
+        padding_lista = self._generar_nro_lista_bloque(layout, seccion,
+                                                       categoria, candidato,
+                                                       alto_titulo)
+        # genero la descripcion de la agrupación
+        padding_lista = self._generar_lista_bloque(layout, seccion, categoria,
+                                                   candidato, padding_lista)
+        # genero la descripcion del candidato
+        y_candidato = self._generar_candidato_bloque(layout, seccion,
+                                                     categoria, candidato,
+                                                     padding_lista)
+        # genero los candidatos secundarios
+        y_secundarios = self._generar_secundarios_bloque(layout, seccion,
+                                                         categoria, candidato,
+                                                         y_candidato)
+        # genero los candidatos suplentes
+        y_secundarios = self._generar_suplentes_bloque(layout, seccion,
+                                                       categoria, candidato,
+                                                       y_secundarios)
+        # genero los datos de la categoría adherida a este bloque
+        self._generar_adherida_bloque(layout, seccion, categoria,
+                                      y_secundarios)
+
         return seccion
-
-

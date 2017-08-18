@@ -5,7 +5,6 @@ from hashlib import sha1
 from threading import Thread
 
 from msa.constants import PATH_TTS
-from msa.core.audio.player import WavPlayer
 from msa.core.audio.settings import VOLUMEN_GENERAL
 from msa.core.data.settings import JUEGO_DE_DATOS
 from msa.core.logging import get_logger
@@ -21,9 +20,11 @@ class Locutor(Thread):
         Thread.__init__(self)
         global _audio_player
         if _audio_player is None or not _audio_player.is_alive():
+            from msa.core.audio.player import WavPlayer
             _audio_player = WavPlayer()
             _audio_player.start()
             _audio_player.set_volume(VOLUMEN_GENERAL)
+            self._audio_player = _audio_player
         self.reset()
         self.setDaemon(True)
 
@@ -49,6 +50,7 @@ class Locutor(Thread):
             mensaje -- Mensaje a decir
             repite -- Si es True, repite el mensaje (default False)
         """
+        from msa.core.audio.player import WavPlayer
         logger.debug("Diciendo: {}".format(mensaje))
         _audio_player.empty_queue()
         self.repetir = repetir

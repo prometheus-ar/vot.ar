@@ -25,7 +25,7 @@ try:
 except ValueError:
     pass
 
-from os.path import join
+from os.path import exists, join
 from time import sleep
 from urllib.request import pathname2url
 from gi.repository import Gdk, GObject, Gtk
@@ -37,16 +37,18 @@ from msa.modulos import get_sesion
 from msa.core.config_manager.constants import COMMON_SETTINGS
 from msa.modulos.base.plugins import PluginManager
 from msa.modulos.constants import (APP_TITLE, MODULO_MENU, PATH_SONIDOS_VOTO,
-                                   PATH_TEMPLATES_MODULOS, WINDOW_BORDER_WIDTH)
+                                   PATH_TEMPLATES_MODULOS, WINDOW_BORDER_WIDTH,
+                                   PATH_MODULOS)
 from msa.modulos.gui.settings import (DEBUG_ZAGUAN, FULLSCREEN, MOSTRAR_CURSOR,
-                                      SCREEN_SIZE, WEBKIT_VERSION)
+                                      SCREEN_SIZE, WEBKIT_VERSION,
+                                      USAR_SONIDOS_UI)
 
 # Hilo Global del módulo para reproducir sonidos
 _audio_player = None
 
 
 def print_zaguan_input(msg):
-    from json import loads
+    from ujson import loads
     from re import search
     from pprint import pprint
 
@@ -76,10 +78,12 @@ class ModuloBase(object):
     def __init__(self, nombre):
         """ Constructor."""
         self.sesion = get_sesion()
+        self.logger = self.sesion.logger
+        self.logger.info("Cargando modulo {}".format(nombre))
+
         self.config_files = [COMMON_SETTINGS, nombre]
         self._load_config()
         self.nombre = nombre
-        self.logger = self.sesion.logger
         self.pantalla = None
         self.ret_code = ''
         self.signal = None
@@ -142,9 +146,9 @@ class ModuloBase(object):
         clicks no son capturados correctamente.
 
         Esta funcion intenta parchear el comportamiento y emitir el click
-        cuando la persona hace algo con el dedo que no sea "el tipoco click
-        con la punta" la mayoría de los clicks con la llema entran en esta
-        funcion.
+        cuando la persona hace algo con el dedo que no sea "el tipico click
+        con la punta del dedo" la mayoría de los clicks con la yema entran en
+        por este camino.
         """
         # Agarro el evento de inicio del touch y guardo x, y timestamp
         if event.touch.type == Gdk.EventType.TOUCH_BEGIN:
@@ -226,16 +230,9 @@ class ModuloBase(object):
 
     def quit(self, w=None):
         """ Ejecuta Gtk.main_quit() y termina la ejecucion. """
-        if hasattr(self, "signal") and self.signal is not None:
-            self.signal.remove()
-        if hasattr(self, "signal_papel") and self.signal_papel is not None:
-            self.signal_papel.remove()
-
-        if self.sesion.lector is not None:
-            self.sesion.lector.remover_consultar_lector()
-        if self.sesion.impresora is not None:
-            self.sesion.impresora.remover_consultar_tarjeta()
-        if hasattr(self, "rampa"):
+        if hasattr(self, "rampa") and self.rampa is not None:
+            self.rampa.remover_consultar_lector()
+            self.rampa.remover_consultar_tarjeta()
             self.rampa.desregistrar_eventos()
 
         if hasattr(self, 'pantalla') and self.pantalla is not None:
@@ -255,6 +252,11 @@ class ModuloBase(object):
         self.salir_a_modulo(MODULO_MENU)
 
     def salir_a_modulo(self, modulo):
+        """Sale a un cierto modulo.
+
+        Argumentos:
+            modulo -- el modulo al que sale.
+        """
         self.logger.debug("Saliendo a modulo {}".format(modulo))
         self.ret_code = modulo
         self.quit()
@@ -264,8 +266,10 @@ class ModuloBase(object):
         self.controlador.hide_dialogo()
 
     def _start_audio(self):
+        """Inicia el audioplayer."""
         global _audio_player
-        if _audio_player is None or not _audio_player.is_alive():
+        if (USAR_SONIDOS_UI and (_audio_player is None or not
+                                 _audio_player.is_alive())):
             _audio_player = WavPlayer()
             _audio_player.start()
         self._player = _audio_player
@@ -277,30 +281,56 @@ class ModuloBase(object):
             _audio_player.stop()
 
     def _play(self, nombre_sonido):
-        self._start_audio()
-        sonido = join(PATH_SONIDOS_VOTO, '{}.wav'.format(nombre_sonido))
-        self._player.play(sonido)
+        """Ejecuta los audios de interacción con el usuario.
+
+        Argumentos:
+            nombre_sonido -- el nomre del archivo que queremos ejecutar.
+        """
+        if USAR_SONIDOS_UI:
+            self._start_audio()
+            sonido = join(PATH_SONIDOS_VOTO, '{}.wav'.format(nombre_sonido))
+            self._player.play(sonido)
 
     def play_sonido_ok(self):
+        """Ejecuta el sonido de "OK"."""
         self._play("ok")
 
     def play_sonido_warning(self):
+        """Ejecuta el sonido de "Warning"."""
         self._play("warning")
 
     def play_sonido_error(self):
+        """Ejecuta el sonido de "Error"."""
         self._play("error")
 
     def play_sonido_tecla(self):
+        """Ejecuta el sonido de "Tecla presionada"."""
         self._play("tecla")
 
     def _load_config(self):
+        """Carga las configuraciones para esta ubicación."""
         id_ubicacion = None
         if self.sesion.mesa is not None:
             id_ubicacion = self.sesion.mesa.codigo
         self._config = Config(self.config_files, id_ubicacion)
 
     def config(self, key):
+        """Devuelve una cofiguracion particular para esta ubicación.
+
+        Argumentos:
+            key -- la key de la cual queremos traer el valor.
+        """
         value, file_ = self._config.data(key)
         self.logger.debug("Trayendo config {}: {} desde {}".format(key, value,
                                                               file_))
         return value
+
+    def en_disco(self, nombre_modulo):
+        """Devuelve la existencia de un modulo.
+
+        Argumentos:
+            nombre_modulo -- el nombre del modulo que queremos averiguar si
+                está en el disco actual
+        """
+        return exists(join(PATH_MODULOS, nombre_modulo))
+

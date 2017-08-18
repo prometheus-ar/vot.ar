@@ -16,7 +16,7 @@ ACT_BOLETA_NUEVA = 1
 ACT_BOLETA_REPETIDA = 2
 ACT_ERROR = 3
 ACT_ESPECIALES = 4
-ACT_CLONADA = 5
+ACT_VERIFICAR_ACTA = 5
 
 TEXTOS = (
     "cargando_interfaz", "espere_por_favor", "boletas_procesadas",
@@ -42,5 +42,7 @@ TEXTOS = (
     "palabra_siguiente", "mensaje_copias", "seguro_salir_totalizador",
     "finalizar_totalizacion", "bienvenida_totalizador", "acta_repetida",
     "continuar_totalizacion", "apagar", "titulo_confirmacion_apagado",
-    "recuerde_remover_disco", "boleta_clonada", "contacte_autoridades"
+    "recuerde_remover_disco", "verificar_acta", "revisar_acta_totalizador",
+    "fin_totalizacion_pregunta", "fin_totalizacion_aclaracion",
+    "actas_procesadas",
 )

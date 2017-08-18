@@ -1,3 +1,7 @@
+function mensaje_validando_mesa(){
+    mostrar_mensaje("Validando PIN...", null, null, true)
+}
+
 function pantalla_ingresoacta(data) {
     hide_all();
     var template = get_template("ingreso_acta", "pantallas/ingreso_datos");
@@ -8,9 +12,6 @@ function pantalla_ingresoacta(data) {
     var html_pantallas = $(template(template_data));
     var html_popup = template_popup();
 
-    var img_svg = decodeURIComponent(data.imagen_acta);
-    $(html_pantallas).find('#ingresoacta_svg').html(img_svg);
-    var svg = $(html_pantallas).find('#ingresoacta_svg svg');
 
     $('.contenedor-datos').html(html_pantallas);
     $('.popup-box').html(html_popup);
@@ -20,6 +21,10 @@ function pantalla_ingresoacta(data) {
     show_elements("#contenedor_izq");
     show_elements("#contenedor_opciones");
     show_elements(".contenedor-datos");
+
+    var img_svg = decodeURIComponent(data.imagen_acta);
+    var cont = $('.acta-izq')
+    cont.html(img_svg);
 }
 
 function pantalla_mesaypin(data) {
@@ -33,7 +38,7 @@ function pantalla_mesaypin(data) {
 
     var template_data = {
         pattern_mesa: "[0-9]*[F|M|X]?",
-        pattern_pin: "([A-Z 0-9 £÷¶\\+\\-\\*@=\^]{0,8})",
+        pattern_pin: "([A-Z 0-9]{0,8})",
         mesa: mesa,
         mostrar_imagen: mostrar_imagen,
         mostrar_tooltip: (!mostrar_imagen ||
@@ -42,7 +47,6 @@ function pantalla_mesaypin(data) {
     };
     template_data.af_mesa = mesa === "";
     template_data.af_pin = mesa !== "";
-    template_data.tipo_teclado_pin = constants.chirimbolos_en_pin?"alpha_sim":"qwerty";
     Handlebars.registerPartial('teclado', template_teclado);
     html_pantallas = template(template_data);
     html_popup = template_popup();
@@ -53,8 +57,7 @@ function pantalla_mesaypin(data) {
     $(".btn-aceptar p").attr("id","_txt_aceptar");
     $('.contenedor-datos').html(html_pantallas);
     $('.popup-box').html(html_popup);
-    var lista_teclados = ["qwerty", "alpha_sim", "simbolos", "num"];
-    inicializar_teclado(lista_teclados, window[callback_aceptar]);
+    inicializar_teclado(["qwerty"], window[callback_aceptar]);
     hide_all();
     show_elements("#contenedor_izq");
     show_elements(".barra-titulo");
@@ -63,6 +66,8 @@ function pantalla_mesaypin(data) {
             deshabilitar_teclado();
         }
     });
+
+    $('input.nro_pin').on("change", autopasa_campo_datos);
 }
 
 function pantalla_datospersonales(data) {
@@ -74,7 +79,7 @@ function pantalla_datospersonales(data) {
     var template_popup = get_template("popup", "pantallas/ingreso_datos");
     hide_all();
     if(data.modulo === "escrutinio"){
-        $(document).on("cambioTeclado", mostrar_tooltip);
+        $(document).on("cambioTeclado",mostrar_tooltip);
     }
 
     var autoridades = [
@@ -151,6 +156,13 @@ function pantalla_datospersonales(data) {
             deshabilitar_teclado();
         }
     });
+
+    if(template_data.mostrar_tooltip){
+        console.log(data.imagen_acta);
+        var img_svg = decodeURIComponent(data.imagen_acta);
+        var cont = $('#svg_cierre');
+        cont.html(img_svg);
+    }
  
     bindear_scrolls();
     $("input").focusin(revalida_hora);

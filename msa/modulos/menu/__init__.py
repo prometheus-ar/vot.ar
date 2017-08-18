@@ -23,28 +23,22 @@ class Modulo(ModuloBase):
         self._start_audio()
         levantar_locales()
 
-        self._vaciar_impresora()
         self.ret_code = MODULO_INICIO
         self.mesa_abierta = self.sesion.apertura is not None or not \
             self.config("realizar_apertura")
         self.boton_mantenimiento = False
 
         self.rampa = Rampa(self)
+        self.rampa.expulsar_boleta()
 
         self.sesion._tmp_apertura = None
-
-    def _vaciar_impresora(self):
-        """Expulsa la boleta."""
-        impresora = self.sesion.impresora
-        if impresora is not None:
-            impresora.expulsar_boleta()
 
     def _inicio(self):
         """Inicio del modulo."""
         self.controlador.send_constants()
         self.controlador.cargar_botones(self.mesa_abierta)
 
-    def _show_maintenance_button(self):
+    def mostrar_boton_mantenimiento(self):
         """Muestra el boton de mantenimiento."""
         self.boton_mantenimiento = True
         self.controlador.show_maintenance_button()

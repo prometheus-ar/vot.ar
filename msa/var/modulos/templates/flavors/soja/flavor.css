@@ -1,0 +1,90 @@
+.opciones.conbarra.max8 .candidato {
+  width: 287.75px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  height: 302.5px;
+  margin-top: 10px;
+}
+.opciones.sinbarra.max8 .candidato {
+  width: 328.75px;
+  margin-left: 10px;
+  box-sizing: border-box;
+  display: inline;
+  float: left;
+  height: 302.5px;
+  margin-top: 10px;
+}
+.opciones .candidato .foto-candidato,
+.opciones .candidato .foto-principal {
+  display: inline;
+  float: left;
+  width: 45.83333333%;
+}
+.opciones .candidato .foto-partido,
+.opciones .candidato .foto-secundaria {
+  display: inline;
+  float: left;
+  width: 20.83333333%;
+}
+.opciones .candidato .nombre-partido,
+.opciones .candidato .candidato-principal,
+.opciones .candidato .candidato-secundario {
+  display: inline;
+  float: left;
+  width: 45.83333333%;
+}
+.opciones .candidato.candidato-persona .nombre-partido {
+  border-bottom: 1px solid #cccccc;
+}
+.opciones .candidato.candidato-persona .candidato-secundario {
+  color: #078ed5;
+}
+.opciones .candidato.candidato-lista-completa .foto-partido {
+  display: inline;
+  float: left;
+  width: 45.83333333%;
+}
+.opciones .candidato.candidato-lista-completa .nombre-partido {
+  color: #003366;
+  font-size: 1em;
+  margin-top: 0px;
+}
+.opciones.max8 .candidato-persona .foto-candidato {
+  width: 70%;
+}
+.opciones.max8 .candidato-persona .foto-partido,
+.opciones.max8 .candidato-persona .nombre-partido {
+  display: none;
+}
+.opciones.max8 .candidato-persona .candidato-principal {
+  display: inline;
+  float: left;
+  width: 100%;
+  font-size: 1.2em;
+}
+.opciones.max8 .candidato-persona .candidato-secundario {
+  display: inline;
+  float: left;
+  width: 100%;
+  font-size: 1em;
+}
+.opciones.max8 .candidato-persona .lista {
+  font-size: 1.8em;
+}
+.confirmados .nombre-cargo {
+  min-height: 13px;
+}
+#pantalla_confirmacion .candidato .contenedor-candidato .lista {
+  font-size: 1em;
+}
+#pantalla_confirmacion .candidato .contenedor-candidato .foto-candidato {
+  width: calc(60% - 10px);
+}
+#pantalla_confirmacion .candidato .contenedor-candidato .foto-partido {
+  width: 40%;
+}
+#pantalla_confirmacion .candidato .contenedor-candidato .foto-partido {
+  margin: 0;
+}

@@ -1,0 +1,15 @@
+<div class="candidato {{#if blanco}}blanco{{/if}} {{#if es_consulta}}consulta_popular{{/if}}" id="{{id_boton}}">
+    <div class="nombre-cargo">{{categoria.nombre}}</div>
+    {{#unless es_consulta}}
+        {{#unless blanco}}
+            <div class="lista">
+                <p class="palabra-lista">{{i18n "palabra_lista"}}</p>
+                <p class="numero-lista">{{candidato.lista.numero}}</p>
+            </div>
+        {{/unless}}
+        <div class="foto-candidato">
+            {{imagen_candidatura candidato.imagenes.[0]}}
+        </div>
+    {{/unless}}
+    <div class="candidato-principal">{{candidato.nombre}}</div>
+</div>

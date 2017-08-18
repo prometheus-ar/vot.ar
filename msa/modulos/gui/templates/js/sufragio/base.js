@@ -13,6 +13,7 @@ var _votando = false;
 
 
 function load_patio(){
+    /* Prepara, carga e inicializa la instancia de Patio. */
     if(patio === null){
         if(constants.confirmacion_lateral) {
             contexto = confirmacion_barra_vertical.concat(contexto);
@@ -20,20 +21,22 @@ function load_patio(){
             contexto = confirmacion_barra_horizontal.concat(contexto);
         }
         patio = new Patio($("#contenedor_pantallas"), pantallas, contexto,
-                          "pantallas/sufragio");
-                          if(!constants.BARRA_SELECCION){
-                              var tiles = patio.pantalla_candidatos.context_tiles;
-                              tiles.splice(tiles.indexOf("contenedor_der"), 1);
-                          }
-                          if(constants.confirmacion_lateral) {
-                              var tiles = patio.pantalla_confirmacion.context_tiles;
-                              tiles.splice(tiles.indexOf("barra_opciones"), 1);
-                              tiles.splice(tiles.indexOf("alto_contraste"), 1);
-                          }
+                            "pantallas/sufragio");
+
+        if(!constants.mostrar_barra_seleccion){
+            var tiles = patio.pantalla_candidatos.context_tiles;
+            tiles.splice(tiles.indexOf("contenedor_der"), 1);
+        }
+        if(constants.confirmacion_lateral) {
+            var tiles = patio.pantalla_confirmacion.context_tiles;
+            tiles.splice(tiles.indexOf("barra_opciones"), 1);
+            tiles.splice(tiles.indexOf("alto_contraste"), 1);
+        }
     }
 }
 
 function load_css(flavor){
+    /* Carga el CSS del flavor. */
     var elem = document.createElement('link');
     elem.rel= 'stylesheet';
     elem.href= constants.PATH_TEMPLATES_FLAVORS + flavor +  '/flavor.css';
@@ -58,11 +61,13 @@ function document_ready(){
 $(document).ready(document_ready);
 
 function mostrar_loader(){
+    /* Muestra el loader. */
     setTimeout(cargar_cache, 300);
     patio.loading.only();
 }
 
 function ocultar_loader(){
+    /* Oculta el loader. */
     setTimeout(inicializar_interfaz, 300);
 }
 
@@ -71,15 +76,21 @@ function set_unico_modo(estado){
      * establece la variable "unico modo" que marca que se vota siempre por
      * lista completa.
      */
-    //patio.btn_regresar.show = function(){};
+    patio.btn_regresar.show = function(){};
     unico_modo = estado;
 }
 
 function preload(images){
+    /* Precarga las imagenes de las candidaturas. */
     $(images).each(function() {
         $('<img />').attr('src', "imagenes_candidaturas/" + constants.juego_de_datos + "/" + this);
     });
 }
+
+/*
+ * Pollyfill de Startswith
+ * https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/String/startsWith#Polyfill
+ */
 
 if (!String.prototype.startsWith) {
     String.prototype.startsWith = function(searchString, position){

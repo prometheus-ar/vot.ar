@@ -1,0 +1,24 @@
+[
+  {
+    "adhiere":null,
+    "asistida":"CONCEJAL",
+    "cargo_ejecutivo":false,
+    "codigo":"CNJ",
+    "consulta_popular":false,
+    "id_grupo":1,
+    "max_selecciones":1,
+    "nombre":"CONCEJAL",
+    "posicion":4
+  },
+  {
+    "adhiere":null,
+    "asistida":"SENADOR",
+    "cargo_ejecutivo":false,
+    "codigo":"SEN",
+    "consulta_popular":false,
+    "id_grupo":1,
+    "max_selecciones":1,
+    "nombre":"SENADOR",
+    "posicion":1
+  }
+]

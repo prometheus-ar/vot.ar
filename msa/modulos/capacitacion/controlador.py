@@ -27,17 +27,43 @@ class Controlador(ControladorBase):
 
     def _get_data_mesas(self):
         """Devuelve la data de los botones de cada ubicacion diferente."""
+
+        grupos = []
+
+        # Si estamos agrupando por algun nivel en especial armamos grupos.
+        # Ojo: si entra desde inicio solo levanta la config default
+        clase_grupos = self.modulo.config("agrupar_ubicaciones_por")
+        if clase_grupos is not None:
+            ubicaciones_grupos = Ubicacion.many(clase=clase_grupos)
+            for ubic in ubicaciones_grupos:
+                codigo_hijos = ubic.codigo + "."
+                grupo = ubic.to_dict()
+                grupo["hijos"] = self.get_hijos_grupo(codigo_hijos)
+                grupos.append(grupo)
+        else:
+            # sino armamos un solo grupo.
+            grupo = {}
+            grupo["hijos"] = self.get_hijos_grupo()
+            grupos.append(grupo)
+
+        return grupos
+
+    def get_hijos_grupo(self, codigo_hijos=None):
+        if codigo_hijos is None:
+            codigo_hijos = ""
+        ubics = Ubicacion.many(codigo__startswith=codigo_hijos, clase="Mesa")
         # Uso un set para tomar las N distintas configuraciones
         configuraciones = set()
         # En mesas_capacitacion guardo las mesas de ejemplo.
         mesas_capacitacion = []
 
         # Tomo una mesa testigo por cada lugar diferente
-        for obj in Ubicacion.many(clase="Mesa"):
+        for obj in ubics:
             if obj.cod_datos not in configuraciones:
                 configuraciones.add(obj.cod_datos)
-                mesas_capacitacion.append((obj.numero, obj.departamento,
-                                           obj.municipio, obj.extranjera))
+                mesa = obj.to_dict()
+                mesa['municipio'] = obj.municipio
+                mesas_capacitacion.append(mesa)
 
         return mesas_capacitacion
 
@@ -58,6 +84,7 @@ class Controlador(ControladorBase):
 
     def activar_impresion(self, nro_mesa):
         mesa = Ubicacion.one(numero=nro_mesa)
+        self.modulo._configurar_ubicacion_capacitacion(nro_mesa)
         self.mesa = mesa
         mesa.usar_cod_datos()
         self.estado = E_EN_CONFIGURACION
@@ -83,6 +110,10 @@ class Controlador(ControladorBase):
         constants["mostrar_departamentos"] = MOSTRAR_DEPARTAMENTOS
         constants["items_columna"] = \
             self.modulo.config("items_columna")
+        constants["mostrar_boton_capacitacion"] = \
+            self.modulo.config("mostrar_boton_capacitacion")
+        constants["mostrar_boton_asistida"] = \
+            self.modulo.config("mostrar_boton_asistida")
 
         return constants
 

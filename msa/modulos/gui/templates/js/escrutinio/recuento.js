@@ -32,14 +32,6 @@ function pantalla_boleta_error(){
     pantalla.only();
 }
 
-function pantalla_boleta_clonada(){
-    /*
-     * muestra la pantalla de boleta clonada
-     */
-    var pantalla = patio.pantalla_boleta_clonada;
-    pantalla.only();
-}
-
 function click_secuencia(){
     var func = patio[patio.last_shown].pantalla_siguiente;
     if(typeof(func) !== "undefined"){
@@ -47,13 +39,31 @@ function click_secuencia(){
     }
 }
 
+function pantalla_verificar_acta(data){
+    /*
+     * Muestra la pantalla de verificación de acta (para comprobar tag/impreso).
+     */
+    var last_tile = patio.last_shown;
+    var contenedor = $("#pantalla_verificar_acta #boleta");
+    mostrar_imagen_boleta(data, contenedor);
+    var pantalla = patio.pantalla_verificar_acta;
+    pantalla.only();
+    // volver a los 5 segundos a la pantalla anterior:
+    function _volver(){
+        patio[last_tile].only();
+    }
+    setTimeout(_volver, 5000);
+}
+
 function finalizar_recuento_boletas(){
     sonido_tecla();
     borrar_resaltado();
     var boletas_procesadas = parseInt($(".numero-procesada").html());
     
-    if(boletas_procesadas < constants.MINIMO_BOLETAS_RECUENTO || constants.totalizador){
+    if(boletas_procesadas < constants.MINIMO_BOLETAS_RECUENTO && !constants.totalizador){
         mensaje_pocas_boletas();
+    } else if (constants.totalizador) {
+        mensaje_fin_escrutinio();
     } else {
         cargar_clasificacion_de_votos();
     }
@@ -84,7 +94,7 @@ function boleta_nueva(data){
 function actualizar_boleta(data){
     /*
      * Llamada intermedia para ver si agregamos "efecto" de vacio entre dos
-     * boletas contadas o nos ahorramos ese tiempo por que la boleta contada
+     * boletas contadas o nos ahorramos ese tiempo porque la boleta contada
      * anterior fue error o repetida
      */
     function _inner(){
@@ -99,18 +109,28 @@ function mostrar_imagen_boleta(data, contenedor){
      * lugar indicado
      */
     if(data.imagen !== null){
-        var svg_data = decodeURIComponent(data.imagen);
-        contenedor.html(svg_data);
+        var img = decodeURIComponent(data.imagen);
+
         if(constants.totalizador){
+            contenedor.html(img);
             contenedor.css("transform", "scale(0.7)");
             contenedor.addClass("acta");
+            contenedor.css("transform-origin", "0 0");
         } else {
-            // 0.4755 por que alineamos a nivel pixel la boleta con lo de arriba
-            contenedor.css("transform", "scale(0.459)");
-            var rect = contenedor.find("svg");
-            rect.css("border", "2px solid #ccc");
+
+            if(constants.muestra_svg){
+                contenedor.html(img);
+                contenedor.css("transform", "scale(0.459)");
+                var rect = contenedor.find("svg");
+                rect.css("border", "2px solid #ccc");
+                contenedor.css("transform-origin", "0 0");
+            } else {
+                contenedor.html("");
+                var img_elem = document.createElement("img");
+                img_elem.src = img;
+                contenedor.append(img_elem)
+            }
         }
-        contenedor.css("transform-origin", "0 0");
     }
 }
 
@@ -146,7 +166,7 @@ function actualizar_candidatos(seleccion, votos){
                 data.muestra_foto = !(categoria.consulta_popular && !es_blanco);
                 data.votos = votos[candidato.id_umv];
                 data.total_candidatos = seleccion.length;
-                data.colores = generar_gradiente_colores(candidato.lista);
+                data.color = !es_blanco?candidato.lista.color:"";
                 data.secundarios = secundarios;
                 data.img_path = img_path;
 

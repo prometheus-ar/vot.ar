@@ -1,0 +1,26 @@
+[
+  {
+    "CNJ":135,
+    "agrupacion_municipal":false,
+    "codigo":"1885.1926.2372",
+    "lista_completa":true
+  },
+  {
+    "CNJ":226,
+    "agrupacion_municipal":false,
+    "codigo":"1886.1890.2026",
+    "lista_completa":true
+  },
+  {
+    "CNJ":475,
+    "agrupacion_municipal":false,
+    "codigo":"1886.2104.2105",
+    "lista_completa":true
+  },
+  {
+    "CNJ":859,
+    "agrupacion_municipal":false,
+    "codigo":"BLC",
+    "lista_completa":true
+  }
+]

@@ -13,6 +13,9 @@ class Imagen(object):
 
     """Clase base para las imagenes del modulo."""
 
+    def config_vista(self, key):
+        return self._mostrar.get(key, False)
+
     def generate_data(self):
         """Genera la data para enviar al template."""
         raise NotImplementedError("You must implement on subclass")
@@ -31,6 +34,15 @@ class Imagen(object):
         xml = self.render_svg()
         return xml2pil(xml, self.data['width'], self.data['height'])
 
+    def render(self, svg):
+        ret = None
+        if svg:
+            ret = self.render_svg()
+        else:
+            ret = self.render_image()
+
+        return ret
+
     def _get_img_b64(self, img_path):
         """Devuelve la imagen en base64 formato browser."""
         image = open(img_path, 'rb')
@@ -43,6 +55,6 @@ class Imagen(object):
     def config(self, key, id_ubicacion=None):
         self._config = Config(["imaging"], id_ubicacion)
         value, file_ = self._config.data(key)
-        logger.debug("Trayendo config {}: {} desde {}".format(key, value,
-                                                              file_))
+        #logger.debug("Trayendo config {}: {} desde {}".format(key, value,
+        #                                                      file_))
         return value

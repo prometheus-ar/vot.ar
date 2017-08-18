@@ -1,7 +1,3 @@
-# -*- coding: utf-8 -*-
-
-DPI_VOTO_ALTA = (200, 200)
-
 MEDIDAS_BOLETA = {
     'ancho_boleta': 832,
     'alto_boleta': 2000,
@@ -45,11 +41,13 @@ DEFAULTS_BLOQUE = {
     "padding_nom_lista": 35,
     "padding_num_lista": 35,
     "padding_secundarios": 24,
+    "padding_suplentes": 22,
     "padding_selecciones": 90,
     "rotar_bloque": False,
     "sep_lineas_adherentes": 29,
     "sep_lineas_lista": 30,
     "sep_lineas_secundarios": 29,
+    "sep_lineas_suplentes": 29,
     "sep_lineas_titular": 30,
     "nombre_template": "default",
     "wrap_adherentes": 35,
@@ -57,6 +55,7 @@ DEFAULTS_BLOQUE = {
     "wrap_lista": 30,
     "wrap_secundarios": 27,
     "wrap_titulo": 30,
+    "wrap_suplentes": 30,
 }
 
 MEDIDAS_ACTA = {
@@ -92,6 +91,20 @@ MEDIDAS_ACTA = {
     'alto_firmas': 460,
 }
 
+DEFAULTS_MOSTRAR_BOLETA = {
+    "verificador": True,
+    "en_pantalla": False,
+    "watermark": True,
+    "multiplicador_fz": 0.9,
+}
+
+DEFAULTS_MOSTRAR_ACTA = {
+    "verificador": True,
+    "en_pantalla": False,
+    "watermark": True,
+    "texto": True,
+}
+
 CONFIG_BOLETA_APERTURA = {
     'tipo': 'apertura',
     'width': 605,
@@ -111,6 +124,7 @@ CONFIG_BOLETA_APERTURA = {
     },
     'flecha': {
         'fill': '#ffb634',
+        'posicion': "matrix(1.7464477,0,0,-1.4816169,292.0272,994.4291)"
     },
     'vot_ar': {
         'fill': '#ffffff'
@@ -139,7 +153,7 @@ CONFIG_BOLETA_CIERRE = {
     },
     'flecha': {
         'fill': '#ffffff',
-	'posicion': "matrix(1.7464477,0,0,-1.4816169,292.0272,994.4291)"
+        'posicion': "matrix(1.7464477,0,0,-1.4816169,292.0272,994.4291)"
     },
     'vot_ar': {
         'fill': '#ffffff'

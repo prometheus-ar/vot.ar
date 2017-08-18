@@ -11,8 +11,13 @@ function get_next_modo(){
       } else if(constants.paso){
           if(pagina_anterior !== null){
               var modo = get_modo();
+              if(modo == "BTN_CATEG"){
+                  var cat_actual = get_categoria_actual();
+                  _cambiar_categoria(cat_actual.codigo);
+              } else {
+                  seleccionar_modo(_modo);
+              }
               pagina_anterior = null;
-              cargar_pantalla_inicial();
           } else {
               limpiar_data_categorias();
               pagina_anterior = null;
@@ -76,7 +81,8 @@ function cargar_categorias(categorias, candidatos){
     }
 }
 
-function cargar_listas(boletas){
+function cargar_listas(boletas, preagrupada, hay_agrupaciones_municipales){
+    /* Carga las listas completas. */
     es_ultima = true;
     bindear_botones();
     if(!constants.shuffle.por_sesion && constants.shuffle.boletas){
@@ -102,7 +108,7 @@ function cargar_listas(boletas){
         } else {
             var codigo_lista = boletas[m].codigo;
             if(codigo_lista != constants.cod_lista_blanco){
-                var item = crear_item_lista(boleta, true);
+                var item = crear_item_lista(boleta, true, preagrupada);
                 html += item;
             } else {
                 blanco = 1;
@@ -127,6 +133,12 @@ function cargar_listas(boletas){
             $("#voto_blanco").removeClass("seleccionado");
         }
 
+        if (hay_agrupaciones_municipales) {
+            patio.agrupaciones_municipales.show()
+            $("#agrupaciones_municipales").unbind();
+            $("#agrupaciones_municipales").click(click_agrupaciones_municipales);
+            $("#agrupaciones_municipales").removeClass("seleccionado");
+        }
     } else {
         insercion_boleta(); 
     }
@@ -216,7 +228,7 @@ function seleccion_partido(partidos){
     $("#opciones").show();
     clase_listas = get_template_candidatos(partidos.length);
     pantalla.addClass("pantalla opciones").addClass(clase_listas);
-    if(constants.interna || modo == "BTN_COMPLETA" || !constants.BARRA_SELECCION){
+    if(constants.interna || modo == "BTN_COMPLETA" || !constants.mostrar_barra_seleccion){
         pantalla.addClass("sinbarra");
     } else {
         pantalla.addClass("conbarra");
@@ -225,6 +237,7 @@ function seleccion_partido(partidos){
 }
 
 function generar_botones_partido_categorias(data){
+    /* Genera los botones de las agrupaciones para votacion por categorias. */
     var html = "";
     var partidos = data.partidos;
     if(!constants.shuffle.por_sesion && constants.shuffle.partidos){
@@ -309,14 +322,14 @@ function cargar_partidos_categoria(data){
      */
     bindear_botones();
     pagina_anterior = null;
-    titulo_solapa(data.categoria.nombre);
+    update_titulo_categoria();
     var pantalla = patio.pantalla_partidos_categoria;
     $("#voto_blanco").removeClass("seleccionado");
     var data_botones = generar_botones_partido_categorias(data);
     
     $(pantalla.id).removeClass();
     clase_listas = get_template_candidatos(data_botones[1]);
-    if(constants.BARRA_SELECCION){
+    if(constants.mostrar_barra_seleccion){
         pantalla.addClass("conbarra");
     } else {
         pantalla.addClass("sinbarra");
@@ -381,8 +394,8 @@ function agrupar_candidatos_por_partido(candidatos){
     //Busco todos los partidos que hay
     for(var i in candidatos){
         var candidato = candidatos[i];
-        if(partidos.indexOf(candidatos[i].cod_alianza) == -1){
-            partidos.push(candidatos[i].cod_alianza);
+        if(partidos.indexOf(candidatos[i].cod_partido) == -1){
+            partidos.push(candidatos[i].cod_partido);
         }
     }
 
@@ -395,7 +408,7 @@ function agrupar_candidatos_por_partido(candidatos){
     //Busco todo los candidato para cada partido
     for(var l in partidos){
         for(var j in candidatos){
-            if(partidos[l] == candidatos[j].cod_alianza){
+            if(partidos[l] == candidatos[j].cod_partido){
                 candidatos_ordenados.push(candidatos[j]);
             }
         }
@@ -405,6 +418,7 @@ function agrupar_candidatos_por_partido(candidatos){
 }
 
 function crear_botones_candidatos(candidatos){
+    /* Crea los botones de los candidatos.*/
     var elem = "";
     var blanco = 0;
 
@@ -456,7 +470,7 @@ function cargar_candidatos(data){
 
     bindear_botones();
     cambiar_categoria(data.categoria);
-    titulo_solapa(data.categoria.nombre);
+    contenido_solapa(data.categoria.nombre);
 
     //Me fijo si tengo que agrupar o no a los candidatos en las categorias en 
     //PASO
@@ -470,7 +484,7 @@ function cargar_candidatos(data){
     
     var clase_candidatos = get_template_candidatos(candidatos.length - blanco);
     var clase_categria = "cat_" + data.categoria.codigo;
-    var clase_barra = constants.BARRA_SELECCION?"conbarra":"sinbarra";
+    var clase_barra = constants.mostrar_barra_seleccion?"conbarra":"sinbarra";
     
     var clases = ["pantalla", "opciones", clase_candidatos, clase_categria,
                   clase_barra];

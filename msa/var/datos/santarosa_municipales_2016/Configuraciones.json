@@ -1,0 +1,33 @@
+[
+  {
+    "codigo":"campos_extra",
+    "descripcion":"Nombre de los campos extra a guardar en el chip",
+    "valor":[
+      "boletas_contadas",
+      "total_votantes"
+    ]
+  },
+  {
+    "codigo":"datos_eleccion",
+    "descripcion":"Contiene los datos generales de la elecci\u00f3n",
+    "valor":{
+      "entidad":"Junta Electoral de la Provincia de Mendoza",
+      "fecha":"11 de Diciembre de 2016",
+      "subtitulo":"11 de Diciembre de 2016",
+      "titulo":"Elecci\u00f3n de Intendente del Departamento de Santa Rosa - PASO"
+    }
+  },
+  {
+    "codigo":"posiciones_podio",
+    "descripcion":"Indica cu\u00e1ntos candidatos integran el podio de reportes",
+    "valor":3
+  },
+  {
+    "codigo":"tipo_eleccion",
+    "descripcion":"Configuraciones de tipo de elecci\u00f3n",
+    "valor":{
+      "interna":false,
+      "paso":true
+    }
+  }
+]

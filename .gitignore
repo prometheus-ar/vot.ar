@@ -18,10 +18,10 @@ lib/
 lib64/
 parts/
 sdist/
-var/
 *.egg-info/
 .installed.cfg
 *.egg
+tts/
 
 # PyInstaller
 #  Usually these files are written by a python script from a template

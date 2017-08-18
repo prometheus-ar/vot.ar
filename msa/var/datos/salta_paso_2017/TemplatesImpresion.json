@@ -1,0 +1,124 @@
+[
+    {
+        "codigo": "uno",
+        "bloques": [
+            {
+                "ancho": 1320,
+                "alto": 730,
+                "font_size": 50,
+                "padding_num_lista": 50,
+                "posicion": [520, 0],
+                "wrap_lista": 50,
+                "wrap_candidato": 50,
+                "wrap_secundarios": 50,
+                "sep_lineas_secundarios": 35
+            }
+        ]
+    },
+    {
+        "codigo": "dos",
+        "bloques": [
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [520, 0]
+            },
+            {
+                "ancho": 720,
+                "alto": 740,
+                "posicion": [1160, 0]
+            }
+        ]
+    },
+    {
+        "codigo": "tres",
+        "bloques": [
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [640, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 0]
+            }
+        ]
+    },
+    {
+        "codigo": "tres_muchos_cnj",
+        "bloques": [
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [0, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [640, 0]
+            },
+            {
+                "ancho": 640,
+                "alto": 740,
+                "posicion": [1280, 0],
+                "font_size_titulo": 36,
+                "font_size": 30,
+                "wrap_lista": 40,
+                "wrap_candidato": 40,
+                "wrap_secundarios": 40
+            }        
+        ]
+    },
+    {
+        "codigo": "fallback",
+        "comun": {
+            "ancho": 460,
+            "alto": 245,
+            "font_size_titulo": 30,
+            "alto_fondo_titulo": 26,
+            "sep_lineas_lista": 20,
+            "sep_lineas_titular": 20,
+            "padding_num_lista": 20,
+            "padding_nom_lista": 25,
+            "font_size": 30
+        },
+        "bloques": [
+            {
+                "posicion": [60, 0]
+            },
+            {
+                "posicion": [520, 0]
+            },
+            {
+                "posicion": [520, 245]
+            },
+            {
+                "posicion": [520, 490]
+            },
+            {
+                "posicion": [980, 0]
+            },
+            {
+                "posicion": [980, 245]
+            },
+            {
+                "posicion": [980, 490]
+            },
+            {
+                "posicion": [1440, 0]
+            },
+            {
+                "posicion": [1440, 245]
+            },
+            {
+                "posicion": [1440, 490]
+            }
+        ]
+    }
+]

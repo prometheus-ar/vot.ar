@@ -1,0 +1,170 @@
+[
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Alianza",
+    "codigo":"1885",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885",
+    "imagenes":[
+      "1885"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15
+    ]
+  },
+  {
+    "asistida":"PRO - Propuesta Republicana",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1919",
+    "color":[
+      "#FDB813",
+      "#9B2583",
+      "#2D2B74"
+    ],
+    "id_candidatura":"1885.1919",
+    "imagenes":[
+      "1885.1919"
+    ],
+    "nombre":"PRO - Propuesta Republicana",
+    "nombre_corto":"PRO - Prop.Republic.",
+    "orden_absoluto":[
+      15,
+      57
+    ]
+  },
+  {
+    "asistida":"PRO",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140",
+    "color":[
+      "#FDB813",
+      "#9B2583",
+      "#2D2B74"
+    ],
+    "id_candidatura":"1885.1919.2140",
+    "imagenes":[
+      "1885.1919.2140"
+    ],
+    "nombre":"PRO",
+    "nombre_corto":"PRO",
+    "numero":"761",
+    "orden_absoluto":[
+      15,
+      57,
+      193
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1926",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926",
+    "imagenes":[
+      "1885.1926"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "orden_absoluto":[
+      15,
+      61
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926.2372",
+    "imagenes":[
+      "1885.1926.2372"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "numero":"781",
+    "orden_absoluto":[
+      15,
+      61,
+      203
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Candelaria Primero",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2250",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2250",
+    "imagenes":[
+      "1886.2250"
+    ],
+    "nombre":"Candelaria Primero",
+    "nombre_corto":"Candelaria Primero",
+    "orden_absoluto":[
+      6,
+      13
+    ]
+  },
+  {
+    "asistida":"Candelaria Primero",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2250",
+    "codigo":"1886.2250.2259",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2250.2259",
+    "imagenes":[
+      "1886.2250.2259"
+    ],
+    "nombre":"Candelaria Primero",
+    "nombre_corto":"Candelaria Primero",
+    "numero":"916",
+    "orden_absoluto":[
+      6,
+      13,
+      245
+    ]
+  }
+]

@@ -1,0 +1,676 @@
+[
+  {
+    "asistida":"Berruezo, Alicia Elizabeth",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1919.2140",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140.157993",
+    "id_candidatura":"1885.1919.2140.157993",
+    "id_umv":95,
+    "imagenes":[
+      "1885.1919.2140.157993"
+    ],
+    "nombre":"Berruezo, Alicia Elizabeth",
+    "orden_absoluto":[
+      15,
+      57,
+      193,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Mahmud, Federico Gabriel",
+      "Serrano, Ilda Gerarda",
+      "Ares, Bartolo Manuel",
+      "Alvarez, Julia Arminda"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Jorge Saravia, Rub\u00e9n",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.155344",
+    "id_candidatura":"1885.1926.2372.155344",
+    "id_umv":144,
+    "imagenes":[
+      "1885.1926.2372.155344"
+    ],
+    "nombre":"Jorge Saravia, Ruben",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Corvalan, Maria Paola Andrea",
+      "Julian, Ricardo Alberto",
+      "Velazquez, Natalia Cecilia",
+      "Veron, Pascual Angel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Mois\u00e9s, \"Pichona\" Gladys",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"DIP",
+    "cod_lista":"1885.2215.2218",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2218.157953",
+    "id_candidatura":"1885.2215.2218.157953",
+    "id_umv":1048,
+    "imagenes":[
+      "1885.2215.2218.157953"
+    ],
+    "nombre":"Moises, \"Pichona\" Gladys",
+    "orden_absoluto":[
+      15,
+      63,
+      171,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Campos, Joaquin Miguel",
+      "Lix Klett, Maria del Rosario"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Delgado, Federico Jos\u00e9",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"DIP",
+    "cod_lista":"1885.2215.2220",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2220.148714",
+    "id_candidatura":"1885.2215.2220.148714",
+    "id_umv":1051,
+    "imagenes":[
+      "1885.2215.2220.148714"
+    ],
+    "nombre":"Delgado, Federico Jose",
+    "orden_absoluto":[
+      15,
+      63,
+      172,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Arias, Valeria Veronica",
+      "Melian, David Adrian"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Velarde, \"\"Fabio\"\" Hugo Leon\u00e1rdo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2030",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2030.137392",
+    "id_candidatura":"1886.1890.2030.137392",
+    "id_umv":227,
+    "imagenes":[
+      "1886.1890.2030.137392"
+    ],
+    "nombre":"Velarde, \"Fabio\" Hugo Leonardo",
+    "orden_absoluto":[
+      6,
+      51,
+      59,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Vale Venencia, Claudia Silvina",
+      "Quiquinto, Carlos Humberto",
+      "Farias, Lourdes del Milagro",
+      "Posadas, Luis Alberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"D\"Auria, H\u00e9ctor Daniel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1890.2030",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2030.137536",
+    "id_candidatura":"1886.1890.2030.137536",
+    "id_umv":1063,
+    "imagenes":[
+      "1886.1890.2030.137536"
+    ],
+    "nombre":"D\"Auria, Hector Daniel",
+    "orden_absoluto":[
+      6,
+      51,
+      59,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Lanocci, Emma Fatima",
+      "Salvatierra, Luis Jorge"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Otero, Antonio Sebasti\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1906.1909",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1909.140243",
+    "id_candidatura":"1886.1906.1909.140243",
+    "id_umv":1091,
+    "imagenes":[
+      "1886.1906.1909.140243"
+    ],
+    "nombre":"Otero, Antonio Sebastian",
+    "orden_absoluto":[
+      6,
+      52,
+      208,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Roca, Nanci Edith",
+      "Ledesma, Juan Gabriel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Coronel, Juan Ram\u00f3n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1909",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1909.140324",
+    "id_candidatura":"1886.1906.1909.140324",
+    "id_umv":386,
+    "imagenes":[
+      "default"
+    ],
+    "nombre":"Coronel, Juan Ramon",
+    "orden_absoluto":[
+      6,
+      52,
+      208,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Lopez, Maria Eugenia",
+      "Ruiz, Angel Guillermo",
+      "Dominguez, Macarena Beatriz",
+      "Hoyos, Hector Fernando"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Garc\u00eda, Jos\u00e9 R\u00edt\u00f3",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1912.2260",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.2260.149900",
+    "id_candidatura":"1886.1912.2260.149900",
+    "id_umv":410,
+    "imagenes":[
+      "1886.1912.2260.149900"
+    ],
+    "nombre":"Garcia, Jose Rito",
+    "orden_absoluto":[
+      6,
+      48,
+      212,
+      4,
+      1
+    ],
+    "secundarios":[
+      "David, Apolinaria",
+      "Herrera, Mario Argentino",
+      "Ruiz, Marcia Guadalupe",
+      "Rufino, Roque Wenselao"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Arga\u00f1ar\u00e1z, Pedro Custodio",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2223.2224",
+    "cod_partido":"1886.2223",
+    "codigo":"1886.2223.2224.144759",
+    "id_candidatura":"1886.2223.2224.144759",
+    "id_umv":555,
+    "imagenes":[
+      "1886.2223.2224.144759"
+    ],
+    "nombre":"Arga\u00f1araz, Pedro Custodio",
+    "orden_absoluto":[
+      6,
+      66,
+      142,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Luna, Irma Alejandra",
+      "Rojas, Ruben Eduardo",
+      "Campos, Noemi Elizabeth",
+      "Mendez, Maximiliano Walter"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Abreg\u00fa, Alberto Antonio",
+    "clase":"Candidato",
+    "cod_alianza":"1887",
+    "cod_categoria":"DIP",
+    "cod_lista":"1887.1989.2254",
+    "cod_partido":"1887.1989",
+    "codigo":"1887.1989.2254.142601",
+    "id_candidatura":"1887.1989.2254.142601",
+    "id_umv":1102,
+    "imagenes":[
+      "1887.1989.2254.142601"
+    ],
+    "nombre":"Abregu, Alberto Antonio",
+    "orden_absoluto":[
+      5,
+      53,
+      103,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Delgadillo, Carmen Gabriela",
+      "Chancalay, Ceverino Atilio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"P\u00e9rez, Santos Ra\u00fal",
+    "clase":"Candidato",
+    "cod_alianza":"1887",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1887.2126.2141",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2141.152006",
+    "id_candidatura":"1887.2126.2141.152006",
+    "id_umv":606,
+    "imagenes":[
+      "1887.2126.2141.152006"
+    ],
+    "nombre":"Perez, Santos Raul",
+    "orden_absoluto":[
+      5,
+      31,
+      100,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Perez, Miriam Mabel",
+      "Sequeira, Claudio Jorge",
+      "Sosa, Alicia",
+      "Salazar, Ramon Arnaldo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Gonz\u00e1lez, Antonio M\u00e1rcos",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.1905.2139",
+    "cod_partido":"1888.1905",
+    "codigo":"1888.1905.2139.142822",
+    "id_candidatura":"1888.1905.2139.142822",
+    "id_umv":624,
+    "imagenes":[
+      "1888.1905.2139.142822"
+    ],
+    "nombre":"Gonzalez, Antonio Marcos",
+    "orden_absoluto":[
+      3,
+      41,
+      163,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Santillan, Ana Maria",
+      "Romano, Juan Jose",
+      "Alvarez, Carla Jimena",
+      "Vidaurre, Marcos Hernan"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ech\u00e1rt, Ra\u00fal Alejandro",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"DIP",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.151216",
+    "id_candidatura":"1888.1934.2440.151216",
+    "id_umv":1112,
+    "imagenes":[
+      "1888.1934.2440.151216"
+    ],
+    "nombre":"Etchart, Raul Alejandro",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Romeri, Alicia Noemi",
+      "Cordoba, Bruno Emanuel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Correa, Mario",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2117.2118",
+    "cod_partido":"1888.2117",
+    "codigo":"1888.2117.2118.138248",
+    "id_candidatura":"1888.2117.2118.138248",
+    "id_umv":658,
+    "imagenes":[
+      "1888.2117.2118.138248"
+    ],
+    "nombre":"Correa, Mario",
+    "orden_absoluto":[
+      3,
+      49,
+      166,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Alarcon, Rosa Nelida",
+      "Bautista, Jorge Enrique",
+      "Sarapura, Maria Antonia",
+      "Dalinger, Geronimo Rodolfo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Posadas Bas\u00e1n, Daniel Arnaldo",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.146594",
+    "id_candidatura":"1888.2378.2379.146594",
+    "id_umv":689,
+    "imagenes":[
+      "1888.2378.2379.146594"
+    ],
+    "nombre":"Posadas Bazan, Daniel Arnaldo",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Moya, Rosa Ana Maria",
+      "Beron, Ariel Rodrigo",
+      "Toscano Retamozo, Rita del Valle",
+      "Sarapura, Jose Luis"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"D\u00edaz, Norberto Sebasti\u00e1n Carlos",
+    "clase":"Candidato",
+    "cod_alianza":"1889",
+    "cod_categoria":"DIP",
+    "cod_lista":"1889.1916.2271",
+    "cod_partido":"1889.1916",
+    "codigo":"1889.1916.2271.146605",
+    "id_candidatura":"1889.1916.2271.146605",
+    "id_umv":1126,
+    "imagenes":[
+      "1889.1916.2271.146605"
+    ],
+    "nombre":"Diaz, Sebastian",
+    "orden_absoluto":[
+      4,
+      25,
+      2,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Ruiz, Maria Fernanda",
+      "Venencia, Higinio Manuel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Toledo, H\u00e9ctor Marcos Fabi\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"DIP",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.145392",
+    "id_candidatura":"1947.1947.1985.145392",
+    "id_umv":1145,
+    "imagenes":[
+      "1947.1947.1985.145392"
+    ],
+    "nombre":"Toledo, Hector Marcos Fabian",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Guaymas, Maria Ines",
+      "Usandivaras, Abelardo Baltasar"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Garc\u00eda, Eduardo Daniel",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.150943",
+    "id_candidatura":"1947.1947.1985.150943",
+    "id_umv":830,
+    "imagenes":[
+      "1947.1947.1985.150943"
+    ],
+    "nombre":"Garcia, Eduardo Daniel",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Arga\u00f1araz, Adriana Marcelina",
+      "Rojas, Armando Hernan",
+      "Beron, Elena Arminda",
+      "Garcia, Hugo Rogelio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":891,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1161,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":951,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1172,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1011,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1183,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

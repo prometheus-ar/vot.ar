@@ -1,4 +1,4 @@
-function consulta(data){
+function consulta(candidatos){
     /*
      * Muestra la pantalla de consulta de votacion.
      */
@@ -9,24 +9,24 @@ function consulta(data){
     if (constants.asistida) {
         $("#pantalla_consulta .texto-mediano").show();
         $("#pantalla_consulta #candidatos_seleccion").hide();
-        patio.pantalla_consulta.only();
+    } else {
+        $("#img_voto").html('<h2 style="margin-top:200px">Cargando...</h2>');
     }
-    send("imagen_consulta");
+    candidatos_consulta(candidatos);
+    patio.pantalla_consulta.only();
+    setTimeout(
+        function(){
+            send("imagen_consulta");
+        },
+        100);
 }
 
-function imagen_consulta(data){
-    /*
-     * Muesta la imagen de consulta de voto.
-     * Argumentos:
-     * data -- un png base64 encoded.
-     */
-    patio.pantalla_consulta.only();
-    var img = decodeURIComponent(data[0]);
-    $("#img_voto").html(img);
+function candidatos_consulta(candidatos){
+    /* Muestra los candidatos en la consulta de voto. */
     var html_candidatos = "";
+    $("#candidatos_seleccion").html("");
     
     var template = get_template("candidato_verificacion");
-    var candidatos = data[1];
     var items = "";
     for(var i in candidatos){
         var candidato = local_data.candidaturas.one(
@@ -47,19 +47,44 @@ function imagen_consulta(data){
     $("#candidatos_seleccion").html(items);
 }
 
-function mostrar_voto(data){
+function imagen_consulta(data){
     /*
      * Muesta la imagen de consulta de voto.
      * Argumentos:
      * data -- un png base64 encoded.
      */
     var img = decodeURIComponent(data);
-    $("#img_previsualizacion").html(img);
-    var svg = $("#img_previsualizacion svg");
-    svg.css("transform-origin", "10% 0");
-    svg.css("transform", "scale(0.55)");
+    var svg = constants.muestra_svg;
+    if(svg){
+        $("#img_voto").html(img);
+    } else {
+        $("#img_voto").html("");
+        var img_elem = document.createElement("img");
+        img_elem.src = img;
+        var contenedor = document.getElementById("img_voto")
+        contenedor.appendChild(img_elem);
+    }
+}
 
-    window.setTimeout(confirmar_seleccion, 150);
+function mostrar_voto(data){
+    /*
+     * Muesta la imagen de consulta de voto.
+     * Argumentos:
+     * data -- un png base64 encoded.
+     */
+    if(!constants.asistida){
+        var img = decodeURIComponent(data);
+        var svg = constants.muestra_svg;
+        if(svg){
+            $("#img_previsualizacion").html(img);
+        } else {
+            var img_elem = document.createElement("img");
+            img_elem.src = img;
+            var contenedor = document.getElementById("img_previsualizacion")
+            contenedor.innerHTML = "";
+            contenedor.appendChild(img_elem);
+        }
+    }
 }
 
 function pantalla_principal(){
@@ -122,9 +147,12 @@ function insercion_boleta(){
 }
 
 function popular_pantalla_modos(){
+    /*
+     * Genera los datos a mostrar en la pantalla de seleccion de modos.
+     */
     var botones = [];
-    for(var i in constants.BOTONES_SELECCION_MODO){
-        var boton = constants.BOTONES_SELECCION_MODO[i];
+    for(var i in constants.botones_seleccion_modo){
+        var boton = constants.botones_seleccion_modo[i];
         var data = {};
         if(boton == "BTN_COMPLETA"){
             data.clase = "votar-lista-completa";
@@ -143,9 +171,12 @@ function popular_pantalla_modos(){
 }
 
 function popular_pantalla_menu(){
+    /*
+     * Genera los datos a mostrar en la pantalla de seleccion del menu.
+     */
     return {
         "asistida": constants.asistida,
-        "usar_asistida": constants.USAR_ASISTIDA,
+        "usar_asistida": constants.usar_asistida,
     };
 }
 
@@ -167,8 +198,13 @@ function agradecimiento(){
     if(!confirmada){
       confirmada = true;
       limpiar_data_categorias();
-      previsualizar_voto();
+
       patio.pantalla_agradecimiento.only();
+      if(!constants.asistida){
+        $("#img_previsualizacion").html('<h2 style="margin-top:200px">Cargando...</h2>');
+        setTimeout(previsualizar_voto, 50);
+        setTimeout(confirmar_seleccion, 100);
+      }
     }
 }
 

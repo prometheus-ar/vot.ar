@@ -1,0 +1,35 @@
+agrupar_cargo: false
+agrupar_por_partido: false
+boton_modificar_con_una_categoria: false
+boton_modificar_en_categorias: true
+boton_modificar_en_lista_completa: true
+botones_seleccion_modo: [BTN_CATEG, BTN_COMPLETA]
+categoria_agrupa_por: Alianza
+colapsar_candidatos: 10
+colapsar_listas: 35
+confirmacion_lateral: true
+interna: false
+limitar_candidatos:
+    secundarios:
+        barra_lateral: null
+        boton_candidato: null
+        confirmacion : null
+        verificacion: null
+    suplentes:
+        barra_lateral: null
+        boton_candidato: null
+        confirmacion : null
+        verificacion: null
+mezclar_agrupaciones: true
+mezclar_candidatos: true
+mezclar_consulta: true
+mezclar_listas: true
+mezclar_por_sesion: true
+mostrar_adheridas_confirmacion: true
+mostrar_barra_seleccion: false
+paso: true
+precachear_imagenes: true
+seleccionar_candidato_unico: true
+seleccionar_idioma: false
+seleccionar_lista_unica: true
+mostrar_blanco_siempre: true

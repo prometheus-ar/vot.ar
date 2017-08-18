@@ -1,5 +1,5 @@
 from msa.core.imaging import Imagen
-from msa.core.imaging.constants import MEDIDAS_BOLETA
+from msa.core.imaging.constants import MEDIDAS_ACTA
 
 
 class ImagenPrueba(Imagen):
@@ -13,8 +13,8 @@ class ImagenPrueba(Imagen):
     def generate_data(self):
         """Genera la data para enviar al template."""
         svg_args = {}
-        svg_args['width'] = MEDIDAS_BOLETA["ancho"]
-        svg_args['height'] = MEDIDAS_BOLETA["alto_con_verif"]
+        svg_args['width'] = MEDIDAS_ACTA["ancho"]
+        svg_args['height'] = MEDIDAS_ACTA["alto_recuento"]
 
         self.data = svg_args
 

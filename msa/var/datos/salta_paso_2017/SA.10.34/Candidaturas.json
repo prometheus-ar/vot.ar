@@ -1,0 +1,146 @@
+[
+  {
+    "asistida":"Cruz, Juan Carlos",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2051",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2051.138053",
+    "id_candidatura":"1886.1890.2051.138053",
+    "id_umv":262,
+    "imagenes":[
+      "1886.1890.2051.138053"
+    ],
+    "nombre":"Cruz, Juan Carlos",
+    "orden_absoluto":[
+      6,
+      51,
+      84,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Gregorio, Guillerma",
+      "Urquiza, Hector Arnaldo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Pisco, Sebasti\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.141495",
+    "id_candidatura":"1886.2104.2105.141495",
+    "id_umv":490,
+    "imagenes":[
+      "1886.2104.2105.141495"
+    ],
+    "nombre":"Pisco, Sebastian",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Martinez, Gloria",
+      "Tolaba, Martin"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Tol\u00e1ba, Juan Carlos",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.149124",
+    "id_candidatura":"1888.2378.2379.149124",
+    "id_umv":707,
+    "imagenes":[
+      "1888.2378.2379.149124"
+    ],
+    "nombre":"Tolaba, Juan Carlos",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Mendiz, Elsa Mariela",
+      "Tolaba, Ruben"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":860,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":920,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":980,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

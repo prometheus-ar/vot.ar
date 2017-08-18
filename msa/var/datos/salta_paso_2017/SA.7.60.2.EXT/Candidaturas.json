@@ -1,0 +1,370 @@
+[
+  {
+    "asistida":"M\u00e9ndez, Santos Marcelino",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1904.2053",
+    "cod_partido":"1885.1904",
+    "codigo":"1885.1904.2053.149090",
+    "id_candidatura":"1885.1904.2053.149090",
+    "id_umv":27,
+    "imagenes":[
+      "1885.1904.2053.149090"
+    ],
+    "nombre":"M\u00e9ndez, Santos Marcelino",
+    "orden_absoluto":[
+      15,
+      44,
+      179,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Vilte Calderon, Claudia",
+      "Martinez, Franco Maximiliano"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guzm\u00e1n, Diego Sebasti\u00e1n",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1919.2140",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140.146739",
+    "id_candidatura":"1885.1919.2140.146739",
+    "id_umv":91,
+    "imagenes":[
+      "1885.1919.2140.146739"
+    ],
+    "nombre":"Guzman, Diego Sebastian",
+    "orden_absoluto":[
+      15,
+      57,
+      193,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Fernandez, Ana",
+      "Farfan, Pedro Pascual"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guzm\u00e1n, Daniel Alejandro",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1923.2236",
+    "cod_partido":"1885.1923",
+    "codigo":"1885.1923.2236.143088",
+    "id_candidatura":"1885.1923.2236.143088",
+    "id_umv":101,
+    "imagenes":[
+      "1885.1923.2236.143088"
+    ],
+    "nombre":"Guzman, Daniel Alejandro",
+    "orden_absoluto":[
+      15,
+      50,
+      187,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Quinta, Clarisa Ariadna",
+      "Reyes, Roman Omar"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Contreras Gareca, Lucio Ariel",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.156620",
+    "id_candidatura":"1885.1926.2372.156620",
+    "id_umv":157,
+    "imagenes":[
+      "1885.1926.2372.156620"
+    ],
+    "nombre":"Contreras Gareca, Lucio Ariel",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Flores, Matilde Belen Maira",
+      "Contreras Gareca, Horacio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Vides, Juan Neri",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1929.2246",
+    "cod_partido":"1885.1929",
+    "codigo":"1885.1929.2246.146577",
+    "id_candidatura":"1885.1929.2246.146577",
+    "id_umv":166,
+    "imagenes":[
+      "1885.1929.2246.146577"
+    ],
+    "nombre":"Vides, Juan Neri",
+    "orden_absoluto":[
+      15,
+      58,
+      200,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Arce, Dalma Lorena",
+      "Vides, Jose Miguel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Meneses, M\u00edriam del Valle",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2065",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2065.140246",
+    "id_candidatura":"1886.1890.2065.140246",
+    "id_umv":276,
+    "imagenes":[
+      "1886.1890.2065.140246"
+    ],
+    "nombre":"Meneses, Miriam del Valle",
+    "orden_absoluto":[
+      6,
+      51,
+      63,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Meneses, Edwin",
+      "Quiroga, Rocio"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ponce, Patricia Rosana",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1903.2121",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121.147515",
+    "id_candidatura":"1886.1903.2121.147515",
+    "id_umv":339,
+    "imagenes":[
+      "1886.1903.2121.147515"
+    ],
+    "nombre":"Ponce, Patricia Rosana",
+    "orden_absoluto":[
+      6,
+      23,
+      137,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Ramirez, Dionicio",
+      "Campos, Carolina de los Angeles"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Sai, Quita, Luis Fidel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1907",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907.145824",
+    "id_candidatura":"1886.1906.1907.145824",
+    "id_umv":373,
+    "imagenes":[
+      "1886.1906.1907.145824"
+    ],
+    "nombre":"Saiquita, Luis Fidel",
+    "orden_absoluto":[
+      6,
+      52,
+      207,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cazon, Gabriela Elizabeth",
+      "Tolaba, Simon"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Tol\u00e1ba, Diego Ricardo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.149506",
+    "id_candidatura":"1886.2104.2105.149506",
+    "id_umv":503,
+    "imagenes":[
+      "1886.2104.2105.149506"
+    ],
+    "nombre":"Tolaba, Diego Ricardo",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Tapia, Maria Ester",
+      "Guayta, Benito Ventura"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ocampo, Esteban",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.1905.2139",
+    "cod_partido":"1888.1905",
+    "codigo":"1888.1905.2139.143903",
+    "id_candidatura":"1888.1905.2139.143903",
+    "id_umv":630,
+    "imagenes":[
+      "1888.1905.2139.143903"
+    ],
+    "nombre":"Ocampo, Esteban",
+    "orden_absoluto":[
+      3,
+      41,
+      163,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Ruiz, Soledad de los Angeles",
+      "Gomez, Enrique Gustavo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Barroso, Manuel Marco Antonio",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.146212",
+    "id_candidatura":"1888.2378.2379.146212",
+    "id_umv":682,
+    "imagenes":[
+      "1888.2378.2379.146212"
+    ],
+    "nombre":"Barroso, Manuel Marco",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Ignacio, Felisa",
+      "Meneses, Bernardino Wilson"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":907,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":967,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1027,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

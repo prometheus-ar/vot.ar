@@ -1,0 +1,479 @@
+<script id="tmpl_pantallas/escrutinio/campo_extra" type="text/x-handlebars-template" class="raw_template">
+<div id="campo_{{id_campo}}" class="campo {{#if editable}}campo_editable{{/if}}">
+    <div class="clave">{{titulo}}</div>
+    <div id="numero_{{id_campo}}" class="contenedor-valor">
+        <div id="valor_{{id_campo}}" class="valor {{#if editable}}editable{{/if}}" data-value="{{cantidad}}">
+            {{cantidad}}
+        </div>
+        {{#if editable}}
+            <div id="btn_bajar_{{id_campo}}" class="btn-bajar" data-target="valor_{{id_campo}}">-</div>
+        {{/if}}
+        {{#if editable}}
+            <div id="btn_subir_{{id_campo}}" class="btn-subir" data-target="valor_{{id_campo}}">+</div>
+        {{/if}}
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/candidato" type="text/x-handlebars-template" class="raw_template">
+<div class="contenedor-votado max-{{total_candidatos}}" id="candidato_{{candidato.codigo}}" cod_lista="{{candidato.codigo}}">
+  <div class="candidato {{#if es_blanco}}blanco{{/if}} {{#if consulta_popular}}consulta_popular{{/if}}">
+        <div class="nombre-cargo-recuento">{{categoria.nombre}}</div>
+        {{#unless no_muestra_lista}}
+            <div class="lista">
+                <p class="palabra-lista">{{palabra_lista}}</p>
+                <p class="numero-lista">{{candidato.lista.numero}}</p>
+            </div>
+        {{/unless}}
+        {{#if muestra_foto}}
+            <div class="foto-candidato">
+                <img src="{{img_path}}{{#if es_blanco}}BLC.svg{{else}}{{candidato.imagenes.[0]}}.jpg{{/if}}" />
+            </div>
+        {{/if}}
+        {{#unless no_muestra_lista}}
+            <div class="foto-partido">
+                <img src="{{img_path}}{{candidato.lista.imagenes.[0]}}.jpg" />
+            </div>
+            <div class="nombre-partido">{{candidato.partido.nombre}}</div>
+            <div class="nombre-lista">{{candidato.lista.nombre}}</div>
+        {{/unless}}
+        {{#if consulta_popular}}
+        <div class="candidato-principal" style="color:{{candidato.lista.color.[0]}}">{{candidato.nombre}}</div>
+        {{else}}
+        <div class="candidato-principal">{{candidato.nombre}}</div>
+        {{/if}}
+        <div class="candidato-secundario"> {{secundarios}} </div>
+        <div class="candidato-secundario">
+            {{#candidato.categorias_hijas}}
+                {{2.nombre}}: {{1.nombre}}
+                {{#1.secundarios}}
+                    {{this}}{{#unless @last}};{{/unless}}
+                {{/1.secundarios}}
+            {{/candidato.categorias_hijas}}
+        </div>
+    </div>
+    <div class="pie-candidato">
+        <div class="numero-votos">Votos: {{votos}}</div>
+        {{{colores color}}}
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_acciones" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_acciones" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_aceptar" class="boton-accion-panel positivo">
+        <p>
+        <span class="barra-opciones-texto" id="_txt_aceptar"></span>
+        </p>
+    </li>
+    <li id="boton_cancelar" class="boton-accion-panel negativo">
+        <p>
+        <span class="barra-opciones-texto" id="_txt_cancelar"></span>
+        </p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_asistente" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_asistente" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_anterior" class="boton-accion-panel volver">
+        <p>
+            <span class="barra-opciones-texto" id="_txt_palabra_anterior"></span>
+        </p>
+    </li>
+    <li id="boton_siguiente" class="boton-accion-panel avanzar">
+        <p>
+            <span class="barra-opciones-texto _txt_palabra_siguiente" id="boton_siguiente_asistente"></span>
+        </p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_blanco" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_blanco" class="panel-acciones panel-derecho" style="display:none">
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_clasificacion" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_clasificacion" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_imprimir" class="boton-accion-panel imprimir" style="display:none">
+        <p>
+        <span class="barra-opciones-texto" id="_txt_imprimir_actas"></span>
+        </p>
+    </li>
+    <li id="boton_volver" class="boton-accion-panel volver">
+        <p>
+        <span class="barra-opciones-texto" id="_txt_volver"></span>
+        </p>
+    </li>
+    <li id="boton_siguiente" class="boton-accion-panel siguiente">
+        <p>
+        <span class="barra-opciones-texto _txt_palabra_siguiente" id="boton_siguiente_clasificacion"></span>
+        </p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_copias" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_copias" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_finalizar" class="boton-accion-panel salir">
+        <p>
+            <span class="barra-opciones-texto" id="_txt_palabra_finalizar"></span>
+        </p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_derecho" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_derecho" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_continuar">
+        <p>
+        <span class="barra-opciones-texto texto-recuento" id="_txt_finalizar_recuento"></span>
+        <span class="barra-opciones-texto texto-totalizador" id="_txt_finalizar_totalizacion"></span>
+        </p>
+    </li>
+    <li id="boton_qr" style="display:none">
+        <span>
+            <i class="material-icons">&#xE5CC;</i>
+            <p id="_txt_ver_qr"></p>
+        </span>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_estado" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_estado" class="panel-acciones panel-central" style="display:none">
+    <li id="identificador_mesa">
+    <p>Mesa <span class="num-mesa" id="numero_mesa">{{numero_mesa}}</span></p>
+    </li>
+    <li id="cantidad_escrutadas">
+    <p><span id="_txt_boletas_procesadas" class="texto-recuento"/><span id="_txt_actas_procesadas" class="texto-totalizador"/>:
+        <span class="numero-procesada">0</span></p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/panel_finalizar" type="text/x-handlebars-template" class="raw_template">
+<div id="panel_finalizar" class="panel-acciones panel-derecho" style="display:none">
+    <li id="boton_finalizar" class="boton-accion-panel apagar">
+        <p>
+            <span class="barra-opciones-texto" id="_txt_apagar"></span>
+        </p>
+    </li>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/tabla" type="text/x-handlebars-template" class="raw_template">
+<div id="tabla">
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/context/teclado" type="text/x-handlebars-template" class="raw_template">
+<div id="teclado-flechas">
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/copias" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_copias" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 id="_txt_mensaje_copias"></h1>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/imprimiendo" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_imprimiendo" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 id="_txt_mensaje_imprimiendo"></h1>
+        <h2 id="_txt_espere_por_favor"></h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/loading" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_loader" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 id="_txt_cargando_interfaz">{{cargando_interfaz}}</h1>
+        <h2 id="_txt_espere_por_favor">{{espere_por_favor}}</h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/mensaje_confirmar_apagar" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_confirmar_apagar" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center;">
+    <div class="contenedor_texto">
+        <h1 class="texto-principal" id="_txt_titulo_confirmacion_apagado"></h1>
+        <h2 class="texto-secundario" id="_txt_recuerde_remover_disco"></h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/mensaje_fin_escrutinio" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_fin_escrutinio" class="mensaje pantalla completo pocas-boletas" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 id="_txt_fin_escrutinio_pregunta"></h1>
+        <h2 id="_txt_fin_escrutinio_aclaracion"></h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/mensaje_pocas_boletas" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_pocas_boletas" class="mensaje pantalla completo pocas-boletas" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h3 id="_txt_pocas_boletas_alerta"></h3>
+        <h1 id="_txt_pocas_boletas_pregunta"></h1>
+        <h2 id="_txt_pocas_boletas_aclaracion"></h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/mensaje_salir" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_salir" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 class="texto-principal texto-recuento" id="_txt_seguro_salir_escrutinio"></h1>
+        <h2 class="texto-secundario texto-recuento" id="_txt_seguro_salir_escrutinio_aclaracion"></h2>
+        <h1 class="texto-principal texto-totalizador" id="_txt_seguro_salir_totalizador"></h1>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_boleta" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_boleta" style="display:none">
+    <div id="resultado">
+    </div>
+    <div id="boleta">
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_boleta_error" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_boleta_error" style="display:none;">
+    <div class="mensaje pantalla completo error">
+        <div class="contenedor_texto">
+            <h1 id="_txt_error_lectura"></h1>
+            <h2 id="_txt_continuar_recuento" class="texto-recuento"></h2>
+            <h2 id="_txt_continuar_totalizacion" class="texto-totalizador"></h2>
+        </div>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_boleta_repetida" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_boleta_repetida" style="display:none;">
+    <div class="mensaje pantalla medio duplicada">
+        <div class="contenedor_texto">
+            <h1 id="_txt_boleta_repetida" class="texto-recuento"></h1>
+            <h1 id="_txt_acta_repetida" class="texto-totalizador"></h1>
+            <h2 id="_txt_continuar_recuento" class="texto-recuento"></h2>
+            <h2 id="_txt_continuar_totalizacion" class="texto-totalizador"></h2>
+        </div>
+    </div>
+    <div id="boleta">
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_clasificacion_votos" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_clasificacion_votos" style="display:none">
+    <div id="campos_extra">
+    </div>
+    <div id="definiciones">
+        <div class="titulo"></div>
+        <div class="contenido"></div>
+    </div>
+</diV>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_verificar_acta" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_verificar_acta" style="display:none;">
+    <div class="mensaje pantalla medio duplicada">
+        <div class="contenedor_texto">
+            <h1 id="_txt_verificar_acta" class="texto-totalizador"></h1>
+            <h2 id="_txt_revisar_acta_totalizador" class="texto-totalizador"></h2>
+        </div>
+    </div>
+    <div id="boleta">
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_clasificacion_votos" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_clasificacion_votos" style="display:none">
+    <div id="campos_extra">
+    </div>
+    <div id="definiciones">
+        <div class="titulo"></div>
+        <div class="contenido"></div>
+    </div>
+</diV>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_copias" type="text/x-handlebars-template" class="raw_template">
+<div id="mensaje_salir" class="mensaje pantalla completo sin-barra-opciones" style="display:none;text-align:center">
+    <div class="contenedor_texto">
+        <h1 id="_txt_seguro_salir_escrutinio"></h1>
+        <h2 id="_txt_seguro_salir_escrutinio_aclaracion"></h2>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/pantalla_inicial" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_inicial" class="mensaje pantalla completo inicial" style="display:none">
+  <div class="tooltip flecha-der">
+    <p id="_txt_bienvenida_recuento" class="texto-recuento"></p>
+    <p id="_txt_bienvenida_totalizador" class="texto-totalizador"></p>
+  </div>
+  <div id="img1" class="imagen">
+    <img src="img/asistente_cierre/acercar_boleta.png" />
+  </div>
+  <div id="img2" class="imagen">
+    <img src="img/asistente_cierre/acercar_recuento_totalizador.png" />
+  </div>
+</div>
+</script>
+<script id="tmpl_pantallas/escrutinio/pedir_acta" type="text/x-handlebars-template" class="raw_template">
+<div id="pantalla_pedir_acta" class="mensaje pantalla pedir-acta" style="display:none">
+    <div class="encabezado">
+        <p id="texto_insercion_acta" class="titulo"></p>
+    </div>
+    <div class="imagen"></div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/slides/certificados_extra" type="text/x-handlebars-template" class="raw_template">
+<div id="slide_certificados_extra" class="slide" style="display:none">
+    <div class="contenido-slide">
+        <p id="_txt_usted_puede_imprimir"></p>
+        <img class="imagen_qr con-qr" />
+        <p id="_txt_fiscales_qr" class="con-qr"></p>
+    </div>
+
+
+</script>
+<script id="tmpl_pantallas/escrutinio/slides/devolucion_sobre" type="text/x-handlebars-template" class="raw_template">
+<div id="slide_devolucion_sobre" class="slide" style="display:none">
+    <div class="contenido-slide">
+        <p id="_txt_introduzca_sobre_actas"></p>
+        <div id="imagen_introduzca_sobre_actas">
+            <div id="_txt_lista_actas_sobre" class="texto-slide"></div>
+            <div id="_txt_lista_otras_actas" class="texto-slide"></div>
+            <div id="_txt_padrones_electorales" class="texto-slide"></div>
+            <div id="_txt_otros_votos" class="texto-slide"></div>
+        </div>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/slides/devolucion_urna" type="text/x-handlebars-template" class="raw_template">
+<div id="slide_devolucion_urna" class="slide" style="display:none">
+    <div class="contenido-slide">
+        <p id="_txt_introduzca_certificado_boletas"></p>
+        <div id="imagen_introduzca_certificado">
+            <div id="_txt_certificado_de_escrutinio" class="texto-slide"></div>
+            <div id="_txt_boletas_votos_nulos" class="texto-slide"></div>
+            <div id="_txt_introducir_urna" class="texto-slide"></div>
+            <div id="_txt_cerrar_faja_seguridad" class="texto-slide"></div>
+        </div>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/slides/firmar_acta" type="text/x-handlebars-template" class="raw_template">
+<div id="slide_firmar_acta" class="slide" style="display:none">
+    <div class="contenido-slide">
+        <p id="_txt_asegurese_firmar_acta"></p>
+        <p id="_txt_el_suplente_acercara"></p>
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/slides/qr_fiscales" type="text/x-handlebars-template" class="raw_template">
+<div id="slide_qr_fiscales" class="slide" style="display:none">
+    <div class="contenido-slide">
+        <p id="_txt_introduzca_certificados_para_fiscales"></p>
+        <img class="imagen_qr con-qr" />
+    </div>
+</div>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/tabla" type="text/x-handlebars-template" class="raw_template">
+<table>
+    <thead>
+      <tr>
+        {{#each titulos}}
+        <th {{#if @first}} colspan="{{../../ancho_titulo}}"{{else}} style="text-align:center" {{/if}}>
+            <div>{{.}}</div>
+          </th>
+        {{/each}}
+        </tr>
+    </thead>
+    <tbody class="contenedor-scroll arriba">
+        <tr id="scroll-arriba"><td>&#xE5C7;</td></tr>
+    </tbody>
+    <tbody class="votos-regulares">
+      {{#each filas}}
+          <tr id="fila-{{datos.codigo}}" class="{{tipo}}">
+              <td {{#if expande}} colspan="{{../../num_filas}}"{{/if}}>
+                  {{#if mostrar_numero_lista}}
+                      {{#if datos.numero}}
+                        <div class="lista-numero">
+                            {{datos.numero}}
+                            {{{colores ../color}}}
+                        </div>
+                      {{/if}}
+                  {{else if ../color}}
+                      {{#if datos.numero}}
+                        {{{colores ../color}}}
+                      {{/if}}
+                  {{else}}
+                  <div class="lista-especial">
+                      &nbsp;
+                  </div>
+                  {{/if}}
+                  <div class="descripcion {{#if es_blanco}}voto-blanco{{/if}}">
+                      {{{descripcion}}}
+                  </div>
+              </td>
+              {{#each categorias}}
+              <td id="celda_{{id_umv}}" class="{{clase_resaltado}} col_{{@index}}">
+                  {{#if votos}}
+                    {{votos}}
+                  {{else}} 
+                  -
+                  {{/if}}
+              </td>
+              {{/each}}
+          </tr>
+      {{/each }}
+      </tbody>
+      <tbody class="contenedor-scroll abajo">
+          <tr id="scroll-abajo"><td>&#xE5C5;</td></tr>
+      </tbody>
+      <tbody class="votos-especiales">
+      {{#each filas_especiales}}
+          <tr id="fila-{{id_fila}}" class="{{tipo}}">
+              <td colspan="{{../ancho_filas_especiales}}">
+                  <div class="lista-especial">
+                      &nbsp;
+                  </div>
+                  <div class="descripcion">
+                      {{descripcion}}
+                  </div>
+              </td>
+              <td colspan="1">
+                  {{votos}}
+              </td>
+          </tr>
+      {{/each }}
+    </tbody>
+</table>
+
+</script>
+<script id="tmpl_pantallas/escrutinio/colores" type="text/x-handlebars-template" class="raw_template">
+<div class="color-lista">
+  {{#each colores}}
+  <div class="color colores{{../num_colores}}" style="background:{{this}}"></div>
+  {{/each}}
+</div>
+
+</script>

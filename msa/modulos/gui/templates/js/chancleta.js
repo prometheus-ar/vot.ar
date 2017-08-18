@@ -1,4 +1,12 @@
 function sortJsonArrayByProperty(objArray, prop, direction){
+    /*
+     *  Ordena los objetos en un array por una propiedad de los mismos.
+     *
+     *  Argumentos:
+     *      objArray -- array de objetos
+     *      prop -- la pripiedad por la cual la querems ordenar
+     *      direction -- 1 ASC, 0 DESC
+     */
     if (arguments.length<2) throw new Error("sortJsonArrayByProp requires 2 arguments");
     var direct = arguments.length>2 ? arguments[2] : 1; //Default to ascending
 
@@ -21,14 +29,22 @@ function sortJsonArrayByProperty(objArray, prop, direction){
 }
 
 function Chancleta(data_){
+    /* Un objeto que se comporta similar a un OjotaSet. */
     this._data = data_; 
 }
 
 function _all(){
+    /* Devuelve todos los elementos. */
     return this._data;
 }
 
 function _many(filter_dict){
+    /* Devuelve todos los objetos que coincidan con un filtro.
+     * 
+     * Argumentos:
+     *  filter_dict -- un diccionario con los keys que queremos filtrar, puede
+     *  tener tambien el key "sorted" que ordena por ese campo.
+     */
     if(filter_dict === undefined){
         filter_dict = {};
     }
@@ -52,6 +68,12 @@ function _many(filter_dict){
 }
 
 function _one(filter_dict){
+    /* Devuelve el primer objeto que coincida con un filtro.
+     * 
+     * Argumentos:
+     *  filter_dict -- un diccionario con los keys que queremos filtrar, puede
+     *  tener tambien el key "sorted" que ordena por ese campo.
+     */
     var objects = this.many(filter_dict);
     if(objects.length){
         return objects[0];
@@ -59,6 +81,12 @@ function _one(filter_dict){
 }
 
 function _first(filter_dict){
+    /* Devuelve el primer objeto que coincida con un filtro, falla si no hay.
+     * 
+     * Argumentos:
+     *  filter_dict -- un diccionario con los keys que queremos filtrar, puede
+     *  tener tambien el key "sorted" que ordena por ese campo.
+     */
     return this.many(filter_dict)[0];
 }
 

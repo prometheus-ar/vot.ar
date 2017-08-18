@@ -1,7 +1,6 @@
-from construct import (Array, Bytes, Embed, GreedyRange, If, Struct, UBInt8,
+from construct import (Array, Bytes, Embed, GreedyRange, Struct, UBInt8,
                        UBInt16)
-from msa.core.data.constants import LEN_COD_CATEGORIA
-from msa.core.documentos.constants import LEN_LEN_OPC, LEN_LEN_UBIC, LEN_SERIAL
+from msa.core.documentos.constants import LEN_LEN_OPC, LEN_LEN_UBIC
 
 
 struct_voto = Struct(
@@ -9,8 +8,7 @@ struct_voto = Struct(
     Bytes("len_ubic", LEN_LEN_UBIC),
     Bytes("ubicacion", lambda ctx: int(ctx.len_ubic)),
     Bytes("len_opciones", LEN_LEN_OPC),
-    Bytes("opciones", lambda ctx: int(ctx.len_opciones)),
-    Bytes("serial", LEN_SERIAL)
+    Bytes("opciones", lambda ctx: int(ctx.len_opciones))
 )
 
 struct_recuento = Struct(

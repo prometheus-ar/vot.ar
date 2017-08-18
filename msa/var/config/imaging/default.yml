@@ -1,0 +1,7 @@
+clases_a_mostrar: ["Alianza", "Lista"]
+colapsar_partido: false
+mostrar_adheridas: false
+mostrar_suplentes_en_boleta: true
+mostrar_ubicacion_boleta: false
+numero_lista_en_tabla: true
+usar_qr: true

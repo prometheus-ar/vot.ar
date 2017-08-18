@@ -3,9 +3,7 @@
 Orquesta el orden y maneja la impresion de actas y certificados.
 """
 from base64 import b64encode
-from json import dumps
-
-from dbus.exceptions import DBusException
+from ujson import dumps
 
 from gi.repository.GObject import timeout_add
 from msa.core.data.candidaturas import Categoria
@@ -13,7 +11,6 @@ from msa.core.documentos.constants import (CIERRE_CERTIFICADO,
                                            CIERRE_COPIA_FIEL,
                                            CIERRE_ESCRUTINIO, CIERRE_RECUENTO,
                                            CIERRE_TRANSMISION)
-from msa.core.rfid.constants import TAG_RECUENTO
 from msa.modulos import get_sesion
 from msa.settings import QUEMA
 
@@ -23,7 +20,7 @@ class RegistradorCierre(object):
     """Registrador para la Apertura."""
 
     def __init__(self, callback_generando=None, callback_error_registro=None,
-                 callback_imprimiendo=None):
+                 callback_imprimiendo=None, rampa=None):
         """Constructor del registrador del cierre."""
         self.callback_generando = callback_generando
         self.callback_error_registro = callback_error_registro
@@ -33,6 +30,7 @@ class RegistradorCierre(object):
         self.actas_sin_chip = (CIERRE_ESCRUTINIO, CIERRE_COPIA_FIEL,
                                CIERRE_CERTIFICADO)
         self.sesion = get_sesion()
+        self.rampa = rampa
 
     def _guardar_tag(self, tag, categoria=None):
         """ Guarda los datos en el tag, lo vuelve a leer y compara los dos
@@ -42,18 +40,19 @@ class RegistradorCierre(object):
         """
         guardado_ok = False
         datos = self.sesion.recuento.a_tag(categoria)
+        tipo_tag = self.sesion.recuento.tipo_tag
 
         def _intento(datos):
             """Un intento de grabacion."""
-            return self.sesion.lector.guardar_tag(TAG_RECUENTO, datos, QUEMA)
+            return self.rampa.guardar_tag(tipo_tag, datos, QUEMA)
 
         # Solo guardo el tag si no tiene datos.
-        if tag['datos'] == b'':
+        if tag.vacio:
             guardado_ok = _intento(datos)
             # ni no lo puede grabar trato de nuevo depues de resetear el
             # lector.
             if not guardado_ok:
-                self.sesion.lector.reset()
+                self.rampa.reset_rfid()
                 guardado_ok = _intento(datos)
 
         return guardado_ok
@@ -64,7 +63,7 @@ class RegistradorCierre(object):
         cualquier caso contrario
         """
         registrada = False
-        tag = self.sesion.lector.get_tag()
+        tag = self.rampa.get_tag()
         if tipo_acta[0] in self.actas_con_chip:
             # Si el acta tiene chip se guarda en el mismo y se imprime
             registrada = self._registrar_acta_con_chip(tag, tipo_acta)
@@ -97,7 +96,7 @@ class RegistradorCierre(object):
 
         return registrada
 
-    def _get_extra_data(self, tipo_acta):
+    def _get_extra_data(self, tipo_acta, serializar_dni=True):
         """Genera la data extra para mandarle al servicio de impresion."""
         if self.sesion.recuento.autoridades:
             autoridades = [aut.a_dict() for aut in
@@ -108,22 +107,21 @@ class RegistradorCierre(object):
         extra_data = {
             "tipo_acta": tipo_acta,
             "autoridades": autoridades,
-            "hora": self.sesion.recuento.hora
+            "hora": self.sesion.recuento.hora,
+            "clase_acta": self.sesion.recuento.clase_acta,
+            "con_dni": serializar_dni,
         }
         return dumps(extra_data)
 
-    def _imprimir_acta(self, tipo_acta):
+    def _imprimir_acta(self, tipo_acta, serializar_dni=True):
         """Imprime las actas."""
         def _imprimir():
-            encoded_data = b64encode(self.sesion.recuento.a_tag(tipo_acta[1]))
-            extra_data = self._get_extra_data(tipo_acta)
-            try:
-                self.sesion.impresora.imprimir_serializado(
-                    "Recuento", encoded_data, extra_data=extra_data)
-            except DBusException:
-                # ignorando posible timeout de dbus para carga de buffer
-                # el zen de python me pide que lo haga explicito :D
-                pass
+            tag = self.sesion.recuento.a_tag(tipo_acta[1],
+                                             con_dnis=serializar_dni)
+            encoded_data = b64encode(tag)
+            extra_data = self._get_extra_data(tipo_acta, serializar_dni)
+            self.rampa.imprimir_serializado("Recuento", encoded_data,
+                                            extra_data=extra_data)
         timeout_add(100, _imprimir)
 
 
@@ -153,10 +151,10 @@ class SecuenciaActas(object):
         self.logger = modulo.sesion.logger
         self.sesion = modulo.sesion
         self.actas_a_imprimir = self._crear_lista_actas()
-        self.registrador = RegistradorCierre()
+        self.rampa = self.modulo.rampa
+        self.registrador = RegistradorCierre(rampa=self.rampa)
         self.acta_actual = None
         self._finalizado = False
-        self.rampa = self.modulo.rampa
         self.logger.info("Creado objeto de secuencia de actas")
 
     def _crear_lista_actas(self):
@@ -177,7 +175,7 @@ class SecuenciaActas(object):
         """Ejecuta la secuencia de impresion de actas."""
         self.logger.info("Ejecutando secuencia de impresion")
         try:
-            self.sesion.impresora.remover_boleta_expulsada()
+            self.rampa.remover_boleta_expulsada()
             self.acta_actual = self.actas_a_imprimir.pop(0)
             self._pedir_acta()
         except IndexError:
@@ -186,6 +184,8 @@ class SecuenciaActas(object):
             self._finalizado = True
             self.acta_actual[0] = CIERRE_CERTIFICADO
 
+            if self.acta_actual[1] is None:
+                self.acta_actual[1] = 0
             self.acta_actual[1] = self.acta_actual[1] + 1
             grupos = list(set([cat.id_grupo for cat in Categoria.all()]))
             if self.acta_actual[1] > len(grupos):
@@ -202,11 +202,11 @@ class SecuenciaActas(object):
         """Pedimos el ingreso del acta."""
         self.logger.info("Pidiendo acta: %s", self.acta_actual[0])
         self.callback_espera(self.acta_actual)
-        self.sesion.impresora.remover_insertando_papel()
-        self.sesion.impresora.remover_consultar_tarjeta()
+        self.rampa.remover_insertando_papel()
+        self.rampa.remover_consultar_tarjeta()
         self.rampa.registrar_nuevo_papel(self._imprimir_acta)
 
-    def _fin_impresion(self):
+    def _fin_impresion(self, *args):
         """Se llama cuando termina de imprimir."""
         self.logger.info("Fin de la impresion")
         self._imprimiendo = False
@@ -216,14 +216,14 @@ class SecuenciaActas(object):
         """Manda a imprimir el acta."""
         if not self._imprimiendo:
             self._imprimiendo = True
-            self.sesion.impresora.remover_insertando_papel()
-            self.sesion.impresora.remover_consultar_tarjeta()
+            self.rampa.remover_insertando_papel()
+            self.rampa.remover_consultar_tarjeta()
 
             self.logger.info("Imprimiendo acta")
             if self.callback_imprimiendo is not None:
                 self.logger.info("callback_imprimiendo")
                 self.callback_imprimiendo(self.acta_actual, self._finalizado)
-            # tiramos este timeout por que sino no actualiza el panel de estado
+            # tiramos este timeout porque sino no actualiza el panel de estado
             timeout_add(200, self._impresion_real)
         else:
             self.logger.warning("Frenado intento de impresion concurrente")
@@ -231,14 +231,24 @@ class SecuenciaActas(object):
     def _impresion_real(self):
         """Efectivamente manda a imprimir el acta."""
         self.logger.info("Por registrar acta")
-        registrado = self.registrador.registrar_acta(self.acta_actual)
+        self.rampa.registrar_error_impresion(self._error_impresion)
+        try:
+            registrado = self.registrador.registrar_acta(self.acta_actual)
+        except ValueError as e:
+            # la cantidad de votos excede lo que smart_numpacker puede guardar
+            self.logger.exception(e)
+            registrado = None
         if registrado:
             self.logger.info("Acta registrada")
             # una vez que termine de imprimir ejecutamos la secuencia para
             # que levante el proximo elemento.
-            self.sesion.impresora.registrar_boleta_expulsada(
-                self._fin_impresion)
+            self.rampa.registrar_boleta_expulsada(self._fin_impresion)
         else:
-            self.logger.info("Acta NO registrada")
-            self.callback_error_registro(self.acta_actual, self._finalizado)
-            self._imprimiendo = False
+            self._error_impresion()
+
+    def _error_impresion(self):
+        self.logger.info("Acta NO registrada")
+        self.rampa.remover_boleta_expulsada()
+        self.callback_error_registro(self.acta_actual, self._finalizado)
+        self._imprimiendo = False
+

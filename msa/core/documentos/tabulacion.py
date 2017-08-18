@@ -97,4 +97,5 @@ class Pizarra():
         Argumentos:
             id_umv -- el id_umv de una candidatura.
         """
+        # aca es donde efectivamente se suman los votos.
         self.__resultados[id_umv] += 1

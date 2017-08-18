@@ -25,6 +25,12 @@ def arm_event(function):
             pass
     return _inner
 
+def arm_event_response(function):
+    def _inner(self, data, *args, **kwargs):
+        # la suscripción a eventos no devuelve datos adicionales:
+        if data:
+            return function(self, data, *args, **kwargs)
+    return _inner
 
 def retry_on_error(function):
     def _inner(self, *args, **kwargs):

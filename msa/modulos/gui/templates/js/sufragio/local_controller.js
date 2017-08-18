@@ -49,6 +49,13 @@ function cargar_datos(data){
         }
     }
 
+    // Agregando las categorias_hijas al voto en blanco.
+    var blancos = local_data.candidaturas.many({clase: "Blanco"});
+    for(var i in blancos){
+        var candidatura = blancos[i];
+        candidatura.categorias_hijas = get_categorias_hijas_candidato(candidatura);
+    }
+
     if(constants.precachear_imagenes){
         var agrupaciones = local_data.agrupaciones.all();
         for(var k in agrupaciones){
@@ -56,7 +63,6 @@ function cargar_datos(data){
             precachear_imagen(agrupacion.imagenes[0]);
         }
     }
-
 
     // Recorro todas las "Boletas Virtuales" y le hago un shortcut a la lista
     // de manera que cuando lo busque despues lo tenga a mano.
@@ -143,7 +149,7 @@ function cargar_pantalla_inicial(){
     // vez de tocar el boton de aceptar haya decidido meter una boleta nueva.
     hide_dialogo();
     // traemos los botones que tenemos que mostrar de las constantes.
-    var botones = constants.BOTONES_SELECCION_MODO;
+    var botones = constants.botones_seleccion_modo;
     // Establecemos que no vamos, por ahora, a votar por categorias, por
     // descarte.
     var fallback = false;
@@ -247,6 +253,7 @@ function _cargar_pantalla_lista_completa(cod_partido){
      */
     // Armamos el filtro por defecto con el que vamos a filtrar las listas.
     var agrupa_cargo = false;
+    var hay_agrupaciones_municipales = false;
     var filter = {
         "lista_completa": true,
     };
@@ -278,6 +285,12 @@ function _cargar_pantalla_lista_completa(cod_partido){
             {cod_categoria: constants.agrupar_cargo,
              clase: "Candidato"}
         );
+        var agrupaciones_municipales = local_data.boletas.many(
+            {"agrupacion_municipal": true}
+        );
+        if(agrupaciones_municipales.length){
+            hay_agrupaciones_municipales = true;
+        }
         // vamos a buscar si hay un candidato blanco para la categoria en
         // cuestion para ademas mostrar el voto en blanco.
         var blanco = local_data.candidaturas.one(
@@ -296,17 +309,20 @@ function _cargar_pantalla_lista_completa(cod_partido){
         data = local_data.boletas.many(filter);
     }
 
-    if(data.length == 1 && constants.seleccionar_lista_unica){
+    if((data.length - 1) == 1 && constants.seleccionar_lista_unica){
         // si tengo una sola lista completa la selecciono, esto pasa en general
         // cuando seleccionamos un partido o candidatos que tiene una sola
         // lista.
-        seleccionar_lista(data[0].codigo);
+        var codigo_lista = (data[0].codigo !== "BLC")? data[0].codigo : data[1].codigo;
+        seleccionar_lista(codigo_lista);
     } else {
         // Si hay mas de una entonces cargamos la pantalla de listas.
         if(constants.asistida){
-            cargar_listas_asistida(data, agrupa_cargo); 
+            cargar_listas_asistida(data, agrupa_cargo, hay_agrupaciones_municipales);
         } else {
-            cargar_listas(data);
+            cargar_listas(data, agrupa_cargo, hay_agrupaciones_municipales);
+            var agrupacion = local_data.agrupaciones.one({codigo: cod_partido});
+            solapa(agrupacion);
         }
     }
 }
@@ -449,6 +465,13 @@ function _cargar_candidatos_categoria(categoria, agrupacion){
             cargar_candidatos_asistida(data_dict);
         } else {
             cargar_candidatos(data_dict);
+            if(agrupacion){
+                // Muestro la agrupacion en la solapa y la oculto de los botones
+                ocultar_agrupacion();
+                var obj_agrupacion = local_data.agrupaciones.one(
+                        {codigo: agrupacion})
+                solapa(obj_agrupacion, categoria)
+            }
         }
     }
 }
@@ -489,7 +512,7 @@ function _cargar_candidatos_consulta_popular(categoria){
 function _cargar_datos_barra_categorias(){
     /* Carga la barra derecha de seleccion de categorias en caso de que la
     * tenga que mostrar efectivamente.. */
-    if(constants.BARRA_SELECCION){
+    if(constants.mostrar_barra_seleccion){
         // Traemos todas las categorias que queremos mostrar.
         var categorias = local_data.categorias.many({
             "sorted": "posicion",
@@ -589,11 +612,18 @@ function seleccionar_lista(cod_lista){
             } 
         } else if(constants.agrupar_cargo){
             // En cambio si estamos agrupando en por cargo vamos a usar ese
-            // codgio de categoria como id del candidato
+            // codigo de categoria como id del candidato
             var cod_categoria = constants.agrupar_cargo;
             var filter = {lista_completa: true};
             // Busco todas las boletas que tengan ese candidato 
-            filter[cod_categoria] = local_data.candidaturas.one({codigo:cod_lista}).id_umv;
+            var candidato = local_data.candidaturas.one({codigo:cod_lista})
+            if(typeof(candidato) == "undefined"){
+                // Si el candidato no esta definido, estoy en presencia de
+                // agrupaciones municipales
+                filter["agrupacion_municipal"] = true;
+            } else {
+                filter[cod_categoria] = candidato.id_umv;
+            }
             data = local_data.boletas.many(filter);
             // Si hay una sola lista completa que tenga ese candidato la vamos
             // a elegir. En algunos lugares pueden quererer que este
@@ -618,6 +648,7 @@ function seleccionar_lista(cod_lista){
                     cargar_partidos_completa_asistida({partidos: partidos});
                 } else {
                     cargar_partidos_completa({partidos: partidos});
+                    solapa(candidato)
                 }
             } else {
                 // Si la cantidad de listas entra en pantalla las cargamos
@@ -625,7 +656,8 @@ function seleccionar_lista(cod_lista){
                 if(constants.asistida){
                     cargar_listas_asistida(data); 
                 } else {
-                    cargar_listas(data);
+                    cargar_listas(data, true);
+                    solapa(candidato)
                 }
             }
             // salimos de la funcion parar que no cargue la confirmacion.
@@ -819,6 +851,7 @@ function get_candidatos_boleta(boleta){
 }
 
 function get_categorias_hijas_candidato(candidato){
+    /* Devuelve las categorias hias de un candidato. */
     var ret = [];
 
     var categorias_hijas = local_data.categorias.many({
@@ -845,6 +878,7 @@ function get_categorias_hijas_candidato(candidato){
 }
 
 function get_partidos_con_listas(){
+    /* Devuelve todos los partidos que tengan alguna lista completa. */
     var partidos = [];
     var cods_partidos = [];
     var boletas = local_data.boletas.many({lista_completa: true});

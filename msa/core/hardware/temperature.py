@@ -30,15 +30,15 @@ def get_temp():
                 subs = list(sensors.SubFeatureIterator(chip, feature))
                 try:
                     sensor_temp = sensors.get_value(chip, subs[0].number)
-                    # el 200 es por que en las maquinas de desarrollo devuelve
+                    # el 200 es porque en las maquinas de desarrollo devuelve
                     # los RPM de los ventiladores como features. Esta es la
                     # solucion menos compleja para descartar ese valor.
                     if sensor_temp < 200 and sensor_temp > temp:
                         temp = sensor_temp
                 except Exception:
-                    # alguno de los sensores no se pudo leer. en circunstancias
-                    # normales no pasa pero atajamoe el error para que siga con
-                    # el resto de las featuras
+                    # alguno de los sensores no se pudo leer. En circunstancias
+                    # normales no pasa, pero atajamos el error para que siga con
+                    # el resto de las features
                     pass
     finally:
         sensors.cleanup()

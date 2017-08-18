@@ -1,0 +1,515 @@
+[
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Alianza",
+    "codigo":"2",
+    "color":[
+      "#015fb7"
+    ],
+    "descripcion_extra":"2",
+    "id_candidatura":"2",
+    "imagenes":[
+      "2"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"PJ",
+    "orden_absoluto":[
+      1
+    ]
+  },
+  {
+    "asistida":"Compromiso por Santa Rosa",
+    "clase":"Partido",
+    "cod_alianza":"2",
+    "codigo":"2.2A",
+    "color":[
+      "#015fb7"
+    ],
+    "descripcion_extra":"2A",
+    "id_candidatura":"2.2A",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Compromiso por Santa Rosa",
+    "nombre_corto":"CSR",
+    "orden_absoluto":[
+      1,
+      3
+    ]
+  },
+  {
+    "asistida":"Compromiso por Santa Rosa",
+    "clase":"Lista",
+    "cod_alianza":"2",
+    "cod_partido":"2.2A",
+    "codigo":"2.2A.2A",
+    "color":[
+      "#015fb7"
+    ],
+    "id_candidatura":"2.2A.2A",
+    "imagenes":[
+      "2.2A.2A"
+    ],
+    "nombre":"Compromiso por Santa Rosa",
+    "nombre_corto":"CSR",
+    "numero":"2A",
+    "orden_absoluto":[
+      1,
+      3,
+      3
+    ]
+  },
+  {
+    "asistida":"Frente de Agrupaciones Peronistas",
+    "clase":"Partido",
+    "cod_alianza":"2",
+    "codigo":"2.2B",
+    "color":[
+      "#015fb7"
+    ],
+    "descripcion_extra":"2B",
+    "id_candidatura":"2.2B",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Frente de Agrupaciones Peronistas",
+    "nombre_corto":"FAP",
+    "orden_absoluto":[
+      1,
+      4
+    ]
+  },
+  {
+    "asistida":"Frente de Agrupaciones Peronistas",
+    "clase":"Lista",
+    "cod_alianza":"2",
+    "cod_partido":"2.2B",
+    "codigo":"2.2B.2B",
+    "color":[
+      "#015fb7"
+    ],
+    "id_candidatura":"2.2B.2B",
+    "imagenes":[
+      "2.2B.2B"
+    ],
+    "nombre":"Frente de Agrupaciones Peronistas",
+    "nombre_corto":"FAP",
+    "numero":"2B",
+    "orden_absoluto":[
+      1,
+      4,
+      4
+    ]
+  },
+  {
+    "asistida":"Ahora Le Toca Al Pueblo",
+    "clase":"Partido",
+    "cod_alianza":"2",
+    "codigo":"2.2C",
+    "color":[
+      "#015fb7"
+    ],
+    "descripcion_extra":"2C",
+    "id_candidatura":"2.2C",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Ahora Le Toca Al Pueblo",
+    "nombre_corto":"ALTAP",
+    "orden_absoluto":[
+      1,
+      5
+    ]
+  },
+  {
+    "asistida":"Ahora Le Toca Al Pueblo",
+    "clase":"Lista",
+    "cod_alianza":"2",
+    "cod_partido":"2.2C",
+    "codigo":"2.2C.2C",
+    "color":[
+      "#015fb7"
+    ],
+    "id_candidatura":"2.2C.2C",
+    "imagenes":[
+      "2.2C.2C"
+    ],
+    "nombre":"Ahora Le Toca Al Pueblo",
+    "nombre_corto":"ALTAP",
+    "numero":"2C",
+    "orden_absoluto":[
+      1,
+      5,
+      5
+    ]
+  },
+  {
+    "asistida":"Trabajando Unidos por Santa Rosa",
+    "clase":"Partido",
+    "cod_alianza":"2",
+    "codigo":"2.2D",
+    "color":[
+      "#015fb7"
+    ],
+    "descripcion_extra":"2D",
+    "id_candidatura":"2.2D",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Trabajando Unidos X Santa Rosa",
+    "nombre_corto":"TUSR",
+    "orden_absoluto":[
+      1,
+      6
+    ]
+  },
+  {
+    "asistida":"Trabajando Unidos por Santa Rosa",
+    "clase":"Lista",
+    "cod_alianza":"2",
+    "cod_partido":"2.2D",
+    "codigo":"2.2D.2D",
+    "color":[
+      "#015fb7"
+    ],
+    "id_candidatura":"2.2D.2D",
+    "imagenes":[
+      "2.2D.2D"
+    ],
+    "nombre":"Trabajando Unidos X Santa Rosa",
+    "nombre_corto":"TUSR",
+    "numero":"2D",
+    "orden_absoluto":[
+      1,
+      6,
+      6
+    ]
+  },
+  {
+    "asistida":"Santa Rosa Cambia",
+    "clase":"Alianza",
+    "codigo":"501",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "descripcion_extra":"501",
+    "id_candidatura":"501",
+    "imagenes":[
+      "501"
+    ],
+    "nombre":"Santa Rosa Cambia",
+    "nombre_corto":"SRC",
+    "orden_absoluto":[
+      4
+    ]
+  },
+  {
+    "asistida":"Unidad por Santa Rosa",
+    "clase":"Partido",
+    "cod_alianza":"501",
+    "codigo":"501.501A",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "descripcion_extra":"501A",
+    "id_candidatura":"501.501A",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Unidad por Santa Rosa",
+    "nombre_corto":"UNISR",
+    "orden_absoluto":[
+      4,
+      7
+    ]
+  },
+  {
+    "asistida":"Unidad por Santa Rosa",
+    "clase":"Lista",
+    "cod_alianza":"501",
+    "cod_partido":"501.501A",
+    "codigo":"501.501A.501A",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "id_candidatura":"501.501A.501A",
+    "imagenes":[
+      "501.501A.501A"
+    ],
+    "nombre":"Unidad por Santa Rosa",
+    "nombre_corto":"UNISR",
+    "numero":"501A",
+    "orden_absoluto":[
+      4,
+      7,
+      7
+    ]
+  },
+  {
+    "asistida":"Dem\u00f3cratas Santarrosinos",
+    "clase":"Partido",
+    "cod_alianza":"501",
+    "codigo":"501.501B",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "descripcion_extra":"501B",
+    "id_candidatura":"501.501B",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Dem\u00f3cratas Santarrosinos",
+    "nombre_corto":"DS",
+    "orden_absoluto":[
+      4,
+      8
+    ]
+  },
+  {
+    "asistida":"Dem\u00f3cratas Santarrosinos",
+    "clase":"Lista",
+    "cod_alianza":"501",
+    "cod_partido":"501.501B",
+    "codigo":"501.501B.501B",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "id_candidatura":"501.501B.501B",
+    "imagenes":[
+      "501.501B.501B"
+    ],
+    "nombre":"Dem\u00f3cratas Santarrosinos",
+    "nombre_corto":"DS",
+    "numero":"501B",
+    "orden_absoluto":[
+      4,
+      8,
+      8
+    ]
+  },
+  {
+    "asistida":"Santa Rosa de Libres e Iguales",
+    "clase":"Partido",
+    "cod_alianza":"501",
+    "codigo":"501.501C",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "descripcion_extra":"501C",
+    "id_candidatura":"501.501C",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Santa Rosa de Libres e Iguales",
+    "nombre_corto":"SRLI",
+    "orden_absoluto":[
+      4,
+      9
+    ]
+  },
+  {
+    "asistida":"Santa Rosa de Libres e Iguales",
+    "clase":"Lista",
+    "cod_alianza":"501",
+    "cod_partido":"501.501C",
+    "codigo":"501.501C.501C",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "id_candidatura":"501.501C.501C",
+    "imagenes":[
+      "501.501C.501C"
+    ],
+    "nombre":"Santa Rosa de Libres e Iguales",
+    "nombre_corto":"SRLI",
+    "numero":"501C",
+    "orden_absoluto":[
+      4,
+      9,
+      9
+    ]
+  },
+  {
+    "asistida":"Lo Mejor Est\u00e1 Por Llegar",
+    "clase":"Partido",
+    "cod_alianza":"501",
+    "codigo":"501.501D",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "descripcion_extra":"501D",
+    "id_candidatura":"501.501D",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Lo Mejor Est\u00e1 Por Llegar",
+    "nombre_corto":"LMEPLL",
+    "orden_absoluto":[
+      4,
+      10
+    ]
+  },
+  {
+    "asistida":"Lo Mejor Est\u00e1 Por Llegar",
+    "clase":"Lista",
+    "cod_alianza":"501",
+    "cod_partido":"501.501D",
+    "codigo":"501.501D.501D",
+    "color":[
+      "#fbdf00",
+      "#f84474",
+      "#00a1ec"
+    ],
+    "id_candidatura":"501.501D.501D",
+    "imagenes":[
+      "501.501D.501D"
+    ],
+    "nombre":"Lo Mejor Est\u00e1 Por Llegar",
+    "nombre_corto":"LMEPLL",
+    "numero":"501D",
+    "orden_absoluto":[
+      4,
+      10,
+      10
+    ]
+  },
+  {
+    "asistida":"Partido Obrero",
+    "clase":"Alianza",
+    "codigo":"71",
+    "color":[
+      "#e10832",
+      "#f1e201"
+    ],
+    "descripcion_extra":"71",
+    "id_candidatura":"71",
+    "imagenes":[
+      "71"
+    ],
+    "nombre":"Partido Obrero",
+    "nombre_corto":"PO",
+    "orden_absoluto":[
+      3
+    ]
+  },
+  {
+    "asistida":"Partido Obrero",
+    "clase":"Partido",
+    "cod_alianza":"71",
+    "codigo":"71.71",
+    "color":[
+      "#e10832",
+      "#f1e201"
+    ],
+    "descripcion_extra":"71",
+    "id_candidatura":"71.71",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Partido Obrero",
+    "nombre_corto":"PO",
+    "orden_absoluto":[
+      3,
+      2
+    ]
+  },
+  {
+    "asistida":"Partido Obrero",
+    "clase":"Lista",
+    "cod_alianza":"71",
+    "cod_partido":"71.71",
+    "codigo":"71.71.71",
+    "color":[
+      "#e10832",
+      "#f1e201"
+    ],
+    "id_candidatura":"71.71.71",
+    "imagenes":[
+      "71.71.71"
+    ],
+    "nombre":"Partido Obrero",
+    "nombre_corto":"PO",
+    "numero":"71",
+    "orden_absoluto":[
+      3,
+      2,
+      2
+    ]
+  },
+  {
+    "asistida":"Partido Federal",
+    "clase":"Alianza",
+    "codigo":"8",
+    "color":[
+      "#ee2f15"
+    ],
+    "descripcion_extra":"8",
+    "id_candidatura":"8",
+    "imagenes":[
+      "8"
+    ],
+    "nombre":"Partido Federal",
+    "nombre_corto":"PF",
+    "orden_absoluto":[
+      2
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n Por Santa Rosa",
+    "clase":"Partido",
+    "cod_alianza":"8",
+    "codigo":"8.8",
+    "color":[
+      "#ee2f15"
+    ],
+    "descripcion_extra":"8",
+    "id_candidatura":"8.8",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Uni\u00f3n Por Santa Rosa",
+    "nombre_corto":"UNIOSR",
+    "orden_absoluto":[
+      2,
+      1
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n Por Santa Rosa",
+    "clase":"Lista",
+    "cod_alianza":"8",
+    "cod_partido":"8.8",
+    "codigo":"8.8.8",
+    "color":[
+      "#ee2f15"
+    ],
+    "id_candidatura":"8.8.8",
+    "imagenes":[
+      "8.8.8"
+    ],
+    "nombre":"Uni\u00f3n Por Santa Rosa",
+    "nombre_corto":"UNIOSR",
+    "numero":"8",
+    "orden_absoluto":[
+      2,
+      1,
+      1
+    ]
+  }
+]

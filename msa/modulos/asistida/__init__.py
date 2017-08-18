@@ -27,8 +27,6 @@ class Modulo(ModuloSufragio):
         self._load_config()
         self._start_audio()
         self.inicializar_locutor()
-        # piso el tiempo de verificacion para que termine de hablar
-        self.tiempo_verificacion = 25000
 
     def inicializar_locutor(self):
         """Inicializa el locutor que es el proceso que habla en asistida."""
@@ -47,9 +45,9 @@ class Modulo(ModuloSufragio):
         if self.estado == E_VOTANDO:
             self.controlador.send_command("mostrar_teclado")
 
-    def _error(self):
+    def _error(self, cambiar_estado=True):
         """Lanza el error tanto en la interfaz visual como en la auditiva."""
-        ModuloSufragio._error(self)
+        ModuloSufragio._error(self, cambiar_estado)
 
         def _locutar_error():
             """Ejecuta el sonido del error."""
@@ -58,3 +56,14 @@ class Modulo(ModuloSufragio):
                       Speech.one("error_almacenado_2").texto]
             self.sesion.locutor.decir(frases)
         idle_add(_locutar_error)
+
+
+    def _consultar(self, tag):
+        """Permite al elector consultar una boleta.
+
+        Parametros:
+            tag -- un objeto de clase SoporteDigital.
+        """
+        # En votacion asistida no permitimos verificar la boleta apoyandola.
+        if self.rampa.tiene_papel:
+            self._mostrar_consulta(tag)

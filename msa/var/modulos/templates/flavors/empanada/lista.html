@@ -1,0 +1,44 @@
+<div id="{{id_boton}}" class="candidato candidato-lista-completa boton-lista {{seleccionado}}">
+    {{#if lista.numero}}
+        <div class="lista">
+            <p class="palabra-lista">{{i18n "palabra_lista"}}</p>
+            <p class="numero-lista">{{lista.numero}}</p>
+        </div>
+    {{/if}}
+    {{#if normal}}
+        <div class="nombre-partido">{{lista.nombre}}</div>
+        <div class="foto-partido">
+            {{imagen_candidatura lista.imagenes.[0]}}
+        </div>
+
+        {{#candidatos}}
+            <div class="foto-candidato {{#if es_blanco}}blanco{{/if}}">
+                {{imagen_candidatura imagenes.[0]}}
+            </div>
+        {{/candidatos}}
+
+        {{colores lista.color}}
+        <div class="lista-candidatos">
+            {{#candidatos}}
+            <div class="nombre-categoria">{{categoria.nombre}}:</div>
+            <div class="nombre-candidato">
+                {{#if es_blanco}}
+                    {{i18n "palabra_no_presenta_candidatos"}}
+                {{else}}
+                    {{nombre}}
+                    {{#if categoria.cargo_ejecutivo}}
+                        / {{secundarios}}
+                    {{/if}}
+                {{/if}}
+            </div>
+            {{/candidatos}}
+        </div>
+    {{else}}
+        <div class="foto-candidato">
+            {{#if lista.imagenes.[0]}}
+                {{imagen_candidatura lista.imagenes.[0]}}
+            {{/if}}
+        </div>
+        <div class="nombre-partido">{{lista.nombre}}</div>
+    {{/if}}
+</div>

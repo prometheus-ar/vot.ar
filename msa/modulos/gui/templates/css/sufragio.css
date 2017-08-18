@@ -1068,6 +1068,11 @@ body:after {
   box-sizing: border-box;
   height: auto;
 }
+#pantalla_agradecimiento #img_previsualizacion svg,
+#pantalla_agradecimiento #img_previsualizacion img {
+  transform-origin: 14% 0;
+  transform: scale(0.55);
+}
 #consulta_popular_container .opcion-consulta .nombre-candidato .candidato-principal {
   font-size: 1.4em;
 }
@@ -1080,7 +1085,8 @@ body:after {
   overflow: hidden;
   height: 485px;
 }
-#pantalla_consulta #img_voto svg {
+#pantalla_consulta #img_voto svg,
+#pantalla_consulta #img_voto img {
   display: block;
   margin: 0 auto;
   -webkit-transform: scale(0.56);
@@ -1169,7 +1175,6 @@ body:after {
   box-sizing: border-box;
   border: 1px solid #cccccc;
   margin-bottom: 5px;
-  margin-right: 5px;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .color-lista:before {
   content: "";
@@ -1209,16 +1214,15 @@ body:after {
   text-align: left;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 0.9em;
+  font-size: 0.7em;
   margin-bottom: 5px;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .foto-candidato,
 #pantalla_consulta #candidatos_seleccion .candidato .foto-partido,
 #pantalla_consulta #candidatos_seleccion .candidato .foto-secundario,
 #pantalla_consulta #candidatos_seleccion .candidato .color-lista {
-  width: 10%;
+  width: 70px;
   position: relative;
-  box-sizing: border-box;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .foto-candidato:before,
 #pantalla_consulta #candidatos_seleccion .candidato .foto-partido:before,
@@ -1252,7 +1256,7 @@ body:after {
   margin-right: 5px;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .lista {
-  font-size: 2em;
+  font-size: 1.2em;
   float: right;
   text-align: right;
 }
@@ -1269,12 +1273,9 @@ body:after {
   margin: 0px;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .nombre-partido,
-#pantalla_consulta #candidatos_seleccion .candidato .nombre-lista,
 #pantalla_consulta #candidatos_seleccion .candidato .candidato-principal,
 #pantalla_consulta #candidatos_seleccion .candidato .candidato-secundario {
-  width: 57%;
-  float: left;
-  text-align: left;
+  width: 100%;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .nombre-partido {
   float: left;
@@ -1282,18 +1283,13 @@ body:after {
   display: block;
   padding-bottom: 3px;
   text-align: left;
-  font-size: 1.6em;
-}
-#pantalla_consulta #candidatos_seleccion .candidato .nombre-lista {
-  font-weight: bold;
-  font-size: 1.7em;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .candidato-principal {
-  font-size: 2.5em;
+  font-size: 0.85em;
   font-weight: bold;
   color: #003366;
+  clear: both;
   text-align: left;
-  margin-top: 10px;
 }
 #pantalla_consulta #candidatos_seleccion .candidato .candidato-secundario {
   font-size: 0.75em;
@@ -1754,7 +1750,7 @@ body:after {
   font-size: 1.5em;
   font-weight: bold;
   background: #ff0000;
-  width: 301px;
+  width: 180px;
   float: left;
   height: 100%;
   margin-top: -10px;
@@ -1764,7 +1760,7 @@ body:after {
 #contenedor_opciones .cinta span {
   display: inline-block;
   font-size: 0.8em;
-  padding-top: 10px;
+  /*padding-top: 10px;*/
 }
 #contenedor_opciones .boton-barra-individual {
   display: inline-block;
@@ -1837,6 +1833,26 @@ body:after {
 }
 #contenedor_opciones #voto_blanco.seleccionado p::before {
   color: #078ed5;
+}
+#contenedor_opciones #agrupaciones_municipales {
+  width: 400px;
+  line-height: 50px;
+  background: #ff6600;
+  border: 4px solid #ff6600;
+  border-bottom: 0;
+}
+#contenedor_opciones #agrupaciones_municipales p {
+  font-size: 1.7em;
+  margin: auto;
+  text-align: center;
+}
+#contenedor_opciones #agrupaciones_municipales.seleccionado {
+  background: #ffffff;
+  border: 4px solid #ff6600;
+  border-bottom: 0;
+}
+#contenedor_opciones #agrupaciones_municipales.seleccionado p {
+  color: #ff6600;
 }
 #contenedor_opciones #confirmar_seleccion {
   background: #078ed5;
@@ -2817,7 +2833,6 @@ body[data-state='alto-contraste'] #contenedor_der #candidatos_seleccionados .can
   display: inline-block;
 }
 body[data-state='alto-contraste'] #pantalla_confirmacion.confirmados .candidato {
-  font-size: 150%;
   border: solid 1px;
   border-radius: 3px;
   background-color: #000000;

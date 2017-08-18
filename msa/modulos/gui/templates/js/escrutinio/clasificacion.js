@@ -1,12 +1,15 @@
+/* Cosas relacionadas a la pantalla de clasificacion de votos */
 var _pantalla_clasificacion_cargada = false;
 
 function volver_al_recuento(){
+    /* Vuelve al recuento. */
     $("#cantidad_escrutadas").show();
     send("habilitar_recuento");
     pantalla_inicial();
 }
 
 function anterior_clasificacion(){
+    /* Muestra como activo el campo anterior. */
     sonido_tecla();
     var index = _campo_get_index();
     if(index){
@@ -18,6 +21,7 @@ function anterior_clasificacion(){
 }
 
 function siguiente_clasificacion(){
+    /* Muestra como activo el campo siguiente. */
     sonido_tecla();
     var index = _campo_get_index();
     _campo_get(index + 1);
@@ -25,6 +29,7 @@ function siguiente_clasificacion(){
 }
 
 function actualizar_botones_panel(){
+    /* Actualiza los botones del panel segun el estado. */
     var index = _campo_get_index();
     var len_campos = _campo_get_ids().length;
     if(index == len_campos - 1){
@@ -49,6 +54,7 @@ function actualizar_botones_panel(){
 }
 
 function generar_clasificacion_de_votos(datos){
+    /* Genera la pantalla de clasificacion de votos. */
     _pantalla_clasificacion_cargada = true;
     listas = [];
     var obj_procesadas = {
@@ -89,6 +95,7 @@ function generar_clasificacion_de_votos(datos){
 }
 
 function bajar_numero(){
+    /* Baja en uno el numero del campo del item de la clasificacion.*/
     sonido_tecla();
     var target = $(this).data("target");
     var elemento = $("#" + target);
@@ -101,6 +108,7 @@ function bajar_numero(){
 }
 
 function subir_numero(){
+    /* Sube en uno el numero del campo del item de la clasificacion.*/
     sonido_tecla();
     var target = $(this).data("target");
     var elemento = $("#" + target);
@@ -147,6 +155,7 @@ function pantalla_clasificacion_votos(datos){
 }
 
 function _campo_get_index(){
+    /* Devuelve el indice del campo actual. */
     var campos = _campo_get_ids();
     var campo_actual = $(".seleccionado.campo_editable").attr("id");
     var index = campos.indexOf(campo_actual);
@@ -154,6 +163,7 @@ function _campo_get_index(){
 }
 
 function _campo_get_ids(){
+    /* Devuelve los ids de los campos editables. */
     var campos = $(".campo_editable").map(
         function(){
             return this.id;
@@ -163,12 +173,14 @@ function _campo_get_ids(){
 }
 
 function _campo_get(index){
+    /* Devuelve el indice de un campo. */
     $("#campos_extra .campo").removeClass("seleccionado");
     var campo = $(".campo_editable").get(index);
     $(campo).addClass("seleccionado");
 }
 
 function _campo_seleccionar(){
+    /* Selecciona un campo. */
     sonido_tecla();
     $("#campos_extra .campo").removeClass("seleccionado");
     $(this).addClass("seleccionado");
@@ -176,12 +188,13 @@ function _campo_seleccionar(){
 }
 
 function cargar_clasificacion_de_votos(){
+    /* Carga la clasifiacion de votos. */
     $("#cantidad_escrutadas").hide();
     send("cargar_clasificacion_de_votos");
 }
 
 function guardar_listas_especiales(){
-
+    /* Envia las listas especiales al backend. */
     var listas = {};
     var campos = $(".valor.editable").each(function(index, element){
         var parts = this.id.split("_");
@@ -191,6 +204,7 @@ function guardar_listas_especiales(){
 }
 
 function total_boletas(){
+    /* calcula y muestra el numero de boletas procesadas. */
     var numeros = $(".valor.editable").map(
         function(){ 
             return parseInt($(this).text());

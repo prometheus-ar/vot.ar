@@ -1,0 +1,11 @@
+<!-- inicio texto -->
+<g transform="translate(10, {{texto_acta.0}})">
+    <text>
+        {% for line in texto_acta.1 %}
+        <tspan x="0" dy="1em">
+            {{ line }}
+        </tspan>
+        {% endfor %}
+    </text>
+</g>
+<!-- fin texto -->

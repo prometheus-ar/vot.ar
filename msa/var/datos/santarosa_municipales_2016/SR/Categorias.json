@@ -1,0 +1,13 @@
+[
+  {
+    "adhiere":null,
+    "asistida":"Intendente",
+    "cargo_ejecutivo":true,
+    "codigo":"INT",
+    "consulta_popular":false,
+    "id_grupo":1,
+    "max_selecciones":1,
+    "nombre":"Intendente",
+    "posicion":4
+  }
+]

@@ -1,0 +1,9 @@
+<!-- leyenda -->
+{% if not de_muestra and leyenda != None %}
+    <g transform="translate(792, 1380) rotate(-90, 0, 0)">
+        <rect x="0" y="0" width="800" height="40" fill="{{colores.negro}}"/>
+        <text  y="25" x="5" fill="{{colores.blanco}}" font-size="1.1em">
+            {{leyenda}}
+        </text>
+    </g>
+{% endif %}

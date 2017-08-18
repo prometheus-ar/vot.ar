@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 
 # settings para rfid
-TOKEN = '74'
-TOKEN_TECNICO = '73'
+TOKEN = '6A'
+TOKEN_TECNICO = '3C'
 COMPROBAR_TOKEN = True
-USAR_SALT = True
-
-# desplazamiento de boleta en la impresora para sacarla o volverla al lector
-DESPLAZAMIENTO_BOLETA = 10  #TODO: esta variable podria ser eliminada a partir
-# de la muerte de Malata
 
 # cosas de impresion
 COMPRESION_IMPRESION = False

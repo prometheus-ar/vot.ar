@@ -22,6 +22,7 @@ function document_ready(){
     */
     preparar_eventos();
     $(document).bind("dragstart", function(event){event.target.click();});
+    registrar_helper_colores();
     load_ready_msg();
 }
 
@@ -55,7 +56,6 @@ function actualizar(data){
     borrar_resaltado();
 
     patio.pantalla_boleta_error.hide();
-    patio.pantalla_boleta_clonada.hide();
     patio.pantalla_boleta_repetida.hide();
     patio.pantalla_boleta.hide();
 
@@ -63,11 +63,14 @@ function actualizar(data){
         actualizar_boleta(data);
     } else if (data.tipo == tipo_act.ACT_ERROR){
         setTimeout(pantalla_boleta_error, 200);
-    } else if (data.tipo == tipo_act.ACT_CLONADA){
-        setTimeout(pantalla_boleta_clonada, 200);
     } else if (data.tipo == tipo_act.ACT_BOLETA_REPETIDA){
         function _repetida(){
             pantalla_boleta_repetida(data);
+        }
+        setTimeout(_repetida, 200);
+    } else if (data.tipo == tipo_act.ACT_VERIFICAR_ACTA){
+        function _repetida(){
+            pantalla_verificar_acta(data);
         }
         setTimeout(_repetida, 200);
     } else if (data.tipo == tipo_act.ACT_INICIAL){

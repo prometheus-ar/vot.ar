@@ -409,12 +409,17 @@ b {
 }
 .tooltip #svg_cierre {
   float: left;
-  background: url(../img/cierre.svg);
-  background-size: 147px 253px;
   width: 147px;
   height: 252px;
   margin: 25px 10px;
-  border: 1px solid #bec3be;
+}
+.tooltip #svg_cierre svg {
+  -webkit-transform: scale(0.25);
+  -moz-transform: scale(0.25);
+  transform: scale(0.25);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
 }
 .tooltip .texto-chico {
   margin: 10px 10px 0px 10px;
@@ -456,6 +461,18 @@ b {
   border: 1px solid #ddd;
   border-radius: 5px;
 }
+.ingreso input.nro_mesa {
+  width: 11.5em;
+}
+.ingreso input.nro_pin {
+  width: 3em;
+  display: inline;
+  float: left;
+  clear: none;
+}
+.ingreso input.nro_pin[name='nro_pin_1'] {
+  clear: left;
+}
 .ingreso input.seleccionado {
   -webkit-box-shadow: 0px 0px 0px 5px #ffb634;
   -moz-box-shadow: 0px 0px 0px 5px #ffb634;
@@ -484,15 +501,26 @@ b {
   padding-right: 4px;
 }
 .ingreso .mesaypin {
-  width: 60%;
+  width: 70%;
   float: left;
   overflow: hidden;
   text-align: center;
   padding-top: 35px;
   padding-bottom: 50px;
-  padding-left: 41.5%;
+  padding-left: 36.5%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.ingreso .guion {
+  font-weight: bold;
+  display: inline-block;
+  float: left;
+  /*margin: 0px 10px;*/
+  width: 1em;
+  font-size: 2em;
+  height: 1.5em;
+  line-height: 1.5em;
   box-sizing: border-box;
 }
 .ingreso .tooltip {
@@ -514,20 +542,22 @@ b {
   padding: 20px;
   border-radius: 10px;
   height: 170px;
-}
-.ingreso .tooltip .contenido_tooltip #svg_apertura {
-  float: left;
-  background: url(../img/apertura.svg);
-  background-size: 100px 171px;
-  width: 100px;
-  height: 171px;
-}
-.ingreso .tooltip .contenido_tooltip #svg_cierre {
-  float: left;
-  background: url(../img/cierre.svg);
-  background-size: 100px 171px;
-  width: 100px;
-  height: 171px;
+  /*
+            #svg_apertura {
+                float: left;
+                background:url(../img/apertura.svg);
+                background-size: 100px 171px;
+                width: 100px;
+                height: 171px;
+            }
+            #svg_cierre {
+                float: left;
+                background:url(../img/cierre.svg);
+                background-size: 100px 171px;
+                width: 100px;
+                height: 171px;
+            }
+            */
 }
 .ingreso .tooltip .contenido_tooltip p {
   width: 270px;
@@ -929,16 +959,19 @@ body[data-state='alto-contraste'] #insercion_boleta.mensaje .tooltip {
   margin: 0 auto;
 }
 .mensaje.ingreso-acta .acta-izq {
-  background-image: url("../img/apertura.svg");
-  background-repeat: no-repeat;
-  background-position: bottom;
-  background-size: 90%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
   width: 300px;
-  height: 100%;
-  z-index: 10;
+  top: 0;
+  right: 0;
+  margin-top: 0;
+}
+.mensaje.ingreso-acta .acta-izq svg {
+  -webkit-transform: scale(0.43);
+  -moz-transform: scale(0.43);
+  transform: scale(0.43);
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+  margin-top: -30px;
 }
 .mensaje.ingreso-acta .acta-der {
   background-image: url("../img/ingreso_datos/apoyar_acta.png");
@@ -1591,7 +1624,6 @@ body[data-state='alto-contraste'] #contenedor_der #candidatos_seleccionados .can
   display: inline-block;
 }
 body[data-state='alto-contraste'] #pantalla_confirmacion.confirmados .candidato {
-  font-size: 150%;
   border: solid 1px;
   border-radius: 3px;
   background-color: #000000;

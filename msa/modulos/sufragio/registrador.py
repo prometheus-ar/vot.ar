@@ -2,7 +2,10 @@
 
 Se encarga de manejar el almacenamiento e impresion de las BUE.
 """
-from gi.repository.GObject import timeout_add
+from datetime import datetime
+
+from gi.repository.GObject import timeout_add, source_remove
+
 
 
 class Registrador(object):
@@ -16,54 +19,79 @@ class Registrador(object):
         self.callback = callback
         self.modulo = modulo
         self.callback_error = callback_error
+        self.logger = self.modulo.sesion.logger
 
+        # vamos a lanzar el evento de fin de impresion una sola vez.
         self._evento_ya_lanzado = False
         self.seleccion = None
+        self._timeout_error = None
 
-    def _registrar_voto(self, solo_impimir=False):
+        self._start = None
+
+    def _evaluar_grabacion_tag(self, tag_guardado):
+        """Evalua el exito al fin de la grabación del tag.
+
+        Argumentos:
+            tag_guardado -- un booleano que indica si el tag fue
+                guardado o no
+        """
+        self.logger.info("Fin del registro.")
+        now = datetime.now()
+        tiempo = now - self._start
+        self._start = now
+        self.logger.debug("Tiempo de grabación del tag %s", tiempo)
+        if not tag_guardado:
+            self.logger.error("Recibido el mensaje de tag no guardado.")
+            self.callback_error()
+        else:
+            # Despues de que se graba el tag tenemos n segundos para recibir
+            # el evento de fin de impresion si no es así tiramos un error
+            if self._timeout_error is not None:
+                self.logger.warning("Eliminando timeout anterior")
+                source_remove(self._timeout_error)
+            self._timeout_error = timeout_add(25000, self._error_impresion)
+
+    def _error_impresion(self):
+        """Callback que se llama cuando no se imprimió la boleta."""
+        if self._timeout_error is not None:
+            source_remove(self._timeout_error)
+            self._timeout_error = None
+        self.callback_error(cambiar_estado=False)
+
+    def _fin_de_la_impresion(self, estado=None):
+        """Callback que se llama cuando se terminó de imprimir una BUE."""
+        self.logger.info("Terminó de imprimir.")
+        now = datetime.now()
+        tiempo = now - self._start
+        self.logger.debug("Tiempo de impresión de la boleta %s", tiempo)
+        if self._timeout_error is not None:
+            source_remove(self._timeout_error)
+            self._timeout_error = None
+        self._evento_ya_lanzado = True
+        self.modulo.rampa.tiene_papel = False
+        self.modulo.rampa.tag_leido = None
+        self.modulo.rampa.registrar_default_sensor_1()
+        self.logger.info("Llamando al callback post impresión.")
+        self.callback()
+
+    def registrar_voto(self, solo_impimir=False):
         """La funcion que explicitamente manda a registrar el voto."""
-        logger = self.modulo.sesion.logger
-        logger.info("Registrando voto.")
-        fallo = False
-        impresora = self.modulo.sesion.impresora
-
-        def fin_de_la_impresion(estado=None):
-            """Callback que se llama cuando se terminó de imprimir una BUE."""
-            logger.info("Terminó de imprimir.")
-            if not self._evento_ya_lanzado:
-                logger.info("Rehookeando eventos.")
-                self._evento_ya_lanzado = True
-                impresora.remover_insertando_papel()
-                rampa = self.modulo.rampa
-                rampa.tiene_papel = False
-                impresora.registrar_insertando_papel(rampa.cambio_sensor_2)
-                if not fallo:
-                    logger.info("Llamando al callback post impresión.")
-                    self.callback()
-            return False
+        self.logger.info("Registrando voto.")
+        rampa = self.modulo.rampa
+        self._start = datetime.now()
 
         self._evento_ya_lanzado = False
-        # hookeo el evento, pero tambien agrego un timeout para asegurarme de
-        # que si por alguna razón no salta el evento de fin de impresión sigue
-        # su curso y asume que la sesion de impresión terminó. El manejo del
-        # error de esto se hace mas abajo y es syncronico, a diferencia de
-        # esto que es asincronico.
-        if impresora is not None:
-            impresora.remover_insertando_papel()
-            impresora.registrar_insertando_papel(fin_de_la_impresion)
-            timeout_add(10000, fin_de_la_impresion)
+        if rampa.tiene_conexion:
+            rampa.registrar_fin_impresion(self._fin_de_la_impresion)
 
-            logger.info("Enviando comando de impresion.")
-            self.seleccion.serial = \
-                bytes(self.modulo.rampa.datos_tag['serial'], "utf8")
-            respuesta = impresora.registrar(self.seleccion, solo_impimir)
-            logger.info("Fin del registro.")
-            if respuesta['status'] == "TAG_NO_GUARDADO":
-                logger.error("Recibido el mensaje de tag no guardado.")
-                fallo = True
-                self.callback_error()
+            self.logger.info("Enviando comando de impresion.")
+            # traemos la key de encriptación del voto.
+            aes_key = self.modulo.sesion.mesa.get_aes_key()
+            # Guardamos el tag e imprimimos la boleta.
+            rampa.registrar_error_impresion(self._error_impresion)
+            rampa.registrar_voto(self.seleccion, solo_impimir, aes_key,
+                                 self._evaluar_grabacion_tag)
         else:
-            fallo = True
             self.callback_error()
 
     def _prepara_impresion(self, seleccion):

@@ -64,15 +64,37 @@ function update_titulo_categoria(){
      * Actualiza la solapa que contiene el nombre de la categoria que se estan
      * votando.
      */
-    $('#encabezado').addClass("con-categoria-votada");
-    var data_categoria = get_data_categoria(get_categoria_actual())
-    if(data_categoria !== undefined){
-      var nombre = data_categoria.nombre;
-      $('#categoria_votada').html(nombre);
-      $('#categoria_votada').show();
+    var categoria_actual = get_categoria_actual()
+    if(categoria_actual !== undefined){
+      contenido_solapa(categoria_actual.nombre);
     }
 }
 
-function titulo_solapa(titulo){
-    $('#categoria_votada').html(titulo);
+function contenido_solapa(html, extra_alto){
+    /* Cambia el contenido de la solapa del titulo. */
+    patio.categoria_votada.html(html);
+    if(extra_alto) {
+        $("#categoria_votada").addClass("extra-alto");
+    } else {
+        $("#categoria_votada").removeClass("extra-alto");
+    }
+    patio.categoria_votada.show();
+}
+
+function mostrar_template_solapa(template, datos, extra_alto){
+    var template = get_template(template);
+    var html = template(datos);
+    contenido_solapa(html, extra_alto);
+}
+
+function solapa(candidatura, categoria){
+    if(constants.solapa_inteligente && typeof(candidatura) !== "undefined"){
+        mostrar_template_solapa("solapa", {candidatura: candidatura,
+                                           categoria: categoria},
+                                           typeof(categoria) == "undefined");
+    }
+}
+
+function ocultar_agrupacion(){
+    $(".candidato .nombre-candidato .nombre-partido").hide();
 }

@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 """Fuente de datos para la BUE."""
-from hashlib import sha256
 from os.path import join
 
 from cryptography.exceptions import InvalidTag
@@ -8,9 +7,10 @@ from ojota import Ojota, current_data_code, set_data_source
 from ojota.base import OjotaHierarchy
 from ojota.sources import JSONSource
 
-from msa.core.crypto import derivar_clave, desencriptar
+from msa.core.crypto import desencriptar_credencial
 from msa.core.data.candidaturas import Candidatura
-from msa.core.data.settings import (NOMBRE_JSON_MESAS, PATH_CARPETA_DATOS,
+from msa.core.data.constants import NOMBRE_JSON_UBICACIONES
+from msa.core.data.settings import (PATH_CARPETA_DATOS,
                                     PATH_DATOS_JSON)
 
 
@@ -21,14 +21,10 @@ class Ubicacion(OjotaHierarchy):
 
     """Ubicacion de votacion."""
 
-    plural_name = NOMBRE_JSON_MESAS
+    plural_name = NOMBRE_JSON_UBICACIONES
     pk_field = "codigo"
     default_order = "codigo"
     required_fields = ("descripcion", "cod_datos", "clase")
-
-    def __init__(self, *args, **kwargs):
-        OjotaHierarchy.__init__(self, *args, **kwargs)
-        self.__aes_key = None
 
     def template_ubic(self):
         """Devuelve el template adecuando para la ubicacion actual."""
@@ -90,26 +86,49 @@ class Ubicacion(OjotaHierarchy):
             descripcion = ""
         return descripcion
 
+    def es_mesa(self):
+        return self.clase == "Mesa"
+
     @property
     def descripcion_completa(self):
         """Devuelve la ubicacion completa."""
         return "%s %s" % (self.clase, self.descripcion)
 
-    def validar(self, salt, pin, key_credencial):
+    def validar(self, form_data, credencial, validar_mesa):
+        """Valida una mesa.
+
+        Argumentos:
+            form_data -- un diccionario con la mesa y el pin que estamos
+            tratando de validar/
+            credencial -- un objeto de tipo SoporteDigital de la credencial.
+        """
         mesa_valida = False
-        if len(key_credencial):
+        key = None
+        # si no es una mesa no nos tomamos la molestia.
+        if self.es_mesa() and credencial is not None:
+            # obtenemos el pin
+            pin = bytes(form_data.get("pin"), "utf8")
+            # si es modo demo la credencial no tiene la mesa en la
+            # validacion
+            if validar_mesa:
+                id_unico_mesa = bytes(self.id_unico_mesa, "utf8")
+            else:
+                id_unico_mesa = None
+
             try:
-                self.decode_aes_key(salt, pin, key_credencial)
-                cred = salt + key_credencial[16:]
-                hash_credencial = sha256(cred).hexdigest()
-                if hash_credencial == self.credencial:
-                    mesa_valida = True
+                # obtenemos la key que está dentro de la credencial.
+                key = desencriptar_credencial(id_unico_mesa, pin, credencial)
+                mesa_valida = True
             except InvalidTag:
                 pass
+
+        self.set_aes_key(key)
+
         return mesa_valida
 
     @property
     def listas_especiales(self):
+        """Devuelve los codigos de candidatura de las listas especiales."""
         codigos = []
         especiales = Candidatura.many(clase="Especial",
                                       sorted="orden_absoluto")
@@ -120,19 +139,20 @@ class Ubicacion(OjotaHierarchy):
         return codigos
 
     def usar_cod_datos(self):
+        """Establece el cod_datos de una ubicación."""
         current_data_code(self.cod_datos)
 
     def set_aes_key(self, key):
+        """Establece la clave con la que vamos a encriptar los votos.
+
+        Argumentos:
+            key -- la clave que vamos a almacenar.
+        """
         self.__aes_key = key
 
     def get_aes_key(self):
+        """Devuelve la clave con la que vamos a encriptar los votos."""
         return self.__aes_key
-
-    def decode_aes_key(self, salt, pin, key_credencial):
-        clave = derivar_clave(bytes(pin, "utf8"), salt)
-        key_mesa = desencriptar(clave, key_credencial)
-        self.set_aes_key(key_mesa)
-
 
 
 class RootJSONSource(JSONSource):

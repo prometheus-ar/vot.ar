@@ -5,7 +5,7 @@ from msa.core.data.helpers import get_config
 from msa.core.data.settings import JUEGO_DE_DATOS
 from msa.modulos import get_sesion
 from msa.modulos.constants import (EXT_IMG_VOTO, PATH_FOTOS_ORIGINALES,
-                                   PATH_TEMPLATES_MODULOS,
+                                   PATH_TEMPLATES_MODULOS, PATH_TEMPLATES_VAR,
                                    PATH_TEMPLATES_FLAVORS)
 from msa.modulos.gui.settings import MOSTRAR_CURSOR
 
@@ -72,6 +72,7 @@ class ControladorBase(WebContainerController):
             "mostrar_cursor": MOSTRAR_CURSOR,
             "PATH_TEMPLATES_MODULOS": "file:///%s/" % PATH_TEMPLATES_MODULOS,
             "PATH_TEMPLATES_FLAVORS": "file:///%s/" % PATH_TEMPLATES_FLAVORS,
+            "PATH_TEMPLATES_VAR": "file:///%s/" % PATH_TEMPLATES_VAR,
             "path_imagenes_candidaturas": "file:///%s/" % PATH_FOTOS_ORIGINALES,
         }
         if self.textos is not None:

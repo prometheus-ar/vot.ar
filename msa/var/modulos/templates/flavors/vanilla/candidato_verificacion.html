@@ -1,0 +1,35 @@
+<div class="candidato {{#if blanco}}blanco{{/if}} {{#if es_consulta}}consulta_popular{{/if}}" id="{{id_boton}}">
+    <div class="nombre-cargo">{{categoria.nombre}}</div>
+    {{#unless es_consulta}}
+        {{#unless blanco}}
+            <div class="lista">
+                <p class="palabra-lista">{{i18n "palabra_lista"}}</p>
+                <p class="numero-lista">{{candidato.lista.numero}}</p>
+            </div>
+        {{/unless}}
+        <div class="foto-candidato">
+            {{imagen_candidatura candidato.imagenes.[0]}}
+        </div>
+        {{#unless blanco}}
+            <div class="foto-partido">
+                {{imagen_candidatura candidato.lista.imagenes.[0]}}
+            </div>
+        {{/unless}}
+        {{colores candidato.lista.color}}
+    {{/unless}}
+    {{#unless es_consulta}}
+        <div class="nombre-partido">{{candidato.alianza.nombre}}</div>
+        <div class="nombre-lista">{{candidato.lista.nombre}}</div>
+    {{/unless}}
+    {{#if es_consulta}}
+    <div class="candidato-principal" style="color:{{candidato.lista.color.[0]}}">{{candidato.nombre}}</div>
+    {{else}}
+    <div class="candidato-principal">{{candidato.nombre}}</div>
+    {{/if}}
+    <div class="candidato-secundario">{{{secundarios}}}</div>
+    <div class="candidato-secundario">
+        {{#candidato.categorias_hijas}}
+            {{2.nombre}} : {{1.nombre}}
+        {{/candidato.categorias_hijas}}
+    </div>
+</div>

@@ -80,7 +80,8 @@ function popular_teclado(id){
     return {"id": keyname, "rows": rows};
 }
 
-function mostrar_mensaje(mensaje, callback_positivo, callback_negativo){
+function mostrar_mensaje(mensaje, callback_positivo, callback_negativo,
+                         ocultar_botones){
     /*
      * Muestra un mensaje en el area del teclado
      * Argumentos:
@@ -91,13 +92,27 @@ function mostrar_mensaje(mensaje, callback_positivo, callback_negativo){
      *     presiona cancelar. En caso de no estar, simplemente oculta
      *     el mensaje
      */
-    if (!callback_negativo){
+    if(typeof(ocultar_botones) === "undefined"){
+        ocultar_botones = false;
+    }
+    if(!callback_negativo){
         var callback_negativo = ocultar_mensaje;
     }
+
     var selector = patio_teclado.mensaje.id;
+
+    if(ocultar_botones){
+        $(selector + " .btn-aceptar").hide();
+        $(selector + " .btn-cancelar").hide();
+    } else {
+        $(selector + " .btn-aceptar").show();
+        $(selector + " .btn-cancelar").show();
+
+        $(selector + " .btn-aceptar").on("click", callback_positivo);
+        $(selector + " .btn-cancelar").on("click", callback_negativo);
+    }
+
     $(selector + " .texto").html(mensaje);
-    $(selector + " .btn-aceptar").on("click",callback_positivo);
-    $(selector + " .btn-cancelar").on("click",callback_negativo);
     $(".placeholder-confirma").show();
     patio_teclado.mensaje.only();
     destination.removeClass("seleccionado");
@@ -222,66 +237,6 @@ function seleccionar_numeral() {
     apretar_numeral();
 }
 
-function on_focus(destination) {
-    $("input").removeClass("seleccionado");
-    destination.addClass("seleccionado");
-    var ultimo = destination.val().length;
-    var sig = find_next_input(destination);
-    var ant = find_prev_input(destination);
-    
-    if(destination.data("keyboard")){
-        var keyboard_type = destination.data("keyboard");
-        patio_teclado[keyboard_type].only();
-        $(document).trigger("cambioTeclado");
-    }
-
-    if (sig.length > 0) {
-        $('div.ui-keyboard-aceptar')
-            .text('Siguiente')
-            .addClass('ui-keyboard-siguiente')
-            .removeClass('ui-keyboard-aceptar')
-            .attr("data-accion","siguiente")
-    } else {
-        if(typeof(callbacks_especiales["aceptar"]) !== "undefined"){
-            $('div.ui-keyboard-siguiente')
-                .text('Aceptar')
-                .addClass('ui-keyboard-aceptar')
-                .removeClass('ui-keyboard-siguiente')
-                .attr("data-accion","aceptar")
-        }
-    }
-
-    if (sig.length === 0){
-        $('div.ui-keyboard-siguiente')
-            .addClass('disabled')
-            .trigger('btnSiguienteDeshabilitado');
-    } else {
-        $('div.ui-keyboard-siguiente')
-            .removeClass('disabled')
-            .trigger('btnSiguienteHabilitado');
-    }
-
-    if (ant.length === 0){
-        $('div.ui-keyboard-anterior')
-            .addClass('disabled');
-    } else {
-        $('div.ui-keyboard-anterior')
-            .removeClass('disabled');
-    }
-
-    if (this.setSelectionRange) {
-        this.focus();
-        this.setSelectionRange(ultimo, ultimo);
-    }
-    else if (this.createTextRange) {
-        var range = this.createTextRange();
-        range.collapse(true);
-        range.moveEnd('character', ultimo);
-        range.moveStart('character', ultimo);
-        range.select();
-    }
-}
-
 //Comportamiento para los inputs
 $.fn.keyboard = function () {
     /*
@@ -290,9 +245,65 @@ $.fn.keyboard = function () {
      * y adecua los botones de siguiente/anterior
      */
     this.addClass("text");
-    this.focusin(function (){
+    this.focusin(function () {
         destination = $(this);
-        on_focus(destination)
+        $("input").removeClass("seleccionado");
+        destination.addClass("seleccionado");
+        var ultimo = destination.val().length;
+        var sig = find_next_input(destination);
+        var ant = find_prev_input(destination);
+        
+        if(destination.data("keyboard")){
+            var keyboard_type = destination.data("keyboard");
+            patio_teclado[keyboard_type].only();
+            $(document).trigger("cambioTeclado");
+        }
+
+        if (sig.length > 0) {
+            $('div.ui-keyboard-aceptar')
+                .text('Siguiente')
+                .addClass('ui-keyboard-siguiente')
+                .removeClass('ui-keyboard-aceptar')
+                .attr("data-accion","siguiente")
+        } else {
+            if(typeof(callbacks_especiales["aceptar"]) !== "undefined"){
+                $('div.ui-keyboard-siguiente')
+                    .text('Aceptar')
+                    .addClass('ui-keyboard-aceptar')
+                    .removeClass('ui-keyboard-siguiente')
+                    .attr("data-accion","aceptar")
+            }
+        }
+
+        if (sig.length === 0){
+            $('div.ui-keyboard-siguiente')
+                .addClass('disabled')
+                .trigger('btnSiguienteDeshabilitado');
+        } else {
+            $('div.ui-keyboard-siguiente')
+                .removeClass('disabled')
+                .trigger('btnSiguienteHabilitado');
+        }
+
+        if (ant.length === 0){
+            $('div.ui-keyboard-anterior')
+                .addClass('disabled');
+        } else {
+            $('div.ui-keyboard-anterior')
+                .removeClass('disabled');
+        }
+
+        if (this.setSelectionRange) {
+            this.focus();
+            this.setSelectionRange(ultimo, ultimo);
+        }
+        else if (this.createTextRange) {
+            var range = this.createTextRange();
+            range.collapse(true);
+            range.moveEnd('character', ultimo);
+            range.moveStart('character', ultimo);
+            range.select();
+        }
     });
     return $(this);
 };
@@ -335,14 +346,4 @@ function find_prev_input(elem){
 
 function sonido_teclado(){
     send("sonido_tecla");
-}
-
-function mostrar_teclado_simbolos(){
-    var campo = $(".seleccionado").data("keyboard", "simbolos");
-    on_focus(campo.first());
-}
-
-function mostrar_teclado_qwerty(){
-    var campo = $(".seleccionado").data("keyboard", "alpha_sim")
-    on_focus(campo.first());
 }

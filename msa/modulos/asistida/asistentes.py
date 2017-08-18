@@ -2,9 +2,11 @@
 Los asistentes se encargan de manejar el audio y la navegacion de las
 diferentes "pantallas" del modulo Asistida.
 """
+from gi.repository.GObject import timeout_add
+
 from msa.constants import COD_LISTA_BLANCO
 from msa.core.data import Speech
-from msa.core.data.candidaturas import Categoria, Candidatura
+from msa.core.data.candidaturas import Categoria, Candidatura, Lista
 from msa.modulos.sufragio.constants import (BOTON_LISTA_COMPLETA,
                                             BOTON_VOTAR_POR_CATEGORIAS)
 
@@ -16,6 +18,7 @@ class Asistente(object):
     """
 
     indice_inicio = 1
+    es_interactivo = True           # muestra teclado en pantalla
 
     def __init__(self, controlador, data, data_key=None, repetir=True):
         """Inicializa el asistente y empieza a enumerar las opciones.
@@ -59,20 +62,23 @@ class Asistente(object):
         self._decir(textos, repetir)
 
     def _decir(self, mensaje, repetir=True, cambio_estado=False):
-        u"""
-            Envía el mensaje al locutor.
+        """
+        Envía el mensaje al locutor.
 
-            Argumentos:
-              mensaje -- el mensaje a emitir
-              repetir -- hace que el locutor repita automáticamente el mensaje
-              cambio_estado -- quien llama a este método pide que el timer de
-                               repetición de locución se reinicie, ya que ha
-                               habido un nuevo tipo de mensaje
+        Argumentos:
+            mensaje -- el mensaje a emitir
+            repetir -- hace que el locutor repita automáticamente el mensaje
+            cambio_estado -- quien llama a este método pide que el timer de
+                repetición de locución se reinicie, ya que hubo un nuevo tipo
+                de mensaje
         """
         if cambio_estado:
             self.controlador.sesion.locutor.reset()
-
         self.controlador.sesion.locutor.decir(mensaje, repetir)
+
+    def registrar_callback_fin_cola(self, callback):
+        locutor = self.controlador.sesion.locutor
+        locutor._audio_player.registrar_callback_fin_cola(callback)
 
     def _get_opciones(self):
         """Genera una lista con todas las opciones."""
@@ -95,7 +101,8 @@ class Asistente(object):
         """
         num_opcion, datos = opcion
         mensaje = [self._('para_votar'),
-                   datos['texto_asistida'],
+                   datos['texto_asistida'] if datos["codigo"] != "0"
+                        else self._('agrupaciones_municipales'),
                    self._('presione'),
                    str(num_opcion)]
         return mensaje
@@ -189,9 +196,11 @@ class AsistenteModos(Asistente):
 
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
-        mensaje = [self._('ingrese_nro_modo'),
-                   self._("confirmando_con_e_opcion"),
-                   self._("las_opciones_son")]
+        mensaje = [
+            self._('a_continuacion_usted'),
+            self._('ingrese_nro_modo'),
+            self._("confirmando_con_e_opcion"),
+            self._("las_opciones_son")]
         return mensaje
 
     def procesar_data(self):
@@ -240,9 +249,37 @@ class AsistenteListaCompleta(Asistente):
 
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
-        mensaje = [self._('ingrese_nro_lista'),
-                   self._("confirmando_con_e_opcion"),
-                   self._("las_opciones_son")]
+        mensaje = [
+            self._('a_continuacion_usted'),
+            self._('ingrese_nro_lista'),
+            self._("confirmando_con_e_opcion"),
+            self._("las_opciones_son")]
+        return mensaje
+
+    def _audio_opcion(self, opcion):
+        """
+        Genera el contenido del texto del audio de la opción.
+        Argumentos:
+            opcion -- la opcion a locutar.
+        """
+        num_opcion, datos = opcion
+
+        mensaje = [self._('para_votar'),
+                   datos['texto_asistida']]
+
+        if self.controlador.modulo.config("completa_dice_candidato"):
+            lista = Lista.one(datos["codigo"])
+            if lista is not None:
+                for candidato in lista.candidatos:
+                    if len(lista.candidatos) > 1:
+                        mensaje.append(candidato.categoria.texto_asistida)
+                    mensaje.append(candidato.texto_asistida)
+            elif datos["codigo"] == "0":
+                # casos especiales:
+                mensaje.append(self._('agrupaciones_municipales'))
+
+        mensaje += [self._('presione'),
+                    str(num_opcion)]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -273,7 +310,6 @@ class AsistenteListaCompleta(Asistente):
 
         if blanco is not None:
             nueva_data = nueva_data + [blanco]
-            #self.indice_inicio = 0
 
         return nueva_data
 
@@ -289,8 +325,10 @@ class AsistenteCargoListas(Asistente):
 
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
-        mensaje = [self._('ingrese_nro_cargo_lista'),
-                   self._("confirmando_con_e_opcion")]
+        mensaje = [
+            self._('a_continuacion_usted'),
+            self._('ingrese_nro_cargo_lista'),
+            self._("confirmando_con_e_opcion")]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -301,7 +339,11 @@ class AsistenteCargoListas(Asistente):
             numero -- el numero de opcion que tiene la opcion elegida.
         """
 
-        codigo = opcion['id_candidatura']
+        if "id_candidatura" in opcion:
+            codigo = opcion['id_candidatura']
+        elif opcion["codigo"] == "0":
+            # casos especiales como "agrupaciones_municipales":
+            codigo = None
         self.controlador.send_command("seleccionar_lista", codigo)
 
     def procesar_data(self):
@@ -342,8 +384,11 @@ class AsistenteAdhesion(Asistente):
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
         self.categoria = Categoria.one(self.data[1])
-        mensaje = [self.categoria.texto_asistida_ingrese_nro,
-                   self._("confirmando_con_e_opcion")]
+        mensaje = [
+            self._("a_continuacion_usted"),
+            self._("su_candidato_para"),
+            self.categoria.texto_asistida,
+            self._("confirmando_con_e_opcion")]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -356,7 +401,7 @@ class AsistenteAdhesion(Asistente):
         if self.confirmando is None:
             self.confirmando = [opcion, numero]
             categoria = Categoria.one(opcion['cod_categoria'])
-            mensaje = [self._("ud_eligio_candidato"),
+            mensaje = [self._("ud_eligio_opcion"),
                        numero,
                        self._("para"),
                        categoria.texto_asistida,
@@ -387,14 +432,12 @@ class AsistenteCandidatos(Asistente):
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
         self.categoria = Categoria.one(self.data["cod_categoria"])
-        mensaje = [self.categoria.texto_asistida_ingrese_nro,
-                   self._("confirmando_con_e"),
-                   self._("las_opciones_son")]
-        return mensaje
-
-    def get_epilogo(self):
-        """Lo que dice después de la lista de opciones."""
-        mensaje = [ self._("asterisco_cambiar_agrupacion")]
+        mensaje = [
+            self._("a_continuacion_usted"),
+            self._("su_candidato_para"),
+            self.categoria.texto_asistida,
+            self._("confirmando_con_e"),
+            self._("las_opciones_son")]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -407,7 +450,7 @@ class AsistenteCandidatos(Asistente):
         if self.confirmando is None:
             self.confirmando = [opcion, numero]
             categoria = Categoria.one(opcion['cod_categoria'])
-            mensaje = [self._("ud_eligio_candidato"),
+            mensaje = [self._("ud_eligio_opcion"),
                        numero,
                        self._("para"),
                        categoria.texto_asistida,
@@ -419,12 +462,6 @@ class AsistenteCandidatos(Asistente):
             self.controlador.send_command("seleccionar_candidatos_asistida",
                 [self.confirmando[0]['cod_categoria'],
                  [self.confirmando[0]['id_umv']]])
-
-    def cancelar(self):
-        """Cancela una opcion."""
-        self.controlador.sesion.locutor.shutup()
-        self.controlador.modulo.set_estado(None)
-        self.controlador.modulo._comenzar()
 
 
 class AsistenteConsultaPopular(Asistente):
@@ -443,9 +480,12 @@ class AsistenteConsultaPopular(Asistente):
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
         self.categoria = Categoria.one(self.data["cod_categoria"])
-        mensaje = [self.categoria.texto_asistida_ingrese_nro,
-                   self._("confirmando_con_e_opcion"),
-                   self._("las_opciones_son")]
+        mensaje = [
+            self._("a_continuacion_usted"),
+            self._("su_candidato_para"),
+            self.categoria.texto_asistida,
+            self._("confirmando_con_e_opcion"),
+            self._("las_opciones_son")]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -476,6 +516,11 @@ class AsistentePartido(Asistente):
 
     """Asistente para seleccion de partido."""
 
+    def __init__(self, controlador, data, data_key=None, repetir=True):
+        blanco = Candidatura.first(clase="Blanco").to_dict()
+        data.append(blanco)
+        Asistente.__init__(self, controlador, data, data_key, repetir)
+
     def get_monitor(self):
         """Devuelve el texto del monitor."""
         if self.confirmando:
@@ -487,7 +532,9 @@ class AsistentePartido(Asistente):
 
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
-        mensaje = [self._("ingrese_nro_interna")]
+        mensaje = [
+            self._("a_continuacion_usted"),
+            self._("ingrese_nro_interna")]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -499,15 +546,18 @@ class AsistentePartido(Asistente):
         """
         if self.confirmando is None:
             self.confirmando = [opcion, numero]
-            mensaje = [self._("ud_eligio_candidato"),
+            mensaje = [self._("ud_eligio_opcion"),
                        numero,
-                       self._("para"),
                        opcion['texto_asistida'],
                        self._("acuerdo_cancelar")]
             self._decir(mensaje)
             self.controlador.cambiar_monitor()
         else:
-            self.controlador.send_command("seleccionar_partido_asistida",
+            if self.confirmando[0]['codigo'] == COD_LISTA_BLANCO:
+                self.controlador.send_command("seleccionar_lista",
+                                              self.confirmando[0]['codigo'])
+            else:
+                self.controlador.send_command("seleccionar_partido_asistida",
                                          [self.confirmando[0]['codigo'],
                                           None])
 
@@ -517,7 +567,9 @@ class AsistentePartidosCat(Asistente):
     """Asistente para seleccion de partido."""
 
     def __init__(self, controlador, data, data_key=None, repetir=True):
-        blanco = Candidatura.one(clase="Blanco").to_dict()
+        categoria = data[0]['cod_categoria']
+        blanco = Candidatura.one(clase="Blanco",
+                                 cod_categoria=categoria).to_dict()
         data.append(blanco)
         Asistente.__init__(self, controlador, data, data_key, repetir)
 
@@ -543,7 +595,12 @@ class AsistentePartidosCat(Asistente):
 
     def get_preludio(self):
         """Devuelve el mensaje del preludio."""
-        mensaje = [self._("ingrese_nro_interna")]
+        self.categoria = Categoria.one(self.data[0]['cod_categoria'])
+        mensaje = [
+                self._('a_continuacion_usted'),
+                self._("ingrese_nro_interna"),
+                self._("para"),
+                self.categoria.texto_asistida]
         return mensaje
 
     def callback(self, opcion, numero):
@@ -555,17 +612,22 @@ class AsistentePartidosCat(Asistente):
         """
         if self.confirmando is None:
             self.confirmando = [opcion, numero]
-            mensaje = [self._("ud_eligio_interna"),
+            mensaje = [self._("ud_eligio_opcion"),
                        numero,
                        opcion['texto_asistida'],
                        self._("acuerdo_cancelar")]
             self._decir(mensaje)
             self.controlador.cambiar_monitor()
         else:
-            self.controlador.send_command(
-                "seleccionar_partido_asistida",
-                [self.confirmando[0]['codigo'],
-                 self.confirmando[0]['cod_categoria']])
+            if self.confirmando[0]['codigo'] == COD_LISTA_BLANCO:
+                self.controlador.send_command("seleccionar_candidatos_asistida",
+                    [self.confirmando[0]['cod_categoria'],
+                    [self.confirmando[0]['id_umv']]])
+            else:
+                self.controlador.send_command(
+                    "seleccionar_partido_asistida",
+                    [self.confirmando[0]['codigo'],
+                    self.confirmando[0]['cod_categoria']])
 
 
 class AsistenteConfirmacion(Asistente):
@@ -576,6 +638,7 @@ class AsistenteConfirmacion(Asistente):
         if len(data) == 1:
             self.controlador = controlador
             self.elegir(None)
+            self.es_interactivo = False     # no mostrar teclado (controlador)
         else:
             Asistente.__init__(self, controlador, data, data_key, repetir)
 
@@ -607,11 +670,19 @@ class AsistenteConfirmacion(Asistente):
         return mensaje
 
     def elegir(self, data):
-        """Elije una opcion"""
-        self._decir([self._("imprimiendo")], False)
-        self.controlador.prepara_impresion()
-        self.controlador.previsualizar_voto(data)
-        self.controlador.confirmar_seleccion(data)
+        """Confirma la elección, no utiliza número de opcion (data)"""
+        # ocultar inmediatamente el teclado:
+        self.controlador.send_command("ocultar_teclado")
+        def _interfaz():
+            self.controlador.send_command("agradecimiento")
+
+        def _inner():
+            self.controlador.prepara_impresion()
+            self._decir([self._("imprimiendo")], False)
+            self.controlador.confirmar_seleccion(data)
+
+        timeout_add(1000, _interfaz)
+        timeout_add(2000, _inner)
 
     def cancelar(self):
         """Cancela una opcion."""
@@ -636,3 +707,22 @@ class AsistenteVerificacion(AsistenteConfirmacion):
         mensaje = [self._("ud_voto")]
 
         return mensaje
+
+    def _decir(self, mensaje, repetir=True, cambio_estado=False):
+        """
+        Envía el mensaje al locutor.
+
+        Argumentos:
+            mensaje -- el mensaje a emitir
+            repetir -- hace que el locutor repita automáticamente el mensaje
+            cambio_estado -- quien llama a este método pide que el timer de
+                repetición de locución se reinicie, ya que hubo un nuevo tipo
+                de mensaje
+        """
+        def _inner():
+            rampa = self.controlador.modulo.rampa
+            self.controlador.modulo.pantalla_insercion()
+            rampa.expulsar_boleta()
+
+        self.registrar_callback_fin_cola(_inner)
+        AsistenteConfirmacion._decir(self, mensaje, repetir, cambio_estado)

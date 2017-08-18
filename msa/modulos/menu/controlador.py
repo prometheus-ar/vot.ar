@@ -1,10 +1,11 @@
 """Constrolador del modulo Menu."""
-from gi.repository.GObject import timeout_add_seconds, source_remove
+
+from gi.repository.GObject import source_remove, timeout_add_seconds
 
 from msa.modulos.base.actions import BaseActionController
 from msa.modulos.base.controlador import ControladorBase
-from msa.modulos.menu.constants import TEXTOS, TIMEOUT_MENU
-from msa.settings import MODO_DEMO
+from msa.modulos.constants import MODULO_TOTALIZADOR
+from msa.modulos.menu.constants import TEXTOS
 
 
 class Actions(BaseActionController):
@@ -35,7 +36,13 @@ class Controlador(ControladorBase):
         self.modulo._inicio()
 
     def iniciar_timer(self):
-        self.timer = timeout_add_seconds(TIMEOUT_MENU, self.lockear_menu)
+        if self.modulo.config("usar_lockscreen") and not self.sesion.modo_demo:
+            self.timer = timeout_add_seconds(
+                self.modulo.config("tiempo_lockscreen"),
+                self.lockear_menu)
+        else:
+            # diferenciar de pantalla bloqueada (ver rampa)
+            self.timer = False
 
     def quitar_timer(self):
         if self.timer is not None:
@@ -46,21 +53,32 @@ class Controlador(ControladorBase):
         self.iniciar_timer()
 
     def lockear_menu(self):
+        self.quitar_timer()
         self.send_command("mostrar_lockscreen")
         self.timer = None
+        return False
 
     def cargar_botones(self, mesa_abierta):
+        self.reiniciar_timer()
         usar_asistida = self.modulo.config("usar_asistida")
         usar_sufragio = self.modulo.config("usar_sufragio")
         usar_totalizador = self.modulo.config("usar_totalizador")
+        # aún estando habilitado el totalizador nos aseguramos de que esté
+        # siendo usado en este disco de esta elección.
+        if usar_totalizador:
+            usar_totalizador = self.modulo.en_disco(MODULO_TOTALIZADOR)
+
+        modo_demo = self.sesion.modo_demo
         usar_capacitacion = (self.modulo.config("usar_capacitacion") and
-                             MODO_DEMO)
+                             modo_demo)
         self.send_command("mostrar_pantalla",
                           {'USAR_ASISTIDA': usar_asistida,
                            'USAR_VOTO': usar_sufragio,
                            'USAR_TOTALIZADOR': usar_totalizador,
                            'USAR_CAPACITACION': usar_capacitacion})
-        self.reiniciar_timer()
+
+    def mostrar_botonera(self):
+        self.cargar_botones(self.modulo.mesa_abierta)
 
     def show_maintenance_button(self):
         usar_mantenimiento = self.modulo.config("usar_mantenimiento")

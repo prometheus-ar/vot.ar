@@ -45,8 +45,9 @@ class Controlador(ControladorBase):
     def _inicializa_pantalla(self):
         """Inicializa la pantalla de previsualizacion de la apertura."""
         if self.sesion._tmp_apertura is not None:
+            mostrar = {"en_pantalla": True}
             imagen_acta = self.sesion._tmp_apertura.a_imagen(svg=True,
-                                                             de_muestra=True)
+                                                             mostrar=mostrar)
             imagen_data = quote(imagen_acta.encode("utf-8"))
             self.set_pantalla_confirmacion(imagen_data)
         else:

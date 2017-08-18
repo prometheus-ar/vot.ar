@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
-from construct import Container, RangeError, FieldError
+from construct import Container, RangeError
 
-from msa.core.crypto.decorators import encriptar_tag, desencriptar_tag
 from msa.core.data.candidaturas import Categoria, Candidatura
 from msa.core.data import Ubicacion
 from msa.core.documentos.constants import LEN_LEN_UBIC, LEN_LEN_OPC
@@ -20,7 +19,6 @@ class Seleccion(object):
         self.mesa = mesa
         self.__candidatos = candidatos[:] if candidatos else []
         self.interna = interna
-        self.serial = b"\x00" * 16
 
     def elegir_candidato(self, candidato, borrar=True):
         """Guarda un candidato seleccionado.
@@ -80,11 +78,7 @@ class Seleccion(object):
                 if blanco is not None:
                     self.elegir_candidato(blanco)
 
-    @encriptar_tag
     def a_tag(self):
-        return self.a_string()
-
-    def a_string(self):
         """Devuelve la informacion de la seleccion para almacenar en tag rfid.
         """
         # Generamos el largo del codigo de ubicacion de la mesa
@@ -99,8 +93,7 @@ class Seleccion(object):
         container = Container(len_ubic=len_ubic,
                               ubicacion=ubicacion,
                               opciones=opciones,
-                              len_opciones=len_opciones,
-                              serial=self.serial)
+                              len_opciones=len_opciones)
         built = struct_voto.build(container)
         return built
 
@@ -116,13 +109,10 @@ class Seleccion(object):
         return ",".join(categorias)
 
     @forzar_idioma(DEFAULT_LOCALE)
-    def a_imagen(self, verificador=True, solo_mostrar=False, svg=False):
+    def a_imagen(self, mostrar=None, svg=False):
         """Genera la imagen de la boleta."""
-        imagen = ImagenBoleta(self, verificador, solo_mostrar)
-        if svg:
-            rendered = imagen.render_svg()
-        else:
-            rendered = imagen.render_image()
+        imagen = ImagenBoleta(self, mostrar)
+        rendered = imagen.render(svg)
         return rendered
 
     def __str__(self):
@@ -130,21 +120,14 @@ class Seleccion(object):
                         for c in self.__candidatos)
 
     @classmethod
-    @desencriptar_tag
     def desde_tag(cls, tag, mesa=None):
-        """Devuelve una seleccion a partir de la informacion de un tag rfid.
-        """
-        return cls.desde_string(tag, mesa)
-
-    @classmethod
-    def desde_string(cls, tag, mesa=None):
         """Devuelve una seleccion a partir de la informacion de un tag rfid.
         """
         seleccion = None
 
         try:
             datos_tag = struct_voto.parse(tag)
-        except (RangeError, FieldError, ValueError):
+        except RangeError:
             # Manejamos que no nos puedan meter cualquier
             datos_tag = None
 
@@ -156,14 +139,13 @@ class Seleccion(object):
                     raise MesaIncorrecta()
             else:
                 # OJO: Esto trae cualquier mesa del juego de datos.
-                # No importa por que todas las mesas del mismo juego son
-                # compatibles. Pero no nos permite identificar de que mesa es
+                # No importa cual porque todas las mesas del mismo juego son
+                # compatibles pero no nos permite identificar de que mesa es
                 # el voto.
                 mesa = Ubicacion.first(cod_datos=ubic)
                 mesa.usar_cod_datos()
 
             seleccion = Seleccion(mesa)
-            seleccion.serial = datos_tag.serial
 
             sel_por_cat = {}
             # recorremos cada uno de los pares de categoria/candidatos en el
@@ -206,10 +188,3 @@ class Seleccion(object):
                             break
 
         return seleccion
-
-    @classmethod
-    def desde_qr(cls, datos):
-        """Devuelve una seleccion a partir de la informacion de un qr."""
-        return Seleccion()
-
-

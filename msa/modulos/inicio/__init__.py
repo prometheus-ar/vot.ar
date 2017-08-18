@@ -11,7 +11,6 @@ from msa.modulos import get_sesion
 from msa.modulos.base.modulo import ModuloBase
 from msa.modulos.constants import (E_INICIAL, MODULO_CAPACITACION, SHUTDOWN,
                                    SUBMODULO_MESA_Y_PIN_INICIO)
-from msa.modulos.gui.basegui import MsgDialog
 from msa.modulos.inicio.controlador import Controlador
 from msa.modulos.inicio.rampa import Rampa
 from msa.settings import DEBUG
@@ -39,26 +38,25 @@ class Modulo(ModuloBase):
         # Importante antes de inicializar el modulo, limpiar la configuracion
         self.sesion = get_sesion()
         self._limpiar_configuracion()
-        self.mute_armve_ver_1()
         self.controlador = Controlador(self)
         self.web_template = "inicio"
 
         ModuloBase.__init__(self, nombre)
 
         self.loop_lector = True
-        self._vaciar_impresora()
         self.estado = E_INICIAL
         self.dialogo = None
         self._bind_term()
-        self.manejar_desconexion()
 
         self.rampa = Rampa(self)
+        self.rampa.expulsar_boleta()
+        self.mute_armve_ver_1()
 
     def mute_armve_ver_1(self):
         """Funcion para mutear ARMVE version 1 (serie P2)."""
-        if hasattr(self.sesion, "agent"):
-            machine_number = self.sesion.agent.get_machine_type()
-            if machine_number == 1:
+        if self.rampa.tiene_conexion:
+            version = self.rampa.get_arm_version()
+            if version == 1:
                 system('/usr/bin/amixer -c 0 sset "Auto-Mute Mode" Disabled')
 
     def _bind_term(self):
@@ -82,34 +80,6 @@ class Modulo(ModuloBase):
         """Funcion llamada desde el controlador."""
         self.controlador.send_constants()
 
-    def manejar_desconexion(self):
-        """Maneja la desconexion del hardware.
-
-        En Malata tenia mas sentido que ahora, pero de todos modos si perdemos
-        conexion lo mostramos.
-        """
-        def mostrar_dialogo(estado):
-            """Muestra el dialogo en caso de desconexion."""
-
-            if not estado and self.dialogo is None:
-                self.dialogo = MsgDialog(_("arm_no_responde"))
-                self.dialogo.show()
-            elif estado and self.dialogo is not None:
-                self.dialogo.hide()
-                self.dialogo = None
-
-        if self.sesion.impresora is None or not self.sesion.impresora.estado():
-            mostrar_dialogo(False)
-
-        if self.sesion.impresora is not None:
-            self.sesion.impresora.connection(mostrar_dialogo)
-
-    def _vaciar_impresora(self):
-        """Expulsa la boleta cuando arranca el modulo"""
-        impresora = self.sesion.impresora
-        if impresora is not None and impresora.estado():
-            impresora.expulsar_boleta()
-
     def _pantalla_principal(self):
         """Levanta la pantalla inicial."""
         self.controlador.set_screen("pantalla_inicio")
@@ -118,8 +88,9 @@ class Modulo(ModuloBase):
         """Sale al modo de capacitacion."""
         self.salir_a_modulo(MODULO_CAPACITACION)
 
-    def configurar(self):
+    def configurar(self, tag):
         """Inicio la configuración de la mesa."""
+        self.sesion.credencial = tag
         self.salir_a_modulo(SUBMODULO_MESA_Y_PIN_INICIO)
 
     def _limpiar_configuracion(self):

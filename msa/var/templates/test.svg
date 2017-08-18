@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="832"
+   height="1138"
+   viewBox="0 0 8.32 10.093987"
+   id="svg2"
+   version="1.1">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1257"
+     inkscape:window-height="886"
+     id="namedview8"
+     showgrid="false"
+     inkscape:zoom="0.472"
+     inkscape:cx="275.17247"
+     inkscape:cy="468.30269"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg2"
+     fit-margin-top="200"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <rect
+     width="8.3199902"
+     height="9.379982"
+     id="rect4"
+     x="0"
+     y="1.4134969" />
+  <path
+     d="M 0,1.4135039 V 10.793497 H 1.664 V 1.4135039 z m 3.328,0 V 10.793497 H 4.992 V 1.4135039 z m 3.328,0 V 10.793497 H 8.32 V 1.4135039 z m -6.656,0 H 8.32 V 3.2895024 H 0 z m 0,3.7519973 h 8.32 v 1.875999 H 0 z m 0,3.751997 H 8.32 V 10.793497 H 0 z"
+     id="path6"
+     inkscape:connector-curvature="0"
+     style="fill:#ffffff;fill-rule:evenodd" />
+</svg>

@@ -94,9 +94,14 @@ function mensaje_fin_escrutinio(){
     function _cancelar(){
         sonido_tecla();
         desbindear_panel_acciones();
-        //Aca llamamos de nuevo a la pantalla de carga pero via el backend,
-        //para explicitamente volver a armarla.
-        cargar_clasificacion_de_votos();
+        if (constants.totalizador) {
+            // Volver al inicio para poder seguir totalizando recuentos:
+            pantalla_inicial();
+        } else {
+            //Aca llamamos de nuevo a la pantalla de carga pero via el backend,
+            //para explicitamente volver a armarla.
+            cargar_clasificacion_de_votos();
+        }
     }
     sonido_tecla();
     var pantalla = patio.mensaje_fin_escrutinio;
@@ -107,8 +112,8 @@ function mensaje_fin_escrutinio(){
 
 function mensaje_confirmacion_apagar(){
     /*
-    * Confirma la salida del escritinio, usamos una funcion diferente que la de
-    * "apoyar credencial" por que es un caso especial.
+    * Confirma la salida del escritinio, usamos una funcion diferente a la de
+    * "apoyar credencial" porque es un caso especial.
     */
     function _aceptar(){
         sonido_tecla();

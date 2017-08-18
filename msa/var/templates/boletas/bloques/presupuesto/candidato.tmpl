@@ -1,0 +1,13 @@
+<!-- Contenedor candidato -->
+<g style="font-size:{{sec.font_size}}px">   
+    <!-- Lista X -->
+    <rect width="{{sec.height-5}}" height="{{sec.height-5}}" fill="#ffffff"
+stroke="#000000" stroke-width="1px" y="{{sec.margen_sup}}" x="{{sec.width - sec.height}}"/>
+    <text x="{{margen_der - 80 + margen_izq}}" y="{{sec.layout.posicion_numero}}" width="{{ancho_texto}}" style="font-size:{{sec.numero_lista.em}}em;text-anchor:end;">{{sec.numero_lista.numero}}</text> 
+    <!-- Candidato principal -->
+    <text x="{{margen_texto}}" y="{{sec.nombre_candidato.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.nombre_candidato.em}}em;">
+        {% for linea in sec.nombre_candidato.lineas %}
+            <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.nombre_candidato.em}}em">{{linea.1}}</tspan>
+        {% endfor %}
+    </text> 
+</g>

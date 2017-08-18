@@ -3,6 +3,7 @@
 from random import shuffle
 
 from ojota import Ojota, OjotaSet, Relation
+from ojota.base import get_current_data_code
 from ojota.sources import JSONSource
 
 from msa.core.data.constants import (NOMBRE_JSON_AGRUPACIONES,
@@ -63,15 +64,6 @@ class Categoria(CandidaturaBase):
     plural_name = NOMBRE_JSON_CATEGORIAS
     required_fields = ("nombre", "posicion", "consulta_popular", "adhiere",
                        "asistida")
-
-    @property
-    def texto_asistida_ingrese_nro(self):
-        """
-        Devuelve el texto para a descripcion de la proxima categoria en
-        asistida.
-        """
-        msg = u'A continuación usted elegirá su candidato para %s'
-        return msg % self.texto_asistida
 
     def __str__(self):
         """Representacion del objeto. Codigo y nombre de la Candidatura."""
@@ -161,6 +153,22 @@ class Agrupacion(CandidaturaBase):
     required_fields = ("clase", "nombre", "color", "imagenes", "nombre",
                        "nombre_corto", "asistida")
 
+    @classmethod
+    def get_cache_name(cls):
+        """Genera el nombre que vamos a usar para guardar en cache."""
+        if cls.cache_name is not None:
+            cache_name = '_cache_' + cls.cache_name
+        else:
+            cache_name = '_cache_' + cls.get_plural_name()
+
+        if cls.prefilter is not None and "clase" in cls.prefilter:
+            cache_name += "_" + cls.prefilter["clase"]
+
+        if not cls.data_in_root and get_current_data_code():
+            cache_name += '_' + get_current_data_code()
+
+        return cache_name
+
     @property
     def partido(self):
         return Agrupacion.one(clase="Partido",
@@ -183,15 +191,11 @@ class Agrupacion(CandidaturaBase):
 
 
 class Partido(Agrupacion):
-    def __init__(self, *args, **kwargs):
-        self.prefilter = {"clase": "Partido"}
-        Agrupacion.__init__(self, *args, **kwargs)
+    prefilter = {"clase": "Partido"}
 
 
 class Lista(Agrupacion):
-    def __init__(self, *args, **kwargs):
-        self.prefilter = {"clase": "Lista"}
-        Agrupacion.__init__(self, *args, **kwargs)
+    prefilter = {"clase": "Lista"}
 
     @property
     def candidatos(self):
@@ -213,9 +217,7 @@ class Lista(Agrupacion):
 
 
 class Alianza(Agrupacion):
-    def __init__(self, *args, **kwargs):
-        self.prefilter = {"clase": "Alianza"}
-        Agrupacion.__init__(self, *args, **kwargs)
+    prefilter = {"clase": "Alianza"}
 
 
 class Boleta(Ojota):

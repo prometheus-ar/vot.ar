@@ -1,0 +1,9 @@
+{% if sec.mostrar_titulo %}
+    <!-- Titulo -->
+    <rect x="{{margen_bloque}}" y="{{sec.box_titulo.pos_y}}" width="{{sec.box_titulo.width}}" height="{{sec.box_titulo.height}}" fill="#000000"/>
+    <text x="{{margen_texto}}" y="{{sec.titulo.pos_y}}" width="{{sec.titulo.width}}" style="font-size:{{sec.titulo.font_size}}px;fill:#ffffff">
+        {% for linea in sec.titulo.lineas %}
+            <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.titulo.font_size}}px">{{linea.1}}</tspan>
+        {% endfor %}
+    </text>
+{% endif %}

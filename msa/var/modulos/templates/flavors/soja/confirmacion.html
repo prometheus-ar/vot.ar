@@ -1,0 +1,21 @@
+<div class="candidato {{#if blanco}}blanco{{/if}} {{consulta_popular}} {{#if modificar}}modificable{{/if}}" id="{{id_boton}}">
+    <div class="contenedor-candidato">
+        <div class="nombre-cargo">{{categoria.nombre}}</div> 
+        <div class="lista">
+            <p class="palabra-lista">{{i18n "palabra_lista"}}</p>
+            <p class="numero-lista">{{candidato.lista.numero}}</p>
+        </div>
+        <div class="foto-candidato">
+            {{imagen_candidatura candidato.imagenes.[0]}}
+        </div>
+        {{#if consulta_popular}}
+        <div class="candidato-principal" style="color:{{candidato.lista.color.[0]}}">{{candidato.nombre}}</div>
+        {{else}}
+        <div class="candidato-principal">{{candidato.nombre}}</div>
+        {{/if}}
+        <div class="candidato-secundario">{{{secundarios}}}</div>
+    </div>
+    {{#if modificar}}
+        <div class="btn-modificar-voto"><p>{{i18n "modificar"}}</p></div>
+    {{/if}}
+</div>

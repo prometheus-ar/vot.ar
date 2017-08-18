@@ -1,0 +1,11 @@
+
+<!-- Contenedor candidato -->
+<g style="font-size:{{sec.font_size}}px">   
+    <text x="{{margen_texto}}" y="{{sec.numero_lista.pos_y}}" style="font-size:{{sec.numero_lista.em}}em;">{{sec.numero_lista.texto}}</text> 
+
+    <text x="{{margen_texto}}" y="{{sec.nombre_candidato.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.nombre_candidato.em}}em">
+        {% for linea in sec.nombre_candidato.lineas %}
+            <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.nombre_candidato.em}}em">{{linea.1}}</tspan>
+        {% endfor %}
+    </text> 
+</g>

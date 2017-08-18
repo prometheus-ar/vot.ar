@@ -6,7 +6,7 @@ FAST_PACKING = False  # Indica si se usan las funciones rápidas para
                       # pack|unpack
 SMART_PACKING = True  # Indica si se usan las funciones de smart packing
 
-CANTIDAD_BITS_PACKER = 9  # Cantidad de bits por numero en numpacker
+CANTIDAD_BITS_PACKER = 16  # Cantidad de bits por numero en numpacker
 
 try:
     from msa.core.packing.settings_local import *

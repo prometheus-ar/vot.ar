@@ -16,7 +16,7 @@ from msa.modulos.constants import (E_INGRESO_ACTA, E_INGRESO_DATOS, E_MESAYPIN,
                                    MODULO_APERTURA, MODULO_INICIO,
                                    MODULO_RECUENTO, MODULO_TOTALIZADOR)
 from msa.modulos.ingreso_datos.constants import ERRORES, TEXTOS
-from msa.settings import DEBUG
+from msa.settings import DEBUG, MODO_DEMO
 
 
 class Actions(BaseActionController):
@@ -89,8 +89,8 @@ class Controlador(ControladorBase):
         self.send_command("show_body")
 
         # Si ya hay una boleta en la impresora la expulsamos
-        if self.estado == E_INGRESO_ACTA and self.sesion.impresora is not None:
-            self.sesion.impresora.expulsar_boleta()
+        if self.estado == E_INGRESO_ACTA:
+            self.modulo.rampa.expulsar_boleta()
 
     def set_cargando_recuento(self):
         """Muestra la pantalla de cargando el recuento."""
@@ -130,6 +130,7 @@ class Controlador(ControladorBase):
             data['pattern_validacion_hora'] = "[0]?[8-9]|1[0-9]?|2[0-3]?"
         else:
             data['pattern_validacion_hora'] = "1[8-9]?|2[0-3]?"
+            data["imagen_acta"] = quote(self.imagen_acta)
 
         if (hasattr(self.modulo, "apertura") and
                 self.modulo.apertura is not None and
@@ -152,10 +153,10 @@ class Controlador(ControladorBase):
         """Muestra la pantalla de datos personales."""
         if 'autoridades' in data and data['autoridades'] is not None:
             for autoridad in data['autoridades']:
-                autoridad['nombre'] = autoridad['nombre'].replace("'",
-                                                                  "&#39;")
-                autoridad['apellido'] = autoridad['apellido'].replace("'",
-                                                                      "&#39;")
+                nombre = autoridad['nombre'].replace("'", "&#39;")
+                autoridad['nombre'] = nombre
+                apellido = autoridad['apellido'].replace("'", "&#39;")
+                autoridad['apellido'] = apellido
 
         if self.modulo_padre == MODULO_APERTURA:
             data['modulo'] = "apertura"
@@ -224,7 +225,7 @@ class Controlador(ControladorBase):
         self.cargar_dialogo(callback_template="msg_mesa_y_pin_incorrectos",
                             aceptar=self.hide_dialogo)
 
-    def recibir_mesaypin(self, data):
+    def recibir_mesaypin(self, form_data, validar_mesa=not MODO_DEMO):
         """ Recibe la mesa y pin ingresada y la valida para
         pasar a la siguiente pantalla, o rechaza el ingreso y vuelve
         a pedir el ingreso de datos
@@ -232,22 +233,17 @@ class Controlador(ControladorBase):
             {"mesa": 1,
             "pin": A1C2E3G4}
         """
-        mesa_valida = False
-        mesa = data['mesa']
-        pin = data['pin']
-        mesa_obj = Ubicacion.one(numero=mesa)
 
-        if mesa_obj is not None:
-            mesa_valida = mesa_obj.validar(self.sesion.salt, pin,
-                                           self.sesion.key_credencial)
+        mesa = Ubicacion.one(numero=form_data['mesa'])
 
-        if mesa_valida:
-            self.modulo._validar_configuracion(mesa_obj)
+        if mesa is not None and mesa.validar(form_data, self.sesion.credencial,
+                                             validar_mesa):
+            self.modulo._abrir_mesa(mesa)
         else:
             self.msg_mesaypin_incorrecto()
             self._intento += 1
             if self._intento >= 3:
-                self.sesion.impresora.expulsar_boleta()
+                self.modulo.rampa.expulsar_boleta()
                 self.modulo.salir_a_modulo(MODULO_INICIO)
 
     def recibir_datospersonales(self, data):
@@ -262,12 +258,12 @@ class Controlador(ControladorBase):
             if len(autoridad) == 4:
                 largos = [len(x) for x in autoridad]
                 del largos[2]
-                if largos != [0, 0, 0]:
+                if any(largos):
                     autoridad_mesa = Autoridad(*autoridad)
                     autoridades.append(autoridad_mesa)
 
         if self.modulo_padre == MODULO_APERTURA:
-            self.modulo.crear_objeto(autoridades, data['hora'])
+            self.modulo.crear_apertura(autoridades, data['hora'])
         else:
             self.modulo.generar_recuento(autoridades, data['hora'])
 
@@ -281,7 +277,6 @@ class Controlador(ControladorBase):
             "USAR_BUFFER_IMPRESION": USAR_BUFFER_IMPRESION,
             "realizar_apertura": self.modulo.config("realizar_apertura"),
             "usa_login_desde_inicio": self.modulo.config("login_desde_inicio"),
-            "chirimbolos_en_pin": self.modulo.config("chirimbolos_en_pin"),
         }
         constants_dict = self.base_constants_dict()
         constants_dict.update(local_constants)

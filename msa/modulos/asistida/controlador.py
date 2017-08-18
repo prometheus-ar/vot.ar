@@ -2,11 +2,12 @@
 from datetime import datetime
 from os.path import join
 
-from gi.repository import GObject
+from gi.repository.GObject import timeout_add_seconds
 
 from msa.constants import COD_LISTA_BLANCO
 from msa.core.audio.settings import VOLUMEN_GENERAL
-from msa.core.data.candidaturas import Candidatura, Categoria, Lista, Partido
+from msa.core.data.candidaturas import (Agrupacion, Candidatura, Categoria,
+                                        Lista)
 from msa.modulos.asistida.asistentes import (AsistenteAdhesion,
                                              AsistenteCandidatos,
                                              AsistenteCargoListas,
@@ -20,6 +21,7 @@ from msa.modulos.asistida.constants import PATH_TONOS, TIEMPO_ITER_TIMEOUT
 from msa.modulos.asistida.helpers import ultimo_beep
 from msa.modulos.constants import MODULO_ASISTIDA
 from msa.modulos.sufragio.controlador import Controlador as ControllerVoto
+
 
 class Controlador(ControllerVoto):
 
@@ -35,7 +37,7 @@ class Controlador(ControllerVoto):
 
         self.ultima_tecla = None
 
-        GObject.timeout_add_seconds(TIEMPO_ITER_TIMEOUT, ultimo_beep, self)
+        timeout_add_seconds(TIEMPO_ITER_TIMEOUT, ultimo_beep, self)
 
     def audios_pantalla_modos(self, data):
         """Carga los audios de la pantalla de modos."""
@@ -79,9 +81,12 @@ class Controlador(ControllerVoto):
         """Carga los audios de las lista de los cargos."""
         listas = []
         for datum in data:
-            lista = Candidatura.one(id_umv=datum).to_dict()
-            listas.append(lista)
-
+            if datum:
+                lista = Candidatura.one(id_umv=datum).to_dict()
+                listas.append(lista)
+            elif datum == 0:
+                # casos especiales como "agrupaciones_municipales"
+                listas.append({"codigo": "0", "texto_asistida": ""})
         self.audios("cargar_cargo_listas", listas)
 
     def audios_mostrar_confirmacion(self, data):
@@ -99,16 +104,16 @@ class Controlador(ControllerVoto):
         """Carga los audios de los partidos en la categoria."""
         partidos = []
         for datum in data[1]:
-            partido = Partido.one(datum).to_dict()
-            partido["cod_categoria"] = data[0]
-            partidos.append(partido)
+            agrupacion = Agrupacion.one(datum).to_dict()
+            agrupacion["cod_categoria"] = data[0]
+            partidos.append(agrupacion)
         self.audios("cargar_partidos_categoria", partidos)
 
     def audios_partidos_completa(self, data):
         """Carga los audios de los partidos en lista completa."""
         partidos = []
         for datum in data:
-            partido = Partido.one(datum).to_dict()
+            partido = Agrupacion.one(datum).to_dict()
             partidos.append(partido)
         self.audios("cargar_partidos_completa", partidos)
 
@@ -131,7 +136,8 @@ class Controlador(ControllerVoto):
             clase, key = interceptar[command]
             self.asistente = clase(self, data, key)
             self.cambiar_monitor()
-            self.send_command("mostrar_teclado")
+            if self.asistente.es_interactivo:
+                self.send_command("mostrar_teclado")
 
     def numeral(self, numero):
         """Callback cuando se apreta en numeral.
@@ -181,19 +187,17 @@ class Controlador(ControllerVoto):
             cat_list.append(cat_dict)
         self.modulo.seleccion = None
         self.asistente = AsistenteVerificacion(self, cat_list, repetir=False)
-        self._imagen_verificacion = None
         self._datos_verificacion = None
 
-    def send_constants(self):
-        """Envia todas las constantes de la eleccion."""
-        constants_dict = self.get_constants()
+    def get_constants(self):
+        constants_dict = ControllerVoto.get_constants(self)
         constants_dict['asistida'] = True
         constants_dict['titulo'] = _("titulo_votacion_asistida")
         constants_dict['subtitulo'] = _("coloque_el_acrilico")
         constants_dict['subtitulo_contraste'] = \
             _("coloque_el_acrilico_contraste")
-        constants_dict['seleccionar_candidato_unico'] = False
-        self.send_command("set_constants", constants_dict)
+
+        return constants_dict
 
     def emitir_tono(self, tecla):
         """Emite un tono segun la tecla pulsada."""

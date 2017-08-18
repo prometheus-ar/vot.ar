@@ -1,0 +1,229 @@
+[
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Alianza",
+    "codigo":"1885",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885",
+    "imagenes":[
+      "1885"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1926",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926",
+    "imagenes":[
+      "1885.1926"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "orden_absoluto":[
+      15,
+      61
+    ]
+  },
+  {
+    "asistida":"Salta Nos Une",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372",
+    "color":[
+      "#646469",
+      "#B21E27",
+      "#FF8671"
+    ],
+    "id_candidatura":"1885.1926.2372",
+    "imagenes":[
+      "1885.1926.2372"
+    ],
+    "nombre":"Salta Nos Une",
+    "nombre_corto":"Salta Nos Une",
+    "numero":"781",
+    "orden_absoluto":[
+      15,
+      61,
+      203
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1890",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890",
+    "imagenes":[
+      "1886.1890"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"Part.Justicialista",
+    "orden_absoluto":[
+      6,
+      51
+    ]
+  },
+  {
+    "asistida":"Para Que El Jard\u00edn Siga Creciendo",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2060",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2060",
+    "imagenes":[
+      "1886.1890.2060"
+    ],
+    "nombre":"Para Que El Jardin Siga Creciendo",
+    "nombre_corto":"El Jardin Siga Crec.",
+    "numero":"243",
+    "orden_absoluto":[
+      6,
+      51,
+      46
+    ]
+  },
+  {
+    "asistida":"Partido Renovador de Salta",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1906",
+    "color":[
+      "#002E6D",
+      "#77AA3A"
+    ],
+    "id_candidatura":"1886.1906",
+    "imagenes":[
+      "1886.1906"
+    ],
+    "nombre":"Partido Renovador de Salta",
+    "nombre_corto":"P.Renovador de Salta",
+    "orden_absoluto":[
+      6,
+      52
+    ]
+  },
+  {
+    "asistida":"Pares",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907",
+    "color":[
+      "#002E6D",
+      "#77AA3A"
+    ],
+    "id_candidatura":"1886.1906.1907",
+    "imagenes":[
+      "1886.1906.1907"
+    ],
+    "nombre":"Pares",
+    "nombre_corto":"Pares",
+    "numero":"801",
+    "orden_absoluto":[
+      6,
+      52,
+      207
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n C\u00edvica Radical",
+    "clase":"Alianza",
+    "codigo":"1947",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Union Civica Radical",
+    "nombre_corto":"Union Civica Radical",
+    "orden_absoluto":[
+      16
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n C\u00edvica Radical",
+    "clase":"Partido",
+    "cod_alianza":"1947",
+    "codigo":"1947.1947",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947",
+    "imagenes":[
+      "1947.1947"
+    ],
+    "nombre":"Union Civica Radical",
+    "nombre_corto":"Union Civica Radical",
+    "orden_absoluto":[
+      16,
+      65
+    ]
+  },
+  {
+    "asistida":"El Nuevo Camino",
+    "clase":"Lista",
+    "cod_alianza":"1947",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947.1985",
+    "imagenes":[
+      "1947.1947.1985"
+    ],
+    "nombre":"El Nuevo Camino",
+    "nombre_corto":"El Nuevo Camino",
+    "numero":"302",
+    "orden_absoluto":[
+      16,
+      65,
+      87
+    ]
+  }
+]

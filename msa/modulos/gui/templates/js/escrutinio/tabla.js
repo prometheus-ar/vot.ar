@@ -12,37 +12,50 @@ function generar_tabla_inicial(data){
     if(data.grupo_cat !== null){
         filter.id_grupo = data.grupo_cat; 
     }
+    // Filtro todas las categorias del grupo que quiero mostrar.
     var categorias = local_data.categorias.many(filter); 
     var agrupaciones = local_data.agrupaciones.many();
     agrupaciones = agrupaciones.sort(ordenar_absolutamente);
 
+    // shortcuts
     var usa_alianzas = constants.TABLA_MUESTRA_ALIANZA; 
     var usa_partidos = constants.TABLA_MUESTRA_PARTIDO; 
 
+    // inicializo las variables
     var ultima_alianza = null;
     var ultimo_partido = null;
 
+    // recorro las agrupaciones para armar la tabla
     for(var i in agrupaciones){
         var agrupacion = agrupaciones[i];
         var fila = null;  
 
         if(agrupacion.clase == "Alianza"){
+            // resistir la tentación de juntar estos ifs. si los juntamos va a
+            // entrar en el else y no queremos eso.
             if(usa_alianzas){
+                // si es una alianza y mostramos alianzas en la tabla.
                 fila = _generar_alianza(agrupacion);
             }
         } else if(agrupacion.clase == "Partido"){
+            // resistir la tentación de juntar estos ifs. si los juntamos va a
+            // entrar en el else y no queremos eso.
             if(usa_partidos){
+                // si es un partido y usamos partidos en la tabla.
                 fila = _generar_partido(agrupacion);
             }
         } else {
+            // las listas aparecen siempre.
             fila = _generar_lista(agrupacion, categorias);
         }
 
+        // si esta agrupacion se agrega como fila la agregamos.
         if(fila != null){
             filas.push(fila);
         }
     }
-
+    // agregamos la fila de voto en blanco si hay voto en blanco para alguna de
+    // las categorias
     var fila_blanco = _generar_lista_blanca(categorias);
     if(fila_blanco.categorias.length){
         filas.push(fila_blanco);
@@ -52,6 +65,7 @@ function generar_tabla_inicial(data){
 }
 
 function _generar_partido(partido){
+    /* Genera la fila de Partido. */
     var fila = {
         tipo: "partido",
         datos: partido,
@@ -62,6 +76,7 @@ function _generar_partido(partido){
 }
 
 function _generar_alianza(alianza){
+    /* Genera la fila de Alianza. */
     var fila = {
         tipo: "alianza",
         datos: alianza,
@@ -71,44 +86,43 @@ function _generar_alianza(alianza){
     return fila;
 }
 
-function generar_gradiente_colores(lista){
-    var str_colores = String();
-    if(typeof(lista) !== "undefined" && lista.color !== null){
-        var colores = lista.color;
-        if(colores.length > 1){
-            var width_color = Math.round(100 / colores.length);
-            for(var i in colores){
-                if(str_colores !== ""){
-                    str_colores += ", ";
-                }
-                str_colores += colores[i] + " " + width_color + "%";
-            }
-            str_colores = "linear-gradient(90deg," + str_colores + ")"; 
-        } else {
-            str_colores = colores;
-        }
+function crear_div_colores(colores){
+    var item = "";
+    if(colores){
+      var template = get_template("colores", "pantallas/escrutinio");
+      var template_data = {
+          num_colores: colores.length,
+          colores: colores
+      };
+
+      item = template(template_data);
     }
-    return str_colores;
+    return new Handlebars.SafeString(item);
 }
 
 function _generar_lista(lista, categorias){
+    /* Genera la fila de la Lista. */
     var fila_lista = {
         tipo: "lista",
         datos: lista,
         categorias: [],
-        expande: true, // Si hay una sola categoria, entonces expande
+        expande: categorias.length == 1, // Si hay una sola categoria, entonces expande
         mostrar_numero_lista: constants.USAR_NUMERO_LISTA,
     };
+    // Si mostramos el color generamos el gradiente.
     if(constants.USAR_COLOR){
-        fila_lista.colores = generar_gradiente_colores(lista);
+        fila_lista.color = lista.color;
     }
 
+    // mostramos el nombre corto o el largo segun la setting
     if(constants.USAR_NOMBRE_CORTO){
         fila_lista.descripcion = lista.nombre_corto;
     } else {
         fila_lista.descripcion = lista.nombre;
     }
 
+    // Agregamos candidatos para cada categoria, incluso para los espacios
+    // vacios
     for(var j in categorias){
         var categoria = categorias[j];
         var candidato = _generar_candidato(lista, categoria);
@@ -119,12 +133,13 @@ function _generar_lista(lista, categorias){
 }
 
 function _generar_lista_blanca(categorias){
+    /* Genera la fila para voto en blanco. */
     var fila_lista = {
         tipo: "lista",
         datos: {"numero": "", "codigo": "BLC"},
         categorias: [],
-        expande: true,
-        mostrar_numero_lista: false,
+        expande: categorias.length == 1,
+        mostrar_numero_lista: constants.USAR_NUMERO_LISTA,
         descripcion: "Votos en Blanco",
         es_blanco: true
     };
@@ -143,6 +158,7 @@ function _generar_lista_blanca(categorias){
 }
 
 function _generar_candidato(lista, categoria){
+    /* Genera el cuadradito para el candidato. */
     var filter = {
         "cod_lista": lista.codigo,
         "cod_categoria": categoria.codigo};
@@ -187,12 +203,15 @@ function generar_filas(data){
 }
 
 function generar_filas_especiales(data){
+    /* Genera las filas especiales para mostrar en la tabla luego de la
+     * clasificacion de votos.
+     */
     var filas = [];
     var listas_especiales = data.listas_especiales;
     var total_general = data.total_general;
     var orden_especiales = data.orden_especiales;
 
-    //Fila especial común
+    //Filas especiales "normales"
     if (listas_especiales !== null){
         for (var i in orden_especiales){
             var codigo = orden_especiales[i];
@@ -205,9 +224,12 @@ function generar_filas_especiales(data){
             };
             filas.push(fila_especial);
         }
-        $("#cantidad_escrutadas").hide();
+        // en escrutinio, ocultar cant. boletas si se muestran listas especiales
+        if (!constants.totalizador) {
+            $("#cantidad_escrutadas").hide();
+        }
     }
-    //Fila total general
+    // Fila total general
     if (total_general !== null){
         var fila_total = {
             tipo: "total-general",
@@ -241,6 +263,7 @@ function generar_titulos(grupo_cat){
 }
 
 function generar_scroll(){
+    /* Genera los botones de scroll para la tabla. */
     var alto_contenedor = 730;
     var alto_flechas = 50;
     var alto_tabla_regulares = $("tbody.votos-regulares").height();
@@ -253,9 +276,10 @@ function generar_scroll(){
 }
 
 function bindear_botones_scroll(){
+    /* Bindea los botones del scroll.*/
     $("#scroll-arriba, #scroll-abajo").off("click");
-    $("#scroll-arriba").on("click",scroll_arriba);
-    $("#scroll-abajo").on("click",scroll_abajo);
+    $("#scroll-arriba").on("click", scroll_arriba);
+    $("#scroll-abajo").on("click", scroll_abajo);
 
     //Posicion inicial
     $("tbody.contenedor-scroll").show();
@@ -283,12 +307,14 @@ function habilitar_botones_scroll(){
 }
 
 function scroll_arriba(){
-    var posicion_actual =  $("tbody.votos-regulares").scrollTop();
+    /* Callback del click del boton, scrollea la tabla hacia arriba. */
+    var posicion_actual = $("tbody.votos-regulares").scrollTop();
     $("tbody.votos-regulares").scrollTop(posicion_actual - 50);
 
 }
 
 function scroll_abajo(){
+    /* Callback del click del boton, scrollea la tabla hacia abajo. */
     var posicion_actual =  $("tbody.votos-regulares").scrollTop();
     $("tbody.votos-regulares").scrollTop(posicion_actual + 50);
 
@@ -312,6 +338,14 @@ function actualizar_tabla(data){
     var html_tabla = template(data_template);
     $("#tabla").html(html_tabla);
     generar_scroll();
+    scrollear_a_principal();
+}
+
+function scrollear_a_principal(){
+    var offset = $(".resaltado.col_0").offset();
+    if(offset){
+        $("tbody.votos-regulares").scrollTop(offset.top - 60)
+    }
 }
 
 function borrar_resaltado(){
@@ -319,4 +353,8 @@ function borrar_resaltado(){
      * borra el resaltado de votos de la tabla.
      */
     $("#tabla td").removeClass("resaltado");
+}
+
+function registrar_helper_colores(){
+    Handlebars.registerHelper("colores", crear_div_colores);
 }

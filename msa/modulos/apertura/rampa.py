@@ -18,28 +18,28 @@ class Apertura(RampaActas):
     de apertura.
     """
 
-    def cambio_tag(self, tipo_tag, tag_dict):
+    def cambio_tag(self, tipo_lectura, tag):
         """ Callback de cambio de tag.
 
         Argumentos:
-            tipo_tag -- el tipo de tag
-            tag_dict -- los datos del tag
+            tipo_lectura -- el tipo de lectura del tag
+            tag -- representacion del tag
         """
-        if tag_dict is not None:
-            if tipo_tag == TAG_ADMIN:
+        if tag is not None:
+            if tipo_lectura == TAG_ADMIN:
                 timeout_add(500, self.salir)
-            elif tipo_tag == TAG_COLISION:
+            elif tipo_lectura == TAG_COLISION:
                 self.expulsar_boleta()
                 self.tag_colision()
 
-        if tag_dict != self.datos_tag:
-            self.datos_tag = tag_dict
+        if tag != self.tag_leido:
+            self.tag_leido = tag
             self.maestro()
 
-    def procesar_tag(self, datos_tag):
+    def procesar_tag(self, tag):
         """ Callback del evento de tag modificado.
 
         Argumentos:
-            datos_tag -- los datos del tag
+            tag -- los datos del tag
         """
         pass

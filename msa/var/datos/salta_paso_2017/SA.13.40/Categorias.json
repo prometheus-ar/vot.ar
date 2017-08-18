@@ -1,0 +1,24 @@
+[
+  {
+    "adhiere":null,
+    "asistida":"CONCEJAL",
+    "cargo_ejecutivo":false,
+    "codigo":"CNJ",
+    "consulta_popular":false,
+    "id_grupo":1,
+    "max_selecciones":1,
+    "nombre":"CONCEJAL",
+    "posicion":4
+  },
+  {
+    "adhiere":null,
+    "asistida":"INTENDENTE",
+    "cargo_ejecutivo":false,
+    "codigo":"INT",
+    "consulta_popular":false,
+    "id_grupo":1,
+    "max_selecciones":1,
+    "nombre":"INTENDENTE",
+    "posicion":3
+  }
+]

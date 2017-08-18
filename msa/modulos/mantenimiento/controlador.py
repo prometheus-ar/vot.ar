@@ -33,7 +33,7 @@ class Actions(BaseActionController):
 
     def click_boton(self, data):
         """Callback de cuando se hace click en el boton."""
-        # Lo corro asincronico por que si queda dentro de un thread de webkit
+        # Lo corro asincronico porque si queda dentro de un thread de webkit
         # cuando cambio de modulo tira un segfault
         self.async(self.controlador.modulo._btn_presionado, data)
 
@@ -136,15 +136,16 @@ class Controlador(ControladorBase):
     def inicio_mantenimiento(self):
         """Corre el inicio de los datos del modulo de mantenimiento."""
         self.get_volume()
-        self.get_brightness()
-        self.get_rfid_antenna_level()
-        self.get_build()
-        self.get_fan_mode(True)
-        self.get_fan_speed()
-        self.get_temperature()
-        self.get_power_source()
-        self.get_pir_status()
-        self.get_pir_mode(True)
+        if self.rampa.tiene_conexion is not None:
+            self.get_brightness()
+            self.get_rfid_antenna_level()
+            self.get_build()
+            self.get_fan_mode(True)
+            self.get_fan_speed()
+            self.get_temperature()
+            self.get_power_source()
+            self.get_pir_status()
+            self.get_pir_mode(True)
         self.send_command("inicio_mantenimiento")
 
         self.timeout_bateria = timeout_add(10000, self.get_battery_status)
@@ -180,34 +181,31 @@ class Controlador(ControladorBase):
                 self.modulo.play_sonido_ok()
 
         # muestra volumen y resetea semaforo, aunque sea el mismo lo mandamos
-        # de nuevo, por que sino no se resetea el semaforo
+        # de nuevo, porque sino no se resetea el semaforo
         self.send_command("mostrar_volumen",
                           {'volumen': self.volume_level})
 
     def get_power_source(self):
         """Devuelve la fuente de alimentacion."""
-        if hasattr(self.sesion, "powermanager"):
-            self.power_source = self.sesion.powermanager.get_power_source()
-            try:
-                self.power_source = self.power_source['byte']
+        if self.rampa.tiene_conexion:
+            power_source = self.rampa.get_power_source()
+            if power_source is not None:
+                self.power_source = power_source['byte']
                 self.send_command("mostrar_fuente_energia",
                                   {'power_source': self.power_source})
-            except:
-                pass
         else:
             self.send_command("mostrar_fuente_energia",
                               {'power_source': 0})
 
     def get_battery_status(self):
         """Devuelve el estado de la batería."""
-        if hasattr(self.sesion, "powermanager"):
-            battery_data = self.sesion.powermanager.get_power_status()
+        if self.rampa.tiene_conexion:
+            battery_data = self.rampa.get_power_status()
             batteries = None
 
             if battery_data is not None:
-                json_data = json.loads(battery_data)
-                if json_data["batt_number"] > 0:
-                    json_battery = json_data["batt_data"]
+                if battery_data["batt_number"] > 0:
+                    json_battery = battery_data["batt_data"]
                     batteries = []
                     lowest_current = 0
                     battery_discharging = 0
@@ -237,11 +235,11 @@ class Controlador(ControladorBase):
 
     def get_brightness(self):
         """Devuelve el brillo de la pantalla."""
-        if hasattr(self.sesion, "backlight"):
-            brightness = self.sesion.backlight.get_brightness()
+        brightness = self.rampa.get_brightness()
+        if brightness is not None:
             self.brightness_level = int(brightness)
             self.send_command("mostrar_brillo",
-                              {'brillo': self.brightness_level})
+                            {'brillo': self.brightness_level})
 
     def set_brightness(self, data):
         """Establece el brillo."""
@@ -249,32 +247,27 @@ class Controlador(ControladorBase):
             self.brightness_level = self.brightness_level + INCREMENTO_BRILLO
         elif data == "abajo" and int(self.brightness_level) > 0:
             self.brightness_level = self.brightness_level - DECREMENTO_BRILLO
-        self.sesion.backlight.set_brightness(self.brightness_level)
+        self.rampa.set_brightness(self.brightness_level)
         self.send_command("mostrar_brillo", {'brillo': self.brightness_level})
 
     def get_build(self):
         """Devuelve el build de la placa."""
-        if hasattr(self.sesion, "agent"):
-            build = self.sesion.agent.get_build()
-            machine_type = self.sesion.agent.get_machine_type()
-            self.send_command("mostrar_build", {'build': build,
-                                                'machine': machine_type})
+        build = self.rampa.get_arm_build()
+        machine_type = self.rampa.get_arm_version()
+        self.send_command("mostrar_build", {'build': build,
+                                            'machine': machine_type})
 
     def get_rfid_antenna_level(self):
         """Devuelve el nivel de la antena de RFID."""
-        if self.sesion.lector is not None:
-            level = self.sesion.lector.get_antenna_level()
-            try:
-                level = json.loads(level)
-                level = level['byte']
-                if level:
-                    antenna_level = POTENCIA_ALTA
-                else:
-                    antenna_level = POTENCIA_BAJA
-                self.send_command("mostrar_potencia_rfid",
-                                  {'potencia': antenna_level})
-            except:
-                pass
+        level = self.rampa.get_antenna_level()
+        if level is not None:
+            level = level['byte']
+            if level:
+                antenna_level = POTENCIA_ALTA
+            else:
+                antenna_level = POTENCIA_BAJA
+            self.send_command("mostrar_potencia_rfid",
+                            {'potencia': antenna_level})
 
     def rfid_check(self, data):
         """Chequea el rfid."""
@@ -282,19 +275,19 @@ class Controlador(ControladorBase):
 
     def get_fan_speed(self):
         """Devuelve la velocidad del Fan."""
-        if hasattr(self.sesion, "fancoolers"):
-            self.fan_speed = self.sesion.fancoolers.get_fan_speed()
+        if self.rampa.tiene_conexion and not self.fan_mode:
+            self.fan_speed = self.rampa.get_fan_speed()
             try:
-                self.fan_speed = json.loads(self.fan_speed)
                 self.fan_speed = self.fan_speed['byte']
                 self.send_command("mostrar_velocidad_ventilador",
                                   {'velocidad': self.fan_speed})
             except:
                 pass
+        return False
 
     def set_fan_speed(self, data):
         """Establece la velocidad del fan."""
-        self.sesion.fancoolers.set_fan_speed(data)
+        self.rampa.set_fan_speed(data)
 
     def get_fan_mode(self, display=False):
         """
@@ -305,10 +298,10 @@ class Controlador(ControladorBase):
         try:
             modo_actual = self.fan_mode
         except:
-            if hasattr(self.sesion, "fancoolers"):
-                self.fan_mode = self.sesion.fancoolers.get_fan_mode()
+            if self.rampa.tiene_conexion:
+                self.fan_mode = self.rampa.get_fan_mode()
             else:
-                self.fan_mode = "Automatico"
+                self.fan_mode = True
             modo_actual = self.fan_mode
         if display:
             self.send_command("mostrar_modo_ventilador",
@@ -322,7 +315,8 @@ class Controlador(ControladorBase):
         True = modo automatico. False = modo manual
         """
         self.fan_mode = int(data)
-        self.sesion.fancoolers.set_fan_auto_mode(self.fan_mode)
+        self.rampa.set_fan_mode(self.fan_mode)
+        timeout_add(1000, self.get_fan_speed)
 
     def process_fan_speed(self, data):
         """Procesa la velocidad del fan. Muestra la velocidad en pantalla."""
@@ -350,7 +344,7 @@ class Controlador(ControladorBase):
         self.set_fan_speed(0)
         sleep(1)
         if reset_auto_mode:
-            self.set_fan_auto_mode(True)
+            self.set_fan_auto_mode(1)
         else:
             self.set_fan_speed(pre_velocity)
 
@@ -370,8 +364,8 @@ class Controlador(ControladorBase):
 
     def get_pir_status(self):
         """Devuelve el estado del PIR."""
-        if USAR_PIR and hasattr(self.sesion, "pir"):
-            pir_status = self.sesion.pir.get_pir_status()
+        if USAR_PIR and self.rampa.tiene_conexion is not None:
+            pir_status = self.rampa.get_pir_status()
             try:
                 pir_status = pir_status['byte']
                 self.send_command("mostrar_estado_pir", {'estado': pir_status})
@@ -389,10 +383,8 @@ class Controlador(ControladorBase):
         self.send_command("mostrar_test_impresora", {'estado': 'imprimiendo'})
         tipo_tag = "Prueba"
         seleccion_tag = ""
-        self.sesion.impresora.imprimir_serializado(tipo_tag, seleccion_tag,
-                                                   transpose=False,
-                                                   only_buffer=True)
-        self.sesion.impresora.do_print()
+        self.rampa.imprimir_serializado(tipo_tag, seleccion_tag,
+                                               transpose=False)
 
     def printer_begin_test(self):
         """Empieza el test de impresion."""
@@ -407,8 +399,8 @@ class Controlador(ControladorBase):
         try:
             modo_actual = self.pir_mode
         except:
-            if hasattr(self.sesion, "pir"):
-                self.pir_mode = self.sesion.pir.get_pir_mode()
+            if USAR_PIR and self.rampa.tiene_conexion:
+                self.pir_mode = self.rampa.get_pir_mode()
                 modo_actual = self.pir_mode
             else:
                 modo_actual = None
@@ -420,11 +412,11 @@ class Controlador(ControladorBase):
     def set_pir_mode(self, data):
         """Establece el modo del PIR."""
         self.pir_mode = int(data)
-        self.sesion.pir.set_pir_mode(self.pir_mode)
+        self.rampa.set_pir_mode(self.pir_mode)
 
     def get_autofeed_mode(self):
         """Devuelve el modo de autofeed."""
-        mode = self.sesion.impresora.get_autofeed_mode()
+        mode = self.rampa.get_autofeed_mode()
         self.autofeed_mode = mode.get('af_type')
 
         if self.autofeed_mode == AUTOFEED_1:
@@ -445,7 +437,7 @@ class Controlador(ControladorBase):
             self.autofeed_mode = AUTOFEED_1
         else:
             self.autofeed_mode = AUTOFEED_2
-        self.sesion.impresora.set_autofeed_mode(self.autofeed_mode)
+        self.rampa.set_autofeed_mode(self.autofeed_mode)
 
     def md5check(self):
         """Chequea los md5 del disco."""
@@ -466,16 +458,16 @@ class Controlador(ControladorBase):
         else:
             device_id = DEV_AGENT
 
-        self.sesion.agent.reset(device_id)
+        self.rampa.reset(device_id)
 
     def set_print_quality(self, data):
         """Establece la calidad de impresion."""
         quality = int(data)
-        self.sesion.impresora.set_quality(quality)
+        self.rampa.set_printer_quality(quality)
 
     def get_print_quality(self):
         """Obtiene la calidad de impresion."""
-        data = self.sesion.impresora.get_quality()
+        data = self.rampa.get_printer_quality()
         self.print_quality = data[0]['byte']
 
         error = PRINT_STEP / 2

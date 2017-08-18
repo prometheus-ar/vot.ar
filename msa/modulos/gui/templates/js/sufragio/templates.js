@@ -22,7 +22,7 @@ function get_template_candidatos(num_candidato){
             if(num_candidato <= lista[i] && num_candidato > anterior){
                 ret = lista[i];
                 break;
-            }
+           }
             anterior = lista[i];
         }
     }
@@ -45,7 +45,7 @@ function get_template_confirmacion(num_categorias){
     return "confirmacion" + ret;
 }
 
-function crear_item_lista(boleta, normal){
+function crear_item_lista(boleta, normal, preagrupada){
     /*
      * Crea el boton para una lista.
      * Argumentos:
@@ -73,6 +73,8 @@ function crear_item_lista(boleta, normal){
     template_data.normal = normal;
     template_data.seleccionado =  seleccionado;
     template_data.candidatos = candidatos;
+    template_data.cantidad_candidatos = candidatos.length;
+    template_data.preagrupada = preagrupada;
 
     var item = template(template_data);
     return item;
@@ -117,10 +119,17 @@ function crear_item_partido(partido, seleccionado){
     var id_lista = 'partido_' + partido.codigo;
     var path_imagen_agrupacion = get_path_partido(partido.imagen);
     var img_cand = [];
-    var candidaturas = local_data.candidaturas.many({cod_alianza: partido.codigo});
-    for(var i in candidaturas){
-        var candidato = candidaturas[i];
-        img_cand.push(candidato.codigo);
+
+    if(constants.mostrar_fotos_candididatos_boton_partido){
+        var filtro = {cod_alianza: partido.codigo}
+        if(get_modo() == "BTN_CATEG"){
+            filtro.cod_categoria = get_categoria_actual().codigo;
+        }
+        var candidaturas = local_data.candidaturas.many(filtro);
+        for(var i in candidaturas){
+            var candidato = candidaturas[i];
+            img_cand.push(candidato.codigo);
+        }
     }
 
     if(seleccionado){
@@ -140,6 +149,7 @@ function crear_item_partido(partido, seleccionado){
 }
 
 function crear_item_candidato(candidato, seleccionado, template_name){
+    /* Crea el contenido del boton de un candidato. */
     var extra_html = "";
     var extra_classes = "";
     var id_candidato = 'candidato_' + candidato.id_umv;
@@ -149,9 +159,11 @@ function crear_item_candidato(candidato, seleccionado, template_name){
     //Si el partido y la lista se llaman igual no muestro la lista esto fue
     //agregado en Salta y puede ser que en otros lados no quieran este
     //comportamiento
-    if(typeof(candidato.partido) !== "undefined" &&
-       typeof(candidato.lista) !== "undefined" && 
-       candidato.lista.nombre == candidato.partido.nombre){
+    if(constants.no_repetir_lista_partido_iguales &&
+            typeof(candidato.partido) !== "undefined" &&
+            typeof(candidato.lista) !== "undefined" && 
+            candidato.lista.nombre == candidato.partido.nombre){
+
         nombre_lista = false;
     } else {
         nombre_lista = candidato.lista.nombre;
@@ -172,12 +184,14 @@ function crear_item_candidato(candidato, seleccionado, template_name){
     template_data.extra_classes = extra_classes;
     template_data.extra_html = extra_html;
     template_data.nombre_lista = nombre_lista;
+    template_data.nombre_partido = candidato.partido.nombre;
     var rendered = template(template_data);
 
     return rendered;
 }
 
 function crear_categorias_hijas(categorias_hijas, vista){
+    /* crea los templates de categorias_hijas para un boton. */
     var html = "";
     var template_hija = get_template("candidato_hijo");
     for(var l in categorias_hijas){
@@ -196,6 +210,7 @@ function crear_categorias_hijas(categorias_hijas, vista){
 }
 
 function generar_paneles_confirmacion(categorias){
+    /* Genera los paneles de confirmacion. */
     var template = get_template("confirmacion");
     var modo = get_modo();
 
@@ -212,8 +227,8 @@ function generar_paneles_confirmacion(categorias){
         var id_confirmacion = "confirmacion_" + categoria.codigo;
         var template_data = main_dict_candidato(candidato, id_confirmacion,
                                                 "confirmacion");
-        template_data.modificar = (constants.modificar_en_completa && modo == "BTN_COMPLETA") || (constants.modificar_en_categorias && modo == "BTN_CATEG") || categoria.consulta_popular;
-        if(categorias.length == 1 && !constants.modificar_con_una_categroria){
+        template_data.modificar = (constants.boton_modificar_en_lista_completa && modo == "BTN_COMPLETA") || (constants.boton_modificar_en_categorias && modo == "BTN_CATEG") || categoria.consulta_popular;
+        if(categorias.length == 1 && !constants.boton_modificar_con_una_categroria){
             template_data.modificar = false;
         }
         template_data.consulta_popular = categoria.consulta_popular?"consulta_popular":"";
@@ -226,6 +241,7 @@ function generar_paneles_confirmacion(categorias){
 }
 
 function msg_error_grabar_boleta(){
+    /* Genera el mensaje de error de grabación de la boleta. */
     var template = get_template("popup", "partials/popup");
     var template_data = {
         pregunta: constants.i18n.error_grabar_boleta_alerta,
@@ -238,6 +254,7 @@ function msg_error_grabar_boleta(){
 }
 
 function main_dict_base(id_boton){
+    /* Diccionario base de los items de un boton. */
     var data = {
         "id_boton": id_boton,
     };
@@ -245,12 +262,27 @@ function main_dict_base(id_boton){
 }
 
 function traer_candidatos_template(candidato, campo, vista){
+    /* devuelve la cantidad de candidatos para mostrar en el template segun el
+     * campo y la vista.
+     *
+     * Argumentos:
+     *     Candidato -- el candidato del que queremos mostrar los
+     *     "subcandidatos"
+     *     campo -- el campo dentro del objeto candidato: "secundarios",
+     *     "suplentes" 
+     *     vista -- el lugar donde se van a mostrar tales candidatos 
+     *     "barra_lateral", "boton_candidato", "confirmacion", "verificacion"
+     */
+    // Traigo los candidatos del campo en cuestion
     var candidatos = candidato[campo];
 
+    //Traigo las settings de limitacion de candidatos para ese campo
     var dict_campo = constants.limitar_candidatos[campo];
+    // Si las settings existen 
     if(dict_campo != undefined){
+        // Averiguamos la cantidad.
         var cantidad = dict_campo[vista];
-
+        // si hay una cantidad establecida en el Diccionario.
         if(cantidad != null){
             var vista_cat = cantidad[candidato.cod_categoria];
             if(typeof(vista_cat) !== "undefined"){

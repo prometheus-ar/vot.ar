@@ -21,7 +21,6 @@ CAM_BOL_CONT = "boletas_contadas"
 CAM_TOT_VOT = "total_votantes"
 PLANILLAS_DATOS_EXTRA = [CAM_TOT_VOT, CAM_BOL_CONT]
 
-
 try:
     from msa.constants_extras import *
 except ImportError:

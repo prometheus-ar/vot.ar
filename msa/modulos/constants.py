@@ -17,11 +17,12 @@ PATH_RECURSOS_VOTO = join(PATH_RECURSOS, 'voto')
 PATH_FOTOS_ORIGINALES = join(PATH_VARS, "imagenes_candidaturas")
 PATH_MODULOS = join(PATH_CODIGO, "modulos")
 PATH_TEMPLATES_MODULOS = join(PATH_MODULOS, "gui", "templates")
-PATH_TEMPLATES_FLAVORS = join(PATH_VARS, "modulos", "templates", "flavors")
+PATH_TEMPLATES_VAR = join(PATH_VARS, "modulos", "templates")
+PATH_TEMPLATES_FLAVORS = join(PATH_TEMPLATES_VAR, "flavors")
 PATH_SONIDOS_VOTO = join(PATH_MODULOS, "gui", "sonidos")
 
 EXT_IMG_VOTO = "jpg"
-FLAVORS_HABILITADOS = ["vanilla", "empanada", "soja", "medialuna", "milanga"]
+FLAVORS_HABILITADOS = ["empanada", ]
 
 MODULO_APERTURA = "apertura"
 MODULO_ASISTIDA = "asistida"

@@ -41,21 +41,25 @@ class Modulo(ModuloBase):
 
         self.ret_code = MODULO_INICIO
         self.estado = E_INICIAL
-        self.registrador = RegistradorApertura(self, self.callback_salir,
-                                               self.callback_proxima_acta)
+        self.registrador = RegistradorApertura(self)
 
     def callback_salir(self):
+        """Callback llamado por el registrador para salir del modulo."""
+        self.sesion.apertura = self.sesion._tmp_apertura
+        del self.sesion._tmp_apertura
         self.salir_a_modulo(MODULO_MENU)
 
-    def callback_proxima_acta(self):
+    def callback_proxima_acta(self, *args):
+        """Callback llamado por el registrador para registrar otra acta."""
         self.controlador.proxima_acta()
 
     def reimprimir(self, *args):
+        """Intenta imprimir nuevamente."""
         timeout_add(100, self.controlador.reimprimir)
 
     def confirmar_apertura(self):
         """Configura la apertura."""
-        self.registrador.registrar()
+        self.registrador.registrar(self.sesion._tmp_apertura)
 
     def salir(self):
         """ Sale del módulo de apertura, vuelve al comienzo con la maquina
@@ -65,7 +69,7 @@ class Modulo(ModuloBase):
 
     def mensaje_inicial(self):
         """
-        No hace nada, por que estamos en el modulo y no en el submodulo.
+        No hace nada, porque estamos en el modulo y no en el submodulo.
         """
         pass
 

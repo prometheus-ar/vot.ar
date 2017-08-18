@@ -1,0 +1,146 @@
+[
+  {
+    "asistida":"Rold\u00e1n, Pablo Marcelo",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1919.2140",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140.138385",
+    "id_candidatura":"1885.1919.2140.138385",
+    "id_umv":73,
+    "imagenes":[
+      "1885.1919.2140.138385"
+    ],
+    "nombre":"Roldan, Pablo Marcelo",
+    "orden_absoluto":[
+      15,
+      57,
+      193,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Moreno, Liliana Noemi",
+      "Sanguino, Nelson Enrico"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ci\u00e1nsi, Sergio, Guido",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.153068",
+    "id_candidatura":"1885.1926.2372.153068",
+    "id_umv":137,
+    "imagenes":[
+      "1885.1926.2372.153068"
+    ],
+    "nombre":"Cianci, Sergio Guido",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Gonzalez, Soledad Consuelo",
+      "Sanchez, Luis Valle Manuel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"B\u00edti\u00e1n, Ar\u00edel, Arnaldo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2250.2259",
+    "cod_partido":"1886.2250",
+    "codigo":"1886.2250.2259.146037",
+    "id_candidatura":"1886.2250.2259.146037",
+    "id_umv":580,
+    "imagenes":[
+      "1886.2250.2259.146037"
+    ],
+    "nombre":"Bitian, Ariel Arnaldo",
+    "orden_absoluto":[
+      6,
+      13,
+      245,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Castellano, Veronica Zulema",
+      "Coronel, Mauro Guillermo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":870,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":930,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":990,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

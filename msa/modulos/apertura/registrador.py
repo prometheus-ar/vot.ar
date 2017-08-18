@@ -1,12 +1,7 @@
-# -*- coding: utf-8 -*-
 """
 Clase para el manejo de la impresion de las actas de apertura.
 """
-
 from base64 import b64encode
-from time import sleep
-
-from gi.repository.GObject import timeout_add, idle_add
 
 from msa.core.rfid.constants import TAG_APERTURA
 from msa.modulos.constants import E_REGISTRANDO, E_INICIAL
@@ -18,119 +13,96 @@ class RegistradorApertura():
 
     """Registrador para la Apertura."""
 
-    def __init__(self, modulo, callback_salir, callback_proxima_acta):
+    def __init__(self, modulo):
         """
         Constructor del registrador de apertura.
         Argumentos:
             modulo -- una referencia al modulo al que pertenece.
         """
         self.modulo = modulo
-        self.sesion = self.modulo.sesion
+        self.rampa = modulo.rampa
+        self.logger = modulo.sesion.logger
+
         self.actas_impresas = 0
-        self.callback_salir = callback_salir
-        self.callback_proxima_acta = callback_proxima_acta
 
-    def registrar(self, *args):
-        """Funcion de entrada para registrar el acta de apertura."""
-        logger = self.sesion.logger
-        logger.info("registrando")
-        rampa = self.modulo.rampa
-        rampa.remover_nuevo_papel()
+    def registrar(self, apertura):
+        """Registra una (o más) apertura.
 
-        def _fin_impresion(printer_status=None):
-            """Maneja el fin de la impresion.
-
-            Desregistra los eventos. Si todas las actas que tenian que ser
-            impresas salen impresas sale del modulo, sino registra el evento de
-            espera de papel.
-            """
-            logger.debug("FIN IMPRESION")
-            rampa.remover_boleta_expulsada()
-            rampa.remover_nuevo_papel()
-            self.actas_impresas += 1
-            logger.info("Fin de la impresion del acta.")
-            if self.actas_impresas == CANTIDAD_APERTURAS:
-                logger.info("Saliendo.")
-                del self.sesion._tmp_apertura
-                self.callback_salir()
-            else:
-                logger.info("Pidiendo otra.")
-                self.modulo.estado = E_INICIAL
-                self.callback_proxima_acta()
-                rampa.registrar_nuevo_papel(self.modulo.reimprimir)
-
-        logger.info("Empezando a registrar acta de Apertura.")
+        Argumentos:
+            apertura -- apertura que queremos imprimir.
+        """
+        self.logger.info("registrando")
         self.modulo.estado = E_REGISTRANDO
+        self.rampa.remover_nuevo_papel()
 
-        if self._guardar_e_imprimir():
-            # hookeo el evento de fin de impresion para salir del modulo
-            logger.info("Hookeando evento de fin de impresion.")
-            rampa.registrar_boleta_expulsada(_fin_impresion)
+        self._datos = apertura.a_tag()
+        # El modulo Apertura tiene la particularidad de ser el unico modo que
+        # levanta con un papel puesto, por lo tanto no estamos 100% seguros a
+        # alto nivel de que efectivamente el papel esté puesto (podemos tener
+        # falsos negativos), por lo tanto hacemos este shortcut para
+        # preguntarlo explicitamente al backend.
+        tiene_papel = self.rampa._servicio._estado_papel()
+
+        if not tiene_papel or self.rampa.tag_leido is None:
+            self.logger.error("No tengo papel")
+            self._error()
         else:
-            logger.error("Lanzando mensaje de error a la UI.")
-            self.modulo.controlador.msg_error_apertura(rampa.datos_tag)
-            rampa.expulsar_boleta()
-            def _fin_expulsion():
-                rampa.remover_boleta_expulsada()
-                def _hide_and_try(status):
-                    rampa.remover_nuevo_papel()
-                    self.modulo.hide_dialogo()
-                    self.modulo.controlador.mostrar_imprimiendo()
-                    timeout_add(100, self.registrar)
-                rampa.registrar_nuevo_papel(_hide_and_try)
-            rampa.remover_nuevo_papel()
-            rampa.registrar_boleta_expulsada(_fin_expulsion)
+            self._guardar_tag()
 
-    def _guardar_e_imprimir(self):
-        """Se encarga primero de guardar los datos y corroborar que esté todo
-           ok. Si es así imprime y devuelve True si está todo bien o False
-           en cualquier caso contrario.
+    def _error(self):
+        """Maneja un error al intentar registrar un acta."""
+        self.rampa.remover_boleta_expulsada()
+        self.modulo.controlador.msg_error_apertura(self.rampa.tag_leido)
+        self.rampa.expulsar_boleta()
+        self.rampa.registrar_nuevo_papel(self._reintentar)
+
+    def _reintentar(self, *args):
+        """Reintenta imprimir un acta."""
+        self.rampa.tiene_papel = True
+        self.modulo.hide_dialogo()
+        self.modulo.reimprimir()
+
+    def _guardar_tag(self):
+        """Guarda un tag de una apertura."""
+        self.logger.debug("guardando_tag")
+        self.rampa.guardar_tag_async(self._tag_guardado, TAG_APERTURA,
+                                     self._datos, QUEMA)
+
+    def _tag_guardado(self, exito):
+        """Callback que se ejecuta luego de intentar guardar un tag.
+
+        Argumentos:
+            exito -- un booleano que indica si el tag se guardó exitosamente.
         """
-        exito = False
-        logger = self.sesion.logger
-        tag = self.modulo.rampa.datos_tag
-
-        if tag is None:
-            sleep(1)
-            tag = self.sesion.lector.get_tag()
-            self.modulo.rampa.datos_tag = tag
-
-        if not tag or not self.sesion.impresora:
-            logger.error("No tengo un tag insertado para guardar la apertura.")
+        if not exito:
+            self.logger.error("El tag NO se guardó correctamente.")
+            # Por las dudas reseteamos el RFID
+            self.rampa.reset_rfid()
+            self._error()
         else:
-            # Chequeo que el tag esté vacío
-            datos_tag = tag['datos']
-            if datos_tag != b'':
-                logger.error("El tag tiene datos.")
-            else:
-                # Todo ok, guardo el acta de apertura, si devuelve True imprimo
-                if self._guardar_apertura():
-                    logger.info("El tag se guardó correctamente.")
-                    self.sesion.apertura = self.sesion._tmp_apertura
-                    exito = True
-                    self._imprimir_acta()
-                else:
-                    logger.error("Ocurrió un error al guardar la Apertura.")
-        return exito
+            self.logger.info("El tag se guardó correctamente.")
+            self._imprimir()
 
-    def _guardar_apertura(self):
-        """ Guarda los datos en el tag, lo vuelve a leer y compara los dos
-            strings para verificar la correcta escritura.
-            Devuelve True si el guardado y la comprobación están correctos,
-            False en caso contrario.
-        """
-        self.sesion.logger.info("Guardando el tag de Apertura.")
-        datos = self.sesion._tmp_apertura.a_tag()
-        guardado_ok = self.sesion.lector.guardar_tag(TAG_APERTURA, datos,
-                                                     QUEMA)
-        return guardado_ok
+    def _imprimir(self):
+        """Imprime una Apertura."""
+        self.logger.info("Imprimiendo acta de Apertura.")
+        self.rampa.registrar_boleta_expulsada(self._fin_impresion)
+        self.rampa.registrar_error_impresion(self._error)
+        self.modulo.rampa.imprimir_serializado("Apertura",
+                                               b64encode(self._datos))
 
-    def _imprimir_acta(self):
-        """Efectivamente manda a imprimir el acta."""
-        def _imprimir():
-            self.sesion.logger.info("Imprimiendo acta de Apertura.")
-            tipo_tag = self.sesion._tmp_apertura.__class__.__name__
-            tag = self.sesion._tmp_apertura.a_tag()
-            self.sesion.impresora.imprimir_serializado(tipo_tag,
-                                                       b64encode(tag))
-        timeout_add(100, _imprimir)
+    def _fin_impresion(self, *args):
+        """Callback que se llama una vez que se terminó de imprimir un acta."""
+        self.logger.debug("Fin de la impresion del acta.")
+        self.rampa.remover_boleta_expulsada()
+
+        self.actas_impresas += 1
+        if self.actas_impresas == CANTIDAD_APERTURAS:
+            self.logger.debug("Saliendo.")
+            self.modulo.callback_salir()
+        else:
+            self.logger.debug("Pidiendo otra acta.")
+            self.modulo.estado = E_INICIAL
+            self.modulo.callback_proxima_acta()
+            self.rampa.registrar_nuevo_papel(self.modulo.reimprimir)
+

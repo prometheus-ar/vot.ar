@@ -1,4 +1,5 @@
 function set_locale(data_locale){
+    /* Establece los textos de la pantalla. */
     $('#title').text(data_locale.title);
     $('#init_msg').text(data_locale.init_msg);
     $('#calibration_msg').text(data_locale.calibration_msg);

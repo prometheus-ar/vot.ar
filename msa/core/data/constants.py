@@ -6,8 +6,7 @@ NOMBRE_JSON_CATEGORIAS = 'Categorias'
 NOMBRE_JSON_CONFIGS = 'Configuraciones'
 NOMBRE_JSON_BOLETAS = 'Boletas'
 
-NOMBRE_JSON_MESAS_DEFINITIVO = 'Ubicaciones'
-NOMBRE_JSON_MESAS_1 = 'Ubicaciones_1'
+NOMBRE_JSON_UBICACIONES = 'Ubicaciones'
 
 TIPO_DOC = ["DNI", "LC", "LE"]
 

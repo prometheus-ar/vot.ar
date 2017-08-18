@@ -1,0 +1,331 @@
+[
+  {
+    "asistida":"Palma, Santos Ariel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2039",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2039.137881",
+    "id_candidatura":"1886.1890.2039.137881",
+    "id_umv":237,
+    "imagenes":[
+      "1886.1890.2039.137881"
+    ],
+    "nombre":"Palma, Santos Ariel",
+    "orden_absoluto":[
+      6,
+      51,
+      65,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Saravia, Magdalena",
+      "Miranda, Aldo Nilo",
+      "Vazquez, Felipa",
+      "Martinez, Arnaldo Esteban",
+      "Cortez, Carolina Soledad",
+      "Juarez, Jose Geronimo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ruiz, M\u00edriam Beatriz",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2069",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2069.141316",
+    "id_candidatura":"1886.1890.2069.141316",
+    "id_umv":279,
+    "imagenes":[
+      "1886.1890.2069.141316"
+    ],
+    "nombre":"Ruiz, Miriam Beatriz",
+    "orden_absoluto":[
+      6,
+      51,
+      66,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Carratala, Jose Armando",
+      "Torrez, Karen Macarena",
+      "Villalva, Lisandro Aguileo",
+      "Buryaile, Yamila Nahir",
+      "Bravo, Basilio Lorenzo",
+      "Diaz, Mirta Alicia"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Rodr\u00edguez, Jos\u00e9 Federico",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1891.2169",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2169.141534",
+    "id_candidatura":"1886.1891.2169.141534",
+    "id_umv":1074,
+    "imagenes":[
+      "1886.1891.2169.141534"
+    ],
+    "nombre":"Rodriguez, \"Cata\" Jose Federico",
+    "orden_absoluto":[
+      6,
+      27,
+      125,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Lucena, Aida Dolores"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"D\u00edaz, \"C\u00e9pi\" Cerb\u00e1nda",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1891.2170",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2170.142293",
+    "id_candidatura":"1886.1891.2170.142293",
+    "id_umv":1075,
+    "imagenes":[
+      "1886.1891.2170.142293"
+    ],
+    "nombre":"Diaz, \"Cepy\" Cerbanda",
+    "orden_absoluto":[
+      6,
+      27,
+      124,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Torres, Nani Magin"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Villalba, \u00c9bert Armando",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2113.2114",
+    "cod_partido":"1886.2113",
+    "codigo":"1886.2113.2114.154338",
+    "id_candidatura":"1886.2113.2114.154338",
+    "id_umv":541,
+    "imagenes":[
+      "1886.2113.2114.154338"
+    ],
+    "nombre":"Villalba, Hebert Armando",
+    "orden_absoluto":[
+      6,
+      46,
+      141,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Flores, Ana Maria",
+      "Choque, Miguel Ceferino",
+      "Diaz, Evelina Yanel",
+      "Barraza, Ernesto",
+      "Ruiz, Noelia Maribel",
+      "Molina, Arnaldo Rene"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Villa, Jes\u00fas Ram\u00f3n",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"DIP",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.151626",
+    "id_candidatura":"1888.1934.2440.151626",
+    "id_umv":1114,
+    "imagenes":[
+      "1888.1934.2440.151626"
+    ],
+    "nombre":"Villa, Jesus Ramon \"Rana\"",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      2,
+      1
+    ],
+    "secundarios":[
+      "Flores, Julia Natividad"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Illesca, Luis Reinaldo",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.151797",
+    "id_candidatura":"1888.2378.2379.151797",
+    "id_umv":716,
+    "imagenes":[
+      "1888.2378.2379.151797"
+    ],
+    "nombre":"Illesca, Luis Reinaldo",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Saravia, Ana",
+      "Lobo, Francisco Andres",
+      "Guerra, Veronica",
+      "Palomo, Felix Rosa",
+      "Amado, Adelina",
+      "Palma, Luis Alberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":900,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1163,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":960,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1174,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1020,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1185,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

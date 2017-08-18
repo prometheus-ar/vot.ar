@@ -59,8 +59,9 @@ class Config():
             with open(path, 'r') as file_:
                 temp_settings = load(file_.read())
                 settings = {}
-                for key, value in temp_settings.items():
-                    settings[key] = (value, file_name)
+                if temp_settings is not None:
+                    for key, value in temp_settings.items():
+                        settings[key] = (value, file_name)
 
         return settings
 

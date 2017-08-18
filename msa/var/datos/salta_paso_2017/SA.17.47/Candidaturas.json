@@ -1,0 +1,1067 @@
+[
+  {
+    "asistida":"Guevara, Rita Valeria",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1895.2213",
+    "cod_partido":"1885.1895",
+    "codigo":"1885.1895.2213.147168",
+    "id_candidatura":"1885.1895.2213.147168",
+    "id_umv":7,
+    "imagenes":[
+      "1885.1895.2213.147168"
+    ],
+    "nombre":"Guevara, Rita Valeria",
+    "orden_absoluto":[
+      15,
+      47,
+      186,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Cardozo, Gustavo Jesus",
+      "Mansilla, Lorena Rita",
+      "Arjona, Cesar Juan",
+      "Guerra, Elda Natalia",
+      "Guzman, Rodolfo Antonio",
+      "Lopez, Marcela Jaquelina"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Avellaneda, Landri\u00e9l, Cristian",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1918.2237",
+    "cod_partido":"1885.1918",
+    "codigo":"1885.1918.2237.143128",
+    "id_candidatura":"1885.1918.2237.143128",
+    "id_umv":54,
+    "imagenes":[
+      "1885.1918.2237.143128"
+    ],
+    "nombre":"Avellaneda Landriel, Cristian",
+    "orden_absoluto":[
+      15,
+      56,
+      192,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Lopez, Marcela Valeria",
+      "Colque, Fernando Nicolas",
+      "Condori, Mariana del Valle",
+      "Carrasco, Nestor Nicolas",
+      "Pastrana, Gisela Belen",
+      "Mamani, Hector Antonio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Siares, Estela del Valle",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1929.2434",
+    "cod_partido":"1885.1929",
+    "codigo":"1885.1929.2434.148544",
+    "id_candidatura":"1885.1929.2434.148544",
+    "id_umv":167,
+    "imagenes":[
+      "1885.1929.2434.148544"
+    ],
+    "nombre":"Siares, Estela del Valle",
+    "orden_absoluto":[
+      15,
+      58,
+      196,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Garcia Serrano, Fabio Daniel",
+      "Alonso, Gabriela Elena",
+      "Delgado, Wilson German",
+      "Lobo, Claudia Patricia",
+      "Gomez, Carlos Alberto",
+      "Gandino, Alicia Celene"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Vargas, Claudia Silvina",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"SEN",
+    "cod_lista":"1885.2215.2216",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2216.143636",
+    "id_candidatura":"1885.2215.2216.143636",
+    "id_umv":1201,
+    "imagenes":[
+      "1885.2215.2216.143636"
+    ],
+    "nombre":"Vargas, Claudia Silvina",
+    "orden_absoluto":[
+      15,
+      63,
+      173,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ger\u00f3n, Ambrosio Filem\u00f3n",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"DIP",
+    "cod_lista":"1885.2215.2216",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2216.143638",
+    "id_candidatura":"1885.2215.2216.143638",
+    "id_umv":1040,
+    "imagenes":[
+      "1885.2215.2216.143638"
+    ],
+    "nombre":"Geron, Ambrosio Filemon",
+    "orden_absoluto":[
+      15,
+      63,
+      173,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Corregidor, Candelario Gabriel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.1992",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1992.141545",
+    "id_candidatura":"1886.1890.1992.141545",
+    "id_umv":184,
+    "imagenes":[
+      "1886.1890.1992.141545"
+    ],
+    "nombre":"Corregidor, Candelario Gabriel",
+    "orden_absoluto":[
+      6,
+      51,
+      10,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Leiva, Maria Celeste",
+      "Galarce, Boris Abel",
+      "Pastrana, Silvana Sabina",
+      "Carrazco, Leonardo Favio",
+      "Quiroga, Maira Soledad",
+      "Cisneros, Hugo Luis Antonio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Almeda, \"Casita\" Fernando",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.1891.2162",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2162.141086",
+    "id_candidatura":"1886.1891.2162.141086",
+    "id_umv":1233,
+    "imagenes":[
+      "1886.1891.2162.141086"
+    ],
+    "nombre":"Almeda, \"Casita\" Fernando",
+    "orden_absoluto":[
+      6,
+      27,
+      111,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Cisneros, \"Melli\" Sergio",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1891.2162",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2162.141128",
+    "id_candidatura":"1886.1891.2162.141128",
+    "id_umv":1071,
+    "imagenes":[
+      "1886.1891.2162.141128"
+    ],
+    "nombre":"Cisneros, \"Melli\" Sergio",
+    "orden_absoluto":[
+      6,
+      27,
+      111,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Flores, Elio, Osc\u00e1r \"Lulo\"",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"SEN",
+    "cod_lista":"1886.1891.2165",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2165.141744",
+    "id_candidatura":"1886.1891.2165.141744",
+    "id_umv":1234,
+    "imagenes":[
+      "1886.1891.2165.141744"
+    ],
+    "nombre":"Flores, Elio Oscar \"Lulo\"",
+    "orden_absoluto":[
+      6,
+      27,
+      109,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Cisneros, Azucena \"Pr\u00f3fe L\u00e1vaque\"",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1891.2165",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2165.141764",
+    "id_candidatura":"1886.1891.2165.141764",
+    "id_umv":1072,
+    "imagenes":[
+      "1886.1891.2165.141764"
+    ],
+    "nombre":"Cisneros, Azucena \"Profe Lavaque\"",
+    "orden_absoluto":[
+      6,
+      27,
+      109,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Casimiro, Sebasti\u00e1n Cristino",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"DIP",
+    "cod_lista":"1886.1891.2301",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2301.143560",
+    "id_candidatura":"1886.1891.2301.143560",
+    "id_umv":1082,
+    "imagenes":[
+      "1886.1891.2301.143560"
+    ],
+    "nombre":"Casimiro, Sebastian Cristino",
+    "orden_absoluto":[
+      6,
+      27,
+      110,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Casimiro, Sergio Mart\u00edn",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1903.2121",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121.142063",
+    "id_candidatura":"1886.1903.2121.142063",
+    "id_umv":327,
+    "imagenes":[
+      "1886.1903.2121.142063"
+    ],
+    "nombre":"Casimiro, Sergio Martin",
+    "orden_absoluto":[
+      6,
+      23,
+      137,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Quiroga, Andrea Patricia",
+      "Marin Nu\u00f1ez, Carlos Miguel",
+      "Soria, Claudia Elizabeth",
+      "Escalante, Ruben Andres",
+      "Chauqui, Juana Valeria",
+      "Liendro, Luis Marino"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Camacho, Rosendo Daniel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1907",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907.137974",
+    "id_candidatura":"1886.1906.1907.137974",
+    "id_umv":366,
+    "imagenes":[
+      "1886.1906.1907.137974"
+    ],
+    "nombre":"Camacho, Rosendo Daniel",
+    "orden_absoluto":[
+      6,
+      52,
+      207,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Mamani, Graciela Liliana",
+      "Ramirez, Cristian Fernando",
+      "Maita, Iris Marilin",
+      "Humano, Jorge Alfonso",
+      "Lopez, Ramona Carolina",
+      "Alarcon, Rafael Francisco Javier"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Arjona, Marcos Miguel",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1912.2260",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.2260.150623",
+    "id_candidatura":"1886.1912.2260.150623",
+    "id_umv":422,
+    "imagenes":[
+      "1886.1912.2260.150623"
+    ],
+    "nombre":"Arjona, Marcos Miguel",
+    "orden_absoluto":[
+      6,
+      48,
+      212,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Condori Aguaysol, Nieves Regina",
+      "Condori, Rene del Rosario",
+      "Vilte, Jesica Ana",
+      "Pastrana, Alfredo Manuel",
+      "Gimenez, Margarita Yolanda",
+      "Zambrano, Martin Rene"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Pastrana, \"Gu\u00edllo\"",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1935.2152",
+    "cod_partido":"1886.1935",
+    "codigo":"1886.1935.2152.152390",
+    "id_candidatura":"1886.1935.2152.152390",
+    "id_umv":458,
+    "imagenes":[
+      "1886.1935.2152.152390"
+    ],
+    "nombre":"Pastrana, \"Guillo\"",
+    "orden_absoluto":[
+      6,
+      22,
+      134,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Locascio, Ines Cecilia",
+      "Arroyo, Julio Cesar",
+      "Diaz Moya, Lucinda Elena",
+      "Aybar, Walter Edmundo",
+      "Vasquez, Romina Cecilia",
+      "Chocobar, Felix Daniel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Barroso, Ar\u00edel Fernando",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2104.2105",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105.141106",
+    "id_candidatura":"1886.2104.2105.141106",
+    "id_umv":479,
+    "imagenes":[
+      "1886.2104.2105.141106"
+    ],
+    "nombre":"Barroso, Ariel Fernando",
+    "orden_absoluto":[
+      6,
+      35,
+      3,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Molina, Elisa Patricia",
+      "Monta\u00f1ez, Damian Emmanuel",
+      "Alvarez, Nancy Azucena",
+      "Velardez, Luis Emanuel",
+      "Bolivar, Nora Griselda",
+      "Perez Ramon, Daniel Ernesto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Torres, Adri\u00e1n Ubaldo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2113.2114",
+    "cod_partido":"1886.2113",
+    "codigo":"1886.2113.2114.150042",
+    "id_candidatura":"1886.2113.2114.150042",
+    "id_umv":523,
+    "imagenes":[
+      "1886.2113.2114.150042"
+    ],
+    "nombre":"Torres, Adrian Ubaldo",
+    "orden_absoluto":[
+      6,
+      46,
+      141,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Pistan, Monica Beatriz",
+      "Yapura, Omar David",
+      "Chocobar, Tania Gabriela",
+      "Condori, Nestor Andres",
+      "Canavides, Silvia Ramona",
+      "Carrasco, Patricio Gustavo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Torena, Karina Fernanda",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.2223.2224",
+    "cod_partido":"1886.2223",
+    "codigo":"1886.2223.2224.158035",
+    "id_candidatura":"1886.2223.2224.158035",
+    "id_umv":574,
+    "imagenes":[
+      "default_mujer"
+    ],
+    "nombre":"Torena, Karina Fernanda",
+    "orden_absoluto":[
+      6,
+      66,
+      142,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Acosta, Felix Eduardo",
+      "Gonzalez, Maria Ester",
+      "Humano, Alfonso Domingo",
+      "Lopez, Maria Mercedes",
+      "Lopez, Eustaquio Francisco",
+      "Aguirre, Jesica Lorena"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Lucena, Jorge Francisco",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"SEN",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.149991",
+    "id_candidatura":"1888.1934.2440.149991",
+    "id_umv":1260,
+    "imagenes":[
+      "default"
+    ],
+    "nombre":"Lucena, Jorge Francisco",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Balderrama, Enrique Octaviano",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"DIP",
+    "cod_lista":"1888.1934.2440",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440.150022",
+    "id_candidatura":"1888.1934.2440.150022",
+    "id_umv":1110,
+    "imagenes":[
+      "1888.1934.2440.150022"
+    ],
+    "nombre":"Balderrama, Enrique Octaviano",
+    "orden_absoluto":[
+      3,
+      24,
+      144,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Monta\u00f1ez, D\u00e9bora Luciana",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.149780",
+    "id_candidatura":"1888.2378.2379.149780",
+    "id_umv":711,
+    "imagenes":[
+      "1888.2378.2379.149780"
+    ],
+    "nombre":"Monta\u00f1ez, D\u00e9borah Luciana",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Almeida, Carlos Adolfo",
+      "Diaz, Carina Andrea",
+      "Cruz, Aldo Adrian",
+      "Lucena Alanis, Luisa Andrea",
+      "Gonzalez, Roberto Daniel",
+      "Castellanos Cruz, Victoria"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Castro, Crist\u00edna, Blanca, Rosa",
+    "clase":"Candidato",
+    "cod_alianza":"1899",
+    "cod_categoria":"DIP",
+    "cod_lista":"1899.1899.2249",
+    "cod_partido":"1899.1899",
+    "codigo":"1899.1899.2249.150285",
+    "id_candidatura":"1899.1899.2249.150285",
+    "id_umv":1130,
+    "imagenes":[
+      "1899.1899.2249.150285"
+    ],
+    "nombre":"Castro, Cristina Blanca Rosa",
+    "orden_absoluto":[
+      2,
+      15,
+      227,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Galarce, Pablo Javier",
+    "clase":"Candidato",
+    "cod_alianza":"1899",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1899.1899.2249",
+    "cod_partido":"1899.1899",
+    "codigo":"1899.1899.2249.150424",
+    "id_candidatura":"1899.1899.2249.150424",
+    "id_umv":768,
+    "imagenes":[
+      "1899.1899.2249.150424"
+    ],
+    "nombre":"Galarce, Pablo Javier",
+    "orden_absoluto":[
+      2,
+      15,
+      227,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Paz, Alejandra Marcela",
+      "Diaz, Pascual Hernan",
+      "Martinez, Rosana Emilia",
+      "Pistan, Eduardo Delfin",
+      "Renfijes, Natalia Veronica",
+      "Soria, David Humberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"D\u00edaz, Humberto, Celso",
+    "clase":"Candidato",
+    "cod_alianza":"1899",
+    "cod_categoria":"SEN",
+    "cod_lista":"1899.1899.2249",
+    "cod_partido":"1899.1899",
+    "codigo":"1899.1899.2249.158113",
+    "id_candidatura":"1899.1899.2249.158113",
+    "id_umv":1279,
+    "imagenes":[
+      "1899.1899.2249.158113"
+    ],
+    "nombre":"Diaz, Humberto Celso",
+    "orden_absoluto":[
+      2,
+      15,
+      227,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Sald\u00e1\u00f1o, Sergio Rodrigo",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"SEN",
+    "cod_lista":"1947.1947.1949",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1949.138871",
+    "id_candidatura":"1947.1947.1949.138871",
+    "id_umv":1282,
+    "imagenes":[
+      "1947.1947.1949.138871"
+    ],
+    "nombre":"Salda\u00f1o, Sergio Rodrigo",
+    "orden_absoluto":[
+      16,
+      65,
+      93,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Cecc\u00f3ni Sald\u00e1\u00f1o, Gast\u00f3n Mat\u00edas",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"DIP",
+    "cod_lista":"1947.1947.1949",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1949.138873",
+    "id_candidatura":"1947.1947.1949.138873",
+    "id_umv":1138,
+    "imagenes":[
+      "1947.1947.1949.138873"
+    ],
+    "nombre":"Cecconi Salda\u00f1o, Gaston Matias",
+    "orden_absoluto":[
+      16,
+      65,
+      93,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guant\u00e1y, Daniel Alberto",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1947.1947.1949",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1949.138925",
+    "id_candidatura":"1947.1947.1949.138925",
+    "id_umv":786,
+    "imagenes":[
+      "1947.1947.1949.138925"
+    ],
+    "nombre":"Guantay, Daniel Alberto",
+    "orden_absoluto":[
+      16,
+      65,
+      93,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Quintela, Ana Maria",
+      "Cortez, Daniel Roberto",
+      "Lopez, Argentina Rosa",
+      "Chauqui, Ruben Dario",
+      "Zuleta Narvaez, Gabriela",
+      "Torres, Ramon Arnaldo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Guerra, Ana A\u00edda",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"SEN",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.145712",
+    "id_candidatura":"1947.1947.1985.145712",
+    "id_umv":1292,
+    "imagenes":[
+      "1947.1947.1985.145712"
+    ],
+    "nombre":"Guerra, Ana Aida",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      1,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"R\u00e9yes Arias, Mauro",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"DIP",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.145717",
+    "id_candidatura":"1947.1947.1985.145717",
+    "id_umv":1146,
+    "imagenes":[
+      "1947.1947.1985.145717"
+    ],
+    "nombre":"Reyes Arias, Mauro",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      2,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Chocob\u00e1r, Rodrigo \"Toty\"",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.145749",
+    "id_candidatura":"1947.1947.1985.145749",
+    "id_umv":812,
+    "imagenes":[
+      "1947.1947.1985.145749"
+    ],
+    "nombre":"Chocobar, Rodrigo \"Toty\"",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Castro, Patricia del Carmen",
+      "Gonzalez, Walter Rosario",
+      "Herrera, Maria Magdalena",
+      "Liendro Quiroga, Diego del",
+      "Geronimo, Deborah Mariel",
+      "Gomez, Walter Sergio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":873,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1159,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":1301,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":933,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1170,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":1313,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":993,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"DIP",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1181,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      2
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"SEN",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1325,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      1
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

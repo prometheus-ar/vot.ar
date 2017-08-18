@@ -1,43 +1,44 @@
 import textwrap
 
+from copy import copy
 from os.path import join
 
 from msa.constants import COD_TOTAL
 from msa.core.constants import PATH_IMAGENES_VARS
 from msa.core.data.candidaturas import Agrupacion, Candidatura, Categoria
 from msa.core.imaging import Imagen, jinja_env
-from msa.core.imaging.constants import MEDIDAS_ACTA, COLORES
+from msa.core.imaging.constants import (COLORES, DEFAULTS_MOSTRAR_ACTA,
+                                        MEDIDAS_ACTA)
 from msa.settings import MODO_DEMO
 
 
 class ImagenActa(Imagen):
-    def __init__(self, titulo, data, recuento=None, qr=None,
-                 de_muestra=False, verificador=True, grupo_cat=None):
+    def __init__(self, data, mostrar=None, recuento=None, qr=None,
+                 grupo_cat=None):
         """Constructor.
 
         Argumentos:
-            titulo: titulo del acta.
             data: datos para rellenar el acta.
             recuento: Un objeto recuento (solo para actas de cierre).
             qr: imagen del QR.
-            de_muestra: True si es la version para mostrar en pantalla.
-            verificador: Muestra el icono que marca la posicion del chip.
             grupo_cat: el grupo de categorias de la cual queremos hacer el acta.
         """
         self.template = "actas/acta.tmpl"
+
+        self._mostrar = copy(DEFAULTS_MOSTRAR_ACTA)
+        if mostrar is not None:
+            self._mostrar.update(mostrar)
+
         self.render_template()
-        self.titulo = titulo
         self.data = data
         self.recuento = recuento
         self.qr = qr
-        self.de_muestra = de_muestra
         # TODO: manejar el offset mejor, mover a get_medidas,
         # eliminar varible
-        if de_muestra:
-          self.offset_top = 370
+        if self.config_vista("en_pantalla"):
+            self.offset_top = 370
         else:
-          self.offset_top = 0
-        self.verificador = verificador
+            self.offset_top = 0
         self.grupo_cat = grupo_cat
 
         template = "recuento" if recuento is not None else "apertura"
@@ -58,10 +59,11 @@ class ImagenActa(Imagen):
         }
         return medidas
 
-
     def generate_data(self):
         """Genera todos los datos que vamos a necesitar para armar el acta."""
         medidas = self._get_medidas()
+        mesa = self.data["mesa"]
+        pie = "|".join([mesa.codigo, str(mesa.id_planilla), mesa.escuela])
         data = {
             "colores": COLORES,
             "medidas": medidas,
@@ -70,23 +72,39 @@ class ImagenActa(Imagen):
             "encabezado": self._get_encabezado(),
             "i18n": self._get_i18n(),
             "qr": self._get_qr(medidas['width']),
-            "mesa": self.data['mesa'],
+            "mesa": mesa,
             "escudo": self._get_escudo(),
             "verificador": self._get_verificador(),
-            "texto_acta": self._get_texto(),
             "watermark": self._get_watermark(),
-            "de_muestra": self.de_muestra,
-            "presidente": self.data['presidente'],
-            "suplentes": self.data['suplentes'],
+            "en_pantalla": self.config_vista("en_pantalla"),
             "leyenda": self.data['leyenda'],
-            "pie": self.data['pie'],
+            "pie": pie,
         }
+        if self.data["hora"] is not None:
+            data['horas'] = "%02d" % self.data["hora"]['horas']
+            data['minutos'] = "%02d" % self.data["hora"]['minutos']
+        else:
+            data['horas'] = ""
+            data['minutos'] = ""
+
+        if len(self.data["autoridades"]):
+            data["presidente"] = self.data['autoridades'][0]
+        else:
+            data["presidente"] = None
+
+        if len(self.data["autoridades"]) > 1:
+            data["suplentes"] = self.data['autoridades'][1:]
+            data["cantidad_suplentes"] = len(data["suplentes"])
+        else:
+            data["suplentes"] = []
+            data["cantidad_suplentes"] = 0
 
         if self.recuento is not None:
             data["tabla"] = self._get_tabla()
-        data["posiciones"] = self._get_posiciones(data)
 
         self.data = data
+        self.data["texto_acta"] = self._get_texto()
+        self.data["posiciones"] = self._get_posiciones(data)
         return data
 
     def _get_posiciones(self, data):
@@ -136,14 +154,14 @@ class ImagenActa(Imagen):
                                alto_firmas)
 
         # si es una apertura y mostramos un QR tenemos que achicar el final de
-        # las firmas por que sino tapan al QR, vamos a dejar un poquito mas de
+        # las firmas porque sino tapan al QR, vamos a dejar un poquito mas de
         # espacio por un tema de legibilidad
         if self.recuento is None and data["qr"] is not None:
             posiciones['final'] -= data["qr"][3] + 50
 
         # si la imagen es para mostrar en pantalla tocamos las medidas de la
         # imagen para ajustarlas al contenido.
-        if self.de_muestra:
+        if self.config_vista("en_pantalla"):
             data["height"] = posiciones['firmas']
             data["medidas"]["height"] = posiciones['firmas']
 
@@ -152,7 +170,7 @@ class ImagenActa(Imagen):
     def _get_encabezado(self):
         # Devuelve los datos del encabezado
         datos = {
-            "nombre_acta": self.titulo,
+            "nombre_acta": self.data["titulo"],
             "texto": self._get_texto_encabezado()
         }
 
@@ -164,6 +182,7 @@ class ImagenActa(Imagen):
             "firmas_autoridades": _("firmas_autoridades"),
             "firmas_fiscales": _("firmas_fiscales"),
             "firmas_fiscales_detalle": _("firmas_fiscales_detalle"),
+            "firmas_fiscales_continuan": _("firmas_fiscales_continuan"),
             "agrupaciones": _("agrupaciones"),
             "titulo_especiales": _("titulo_especiales"),
             "cantidad": _("cantidad"),
@@ -174,8 +193,8 @@ class ImagenActa(Imagen):
     def _get_qr(self, width):
         """Devuelve los datos del QR para el template."""
         qr = None
-        if not self.de_muestra:
-            usar_qr = self.config("usar_qr", self.data["cod_datos"])
+        if not self.config_vista("en_pantalla"):
+            usar_qr = self.config("usar_qr", self.data["mesa"].cod_datos)
             if self.qr is not None and usar_qr:
                 key = "qr_recuento" if self.recuento is not None \
                     else "qr_apertura"
@@ -194,7 +213,8 @@ class ImagenActa(Imagen):
     def _get_verificador(self):
         """Devuelve los datos del verificador para el template."""
         # muestro imagen verificador y corro margen superior hacia abajo
-        if not self.de_muestra and self.verificador:
+        if (not self.config_vista("en_pantalla")
+                and self.config_vista("verificador")):
             verif_x, verif_y = MEDIDAS_ACTA["verificador"]
             img_verif = join(PATH_IMAGENES_VARS, 'verificador_alta.png')
             img_verif = self._get_img_b64(img_verif)
@@ -205,7 +225,7 @@ class ImagenActa(Imagen):
         """Devuelve los datos de los titulos para el template."""
         lineas = []
 
-        if not self.de_muestra:
+        if not self.config_vista("en_pantalla"):
             # Esto sería un for si no cambiara tanto de eleccion a eleccion
             # probamos varias cosas con los años, esta es la solucion mas
             # customisable
@@ -213,8 +233,7 @@ class ImagenActa(Imagen):
                 _("encabezado_acta_1"),
                 _("encabezado_acta_2"),
                 _("encabezado_acta_3"),
-                _("encabezado_acta_4"),
-                _("encabezado_acta_5")
+                _("encabezado_acta_4")
             ]
 
         return lineas
@@ -222,10 +241,12 @@ class ImagenActa(Imagen):
     def _get_texto(self):
         """Devuelve los datos del texto del acta para el template."""
         texto = None
-        if self.data['mostrar_texto']:
+        if self.config_vista('texto'):
             # traigo los templates
-            tmpl_suplentes = jinja_env.get_template("actas/textos/suplentes.tmpl")
-            tmpl_presidente = jinja_env.get_template("actas/textos/presidente.tmpl")
+            uri_tmpl_suplentes = "actas/textos/suplentes.tmpl"
+            uri_tmpl_presidente = "actas/textos/presidente.tmpl"
+            tmpl_suplentes = jinja_env.get_template(uri_tmpl_suplentes)
+            tmpl_presidente = jinja_env.get_template(uri_tmpl_presidente)
             template = jinja_env.get_template(self.template_texto)
             # los renderizo y los meto en data
             self.data['texto_suplentes'] = tmpl_suplentes.render(**self.data)
@@ -241,7 +262,7 @@ class ImagenActa(Imagen):
     def _get_watermark(self):
         """Devuelve el watermark de las actas."""
         watermarks = []
-        if MODO_DEMO and not self.de_muestra:
+        if MODO_DEMO and not self.config_vista("en_pantalla"):
             # solo muestro la marca de agua si imprimo (con verificador)
             for posicion in MEDIDAS_ACTA['pos_watermark']:
                 watermark = (posicion[0], posicion[1], _("watermark_text"),
@@ -291,21 +312,30 @@ class ImagenActa(Imagen):
             clase = agrupacion.clase
             if clase in clases_a_mostrar:
                 # colapso el partido si tiene una sola lista y esta habilitado
-                if colapsar_partido and clase == "Partido":
+                if colapsar_partido and clase == "Alianza":
                     partido_omitido = len(agrupacion.listas) == 1
                 # Traigo los datos de la fila en caso de que tenga que
                 # mostrarla
                 if not partido_omitido or (partido_omitido and
-                                           clase != "Partido"):
+                                           clase != "Alianza"):
                     fila, chars_lista = self._get_datos_fila(categorias,
                                                              agrupacion,
                                                              partido_omitido)
                     # Las listas solo aparecen si tienen candidatos en
                     # categorias que queremos mostrar en este acta.
                     if (clase != "Lista" or not
-                            all([elem=="-" for elem in fila[3:]])):
+                            all([elem == "-" for elem in fila[3:]])):
                         if chars_lista > max_char:
                             max_char = chars_lista
+
+                        # no mostramos alianzas vacías
+                        try:
+                            if (clase == "Alianza" and
+                                    filas[-1][3] == "Alianza"):
+                                filas.pop(-1)
+                        except IndexError:
+                            pass
+
                         filas.append(fila)
 
         # Vemos si tenemos votos en blanco para agregar
@@ -325,8 +355,8 @@ class ImagenActa(Imagen):
                                      self.data["cod_datos"])
         numero = " " if mostrar_numero else ""
         # Manejo de la fila que tiene los votos en blanco
-        fila = [numero, _("votos_en_blanco"), 0]
-        # cantidad_blancos no es un booleano por que a veces en algunas
+        fila = [numero, _("votos_en_blanco"), 0, True]
+        # cantidad_blancos no es un booleano porque a veces en algunas
         # elecciones esta bueno saber cuantas candidaturas en blanco hay
         cantidad_blancos = 0
         # Recorro todas las categorias buscando las candidaturas blancas en
@@ -362,12 +392,15 @@ class ImagenActa(Imagen):
                                      self.data["cod_datos"])
         indentacion = clases_a_mostrar.index(agrupacion.clase)
         # si el partido no esta omitido vamos a ponerle profundidad.
+        fila_normal = True
         if not partido_omitido:
             nombre = " " * indentacion
             nombre += agrupacion.nombre
         # sino el nombre pasa de largo y queda el que está.
         else:
-            nombre = agrupacion.partido.nombre
+            # nombre = agrupacion.partido.nombre
+            nombre = agrupacion.nombre + " (" + agrupacion.alianza.nombre + ")"
+            fila_normal = False
         # establecemos el numero de la lista. En alguna eleccion esto puede ser
         # mas complejo que traer el numero, puede ser la concatenacion de
         # varios numeros diferentes.
@@ -377,7 +410,7 @@ class ImagenActa(Imagen):
             numero = ""
 
         # armamos la base de la fila.
-        fila = [numero, nombre, indentacion]
+        fila = [numero, nombre, indentacion, fila_normal]
 
         # Recorremos todas las categorias que queremos mostrar en este acta
         # buscando cuantos votos tiene cada candidato.
@@ -403,7 +436,7 @@ class ImagenActa(Imagen):
         # Quizas queremos omitir las categorias adheridas, como en algunas
         # elecciones en las que el vicegobernador es un cargo que adhiere al de
         # gobernador.
-        mostrar_adheridas = self.config("mostrar_adheridas",
+        mostrar_adheridas = self.config("mostrar_adheridas_acta",
                                         self.data["cod_datos"])
         if not mostrar_adheridas:
             filter["adhiere"] = None
@@ -450,7 +483,6 @@ class ImagenActa(Imagen):
                         (len(cods_categorias) * caracteres_categoria))
         for i in range(len(filas)):
             filas[i][1] = filas[i][1][:int(remain_chars)]
-
 
         tabla = {
             "filas": filas,

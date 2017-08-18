@@ -1,0 +1,230 @@
+[
+  {
+    "asistida":"Cruz, Javier Rolando",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.1991",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1991.140043",
+    "id_candidatura":"1886.1890.1991.140043",
+    "id_umv":181,
+    "imagenes":[
+      "1886.1890.1991.140043"
+    ],
+    "nombre":"Cruz, Javier Rolando",
+    "orden_absoluto":[
+      6,
+      51,
+      4,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Pavon, Ofelia Damiana",
+      "Campos, Nery Rolando"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"P\u00e9rez, Francisco Antonio",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1903.2121",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121.141946",
+    "id_candidatura":"1886.1903.2121.141946",
+    "id_umv":323,
+    "imagenes":[
+      "1886.1903.2121.141946"
+    ],
+    "nombre":"Perez, Francisco Antonio",
+    "orden_absoluto":[
+      6,
+      23,
+      137,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Fernandez, Nanci Argelia",
+      "Landriel, Sergio David"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"D\u00edaz, Ram\u00f3n Alberto",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1907",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907.136905",
+    "id_candidatura":"1886.1906.1907.136905",
+    "id_umv":352,
+    "imagenes":[
+      "1886.1906.1907.136905"
+    ],
+    "nombre":"Diaz, Ramon Alberto",
+    "orden_absoluto":[
+      6,
+      52,
+      207,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Campos, Karen Abigail",
+      "Cuellar, Rene Alfredo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"\u00c1lvarez, Adriana del Carmen",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1935.2152",
+    "cod_partido":"1886.1935",
+    "codigo":"1886.1935.2152.151148",
+    "id_candidatura":"1886.1935.2152.151148",
+    "id_umv":444,
+    "imagenes":[
+      "1886.1935.2152.151148"
+    ],
+    "nombre":"Alvarez, Adriana del Carmen",
+    "orden_absoluto":[
+      6,
+      22,
+      134,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Sosa, Antonio Ariel",
+      "Herrera, Ivana de los Angeles"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"C\u00e9spedes, Julio Alejandro",
+    "clase":"Candidato",
+    "cod_alianza":"1887",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1887.2126.2141",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2141.156193",
+    "id_candidatura":"1887.2126.2141.156193",
+    "id_umv":619,
+    "imagenes":[
+      "1887.2126.2141.156193"
+    ],
+    "nombre":"Cespedes, Julio Alejandro",
+    "orden_absoluto":[
+      5,
+      31,
+      100,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Acosta, Elisea Ramona",
+      "Ruiz Gomez, Cristian Sergio"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Chazarreta, Johnat\u00e1n Josu\u00e9",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.146681",
+    "id_candidatura":"1888.2378.2379.146681",
+    "id_umv":692,
+    "imagenes":[
+      "1888.2378.2379.146681"
+    ],
+    "nombre":"Chazarreta, Jonathan Josue",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Lescano, Blanca Rosa",
+      "Gutierrez, Jose Manuel"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":896,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":956,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":1016,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

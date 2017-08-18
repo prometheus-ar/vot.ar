@@ -1,0 +1,63 @@
+[
+    {
+        "codigo": "uno",
+        "bloques": [
+            {
+                "ancho": 1920,
+                "alto": 730,
+                "font_size": 55,
+                "posicion": [0, 0],
+                "wrap_lista": 40,
+                "wrap_candidato": 27,
+                "wrap_secundarios": 34,
+                "sep_lineas_lista": 40
+            }
+        ]
+    },
+    {
+        "codigo": "fallback",
+        "comun": {
+            "ancho": 460,
+            "alto": 245,
+            "font_size_titulo": 30,
+            "alto_fondo_titulo": 26,
+            "sep_lineas_lista": 20,
+            "sep_lineas_titular": 20,
+            "padding_num_lista": 20,
+            "padding_nom_lista": 25,
+            "font_size": 30
+        },
+        "bloques": [
+            {
+                "posicion": [60, 0]
+            },
+            {
+                "posicion": [520, 0]
+            },
+            {
+                "posicion": [520, 245]
+            },
+            {
+                "posicion": [520, 490]
+            },
+            {
+                "posicion": [980, 0]
+            },
+            {
+                "posicion": [980, 245]
+            },
+            {
+                "posicion": [980, 490]
+            },
+            {
+                "posicion": [1440, 0]
+            },
+            {
+                "posicion": [1440, 245]
+            },
+            {
+                "posicion": [1440, 490]
+            }
+        ]
+    }
+]

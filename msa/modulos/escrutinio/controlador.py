@@ -1,4 +1,6 @@
 """Controlador del modulo escrutinio."""
+from base64 import encodestring
+from io import BytesIO
 from os.path import join
 from urllib.parse import quote
 
@@ -19,8 +21,8 @@ from msa.modulos.constants import E_CLASIFICACION, E_RECUENTO, MODULO_INICIO
 from msa.modulos.escrutinio.constants import (ACT_BOLETA_NUEVA,
                                               ACT_BOLETA_REPETIDA, ACT_ERROR,
                                               ACT_ESPECIALES, ACT_INICIAL,
-                                              MINIMO_BOLETAS_RECUENTO, TEXTOS,
-                                              ACT_CLONADA)
+                                              ACT_VERIFICAR_ACTA,
+                                              MINIMO_BOLETAS_RECUENTO, TEXTOS)
 
 
 class Actions(BaseActionController):
@@ -102,7 +104,15 @@ class Controlador(ControladorBase):
             }
 
             if tipo_actualizacion in (ACT_BOLETA_NUEVA, ACT_BOLETA_REPETIDA):
-                imagen = seleccion.a_imagen(solo_mostrar=True, svg=True)
+                muestra_svg = self.modulo.config("muestra_svg")
+                mostrar = {"en_pantalla": True}
+                imagen = seleccion.a_imagen(mostrar, svg=muestra_svg)
+                if not muestra_svg:
+                    buffer = BytesIO()
+                    imagen.save(buffer, format="PNG")
+                    img_data = encodestring(buffer.getvalue())
+                    imagen = "data:image/png;base64,%s" % img_data.decode()
+
                 upd_data['imagen'] = quote(imagen.encode("utf-8"))
                 if tipo_actualizacion == ACT_BOLETA_REPETIDA:
                     upd_data['seleccion'] = None
@@ -219,7 +229,7 @@ class Controlador(ControladorBase):
                 "ACT_BOLETA_REPETIDA": ACT_BOLETA_REPETIDA,
                 "ACT_ERROR": ACT_ERROR,
                 "ACT_ESPECIALES": ACT_ESPECIALES,
-                "ACT_CLONADA": ACT_CLONADA,
+                "ACT_VERIFICAR_ACTA": ACT_VERIFICAR_ACTA,
             },
             "descripcion_especiales": desc_especiales,
             "TABLA_MUESTRA_ALIANZA": self.modulo.config("tabla_muestra_alianza"),
@@ -229,6 +239,8 @@ class Controlador(ControladorBase):
             "USAR_COLOR": self.modulo.config("mostrar_color"),
             "USAR_NUMERO_LISTA": self.modulo.config("mostrar_numero_lista"),
             "totalizador": False,
+            "muestra_svg": self.modulo.config("muestra_svg"),
+            "templates_compiladas": self.modulo.config("templates_compiladas"),
         }
         constants_dict = self.base_constants_dict()
         constants_dict.update(local_constants)
@@ -242,4 +254,23 @@ class Controlador(ControladorBase):
             file_name = "%s.html" % template
             template_file = join(flavor, file_name)
             templates[template] = template_file
+        return templates
+
+    def get_templates_modulo(self):
+        templates = [
+            "campo_extra", "candidato", "context/panel_acciones",
+            "context/panel_asistente", "context/panel_blanco",
+            "context/panel_clasificacion", "context/panel_copias",
+            "context/panel_derecho", "context/panel_estado",
+            "context/panel_finalizar", "context/tabla", "context/teclado",
+            "copias", "imprimiendo", "loading", "mensaje_confirmar_apagar",
+            "mensaje_fin_escrutinio", "mensaje_pocas_boletas", "mensaje_salir",
+            "pantalla_boleta", "pantalla_boleta_error",
+            "pantalla_boleta_repetida", "pantalla_clasificacion_votos",
+            "pantalla_verificar_acta", "pantalla_clasificacion_votos",
+            "pantalla_copias", "pantalla_inicial", "pedir_acta",
+            "slides/certificados_extra", "slides/devolucion_sobre",
+            "slides/devolucion_urna", "slides/firmar_acta",
+            "slides/qr_fiscales", "tabla", "colores"
+        ]
         return templates

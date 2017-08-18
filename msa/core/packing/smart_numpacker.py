@@ -1,5 +1,4 @@
 #-*- coding: utf-8 -*-
-
 """ Módulo para codificar las actas de forma tal que se puedan almacenar en un
 chip de 1K
 
@@ -51,6 +50,9 @@ def nro2cod(nro, bits_fijos, bits_variables, posicion):
 
     menor_signif = nro & masc_menor_signif
     mayor_signif = int((nro & masc_mayor_signif) / 2 ** bits_fijos)
+
+    if nro > (masc_mayor_signif | masc_menor_signif):
+        raise ValueError("Imposible empaquetar nro=%s" % nro)
 
     parte_fija = bin(menor_signif)[2:].zfill(bits_fijos)
 

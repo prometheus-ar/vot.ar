@@ -13,6 +13,7 @@ function set_constants(data){
      */
     constants = data;
     popular_html();
+    load_templates_escrutinio();
     load_patio();
     place_text(data.i18n);
     place_text(data.encabezado);
@@ -25,4 +26,12 @@ function set_constants(data){
 
 function sonido_tecla(){
     send("sonido_tecla");
+}
+
+function load_templates_escrutinio(){
+    if(constants.templates_compiladas){
+        var url = constants.PATH_TEMPLATES_VAR + "escrutinio.html";
+        load_template_comp(url);
+        cargar_templates_en_dom()
+    }
 }

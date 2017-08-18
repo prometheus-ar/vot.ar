@@ -1,0 +1,2361 @@
+[
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Alianza",
+    "codigo":"1885",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885",
+    "imagenes":[
+      "1885"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15
+    ]
+  },
+  {
+    "asistida":"Partido F\u00e9",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1895",
+    "color":[
+      "#00BF00",
+      "#007FFF",
+      "#FF7F00"
+    ],
+    "id_candidatura":"1885.1895",
+    "imagenes":[
+      "1885.1895"
+    ],
+    "nombre":"Partido Fe",
+    "nombre_corto":"Partido Fe",
+    "orden_absoluto":[
+      15,
+      47
+    ]
+  },
+  {
+    "asistida":"Partido Fe",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1895",
+    "codigo":"1885.1895.2213",
+    "color":[
+      "#00BF00",
+      "#007FFF",
+      "#FF7F00"
+    ],
+    "id_candidatura":"1885.1895.2213",
+    "imagenes":[
+      "1885.1895.2213"
+    ],
+    "nombre":"Partido Fe",
+    "nombre_corto":"Partido Fe",
+    "numero":"731",
+    "orden_absoluto":[
+      15,
+      47,
+      186
+    ]
+  },
+  {
+    "asistida":"Partido de la Cultura, la Educacion y El Trabajo",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1911",
+    "color":[
+      "#FFFF00",
+      "#56AAFF"
+    ],
+    "id_candidatura":"1885.1911",
+    "imagenes":[
+      "1885.1911"
+    ],
+    "nombre":"P. Cultura, Educacion y Trabajo",
+    "nombre_corto":"Cult.Educ. y Trabajo",
+    "orden_absoluto":[
+      15,
+      43
+    ]
+  },
+  {
+    "asistida":"Vamos Juntos",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1911",
+    "codigo":"1885.1911.2490",
+    "color":[
+      "#FFFF00",
+      "#56AAFF"
+    ],
+    "id_candidatura":"1885.1911.2490",
+    "imagenes":[
+      "1885.1911.2490"
+    ],
+    "nombre":"Vamos Juntos",
+    "nombre_corto":"Vamos Juntos",
+    "numero":"724",
+    "orden_absoluto":[
+      15,
+      43,
+      184
+    ]
+  },
+  {
+    "asistida":"Primero Salta",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1918",
+    "color":[
+      "#FF001D",
+      "#FFD800",
+      "#000000"
+    ],
+    "id_candidatura":"1885.1918",
+    "imagenes":[
+      "1885.1918"
+    ],
+    "nombre":"Primero Salta",
+    "nombre_corto":"Primero Salta",
+    "orden_absoluto":[
+      15,
+      56
+    ]
+  },
+  {
+    "asistida":"Primero la Gente",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1918",
+    "codigo":"1885.1918.2237",
+    "color":[
+      "#FF001D",
+      "#FFD800",
+      "#000000"
+    ],
+    "id_candidatura":"1885.1918.2237",
+    "imagenes":[
+      "1885.1918.2237"
+    ],
+    "nombre":"Primero la Gente",
+    "nombre_corto":"Primero la Gente",
+    "numero":"751",
+    "orden_absoluto":[
+      15,
+      56,
+      192
+    ]
+  },
+  {
+    "asistida":"PRO - Propuesta Republicana",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1919",
+    "color":[
+      "#FDB813",
+      "#9B2583",
+      "#2D2B74"
+    ],
+    "id_candidatura":"1885.1919",
+    "imagenes":[
+      "1885.1919"
+    ],
+    "nombre":"PRO - Propuesta Republicana",
+    "nombre_corto":"PRO - Prop.Republic.",
+    "orden_absoluto":[
+      15,
+      57
+    ]
+  },
+  {
+    "asistida":"PRO",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1919",
+    "codigo":"1885.1919.2140",
+    "color":[
+      "#FDB813",
+      "#9B2583",
+      "#2D2B74"
+    ],
+    "id_candidatura":"1885.1919.2140",
+    "imagenes":[
+      "1885.1919.2140"
+    ],
+    "nombre":"PRO",
+    "nombre_corto":"PRO",
+    "numero":"761",
+    "orden_absoluto":[
+      15,
+      57,
+      193
+    ]
+  },
+  {
+    "asistida":"Partido Identidad Salte\u00f1a",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.1923",
+    "color":[
+      "#FFFFFF",
+      "#CC1E24",
+      "#000000"
+    ],
+    "id_candidatura":"1885.1923",
+    "imagenes":[
+      "1885.1923"
+    ],
+    "nombre":"Partido Identidad Salte\u00f1a",
+    "nombre_corto":"P.Identidad Salte\u00f1a",
+    "orden_absoluto":[
+      15,
+      50
+    ]
+  },
+  {
+    "asistida":"Pa\u00eds",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.1923",
+    "codigo":"1885.1923.2236",
+    "color":[
+      "#FFFFFF",
+      "#CC1E24",
+      "#000000"
+    ],
+    "id_candidatura":"1885.1923.2236",
+    "imagenes":[
+      "1885.1923.2236"
+    ],
+    "nombre":"Pais",
+    "nombre_corto":"Pais",
+    "numero":"741",
+    "orden_absoluto":[
+      15,
+      50,
+      187
+    ]
+  },
+  {
+    "asistida":"Un Cambio para Salta",
+    "clase":"Partido",
+    "cod_alianza":"1885",
+    "codigo":"1885.2215",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885.2215",
+    "imagenes":[
+      "1885.2215"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "orden_absoluto":[
+      15,
+      63
+    ]
+  },
+  {
+    "asistida":"Un Cambio - Salta",
+    "clase":"Lista",
+    "cod_alianza":"1885",
+    "cod_partido":"1885.2215",
+    "codigo":"1885.2215.2216",
+    "color":[
+      "#CC1E24",
+      "#000000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1885.2215.2216",
+    "imagenes":[
+      "1885.2215.2216"
+    ],
+    "nombre":"Un Cambio para Salta",
+    "nombre_corto":"Un Cambio para Salta",
+    "numero":"704",
+    "orden_absoluto":[
+      15,
+      63,
+      173
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1886",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886",
+    "imagenes":[
+      "1886"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6
+    ]
+  },
+  {
+    "asistida":"Partido Justicialista",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1890",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890",
+    "imagenes":[
+      "1886.1890"
+    ],
+    "nombre":"Partido Justicialista",
+    "nombre_corto":"Part.Justicialista",
+    "orden_absoluto":[
+      6,
+      51
+    ]
+  },
+  {
+    "asistida":"Fe y Esperanza",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1994",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.1994",
+    "imagenes":[
+      "1886.1890.1994"
+    ],
+    "nombre":"Fe y Esperanza",
+    "nombre_corto":"Fe y Esperanza",
+    "numero":"212",
+    "orden_absoluto":[
+      6,
+      51,
+      15
+    ]
+  },
+  {
+    "asistida":"Frejuvi (Frente Justicialista para la Victoria)",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1995",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.1995",
+    "imagenes":[
+      "1886.1890.1995"
+    ],
+    "nombre":"Fte. Justicialista para la Victoria",
+    "nombre_corto":"Fre.Ju.Vi.",
+    "numero":"213",
+    "orden_absoluto":[
+      6,
+      51,
+      16
+    ]
+  },
+  {
+    "asistida":"Hacia Un Futuro Mejor",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1997",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.1997",
+    "imagenes":[
+      "1886.1890.1997"
+    ],
+    "nombre":"Hacia Un Futuro Mejor",
+    "nombre_corto":"Hacia Un Futur.Mejor",
+    "numero":"214",
+    "orden_absoluto":[
+      6,
+      51,
+      17
+    ]
+  },
+  {
+    "asistida":"11 de Marzo - Peronismo Rebelde",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1998",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.1998",
+    "imagenes":[
+      "1886.1890.1998"
+    ],
+    "nombre":"11 de Marzo - Peronismo Rebelde",
+    "nombre_corto":"11 de Marzo",
+    "numero":"208",
+    "orden_absoluto":[
+      6,
+      51,
+      11
+    ]
+  },
+  {
+    "asistida":"La Vecinal",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.1999",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.1999",
+    "imagenes":[
+      "1886.1890.1999"
+    ],
+    "nombre":"La Vecinal",
+    "nombre_corto":"La Vecinal",
+    "numero":"217",
+    "orden_absoluto":[
+      6,
+      51,
+      20
+    ]
+  },
+  {
+    "asistida":"8 de Octubre",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2000",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2000",
+    "imagenes":[
+      "1886.1890.2000"
+    ],
+    "nombre":"8 de Octubre",
+    "nombre_corto":"8 de Octubre",
+    "numero":"209",
+    "orden_absoluto":[
+      6,
+      51,
+      12
+    ]
+  },
+  {
+    "asistida":"Renovaci\u00f3n",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2001",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2001",
+    "imagenes":[
+      "1886.1890.2001"
+    ],
+    "nombre":"Renovacion",
+    "nombre_corto":"Renovacion",
+    "numero":"219",
+    "orden_absoluto":[
+      6,
+      51,
+      22
+    ]
+  },
+  {
+    "asistida":"Movimiento por la Ni\u00f1ez y Usted",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2002",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2002",
+    "imagenes":[
+      "1886.1890.2002"
+    ],
+    "nombre":"Movimiento por la Ni\u00f1ez y Ud.",
+    "nombre_corto":"Mov.P\/La Ni\u00f1ez y Ud.",
+    "numero":"218",
+    "orden_absoluto":[
+      6,
+      51,
+      21
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n por Salta",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2003",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2003",
+    "imagenes":[
+      "1886.1890.2003"
+    ],
+    "nombre":"Union por Salta",
+    "nombre_corto":"Union por Salta",
+    "numero":"224",
+    "orden_absoluto":[
+      6,
+      51,
+      27
+    ]
+  },
+  {
+    "asistida":"Trabajo y Lealtad",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2004",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2004",
+    "imagenes":[
+      "1886.1890.2004"
+    ],
+    "nombre":"Trabajo y Lealtad",
+    "nombre_corto":"Trabajo y Lealtad",
+    "numero":"221",
+    "orden_absoluto":[
+      6,
+      51,
+      24
+    ]
+  },
+  {
+    "asistida":"Cambio, Justicia y Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2005",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2005",
+    "imagenes":[
+      "1886.1890.2005"
+    ],
+    "nombre":"Cambio Justicia y Victoria",
+    "nombre_corto":"Camb.Just.Y Victoria",
+    "numero":"220",
+    "orden_absoluto":[
+      6,
+      51,
+      23
+    ]
+  },
+  {
+    "asistida":"Juntos por Salta",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2006",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2006",
+    "imagenes":[
+      "1886.1890.2006"
+    ],
+    "nombre":"Juntos por Salta",
+    "nombre_corto":"Juntos por Salta",
+    "numero":"215",
+    "orden_absoluto":[
+      6,
+      51,
+      18
+    ]
+  },
+  {
+    "asistida":"Unidad y Lealtad Peronista",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2007",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2007",
+    "imagenes":[
+      "1886.1890.2007"
+    ],
+    "nombre":"Unidad y Lealtad Peronista",
+    "nombre_corto":"Un.Y Lealt.Peronista",
+    "numero":"222",
+    "orden_absoluto":[
+      6,
+      51,
+      25
+    ]
+  },
+  {
+    "asistida":"La Hora del Pueblo",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2008",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2008",
+    "imagenes":[
+      "1886.1890.2008"
+    ],
+    "nombre":"La Hora del Pueblo",
+    "nombre_corto":"La Hora del Pueblo",
+    "numero":"216",
+    "orden_absoluto":[
+      6,
+      51,
+      19
+    ]
+  },
+  {
+    "asistida":"Unidos Renovamos",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2009",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2009",
+    "imagenes":[
+      "1886.1890.2009"
+    ],
+    "nombre":"Unidos Renovamos",
+    "nombre_corto":"Unidos Renovamos",
+    "numero":"223",
+    "orden_absoluto":[
+      6,
+      51,
+      26
+    ]
+  },
+  {
+    "asistida":"Ahora S\u00ed, Juntos Podemos",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2084",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2084",
+    "imagenes":[
+      "1886.1890.2084"
+    ],
+    "nombre":"Ahora Si, Juntos Podemos",
+    "nombre_corto":"Ahora Si Junt.Podem.",
+    "numero":"210",
+    "orden_absoluto":[
+      6,
+      51,
+      13
+    ]
+  },
+  {
+    "asistida":"Por Nuestra Ciudad",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2088",
+    "color":[
+      "#1658F2"
+    ],
+    "id_candidatura":"1886.1890.2088",
+    "imagenes":[
+      "1886.1890.2088"
+    ],
+    "nombre":"Por Nuestra Ciudad",
+    "nombre_corto":"Por Nuestra Ciudad",
+    "numero":"211",
+    "orden_absoluto":[
+      6,
+      51,
+      14
+    ]
+  },
+  {
+    "asistida":"Frente Unidad y Renovaci\u00f3n",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1891",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891",
+    "imagenes":[
+      "1886.1891"
+    ],
+    "nombre":"Fte. Unidad y Renovacion",
+    "nombre_corto":"Fte.Unidad y Renov.",
+    "orden_absoluto":[
+      6,
+      27
+    ]
+  },
+  {
+    "asistida":"11 de Marzo - Peronismo Rebelde",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2186",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2186",
+    "imagenes":[
+      "1886.1891.2186"
+    ],
+    "nombre":"11 de Marzo - Peronismo Rebelde",
+    "nombre_corto":"11 de Marzo",
+    "numero":"508",
+    "orden_absoluto":[
+      6,
+      27,
+      112
+    ]
+  },
+  {
+    "asistida":"Cambio, Justicia y Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2187",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2187",
+    "imagenes":[
+      "1886.1891.2187"
+    ],
+    "nombre":"Cambio Justicia y Victoria",
+    "nombre_corto":"Camb.Just.Y Victoria",
+    "numero":"511",
+    "orden_absoluto":[
+      6,
+      27,
+      115
+    ]
+  },
+  {
+    "asistida":"Hacia Un Futuro Mejor",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2192",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2192",
+    "imagenes":[
+      "1886.1891.2192"
+    ],
+    "nombre":"Hacia Un Futuro Mejor",
+    "nombre_corto":"Hacia Un Futur.Mejor",
+    "numero":"509",
+    "orden_absoluto":[
+      6,
+      27,
+      113
+    ]
+  },
+  {
+    "asistida":"Renovaci\u00f3n Salte\u00f1a",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2197",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2197",
+    "imagenes":[
+      "1886.1891.2197"
+    ],
+    "nombre":"Renovacion Salte\u00f1a",
+    "nombre_corto":"Renovacion Salte\u00f1a",
+    "numero":"510",
+    "orden_absoluto":[
+      6,
+      27,
+      114
+    ]
+  },
+  {
+    "asistida":"Si, Salta Independiente",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1891",
+    "codigo":"1886.1891.2300",
+    "color":[
+      "#1658F2",
+      "#00007F"
+    ],
+    "id_candidatura":"1886.1891.2300",
+    "imagenes":[
+      "1886.1891.2300"
+    ],
+    "nombre":"Si Salta Independiente",
+    "nombre_corto":"Si Salta Independ.",
+    "numero":"512",
+    "orden_absoluto":[
+      6,
+      27,
+      116
+    ]
+  },
+  {
+    "asistida":"Frente Salte\u00f1o",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1903",
+    "color":[
+      "#BF0000",
+      "#000000",
+      "#BF0000"
+    ],
+    "id_candidatura":"1886.1903",
+    "imagenes":[
+      "1886.1903"
+    ],
+    "nombre":"Frente Salte\u00f1o",
+    "nombre_corto":"Frente Salte\u00f1o",
+    "orden_absoluto":[
+      6,
+      23
+    ]
+  },
+  {
+    "asistida":"Frente Salte\u00f1o",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1903",
+    "codigo":"1886.1903.2121",
+    "color":[
+      "#BF0000",
+      "#000000",
+      "#BF0000"
+    ],
+    "id_candidatura":"1886.1903.2121",
+    "imagenes":[
+      "1886.1903.2121"
+    ],
+    "nombre":"Frente Salte\u00f1o",
+    "nombre_corto":"Frente Salte\u00f1o",
+    "numero":"541",
+    "orden_absoluto":[
+      6,
+      23,
+      137
+    ]
+  },
+  {
+    "asistida":"Partido Renovador de Salta",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1906",
+    "color":[
+      "#002E6D",
+      "#77AA3A"
+    ],
+    "id_candidatura":"1886.1906",
+    "imagenes":[
+      "1886.1906"
+    ],
+    "nombre":"Partido Renovador de Salta",
+    "nombre_corto":"P.Renovador de Salta",
+    "orden_absoluto":[
+      6,
+      52
+    ]
+  },
+  {
+    "asistida":"Pares",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907",
+    "color":[
+      "#002E6D",
+      "#77AA3A"
+    ],
+    "id_candidatura":"1886.1906.1907",
+    "imagenes":[
+      "1886.1906.1907"
+    ],
+    "nombre":"Pares",
+    "nombre_corto":"Pares",
+    "numero":"801",
+    "orden_absoluto":[
+      6,
+      52,
+      207
+    ]
+  },
+  {
+    "asistida":"Partido Felicidad",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1912",
+    "color":[
+      "#ED5915",
+      "#632B50",
+      "#D590DD"
+    ],
+    "id_candidatura":"1886.1912",
+    "imagenes":[
+      "1886.1912"
+    ],
+    "nombre":"Partido Felicidad",
+    "nombre_corto":"Partido Felicidad",
+    "orden_absoluto":[
+      6,
+      48
+    ]
+  },
+  {
+    "asistida":"Felicidad Ciudadana",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.1950",
+    "color":[
+      "#ED5915",
+      "#632B50",
+      "#D590DD"
+    ],
+    "id_candidatura":"1886.1912.1950",
+    "imagenes":[
+      "1886.1912.1950"
+    ],
+    "nombre":"Felicidad Ciudadana",
+    "nombre_corto":"Felicidad Ciudadana",
+    "numero":"852",
+    "orden_absoluto":[
+      6,
+      48,
+      213
+    ]
+  },
+  {
+    "asistida":"Felicidad",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.2260",
+    "color":[
+      "#ED5915",
+      "#632B50",
+      "#D590DD"
+    ],
+    "id_candidatura":"1886.1912.2260",
+    "imagenes":[
+      "1886.1912.2260"
+    ],
+    "nombre":"Felicidad",
+    "nombre_corto":"Felicidad",
+    "numero":"851",
+    "orden_absoluto":[
+      6,
+      48,
+      212
+    ]
+  },
+  {
+    "asistida":"Juntos por la Felicidad",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1912",
+    "codigo":"1886.1912.2476",
+    "color":[
+      "#ED5915",
+      "#632B50",
+      "#D590DD"
+    ],
+    "id_candidatura":"1886.1912.2476",
+    "imagenes":[
+      "1886.1912.2476"
+    ],
+    "nombre":"Juntos por la Felicidad",
+    "nombre_corto":"Junt.P.La Felicidad",
+    "numero":"853",
+    "orden_absoluto":[
+      6,
+      48,
+      214
+    ]
+  },
+  {
+    "asistida":"Frente Plural",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.1935",
+    "color":[
+      "#00BF00"
+    ],
+    "id_candidatura":"1886.1935",
+    "imagenes":[
+      "1886.1935"
+    ],
+    "nombre":"Frente Plural",
+    "nombre_corto":"Frente Plural",
+    "orden_absoluto":[
+      6,
+      22
+    ]
+  },
+  {
+    "asistida":"Frente Plural",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.1935",
+    "codigo":"1886.1935.2152",
+    "color":[
+      "#00BF00"
+    ],
+    "id_candidatura":"1886.1935.2152",
+    "imagenes":[
+      "1886.1935.2152"
+    ],
+    "nombre":"Frente Plural",
+    "nombre_corto":"Frente Plural",
+    "numero":"531",
+    "orden_absoluto":[
+      6,
+      22,
+      134
+    ]
+  },
+  {
+    "asistida":"Memoria y Movilizaci\u00f3n Social",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2104",
+    "color":[
+      "#0000FF",
+      "#EE3224"
+    ],
+    "id_candidatura":"1886.2104",
+    "imagenes":[
+      "1886.2104"
+    ],
+    "nombre":"Memoria y Movilizacion Social",
+    "nombre_corto":"Memor.Y Movil.Social",
+    "orden_absoluto":[
+      6,
+      35
+    ]
+  },
+  {
+    "asistida":"Memoria y Movilizaci\u00f3n Social",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2104",
+    "codigo":"1886.2104.2105",
+    "color":[
+      "#0000FF",
+      "#EE3224"
+    ],
+    "id_candidatura":"1886.2104.2105",
+    "imagenes":[
+      "1886.2104.2105"
+    ],
+    "nombre":"Memoria y Movilizacion Social",
+    "nombre_corto":"Memor.Y Movil.Social",
+    "numero":"200",
+    "orden_absoluto":[
+      6,
+      35,
+      3
+    ]
+  },
+  {
+    "asistida":"Partido del Trabajo y la Equidad",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2113",
+    "color":[
+      "#FFFF00",
+      "#FFFFFF",
+      "#00FFFF"
+    ],
+    "id_candidatura":"1886.2113",
+    "imagenes":[
+      "1886.2113"
+    ],
+    "nombre":"Partido del Trabajo y la Equidad",
+    "nombre_corto":"P.Trabajo y Equidad",
+    "orden_absoluto":[
+      6,
+      46
+    ]
+  },
+  {
+    "asistida":"Partido del Trabajo y la Equidad",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2113",
+    "codigo":"1886.2113.2114",
+    "color":[
+      "#FFFF00",
+      "#FFFFFF",
+      "#00FFFF"
+    ],
+    "id_candidatura":"1886.2113.2114",
+    "imagenes":[
+      "1886.2113.2114"
+    ],
+    "nombre":"Partido del Trabajo y la Equidad",
+    "nombre_corto":"P.Trabajo y Equidad",
+    "numero":"561",
+    "orden_absoluto":[
+      6,
+      46,
+      141
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n Victoria Popular",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2223",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2223",
+    "imagenes":[
+      "1886.2223"
+    ],
+    "nombre":"Union Victoria Popular",
+    "nombre_corto":"Union Victoria Pop.",
+    "orden_absoluto":[
+      6,
+      66
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n Victoria Popular",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2223",
+    "codigo":"1886.2223.2224",
+    "color":[
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1886.2223.2224",
+    "imagenes":[
+      "1886.2223.2224"
+    ],
+    "nombre":"Union Victoria Popular",
+    "nombre_corto":"Union Victoria Pop.",
+    "numero":"571",
+    "orden_absoluto":[
+      6,
+      66,
+      142
+    ]
+  },
+  {
+    "asistida":"Agrupacion Bicentenario",
+    "clase":"Partido",
+    "cod_alianza":"1886",
+    "codigo":"1886.2287",
+    "color":[
+      "#FFFFFF",
+      "#FFFF00"
+    ],
+    "id_candidatura":"1886.2287",
+    "imagenes":[
+      "1886.2287"
+    ],
+    "nombre":"Agrupacion Bicentenario",
+    "nombre_corto":"Agrupac.Bicentenario",
+    "orden_absoluto":[
+      6,
+      1
+    ]
+  },
+  {
+    "asistida":"Agrupaci\u00f3n Bicentenario",
+    "clase":"Lista",
+    "cod_alianza":"1886",
+    "cod_partido":"1886.2287",
+    "codigo":"1886.2287.2288",
+    "color":[
+      "#FFFFFF",
+      "#FFFF00"
+    ],
+    "id_candidatura":"1886.2287.2288",
+    "imagenes":[
+      "1886.2287.2288"
+    ],
+    "nombre":"Agrupacion Bicentenario",
+    "nombre_corto":"Agrupac.Bicentenario",
+    "numero":"904",
+    "orden_absoluto":[
+      6,
+      1,
+      235
+    ]
+  },
+  {
+    "asistida":"Frente Popular para la Liberaci\u00f3n",
+    "clase":"Alianza",
+    "codigo":"1887",
+    "color":[
+      "#003DA5",
+      "#DA291C",
+      "#007F00"
+    ],
+    "id_candidatura":"1887",
+    "imagenes":[
+      "1887"
+    ],
+    "nombre":"Fte. Popular para la Liberacion",
+    "nombre_corto":"Fte.Pop.P\/La Liber.",
+    "orden_absoluto":[
+      5
+    ]
+  },
+  {
+    "asistida":"Partido Instrumento Electoral por la Unidad Popular",
+    "clase":"Partido",
+    "cod_alianza":"1887",
+    "codigo":"1887.1989",
+    "color":[
+      "#003DA5",
+      "#DA291C"
+    ],
+    "id_candidatura":"1887.1989",
+    "imagenes":[
+      "1887.1989"
+    ],
+    "nombre":"Partido Unidad Popular",
+    "nombre_corto":"Part.Unidad Popular",
+    "orden_absoluto":[
+      5,
+      53
+    ]
+  },
+  {
+    "asistida":"Unidad Popular",
+    "clase":"Lista",
+    "cod_alianza":"1887",
+    "cod_partido":"1887.1989",
+    "codigo":"1887.1989.2254",
+    "color":[
+      "#003DA5",
+      "#DA291C"
+    ],
+    "id_candidatura":"1887.1989.2254",
+    "imagenes":[
+      "1887.1989.2254"
+    ],
+    "nombre":"Unidad Popular",
+    "nombre_corto":"Unidad Popular",
+    "numero":"421",
+    "orden_absoluto":[
+      5,
+      53,
+      103
+    ]
+  },
+  {
+    "asistida":"Movimiento Nacional y Popular",
+    "clase":"Lista",
+    "cod_alianza":"1887",
+    "cod_partido":"1887.1989",
+    "codigo":"1887.1989.2492",
+    "color":[
+      "#003DA5",
+      "#DA291C"
+    ],
+    "id_candidatura":"1887.1989.2492",
+    "imagenes":[
+      "1887.1989.2492"
+    ],
+    "nombre":"Movimiento Nacional y Popular",
+    "nombre_corto":"Movim.Nac.Y Popular",
+    "numero":"422",
+    "orden_absoluto":[
+      5,
+      53,
+      104
+    ]
+  },
+  {
+    "asistida":"Kol\u00edna",
+    "clase":"Partido",
+    "cod_alianza":"1887",
+    "codigo":"1887.2126",
+    "color":[
+      "#027223",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1887.2126",
+    "imagenes":[
+      "1887.2126"
+    ],
+    "nombre":"Kolina",
+    "nombre_corto":"Kolina",
+    "orden_absoluto":[
+      5,
+      31
+    ]
+  },
+  {
+    "asistida":"Kolina CFK",
+    "clase":"Lista",
+    "cod_alianza":"1887",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2141",
+    "color":[
+      "#027223",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1887.2126.2141",
+    "imagenes":[
+      "1887.2126.2141"
+    ],
+    "nombre":"Kolina CFK",
+    "nombre_corto":"Kolina CFK",
+    "numero":"411",
+    "orden_absoluto":[
+      5,
+      31,
+      100
+    ]
+  },
+  {
+    "asistida":"Kolina Unidad Vecinalista",
+    "clase":"Lista",
+    "cod_alianza":"1887",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2410",
+    "color":[
+      "#027223",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1887.2126.2410",
+    "imagenes":[
+      "1887.2126.2410"
+    ],
+    "nombre":"Kolina Unidad Vecinalista",
+    "nombre_corto":"Kolina Unid.Vecinal.",
+    "numero":"413",
+    "orden_absoluto":[
+      5,
+      31,
+      102
+    ]
+  },
+  {
+    "asistida":"Corriente Federal Kirchnerista",
+    "clase":"Lista",
+    "cod_alianza":"1887",
+    "cod_partido":"1887.2126",
+    "codigo":"1887.2126.2414",
+    "color":[
+      "#027223",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1887.2126.2414",
+    "imagenes":[
+      "1887.2126.2414"
+    ],
+    "nombre":"Corriente Federal Kirchnerista",
+    "nombre_corto":"Federal Kirchnerista",
+    "numero":"412",
+    "orden_absoluto":[
+      5,
+      31,
+      101
+    ]
+  },
+  {
+    "asistida":"Frente Ciudadano para la Victoria",
+    "clase":"Alianza",
+    "codigo":"1888",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888",
+    "imagenes":[
+      "1888"
+    ],
+    "nombre":"Fte. Ciudadano para la Victoria",
+    "nombre_corto":"Fte.Ciud.P\/Victoria",
+    "orden_absoluto":[
+      3
+    ]
+  },
+  {
+    "asistida":"Movimiento Popular Unido (MPU)",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.1905",
+    "color":[
+      "#E82583"
+    ],
+    "id_candidatura":"1888.1905",
+    "imagenes":[
+      "1888.1905"
+    ],
+    "nombre":"Movimiento Popular Unido (MPU)",
+    "nombre_corto":"M.P.U.",
+    "orden_absoluto":[
+      3,
+      41
+    ]
+  },
+  {
+    "asistida":"Movimiento Popular Unido",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.1905",
+    "codigo":"1888.1905.2139",
+    "color":[
+      "#E82583"
+    ],
+    "id_candidatura":"1888.1905.2139",
+    "imagenes":[
+      "1888.1905.2139"
+    ],
+    "nombre":"Movimiento Popular Unido",
+    "nombre_corto":"M.P.U.",
+    "numero":"671",
+    "orden_absoluto":[
+      3,
+      41,
+      163
+    ]
+  },
+  {
+    "asistida":"Frente Ciudadano para la Victoria",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.1934",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888.1934",
+    "imagenes":[
+      "1888.1934"
+    ],
+    "nombre":"Fte. Ciudadano para la Victoria",
+    "nombre_corto":"Fte.Ciud.P\/Victoria",
+    "orden_absoluto":[
+      3,
+      24
+    ]
+  },
+  {
+    "asistida":"Avanti Morocha",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2426",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888.1934.2426",
+    "imagenes":[
+      "1888.1934.2426"
+    ],
+    "nombre":"Avanti Morocha",
+    "nombre_corto":"Avanti Morocha",
+    "numero":"602",
+    "orden_absoluto":[
+      3,
+      24,
+      145
+    ]
+  },
+  {
+    "asistida":"Unidad Ciudadana para la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2440",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888.1934.2440",
+    "imagenes":[
+      "1888.1934.2440"
+    ],
+    "nombre":"Unidad Ciudadana para la Victoria",
+    "nombre_corto":"Unid.Ciud.P\/Victoria",
+    "numero":"601",
+    "orden_absoluto":[
+      3,
+      24,
+      144
+    ]
+  },
+  {
+    "asistida":"La Fuerza de La Unidad",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2502",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888.1934.2502",
+    "imagenes":[
+      "1888.1934.2502"
+    ],
+    "nombre":"La Fuerza de La Unidad",
+    "nombre_corto":"La Fza.De La Unidad",
+    "numero":"603",
+    "orden_absoluto":[
+      3,
+      24,
+      146
+    ]
+  },
+  {
+    "asistida":"Movimiento Popular Unido",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.1934",
+    "codigo":"1888.1934.2536",
+    "color":[
+      "#62B5E5"
+    ],
+    "id_candidatura":"1888.1934.2536",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Movimiento Popular Unido",
+    "nombre_corto":"M.P.U.",
+    "numero":"604",
+    "orden_absoluto":[
+      3,
+      24,
+      147
+    ]
+  },
+  {
+    "asistida":"Cabildo Abierto",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.2108",
+    "color":[
+      "#FF6A1A",
+      "#18375D"
+    ],
+    "id_candidatura":"1888.2108",
+    "imagenes":[
+      "1888.2108"
+    ],
+    "nombre":"Cabildo Abierto",
+    "nombre_corto":"Cabildo Abierto",
+    "orden_absoluto":[
+      3,
+      12
+    ]
+  },
+  {
+    "asistida":"Cabildo Abierto",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2108",
+    "codigo":"1888.2108.2111",
+    "color":[
+      "#FF6A1A",
+      "#18375D"
+    ],
+    "id_candidatura":"1888.2108.2111",
+    "imagenes":[
+      "1888.2108.2111"
+    ],
+    "nombre":"Cabildo Abierto",
+    "nombre_corto":"Cabildo Abierto",
+    "numero":"905",
+    "orden_absoluto":[
+      3,
+      12,
+      236
+    ]
+  },
+  {
+    "asistida":"Partido Frente Grande",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.2117",
+    "color":[
+      "#0000FF",
+      "#FFFFFF",
+      "#FF0000"
+    ],
+    "id_candidatura":"1888.2117",
+    "imagenes":[
+      "1888.2117"
+    ],
+    "nombre":"Partido Frente Grande",
+    "nombre_corto":"Partido Fte.Grande",
+    "orden_absoluto":[
+      3,
+      49
+    ]
+  },
+  {
+    "asistida":"Otra Provincia Es Posible",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2117",
+    "codigo":"1888.2117.2118",
+    "color":[
+      "#0000FF",
+      "#FFFFFF",
+      "#FF0000"
+    ],
+    "id_candidatura":"1888.2117.2118",
+    "imagenes":[
+      "1888.2117.2118"
+    ],
+    "nombre":"Otra Provincia Es Posible",
+    "nombre_corto":"Otra Pcia.Es Posible",
+    "numero":"681",
+    "orden_absoluto":[
+      3,
+      49,
+      166
+    ]
+  },
+  {
+    "asistida":"Partido de la Victoria",
+    "clase":"Partido",
+    "cod_alianza":"1888",
+    "codigo":"1888.2378",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378",
+    "imagenes":[
+      "1888.2378"
+    ],
+    "nombre":"Partido de la Victoria",
+    "nombre_corto":"Part. de la Victoria",
+    "orden_absoluto":[
+      3,
+      45
+    ]
+  },
+  {
+    "asistida":"Unidad para la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2379",
+    "imagenes":[
+      "1888.2378.2379"
+    ],
+    "nombre":"Unidad para la Victoria",
+    "nombre_corto":"Unidad P\/La Victoria",
+    "numero":"651",
+    "orden_absoluto":[
+      3,
+      45,
+      150
+    ]
+  },
+  {
+    "asistida":"Militancia y Compromiso Social",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2383",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2383",
+    "imagenes":[
+      "1888.2378.2383"
+    ],
+    "nombre":"Militancia y Compromiso Social",
+    "nombre_corto":"Milit.Y Compr.Social",
+    "numero":"656",
+    "orden_absoluto":[
+      3,
+      45,
+      155
+    ]
+  },
+  {
+    "asistida":"Avanti Morocha",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2421",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2421",
+    "imagenes":[
+      "1888.2378.2421"
+    ],
+    "nombre":"Avanti Morocha",
+    "nombre_corto":"Avanti Morocha",
+    "numero":"652",
+    "orden_absoluto":[
+      3,
+      45,
+      151
+    ]
+  },
+  {
+    "asistida":"Ciudadanas a la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2494",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2494",
+    "imagenes":[
+      "1888.2378.2494"
+    ],
+    "nombre":"Ciudadan@S a la Victoria",
+    "nombre_corto":"Ciudad.A la Victoria",
+    "numero":"654",
+    "orden_absoluto":[
+      3,
+      45,
+      153
+    ]
+  },
+  {
+    "asistida":"Aluvi\u00f3n Ciudadano",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2500",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2500",
+    "imagenes":[
+      "1888.2378.2500"
+    ],
+    "nombre":"Aluvion Ciudadano",
+    "nombre_corto":"Aluvion Ciudadano",
+    "numero":"653",
+    "orden_absoluto":[
+      3,
+      45,
+      152
+    ]
+  },
+  {
+    "asistida":"Juntos a la Victoria",
+    "clase":"Lista",
+    "cod_alianza":"1888",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2526",
+    "color":[
+      "#70D9FF"
+    ],
+    "id_candidatura":"1888.2378.2526",
+    "imagenes":[
+      "1888.2378.2526"
+    ],
+    "nombre":"Juntos a la Victoria",
+    "nombre_corto":"Juntos a la Victoria",
+    "numero":"655",
+    "orden_absoluto":[
+      3,
+      45,
+      154
+    ]
+  },
+  {
+    "asistida":"Frente de Izquierda y de los Trabajadores (FIT)",
+    "clase":"Alianza",
+    "codigo":"1889",
+    "color":[
+      "#E10600",
+      "#F9DA00",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1889",
+    "imagenes":[
+      "1889"
+    ],
+    "nombre":"Fte. de Izquierda - Partido Obrero - PTS",
+    "nombre_corto":"F.I.T.",
+    "orden_absoluto":[
+      4
+    ]
+  },
+  {
+    "asistida":"Frente de Izquierda y de los Trabajadores (FIT)",
+    "clase":"Partido",
+    "cod_alianza":"1889",
+    "codigo":"1889.1916",
+    "color":[
+      "#E10600",
+      "#F9DA00",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1889.1916",
+    "imagenes":[
+      "1889.1916"
+    ],
+    "nombre":"Fte. de Izquierda - Partido Obrero - PTS",
+    "nombre_corto":"F.I.T.",
+    "orden_absoluto":[
+      4,
+      25
+    ]
+  },
+  {
+    "asistida":"Frente de Izquierda y de los Trabajadores (FIT)",
+    "clase":"Lista",
+    "cod_alianza":"1889",
+    "cod_partido":"1889.1916",
+    "codigo":"1889.1916.2271",
+    "color":[
+      "#E10600",
+      "#F9DA00",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1889.1916.2271",
+    "imagenes":[
+      "1889.1916.2271"
+    ],
+    "nombre":"Fte. de Izquierda - Partido Obrero - PTS",
+    "nombre_corto":"F.I.T.",
+    "numero":"189",
+    "orden_absoluto":[
+      4,
+      25,
+      2
+    ]
+  },
+  {
+    "asistida":"Movimiento Solidaridad y Justicia",
+    "clase":"Alianza",
+    "codigo":"1893",
+    "color":[
+      "#007F00"
+    ],
+    "id_candidatura":"1893",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Movimiento Solidaridad y Justicia",
+    "nombre_corto":"Mov.Solid.Y Justicia",
+    "orden_absoluto":[
+      12
+    ]
+  },
+  {
+    "asistida":"Movimiento Solidaridad y Justicia",
+    "clase":"Partido",
+    "cod_alianza":"1893",
+    "codigo":"1893.1893",
+    "color":[
+      "#007F00"
+    ],
+    "id_candidatura":"1893.1893",
+    "imagenes":[
+      "1893.1893"
+    ],
+    "nombre":"Movimiento Solidaridad y Justicia",
+    "nombre_corto":"Mov.Solid.Y Justicia",
+    "orden_absoluto":[
+      12,
+      42
+    ]
+  },
+  {
+    "asistida":"Guille 2017",
+    "clase":"Lista",
+    "cod_alianza":"1893",
+    "cod_partido":"1893.1893",
+    "codigo":"1893.1893.1894",
+    "color":[
+      "#007F00"
+    ],
+    "id_candidatura":"1893.1893.1894",
+    "imagenes":[
+      "1893.1893.1894"
+    ],
+    "nombre":"Guille 2017",
+    "nombre_corto":"Guille 2017",
+    "numero":"909",
+    "orden_absoluto":[
+      12,
+      42,
+      238
+    ]
+  },
+  {
+    "asistida":"Compromiso Federal",
+    "clase":"Alianza",
+    "codigo":"1899",
+    "color":[
+      "#FFFF56",
+      "#000000"
+    ],
+    "id_candidatura":"1899",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Compromiso Federal",
+    "nombre_corto":"Compromiso Federal",
+    "orden_absoluto":[
+      2
+    ]
+  },
+  {
+    "asistida":"Compromiso Federal",
+    "clase":"Partido",
+    "cod_alianza":"1899",
+    "codigo":"1899.1899",
+    "color":[
+      "#FFFF56",
+      "#000000"
+    ],
+    "id_candidatura":"1899.1899",
+    "imagenes":[
+      "1899.1899"
+    ],
+    "nombre":"Compromiso Federal",
+    "nombre_corto":"Compromiso Federal",
+    "orden_absoluto":[
+      2,
+      15
+    ]
+  },
+  {
+    "asistida":"Unidad Federal",
+    "clase":"Lista",
+    "cod_alianza":"1899",
+    "cod_partido":"1899.1899",
+    "codigo":"1899.1899.2249",
+    "color":[
+      "#FFFF56",
+      "#000000"
+    ],
+    "id_candidatura":"1899.1899.2249",
+    "imagenes":[
+      "1899.1899.2249"
+    ],
+    "nombre":"Unidad Federal",
+    "nombre_corto":"Unidad Federal",
+    "numero":"871",
+    "orden_absoluto":[
+      2,
+      15,
+      227
+    ]
+  },
+  {
+    "asistida":"Movimiento Socialista de los Trabajadores (MST)",
+    "clase":"Alianza",
+    "codigo":"1938",
+    "color":[
+      "#F20C0C",
+      "#17B717",
+      "#8845D1"
+    ],
+    "id_candidatura":"1938",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Mov. Soc. de los Trabajadores",
+    "nombre_corto":"M.S.T.",
+    "orden_absoluto":[
+      9
+    ]
+  },
+  {
+    "asistida":"Movimiento Socialista de los Trabajadores (MST)",
+    "clase":"Partido",
+    "cod_alianza":"1938",
+    "codigo":"1938.1938",
+    "color":[
+      "#F20C0C",
+      "#17B717",
+      "#8845D1"
+    ],
+    "id_candidatura":"1938.1938",
+    "imagenes":[
+      "1938.1938"
+    ],
+    "nombre":"Mov. Soc. de los Trabajadores",
+    "nombre_corto":"M.S.T.",
+    "orden_absoluto":[
+      9,
+      36
+    ]
+  },
+  {
+    "asistida":"Movimiento Socialista de los Trabajadores (MST) - Nueva Izquierda",
+    "clase":"Lista",
+    "cod_alianza":"1938",
+    "cod_partido":"1938.1938",
+    "codigo":"1938.1938.2419",
+    "color":[
+      "#F20C0C",
+      "#17B717",
+      "#8845D1"
+    ],
+    "id_candidatura":"1938.1938.2419",
+    "imagenes":[
+      "1938.1938.2419"
+    ],
+    "nombre":"Nueva Izquierda",
+    "nombre_corto":"MST Nueva Izquierda",
+    "numero":"38",
+    "orden_absoluto":[
+      9,
+      36,
+      1
+    ]
+  },
+  {
+    "asistida":"La Gur\u00fasa",
+    "clase":"Alianza",
+    "codigo":"1939",
+    "color":[
+      "#FF0000"
+    ],
+    "id_candidatura":"1939",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"La Gu.Ru.Sa",
+    "nombre_corto":"La Gu.Ru.Sa",
+    "orden_absoluto":[
+      8
+    ]
+  },
+  {
+    "asistida":"La Gur\u00fasa",
+    "clase":"Partido",
+    "cod_alianza":"1939",
+    "codigo":"1939.1939",
+    "color":[
+      "#FF0000"
+    ],
+    "id_candidatura":"1939.1939",
+    "imagenes":[
+      "1939.1939"
+    ],
+    "nombre":"La Gu.Ru.Sa",
+    "nombre_corto":"La Gu.Ru.Sa",
+    "orden_absoluto":[
+      8,
+      32
+    ]
+  },
+  {
+    "asistida":"La Gurusa",
+    "clase":"Lista",
+    "cod_alianza":"1939",
+    "cod_partido":"1939.1939",
+    "codigo":"1939.1939.2190",
+    "color":[
+      "#FF0000"
+    ],
+    "id_candidatura":"1939.1939.2190",
+    "imagenes":[
+      "1939.1939.2190"
+    ],
+    "nombre":"La Gu.Ru.Sa",
+    "nombre_corto":"La Gu.Ru.Sa",
+    "numero":"907",
+    "orden_absoluto":[
+      8,
+      32,
+      237
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n C\u00edvica Radical",
+    "clase":"Alianza",
+    "codigo":"1947",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Union Civica Radical",
+    "nombre_corto":"Union Civica Radical",
+    "orden_absoluto":[
+      16
+    ]
+  },
+  {
+    "asistida":"Uni\u00f3n C\u00edvica Radical",
+    "clase":"Partido",
+    "cod_alianza":"1947",
+    "codigo":"1947.1947",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947",
+    "imagenes":[
+      "1947.1947"
+    ],
+    "nombre":"Union Civica Radical",
+    "nombre_corto":"Union Civica Radical",
+    "orden_absoluto":[
+      16,
+      65
+    ]
+  },
+  {
+    "asistida":"Evoluci\u00f3n Ciudadana",
+    "clase":"Lista",
+    "cod_alianza":"1947",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1958",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947.1958",
+    "imagenes":[
+      "1947.1947.1958"
+    ],
+    "nombre":"Evolucion Ciudadana",
+    "nombre_corto":"Evolucion Ciudadana",
+    "numero":"310",
+    "orden_absoluto":[
+      16,
+      65,
+      95
+    ]
+  },
+  {
+    "asistida":"Todos por El Cambio",
+    "clase":"Lista",
+    "cod_alianza":"1947",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1980",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947.1980",
+    "imagenes":[
+      "1947.1947.1980"
+    ],
+    "nombre":"Todos por El Cambio",
+    "nombre_corto":"Todos por El Cambio",
+    "numero":"304",
+    "orden_absoluto":[
+      16,
+      65,
+      89
+    ]
+  },
+  {
+    "asistida":"El Nuevo Camino",
+    "clase":"Lista",
+    "cod_alianza":"1947",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947.1985",
+    "imagenes":[
+      "1947.1947.1985"
+    ],
+    "nombre":"El Nuevo Camino",
+    "nombre_corto":"El Nuevo Camino",
+    "numero":"302",
+    "orden_absoluto":[
+      16,
+      65,
+      87
+    ]
+  },
+  {
+    "asistida":"Cambio Radical",
+    "clase":"Lista",
+    "cod_alianza":"1947",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1986",
+    "color":[
+      "#FF0000",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"1947.1947.1986",
+    "imagenes":[
+      "1947.1947.1986"
+    ],
+    "nombre":"Cambio Radical",
+    "nombre_corto":"Cambio Radical",
+    "numero":"309",
+    "orden_absoluto":[
+      16,
+      65,
+      94
+    ]
+  },
+  {
+    "asistida":"Salta S\u00f3mos Todos",
+    "clase":"Alianza",
+    "codigo":"1973",
+    "color":[
+      "#F7EA48"
+    ],
+    "id_candidatura":"1973",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Salta Somos Todos",
+    "nombre_corto":"Salta Somos Todos",
+    "orden_absoluto":[
+      14
+    ]
+  },
+  {
+    "asistida":"Salta S\u00f3mos Todos",
+    "clase":"Partido",
+    "cod_alianza":"1973",
+    "codigo":"1973.1973",
+    "color":[
+      "#F7EA48"
+    ],
+    "id_candidatura":"1973.1973",
+    "imagenes":[
+      "1973.1973"
+    ],
+    "nombre":"Salta Somos Todos",
+    "nombre_corto":"Salta Somos Todos",
+    "orden_absoluto":[
+      14,
+      62
+    ]
+  },
+  {
+    "asistida":"Juntos Salta Somos Todos",
+    "clase":"Lista",
+    "cod_alianza":"1973",
+    "cod_partido":"1973.1973",
+    "codigo":"1973.1973.2232",
+    "color":[
+      "#F7EA48"
+    ],
+    "id_candidatura":"1973.1973.2232",
+    "imagenes":[
+      "1973.1973.2232"
+    ],
+    "nombre":"Juntos Salta Somos Todos",
+    "nombre_corto":"Junt.Salta Som.Todos",
+    "numero":"891",
+    "orden_absoluto":[
+      14,
+      62,
+      230
+    ]
+  },
+  {
+    "asistida":"Salta Federal",
+    "clase":"Alianza",
+    "codigo":"2302",
+    "color":[
+      "#FC3592",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"2302",
+    "imagenes":[
+      "default_lista"
+    ],
+    "nombre":"Salta Federal",
+    "nombre_corto":"Salta Federal",
+    "orden_absoluto":[
+      13
+    ]
+  },
+  {
+    "asistida":"Salta Federal",
+    "clase":"Partido",
+    "cod_alianza":"2302",
+    "codigo":"2302.2302",
+    "color":[
+      "#FC3592",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"2302.2302",
+    "imagenes":[
+      "2302.2302"
+    ],
+    "nombre":"Salta Federal",
+    "nombre_corto":"Salta Federal",
+    "orden_absoluto":[
+      13,
+      60
+    ]
+  },
+  {
+    "asistida":"Federales de Salta",
+    "clase":"Lista",
+    "cod_alianza":"2302",
+    "cod_partido":"2302.2302",
+    "codigo":"2302.2302.2305",
+    "color":[
+      "#FC3592",
+      "#FFFFFF"
+    ],
+    "id_candidatura":"2302.2302.2305",
+    "imagenes":[
+      "2302.2302.2305"
+    ],
+    "nombre":"Federales de Salta",
+    "nombre_corto":"Federales de Salta",
+    "numero":"881",
+    "orden_absoluto":[
+      13,
+      60,
+      229
+    ]
+  }
+]

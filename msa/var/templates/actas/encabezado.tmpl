@@ -1,0 +1,23 @@
+<!-- encabezado -->
+<g transform="translate(0, 0)">
+    <!-- titulo -->
+    <rect x="108" y="2" width="722" height="40" fill="{{colores.blanco}}" stroke="{{colores.negro}}" stroke-width="4" />
+    <text>
+        <tspan y="7" x="113" dy="1em">{{encabezado.nombre_acta}}</tspan>
+    </text>
+    <!-- fin titulo -->
+    <text style="font-size:1.2em">
+        <tspan y="45" x="113" dy="1em">{{i18n.mesa}} {{mesa}}</tspan>
+    </text>
+    {% if not de_muestra %}
+        <!-- texto encabezado -->
+        <text y="90">
+            {% for line in encabezado.texto %}
+                <tspan dy="1em" x="10">{{line}}</tspan>
+            {% endfor %}
+        </text>
+        <!-- fin texto encabezado -->
+    {% endif %}
+    <!-- fin cuadro mesa -->
+</g>
+<!-- fin encabezado -->

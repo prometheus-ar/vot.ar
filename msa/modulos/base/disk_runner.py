@@ -3,6 +3,7 @@ from argparse import ArgumentParser
 from msa.modulos.base import App
 from msa.modulos.constants import MODULO_CALIBRADOR
 
+
 class DiskRunner():
     """Corre la aplicacion en el contexto del disco."""
     def __init__(self, modulos_startup, modulos_aplicacion, calibracion=True):

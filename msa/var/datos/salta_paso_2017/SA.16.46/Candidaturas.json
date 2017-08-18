@@ -1,0 +1,174 @@
+[
+  {
+    "asistida":"Aguilera, Dominga Eugenia",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.153050",
+    "id_candidatura":"1885.1926.2372.153050",
+    "id_umv":136,
+    "imagenes":[
+      "1885.1926.2372.153050"
+    ],
+    "nombre":"Aguilera, Dominga Eugenia",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Guzman, Jesus",
+      "Apaza Perez, Herminia Mariel"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Ol\u00e1zo, Yolanda Mercedes",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2060",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2060.147598",
+    "id_candidatura":"1886.1890.2060.147598",
+    "id_umv":270,
+    "imagenes":[
+      "1886.1890.2060.147598"
+    ],
+    "nombre":"Olazo, Yolanda Mercedes",
+    "orden_absoluto":[
+      6,
+      51,
+      46,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Apaza, Pedro Feliz",
+      "Lopez Garcia, Jimena Isabel"
+    ],
+    "sexo":"F",
+    "suplentes":null
+  },
+  {
+    "asistida":"Valdez Abadia, Sergio Alejandro",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1906.1907",
+    "cod_partido":"1886.1906",
+    "codigo":"1886.1906.1907.136956",
+    "id_candidatura":"1886.1906.1907.136956",
+    "id_umv":356,
+    "imagenes":[
+      "1886.1906.1907.136956"
+    ],
+    "nombre":"Valdez Abadia, Sergio Alejandro",
+    "orden_absoluto":[
+      6,
+      52,
+      207,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Balderrama, Blanca Aurora",
+      "Cardozo, Sergio Eduardo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Apaza, Andr\u00e9s H\u00e9ctor",
+    "clase":"Candidato",
+    "cod_alianza":"1947",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1947.1947.1985",
+    "cod_partido":"1947.1947",
+    "codigo":"1947.1947.1985.145372",
+    "id_candidatura":"1947.1947.1985.145372",
+    "id_umv":807,
+    "imagenes":[
+      "1947.1947.1985.145372"
+    ],
+    "nombre":"Apaza, Andres Hector",
+    "orden_absoluto":[
+      16,
+      65,
+      87,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Carbajo, Maria Dolores",
+      "Robles, Sergio Reynaldo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":872,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":932,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":992,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

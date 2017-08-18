@@ -717,7 +717,7 @@ body[data-modo='totalizador'] #pantalla_inicial > .tooltip {
 #boleta {
   display: block;
   width: 890px;
-  height: 302px;
+  height: 390;
   margin-top: 10px;
   margin-left: 13px;
   -moz-border-radius: 3px 3px 3px 3px;
@@ -728,9 +728,7 @@ body[data-modo='totalizador'] #pantalla_inicial > .tooltip {
   box-sizing: border-box;
 }
 #boleta img {
-  width: 813px;
-  height: 300px;
-  margin-left: 90px;
+  width: 870px;
 }
 #boleta.acta {
   overflow: hidden;
@@ -738,7 +736,10 @@ body[data-modo='totalizador'] #pantalla_inicial > .tooltip {
   height: 900px;
   margin-left: 14%;
 }
-#pantalla_boleta {
+#pantalla_boleta,
+#pantalla_boleta_repetida,
+#pantalla_verificar_acta,
+#pantalla_boleta_error {
   overflow: hidden;
   height: 670px;
 }
@@ -1151,10 +1152,64 @@ div.contenedor-votado:first-child:nth-last-child(1) ~ div.contenedor-votado {
   font-size: 2em;
 }
 .contenedor-votado.max-1 .candidato .nombre-partido {
-  font-size: 1.8em;
+  font-size: 1.1em;
+  font-weight: bold;
 }
 .contenedor-votado.max-1 .candidato .nombre-cargo-recuento {
   min-height: auto;
+}
+.contenedor-votado.max-2 .candidato .lista {
+  font-size: 1.8em;
+}
+.contenedor-votado.max-2 .candidato .nombre-partido {
+  font-size: 1em;
+  font-weight: bold;
+}
+.contenedor-votado.max-2 .candidato .nombre-cargo-recuento {
+  min-height: auto;
+}
+.contenedor-votado.max-3 .candidato .lista {
+  font-size: 1.4em;
+}
+.contenedor-votado.max-3 .candidato .nombre-partido {
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.contenedor-votado.max-3 .candidato .nombre-cargo-recuento {
+  min-height: auto;
+}
+.contenedor-votado.max-4 .candidato .lista {
+  font-size: 1em;
+}
+.contenedor-votado.max-4 .candidato .nombre-partido {
+  font-size: 0.85em;
+  font-weight: bold;
+}
+.contenedor-votado.max-4 .candidato .nombre-partido {
+  line-height: 0.95em;
+  min-height: 1.9em;
+}
+.contenedor-votado.max-5 .candidato .lista {
+  font-size: 1em;
+}
+.contenedor-votado.max-5 .candidato .nombre-partido {
+  font-size: 0.8em;
+  font-weight: bold;
+}
+.contenedor-votado.max-5 .candidato .nombre-partido {
+  line-height: 0.9em;
+  min-height: 1.8em;
+}
+.contenedor-votado.max-6 .candidato .lista {
+  font-size: 1em;
+}
+.contenedor-votado.max-6 .candidato .nombre-partido {
+  font-size: 0.75em;
+  font-weight: bold;
+}
+.contenedor-votado.max-6 .candidato .nombre-partido {
+  line-height: 0.85em;
+  min-height: 1.7em;
 }
 .contenedor-votado .candidato {
   background-color: #ffffff;
@@ -1180,29 +1235,33 @@ div.contenedor-votado:first-child:nth-last-child(1) ~ div.contenedor-votado {
 .contenedor-votado .candidato .candidato-principal {
   color: #003366;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 0.85em;
+  clear: both;
   padding-top: 5px;
+  width: 100%;
 }
 .contenedor-votado .candidato .candidato-secundario {
+  display: none;
   margin-top: 3px;
   color: #078ed5;
   font-size: 0.75em;
   font-weight: bold;
   width: 100%;
 }
-.contenedor-votado .candidato .nombre-alianza {
-  padding-bottom: 10px;
-  margin-top: 60px;
-  font-size: 1.5em;
-  display: block;
-}
 .contenedor-votado .candidato .nombre-partido {
   padding-bottom: 3px;
+  margin-top: 5px;
   font-size: 0.8em;
   display: block;
+  float: left;
+  width: 100%;
+}
+.contenedor-votado .candidato .nombre-lista {
+  clear: left;
 }
 .contenedor-votado .candidato .foto-candidato,
 .contenedor-votado .candidato .foto-partido {
+  max-width: 98px;
   position: relative;
 }
 .contenedor-votado .candidato .foto-candidato:before,
@@ -1225,16 +1284,15 @@ div.contenedor-votado:first-child:nth-last-child(1) ~ div.contenedor-votado {
   border: 1px solid #cccccc;
   display: block;
   float: left;
-  width: 22%;
+  width: 50%;
 }
 .contenedor-votado .candidato .foto-secundario {
   display: none;
 }
 .contenedor-votado .candidato .foto-partido {
-  width: 22%;
+  width: calc(50% - 2.4em);
   border: 1px solid #cccccc;
   float: left;
-  margin-right: 10px;
 }
 .contenedor-votado .candidato .lista {
   font-size: 1em;
@@ -1289,7 +1347,7 @@ div.contenedor-votado:first-child:nth-last-child(1) ~ div.contenedor-votado {
   box-sizing: border-box;
   font-weight: bold;
 }
-.contenedor-votado .pie-candidato .colores {
+.contenedor-votado .pie-candidato .color-lista {
   float: right;
   width: 30%;
   height: 27px;
@@ -1363,10 +1421,8 @@ div.contenedor-votado:first-child:nth-last-child(1) ~ div.contenedor-votado {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  border: 1px solid #cccccc;
   width: 100%;
   float: left;
-  margin-left: 5px;
 }
 .color-lista:before {
   content: "";
@@ -1465,7 +1521,19 @@ table th {
 }
 #tabla th:nth-child(1),
 #tabla tr td:nth-child(1) {
-  width: 140px;
+  width: 300px;
+}
+#tabla th:nth-child(1):nth-last-child(3),
+#tabla tr td:nth-child(1):nth-last-child(3) {
+  width: 300px;
+}
+#tabla th:nth-child(1):nth-last-child(3) .lista-numero,
+#tabla tr td:nth-child(1):nth-last-child(3) .lista-numero {
+  width: 10%;
+}
+#tabla th:nth-child(1):nth-last-child(3) .descripcion,
+#tabla tr td:nth-child(1):nth-last-child(3) .descripcion {
+  width: 80%;
 }
 #tabla tbody > tr.especial {
   border-top: 2px dashed #CCC;
@@ -1518,8 +1586,8 @@ table th {
   text-align: center;
 }
 #tabla tr td:first-child div.lista-numero {
-  width: 17%;
-  height: 25px;
+  width: 20%;
+  height: 30px;
   float: left;
   margin-right: 10px;
   position: relative;
@@ -1536,7 +1604,7 @@ table th {
   position: relative;
 }
 #tabla tr td:first-child div.lista-especial {
-  width: 0px;
+  width: 40px;
   height: 100%;
   float: left;
   margin-right: 10px;
@@ -1558,10 +1626,11 @@ table th {
   left: 431px;
 }
 .descripcion {
-  width: 75%;
+  width: 70%;
   float: left;
 }
 .voto-blanco {
+  width: 100%;
   float: left;
 }
 .menos20 {

@@ -48,13 +48,16 @@ function get_alianza_candidato(candidato){
 }
 
 function get_categorias_hijas_candidato(candidato){
+    /* Devuelve las categorias hijas de un candidato. */
     var ret = [];
-
+    
+    // Obtenemos las categorias hijas de la categoría del candidato.
     var categorias_hijas = local_data.categorias.many({
         adhiere: candidato.cod_categoria
     });
 
     if(categorias_hijas.length){
+        // Recorremos las categorias hijas buscando un candidato de esta lista.
         for(var j in categorias_hijas){
             var categoria = categorias_hijas[j];
             if(categoria){
@@ -62,6 +65,8 @@ function get_categorias_hijas_candidato(candidato){
                     "cod_categoria": categoria.codigo,
                     "cod_lista": candidato.cod_lista
                 });
+                // Si existe tal candidato lo agregamos a la lista de
+                // candidatos hijos.
                 if(candidato_hijo){
                     var cat_hija = [categoria.codigo, candidato_hijo,
                                     categoria];

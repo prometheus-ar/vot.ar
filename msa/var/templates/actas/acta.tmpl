@@ -1,0 +1,46 @@
+{% include "actas/xmlversion.tmpl" %}
+{% include "actas/doctype.tmpl" %}
+<svg version="1.1" baseProfile="full"
+     width="{{medidas.width}}" height="{{medidas.height}}"
+     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+     style="font-size:23px;font-weight:bold;font-family: nimbus mono L;">
+    {% include "actas/fondo.tmpl" %}
+
+    <!-- imagenes embebidas -->
+    {% if qr %}
+        {% include "actas/qr.tmpl" %}
+    {% endif %}
+    {% if escudo %}
+        {% include "actas/escudo.tmpl" %}
+    {% endif %}
+    {% if verificador %}
+        {% include "actas/verificador.tmpl" %}
+    {% endif %}
+    <!-- fin imagenes embebidas -->
+
+    {% include "actas/encabezado.tmpl" %}
+    
+    {% if texto_acta %}
+        {% include "actas/texto.tmpl" %}
+    {% endif %}
+
+    {% if tabla %}
+        {% include "actas/tabla.tmpl" %}
+    {% endif %}
+
+    {% if not de_muestra %}
+        {% include "actas/firmas.tmpl" %}
+    {% endif %}
+
+    {% if not de_muestra %}
+        {% include "actas/firmas.tmpl" %}
+    {% endif %}
+    {% include "actas/leyenda.tmpl" %}
+
+    {% include "actas/watermark.tmpl" %}
+
+    {% set devel = False%}
+    {% if devel %}
+        {% include "actas/devel.tmpl" %}
+    {% endif %}
+</svg>

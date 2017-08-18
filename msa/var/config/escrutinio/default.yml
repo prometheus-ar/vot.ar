@@ -1,0 +1,6 @@
+mostrar_asistente_cierre: true
+mostrar_color: true
+mostrar_numero_lista: true
+tabla_muestra_alianza: true
+tabla_muestra_partido: false
+usar_nombre_corto: false

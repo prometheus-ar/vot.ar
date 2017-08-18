@@ -1,0 +1,46 @@
+{% set margen_texto = margen_texto + 100 %}
+<!-- Contenedor candidato -->
+<g style="font-size:{{sec.font_size}}px">   
+    <!-- Lista X -->
+    <text x="{{posicion_lista}}" y="{{sec.numero_lista.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.numero_lista.em}}em;text-anchor:end;">{{sec.numero_lista.texto}}</text> 
+    <!-- Nombre de la lista-->
+    <text x="{{margen_texto}}" y="{{sec.nombre_lista.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.nombre_lista.em}}em;">
+        {% for linea in sec.nombre_lista.lineas %}
+            <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.nombre_lista.em}}em">{{linea.1}}</tspan>
+        {% endfor %}
+    </text> 
+    <g transform="translate({{sec.layout.translate_x}}, 0)">
+        <!-- Candidato principal -->
+        <text x="{{margen_texto}}" y="{{sec.nombre_candidato.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.nombre_candidato.em}}em;">
+            {% for linea in sec.nombre_candidato.lineas %}
+                <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.nombre_candidato.em}}em">{{linea.1}}</tspan>
+            {% endfor %}
+        </text> 
+        {% if not sec.es_blanco %}
+            <!-- Candidatos secundarios -->
+            {% if sec.secundarios %}
+                <text x="{{margen_texto}}" y="{{sec.secundarios.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.secundarios.em}}em;">
+                {% for linea in sec.secundarios.lineas %}
+                    <tspan  x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.secundarios.em}}em">{{linea.1}}</tspan>
+                {% endfor %}
+                </text>
+            {% endif %}
+            <!-- Candidatos suplentes -->
+            {% if sec.suplentes %}
+                <text x="{{margen_texto}}" y="{{sec.suplentes.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.suplentes.em}}em;">
+                {% for linea in sec.suplentes.texto %}
+                    <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.suplentes.em}}em">{{linea.1}}</tspan>
+                {% endfor %}
+                </text>
+            {% endif %}
+            <!-- Candidategorias Adheridas -->
+            {% if sec.adherentes %}
+                <text x="{{margen_texto}}" y="{{sec.adherentes.pos_y}}" width="{{ancho_texto}}" style="font-size:{{sec.adherentes.em}}em">
+                {% for linea in sec.adherentes.lineas %}
+                    <tspan x="{{margen_texto}}" y="{{linea.0}}" dy="{{sec.adherentes.em}}em">{{linea.1}}</tspan>
+                {% endfor %}
+                </text>
+            {% endif %}
+        {% endif %}
+    </g>
+</g>

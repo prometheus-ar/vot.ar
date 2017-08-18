@@ -1,0 +1,152 @@
+[
+  {
+    "asistida":"\u00c1lvarez, Arturo Fernando",
+    "clase":"Candidato",
+    "cod_alianza":"1885",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1885.1926.2372",
+    "cod_partido":"1885.1926",
+    "codigo":"1885.1926.2372.153001",
+    "id_candidatura":"1885.1926.2372.153001",
+    "id_umv":134,
+    "imagenes":[
+      "1885.1926.2372.153001"
+    ],
+    "nombre":"Alvarez, Arturo Fernando",
+    "orden_absoluto":[
+      15,
+      61,
+      203,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Garzon, Virginia Flora",
+      "Castillo, Candelario",
+      "Tintilay, Martina",
+      "Cabana, Alberto"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Orihuela, Leopoldo",
+    "clase":"Candidato",
+    "cod_alianza":"1886",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1886.1890.2058",
+    "cod_partido":"1886.1890",
+    "codigo":"1886.1890.2058.139841",
+    "id_candidatura":"1886.1890.2058.139841",
+    "id_umv":268,
+    "imagenes":[
+      "1886.1890.2058.139841"
+    ],
+    "nombre":"Orihuela, Leopoldo",
+    "orden_absoluto":[
+      6,
+      51,
+      85,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Castro, Alicia",
+      "Subelza, Victor",
+      "Ortiz, Elsa Liliana",
+      "Martinez, Santos"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Sub\u00e9lza, Mart\u00edn",
+    "clase":"Candidato",
+    "cod_alianza":"1888",
+    "cod_categoria":"CNJ",
+    "cod_lista":"1888.2378.2379",
+    "cod_partido":"1888.2378",
+    "codigo":"1888.2378.2379.149236",
+    "id_candidatura":"1888.2378.2379.149236",
+    "id_umv":709,
+    "imagenes":[
+      "1888.2378.2379.149236"
+    ],
+    "nombre":"Subelza, Martin",
+    "orden_absoluto":[
+      3,
+      45,
+      150,
+      4,
+      1
+    ],
+    "secundarios":[
+      "Tolaba, Nora",
+      "Vilca, Jesus",
+      "Cabana, Guadalupe Silvia",
+      "Martinez, Omar Gustavo"
+    ],
+    "sexo":"M",
+    "suplentes":null
+  },
+  {
+    "asistida":"Voto en Blanco",
+    "clase":"Blanco",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"BLC",
+    "id_candidatura":"BLC",
+    "id_umv":858,
+    "imagenes":[
+      "BLC"
+    ],
+    "nombre":"Voto en Blanco",
+    "orden_absoluto":[
+      994,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Impugnados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"IMP",
+    "id_candidatura":"IMP",
+    "id_umv":918,
+    "nombre":"Votos Impugnados",
+    "orden_absoluto":[
+      995,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  },
+  {
+    "asistida":"Votos Observados",
+    "clase":"Especial",
+    "cod_categoria":"CNJ",
+    "cod_lista":"",
+    "codigo":"OBS",
+    "id_candidatura":"OBS",
+    "id_umv":978,
+    "nombre":"Votos Observados",
+    "orden_absoluto":[
+      996,
+      4
+    ],
+    "secundarios":[
+
+    ],
+    "sexo":null,
+    "suplentes":null
+  }
+]

@@ -1,0 +1,21 @@
+<div class="candidato candidato-persona {{extra_classes}}" id="{{id_boton}}">
+    <div class="lista">
+        <p class="palabra-lista">{{i18n "palabra_lista"}}</p>
+        <p class="numero-lista">{{candidato.lista.numero}}</p>
+    </div>
+    <div class="foto-candidato" style="display:none;">
+        {{imagen_candidatura candidato.imagenes.[0]}}
+    </div>
+    <div class="foto-partido">
+        {{imagen_candidatura candidato.lista.imagenes.[0]}}
+    </div>
+    {{#if nombre_lista}}
+        <div class="nombre-partido">{{nombre_lista}}</div>
+    {{else}}
+        <div class="nombre-partido">{{candidato.partido.nombre}}</div>
+    {{/if}}
+    {{{colores candidato.lista.color}}}
+    <div class="candidato-principal">{{candidato.nombre}}</div>
+    <div class="candidato-secundario">{{{secundarios}}}</div>
+    {{&extra_html}}
+</div>

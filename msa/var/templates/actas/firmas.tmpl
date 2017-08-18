@@ -1,0 +1,67 @@
+{% set ancho_bloque = 773 %}
+{% set alto_bloque = 230 %}
+{% set y_firmas = 210 %}
+
+{% if suplentes|length == 0 %}
+    {% set font_size = 25 %}
+    {% set ancho = 350 %}
+    {% set ubic = [250] %}
+{% endif %}
+
+{% if suplentes|length == 1 %}
+    {% set font_size = 20 %}
+    {% set ancho = 350 %}
+    {% set ubic = [30, 410] %}
+{% endif %}
+
+{% if suplentes|length == 2 %}
+    {% set font_size = 16 %}
+    {% set ancho = 245 %}
+    {% set ubic = [15, 265, 530] %}
+{% endif %}
+
+<g transform="translate(0,{{posiciones.firmas}})">
+    <rect x="11" y="0" width="773" height="40" fill="{{colores.blanco}}" stroke="{{colores.negro}}" stroke-width="3"/>
+    <text style="font-size:1.05em">
+        <tspan y="3" x="20" dy="1em">{{i18n.firmas_autoridades}}</tspan>
+    </text>
+    <rect x="11" y="40" width="{{ancho_bloque}}" height="{{alto_bloque}}" stroke="{{colores.negro}}" stroke-width="3" fill="{{colores.blanco}}"/>
+    
+    <g transform="translate({{ubic.0}}, {{y_firmas}})">
+        <line x1="0" y1="0" x2="{{ancho}}" y2="0" style="stroke:{{colores.negro}};stroke-width:2"/>
+        <text x="0" y="18" style="font-size:{{font_size}}px"> {{presidente.apellido}}</text>
+        <text x="0" y="35" style="font-size:{{font_size}}px"> {{presidente.nombre}} </text>
+        <text x="0" y="51" style="font-size:{{font_size}}px"> {{presidente.tipo_documento}} {{presidente.nro_documento}} </text>
+    </g>
+    {% if suplentes|length > 0 %}
+        <g transform="translate({{ubic.1}}, {{y_firmas}})">
+            <line x1="0" y1="0" x2="{{ancho}}" y2="0" style="stroke:{{colores.negro}};stroke-width:2"/>
+            <text x="0" y="18" style="font-size:{{font_size}}px"> {{suplentes.0.apellido}}</text>
+            <text x="0" y="35" style="font-size:{{font_size}}px"> {{suplentes.0.nombre}} </text>
+            <text x="0" y="51" style="font-size:{{font_size}}px"> {{suplentes.0.tipo_documento}} {{suplentes.0.nro_documento}} </text>
+        </g>
+    {% endif %}
+    {% if suplentes|length == 2 %}
+        <g transform="translate({{ubic.2}}, {{y_firmas}})">
+            <line x1="0" y1="0" x2="{{ancho}}" y2="0" style="stroke:{{colores.negro}};stroke-width:2"/>
+            <text x="0" y="18" style="font-size:{{font_size}}px"> {{suplentes.1.apellido}}</text>
+            <text x="0" y="35" style="font-size:{{font_size}}px"> {{suplentes.1.nombre}} </text>
+            <text x="0" y="51" style="font-size:{{font_size}}px"> {{suplentes.1.tipo_documento}} {{suplentes.1.nro_documento}} </text>
+        </g>
+    {% endif %}
+</g>
+
+
+{% if posiciones.final > 0 %}
+    <g transform="translate(0, {{posiciones.firmas + 300}})">
+        <rect x="11" y="0" width="773" height="40" fill="{{colores.blanco}}" stroke="{{colores.negro}}" stroke-width="3"/>
+        <text style="font-size:1.05em">
+            <tspan y="3" x="20" dy="1em">{{i18n.firmas_fiscales}}</tspan>
+        </text>
+        <rect x="11" y="40" width="{{ancho_bloque}}" height="{{posiciones.final - 10}}" stroke="{{colores.negro}}" stroke-width="3" fill="{{colores.blanco}}"/>
+        
+        <text y="{{posiciones.final + 25}}" x="15">{{i18n.firmas_fiscales_detalle}}</text>
+        <text style="font-size:0.9em" y="{{posiciones.final + 55}}" x="10">{{pie}}</text>
+    </g>
+{% endif %}
+

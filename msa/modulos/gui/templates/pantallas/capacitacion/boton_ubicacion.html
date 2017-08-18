@@ -1,19 +1,35 @@
 <div class="columna columna-{{numero_cols}}">
+        {{#titulo}}
+        <div class="btn extranjera" id="subtitulo">
+            <div class="subir_nivel" id="subir_nivel">
+                <i class="material-icons boton-accion">&#xE5C4;</i>
+            </div>
+            <div class="text">
+                {{.}}
+            </div>
+        </div>
+        {{/titulo}}
         {{#ubicaciones}}
-            <div class="btn {{#display_ext}}extranjera{{/display_ext}}">
+        <div class="btn {{#extranjera}}extranjera{{/extranjera}}" data-indice="{{@index}}">
                 <div class="text">
-                    {{#if departamento}}<span class="departamento">{{departamento}} </span> - {{/if}}<span class="municipio"><strong>{{municipio}}</strong></span>
+                    <span class="municipio">
+                        <strong>{{descripcion}}</strong>
+                    </span>
                     {{#if extranjera}}
-                    <span class="extranjera">(Extranjera)</span>
+                    <span class="extranjera">{{i18n "extranjeros_capacitacion"}}</span>
                     {{/if}}
                 </div>
                 <div class="botones">
+                    {{#mostrar_boton_capacitacion}}
                     <div class="demo" id="demo_{{nro_mesa}}">
                         <i class="material-icons boton-accion">&#xE417;</i>
                     </div>
+                    {{/mostrar_boton_capacitacion}}
+                    {{#mostrar_boton_asistida}}
                     <div class="asistida" id="asistida_{{nro_mesa}}">
                         <i class="material-icons boton-accion">&#xE310;</i>
                     </div>
+                    {{/mostrar_boton_asistida}}
                     {{#mostrar_boton_impresion}}
                         <div class="imprimir" id="imprimir_{{nro_mesa}}">
                             <i class="material-icons boton-accion">&#xE8AD;</i>
