@@ -4,6 +4,10 @@ VOT.AR - Sistema de Voto Electrónico - Versión 3.1 (Ahí Vamos)
 
 ## Imágenes ISO
 
+PASO Salta 2017: https://anonfile.com/S747o4ccbe/votar_salta_paso_2017.iso
+
+PASO Corrientes 2017: https://anonfile.com/e4H5m9c0b7/votar_transmision_corrientes.iso
+
 [LINK ROTO] Versión de comienzos de año 2015: http://bit.ly/1Lp1Z78
 
 [LINK ROTO] Versión de las PASO (Abril-Mayo 2015): http://bit.ly/1MTubzB
