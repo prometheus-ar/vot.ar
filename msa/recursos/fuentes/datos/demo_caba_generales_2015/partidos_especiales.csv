@@ -1,5 +1,0 @@
-id_partido,id_alianza,descripcion,texto_asistida,descripcion_corta,color,especial,voto_positivo,idx_fila
-BLC,,Votos en BLANCO,Voto en BLANCO,En Blanco,#ffffff,SI,SI,995
-IMP,,Votos IMPUGNADOS,Votos IMPUGNADOS,Impugnados,,SI,NO,996
-OBS,,Votos OBSERVADOS,Votos OBSERVADOS,Observados,,SI,NO,997
-REC,,Votos RECURRIDOS,Votos RECURRIDOS,Recurridos,,SI,NO,998
