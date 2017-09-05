@@ -1,9 +1,0 @@
-id_provincia,id_departamento,id_localidad,id_cargo,piso,bancas,listas_excluidas,listas_sin_banca
-EJ,,,SEN,5,1,"OBS,IMP,REC,CSI,CNO",BLC
-,1,,DIP,5,3,"OBS,IMP,REC,CSI,CNO",BLC
-,2,,DIP,5,3,"OBS,IMP,REC,CSI,CNO",BLC
-,3,,DIP,5,3,"OBS,IMP,REC,CSI,CNO",BLC
-,4,,DIP,5,3,"OBS,IMP,REC,CSI,CNO",BLC
-,,1,CNJ,5,5,"OBS,IMP,REC,CSI,CNO",BLC
-,,5,CNJ,5,5,"OBS,IMP,REC,CSI,CNO",BLC
-,,12,CNJ,5,5,"OBS,IMP,REC,CSI,CNO",BLC

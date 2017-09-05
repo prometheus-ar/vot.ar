@@ -1,1 +1,0 @@
-ENCRIPTAR_TAG = True
